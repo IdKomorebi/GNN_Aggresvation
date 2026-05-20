@@ -80,7 +80,12 @@ def train_model(
         weight_decay=cfg["training"].get("weight_decay", 1e-4),
     )
 
+    # 学习率调度器
     epochs = cfg["training"]["epochs"]
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+        optimizer, T_max=epochs, eta_min=cfg["training"]["lr"] * 0.01
+    )
+
     patience = cfg["training"].get("patience", 20)
     best_test_loss = float("inf")
     patience_counter = 0
@@ -112,6 +117,9 @@ def train_model(
             n_samples += batch_x.size(0)
         train_loss = epoch_loss / n_samples
 
+        # 学习率调度
+        scheduler.step()
+
         # ---- 测试 ----
         model.eval()
         with torch.no_grad():
@@ -134,10 +142,12 @@ def train_model(
         # ---- 日志 ----
         if epoch == 1 or epoch % 20 == 0 or epoch == epochs or patience_counter >= patience:
             alpha_str = ", ".join(f"{v:.4f}" for v in alpha)
+            current_lr = scheduler.get_last_lr()[0]
             print(
                 f"  Epoch {epoch:4d} | "
                 f"训练损失: {train_loss:.6f} | "
                 f"测试损失: {test_loss:.6f} | "
+                f"lr: {current_lr:.6f} | "
                 f"alpha: [{alpha_str}]"
             )
 
