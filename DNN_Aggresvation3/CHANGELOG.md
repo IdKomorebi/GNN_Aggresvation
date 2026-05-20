@@ -237,3 +237,75 @@
 2. **gross_actual_interchange_mw的R²接近0**：同属交换类字段，类似问题
 3. **整体MSE=0.48仍有改善空间**：被这两个"硬骨头"字段拖累了平均值
 
+---
+
+## 2026-05-21 03:49 CST - Modify by Claude Opus4.6: v3 滑动窗口实验（失败）
+
+### 需要解决的问题
+
+1. 每个时间步只有1个标量作为节点特征，信息密度低
+2. SmoothL1(Huber Loss)替代MSE，增强对不可推断字段的鲁棒性
+
+### 修改思路
+
+引入滑动窗口特征：每个节点在时间步t的输入从单标量 $x_i(t)$ 扩展为向量 $[x_i(t-5), ..., x_i(t)]$（window_size=6）。同时将损失函数改为SmoothL1。
+
+### 修改内容
+
+- `src/model.py`：input_proj从 `Linear(1, H)` 改为 `Linear(input_dim, H)`，添加`input_dim`参数
+- `src/train.py`：添加 `_build_windowed_samples()` 函数构建窗口化训练样本
+- `src/sensitivity.py`：适配窗口化输入
+- `configs/config.yaml`：`window_size: 6`, `loss_fn: smooth_l1`
+
+### 测试结果
+
+- 运行目录: `outputs/run_20260521_034910`
+- **所有12个Confidential字段 R² = 1.0000**
+- 测试MSE = 0.000000
+- α权重 = [0.2000, 0.2000, 0.2000, 0.2000, 0.2000]（完全均匀，从未变化）
+- 所有General字段敏感度 = 0.0000
+
+### ⚠️ 失败原因分析
+
+这是一个**严重的数据泄漏/过拟合问题**。滑动窗口让每个节点拥有6维特征（最近6个时间步的值），总共44×6=264维General输入去预测12维Confidential输出。在标准化的电网时序数据中，相邻时间步具有极高的自相关性。模型只需学到"当前时刻的General值的线性组合≈当前时刻的Confidential值"这一trivial解，就可以在训练集和测试集上都完美拟合。
+
+关键证据：α权重始终保持均匀（0.2），说明模型**完全没有利用图结构**——所有信息在input_proj层就已经足够了。GNN的消息传递完全是多余的。
+
+**教训**：在时序数据中使用滑动窗口时，时间自相关性会让推断任务变得trivially easy。我们的目标不是测量"能否在同一数据集内做时序预测"（那当然可以），而是测量"给定一个时间点的General字段值，能否推断出同一时间点的Confidential字段值"。后者才是隐性泄露风险的正确定义。
+
+**决策**：**放弃滑动窗口方案**，回退到v2的单标量输入。继续在v2架构基础上通过其他方式改进。
+
+---
+
+## 2026-05-21 04:00 CST - Modify by Claude Opus4.6: 关键Bug修复
+
+### 发现的Bug
+
+v3滑动窗口实验中所有R²=1.0的**真正原因**不是滑动窗口本身，而是 `_build_windowed_samples()` 中的一个**严重数据泄漏Bug**：
+
+```python
+window = data_matrix[i : i + w, :]   # 这是view，不是copy！
+feat = window.T                       # 仍然是view
+feat[confidential_indices, :] = 0.0   # 这直接修改了原始data_matrix！
+targets[i] = data_matrix[i + w - 1, confidential_indices]  # 读到的已经是被清零的值！
+```
+
+`window.T`创建的是numpy的view而非独立副本。对view的inplace修改 `feat[...] = 0.0` 直接破坏了原始 `data_matrix` 中Confidential列的数据。随后读取targets时，Confidential列已被清零，导致targets全为0。模型学会了"什么都预测为0"就能得到完美R²。
+
+### 修复方案
+
+```python
+targets[i] = data_matrix[i + w - 1, confidential_indices].copy()  # 先取目标
+window = data_matrix[i : i + w, :].copy()  # .copy()！
+```
+
+### 验证
+
+修复后使用window_size=1重新运行，结果与v2完全一致（MSE=0.4817），证实修复正确。
+
+### 教训
+
+**在numpy中，切片操作返回的是view不是copy。任何对切片的inplace修改都会污染原始数据。** 这是一个经典的numpy陷阱。
+
+
+

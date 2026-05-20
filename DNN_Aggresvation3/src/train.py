@@ -1,11 +1,10 @@
 """
-训练模块。
+训练模块 v3。
 
-职责：
-- 将数据矩阵转换为GNN输入（Confidential位置置零）
-- 批量化训练，监督信号为Confidential的真实标准化值
-- 早停机制（基于测试集损失）
-- 返回训练历史、最优模型参数和学到的α权重
+改进：
+- 支持滑动窗口特征（每个节点输入不再是1个标量，而是近w个时间步的值）
+- 损失函数可选MSE或SmoothL1（Huber Loss，对不可推断字段的大误差更鲁棒）
+- 保留CosineAnnealing学习率调度器和早停机制
 """
 from __future__ import annotations
 
@@ -18,28 +17,45 @@ from torch.utils.data import DataLoader, TensorDataset
 from .model import InferenceDrivenGNN
 
 
-def _prepare_node_values(
+def _build_windowed_samples(
     data_matrix: np.ndarray,
     confidential_indices: list[int],
+    window_size: int = 1,
 ) -> tuple[np.ndarray, np.ndarray]:
     """
-    将完整数据矩阵转换为GNN输入和监督目标。
+    构建滑动窗口训练样本。
 
-    - node_values: Confidential位置置零（攻击者看不到）
-    - targets: Confidential位置的真实值
+    当window_size=1时，退化为原始的逐时间步方式。
+    当window_size=w时，每个样本的节点特征为最近w个时间步的值组成的向量。
 
     参数:
         data_matrix: (T, N) 标准化后的完整数据
         confidential_indices: Confidential节点在列中的索引
+        window_size: 滑动窗口大小
 
     返回:
-        node_values: (T, N) float32
-        targets:     (T, C) float32
+        node_features: (T-w+1, N, w) float32 — Confidential位置已置零
+        targets:       (T-w+1, C) float32 — 最后一个时间步的Confidential真实值
     """
-    node_values = data_matrix.copy()
-    node_values[:, confidential_indices] = 0.0
-    targets = data_matrix[:, confidential_indices].copy()
-    return node_values.astype(np.float32), targets.astype(np.float32)
+    T, N = data_matrix.shape
+    C = len(confidential_indices)
+    w = window_size
+
+    n_samples = T - w + 1
+    features = np.zeros((n_samples, N, w), dtype=np.float32)
+    targets = np.zeros((n_samples, C), dtype=np.float32)
+
+    for i in range(n_samples):
+        # 先提取目标值（在修改之前）
+        targets[i] = data_matrix[i + w - 1, confidential_indices].copy()
+        # 构造节点特征（必须copy，否则会修改原始data_matrix）
+        window = data_matrix[i : i + w, :].copy()  # (w, N) — copy!
+        feat = window.T  # (N, w)
+        # Confidential位置置零
+        feat[confidential_indices, :] = 0.0
+        features[i] = feat
+
+    return features, targets
 
 
 def train_model(
@@ -50,28 +66,40 @@ def train_model(
     cfg: dict,
     device: torch.device,
 ) -> dict:
-    """
-    训练推断驱动的GNN。
-
-    返回包含训练历史、最终α权重和测试集预测的字典。
-    """
+    """训练推断驱动的GNN。"""
     conf_indices = data_info["confidential_indices"]
+    window_size = cfg.get("model", {}).get("window_size", 1)
+    loss_fn_name = cfg.get("training", {}).get("loss_fn", "mse")
 
-    # 构造输入与目标
-    train_inputs, train_targets = _prepare_node_values(train_data, conf_indices)
-    test_inputs, test_targets = _prepare_node_values(test_data, conf_indices)
+    # 构造带窗口的输入与目标
+    train_features, train_targets = _build_windowed_samples(
+        train_data, conf_indices, window_size
+    )
+    test_features, test_targets = _build_windowed_samples(
+        test_data, conf_indices, window_size
+    )
+    print(f"  窗口大小: {window_size}")
+    print(f"  训练样本数: {len(train_features)}, 测试样本数: {len(test_features)}")
+    print(f"  节点特征维度: {train_features.shape[2]}")
+    print(f"  损失函数: {loss_fn_name}")
 
     # DataLoader
     train_dataset = TensorDataset(
-        torch.as_tensor(train_inputs),
+        torch.as_tensor(train_features),
         torch.as_tensor(train_targets),
     )
     batch_size = cfg["training"]["batch_size"]
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
-    # 测试集一次性加载（量级不大）
-    test_x = torch.as_tensor(test_inputs, device=device)
+    # 测试集一次性加载
+    test_x = torch.as_tensor(test_features, device=device)
     test_y = torch.as_tensor(test_targets, device=device)
+
+    # 损失函数
+    if loss_fn_name == "smooth_l1" or loss_fn_name == "huber":
+        loss_fn = torch.nn.SmoothL1Loss()
+    else:
+        loss_fn = torch.nn.MSELoss()
 
     # 优化器
     optimizer = torch.optim.Adam(
@@ -107,7 +135,7 @@ def train_model(
             batch_y = batch_y.to(device)
 
             pred = model(batch_x)
-            loss = torch.nn.functional.mse_loss(pred, batch_y)
+            loss = loss_fn(pred, batch_y)
 
             optimizer.zero_grad()
             loss.backward()
@@ -120,7 +148,7 @@ def train_model(
         # 学习率调度
         scheduler.step()
 
-        # ---- 测试 ----
+        # ---- 测试（始终用MSE评估，以便跨版本对比） ----
         model.eval()
         with torch.no_grad():
             test_pred = model(test_x)
@@ -146,7 +174,7 @@ def train_model(
             print(
                 f"  Epoch {epoch:4d} | "
                 f"训练损失: {train_loss:.6f} | "
-                f"测试损失: {test_loss:.6f} | "
+                f"测试MSE: {test_loss:.6f} | "
                 f"lr: {current_lr:.6f} | "
                 f"alpha: [{alpha_str}]"
             )

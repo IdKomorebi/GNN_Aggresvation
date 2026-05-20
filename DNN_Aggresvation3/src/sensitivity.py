@@ -1,13 +1,10 @@
 """
-遮蔽重要性法计算General字段敏感度。
+遮蔽重要性法计算General字段敏感度（v3 - 支持滑动窗口）。
 
 核心逻辑：
 - 基线：所有General字段可见，Confidential字段不可见 → 测量还原误差
 - 遮蔽：逐一将每个General字段置零 → 测量还原误差增量
 - 敏感度 = (遮蔽后误差 - 基线误差) / 基线误差
-
-敏感度越高，说明该General字段对还原Confidential真实值的贡献越大，
-即其隐性泄露风险越高。
 """
 from __future__ import annotations
 
@@ -16,6 +13,7 @@ import pandas as pd
 import torch
 
 from .model import InferenceDrivenGNN
+from .train import _build_windowed_samples
 
 
 def compute_masking_sensitivity(
@@ -23,34 +21,25 @@ def compute_masking_sensitivity(
     test_data: np.ndarray,
     data_info: dict,
     device: torch.device,
+    window_size: int = 1,
 ) -> tuple[pd.DataFrame, float]:
     """
-    遮蔽重要性法计算敏感度。
-
-    参数:
-        model: 训练好的GNN模型
-        test_data: (T_test, N) 标准化后的测试数据
-        data_info: 数据信息字典
-        device: 计算设备
-
-    返回:
-        sensitivity_df: 包含敏感度排名的DataFrame
-        baseline_loss: 基线还原误差
+    遮蔽重要性法计算敏感度（支持滑动窗口特征）。
     """
     conf_indices = data_info["confidential_indices"]
     general = data_info["general"]
     n_general = data_info["n_general"]
 
-    # 构造基线输入：Confidential位置置零
-    node_values = test_data.copy()
-    node_values[:, conf_indices] = 0.0
-    targets = test_data[:, conf_indices]
+    # 构造基线输入（带窗口）
+    base_features, targets = _build_windowed_samples(
+        test_data, conf_indices, window_size
+    )
 
     model.eval()
 
     # 基线损失
     with torch.no_grad():
-        x_base = torch.as_tensor(node_values, dtype=torch.float32, device=device)
+        x_base = torch.as_tensor(base_features, dtype=torch.float32, device=device)
         y_true = torch.as_tensor(targets, dtype=torch.float32, device=device)
         pred_base = model(x_base)
         baseline_loss = torch.nn.functional.mse_loss(pred_base, y_true).item()
@@ -61,12 +50,13 @@ def compute_masking_sensitivity(
     # 逐一遮蔽每个General字段
     rows = []
     for i in range(n_general):
-        masked_values = node_values.copy()
-        masked_values[:, i] = 0.0  # 遮蔽第i个General字段
+        masked_features = base_features.copy()
+        # 遮蔽第i个节点的所有窗口特征
+        masked_features[:, i, :] = 0.0
 
         with torch.no_grad():
             x_masked = torch.as_tensor(
-                masked_values, dtype=torch.float32, device=device
+                masked_features, dtype=torch.float32, device=device
             )
             pred_masked = model(x_masked)
             masked_loss = torch.nn.functional.mse_loss(pred_masked, y_true).item()

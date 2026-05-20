@@ -1,0 +1,13 @@
+confidential_field,test_r2
+net_actual_interchange_mw,1.0
+gross_actual_interchange_mw,1.0
+total_gen,1.0
+metered_load_mw,1.0
+total_losses,1.0
+congestion_price_da,1.0
+congestion_price_rt,1.0
+marginal_loss_price_da,1.0
+total_lmp_da,1.0
+da_as_total_mw_primary_reserve,1.0
+da_as_total_mw_synchronized_reserve,1.0
+da_as_total_mw_thirty_minutes_reserve,1.0

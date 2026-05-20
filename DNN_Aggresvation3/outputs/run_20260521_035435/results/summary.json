@@ -1,0 +1,45 @@
+{
+  "run_dir": "/Users/haocun/Desktop/AllProjects/GNN_Aggresvation/DNN_Aggresvation3/outputs/run_20260521_035435",
+  "seed": 42,
+  "n_general": 44,
+  "n_confidential": 12,
+  "n_nodes": 56,
+  "n_edges": 816,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.0,
+  "baseline_loss_masking": 0.0,
+  "final_alpha": {
+    "pearson": 0.20000000298023224,
+    "spearman": 0.20000000298023224,
+    "kendall": 0.20000000298023224,
+    "nmi": 0.20000000298023224,
+    "distance_corr": 0.20000000298023224
+  },
+  "per_target_r2": {
+    "net_actual_interchange_mw": 1.0,
+    "gross_actual_interchange_mw": 1.0,
+    "total_gen": 1.0,
+    "metered_load_mw": 1.0,
+    "total_losses": 1.0,
+    "congestion_price_da": 1.0,
+    "congestion_price_rt": 1.0,
+    "marginal_loss_price_da": 1.0,
+    "total_lmp_da": 1.0,
+    "da_as_total_mw_primary_reserve": 1.0,
+    "da_as_total_mw_synchronized_reserve": 1.0,
+    "da_as_total_mw_thirty_minutes_reserve": 1.0
+  },
+  "top10_sensitive_fields": [
+    "gen_fuel_coal_mw",
+    "gen_fuel_gas_mw",
+    "total_pjm_reg_purchases",
+    "total_pjm_self_sched_reg",
+    "total_pjm_assigned_reg",
+    "total_pjm_rmccp_cr",
+    "total_pjm_rmpcp_cr",
+    "da_as_mcp_primary_reserve",
+    "da_as_mcp_synchronized_reserve",
+    "da_as_as_req_mw_primary_reserve"
+  ]
+}

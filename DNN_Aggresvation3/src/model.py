@@ -40,6 +40,7 @@ class InferenceDrivenGNN(nn.Module):
         hidden_dim: int = 32,
         num_layers: int = 2,
         dropout: float = 0.05,
+        input_dim: int = 1,
     ) -> None:
         super().__init__()
 
@@ -62,13 +63,14 @@ class InferenceDrivenGNN(nn.Module):
         self.n_confidential = len(confidential_indices)
         self.n_metrics = metric_tensor.shape[2]
         self.hidden_dim = hidden_dim
+        self.input_dim = input_dim
 
         # 可学习的相关性融合权重 β → α = softmax(β)
         self.beta = nn.Parameter(torch.zeros(self.n_metrics, dtype=torch.float32))
 
-        # 标量 → 隐藏空间投射（General节点用）
+        # 输入投射：(input_dim) → (hidden_dim)
         self.input_proj = nn.Sequential(
-            nn.Linear(1, hidden_dim),
+            nn.Linear(input_dim, hidden_dim),
             nn.ReLU(),
         )
 
@@ -113,19 +115,22 @@ class InferenceDrivenGNN(nn.Module):
         前向传播。
 
         参数:
-            node_values: (B, N) 每个节点在该batch中各时间步的标量值
+            node_values: (B, N, input_dim) 或 (B, N) 每个节点的特征
                          Confidential节点位置已被置零
 
         返回:
             (B, C) 对Confidential节点的预测值
         """
+        # 适配 (B, N) 输入为 (B, N, 1)
+        if node_values.dim() == 2:
+            node_values = node_values.unsqueeze(-1)
+
         B = node_values.shape[0]
 
-        # General节点：标量升维 (B, N, 1) → (B, N, H)
-        h_proj = self.input_proj(node_values.unsqueeze(-1))
+        # General节点：投射 (B, N, input_dim) → (B, N, H)
+        h_proj = self.input_proj(node_values)
 
         # Confidential节点：使用可学习嵌入替代零向量投影
-        # 通过scatter方式避免inplace操作
         conf_emb = self.conf_embedding.unsqueeze(0).expand(B, -1, -1)  # (B, C, H)
 
         # 构造索引用于scatter

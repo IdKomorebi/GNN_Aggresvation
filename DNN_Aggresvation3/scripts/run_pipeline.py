@@ -200,6 +200,7 @@ def main() -> None:
     # 步骤4: 训练GNN
     # ================================================================
     model_cfg = cfg.get("model", {})
+    window_size = int(model_cfg.get("window_size", 1))
     model = InferenceDrivenGNN(
         metric_tensor=metric_tensor,
         edge_mask=edge_mask,
@@ -209,6 +210,7 @@ def main() -> None:
         hidden_dim=int(model_cfg.get("hidden_dim", 32)),
         num_layers=int(model_cfg.get("num_layers", 2)),
         dropout=float(model_cfg.get("dropout", 0.05)),
+        input_dim=window_size,
     ).to(device)
 
     train_results = train_model(
@@ -262,6 +264,7 @@ def main() -> None:
         test_data=data_info["test_data"],
         data_info=data_info,
         device=device,
+        window_size=window_size,
     )
 
     # ================================================================

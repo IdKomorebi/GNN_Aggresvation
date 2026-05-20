@@ -1,0 +1,6 @@
+metric,alpha
+pearson,0.2
+spearman,0.2
+kendall,0.2
+nmi,0.2
+distance_corr,0.2

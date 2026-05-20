@@ -1,5 +1,5 @@
 # DNN_Aggresvation3 配置文件
-# 端到端推断驱动的敏感度评估网络 - v2 结构性改进
+# 端到端推断驱动的敏感度评估网络 - v4 回退单标量+排除不可推断字段
 
 dataset:
   csv_path: ../data/Processed/pjm_rto_hourly_2025_cleaned.csv
@@ -48,6 +48,7 @@ model:
   hidden_dim: 64
   num_layers: 3
   dropout: 0.15
+  window_size: 1
 
 training:
   epochs: 800
@@ -56,6 +57,7 @@ training:
   weight_decay: 0.0005
   train_ratio: 0.7
   patience: 80
+  loss_fn: mse
 
 runtime:
   seed: 42
