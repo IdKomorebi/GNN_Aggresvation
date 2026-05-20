@@ -1,0 +1,13 @@
+{
+  "source_run": "/Users/haocun/Desktop/AllProjects/GNN_Aggresvation/DNN_Aggresvation2/outputs/run_20260520_201738",
+  "fold_size": 3,
+  "folds": 5,
+  "heldout_count": 15,
+  "heldout_mae": 0.09272995500873882,
+  "heldout_rmse": 0.11235502455771387,
+  "heldout_mean_error": 0.04566615284654084,
+  "heldout_overprediction_rate": 0.7333333333333333,
+  "mean_non_anchor_general_score": 0.3937998294830322,
+  "mean_non_anchor_general_p90_score": 0.7160746216773987,
+  "mean_non_anchor_general_above_0_8": 1.2
+}

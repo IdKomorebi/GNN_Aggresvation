@@ -2,8 +2,35 @@
 
 # 数据集配置
 data:
-  csv_path: "../pjm_rto_hourly_2025_aligned_processed_one_header.csv" # 相对于项目根目录的路径
+  raw_csv_path: "../data/Raw/pjm_rto_hourly_2025_aligned_processed_one_header.csv" # 相对于项目根目录的路径
+  processed_csv_path: "../data/Processed/pjm_rto_hourly_2025_cleaned.csv" # 删除冗余列后的可复用数据
+  use_processed_cache: true # 优先复用 processed_csv_path；配置变更时自动重建
   downsample_size: 300  # 针对计算开销大的相关性指标（如 Kendall 和 NMI）的等距降采样样本数
+  drop_columns:
+    - datetime_beginning_utc
+    - datetime_beginning_ept
+    - net_sched_interchange_mw
+    - prelim_load_avg_hourly
+    - total_pjm_rt_load_mwh
+    - wind_generation_mw
+    - solar_generation_mw
+    - da_as_as_mw_primary_reserve
+    - da_as_as_mw_synchronized_reserve
+    - da_as_as_mw_thirty_minutes_reserve
+    - system_energy_price_rt
+  confidential_columns:
+    - net_actual_interchange_mw
+    - gross_actual_interchange_mw
+    - total_gen
+    - metered_load_mw
+    - total_losses
+    - congestion_price_da
+    - congestion_price_rt
+    - marginal_loss_price_da
+    - total_lmp_da
+    - da_as_total_mw_primary_reserve
+    - da_as_total_mw_synchronized_reserve
+    - da_as_total_mw_thirty_minutes_reserve
 
 # 半监督伪标签配置
 pseudo_label:

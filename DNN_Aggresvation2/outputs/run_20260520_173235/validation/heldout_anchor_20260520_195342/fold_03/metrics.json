@@ -1,0 +1,7 @@
+{
+  "label_mode": "sensitivity",
+  "labeled_nodes": 20,
+  "confidential_nodes": 12,
+  "general_anchor_nodes": 8,
+  "final_loss": 6.498700531665236e-05
+}

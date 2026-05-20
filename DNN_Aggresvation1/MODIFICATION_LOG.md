@@ -440,3 +440,58 @@ General Top10：
    - 已生成 `outputs/dnn_q_cache/`。
    - 已重新运行一次主流水线，生成 `outputs/run20260520_145148/`。
    - 第二次运行明显更快，说明 DNN-q 缓存复用生效。
+
+## 2026-05-20 15:20:39 CST - Modify by GPT5.5
+
+### 数据目录与 processed 复用
+
+1. 新增大目录数据结构：
+   - `data/Raw/`
+   - `data/Processed/`
+
+2. 将原始 CSV 复制到：
+   - `data/Raw/pjm_rto_hourly_2025_aligned_processed_one_header.csv`
+
+3. 生成可复用处理后数据：
+   - `data/Processed/pjm_rto_hourly_2025_cleaned.csv`
+   - `data/Processed/pjm_rto_hourly_2025_cleaned.metadata.json`
+
+4. 修改 `configs/config.yaml`。
+   - 新增 `data.raw_csv_path`。
+   - 新增 `data.processed_csv_path`。
+   - 新增 `data.use_processed_cache`。
+   - 将原来写死在代码里的 `drop_columns` 移入 YAML。
+   - 将原来写死在代码里的 `confidential_columns` 移入 YAML。
+
+5. 修改 `src/data_processing.py`。
+   - `load_and_preprocess_data` 优先读取 `processed_csv_path`。
+   - 若 processed 文件不存在，或 metadata 与当前 raw 文件名/drop 列配置不匹配，则从 Raw 重新生成 processed。
+   - `extract_node_features` 和 `construct_supervision_labels` 不再依赖硬编码的 Confidential 字段列表，而是使用 YAML 传入的 `confidential_columns`。
+
+6. 修改 `scripts/run_pipeline.py` 和 `scripts/run_beta_diagnostics.py`。
+   - 统一读取 Raw/Processed 数据路径。
+   - 将 `drop_columns` 和 `confidential_columns` 传入数据准备流程。
+   - 主流水线启动时会打印 Raw 路径、Processed 路径以及是否复用 processed。
+
+### 验证结果
+
+已使用新数据结构重新运行主流水线，生成：
+
+```text
+outputs/run20260520_152023/
+```
+
+运行日志确认：
+
+- Raw 路径来自 `data/Raw/`
+- Processed 路径来自 `data/Processed/`
+- `use_processed_cache=True`
+- DNN-q 缓存仍从 `outputs/dnn_q_cache/` 复用
+
+最终 alpha 与上一轮一致：
+
+- Pearson: `0.044825`
+- Spearman: `0.164577`
+- Kendall: `0.658079`
+- NMI: `0.081843`
+- dCor: `0.050676`

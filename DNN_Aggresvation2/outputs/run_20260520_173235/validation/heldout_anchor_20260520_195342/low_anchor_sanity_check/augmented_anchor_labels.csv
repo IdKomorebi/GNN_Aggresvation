@@ -1,0 +1,16 @@
+﻿field,q_label,max_r2,top3_mean_r2,label_source
+forecast_load_mw_latest_available,0.9143514287758217,0.9867395213270111,0.7454458794897127,probe_q_anchor
+system_energy_price_da,0.8312528719232097,0.9570345805962792,0.5377622183527148,probe_q_anchor
+gen_fuel_gas_mw,0.7339229235463638,0.8103471426722688,0.5555997455859191,probe_q_anchor
+forecast_load_mw_day_ahead,0.6997977253433816,0.7523075958415651,0.5772746941809533,probe_q_anchor
+gen_fuel_nuclear_pct,0.6543186986745431,0.7068527996414389,0.5317391297517863,probe_q_anchor
+total_lmp_rt,0.4223033257987587,0.455552286167406,0.3447224182719148,probe_q_anchor
+da_as_as_req_mw_thirty_minutes_reserve,0.4171480403089329,0.4724569530228709,0.2880939106430776,probe_q_anchor
+da_as_as_req_mw_synchronized_reserve,0.4119665981269871,0.4565954162269985,0.3078326892269606,probe_q_anchor
+da_as_as_req_mw_primary_reserve,0.410032180361208,0.4570519715321708,0.3003193342956282,probe_q_anchor
+marginal_loss_price_rt,0.3581206366612754,0.3873086267475988,0.2900153264598545,probe_q_anchor
+total_pjm_self_sched_reg,0.0,,,low_graph_edge_anchor
+da_as_ss_mw_synchronized_reserve,0.0,,,low_graph_edge_anchor
+net_inadv_interchange_mw,0.0,,,low_graph_edge_anchor
+da_as_ss_mw_primary_reserve,0.0,,,low_graph_edge_anchor
+da_as_ss_mw_thirty_minutes_reserve,0.0,,,low_graph_edge_anchor

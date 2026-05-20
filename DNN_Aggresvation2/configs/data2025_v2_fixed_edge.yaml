@@ -1,0 +1,83 @@
+dataset:
+  name: data2025_Processed_V2
+  processed_csv: ../data/Processed/pjm_rto_hourly_2025_cleaned.csv
+  output_root: outputs
+
+fields:
+  drop_constant_columns: true
+  drop_columns:
+    - datetime_beginning_utc
+    - datetime_beginning_ept
+    - net_sched_interchange_mw
+    - prelim_load_avg_hourly
+    - total_pjm_rt_load_mwh
+    - wind_generation_mw
+    - solar_generation_mw
+    - da_as_as_mw_primary_reserve
+    - da_as_as_mw_synchronized_reserve
+    - da_as_as_mw_thirty_minutes_reserve
+    - system_energy_price_rt
+
+  confidential:
+    - net_actual_interchange_mw
+    - gross_actual_interchange_mw
+    - total_gen
+    - metered_load_mw
+    - total_losses
+    - congestion_price_da
+    - congestion_price_rt
+    - marginal_loss_price_da
+    - total_lmp_da
+    - da_as_total_mw_primary_reserve
+    - da_as_total_mw_synchronized_reserve
+    - da_as_total_mw_thirty_minutes_reserve
+
+relations:
+  metrics: [pearson, spearman, kendall, nmi, distance_corr]
+  sample_size: 3000
+  expensive_sample_size: 1200
+
+pretrain:
+  epochs: 160
+  batch_size: 64
+  lr: 0.001
+  lambda_gate: 0.002
+  hidden_dims: [64, 32, 16]
+  train_ratio: 0.8
+  r2_weighted_average: true
+
+anchors:
+  high_anchor_count: 10
+  low_anchor_count: 5
+  strategy: top_confidential_edge
+  probe_epochs: 80
+  probe_batch_size: 64
+  probe_lr: 0.001
+  probe_hidden_dims: [32, 16]
+  q_max_weight: 0.7
+  q_top3_weight: 0.3
+  low_anchor_max_graph_score: 0.25
+  low_anchor_max_probe_q: 0.25
+
+graph:
+  top_k: 10
+  threshold: 0.08
+  symmetrize: true
+  add_self_loop: false
+  learn_edge_weights: false
+
+gnn:
+  label_mode: sensitivity
+  include_initial_sensitivity: true
+  epochs: 1200
+  lr: 0.005
+  hidden_dim: 48
+  num_layers: 2
+  dropout: 0.05
+  weight_decay: 0.0001
+  confidential_label_weight: 1.0
+  anchor_label_weight: 1.0
+
+runtime:
+  random_state: 42
+  device: cpu

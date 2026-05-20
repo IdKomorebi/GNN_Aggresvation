@@ -1,0 +1,19 @@
+{
+  "added_low_anchor_count": 5,
+  "added_low_anchors": [
+    "total_pjm_self_sched_reg",
+    "da_as_ss_mw_synchronized_reserve",
+    "net_inadv_interchange_mw",
+    "da_as_ss_mw_primary_reserve",
+    "da_as_ss_mw_thirty_minutes_reserve"
+  ],
+  "unlabeled_general_count": 29,
+  "unlabeled_general_mean_score": 0.36034703254699707,
+  "unlabeled_general_median_score": 0.38001686334609985,
+  "unlabeled_general_p90_score": 0.6914489150047303,
+  "unlabeled_general_above_0_8": 1,
+  "original_unlabeled_mean_score": 0.7243612711764706,
+  "original_unlabeled_median_score": 0.71611905,
+  "original_unlabeled_p90_score": 0.957128495,
+  "original_unlabeled_above_0_8": 11
+}

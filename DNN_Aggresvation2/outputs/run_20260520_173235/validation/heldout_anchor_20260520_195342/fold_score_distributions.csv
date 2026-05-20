@@ -1,0 +1,6 @@
+﻿fold,heldout_fields,train_anchor_count,heldout_anchor_count,non_anchor_general_count,train_anchor_mean_score,heldout_anchor_mean_score,non_anchor_general_mean_score,non_anchor_general_median_score,non_anchor_general_p90_score,non_anchor_general_above_0_8
+1,"forecast_load_mw_latest_available, system_energy_price_da",8,2,34,0.5028746724128723,0.7577468156814575,0.6757725477218628,0.6374174356460571,0.9358698189258575,9
+2,"gen_fuel_gas_mw, forecast_load_mw_day_ahead",8,2,34,0.5625786781311035,0.6707146167755127,0.7253508567810059,0.7215676307678223,0.9518462121486664,10
+3,"gen_fuel_nuclear_pct, total_lmp_rt",8,2,34,0.5939015746116638,0.4386528730392456,0.6654458045959473,0.6640948057174683,0.9232942223548889,9
+4,"da_as_as_req_mw_thirty_minutes_reserve, da_as_as_req_mw_synchronized_reserve",8,2,34,0.6305673122406006,0.4199034869670868,0.7210124135017395,0.7420786023139954,0.9524872720241546,11
+5,"da_as_as_req_mw_primary_reserve, marginal_loss_price_rt",8,2,34,0.6286282539367676,0.40244099497795105,0.6951783299446106,0.6690887808799744,0.9479177236557007,9

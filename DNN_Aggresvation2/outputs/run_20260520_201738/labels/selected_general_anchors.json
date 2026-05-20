@@ -1,0 +1,38 @@
+{
+  "high_anchors": [
+    "forecast_load_mw_latest_available",
+    "system_energy_price_da",
+    "forecast_load_mw_day_ahead",
+    "gen_fuel_nuclear_pct",
+    "total_lmp_rt",
+    "gen_fuel_gas_mw",
+    "marginal_loss_price_rt",
+    "da_as_as_req_mw_synchronized_reserve",
+    "da_as_as_req_mw_primary_reserve",
+    "da_as_as_req_mw_thirty_minutes_reserve"
+  ],
+  "low_anchors": [
+    "total_pjm_self_sched_reg",
+    "da_as_ss_mw_synchronized_reserve",
+    "net_inadv_interchange_mw",
+    "da_as_ss_mw_primary_reserve",
+    "da_as_ss_mw_thirty_minutes_reserve"
+  ],
+  "anchors": [
+    "forecast_load_mw_latest_available",
+    "system_energy_price_da",
+    "forecast_load_mw_day_ahead",
+    "gen_fuel_nuclear_pct",
+    "total_lmp_rt",
+    "gen_fuel_gas_mw",
+    "marginal_loss_price_rt",
+    "da_as_as_req_mw_synchronized_reserve",
+    "da_as_as_req_mw_primary_reserve",
+    "da_as_as_req_mw_thirty_minutes_reserve",
+    "total_pjm_self_sched_reg",
+    "da_as_ss_mw_synchronized_reserve",
+    "net_inadv_interchange_mw",
+    "da_as_ss_mw_primary_reserve",
+    "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+}

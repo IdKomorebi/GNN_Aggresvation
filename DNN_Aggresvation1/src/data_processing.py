@@ -8,56 +8,61 @@ import torch.nn as nn
 import torch.optim as optim
 from sklearn.metrics import normalized_mutual_info_score
 
-# 1. 核心字段定义（符合 LaTeX 规范设计）
-D_DROP = [
-    "datetime_beginning_utc",
-    "datetime_beginning_ept",
-    "net_sched_interchange_mw",
-    "prelim_load_avg_hourly",
-    "total_pjm_rt_load_mwh",
-    "wind_generation_mw",
-    "solar_generation_mw",
-    "da_as_as_mw_primary_reserve",
-    "da_as_as_mw_synchronized_reserve",
-    "da_as_as_mw_thirty_minutes_reserve",
-    "system_energy_price_rt"
-]
+def _processed_metadata_path(processed_csv_path):
+    root, _ = os.path.splitext(processed_csv_path)
+    return f"{root}.metadata.json"
 
-C_CONFIDENTIAL = [
-    "net_actual_interchange_mw",
-    "gross_actual_interchange_mw",
-    "total_gen",
-    "metered_load_mw",
-    "total_losses",
-    "congestion_price_da",
-    "congestion_price_rt",
-    "marginal_loss_price_da",
-    "total_lmp_da",
-    "da_as_total_mw_primary_reserve",
-    "da_as_total_mw_synchronized_reserve",
-    "da_as_total_mw_thirty_minutes_reserve"
-]
+def _preprocess_signature(raw_csv_path, drop_columns):
+    return {
+        "raw_csv_basename": os.path.basename(raw_csv_path),
+        "drop_columns": list(drop_columns or [])
+    }
 
-def load_and_preprocess_data(csv_path):
-    """
-    加载并清理 CSV 数据集，删除冗余列并返回处理后的 DataFrame。
-    """
-    if not os.path.exists(csv_path):
-        raise FileNotFoundError(f"未找到数据集文件: {csv_path}")
-        
-    df = pd.read_csv(csv_path)
-    
-    # 丢弃指定的冗余字段
-    cols_to_drop = [c for c in D_DROP if c in df.columns]
-    df_clean = df.drop(columns=cols_to_drop)
-    
-    # 转换为数值类型
+def _metadata_matches(processed_csv_path, raw_csv_path, drop_columns):
+    metadata_path = _processed_metadata_path(processed_csv_path)
+    if not os.path.exists(metadata_path):
+        return False
+    with open(metadata_path, "r", encoding="utf-8") as f:
+        metadata = json.load(f)
+    return metadata == _preprocess_signature(raw_csv_path, drop_columns)
+
+def _save_processed_metadata(processed_csv_path, raw_csv_path, drop_columns):
+    metadata_path = _processed_metadata_path(processed_csv_path)
+    with open(metadata_path, "w", encoding="utf-8") as f:
+        json.dump(_preprocess_signature(raw_csv_path, drop_columns), f, ensure_ascii=False, indent=2)
+
+def _coerce_numeric(df):
+    df_clean = df.copy()
     for col in df_clean.columns:
         df_clean[col] = pd.to_numeric(df_clean[col], errors='coerce')
-        
     return df_clean
 
-def extract_node_features(df):
+def load_and_preprocess_data(raw_csv_path, processed_csv_path=None, drop_columns=None,
+                             use_processed_cache=True):
+    """
+    优先读取可复用 processed CSV；缓存不存在或签名不匹配时，从 raw CSV 删除配置列后重建。
+    """
+    drop_columns = list(drop_columns or [])
+
+    if processed_csv_path and use_processed_cache and os.path.exists(processed_csv_path):
+        if _metadata_matches(processed_csv_path, raw_csv_path, drop_columns):
+            return _coerce_numeric(pd.read_csv(processed_csv_path))
+
+    if not os.path.exists(raw_csv_path):
+        raise FileNotFoundError(f"未找到原始数据集文件: {raw_csv_path}")
+
+    df = pd.read_csv(raw_csv_path)
+    cols_to_drop = [c for c in drop_columns if c in df.columns]
+    df_clean = _coerce_numeric(df.drop(columns=cols_to_drop))
+
+    if processed_csv_path:
+        os.makedirs(os.path.dirname(processed_csv_path), exist_ok=True)
+        df_clean.to_csv(processed_csv_path, index=False)
+        _save_processed_metadata(processed_csv_path, raw_csv_path, drop_columns)
+
+    return df_clean
+
+def extract_node_features(df, confidential_columns):
     """
     提取每个字段的 13 维统计特征 (z_i)，并在节点间进行列标准化。
     返回标准化特征矩阵、敏感位标签和融合了敏感度的 h_raw 特征 [N, 14]。
@@ -122,7 +127,8 @@ def extract_node_features(df):
     z_tilde = (z - z_mean) / z_std
     
     # 敏感性初值 (Confidential = 1.0, General = 0.0)
-    s_init = np.array([1.0 if c in C_CONFIDENTIAL else 0.0 for c in df.columns], dtype=np.float32)
+    confidential_set = set(confidential_columns or [])
+    s_init = np.array([1.0 if c in confidential_set else 0.0 for c in df.columns], dtype=np.float32)
     
     # 拼接敏感度和标准化特征矩阵得到 h_raw，形状为 [N, 14]
     h_raw = np.column_stack([s_init, z_tilde])
@@ -478,7 +484,8 @@ def _save_dnn_q_cache(cache_dir, columns, gen_indices, conf_indices, q_all, q_ma
         f.write("- `general_to_confidential_predictive_r2.csv`: 每个 General 到每个 Confidential 的 `q_{i,c}`。\n")
         f.write("- `metadata.json`: 生成该缓存时使用的字段和 DNN 参数签名。\n")
 
-def construct_supervision_labels(df, R, r_bar, m, general_label_count=10,
+def construct_supervision_labels(df, R, r_bar, m, confidential_columns,
+                                 general_label_count=10,
                                  high_risk_ratio=0.7, inference_weight=0.65,
                                  predictive_test_ratio=0.3, dnn_epochs=80,
                                  dnn_hidden_dim=16, dnn_lr=0.01,
@@ -493,8 +500,9 @@ def construct_supervision_labels(df, R, r_bar, m, general_label_count=10,
     N = df.shape[1]
     columns = df.columns
     
-    conf_indices = [i for i, c in enumerate(columns) if c in C_CONFIDENTIAL]
-    gen_indices = [i for i, c in enumerate(columns) if c not in C_CONFIDENTIAL]
+    confidential_set = set(confidential_columns or [])
+    conf_indices = [i for i, c in enumerate(columns) if c in confidential_set]
+    gen_indices = [i for i, c in enumerate(columns) if c not in confidential_set]
     
     y = np.zeros(N, dtype=np.float32)
     inference_score = np.zeros(N, dtype=np.float32)
@@ -593,7 +601,10 @@ def construct_supervision_labels(df, R, r_bar, m, general_label_count=10,
 
     return y, inference_score, pseudo_y, inference_score, sensitivity_score, supervision_mask, label_source, q_matrix
 
-def prepare_pipeline_data(csv_path, K_neighbors=5, theta=0.5, downsample_size=300,
+def prepare_pipeline_data(csv_path=None, raw_csv_path=None, processed_csv_path=None,
+                          drop_columns=None, confidential_columns=None,
+                          use_processed_cache=True,
+                          K_neighbors=5, theta=0.5, downsample_size=300,
                           general_label_count=10, high_risk_ratio=0.7,
                           inference_weight=0.65, predictive_test_ratio=0.3,
                           dnn_epochs=80, dnn_hidden_dim=16, dnn_lr=0.01,
@@ -602,8 +613,17 @@ def prepare_pipeline_data(csv_path, K_neighbors=5, theta=0.5, downsample_size=30
     """
     统一驱动整个数据流管道，返回包含预处理全量数据的字典。
     """
-    df_clean = load_and_preprocess_data(csv_path)
-    z_tilde, s_init, h_raw = extract_node_features(df_clean)
+    raw_path = raw_csv_path or csv_path
+    if raw_path is None:
+        raise ValueError("必须提供 raw_csv_path 或 csv_path")
+
+    df_clean = load_and_preprocess_data(
+        raw_path,
+        processed_csv_path=processed_csv_path,
+        drop_columns=drop_columns,
+        use_processed_cache=use_processed_cache
+    )
+    z_tilde, s_init, h_raw = extract_node_features(df_clean, confidential_columns or [])
     R = compute_multi_correlation(df_clean, downsample_size=downsample_size)
     r_bar, m = construct_graph_structure(R, K_neighbors=K_neighbors, theta=theta)
     y, q_all, pseudo_y, inference_score, sensitivity_score, supervision_mask, label_source, q_matrix = construct_supervision_labels(
@@ -611,6 +631,7 @@ def prepare_pipeline_data(csv_path, K_neighbors=5, theta=0.5, downsample_size=30
         R,
         r_bar,
         m,
+        confidential_columns or [],
         general_label_count=general_label_count,
         high_risk_ratio=high_risk_ratio,
         inference_weight=inference_weight,

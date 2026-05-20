@@ -1,0 +1,151 @@
+{
+  "metrics": [
+    "pearson",
+    "spearman",
+    "kendall",
+    "nmi",
+    "distance_corr"
+  ],
+  "global_alpha": {
+    "pearson": 0.20717616015548782,
+    "spearman": 0.19228202157827207,
+    "kendall": 0.19368860249497788,
+    "nmi": 0.2112446119596345,
+    "distance_corr": 0.1956086038116277
+  },
+  "target_weights": [
+    {
+      "target": "net_actual_interchange_mw",
+      "test_r2": -0.22551402077684757,
+      "alpha": {
+        "pearson": 0.22425894439220428,
+        "spearman": 0.20447693765163422,
+        "kendall": 0.1543142944574356,
+        "nmi": 0.14666883647441864,
+        "distance_corr": 0.27028095722198486
+      }
+    },
+    {
+      "target": "gross_actual_interchange_mw",
+      "test_r2": 0.2358054794505109,
+      "alpha": {
+        "pearson": 0.2218153178691864,
+        "spearman": 0.21998381614685059,
+        "kendall": 0.16964398324489594,
+        "nmi": 0.16894719004631042,
+        "distance_corr": 0.21960975229740143
+      }
+    },
+    {
+      "target": "total_gen",
+      "test_r2": 0.9929183231164016,
+      "alpha": {
+        "pearson": 0.20489920675754547,
+        "spearman": 0.19759033620357513,
+        "kendall": 0.21912989020347595,
+        "nmi": 0.1880728304386139,
+        "distance_corr": 0.1903076469898224
+      }
+    },
+    {
+      "target": "metered_load_mw",
+      "test_r2": 0.9792553676478544,
+      "alpha": {
+        "pearson": 0.20972034335136414,
+        "spearman": 0.19555898010730743,
+        "kendall": 0.21466277539730072,
+        "nmi": 0.18894650042057037,
+        "distance_corr": 0.19111138582229614
+      }
+    },
+    {
+      "target": "total_losses",
+      "test_r2": 0.5735000828355188,
+      "alpha": {
+        "pearson": 0.20155340433120728,
+        "spearman": 0.2253478467464447,
+        "kendall": 0.168832466006279,
+        "nmi": 0.1896110624074936,
+        "distance_corr": 0.21465519070625305
+      }
+    },
+    {
+      "target": "congestion_price_da",
+      "test_r2": 0.19948266465149223,
+      "alpha": {
+        "pearson": 0.2178913652896881,
+        "spearman": 0.1844881772994995,
+        "kendall": 0.1865052729845047,
+        "nmi": 0.1909625232219696,
+        "distance_corr": 0.22015266120433807
+      }
+    },
+    {
+      "target": "congestion_price_rt",
+      "test_r2": 0.4505130040659838,
+      "alpha": {
+        "pearson": 0.1986026018857956,
+        "spearman": 0.2189861238002777,
+        "kendall": 0.1834731549024582,
+        "nmi": 0.18709172308444977,
+        "distance_corr": 0.21184633672237396
+      }
+    },
+    {
+      "target": "marginal_loss_price_da",
+      "test_r2": 0.47195901518471794,
+      "alpha": {
+        "pearson": 0.21636560559272766,
+        "spearman": 0.2030656933784485,
+        "kendall": 0.18349039554595947,
+        "nmi": 0.18038800358772278,
+        "distance_corr": 0.21669024229049683
+      }
+    },
+    {
+      "target": "total_lmp_da",
+      "test_r2": 0.9550574950906655,
+      "alpha": {
+        "pearson": 0.2228541225194931,
+        "spearman": 0.17557112872600555,
+        "kendall": 0.2106207013130188,
+        "nmi": 0.20191869139671326,
+        "distance_corr": 0.1890353262424469
+      }
+    },
+    {
+      "target": "da_as_total_mw_primary_reserve",
+      "test_r2": 0.975033069021952,
+      "alpha": {
+        "pearson": 0.21631976962089539,
+        "spearman": 0.17065390944480896,
+        "kendall": 0.1768888384103775,
+        "nmi": 0.24042116105556488,
+        "distance_corr": 0.19571636617183685
+      }
+    },
+    {
+      "target": "da_as_total_mw_synchronized_reserve",
+      "test_r2": 0.9343827954163243,
+      "alpha": {
+        "pearson": 0.17818397283554077,
+        "spearman": 0.17618398368358612,
+        "kendall": 0.17882436513900757,
+        "nmi": 0.2979182004928589,
+        "distance_corr": 0.16888944804668427
+      }
+    },
+    {
+      "target": "da_as_total_mw_thirty_minutes_reserve",
+      "test_r2": 0.14367550411840435,
+      "alpha": {
+        "pearson": 0.20808884501457214,
+        "spearman": 0.21002502739429474,
+        "kendall": 0.18722255527973175,
+        "nmi": 0.184702530503273,
+        "distance_corr": 0.20996108651161194
+      }
+    }
+  ],
+  "r2_weighted_average": true
+}

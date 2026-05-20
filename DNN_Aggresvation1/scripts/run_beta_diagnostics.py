@@ -137,10 +137,18 @@ def main():
         config = yaml.safe_load(f)
 
     pseudo_cfg = config.get("pseudo_label", {})
-    csv_path = resolve_path(config["data"]["csv_path"])
+    raw_csv_path = resolve_path(config["data"].get("raw_csv_path", config["data"].get("csv_path")))
+    processed_csv_path = config["data"].get("processed_csv_path")
+    processed_csv_path = resolve_path(processed_csv_path) if processed_csv_path else None
+    dnn_q_cache_dir = pseudo_cfg.get("dnn_q_cache_dir", os.path.join(config["outputs"]["dir"], "dnn_q_cache"))
+    dnn_q_cache_dir = resolve_path(dnn_q_cache_dir)
     print("Preparing DNN-q data once...")
     base_data = prepare_pipeline_data(
-        csv_path,
+        raw_csv_path=raw_csv_path,
+        processed_csv_path=processed_csv_path,
+        drop_columns=config["data"].get("drop_columns", []),
+        confidential_columns=config["data"].get("confidential_columns", []),
+        use_processed_cache=config["data"].get("use_processed_cache", True),
         K_neighbors=config["graph"]["k_neighbors"],
         theta=config["graph"]["theta"],
         downsample_size=config["data"]["downsample_size"],
@@ -153,6 +161,7 @@ def main():
         dnn_lr=pseudo_cfg.get("dnn_lr", 0.01),
         dnn_weight_decay=pseudo_cfg.get("dnn_weight_decay", 1e-4),
         dnn_seed=pseudo_cfg.get("dnn_seed", 2026),
+        dnn_q_cache_dir=dnn_q_cache_dir,
     )
 
     seeds = [0, 1, 2]

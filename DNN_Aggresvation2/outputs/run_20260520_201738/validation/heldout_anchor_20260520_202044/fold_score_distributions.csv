@@ -1,0 +1,6 @@
+﻿fold,heldout_fields,train_anchor_count,heldout_anchor_count,non_anchor_general_count,train_anchor_mean_score,heldout_anchor_mean_score,non_anchor_general_mean_score,non_anchor_general_median_score,non_anchor_general_p90_score,non_anchor_general_above_0_8
+1,"forecast_load_mw_latest_available, system_energy_price_da, gen_fuel_gas_mw",12,3,29,0.2977445423603058,0.8718964457511902,0.4086838364601135,0.4172097444534302,0.8020372509956359,3
+2,"forecast_load_mw_day_ahead, gen_fuel_nuclear_pct, total_lmp_rt",12,3,29,0.3503248691558838,0.5975784659385681,0.3522360026836395,0.3237972557544708,0.679048728942871,0
+3,"da_as_as_req_mw_thirty_minutes_reserve, da_as_as_req_mw_synchronized_reserve, da_as_as_req_mw_primary_reserve",12,3,29,0.39273956418037415,0.5399932265281677,0.4065846800804138,0.3627901077270508,0.7312882661819458,1
+4,"marginal_loss_price_rt, da_as_ss_mw_synchronized_reserve, total_pjm_self_sched_reg",12,3,29,0.46195682883262634,0.17031657695770264,0.3830418288707733,0.391796737909317,0.6705933332443237,1
+5,"da_as_ss_mw_thirty_minutes_reserve, da_as_ss_mw_primary_reserve, net_inadv_interchange_mw",12,3,29,0.5118497014045715,0.06350883096456528,0.41845279932022095,0.4128860831260681,0.6974055290222168,1

@@ -111,7 +111,12 @@ def main():
     config = load_yaml_config(config_path)
     
     # 4. 路径归一化解析
-    csv_path = resolve_path(config["data"]["csv_path"])
+    raw_csv_path = resolve_path(config["data"].get("raw_csv_path", config["data"].get("csv_path")))
+    processed_csv_path = config["data"].get("processed_csv_path")
+    processed_csv_path = resolve_path(processed_csv_path) if processed_csv_path else None
+    drop_columns = config["data"].get("drop_columns", [])
+    confidential_columns = config["data"].get("confidential_columns", [])
+    use_processed_cache = config["data"].get("use_processed_cache", True)
     output_base_dir = resolve_path(config["outputs"]["dir"])
     run_id = datetime.now().strftime("run%Y%m%d_%H%M%S")
     output_dir = os.path.join(output_base_dir, run_id)
@@ -148,7 +153,9 @@ def main():
     print("      启动重构模块化之后的 GNN 风险传播与聚合流水线")
     print("="*70)
     print(f"项目根目录:        {PROJECT_ROOT}")
-    print(f"数据源 CSV 路径:   {csv_path}")
+    print(f"原始 CSV 路径:     {raw_csv_path}")
+    print(f"处理后 CSV 路径:   {processed_csv_path}")
+    print(f"复用 processed:    {use_processed_cache}")
     print(f"训练 Epochs 轮数:  {epochs}")
     print(f"General 监督锚点:  {general_label_count}")
     print(f"预测R²测试集比例:   {predictive_test_ratio}")
@@ -165,7 +172,11 @@ def main():
     # 5. 驱动数据准备
     print("[1/4] 启动数据读取、特征提取与 5 相关性矩阵构建...")
     data_dict = prepare_pipeline_data(
-        csv_path=csv_path,
+        raw_csv_path=raw_csv_path,
+        processed_csv_path=processed_csv_path,
+        drop_columns=drop_columns,
+        confidential_columns=confidential_columns,
+        use_processed_cache=use_processed_cache,
         K_neighbors=k_neighbors,
         theta=theta,
         downsample_size=downsample_size,
