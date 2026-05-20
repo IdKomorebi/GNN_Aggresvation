@@ -1,0 +1,43 @@
+# GNN风险传播与聚合模型 - 超参数配置文件
+
+# 数据集配置
+data:
+  csv_path: "../pjm_rto_hourly_2025_aligned_processed_one_header.csv" # 相对于项目根目录的路径
+  downsample_size: 300  # 针对计算开销大的相关性指标（如 Kendall 和 NMI）的等距降采样样本数
+
+# 半监督伪标签配置
+pseudo_label:
+  general_label_count: 20  # 增加 General 监督锚点，缓解未标注字段外推漂移
+  high_risk_ratio: 0.7     # General 伪标签中高风险锚点占比，剩余为低风险锚点
+  inference_weight: 0.65   # 预测R²推断能力分数权重，剩余权重给初始敏感度传播分数
+  predictive_test_ratio: 0.3 # 使用时间后段 30% 样本测试 x_i -> x_c 的单字段预测 R²
+  dnn_epochs: 80           # 每个 General->Confidential DNN 回归器的训练轮数
+  dnn_hidden_dim: 16       # DNN 推断模型隐藏层宽度
+  dnn_lr: 0.01             # DNN 推断模型学习率
+  dnn_weight_decay: 0.0001 # DNN 推断模型权重衰减
+  dnn_seed: 2026           # DNN 推断模型随机种子
+  dnn_q_cache_dir: "outputs/dnn_q_cache" # 复用 DNN-q 标签，避免每次重复训练推断 DNN
+
+# 图结构构建参数
+graph:
+  k_neighbors: 5        # 构建固定风险传播图时每个节点的 Top-K 邻居数
+  theta: 0.5            # 建立候选边的平均相关性硬阈值
+
+# GNN 神经网络参数
+model:
+  hidden_dim: 64        # GNN 隐藏层特征维度
+  num_layers: 2         # GNN 的信息聚合传播层数 (L)
+
+# 优化器与训练超参数
+training:
+  epochs: 300           # 训练迭代总轮数
+  lr: 0.002             # Adam 优化器学习率，半监督锚点下使用较稳的步长
+  beta_lr: 0.02         # beta 单独学习率，用于增强可学习融合权重的可辨识性
+  alpha_temperature: 0.7 # Softmax 温度，适度放大 beta 差异但避免过度尖锐
+  w_c: 2.0              # Confidential 敏感节点在平方差损失函数中的加权因子
+  lmbda: 0.0            # 默认去除 beta 的 L2 正则，避免融合权重被强行拉回均匀分布
+  seed: 42              # 固定随机种子，保证实验结果可复现
+
+# 结果产出与保存配置
+outputs:
+  dir: "outputs"        # 产出图表及排名 CSV 的输出目录名称
