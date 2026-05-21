@@ -307,5 +307,43 @@ window = data_matrix[i : i + w, :].copy()  # .copy()！
 
 **在numpy中，切片操作返回的是view不是copy。任何对切片的inplace修改都会污染原始数据。** 这是一个经典的numpy陷阱。
 
+---
+
+## 阶段性总结（截至 2026-05-21 04:05 CST）
+
+### 迭代对比一览
+
+| 版本 | 测试MSE | 较基线 | 最高R² | 最高敏感度 | 关键改动 | 结果 |
+|---|---|---|---|---|---|---|
+| 基线 | 0.7770 | — | 0.7268 | 0.0243 | hidden=32, lr=0.001, 图密度0.73 | 过拟合严重(Epoch6停)，敏感度无区分 |
+| v1 | 0.5966 | ↓23% | 0.8624 | 0.2506 | lr→0.0003, top_k→5, threshold→0.25, hidden→48 | 图密度降至0.26，训完500轮，敏感度提升10倍 |
+| v2 🏆 | **0.4817** | **↓38%** | **0.9751** | 0.1754 | +BatchNorm, +残差连接, +可学习嵌入, +CosineAnnealing | 5字段R²>0.88，α稳定收敛 |
+| v3(窗口) | 0.0000 | — | 1.0000 | 0.0000 | window_size=6 | ❌失败：numpy view bug致数据泄漏 |
+| v4(修复) | 0.4817 | ↓38% | 0.9751 | 0.1754 | 修复.copy()bug, window=1 | ✅与v2一致，验证修复正确 |
+
+### 当前最优模型（v2）关键指标
+
+**还原精度（R²）**：
+- ⚠️ 高风险（R²>0.85）: da_as_total_mw_primary_reserve(0.975), metered_load_mw(0.957), total_gen(0.915), da_as_total_mw_synchronized_reserve(0.908), total_lmp_da(0.884)
+- 中等（0.2~0.5）: congestion_price_rt(0.477), total_losses(0.448), marginal_loss_price_da(0.420), da_as_total_mw_thirty_minutes_reserve(0.387)
+- ✅ 安全（不可推断）: gross_actual_interchange_mw(0.005), net_actual_interchange_mw(-0.961)
+
+**敏感度Top 5**: da_as_nsr_mw_primary_reserve(0.175), gen_fuel_nuclear_mw(0.173), forecast_load_mw_latest_available(0.132), system_energy_price_da(0.083), total_lmp_rt(0.071)
+
+**α权重**: NMI主导(0.43) > Pearson(0.17) ≈ Kendall(0.17) > dCor(0.13) > Spearman(0.10)
+
+### 待改进方向
+
+1. 中等R²字段（0.2~0.5）仍有提升空间，可尝试GAT注意力机制或更深层GNN
+2. 图稀疏度可进一步探索（当前top_k=5, threshold=0.25）
+3. net/gross_actual_interchange_mw确认不可推断（最高Pearson仅0.45），可作为"安全字段"正面案例
+
+### Git记录
+
+- `2fc52e2` — feat: v2结构性改进（BatchNorm, 残差连接, 可学习嵌入）
+- `a21a394` — fix: 关键数据泄漏bug修复 + v3窗口代码 + CHANGELOG
+- 远程: https://github.com/IdKomorebi/GNN_Aggresvation.git (端口7897推送成功)
+
+
 
 

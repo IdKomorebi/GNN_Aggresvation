@@ -1,0 +1,563 @@
+\documentclass[UTF8,a4paper,11pt]{ctexart}
+
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\geometry{left=2.4cm,right=2.4cm,top=2.4cm,bottom=2.4cm}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  urlcolor=blue!55!black,
+  citecolor=blue!55!black
+}
+\setlist[itemize]{leftmargin=2em}
+\setlist[enumerate]{leftmargin=2em}
+
+\title{从伪标签传播到推断监督的图神经网络敏感度评估方法演化}
+\author{DNN\_Aggresvation 子项目 2、3、4、6 总结}
+\date{2026年5月21日}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+本文总结 DNN\_Aggresvation 项目中四个关键子项目的技术演化：子项目2构建了
+``预训练相关性权重 + 固定边权 GNN + General anchor 校准''的风险传播框架；
+子项目3放弃人工伪标签，提出以 Confidential 字段真实还原误差为监督信号的
+Inference-as-Supervision 范式；子项目4在该范式上系统验证了 loss-mask 与 GAT
+注意力聚合；子项目6进一步修正弱 target-conditioned attention，引入双线性
+source-target 交互和目标专属输出头，形成当前最可信的主线模型。整体演化体现了
+项目从启发式评分体系向端到端数据驱动推断风险评估的转变。
+\end{abstract}
+
+\section{研究目标与核心问题}
+
+本项目关注的问题是：在电力市场时序数据中，若某些字段被定义为
+Confidential，攻击者是否可以仅通过公开的 General 字段推断这些 Confidential
+字段。换言之，一个 General 字段的敏感度不应只由它和 Confidential 字段的相关性
+决定，而应由它在样本外帮助还原 Confidential 真实值的能力决定。
+
+因此，项目的核心目标可以表述为：
+\[
+  \text{Sensitivity}(x_i)
+  \propto
+  \Delta \mathcal{L}_{\text{reconstruct}}(X_{\text{conf}})
+  \quad \text{when } x_i \text{ is masked}.
+\]
+这里 $x_i$ 是 General 字段，$X_{\text{conf}}$ 是 Confidential 字段集合。
+如果遮蔽某个 General 字段后 Confidential 还原误差明显上升，则该字段具有较高
+隐性泄露风险。
+
+\section{子项目2：固定边权风险传播与 Anchor 校准}
+
+\subsection{方法动机}
+
+子项目2继承了早期风险评分思路，其主要目标是构造一套工程上完整的图传播流程。
+当时的方法仍然依赖伪标签：先通过单字段 DNN probe 或相关性门控网络估计
+General 字段到 Confidential 字段的推断能力，再选取一部分 General 字段作为
+anchor，最后训练 GNN 在图上传播风险分数。
+
+这一阶段的核心思想是：
+\begin{enumerate}
+  \item 对不同相关性指标进行预训练加权，得到全局相关性权重；
+  \item 使用固定相关性边权构建图；
+  \item 将 Confidential 节点标为高风险；
+  \item 选取少量 General high-risk anchor 与 low-risk anchor 作为监督节点；
+  \item 训练 GNN 将风险从监督节点传播到未监督 General 字段。
+\end{enumerate}
+
+\subsection{相关性指标权重预训练}
+
+子项目2参考 correlation-gated DNN 的思想，为每个 Confidential 目标学习一组
+相关性指标权重。设 General 字段 $x_i$ 与 Confidential 目标 $x_c$ 之间有
+$K$ 种关系指标：
+\[
+  r_{i,c} = \left(r_{i,c}^{(1)}, r_{i,c}^{(2)}, \ldots, r_{i,c}^{(K)}\right).
+\]
+对目标 $c$ 学习一个 softmax 权重：
+\[
+  \alpha_c = \operatorname{softmax}(\beta_c).
+\]
+于是字段 $x_i$ 对目标 $x_c$ 的融合关系强度为：
+\[
+  z_{i,c} = \sum_{k=1}^{K} \alpha_{c,k} r_{i,c}^{(k)}.
+\]
+随后使用门控函数得到字段贡献：
+\[
+  g_{i,c} = \sigma(a_c z_{i,c} + b_c).
+\]
+每个 Confidential 目标得到一组相关性权重后，再按验证集 $R^2$ 对不同目标的
+权重进行加权平均，得到一组全局指标权重 $\bar{\alpha}$，用于固定边权图构建。
+
+\subsection{固定边权 GNN}
+
+在 GNN 阶段，边权不再更新。模型只学习节点表示传播和输出层参数。风险监督信号
+来自两类节点：
+\begin{itemize}
+  \item Confidential 节点：标签固定为 1，代表它们本身就是敏感字段；
+  \item General anchor 节点：由 probe 或伪标签规则给出风险值。
+\end{itemize}
+
+早期只选取高风险 anchor，导致未监督 General 分数整体偏高。后续加入低风险
+anchor，并要求低风险候选同时满足图上低分与 probe 低分，才进入监督集合。这一
+改动改善了 GNN 输出刻度校准。
+
+\subsection{主要结果与价值}
+
+修复常量列问题后，子项目2能产生较合理的未监督 General 排名，例如：
+\begin{itemize}
+  \item \texttt{net\_inadv\_interchange\_mw}
+  \item \texttt{gen\_fuel\_storage\_mw}
+  \item \texttt{total\_pjm\_rmpcp\_cr}
+  \item \texttt{da\_as\_nsr\_mw\_primary\_reserve}
+  \item \texttt{total\_pjm\_reg\_purchases}
+\end{itemize}
+这些字段在业务语义上确实和交换电量、燃料结构、结算或辅助服务相关。
+
+子项目2的价值在于建立了完整工程管线：数据清洗、关系矩阵计算、相关性权重预训练、
+固定图构建、anchor 选择、GNN 训练和结果导出。然而，它的方法论仍然存在根本问题：
+模型拟合的是人为构造的风险标签，而非 Confidential 字段真实还原任务。因此它更适合
+作为项目早期启发式框架，不适合作为最终主线。
+
+\section{子项目3：Inference-as-Supervision 范式}
+
+\subsection{为什么必须转向真实推断监督}
+
+子项目2暴露出一个关键问题：如果我们先用人工规则或单字段 probe 定义风险，再让 GNN
+拟合这些风险，那么 GNN 很可能只是在复刻我们自己的规则。这会形成循环论证：
+\[
+  \text{人工定义图与伪标签}
+  \rightarrow
+  \text{GNN 拟合伪标签}
+  \rightarrow
+  \text{用拟合结果证明风险排序合理}.
+\]
+为避免这一问题，子项目3提出 Inference-as-Supervision：不再人工定义 General
+字段风险标签，而是直接让模型执行攻击者任务，即用 General 字段还原 Confidential
+字段真实值。
+
+\subsection{模型输入与监督目标}
+
+对每个时间步 $t$，构造一个图样本。General 节点输入为其标准化真实值：
+\[
+  h_i^{(0)}(t) = x_i(t), \quad i \in \mathcal{G}.
+\]
+Confidential 节点输入被置零或替换为可学习初始嵌入：
+\[
+  h_c^{(0)}(t) = 0 \quad \text{or} \quad e_c, \quad c \in \mathcal{C}.
+\]
+模型输出为所有 Confidential 字段的预测：
+\[
+  \hat{X}_{\mathcal{C}}(t) = f_{\theta}(X_{\mathcal{G}}(t), A).
+\]
+训练损失为 Confidential 真实值还原 MSE：
+\[
+  \mathcal{L}
+  =
+  \frac{1}{|\mathcal{C}|}
+  \sum_{c \in \mathcal{C}}
+  \left\|\hat{x}_c(t) - x_c(t)\right\|_2^2.
+\]
+
+\subsection{关系图构建}
+
+子项目3仍然使用多种统计关系指标构建图，包括 Pearson、Spearman、Kendall、
+NMI 与 distance correlation。设关系张量为 $R \in \mathbb{R}^{N \times N \times K}$，
+可学习融合权重为：
+\[
+  \alpha = \operatorname{softmax}(\beta).
+\]
+融合邻接矩阵为：
+\[
+  A_{ij}^{\text{raw}}
+  =
+  \sum_{k=1}^{K} \alpha_k R_{ij}^{(k)}.
+\]
+再结合 top-k 与阈值筛选得到边掩码 $M$：
+\[
+  A_{ij} = A_{ij}^{\text{raw}} M_{ij}.
+\]
+消息传递时使用行归一化邻接矩阵：
+\[
+  \tilde{A}_{ij}
+  =
+  \frac{A_{ij}}{\sum_j A_{ij} + \epsilon}.
+\]
+
+\subsection{结构改进与有效版本}
+
+子项目3经历了从基线到 v2 的关键改进。初始版本图密度过高，测试 MSE 为
+0.7770，且模型很早过拟合。随后通过降低图密度、降低学习率、增大模型容量、
+增加正则化，测试 MSE 降至 0.5966。最终有效版本 v2 引入了：
+\begin{itemize}
+  \item BatchNorm，稳定每层隐藏表示；
+  \item 残差连接，缓解深层 GNN 梯度退化；
+  \item Confidential 可学习嵌入，替代固定零向量；
+  \item 双层 MLP 输出头，提升非线性拟合能力；
+  \item CosineAnnealing 学习率调度，帮助 $\alpha$ 稳定收敛。
+\end{itemize}
+
+有效版本的核心结果为：
+\begin{itemize}
+  \item 全 12 个 Confidential 目标测试 MSE：0.4817；
+  \item \texttt{da\_as\_total\_mw\_primary\_reserve} 的 $R^2$ 达到 0.9751；
+  \item \texttt{metered\_load\_mw} 的 $R^2$ 达到 0.9567；
+  \item \texttt{total\_gen} 的 $R^2$ 达到 0.9154；
+  \item \texttt{total\_lmp\_da} 的 $R^2$ 达到 0.8843。
+\end{itemize}
+
+\subsection{遮蔽敏感度}
+
+训练完成后，子项目3不再直接读取 GNN 的节点分数，而是通过遮蔽实验定义 General
+字段敏感度。对每个 General 字段 $x_i$，将其测试集输入置零，重新计算还原损失：
+\[
+  S_i
+  =
+  \frac{
+    \mathcal{L}_{\text{mask}(i)} - \mathcal{L}_{\text{base}}
+  }{
+    \mathcal{L}_{\text{base}} + \epsilon
+  }.
+\]
+该分数表示：遮蔽字段 $x_i$ 后，攻击者还原 Confidential 字段的误差相对增加多少。
+
+子项目3有效版本的敏感度 Top 字段包括：
+\begin{itemize}
+  \item \texttt{da\_as\_nsr\_mw\_primary\_reserve}
+  \item \texttt{gen\_fuel\_nuclear\_mw}
+  \item \texttt{forecast\_load\_mw\_latest\_available}
+  \item \texttt{system\_energy\_price\_da}
+  \item \texttt{total\_lmp\_rt}
+\end{itemize}
+
+\subsection{子项目3的问题}
+
+子项目3虽然方法论最关键，但仍有三个问题：
+\begin{enumerate}
+  \item 消息传递是静态均匀聚合。模型只学习全局 $\alpha$，无法针对不同目标学习
+  不同邻居重要性。
+  \item \texttt{net\_actual\_interchange\_mw} 与
+  \texttt{gross\_actual\_interchange\_mw} 长期低 $R^2$ 或负 $R^2$，但仍参与
+  训练 MSE，拖累总体目标。
+  \item 不同 Confidential 字段机制差异很大，单一共享图可能造成多任务冲突。
+\end{enumerate}
+
+\section{子项目4：Loss-mask 与 GAT 的系统消融}
+
+\subsection{实验设计}
+
+子项目4以子项目3的有效模型为基线，系统测试两个改动：
+\begin{itemize}
+  \item loss-mask：将 \texttt{net\_actual\_interchange\_mw} 与
+  \texttt{gross\_actual\_interchange\_mw} 从训练损失中排除，但仍保留在图中；
+  \item GAT：在固定边掩码内学习 target 节点对 source 节点的 attention 权重。
+\end{itemize}
+
+四组实验如下：
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+实验 & 架构 & 是否排除 interchange loss & 目的 \\
+\midrule
+\texttt{baseline\_gcn} & GCN & 否 & 复现子项目3基线 \\
+\texttt{loss\_mask\_gcn} & GCN & 是 & 单独测试 loss-mask \\
+\texttt{gat} & GAT & 否 & 单独测试注意力机制 \\
+\texttt{gat\_loss\_mask} & GAT & 是 & 测试组合效果 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{GAT 聚合方式}
+
+普通 GAT 在每层中为边 $(i,j)$ 计算可学习 attention logit。子项目4的实现仍然
+保留相关性融合邻接作为先验：
+\[
+  \ell_{ij}
+  =
+  a_t^\top h_i
+  +
+  a_s^\top h_j
+  +
+  \gamma \log(A_{ij}^{\text{prior}} + \epsilon).
+\]
+对无效边进行 mask 后，在邻居维度做 softmax：
+\[
+  \omega_{ij}
+  =
+  \operatorname{softmax}_j(\ell_{ij}).
+\]
+消息聚合为：
+\[
+  m_i = \sum_j \omega_{ij} h_j.
+\]
+
+\subsection{核心结果}
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+实验 & loss目标数 & 10目标MSE & 全12目标MSE & 被排除2目标MSE \\
+\midrule
+\texttt{baseline\_gcn} & 12 & 0.367448 & 0.481692 & 1.052911 \\
+\texttt{loss\_mask\_gcn} & 10 & 0.377320 & 0.574803 & 1.562220 \\
+\texttt{gat} & 12 & 0.372783 & 0.472676 & 0.972139 \\
+\texttt{gat\_loss\_mask} & 10 & 0.362518 & 0.557638 & 1.533239 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+四组中，\texttt{gat\_loss\_mask} 在 10 个可推断目标上取得最低 MSE：
+\[
+  \text{MSE}_{10} = 0.362518.
+\]
+相比 baseline 同口径 0.367448，提升幅度约 1.34\%。这说明 GAT 与 loss-mask
+组合有正向信号，但收益还不算压倒性。
+
+\subsection{字段层面观察}
+
+子项目4的重要价值不只是 MSE 小幅下降，而是揭示了不同字段对模型结构的反应不同。
+\begin{itemize}
+  \item \texttt{marginal\_loss\_price\_da} 从 baseline 的 0.4198 提升到
+  \texttt{gat\_loss\_mask} 的 0.5011，说明注意力对 price/loss 类字段有效。
+  \item \texttt{total\_lmp\_da} 从 0.8843 提升到 0.9234，GAT 明显改善日前价格
+  相关字段。
+  \item \texttt{congestion\_price\_da} 从 0.1990 小幅提升到 0.2137，但仍然是
+  最难推断的非 interchange 字段。
+  \item \texttt{da\_as\_total\_mw\_thirty\_minutes\_reserve} 在 GAT 方案中下降，
+  说明注意力机制可能错误稀释了该字段需要的邻居。
+\end{itemize}
+
+\subsection{单目标 MLP Probe 诊断}
+
+子项目4还新增了单目标 MLP probe，用 44 个 General 字段独立预测每个
+Confidential 字段。该实验不是最终模型，而是诊断工具，用来判断低 $R^2$ 是数据
+不可推断，还是共享 GNN 结构拖累。
+
+关键结果如下：
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+字段 & 单目标 MLP $R^2$ & baseline GCN $R^2$ & GAT+mask $R^2$ \\
+\midrule
+\texttt{total\_gen} & 0.9906 & 0.9154 & 0.9379 \\
+\texttt{metered\_load\_mw} & 0.9762 & 0.9567 & 0.9602 \\
+\texttt{total\_losses} & 0.6541 & 0.4482 & 0.4671 \\
+\texttt{congestion\_price\_da} & 0.0476 & 0.1990 & 0.2137 \\
+\texttt{marginal\_loss\_price\_da} & 0.4407 & 0.4198 & 0.5011 \\
+\texttt{net\_actual\_interchange\_mw} & 0.2482 & -0.9610 & -1.8833 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+这个诊断给出了非常关键的结论：
+\begin{enumerate}
+  \item \texttt{total\_losses} 在单目标 MLP 中远高于共享 GNN，说明它不是不可推断，
+  而是被共享图结构拖累。
+  \item \texttt{congestion\_price\_da} 在单目标 MLP 中很低，却在 GNN/GAT 中更高，
+  说明它需要图结构或间接关系，而不是普通全连接 MLP。
+  \item interchange 字段在共享 GNN 中表现很差，但单目标 MLP 有约 0.25 的 $R^2$，
+  说明不能简单说它们完全安全，只能说它们不适合当前共享图主任务。
+\end{enumerate}
+
+\section{子项目6：强 Target-conditioned Bilinear GAT}
+
+\subsection{从 DNN5 失败到 DNN6 修正}
+
+在子项目4之后，项目曾短暂进入子项目5，尝试 target-conditioned GAT。它的想法是正确的：
+不同 Confidential 目标应该拥有不同邻居权重。但第一版实现过弱：
+\[
+  \ell_{c,j}
+  =
+  s_{\text{target}}(h_c)
+  +
+  s_{\text{condition}}(e_c)
+  +
+  s_{\text{source}}(h_j)
+  +
+  \log A_{c,j}.
+\]
+其中 $s_{\text{condition}}(e_c)$ 对同一个目标 $c$ 的所有 source $j$ 都是常数，
+在 softmax 中会被抵消，不能改变 source 之间的相对排序。因此 DNN5 虽然名义上
+是 target-conditioned，实际上没有真正建模 source-target 交互。
+
+子项目6修正了这一点，引入真正的双线性 target-conditioned attention。
+
+\subsection{双线性 Source-target Attention}
+
+对子项目6中的每个 Confidential 目标 $c$，生成目标 query：
+\[
+  q_c = W_q^{(h)} h_c + W_q^{(e)} e_c.
+\]
+对每个 source 节点 $j$ 生成 key 与 value：
+\[
+  k_j = W_k h_j, \qquad v_j = W_v h_j.
+\]
+attention logit 使用 query-key 点积：
+\[
+  \ell_{c,j}
+  =
+  \frac{q_c^\top k_j}{\sqrt{d}}
+  +
+  b(r_{c,j})
+  +
+  \gamma \log(A_{c,j}^{\text{prior}} + \epsilon).
+\]
+这里 $b(r_{c,j})$ 是由多指标关系向量产生的 relation bias。对无效边 mask 后：
+\[
+  \omega_{c,j}
+  =
+  \operatorname{softmax}_j(\ell_{c,j}),
+  \qquad
+  m_c = \sum_j \omega_{c,j} v_j.
+\]
+
+General 节点仍使用稳定 GCN 聚合，只有 Confidential 节点读取邻居时使用
+target-bilinear attention。这样既保留了全图传播的稳定性，又让每个目标拥有自己的
+source 选择机制。
+
+\subsection{目标专属输出头}
+
+子项目6还加入了 target-specific heads。此前所有 Confidential 字段共享同一个
+输出头：
+\[
+  \hat{x}_c = g(h_c).
+\]
+但不同目标的数据分布和物理机制差异很大，共享输出头会造成额外冲突。子项目6改为：
+\[
+  \hat{x}_c = g_c(h_c),
+\]
+即每个 Confidential 目标拥有自己的小型 MLP head。
+
+\subsection{实验结果}
+
+子项目6主要测试两组：
+\begin{itemize}
+  \item \texttt{target\_bilinear\_gat\_loss\_mask}：排除两个 interchange 字段的 loss；
+  \item \texttt{target\_bilinear\_gat}：全 12 个 Confidential 字段都参与 loss。
+\end{itemize}
+
+核心结果如下：
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+实验 & 训练目标MSE & 全目标MSE & 说明 \\
+\midrule
+\texttt{target\_bilinear\_gat\_loss\_mask} & 0.348861 & 0.556023 & 当前最佳主线 \\
+\texttt{target\_bilinear\_gat} & 0.479325 & 0.479325 & 全目标版本，不如 loss-mask \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\texttt{target\_bilinear\_gat\_loss\_mask} 相比 DNN4 最佳的
+\texttt{gat\_loss\_mask}：
+\[
+  0.362518 \rightarrow 0.348861.
+\]
+这说明强 target-conditioned attention 确实解决了 DNN5 的核心缺陷，并带来了
+可观提升。
+
+\subsection{关键字段对比}
+
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+字段 & DNN4 GAT+mask $R^2$ & DNN6 bilinear+mask $R^2$ & 变化 \\
+\midrule
+\texttt{total\_losses} & 0.4671 & 0.5327 & 提升 \\
+\texttt{congestion\_price\_rt} & 0.4630 & 0.4980 & 提升 \\
+\texttt{da\_as\_total\_mw\_thirty\_minutes\_reserve} & 0.2920 & 0.4988 & 大幅提升 \\
+\texttt{marginal\_loss\_price\_da} & 0.5011 & 0.4251 & 下降 \\
+\texttt{congestion\_price\_da} & 0.2137 & 0.1602 & 下降 \\
+\texttt{total\_lmp\_da} & 0.9234 & 0.8737 & 下降 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+可以看到，DNN6的提升主要集中在此前中等 $R^2$ 且共享图拖累明显的字段上：
+\texttt{total\_losses}、\texttt{congestion\_price\_rt} 和
+\texttt{thirty\_minutes\_reserve}。但它没有解决
+\texttt{congestion\_price\_da}，这提示该字段的问题可能不是 attention 表达能力不足，
+而是邻居候选、图构建、业务噪声或缺失关键外部信息。
+
+\subsection{敏感度排序}
+
+DNN6 最佳版本的敏感度 Top 字段包括：
+\begin{itemize}
+  \item \texttt{da\_as\_nsr\_mw\_primary\_reserve}
+  \item \texttt{gen\_fuel\_nuclear\_mw}
+  \item \texttt{system\_energy\_price\_da}
+  \item \texttt{marginal\_loss\_price\_rt}
+  \item \texttt{total\_lmp\_rt}
+  \item \texttt{forecast\_load\_mw\_latest\_available}
+\end{itemize}
+这些字段覆盖备用容量、燃料结构、日前价格、实时价格和负荷预测，符合 PJM 系统中
+供需、价格和辅助服务之间的耦合关系。
+
+\section{总体演化与方法论总结}
+
+四个子项目体现出一条清晰的技术演化路径：
+
+\begin{enumerate}
+  \item 子项目2建立了图风险传播的工程框架，但监督信号仍依赖人工伪标签和 anchor。
+  \item 子项目3完成关键方法论转向：用 Confidential 真实还原任务替代伪标签风险拟合。
+  \item 子项目4通过消融实验确认：GAT 和 loss-mask 有正向信号，但不同目标之间存在
+  明显机制差异。
+  \item 子项目6修正弱 target-conditioning，使用双线性 source-target 交互，让模型能够
+  为不同 Confidential 目标学习不同邻居权重，成为当前最可信主线。
+\end{enumerate}
+
+从科学性看，项目最重要的进步是从``人为定义风险分数''转向``直接模拟攻击者还原任务''。
+从模型结构看，项目逐步认识到单一共享图不足以覆盖所有 Confidential 目标，必须允许
+目标条件化的边权和目标专属输出。
+
+\section{当前问题与下一步建议}
+
+当前仍有三个主要问题。
+
+\subsection{Congestion Price DA 仍是瓶颈}
+
+\texttt{congestion\_price\_da} 在 DNN4 中最高约 0.2137，在 DNN6 中反而下降到
+0.1602。单目标 MLP probe 也只有 0.0476。这说明它可能不是普通 General 字段直接
+可推断的问题，而是需要更合适的 price 子图、更多外部市场结构信息，或更细粒度的
+节点定义。
+
+\subsection{Interchange 字段需要独立解释}
+
+\texttt{net\_actual\_interchange\_mw} 和 \texttt{gross\_actual\_interchange\_mw}
+在共享 GNN 中经常为负 $R^2$，但单目标 MLP probe 有约 0.25 的 $R^2$。因此它们
+不应被简单归类为完全不可推断，而应表述为：在当前共享图主任务中不适合作为训练目标，
+但数据中仍存在弱推断信号。
+
+\subsection{继续调模型前应固定实验协议}
+
+后续若继续实验，应固定以下协议：
+\begin{itemize}
+  \item 主指标采用 10 个非 interchange 目标的测试 MSE；
+  \item DNN4 \texttt{gat\_loss\_mask} 和 DNN6
+  \texttt{target\_bilinear\_gat\_loss\_mask} 作为固定基线；
+  \item 每次实验保留独立 run 目录，不覆盖 summary；
+  \item 对小幅提升必须进行多 seed 验证；
+  \item 新模型必须解释它相对单目标 MLP probe 的收益来源。
+\end{itemize}
+
+\section{结论}
+
+DNN\_Aggresvation 项目的可信主线不是简单地不断增加模型复杂度，而是逐步澄清
+``敏感度''本身应该如何定义。子项目2证明了图传播框架可以在工程上跑通；子项目3
+将问题提升为真实还原监督，摆脱伪标签循环；子项目4用消融实验揭示了注意力机制和
+多任务冲突；子项目6则通过强 target-conditioned attention 达到目前最好的综合结果。
+
+因此，当前最稳妥的阶段性结论是：以 DNN6 的
+\texttt{target\_bilinear\_gat\_loss\_mask} 作为主模型，以 DNN4 的
+\texttt{gat\_loss\_mask} 作为强基线，并以单目标 MLP probe 作为字段可推断性的诊断参照。
+后续工作不应盲目继续堆叠子项目，而应围绕 \texttt{congestion\_price\_da}、
+interchange 字段解释和多 seed 稳定性进行更有边界的验证。
+
+\end{document}

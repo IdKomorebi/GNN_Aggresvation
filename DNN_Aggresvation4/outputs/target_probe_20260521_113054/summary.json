@@ -1,0 +1,143 @@
+{
+  "run_dir": "/Users/haocun/Desktop/AllProjects/GNN_Aggresvation/DNN_Aggresvation4/outputs/target_probe_20260521_113054",
+  "seed": 42,
+  "device": "cpu",
+  "n_general": 44,
+  "n_confidential": 12,
+  "probe_config": {
+    "hidden_dims": [
+      128,
+      64
+    ],
+    "dropout": 0.15,
+    "lr": 0.0005,
+    "weight_decay": 0.0005,
+    "batch_size": 128,
+    "epochs": 600,
+    "patience": 80
+  },
+  "mean_probe_r2": 0.6136358682009618,
+  "median_probe_r2": 0.5554940108323689,
+  "results": [
+    {
+      "confidential_field": "total_gen",
+      "probe_r2": 0.9906449538219423,
+      "probe_mse": 0.004279308952391148,
+      "best_epoch": 144,
+      "baseline_gcn_r2": 0.9154055118560791,
+      "gat_loss_mask_r2": 0.9379225708544254,
+      "probe_minus_baseline_gcn_r2": 0.07523944196586319,
+      "probe_minus_gat_loss_mask_r2": 0.052722382967516856
+    },
+    {
+      "confidential_field": "metered_load_mw",
+      "probe_r2": 0.9762308832723112,
+      "probe_mse": 0.01027797069400549,
+      "best_epoch": 63,
+      "baseline_gcn_r2": 0.9566894620656967,
+      "gat_loss_mask_r2": 0.9602358527481556,
+      "probe_minus_baseline_gcn_r2": 0.019541421206614507,
+      "probe_minus_gat_loss_mask_r2": 0.01599503052415563
+    },
+    {
+      "confidential_field": "da_as_total_mw_primary_reserve",
+      "probe_r2": 0.9752278189577617,
+      "probe_mse": 0.03425189480185509,
+      "best_epoch": 45,
+      "baseline_gcn_r2": 0.9751069191843271,
+      "gat_loss_mask_r2": 0.973496600985527,
+      "probe_minus_baseline_gcn_r2": 0.00012089977343454628,
+      "probe_minus_gat_loss_mask_r2": 0.0017312179722346333
+    },
+    {
+      "confidential_field": "da_as_total_mw_synchronized_reserve",
+      "probe_r2": 0.9418431110456467,
+      "probe_mse": 0.048981405794620514,
+      "best_epoch": 92,
+      "baseline_gcn_r2": 0.9082280918955803,
+      "gat_loss_mask_r2": 0.9402981363236904,
+      "probe_minus_baseline_gcn_r2": 0.03361501915006637,
+      "probe_minus_gat_loss_mask_r2": 0.0015449747219562493
+    },
+    {
+      "confidential_field": "total_lmp_da",
+      "probe_r2": 0.9299314144617218,
+      "probe_mse": 0.0304314773529768,
+      "best_epoch": 179,
+      "baseline_gcn_r2": 0.8842832744121552,
+      "gat_loss_mask_r2": 0.9234190583229065,
+      "probe_minus_baseline_gcn_r2": 0.04564814004956663,
+      "probe_minus_gat_loss_mask_r2": 0.0065123561388152895
+    },
+    {
+      "confidential_field": "total_losses",
+      "probe_r2": 0.6540839836602339,
+      "probe_mse": 0.3036831319332123,
+      "best_epoch": 179,
+      "baseline_gcn_r2": 0.4482267498970032,
+      "gat_loss_mask_r2": 0.4671440124511719,
+      "probe_minus_baseline_gcn_r2": 0.20585723376323073,
+      "probe_minus_gat_loss_mask_r2": 0.18693997120906203
+    },
+    {
+      "confidential_field": "da_as_total_mw_thirty_minutes_reserve",
+      "probe_r2": 0.4569040380045041,
+      "probe_mse": 0.3897430896759033,
+      "best_epoch": 49,
+      "baseline_gcn_r2": 0.3870720863342285,
+      "gat_loss_mask_r2": 0.29204219579696655,
+      "probe_minus_baseline_gcn_r2": 0.06983195167027556,
+      "probe_minus_gat_loss_mask_r2": 0.16486184220753752
+    },
+    {
+      "confidential_field": "congestion_price_rt",
+      "probe_r2": 0.45617385084739637,
+      "probe_mse": 0.8887786269187927,
+      "best_epoch": 31,
+      "baseline_gcn_r2": 0.47654861211776733,
+      "gat_loss_mask_r2": 0.4630134701728821,
+      "probe_minus_baseline_gcn_r2": -0.020374761270370967,
+      "probe_minus_gat_loss_mask_r2": -0.006839619325485713
+    },
+    {
+      "confidential_field": "marginal_loss_price_da",
+      "probe_r2": 0.4407231017762543,
+      "probe_mse": 0.30631300806999207,
+      "best_epoch": 194,
+      "baseline_gcn_r2": 0.4198299050331116,
+      "gat_loss_mask_r2": 0.501074343919754,
+      "probe_minus_baseline_gcn_r2": 0.020893196743142717,
+      "probe_minus_gat_loss_mask_r2": -0.06035124214349974
+    },
+    {
+      "confidential_field": "net_actual_interchange_mw",
+      "probe_r2": 0.24818995601368454,
+      "probe_mse": 0.5845991373062134,
+      "best_epoch": 226,
+      "baseline_gcn_r2": -0.9609616994857788,
+      "gat_loss_mask_r2": -1.8833212852478027,
+      "probe_minus_baseline_gcn_r2": 1.2091516554994635,
+      "probe_minus_gat_loss_mask_r2": 2.1315112412614874
+    },
+    {
+      "confidential_field": "gross_actual_interchange_mw",
+      "probe_r2": 0.24609347928958358,
+      "probe_mse": 0.44017550349235535,
+      "best_epoch": 12,
+      "baseline_gcn_r2": 0.004897058010101318,
+      "gat_loss_mask_r2": -0.41205132007598877,
+      "probe_minus_baseline_gcn_r2": 0.24119642127948226,
+      "probe_minus_gat_loss_mask_r2": 0.6581447993655724
+    },
+    {
+      "confidential_field": "congestion_price_da",
+      "probe_r2": 0.04758382726050314,
+      "probe_mse": 1.6142498254776,
+      "best_epoch": 3,
+      "baseline_gcn_r2": 0.19901782274246216,
+      "gat_loss_mask_r2": 0.21370857954025269,
+      "probe_minus_baseline_gcn_r2": -0.15143399548195902,
+      "probe_minus_gat_loss_mask_r2": -0.16612475227974954
+    }
+  ]
+}
