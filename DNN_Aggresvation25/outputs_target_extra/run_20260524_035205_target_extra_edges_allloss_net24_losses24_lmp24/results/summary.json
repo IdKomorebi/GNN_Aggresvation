@@ -1,0 +1,172 @@
+{
+  "experiment": "target_extra_edges_allloss_net24_losses24_lmp24",
+  "run_dir": "/Users/haocun/Desktop/AllProjects/GNN_Aggresvation/DNN_Aggresvation15/outputs_target_extra/run_20260524_035205_target_extra_edges_allloss_net24_losses24_lmp24",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 12,
+  "n_nodes": 56,
+  "n_edges": 928,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.45261430740356445,
+  "final_test_mse_targets": 0.45261430740356445,
+  "final_test_mse_all": 0.45261430740356445,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "net_actual_interchange_mw",
+    "gross_actual_interchange_mw",
+    "total_gen",
+    "metered_load_mw",
+    "total_losses",
+    "congestion_price_da",
+    "congestion_price_rt",
+    "marginal_loss_price_da",
+    "total_lmp_da",
+    "da_as_total_mw_primary_reserve",
+    "da_as_total_mw_synchronized_reserve",
+    "da_as_total_mw_thirty_minutes_reserve"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.45261430740356445,
+  "final_alpha": {
+    "pearson": 0.7163370251655579,
+    "spearman": 0.04906517639756203,
+    "kendall": 0.054350316524505615,
+    "nmi": 0.1189967468380928,
+    "distance_corr": 0.0612507089972496
+  },
+  "alpha_general": {
+    "pearson": 0.7163370251655579,
+    "spearman": 0.04906517639756203,
+    "kendall": 0.054350316524505615,
+    "nmi": 0.1189967468380928,
+    "distance_corr": 0.0612507089972496
+  },
+  "alpha_confidential_by_target_mean": {
+    "net_actual_interchange_mw": {
+      "pearson": 0.17993372678756714,
+      "spearman": 0.15365904569625854,
+      "kendall": 0.16601979732513428,
+      "nmi": 0.320657879114151,
+      "distance_corr": 0.17972958087921143
+    },
+    "gross_actual_interchange_mw": {
+      "pearson": 0.1649504452943802,
+      "spearman": 0.15602236986160278,
+      "kendall": 0.1518784612417221,
+      "nmi": 0.37721607089042664,
+      "distance_corr": 0.14993266761302948
+    },
+    "total_gen": {
+      "pearson": 0.19189603626728058,
+      "spearman": 0.19083069264888763,
+      "kendall": 0.1914563924074173,
+      "nmi": 0.23832286894321442,
+      "distance_corr": 0.1874939650297165
+    },
+    "metered_load_mw": {
+      "pearson": 0.19151753187179565,
+      "spearman": 0.18764907121658325,
+      "kendall": 0.19579817354679108,
+      "nmi": 0.23659461736679077,
+      "distance_corr": 0.18844059109687805
+    },
+    "total_losses": {
+      "pearson": 0.1857500523328781,
+      "spearman": 0.1765305995941162,
+      "kendall": 0.17803366482257843,
+      "nmi": 0.28144511580467224,
+      "distance_corr": 0.17824064195156097
+    },
+    "congestion_price_da": {
+      "pearson": 0.16553065180778503,
+      "spearman": 0.15542291104793549,
+      "kendall": 0.16891036927700043,
+      "nmi": 0.24930380284786224,
+      "distance_corr": 0.260832279920578
+    },
+    "congestion_price_rt": {
+      "pearson": 0.1923678070306778,
+      "spearman": 0.1931503713130951,
+      "kendall": 0.18332462012767792,
+      "nmi": 0.21949772536754608,
+      "distance_corr": 0.21165944635868073
+    },
+    "marginal_loss_price_da": {
+      "pearson": 0.2043573260307312,
+      "spearman": 0.18735715746879578,
+      "kendall": 0.2066950500011444,
+      "nmi": 0.21792389452457428,
+      "distance_corr": 0.1836666315793991
+    },
+    "total_lmp_da": {
+      "pearson": 0.19649621844291687,
+      "spearman": 0.18939095735549927,
+      "kendall": 0.2071474939584732,
+      "nmi": 0.21891699731349945,
+      "distance_corr": 0.1880483627319336
+    },
+    "da_as_total_mw_primary_reserve": {
+      "pearson": 0.2376997023820877,
+      "spearman": 0.18451818823814392,
+      "kendall": 0.2147972136735916,
+      "nmi": 0.18097727000713348,
+      "distance_corr": 0.18200765550136566
+    },
+    "da_as_total_mw_synchronized_reserve": {
+      "pearson": 0.18857194483280182,
+      "spearman": 0.1874130368232727,
+      "kendall": 0.19439852237701416,
+      "nmi": 0.24205555021762848,
+      "distance_corr": 0.18756093084812164
+    },
+    "da_as_total_mw_thirty_minutes_reserve": {
+      "pearson": 0.17840218544006348,
+      "spearman": 0.20189933478832245,
+      "kendall": 0.19145403802394867,
+      "nmi": 0.24694985151290894,
+      "distance_corr": 0.18129460513591766
+    }
+  },
+  "per_target_r2": {
+    "net_actual_interchange_mw": -1.104053258895874,
+    "gross_actual_interchange_mw": 0.15976685285568237,
+    "total_gen": 0.9553607665002346,
+    "metered_load_mw": 0.9432304240763187,
+    "total_losses": 0.661504864692688,
+    "congestion_price_da": 0.28216439485549927,
+    "congestion_price_rt": 0.4936996102333069,
+    "marginal_loss_price_da": 0.4786755442619324,
+    "total_lmp_da": 0.928790882229805,
+    "da_as_total_mw_primary_reserve": 0.9586427621543407,
+    "da_as_total_mw_synchronized_reserve": 0.9191906228661537,
+    "da_as_total_mw_thirty_minutes_reserve": 0.335644006729126
+  },
+  "per_target_mse": {
+    "net_actual_interchange_mw": 1.636088490486145,
+    "gross_actual_interchange_mw": 0.4905781149864197,
+    "total_gen": 0.020419467240571976,
+    "metered_load_mw": 0.024547653272747993,
+    "total_losses": 0.2971682548522949,
+    "congestion_price_da": 1.2166593074798584,
+    "congestion_price_rt": 0.8274500370025635,
+    "marginal_loss_price_da": 0.28552666306495667,
+    "total_lmp_da": 0.030926821753382683,
+    "da_as_total_mw_primary_reserve": 0.0571836493909359,
+    "da_as_total_mw_synchronized_reserve": 0.06805998831987381,
+    "da_as_total_mw_thirty_minutes_reserve": 0.47676315903663635
+  },
+  "top10_sensitive_fields": [
+    "da_as_nsr_mw_primary_reserve",
+    "system_energy_price_da",
+    "gen_fuel_nuclear_mw",
+    "gross_inadv_interchange_mw",
+    "marginal_loss_price_rt",
+    "total_lmp_rt",
+    "gen_fuel_other_renewables_pct",
+    "gen_fuel_nuclear_pct",
+    "da_as_as_req_mw_thirty_minutes_reserve",
+    "gen_fuel_coal_mw"
+  ]
+}

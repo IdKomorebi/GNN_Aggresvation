@@ -1,0 +1,13 @@
+confidential_field,used_in_loss,loss_weighting,final_log_var,final_loss_weight
+net_actual_interchange_mw,True,uncertainty,-1.2853460311889648,3.6159188747406006
+gross_actual_interchange_mw,True,uncertainty,-1.3641666173934937,3.912461042404175
+total_gen,True,uncertainty,-3.0,20.08553695678711
+metered_load_mw,True,uncertainty,-3.0,20.08553695678711
+total_losses,True,uncertainty,-1.8035141229629517,6.070943832397461
+congestion_price_da,True,uncertainty,-0.4431406855583191,1.557591438293457
+congestion_price_rt,True,uncertainty,-0.7340785264968872,2.0835611820220947
+marginal_loss_price_da,True,uncertainty,-1.4960776567459106,4.464144706726074
+total_lmp_da,True,uncertainty,-3.0,20.08553695678711
+da_as_total_mw_primary_reserve,True,uncertainty,-2.8692145347595215,17.623170852661133
+da_as_total_mw_synchronized_reserve,True,uncertainty,-2.5057969093322754,12.25331974029541
+da_as_total_mw_thirty_minutes_reserve,True,uncertainty,-1.6949023008346558,5.4461140632629395

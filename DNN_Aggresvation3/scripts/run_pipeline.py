@@ -97,6 +97,98 @@ def _save_json(path: Path, data: dict) -> None:
         json.dump(data, f, indent=2, ensure_ascii=False, default=str)
 
 
+def _load_metric_cache(cache_tensor: Path, cache_meta: Path, metrics: list[str], columns: list[str]) -> np.ndarray | None:
+    """如果缓存与当前字段/指标完全匹配，则读取相关性张量。"""
+    if not cache_tensor.exists() or not cache_meta.exists():
+        return None
+    with open(cache_meta, "r", encoding="utf-8") as f:
+        meta = json.load(f)
+    if meta.get("metrics") != metrics or meta.get("columns") != columns:
+        return None
+    return np.load(cache_tensor)
+
+
+def _find_previous_metric_tensor(
+    output_root: Path,
+    metrics: list[str],
+    columns: list[str],
+) -> tuple[np.ndarray, Path] | None:
+    """从历史run目录中寻找可复用的相关性张量。"""
+    for meta_path in sorted(
+        output_root.glob("run_*/relationships/metrics.json"),
+        reverse=True,
+    ):
+        tensor_path = meta_path.with_name("metric_tensor.npy")
+        cached = _load_metric_cache(tensor_path, meta_path, metrics, columns)
+        if cached is not None:
+            return cached, tensor_path
+    return None
+
+
+def _load_or_compute_metric_tensor(
+    cfg: dict,
+    data_info: dict,
+    metrics: list[str],
+    seed: int,
+    output_root: Path,
+    run_dir: Path,
+) -> np.ndarray:
+    """读取、迁移或计算相关性张量，并在当前run目录保存副本。"""
+    corr_cfg = cfg.get("correlation", {})
+    columns = data_info["all_columns"]
+    meta = {"metrics": metrics, "columns": columns}
+
+    rel_dir = run_dir / "relationships"
+    rel_dir.mkdir(parents=True, exist_ok=True)
+
+    cache_dir_cfg = corr_cfg.get("cache_dir")
+    cache_dir = Path(_resolve_path(cache_dir_cfg)) if cache_dir_cfg else None
+    cache_tensor = cache_dir / "metric_tensor.npy" if cache_dir else None
+    cache_meta = cache_dir / "metrics.json" if cache_dir else None
+
+    if cache_tensor is not None and cache_meta is not None:
+        cached = _load_metric_cache(cache_tensor, cache_meta, metrics, columns)
+        if cached is not None:
+            print(f"  复用相关性缓存: {cache_tensor}")
+            np.save(rel_dir / "metric_tensor.npy", cached)
+            _save_json(rel_dir / "metrics.json", meta)
+            return cached
+        if cache_tensor.exists() or cache_meta.exists():
+            print("  相关性缓存字段或指标不匹配，将尝试历史run或重新计算。")
+
+    previous = _find_previous_metric_tensor(output_root, metrics, columns)
+    if previous is not None:
+        metric_tensor, source_path = previous
+        print(f"  从历史run复用相关性张量: {source_path}")
+        np.save(rel_dir / "metric_tensor.npy", metric_tensor)
+        _save_json(rel_dir / "metrics.json", meta)
+        if cache_dir is not None and cache_tensor is not None and cache_meta is not None:
+            cache_dir.mkdir(parents=True, exist_ok=True)
+            np.save(cache_tensor, metric_tensor)
+            _save_json(cache_meta, meta)
+            print(f"  相关性缓存已写入: {cache_dir}")
+        return metric_tensor
+
+    metric_tensor = compute_metric_tensor(
+        data_info["raw_df"],
+        columns,
+        metrics=metrics,
+        sample_size=int(corr_cfg.get("sample_size", 3000)),
+        expensive_sample_size=int(corr_cfg.get("expensive_sample_size", 1200)),
+        seed=seed,
+    )
+    np.save(rel_dir / "metric_tensor.npy", metric_tensor)
+    _save_json(rel_dir / "metrics.json", meta)
+
+    if cache_dir is not None and cache_tensor is not None and cache_meta is not None:
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        np.save(cache_tensor, metric_tensor)
+        _save_json(cache_meta, meta)
+        print(f"  相关性缓存已更新: {cache_dir}")
+
+    return metric_tensor
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="DNN_Aggresvation3: 端到端推断驱动的敏感度评估流水线"
@@ -164,19 +256,14 @@ def main() -> None:
     print(f"  [相关性计算] 计算 {len(data_info['all_columns'])} 个字段间的 {len(metrics)} 种相关性")
     print("=" * 60)
 
-    rel_dir = run_dir / "relationships"
-    rel_dir.mkdir(parents=True, exist_ok=True)
-
-    metric_tensor = compute_metric_tensor(
-        data_info["raw_df"],
-        data_info["all_columns"],
+    metric_tensor = _load_or_compute_metric_tensor(
+        cfg=cfg,
+        data_info=data_info,
         metrics=metrics,
-        sample_size=int(corr_cfg.get("sample_size", 3000)),
-        expensive_sample_size=int(corr_cfg.get("expensive_sample_size", 1200)),
         seed=seed,
+        output_root=output_root,
+        run_dir=run_dir,
     )
-    np.save(rel_dir / "metric_tensor.npy", metric_tensor)
-    _save_json(rel_dir / "metrics.json", {"metrics": metrics, "columns": data_info["all_columns"]})
     print(f"  相关性张量形状: {metric_tensor.shape}")
 
     # ================================================================

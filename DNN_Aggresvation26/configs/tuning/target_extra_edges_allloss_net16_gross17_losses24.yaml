@@ -1,0 +1,86 @@
+# DNN15：allloss专用，net/gross温和补边 + total_losses补到24
+
+experiment:
+  name: target_extra_edges_allloss_net16_gross17_losses24
+
+dataset:
+  csv_path: ../data/Processed/pjm_rto_hourly_2025_cleaned.csv
+  output_dir: outputs_target_extra
+
+fields:
+  drop_constant_columns: true
+  drop_columns:
+    - datetime_beginning_utc
+    - datetime_beginning_ept
+    - net_sched_interchange_mw
+    - prelim_load_avg_hourly
+    - total_pjm_rt_load_mwh
+    - wind_generation_mw
+    - solar_generation_mw
+    - da_as_as_mw_primary_reserve
+    - da_as_as_mw_synchronized_reserve
+    - da_as_as_mw_thirty_minutes_reserve
+    - system_energy_price_rt
+  confidential:
+    - net_actual_interchange_mw
+    - gross_actual_interchange_mw
+    - total_gen
+    - metered_load_mw
+    - total_losses
+    - congestion_price_da
+    - congestion_price_rt
+    - marginal_loss_price_da
+    - total_lmp_da
+    - da_as_total_mw_primary_reserve
+    - da_as_total_mw_synchronized_reserve
+    - da_as_total_mw_thirty_minutes_reserve
+
+correlation:
+  metrics: [pearson, spearman, kendall, nmi, distance_corr]
+  sample_size: 3000
+  expensive_sample_size: 1200
+  cache_dir: outputs/relationship_cache
+
+graph:
+  selection: threshold_or_topk
+  top_k: 8
+  threshold: 0.25
+  symmetrize: true
+  target_top_k_overrides:
+    net_actual_interchange_mw: 16
+    gross_actual_interchange_mw: 17
+    total_losses: 24
+
+model:
+  architecture: hybrid_bilinear_gated
+  hidden_dim: 64
+  num_layers: 3
+  dropout: 0.15
+  attention_dropout: 0.05
+  attention_dim: 64
+  attention_temperature: 1.0
+  edge_alpha_temperature: 0.35
+  alpha_init_std: 1.0
+  prior_scale_init: 1.0
+  gate_bias_init: -3.0
+  prior_log_eps: 0.0001
+  target_specific_heads: true
+  window_size: 1
+
+training:
+  epochs: 300
+  batch_size: 128
+  lr: 0.0005
+  alpha_lr_multiplier: 12.0
+  weight_decay: 0.0005
+  train_ratio: 0.7
+  patience: 80
+  loss_fn: mse
+  loss_exclude_confidential: []
+
+runtime:
+  seed: 42
+  device: cpu
+
+evaluation:
+  probe_results_csv: ../DNN_Aggresvation4/outputs/target_probe_20260521_113054/target_probe_results.csv

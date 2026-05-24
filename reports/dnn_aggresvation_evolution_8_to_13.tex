@@ -1,0 +1,186 @@
+% !TeX program = xelatex
+\documentclass[UTF8]{ctexart}
+
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\geometry{a4paper, margin=2.5cm}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.5em}
+\setlist[itemize]{leftmargin=2em}
+\setlist[enumerate]{leftmargin=2em}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    urlcolor=blue!60!black,
+    citecolor=blue!60!black
+}
+
+\title{面向电力数据隐性推断风险的图神经网络演化报告（阶段二：DNN8 - DNN13）}
+\author{haocun du}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+本文系统总结 DNN\_Aggresvation 项目从子项目8到子项目13的技术演化过程。该阶段的核心焦点集中于“相关性指标融合权重（Alpha）的分化能力”以及“动态匹配与关系先验的有效融合”。报告依次说明每一版模型如何通过收束参数（DNN8）、引入双线性交互（DNN9）、切断特征泄露倒逼权重分化（DNN10）、验证注意力解释性（DNN11）、试探参数自由度边界（DNN12），最终落位于针对有监督核心边进行定制化约束的全局最优架构（DNN13）。整体演化不仅带来了目标 MSE 的历史性突破（降至 0.3355），更在机理层面上清晰地证明了：无直接监督的 General 节点更适合线性关系主导的稳定传播，而有直接监督的 Confidential 目标更需要基于特定有向边的高度非线性关系推断。
+\end{abstract}
+
+\section{前置概念与符号沿用}
+
+本阶段演化沿用前期的核心符号体系与设定：
+\begin{itemize}
+    \item 节点集划分：General 节点集 $\mathcal{G}$，Confidential 节点集 $\mathcal{C}$。
+    \item 基础输入：General 节点的初始状态为其当期标准化真实值 $x_i(t)$；Confidential 节点的初始状态为其身份嵌入向量 $e_c$。
+    \item 训练范式：Inference-as-Supervision（推断即监督）。模型只接受 General 节点的真实输入，输出 Confidential 节点的预测值 $\hat{x}_c(t)$，并以重建真实 Confidential 值为目标。
+    \item 相关性指标：包含 Pearson, Spearman, Kendall, NMI, distance correlation，共 $M=5$ 种。
+\end{itemize}
+
+\section{子项目8：目标级权重与门控先验融合 (Target-level Alpha \& Gated Prior)}
+
+\subsection{设计目的}
+在子项目7中，为图中的每一条边都学习了一组独立的相关性指标融合权重（Per-edge Alpha）。但实验发现，参数过于分散导致监督信号微弱，大部分边的融合权重依旧接近均匀分布。因此，子项目8决定“收权”：为参数瘦身，赋予更为明确的语义。通过引入“目标级”融合权重，并结合可学习的门控（Gate）机制，让模型自适应地在“关系先验”与“动态匹配”间做权衡。
+
+\subsection{节点构造}
+沿用 Inference-as-Supervision 标准构造：General 输入 $x_i(t)$，Confidential 输入 $e_c$。
+
+\subsection{边权计算}
+将权重参数收束为两类：
+\begin{enumerate}
+    \item \textbf{General 节点全局权重}：所有 General-General 边共享一组全局相关性指标融合权重 $\alpha_G = \operatorname{softmax}(\beta_G / \tau)$。
+    \item \textbf{Confidential 目标专属权重}：每个 Confidential 目标节点 $c$ 学习自己专属的融合权重 $\alpha_c = \operatorname{softmax}(\beta_c / \tau)$。对于其所有入边 $j$，其关系先验定义为：
+    \[
+    p(c,j) = \sum_{m=1}^M \alpha_{c,m} r_{cj}^{(m)}
+    \]
+\end{enumerate}
+
+\subsection{图构建}
+使用统一的 Top-K 结合绝对阈值的掩码机制生成稀疏传播图。
+
+\subsection{聚合方式}
+General-General 边使用固定融合权重的 GCN 聚合。
+Confidential 节点读取源节点信息时，引入混合门控注意力（Hybrid Gated Attention）。注意力得分由动态匹配 $d(c,j)$ 和关系先验 $p(c,j)$ 组成：
+\[
+\lambda(c,j) = \sigma(W_q q_c + W_k k_j + W_r r_{cj} + b)
+\]
+\[
+\text{score}(c,j) = \lambda(c,j) \cdot d(c,j) + (1 - \lambda(c,j)) \cdot p(c,j)
+\]
+
+\subsection{训练目标}
+采用经过验证的 Loss-mask 机制，即将无法有效推断的 interchange 类字段排除出损失计算，从而不干扰整体图的学习方向。
+
+\subsection{结果与问题}
+最佳结果目标 MSE 为 0.3727。该结构明显提升了参数的可解释性（例如部分目标的 $\alpha_c$ 偏向 NMI，门控 $\lambda$ 在不同边上存在明确差异），但整体预测精度仍未打破子项目6（0.3488）的历史纪录。
+
+\section{子项目9：融合双线性动态注意力与精细调优}
+
+\subsection{设计目的}
+子项目9旨在融合两条成功路线：保留 DNN8 具有优秀可解释性的“门控先验框架”，同时引入 DNN6 中表现最强悍的“双线性动态注意力 (Target-bilinear)”以及目标特异性预测头（Target-specific heads）。
+
+\subsection{节点构造}
+结构不变。
+
+\subsection{边权计算}
+仍然使用 $\alpha_G$ 和 $\alpha_c$。
+
+\subsection{图构建}
+实验测试了 Top-3, Top-4, Top-5, Top-8, Top-12 的图密度，最终确定 Top-8 是最平衡的图密度结构。
+
+\subsection{聚合方式}
+将动态注意力部分替换为子项目6中的强力双线性交互：
+\[
+q_c = W_q h_c + U_q e_c, \quad k_j = W_k h_j
+\]
+动态得分加入原始特征偏置 $b(c,j) = W_r r_{cj}$：
+\[
+d'(c,j) = \frac{q_c^\top k_j}{\sqrt{d}} + b(c,j)
+\]
+随后仍然进行门控融合。
+
+\subsection{训练目标}
+通过精细调优来解决先验难以分化的问题：降低门控初始偏置（$b=-2.0$）强迫模型初期看重先验、为 $\beta$ 加入正态随机初始化、大幅提升 Alpha 的学习率倍数、调低 Alpha 的温度系数等。
+
+\subsection{结果与问题}
+在 Top-8 图密度下，目标 MSE 逼近 0.3480，单次表现已极度接近甚至略优于 DNN6 的记录。
+核心问题在于：虽然 General 的全局权重 $\alpha_G$ 出现了强烈的 Pearson（线性相关）断崖式偏好，但 Confidential 的权重 $\alpha_c$ 仍未显著分化。原因在于双线性动态项能力过强，压制了先验发挥的空间。
+
+\section{子项目10：堵截特征泄露，倒逼相关性分化 (Strict Alpha Dependency)}
+
+\subsection{设计目的}
+诊断发现，在 DNN9 的注意力公式中，原始的关系指标向量 $r_{cj}$ 被直接用于计算动态偏置 $b(c,j)$ 和门控 $\lambda$。这意味着模型可以轻易“绕过” $\alpha_c$ 去直接获取不同相关性指标的信息。子项目10的核心目的就是切断这条捷径，逼迫注意力机制必须强依赖 $\alpha_c$ 分化。
+
+\subsection{节点构造 \& 边权计算}
+将先验得分计算转为对数形式，以拉大强弱边差异：
+\[
+\text{prior\_score}(c,j) = \log\left(\sum_{m=1}^M \alpha_{c,m} r_{cj}^{(m)} + \epsilon\right)
+\]
+
+\subsection{聚合方式}
+大刀阔斧修改注意力公式：
+1. 动态得分彻底砍掉 $r_{cj}$ 偏置：$d(c,j) = \frac{q_c^\top k_j}{\sqrt{d}}$。
+2. 门控只读取加权后的 log-prior：$\lambda(c,j) = \sigma(W_q q_c + W_k k_j + W_p \cdot \text{prior\_score}(c,j) + b)$。
+3. 最终融合：$\text{score}(c,j) = \lambda(c,j) \cdot d(c,j) + (1-\lambda(c,j)) \cdot \operatorname{softplus}(\tau) \cdot \text{prior\_score}(c,j)$。
+
+\subsection{图构建 \& 训练目标}
+固定 Top-8，继续使用 mask-loss。
+
+\subsection{结果与问题}
+极其成功。目标 MSE 进一步降至 0.3468。
+最重要的是机制上的突破：$\alpha_c$ 终于出现了高度明显的专属目标分化（例如 Synchronized Reserve 和 Load 极度偏向 NMI，部分目标偏向 Pearson 或 Distance Correlation）。这证明之前的权重趋同确实是“特征泄露走捷径”所致。
+
+\section{子项目11：General 注意力解释性对照 (General Attention Test)}
+
+\subsection{设计目的}
+在前代实验中，全局 $\alpha_G$ 总是呈现出对 Pearson（线性相关）压倒性的依赖。为了验证这是否仅仅是因为 General 节点使用了固定权重 GCN 造成的偏误，子项目11将 General 节点间的聚合也升级为注意力机制。
+
+\subsection{边权计算 \& 聚合方式}
+为 General 节点构建了一套和 Confidential 节点完全对称的 gated log-prior attention 公式，只是共享一组 $\alpha_G$。
+
+\subsection{结果与问题}
+目标 MSE 保持在 0.3475，性能非常稳定。
+实验证明，即使改用灵活的注意力机制，$\alpha_G$ 的 Pearson 断崖领先现象虽有轻微削弱，但依然稳居第一。这提供了一个强有力的理论支撑：General 节点间的底层表征传播，确实天然地更依赖稳定的线性相关关系。
+
+\section{子项目12：节点级 General Alpha 探索 (Node-specific General Alpha)}
+
+\subsection{设计目的}
+测试参数自由度的边界：既然 Confidential 节点可以拥有专属 Alpha 并取得成功，如果将 General 节点的全局 $\alpha_G$ 也打散，让每个 General 目标节点都学习自己的 $\alpha_i^G$，能否进一步提升性能？
+
+\subsection{边权计算}
+不再使用全局 $\alpha_G$，而是针对每一个 General 节点 $i$ 定义一组 $\alpha_i^G$。其入边的先验变为 $p_G(i,j) = \sum_m \alpha_{i,m}^G r_{ij}^{(m)}$。
+
+\subsection{结果与问题}
+结果劣化，目标 MSE 退化至 0.3616。
+深入分析表明，由于 General 节点并没有类似 Confidential 的直接重建损失（Reconstruction Loss）作为监督信号，梯度的长距离回传极其微弱，导致大部分 General 节点的 Alpha 无法学出差异而停留在平均分布状态。过度增加自由度反而破坏了全局共享先验的稳定性。
+
+\section{子项目13：有向边专属权重的最终决战 (Directed Edge-specific Alpha)}
+
+\subsection{设计目的}
+综合以上五代的血泪教训，提取出最核心的设计哲学：“好钢用在刀刃上”。
+缺乏直接监督的 General 节点适合“求稳”以提供基础传播；拥有强监督信号的 Confidential 节点则需要“最高自由度”来精准捕获预测所需的深层关系。子项目13旨在实现这种究极解耦。
+
+\subsection{边权计算与聚合方式}
+1. \textbf{General 节点退回保守}：彻底摒弃子项目11和12的改动，General-General 传播恢复使用全局 $\alpha_G$ 与固定边权的普通 GCN，保证底层特征流动的绝对稳定。
+2. \textbf{Confidential 节点全面解放}：不再是每个节点一组权重，而是为**每一条有向入边**分配一组独立权重（Directed Edge-specific Alpha，即 $\alpha_{c,j}$）。这意味着如果目标 $c$ 观测源 $j$，其对相关性指标的偏好完全针对这条边进行定制。它不同于子项目7中参数冗余的全图逐边权重，因为这里的参数只服务于核心的预测目标。
+先验得分更新为：$p(c,j) = \sum_m \alpha_{c,j,m} r_{cj}^{(m)}$。
+
+\subsection{结果与问题}
+取得了本系列模型演进史上的**最强突破**。
+目标 MSE 大幅下降至 \textbf{0.3355}，远超所有此前结构。同时在机制诊断中观测到，每条进入 Confidential 的关键边都展现出极高定制化的相关性指标偏好（比如预测实时阻塞电价时，从日前系统电价传来的特征边极度依赖 NMI 非线性相关）。
+
+\section{阶段性总结与结论}
+
+DNN8 至 DNN13 是一段逻辑极其缜密的架构消融历程。从盲目放开参数（DNN7），到强行收紧参数并引入先验控制（DNN8），再到融合强动态模块导致先验失效（DNN9），随后通过精妙的结构设计逼迫模型正视关系指标的监督（DNN10）。在确认了 General 节点的线性本质（DNN11）和弱监督参数陷阱（DNN12）之后，模型最终演化为“底层保守共享、顶层有向边极致定制”的 DNN13 架构。
+
+目前，\textbf{DNN\_Aggresvation13} 的 mask-loss 版本凭借 0.3355 的碾压级测试结果，正式取代前代的 Target-bilinear GAT，成为当前针对电力数据隐性推断风险评估的全局最强主线模型。
+
+\end{document}

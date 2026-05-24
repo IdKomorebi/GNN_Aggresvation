@@ -1,0 +1,4 @@
+target_field,target_top_k,degree_before,degree_after,added_edges
+net_actual_interchange_mw,24,9,24,15
+total_losses,24,19,24,5
+total_lmp_da,24,32,32,0

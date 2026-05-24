@@ -1,0 +1,290 @@
+% !TeX program = xelatex
+\documentclass[UTF8]{ctexart}
+
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[strings]{underscore}
+\usepackage{xcolor}
+
+\geometry{a4paper, margin=2.5cm}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.5em}
+\setlist[itemize]{leftmargin=2em}
+\setlist[enumerate]{leftmargin=2em}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    urlcolor=blue!60!black,
+    citecolor=blue!60!black
+}
+
+\title{DNN\_Aggresvation 子项目14--26演化总结（清晰符号版）}
+\author{haocun du}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+本文总结 DNN\_Aggresvation 在子项目14到子项目26期间的完整演化。该阶段的核心任务是：在保持图结构可解释性的前提下，持续提升 confidential target 的推断性能，尤其关注低 R\(^2\) 字段（例如 congestion\_price\_da、net/gross interchange）的可恢复性。实验经历了注意力锐化、自适应构图、General-GAT、残差专家、不确定性加权、困难目标加权、目标扩边、短时序窗口、时序编码器和 staged training 等路线。最终形成的稳定结论是：图主干应保持 ``General-General 固定边权 GCN + Confidential 目标条件注意力''，时间维度（window=3/4）和 staged linear training 是最有效增益来源；net\_actual\_interchange\_mw 仍表现为强困难目标。
+\end{abstract}
+
+\section{阶段目标与问题口径}
+
+这一阶段（14--26）承接子项目13，主要围绕两个问题：
+\begin{enumerate}
+    \item 在整体误差已较低的情况下，如何继续提升中低 R\(^2\) confidential 字段；
+    \item 如何处理明显困难字段（尤其 net/gross interchange）与其他目标之间的训练冲突。
+\end{enumerate}
+
+本阶段一直并行维护两条评价口径：
+\begin{itemize}
+    \item \textbf{maskloss}：训练时排除 net/gross 两个字段，主要用于稳定评估其余 target；
+    \item \textbf{allloss}：训练时包含全部 confidential 字段，用于观察完整攻击能力和困难字段干扰。
+\end{itemize}
+
+\section{统一符号（本阶段）}
+
+\begin{longtable}{p{0.22\linewidth}p{0.70\linewidth}}
+\toprule
+符号 & 含义 \\
+\midrule
+\endhead
+\(X\in\mathbb{R}^{T\times N}\) & 原始数据矩阵，\(T\) 为时间长度，\(N\) 为字段数量。 \\
+\(v_i\) & 第 \(i\) 个字段对应图节点。 \\
+\(\mathcal{G},\mathcal{C}\) & general 与 confidential 节点集合。 \\
+\(r_{ij}^{(m)}\) & 字段 \(i,j\) 在第 \(m\) 种相关性指标下的关系值（Pearson/Spearman/Kendall/NMI/dCor）。 \\
+\(\alpha\) & 相关性指标融合权重，通常由 softmax 参数化。 \\
+\(a_{ij}\) & 融合后边权，\(a_{ij}=\sum_m \alpha_m r_{ij}^{(m)}\)。 \\
+\(B_{ij}\) & 边掩码（阈值与 Top-K 选择后保留为1）。 \\
+\(A_{ij}\) & 最终用于传播的边权，通常 \(A_{ij}=a_{ij}B_{ij}\)。 \\
+\(h_i^{(l)}\) & 节点 \(i\) 在第 \(l\) 层隐表示。 \\
+\(q_i,k_j,v_j\) & 注意力中的 query/key/value。 \\
+\(p_{c,j}\) & confidential 目标 \(c\) 到候选源 \(j\) 的关系先验边权。 \\
+\(\omega_{c,j}\) & confidential 目标 \(c\) 对源 \(j\) 的注意力归一化权重。 \\
+\(\mathcal{L}_{\text{mask}}\), \(\mathcal{L}_{\text{all}}\) & 两种训练口径下的损失。 \\
+R\(^2\) & 单字段决定系数。 \\
+target\_MSE / all\_MSE & 多字段聚合误差指标。 \\
+\bottomrule
+\end{longtable}
+
+\section{结构主线（14--26）}
+
+\subsection{固定不动的主骨架}
+
+从14开始，大多数实验都围绕同一骨架做局部改动：
+\begin{itemize}
+    \item General-General：全局相关系数权重融合后的固定边权 GCN 聚合；
+    \item Confidential-Source：目标条件化注意力，注意力分数融合动态匹配与关系先验；
+    \item 图构建：阈值 + Top-K 的稀疏边保留；
+    \item 输出：confidential 多目标回归。
+\end{itemize}
+
+\subsection{核心分歧}
+
+后续差异主要出现在四个维度：
+\begin{itemize}
+    \item 注意力是否更尖锐（temperature 调整）；
+    \item 边选择是否扩张（全局自适应、局部补边、目标定向扩边）；
+    \item 损失是否重加权（uncertainty / difficulty weighting）；
+    \item 是否引入时间窗口与 staged training。
+\end{itemize}
+
+\section{子项目逐项总结（14--26）}
+
+\subsection{DNN14：注意力锐化成为关键正增益}
+
+\textbf{动机}：在 DNN13 之上，验证低 R\(^2\) 字段瓶颈来自边数、注意力分散、先验强度还是 loss 权重。\\
+\textbf{改动}：对比了 top\_k=12、sharp attention（temperature \(2.0\rightarrow1.0\)）、更强 prior/alpha、弱目标加权。\\
+\textbf{结果}：
+\[
+\texttt{sharp\_attention\_maskloss: target\_MSE}=0.331766,\quad \texttt{all\_MSE}=0.541777
+\]
+是该轮最佳。\\
+\textbf{结论}：注意力过平滑确实存在；锐化有效。盲目增大 Top-K 并非主解。
+
+\subsection{DNN15：自适应构图与局部补边的大规模验证}
+
+\textbf{动机}：希望替代固定 top\_k=8，允许边数自适应。\\
+\textbf{改动}：先做全局自适应阈值拓扑（sharp/relaxed），后做局部目标补边，再做 all-loss 多轮补边（net/gross/losses/lmp 等组合）。\\
+\textbf{结果}：
+\begin{itemize}
+    \item 自适应构图未超过 DNN14 的 maskloss 主线；
+    \item all-loss 最佳对照保留为 \texttt{target\_extra\_edges\_allloss}，\(all\_MSE=0.439477\)；
+    \item net 字段即使多次补边仍为负 R\(^2\)。
+\end{itemize}
+\textbf{结论}：局部补边优于全局自适应，但仍不能取代 DNN14（maskloss）与既有 all-loss 最优对照。
+
+\subsection{DNN16：General-General 从 GCN 改 GAT 失败}
+
+\textbf{动机}：保持全局相关性权重不变，仅将 General-General 聚合改为 edge-prior GAT。\\
+\textbf{结果}：\texttt{general\_gat\_maskloss} 的 target\_MSE=0.339382，劣于 DNN14；allloss 也劣于 DNN15 对照。\\
+\textbf{结论}：当前监督条件下，General-GAT 引入额外自由度和噪声，不如固定边权 GCN 稳定。
+
+\subsection{DNN17：target residual expert 不构成有效突破}
+
+\textbf{动机}：在稳定骨架上增加 confidential 目标残差专家。\\
+\textbf{结果}：maskloss 和 allloss 均未超过对应主线；例如
+\[
+\texttt{residual\_expert\_maskloss: target\_MSE}=0.340547.
+\]
+\textbf{结论}：瓶颈不在输出层容量，而更可能在可用 source 信息与结构归纳偏置。
+
+\subsection{DNN18：uncertainty weighting 可分化但方向不对}
+
+\textbf{动机}：对 12 个目标使用可学习不确定性权重。\\
+\textbf{结果}：权重明显分化，但模型把易拟合字段权重推高，困难字段权重反而更低；maskloss/allloss 均未形成主线超越。\\
+\textbf{结论}：该策略符合概率意义上的 precision weighting，但不符合“补短板”目标。
+
+\subsection{DNN19：difficulty 静态加权也失败}
+
+\textbf{动机}：与 DNN18 相反，人工上调困难目标权重。\\
+\textbf{结果}：个别字段（如 cp\_da）小幅抬升，但 shared representation 被牵引，整体和其他关键字段明显受损。\\
+\textbf{结论}：简单改 loss 权重无法创造新信息，容易引入全局退化。
+
+\subsection{DNN20：目标扩边并非根因解}
+
+\textbf{动机}：保持 loss 不变，只给困难 confidential 目标扩 source 子图。\\
+\textbf{结果}：部分字段有局部收益，但 cp\_da、30min、总体指标未改善，maskloss/allloss 均不优。\\
+\textbf{结论}：问题不只是 top8 截断；过多边会提升噪声路径与注意力分配难度。
+
+\subsection{DNN21：window=3 是第一条强正向主线}
+
+\textbf{动机}：从结构调参转向时间维度。\\
+\textbf{改动}：输入从 window=1 改为 window=3。\\
+\textbf{结果}：
+\[
+\texttt{temporal\_window3\_maskloss: target\_MSE}=0.331438
+\]
+略优于 DNN14，并显著提升 cp\_da（约 \(0.2678\rightarrow0.2996\)）。allloss 也到 \(all\_MSE=0.439227\)。\\
+\textbf{结论}：短时序信息是有效增益来源。
+
+\subsection{DNN22：window=6 过长，噪声上升}
+
+\textbf{动机}：测试更长短期历史是否继续提升。\\
+\textbf{结果}：window=6 改善了 losses/mlp\_da，但整体与价格字段回落，allloss 变差。\\
+\textbf{结论}：存在最优短窗口，非越长越好。
+
+\subsection{DNN23：window=4 形成更均衡折中}
+
+\textbf{动机}：折中 window=3 与 window=6。\\
+\textbf{结果}：
+\[
+\texttt{temporal\_window4\_allloss\_netgross16: all\_MSE}=0.436237
+\]
+并把 gross 提到 0.3044（当时最佳）。\\
+\textbf{结论}：window=4 在 allloss 线上显著有效，成为新候选主线。
+
+\subsection{DNN24：Temporal MLP 编码器小幅刷新 all-loss}
+
+\textbf{动机}：在 window=4 上增强时间编码能力。\\
+\textbf{结果}：
+\[
+\texttt{temporal\_mlp\_window4\_allloss\_netgross16: all\_MSE}=0.435431
+\]
+较 DNN23 小幅更优，并改善 net（但损失 gross）。\\
+\textbf{结论}：更强编码器可提 all-loss，但在 maskloss 不稳定，且存在 target 间 trade-off。
+
+\subsection{DNN25：staged linear 成为 all-loss 当前最强}
+
+\textbf{动机}：训练前期先排除 net/gross，后期再纳入，缓解困难目标早期干扰。\\
+\textbf{结果}：
+\[
+\texttt{staged\_linear\_window4\_allloss\_netgross16: all\_MSE}=0.431317
+\]
+刷新当前最佳，且 net 从 DNN24 的 \(-0.7847\) 提升到 \(-0.6866\)。\\
+\textbf{结论}：staged training 在该任务上有效；staged MLP 反而退化。
+
+\subsection{DNN26：phase 长度调参验证 DNN25 的最优性}
+
+\textbf{动机}：只改 phase1 长度（60/140）验证 phase1=100 是否最佳折中。\\
+\textbf{结果}：
+\begin{itemize}
+    \item phase60：gross 更高（0.3270）但 net 与 overall 变差（all\_MSE=0.436862）；
+    \item phase140：整体明显退化（all\_MSE=0.449831）。
+\end{itemize}
+\textbf{结论}：phase1=100 是当前更优平衡点，DNN26 不替代 DNN25。
+
+\section{关键指标纵向表（14--26）}
+
+\begin{table}[htbp]
+\centering
+\caption{各子项目代表实验的核心结果（摘要）}
+\begin{tabular}{p{0.18\linewidth}p{0.22\linewidth}p{0.12\linewidth}p{0.12\linewidth}p{0.12\linewidth}p{0.12\linewidth}}
+\toprule
+子项目 & 代表实验 & target\_MSE & all\_MSE & gross R\(^2\) & net R\(^2\) \\
+\midrule
+DNN14 & sharp\_attention\_maskloss & 0.331766 & 0.541777 & excl. & excl. \\
+DNN15 & target\_extra\_edges\_allloss & -- & 0.439477 & 0.2367 & -0.8812 \\
+DNN16 & general\_gat\_maskloss / allloss & 0.339382 & 0.451012 & 0.2111 & -0.8511 \\
+DNN17 & residual\_expert\_maskloss / allloss & 0.340547 & 0.464070 & 0.0751 & -0.9526 \\
+DNN18 & uncertainty\_maskloss / allloss & 0.336464 & 0.439875 & 0.1603 & -0.8033 \\
+DNN19 & difficulty\_weighted\_maskloss / allloss & 0.349884 & 0.495329 & 0.0188 & -1.1563 \\
+DNN20 & source\_expand\_maskloss / allloss & 0.355969 & 0.462766 & 0.1062 & -1.0554 \\
+DNN21 & temporal\_window3\_maskloss / allloss & 0.331438 & 0.439227 & 0.2147 & -0.8514 \\
+DNN22 & temporal\_window6\_maskloss / allloss & 0.335776 & 0.449651 & 0.0317 & -0.8186 \\
+DNN23 & temporal\_window4\_maskloss / allloss & 0.333296 & 0.436237 & 0.3044 & -0.8312 \\
+DNN24 & temporal\_mlp\_window4\_maskloss / allloss & 0.336127 & 0.435431 & 0.2440 & -0.7847 \\
+DNN25 & staged\_linear\_window4\_allloss\_netgross16 & -- & \textbf{0.431317} & 0.1835 & \textbf{-0.6866} \\
+DNN26 & staged\_linear\_phase60 / phase140 & -- & 0.436862 / 0.449831 & 0.3270 / 0.1815 & -0.8354 / -0.9202 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{阶段性结论}
+
+\subsection{哪些方向证明有效}
+
+\begin{enumerate}
+    \item 注意力锐化（DNN14）是早期最直接有效改动；
+    \item 时间窗口（DNN21--DNN24）是中后期最稳定增益来源；
+    \item staged linear training（DNN25）在 all-loss 下提供了当前最优整体结果；
+    \item ``net/gross 局部加边'' 可作为 all-loss 对照策略，但不是主因解。
+\end{enumerate}
+
+\subsection{哪些方向反复无效}
+
+\begin{enumerate}
+    \item 全局自适应构图替代固定主图（DNN15）未稳定超越；
+    \item General-GAT 替代 General-GCN（DNN16）整体退化；
+    \item 仅靠 loss weighting（DNN18/19）难以解决困难目标；
+    \item 仅靠扩大困难目标候选边（DNN20）无法根治低 R\(^2\)。
+\end{enumerate}
+
+\subsection{关于困难字段的当前认识}
+
+\begin{itemize}
+    \item gross\_actual\_interchange\_mw 可通过时间窗口与补边获得阶段性提升；
+    \item net\_actual\_interchange\_mw 在多条路线下持续为负 R\(^2\)，说明其可推断性瓶颈更强，可能需要单独分支、不同时间尺度，或承认当前字段集下的不可稳定推断性。
+\end{itemize}
+
+\section{推荐主线（截至DNN26）}
+
+\begin{itemize}
+    \item \textbf{maskloss 主线候选}：
+    \[
+    \texttt{DNN21 (window=3)} \quad \text{或} \quad \texttt{DNN23 (window=4, linear)}
+    \]
+    \item \textbf{allloss 主线}：
+    \[
+    \texttt{DNN25 staged\_linear\_window4\_allloss\_netgross16}
+    \]
+    \item \textbf{gross 优先对照}：
+    \[
+    \texttt{DNN26 phase60}
+    \]
+    \item \textbf{结构消融保留}：DNN16 / DNN17 / DNN18 / DNN19 / DNN20。
+\end{itemize}
+
+\section{一句话总括}
+
+14--26阶段证明了：在本任务中，\textbf{先稳定图主干，再引入短时序信息与分阶段训练} 比继续堆叠注意力复杂度、更换 General 聚合范式或简单调 loss 权重更有效；当前最优 all-loss 已推进到 DNN25，但 net\_actual\_interchange\_mw 仍是后续专门建模的核心难点。
+
+\end{document}

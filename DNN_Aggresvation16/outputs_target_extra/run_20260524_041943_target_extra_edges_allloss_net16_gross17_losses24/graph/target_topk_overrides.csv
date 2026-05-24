@@ -1,0 +1,4 @@
+target_field,target_top_k,degree_before,degree_after,added_edges
+net_actual_interchange_mw,16,9,16,7
+gross_actual_interchange_mw,17,11,18,7
+total_losses,24,19,24,5

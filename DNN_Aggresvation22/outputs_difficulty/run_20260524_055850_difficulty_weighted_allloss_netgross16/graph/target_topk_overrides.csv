@@ -1,0 +1,3 @@
+target_field,target_top_k,degree_before,degree_after,added_edges
+net_actual_interchange_mw,16,9,16,7
+gross_actual_interchange_mw,16,11,17,6
