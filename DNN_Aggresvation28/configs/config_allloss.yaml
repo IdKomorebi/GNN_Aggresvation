@@ -1,0 +1,106 @@
+# DNN28 controlled all-loss counterpart of config_lossexclude.yaml.
+experiment:
+  name: dnn13_compact
+
+dataset:
+  # Raw is required here because this experiment retains fields removed from Processed.
+  csv_path: ../data/Raw/pjm_rto_hourly_2025_aligned_processed_one_header.csv
+  output_dir: outputs
+
+fields:
+  drop_constant_columns: true
+  drop_columns:
+    - datetime_beginning_utc
+    - datetime_beginning_ept
+    - net_sched_interchange_mw
+    #- prelim_load_avg_hourly
+    # - total_pjm_rt_load_mwh
+    #- wind_generation_mw
+    #- solar_generation_mw
+    - da_as_as_mw_primary_reserve
+    - da_as_as_mw_synchronized_reserve
+    - da_as_as_mw_thirty_minutes_reserve
+    - net_actual_interchange_mw
+    # - system_energy_price_rt
+  confidential:
+    - prelim_load_avg_hourly
+    # - net_actual_interchange_mw
+    - gross_actual_interchange_mw
+    - total_gen
+    - metered_load_mw
+    - total_losses
+    - congestion_price_da
+    - congestion_price_rt
+    - marginal_loss_price_da
+    - total_lmp_da
+    - da_as_total_mw_primary_reserve
+    - da_as_total_mw_synchronized_reserve
+    - da_as_total_mw_thirty_minutes_reserve
+
+correlation:
+  metrics: [pearson, spearman, kendall, nmi, distance_corr]
+  sample_size: 3000
+  expensive_sample_size: 1200
+  # Use "all" to reproduce DNN13 graph fitting; use "train" for stricter evaluation.
+  fit_on: all
+  reuse_cache: true
+
+graph:
+  top_k: 8
+  threshold: 0.25
+  symmetrize: true
+  # Add target-specific minimum source counts, for example:
+  target_top_k_overrides:
+    # net_actual_interchange_mw: 16
+    gross_actual_interchange_mw: 16
+    # da_as_total_mw_thirty_minutes_reserve: 16
+
+model:
+  hidden_dim: 64
+  num_layers: 3
+  dropout: 0.23
+  attention_dropout: 0.05
+  attention_dim: 64
+  # DNN13 baseline is 1; increase to 4 to test the DNN27-style extension.
+  attention_heads: 4
+  attention_temperature: 0.8
+  edge_alpha_temperature: 0.35
+  alpha_init_std: 1.0
+  prior_scale_init: 1.0
+  gate_bias_init: -3.0
+  prior_log_eps: 0.0001
+  # DNN13 baseline is linear/window_size=1; temporal tests can use window_size=3 or 4.
+  input_encoder: linear
+  input_encoder_dropout: 0.05
+  window_size: 3
+
+training:
+  epochs: 300
+  batch_size: 128
+  lr: 0.0005
+  alpha_lr_multiplier: 12.0
+  weight_decay: 0.0005
+  train_ratio: 0.7
+  patience: 80
+  loss_fn: mse
+  # This config includes every Confidential target in loss and names the run "allloss".
+  loss_exclude_confidential: []
+
+runtime:
+  seed: 42
+  # All-loss runs use physical GPU 1 by default.
+  device: cuda:1
+
+evaluation:
+  # Each target receives a separate DNN using only this run's General windows.
+  dnn_probe:
+    enabled: true
+    reuse_cache: true
+    hidden_dims: [128, 64]
+    dropout: 0.15
+    # Pin the General-only baseline while tuning GNN-specific parameters.
+    epochs: 300
+    batch_size: 128
+    lr: 0.0005
+    weight_decay: 0.0005
+    patience: 80
