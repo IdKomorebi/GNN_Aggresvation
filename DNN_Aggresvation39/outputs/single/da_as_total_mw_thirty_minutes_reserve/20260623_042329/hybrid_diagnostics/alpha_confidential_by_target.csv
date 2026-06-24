@@ -1,0 +1,2 @@
+target_field,n_valid_sources,pearson,spearman,kendall,nmi,distance_corr
+da_as_total_mw_thirty_minutes_reserve,18,0.18081149458885193,0.15310856699943542,0.16059225797653198,0.3444782793521881,0.16100938618183136

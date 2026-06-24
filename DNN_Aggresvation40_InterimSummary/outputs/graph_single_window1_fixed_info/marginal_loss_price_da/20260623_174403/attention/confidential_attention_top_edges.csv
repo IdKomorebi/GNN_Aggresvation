@@ -1,0 +1,13 @@
+target_field,rank,source_field,source_type,attention
+marginal_loss_price_da,1,forecast_load_mw_day_ahead,general,0.10577423870563507
+marginal_loss_price_da,2,forecast_load_mw_latest_available,general,0.10568676888942719
+marginal_loss_price_da,3,system_energy_price_da,general,0.09427907317876816
+marginal_loss_price_da,4,marginal_loss_price_rt,general,0.08141250908374786
+marginal_loss_price_da,5,gen_fuel_nuclear_pct,general,0.08115782588720322
+marginal_loss_price_da,6,total_lmp_rt,general,0.07848815619945526
+marginal_loss_price_da,7,gen_fuel_oil_mw,general,0.06843404471874237
+marginal_loss_price_da,8,gen_fuel_hydro_mw,general,0.06561039388179779
+marginal_loss_price_da,9,gen_fuel_coal_mw,general,0.05596141517162323
+marginal_loss_price_da,10,da_as_mcp_synchronized_reserve,general,0.04861915484070778
+marginal_loss_price_da,11,total_pjm_loc_credit,general,0.04039476066827774
+marginal_loss_price_da,12,gen_fuel_coal_pct,general,0.03775012493133545

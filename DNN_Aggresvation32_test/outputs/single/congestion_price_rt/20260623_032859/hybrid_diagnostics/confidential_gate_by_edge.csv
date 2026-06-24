@@ -1,0 +1,12 @@
+target_idx,target_field,source_idx,source_field,source_type,gate_lambda,prior
+55,congestion_price_rt,48,total_lmp_rt,general,0.1954154074192047,0.5940050482749939
+55,congestion_price_rt,7,gen_fuel_oil_mw,general,0.168084979057312,0.20488114655017853
+55,congestion_price_rt,5,gen_fuel_multiple_fuels_mw,general,0.1663905531167984,0.3293447196483612
+55,congestion_price_rt,15,gen_fuel_multiple_fuels_pct,general,0.16341806948184967,0.25516942143440247
+55,congestion_price_rt,44,system_energy_price_da,general,0.15758252143859863,0.40065693855285645
+55,congestion_price_rt,23,metered_load_mw,general,0.15382221341133118,0.2899717092514038
+55,congestion_price_rt,17,gen_fuel_oil_pct,general,0.14751750230789185,0.12109337002038956
+55,congestion_price_rt,49,marginal_loss_price_rt,general,0.13269487023353577,0.5718778371810913
+55,congestion_price_rt,45,total_lmp_da,general,0.11622009426355362,0.2867772877216339
+55,congestion_price_rt,24,rmccp,general,0.10646168887615204,0.3083321452140808
+55,congestion_price_rt,30,total_pjm_rmccp_cr,general,0.10391713678836823,0.33442872762680054

@@ -1,0 +1,69 @@
+{
+  "experiment": "single_marginal_loss_price_da",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation32_test/outputs/single/marginal_loss_price_da/20260623_032906",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 55,
+  "n_confidential": 1,
+  "n_nodes": 56,
+  "n_edges": 908,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.18153347074985504,
+  "final_test_mse_targets": 0.18153347074985504,
+  "final_test_mse_all": 0.18153347074985504,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "marginal_loss_price_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.18153347074985504,
+  "final_alpha": {
+    "pearson": 0.9360707998275757,
+    "spearman": 0.014836166054010391,
+    "kendall": 0.016598938032984734,
+    "nmi": 0.013589519076049328,
+    "distance_corr": 0.018904561176896095
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "marginal_loss_price_da": NaN
+  },
+  "final_target_loss_weights": {
+    "marginal_loss_price_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.9360707998275757,
+    "spearman": 0.014836166054010391,
+    "kendall": 0.016598938032984734,
+    "nmi": 0.013589519076049328,
+    "distance_corr": 0.018904561176896095
+  },
+  "alpha_confidential_by_target_mean": {
+    "marginal_loss_price_da": {
+      "pearson": 0.17050078511238098,
+      "spearman": 0.10613907128572464,
+      "kendall": 0.14111573994159698,
+      "nmi": 0.4329674243927002,
+      "distance_corr": 0.149277001619339
+    }
+  },
+  "per_target_r2": {
+    "marginal_loss_price_da": 0.8151653409004211
+  },
+  "per_target_mse": {
+    "marginal_loss_price_da": 0.18153348565101624
+  },
+  "top10_sensitive_fields": [
+    "total_lmp_da",
+    "total_losses",
+    "forecast_load_mw_day_ahead",
+    "system_energy_price_da",
+    "total_lmp_rt",
+    "gen_fuel_nuclear_pct",
+    "gen_fuel_oil_mw",
+    "congestion_price_da",
+    "forecast_load_mw_latest_available",
+    "gross_inadv_interchange_mw"
+  ]
+}

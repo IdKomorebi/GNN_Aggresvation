@@ -1,0 +1,69 @@
+{
+  "experiment": "single_net_actual_interchange_mw",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation40_InterimSummary/outputs/graph_single_window1_fixed_info/net_actual_interchange_mw/20260623_172243",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 608,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.13333871960639954,
+  "final_test_mse_targets": 0.13333871960639954,
+  "final_test_mse_all": 0.13333871960639954,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "net_actual_interchange_mw"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.13333871960639954,
+  "final_alpha": {
+    "pearson": 0.05384870991110802,
+    "spearman": 0.0792483314871788,
+    "kendall": 0.5102893114089966,
+    "nmi": 0.2821153402328491,
+    "distance_corr": 0.07449831813573837
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "net_actual_interchange_mw": NaN
+  },
+  "final_target_loss_weights": {
+    "net_actual_interchange_mw": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.05384870991110802,
+    "spearman": 0.0792483314871788,
+    "kendall": 0.5102893114089966,
+    "nmi": 0.2821153402328491,
+    "distance_corr": 0.07449831813573837
+  },
+  "alpha_confidential_by_target_mean": {
+    "net_actual_interchange_mw": {
+      "pearson": 0.08609490096569061,
+      "spearman": 0.06649371981620789,
+      "kendall": 0.0841498076915741,
+      "nmi": 0.6541528105735779,
+      "distance_corr": 0.10910879075527191
+    }
+  },
+  "per_target_r2": {
+    "net_actual_interchange_mw": 0.8685948848724365
+  },
+  "per_target_mse": {
+    "net_actual_interchange_mw": 0.13333873450756073
+  },
+  "top10_sensitive_fields": [
+    "da_as_as_req_mw_thirty_minutes_reserve",
+    "da_as_as_req_mw_synchronized_reserve",
+    "da_as_as_req_mw_primary_reserve",
+    "gen_fuel_gas_mw",
+    "gross_sched_interchange_mw",
+    "gen_fuel_nuclear_mw",
+    "gen_fuel_coal_mw",
+    "forecast_load_mw_latest_available",
+    "gen_fuel_other_renewables_mw",
+    "gen_fuel_other_renewables_pct"
+  ]
+}

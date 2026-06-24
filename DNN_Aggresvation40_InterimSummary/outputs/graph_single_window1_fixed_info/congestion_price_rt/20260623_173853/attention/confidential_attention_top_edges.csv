@@ -1,0 +1,10 @@
+target_field,rank,source_field,source_type,attention
+congestion_price_rt,1,total_lmp_rt,general,0.27203530073165894
+congestion_price_rt,2,marginal_loss_price_rt,general,0.19243475794792175
+congestion_price_rt,3,total_pjm_rmccp_cr,general,0.1332983374595642
+congestion_price_rt,4,rmccp,general,0.11045733094215393
+congestion_price_rt,5,system_energy_price_da,general,0.08770874887704849
+congestion_price_rt,6,gen_fuel_multiple_fuels_mw,general,0.07185666263103485
+congestion_price_rt,7,gen_fuel_multiple_fuels_pct,general,0.060101140290498734
+congestion_price_rt,8,gen_fuel_oil_mw,general,0.04908975213766098
+congestion_price_rt,9,gen_fuel_oil_pct,general,0.023017987608909607

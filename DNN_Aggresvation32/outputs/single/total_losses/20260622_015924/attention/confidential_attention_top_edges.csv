@@ -1,0 +1,13 @@
+target_field,rank,source_field,source_type,attention
+total_losses,1,gen_fuel_nuclear_mw,general,0.21729975938796997
+total_losses,2,marginal_loss_price_rt,general,0.20667143166065216
+total_losses,3,gen_fuel_wind_mw,general,0.1574975699186325
+total_losses,4,marginal_loss_price_da,general,0.05758829414844513
+total_losses,5,gen_fuel_nuclear_pct,general,0.05003524199128151
+total_losses,6,gross_actual_interchange_mw,general,0.046271950006484985
+total_losses,7,metered_load_mw,general,0.04226619005203247
+total_losses,8,gen_fuel_gas_mw,general,0.034471020102500916
+total_losses,9,gen_fuel_coal_pct,general,0.032330222427845
+total_losses,10,gen_fuel_other_renewables_pct,general,0.029382359236478806
+total_losses,11,gen_fuel_coal_mw,general,0.028453262522816658
+total_losses,12,forecast_load_mw_latest_available,general,0.02237727679312229

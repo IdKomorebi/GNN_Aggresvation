@@ -1,0 +1,6 @@
+metric,alpha
+pearson,0.023236996
+spearman,0.094851255
+kendall,0.8465781
+nmi,0.015173967
+distance_corr,0.02015975

@@ -1,0 +1,2 @@
+confidential_field,used_in_loss,loss_weighting,final_log_var,final_loss_weight
+total_losses,True,static,,1.0

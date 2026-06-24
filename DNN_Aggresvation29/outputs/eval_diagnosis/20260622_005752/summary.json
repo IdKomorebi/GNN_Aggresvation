@@ -1,0 +1,87 @@
+{
+  "n_total": 6556,
+  "n_general": 44,
+  "n_confidential": 12,
+  "temporal_train_size": 4589,
+  "temporal_test_size": 1967,
+  "pivot_summary": {
+    "total_gen": {
+      "temporal_70_30": 0.9953041076660156,
+      "shuffle_70_30": 0.9983556270599365,
+      "shuffle_5fold_mean": 0.9984067201614379,
+      "shuffle_vs_temporal_gap": 0.003102612495422319
+    },
+    "metered_load_mw": {
+      "temporal_70_30": 0.9608409404754639,
+      "shuffle_70_30": 0.9943363070487976,
+      "shuffle_5fold_mean": 0.9945013046264648,
+      "shuffle_vs_temporal_gap": 0.03366036415100093
+    },
+    "total_lmp_da": {
+      "temporal_70_30": 0.9416086673736572,
+      "shuffle_70_30": 0.9820266962051392,
+      "shuffle_5fold_mean": 0.9850185513496399,
+      "shuffle_vs_temporal_gap": 0.043409883975982666
+    },
+    "da_as_total_mw_primary_reserve": {
+      "temporal_70_30": 0.9341651201248169,
+      "shuffle_70_30": 0.9161909818649292,
+      "shuffle_5fold_mean": 0.9062144756317139,
+      "shuffle_vs_temporal_gap": -0.027950644493103027
+    },
+    "da_as_total_mw_synchronized_reserve": {
+      "temporal_70_30": 0.8406035900115967,
+      "shuffle_70_30": 0.8513192534446716,
+      "shuffle_5fold_mean": 0.836691963672638,
+      "shuffle_vs_temporal_gap": -0.003911626338958696
+    },
+    "total_losses": {
+      "temporal_70_30": 0.27208614349365234,
+      "shuffle_70_30": 0.7890111804008484,
+      "shuffle_5fold_mean": 0.7893523335456848,
+      "shuffle_vs_temporal_gap": 0.5172661900520324
+    },
+    "net_actual_interchange_mw": {
+      "temporal_70_30": -0.2560544013977051,
+      "shuffle_70_30": 0.7754546999931335,
+      "shuffle_5fold_mean": 0.7806383490562439,
+      "shuffle_vs_temporal_gap": 1.036692750453949
+    },
+    "da_as_total_mw_thirty_minutes_reserve": {
+      "temporal_70_30": 0.3641436696052551,
+      "shuffle_70_30": 0.7639418840408325,
+      "shuffle_5fold_mean": 0.7686646103858947,
+      "shuffle_vs_temporal_gap": 0.4045209407806396
+    },
+    "marginal_loss_price_da": {
+      "temporal_70_30": 0.36016297340393066,
+      "shuffle_70_30": 0.7370700836181641,
+      "shuffle_5fold_mean": 0.7558597326278687,
+      "shuffle_vs_temporal_gap": 0.395696759223938
+    },
+    "gross_actual_interchange_mw": {
+      "temporal_70_30": 0.15048104524612427,
+      "shuffle_70_30": 0.7441140413284302,
+      "shuffle_5fold_mean": 0.7384703993797302,
+      "shuffle_vs_temporal_gap": 0.587989354133606
+    },
+    "congestion_price_rt": {
+      "temporal_70_30": -1.1755309104919434,
+      "shuffle_70_30": 0.3925725221633911,
+      "shuffle_5fold_mean": 0.3703102946281433,
+      "shuffle_vs_temporal_gap": 1.5458412051200867
+    },
+    "congestion_price_da": {
+      "temporal_70_30": -0.1188575029373169,
+      "shuffle_70_30": 0.2242329716682434,
+      "shuffle_5fold_mean": 0.2489668607711792,
+      "shuffle_vs_temporal_gap": 0.3678243637084961
+    }
+  },
+  "description": {
+    "temporal_70_30": "当前GNN用的方式：前70%时序训练，后30%测试。训练集1-9月，测试集10-12月",
+    "shuffle_70_30": "随机70/30切分，打破时序。训练集和测试集同分布（都有1-12月数据）",
+    "shuffle_5fold_mean": "5-fold随机CV均值，更稳健的同分布参照",
+    "rolling_fold1-4": "滚动时序CV，每次用前k段训练第k+1段测试，定位漂移发生在哪个月"
+  }
+}

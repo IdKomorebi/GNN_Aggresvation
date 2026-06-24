@@ -1,0 +1,69 @@
+{
+  "experiment": "single_congestion_price_da",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation40_InterimSummary/outputs/graph_single_window1_fixed_info/congestion_price_da/20260623_173852",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 616,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.5901604890823364,
+  "final_test_mse_targets": 0.5901604890823364,
+  "final_test_mse_all": 0.5901604890823364,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "congestion_price_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.5901604890823364,
+  "final_alpha": {
+    "pearson": 0.9760885834693909,
+    "spearman": 0.006072711199522018,
+    "kendall": 0.006705756764858961,
+    "nmi": 0.0035515830386430025,
+    "distance_corr": 0.007581318262964487
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "congestion_price_da": NaN
+  },
+  "final_target_loss_weights": {
+    "congestion_price_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.9760885834693909,
+    "spearman": 0.006072711199522018,
+    "kendall": 0.006705756764858961,
+    "nmi": 0.0035515830386430025,
+    "distance_corr": 0.007581318262964487
+  },
+  "alpha_confidential_by_target_mean": {
+    "congestion_price_da": {
+      "pearson": 0.04826568067073822,
+      "spearman": 0.08233171701431274,
+      "kendall": 0.22415266931056976,
+      "nmi": 0.4376271665096283,
+      "distance_corr": 0.20762276649475098
+    }
+  },
+  "per_target_r2": {
+    "congestion_price_da": 0.45594358444213867
+  },
+  "per_target_mse": {
+    "congestion_price_da": 0.5901604890823364
+  },
+  "top10_sensitive_fields": [
+    "system_energy_price_da",
+    "gen_fuel_nuclear_pct",
+    "gen_fuel_gas_mw",
+    "gen_fuel_other_renewables_pct",
+    "gen_fuel_oil_mw",
+    "gen_fuel_coal_mw",
+    "gen_fuel_oil_pct",
+    "gen_fuel_wind_pct",
+    "gen_fuel_nuclear_mw",
+    "forecast_load_mw_latest_available"
+  ]
+}

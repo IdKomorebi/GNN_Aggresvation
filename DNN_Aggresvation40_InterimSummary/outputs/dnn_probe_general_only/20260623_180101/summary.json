@@ -1,0 +1,120 @@
+{
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation40_InterimSummary/outputs/dnn_probe_general_only/20260623_180101",
+  "seed": 42,
+  "device": "cuda:0",
+  "n_general": 44,
+  "n_confidential": 12,
+  "input_policy": "original_general_only",
+  "probe_config": {
+    "hidden_dims": [
+      128,
+      64
+    ],
+    "dropout": 0.15,
+    "lr": 0.0005,
+    "weight_decay": 0.0005,
+    "batch_size": 128,
+    "epochs": 600,
+    "patience": 80
+  },
+  "mean_probe_r2": 0.8936644202397751,
+  "median_probe_r2": 0.9247992817691238,
+  "results": [
+    {
+      "confidential_field": "total_gen",
+      "probe_r2": 0.99832719588513,
+      "probe_mse": 0.0017607738263905048,
+      "best_epoch": 136,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "metered_load_mw",
+      "probe_r2": 0.9962878493933237,
+      "probe_mse": 0.0038703163154423237,
+      "best_epoch": 152,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "total_lmp_da",
+      "probe_r2": 0.9904756458320699,
+      "probe_mse": 0.010877658613026142,
+      "best_epoch": 268,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "da_as_total_mw_primary_reserve",
+      "probe_r2": 0.9536016698145959,
+      "probe_mse": 0.04880278930068016,
+      "best_epoch": 152,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "total_losses",
+      "probe_r2": 0.9334742413917715,
+      "probe_mse": 0.06635401397943497,
+      "best_epoch": 350,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "net_actual_interchange_mw",
+      "probe_r2": 0.9295984627394397,
+      "probe_mse": 0.07143748551607132,
+      "best_epoch": 307,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "da_as_total_mw_synchronized_reserve",
+      "probe_r2": 0.920000100798808,
+      "probe_mse": 0.08250011503696442,
+      "best_epoch": 160,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "da_as_total_mw_thirty_minutes_reserve",
+      "probe_r2": 0.9141437178213236,
+      "probe_mse": 0.08923038095235825,
+      "best_epoch": 163,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "marginal_loss_price_da",
+      "probe_r2": 0.8816090434068973,
+      "probe_mse": 0.11627648025751114,
+      "best_epoch": 307,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "gross_actual_interchange_mw",
+      "probe_r2": 0.8759973140166133,
+      "probe_mse": 0.12903650104999542,
+      "best_epoch": 574,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "congestion_price_rt",
+      "probe_r2": 0.6702083206524372,
+      "probe_mse": 0.36852315068244934,
+      "best_epoch": 51,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    },
+    {
+      "confidential_field": "congestion_price_da",
+      "probe_r2": 0.6602494811248918,
+      "probe_mse": 0.3685414493083954,
+      "best_epoch": 276,
+      "baseline_gcn_r2": null,
+      "gat_loss_mask_r2": null
+    }
+  ]
+}

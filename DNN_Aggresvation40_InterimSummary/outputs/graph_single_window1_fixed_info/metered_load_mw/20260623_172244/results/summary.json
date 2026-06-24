@@ -1,0 +1,69 @@
+{
+  "experiment": "single_metered_load_mw",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation40_InterimSummary/outputs/graph_single_window1_fixed_info/metered_load_mw/20260623_172244",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 636,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.007142826449126005,
+  "final_test_mse_targets": 0.007142826449126005,
+  "final_test_mse_all": 0.007142826449126005,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "metered_load_mw"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.007142826449126005,
+  "final_alpha": {
+    "pearson": 0.20654967427253723,
+    "spearman": 0.1845189332962036,
+    "kendall": 0.24154281616210938,
+    "nmi": 0.18023794889450073,
+    "distance_corr": 0.18715070188045502
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "metered_load_mw": NaN
+  },
+  "final_target_loss_weights": {
+    "metered_load_mw": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.20654967427253723,
+    "spearman": 0.1845189332962036,
+    "kendall": 0.24154281616210938,
+    "nmi": 0.18023794889450073,
+    "distance_corr": 0.18715070188045502
+  },
+  "alpha_confidential_by_target_mean": {
+    "metered_load_mw": {
+      "pearson": 0.18767113983631134,
+      "spearman": 0.18897800147533417,
+      "kendall": 0.18926690518856049,
+      "nmi": 0.24520231783390045,
+      "distance_corr": 0.18888162076473236
+    }
+  },
+  "per_target_r2": {
+    "metered_load_mw": 0.9931491017341614
+  },
+  "per_target_mse": {
+    "metered_load_mw": 0.00714282738044858
+  },
+  "top10_sensitive_fields": [
+    "forecast_load_mw_latest_available",
+    "forecast_load_mw_day_ahead",
+    "gen_fuel_gas_mw",
+    "gen_fuel_coal_mw",
+    "gen_fuel_nuclear_pct",
+    "gen_fuel_other_renewables_pct",
+    "gen_fuel_nuclear_mw",
+    "gen_fuel_oil_mw",
+    "gen_fuel_multiple_fuels_mw",
+    "marginal_loss_price_rt"
+  ]
+}

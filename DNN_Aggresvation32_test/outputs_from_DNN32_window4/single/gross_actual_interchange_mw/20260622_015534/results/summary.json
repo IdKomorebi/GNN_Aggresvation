@@ -1,0 +1,69 @@
+{
+  "experiment": "single_gross_actual_interchange_mw",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation32/outputs/single/gross_actual_interchange_mw/20260622_015534",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 55,
+  "n_confidential": 1,
+  "n_nodes": 56,
+  "n_edges": 908,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.2759783864021301,
+  "final_test_mse_targets": 0.2759783864021301,
+  "final_test_mse_all": 0.2759783864021301,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "gross_actual_interchange_mw"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.2759783864021301,
+  "final_alpha": {
+    "pearson": 0.7945351004600525,
+    "spearman": 0.05822183936834335,
+    "kendall": 0.05746888741850853,
+    "nmi": 0.034567948430776596,
+    "distance_corr": 0.055206120014190674
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "gross_actual_interchange_mw": NaN
+  },
+  "final_target_loss_weights": {
+    "gross_actual_interchange_mw": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.7945351004600525,
+    "spearman": 0.05822183936834335,
+    "kendall": 0.05746888741850853,
+    "nmi": 0.034567948430776596,
+    "distance_corr": 0.055206120014190674
+  },
+  "alpha_confidential_by_target_mean": {
+    "gross_actual_interchange_mw": {
+      "pearson": 0.13722029328346252,
+      "spearman": 0.0947515219449997,
+      "kendall": 0.0907096341252327,
+      "nmi": 0.5764948129653931,
+      "distance_corr": 0.10082373768091202
+    }
+  },
+  "per_target_r2": {
+    "gross_actual_interchange_mw": 0.7351402044296265
+  },
+  "per_target_mse": {
+    "gross_actual_interchange_mw": 0.27597835659980774
+  },
+  "top10_sensitive_fields": [
+    "gross_inadv_interchange_mw",
+    "gross_sched_interchange_mw",
+    "da_as_ss_mw_primary_reserve",
+    "total_pjm_reg_purchases",
+    "total_losses",
+    "total_gen",
+    "gen_fuel_hydro_pct",
+    "gen_fuel_nuclear_mw",
+    "da_as_ss_mw_synchronized_reserve",
+    "gen_fuel_solar_pct"
+  ]
+}

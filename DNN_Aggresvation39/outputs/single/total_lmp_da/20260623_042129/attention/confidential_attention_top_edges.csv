@@ -1,0 +1,13 @@
+target_field,rank,source_field,source_type,attention
+total_lmp_da,1,system_energy_price_da,general,0.13803476095199585
+total_lmp_da,2,total_lmp_rt,general,0.06634670495986938
+total_lmp_da,3,da_as_mcp_synchronized_reserve,general,0.047542791813611984
+total_lmp_da,4,da_as_mcp_primary_reserve,general,0.042173996567726135
+total_lmp_da,5,forecast_load_mw_day_ahead,general,0.0417645201086998
+total_lmp_da,6,marginal_loss_price_da,general,0.0409131795167923
+total_lmp_da,7,gen_fuel_oil_mw,general,0.040454573929309845
+total_lmp_da,8,metered_load_mw,general,0.03969011455774307
+total_lmp_da,9,forecast_load_mw_latest_available,general,0.03870481625199318
+total_lmp_da,10,gen_fuel_oil_pct,general,0.03848707675933838
+total_lmp_da,11,marginal_loss_price_rt,general,0.03506333380937576
+total_lmp_da,12,congestion_price_da,general,0.03358053043484688

@@ -1,0 +1,13 @@
+confidential_field,used_in_loss,loss_weighting,final_log_var,final_loss_weight
+net_actual_interchange_mw,True,static,,1.0
+gross_actual_interchange_mw,True,static,,1.0
+total_gen,True,static,,1.0
+metered_load_mw,True,static,,1.0
+total_losses,True,static,,1.0
+congestion_price_da,True,static,,1.0
+congestion_price_rt,True,static,,1.0
+marginal_loss_price_da,True,static,,1.0
+total_lmp_da,True,static,,1.0
+da_as_total_mw_primary_reserve,True,static,,1.0
+da_as_total_mw_synchronized_reserve,True,static,,1.0
+da_as_total_mw_thirty_minutes_reserve,True,static,,1.0

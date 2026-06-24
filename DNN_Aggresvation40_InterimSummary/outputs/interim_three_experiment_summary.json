@@ -1,0 +1,8 @@
+{
+  "n_targets": 12,
+  "mean_graph_multi_fixed_info_r2": 0.8096251686414083,
+  "mean_graph_single_fixed_info_r2": 0.8417798032363256,
+  "mean_dnn_probe_general_only_r2": 0.8936644202397751,
+  "mean_graph_single_minus_probe": -0.05188461700344959,
+  "mean_graph_multi_minus_probe": -0.0840392515983669
+}

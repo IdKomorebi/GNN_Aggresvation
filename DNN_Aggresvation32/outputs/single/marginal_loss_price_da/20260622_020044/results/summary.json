@@ -1,0 +1,69 @@
+{
+  "experiment": "single_marginal_loss_price_da",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation32/outputs/single/marginal_loss_price_da/20260622_020044",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 55,
+  "n_confidential": 1,
+  "n_nodes": 56,
+  "n_edges": 908,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.23359280824661255,
+  "final_test_mse_targets": 0.23359280824661255,
+  "final_test_mse_all": 0.23359280824661255,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "marginal_loss_price_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.23359280824661255,
+  "final_alpha": {
+    "pearson": 0.8686310648918152,
+    "spearman": 0.030508583411574364,
+    "kendall": 0.029872003942728043,
+    "nmi": 0.027958856895565987,
+    "distance_corr": 0.04302949830889702
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "marginal_loss_price_da": NaN
+  },
+  "final_target_loss_weights": {
+    "marginal_loss_price_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.8686310648918152,
+    "spearman": 0.030508583411574364,
+    "kendall": 0.029872003942728043,
+    "nmi": 0.027958856895565987,
+    "distance_corr": 0.04302949830889702
+  },
+  "alpha_confidential_by_target_mean": {
+    "marginal_loss_price_da": {
+      "pearson": 0.15188583731651306,
+      "spearman": 0.12645547091960907,
+      "kendall": 0.1758357435464859,
+      "nmi": 0.39481744170188904,
+      "distance_corr": 0.15100552141666412
+    }
+  },
+  "per_target_r2": {
+    "marginal_loss_price_da": 0.7623509168624878
+  },
+  "per_target_mse": {
+    "marginal_loss_price_da": 0.23359279334545135
+  },
+  "top10_sensitive_fields": [
+    "total_lmp_da",
+    "total_losses",
+    "system_energy_price_da",
+    "gen_fuel_nuclear_pct",
+    "forecast_load_mw_day_ahead",
+    "forecast_load_mw_latest_available",
+    "marginal_loss_price_rt",
+    "total_lmp_rt",
+    "congestion_price_da",
+    "gross_inadv_interchange_mw"
+  ]
+}

@@ -1,0 +1,13 @@
+target_field,rank,source_field,source_type,attention
+metered_load_mw,1,forecast_load_mw_latest_available,general,0.09090104699134827
+metered_load_mw,2,forecast_load_mw_day_ahead,general,0.08622875064611435
+metered_load_mw,3,total_gen,general,0.08588153123855591
+metered_load_mw,4,gen_fuel_gas_mw,general,0.0640215203166008
+metered_load_mw,5,gen_fuel_nuclear_pct,general,0.055151522159576416
+metered_load_mw,6,gen_fuel_coal_mw,general,0.05425035208463669
+metered_load_mw,7,total_losses,general,0.041085004806518555
+metered_load_mw,8,gen_fuel_other_renewables_pct,general,0.03925560414791107
+metered_load_mw,9,gen_fuel_oil_mw,general,0.038995251059532166
+metered_load_mw,10,system_energy_price_da,general,0.03873901814222336
+metered_load_mw,11,total_lmp_da,general,0.03797035291790962
+metered_load_mw,12,total_lmp_rt,general,0.034821342676877975

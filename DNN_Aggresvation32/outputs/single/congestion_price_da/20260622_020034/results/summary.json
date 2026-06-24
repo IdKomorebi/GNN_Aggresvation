@@ -1,0 +1,69 @@
+{
+  "experiment": "single_congestion_price_da",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation32/outputs/single/congestion_price_da/20260622_020034",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 55,
+  "n_confidential": 1,
+  "n_nodes": 56,
+  "n_edges": 908,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.5246632695198059,
+  "final_test_mse_targets": 0.5246632695198059,
+  "final_test_mse_all": 0.5246632695198059,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "congestion_price_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.5246632695198059,
+  "final_alpha": {
+    "pearson": 0.7743073105812073,
+    "spearman": 0.03966698795557022,
+    "kendall": 0.06872481107711792,
+    "nmi": 0.04300261661410332,
+    "distance_corr": 0.07429824024438858
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "congestion_price_da": NaN
+  },
+  "final_target_loss_weights": {
+    "congestion_price_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.7743073105812073,
+    "spearman": 0.03966698795557022,
+    "kendall": 0.06872481107711792,
+    "nmi": 0.04300261661410332,
+    "distance_corr": 0.07429824024438858
+  },
+  "alpha_confidential_by_target_mean": {
+    "congestion_price_da": {
+      "pearson": 0.07271402329206467,
+      "spearman": 0.07053101807832718,
+      "kendall": 0.2507998049259186,
+      "nmi": 0.3343925178050995,
+      "distance_corr": 0.2715626657009125
+    }
+  },
+  "per_target_r2": {
+    "congestion_price_da": 0.517056941986084
+  },
+  "per_target_mse": {
+    "congestion_price_da": 0.5246632099151611
+  },
+  "top10_sensitive_fields": [
+    "system_energy_price_da",
+    "total_lmp_da",
+    "gen_fuel_nuclear_pct",
+    "forecast_load_mw_latest_available",
+    "marginal_loss_price_da",
+    "metered_load_mw",
+    "gen_fuel_other_renewables_pct",
+    "gen_fuel_gas_mw",
+    "gen_fuel_oil_mw",
+    "total_gen"
+  ]
+}

@@ -1,0 +1,2 @@
+target_field,n_valid_sources,pearson,spearman,kendall,nmi,distance_corr
+da_as_total_mw_primary_reserve,11,0.22215738892555237,0.1601106971502304,0.19130104780197144,0.26412180066108704,0.16230903565883636

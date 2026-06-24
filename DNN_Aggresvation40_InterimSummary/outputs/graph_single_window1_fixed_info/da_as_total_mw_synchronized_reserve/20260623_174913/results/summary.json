@@ -1,0 +1,69 @@
+{
+  "experiment": "single_da_as_total_mw_synchronized_reserve",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation40_InterimSummary/outputs/graph_single_window1_fixed_info/da_as_total_mw_synchronized_reserve/20260623_174913",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 610,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.08154073357582092,
+  "final_test_mse_targets": 0.08154073357582092,
+  "final_test_mse_all": 0.08154073357582092,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "da_as_total_mw_synchronized_reserve"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.08154073357582092,
+  "final_alpha": {
+    "pearson": 0.1099187359213829,
+    "spearman": 0.1043408215045929,
+    "kendall": 0.11322695761919022,
+    "nmi": 0.5807276368141174,
+    "distance_corr": 0.09178589284420013
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "da_as_total_mw_synchronized_reserve": NaN
+  },
+  "final_target_loss_weights": {
+    "da_as_total_mw_synchronized_reserve": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.1099187359213829,
+    "spearman": 0.1043408215045929,
+    "kendall": 0.11322695761919022,
+    "nmi": 0.5807276368141174,
+    "distance_corr": 0.09178589284420013
+  },
+  "alpha_confidential_by_target_mean": {
+    "da_as_total_mw_synchronized_reserve": {
+      "pearson": 0.16970930993556976,
+      "spearman": 0.16619232296943665,
+      "kendall": 0.18548673391342163,
+      "nmi": 0.31677091121673584,
+      "distance_corr": 0.16184070706367493
+    }
+  },
+  "per_target_r2": {
+    "da_as_total_mw_synchronized_reserve": 0.9209303855895996
+  },
+  "per_target_mse": {
+    "da_as_total_mw_synchronized_reserve": 0.08154073357582092
+  },
+  "top10_sensitive_fields": [
+    "da_as_nsr_mw_primary_reserve",
+    "da_as_as_req_mw_synchronized_reserve",
+    "da_as_as_req_mw_primary_reserve",
+    "da_as_as_req_mw_thirty_minutes_reserve",
+    "da_as_mcp_synchronized_reserve",
+    "gen_fuel_nuclear_mw",
+    "system_energy_price_da",
+    "da_as_mcp_primary_reserve",
+    "marginal_loss_price_rt",
+    "total_lmp_rt"
+  ]
+}

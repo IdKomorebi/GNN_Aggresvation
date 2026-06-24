@@ -1,0 +1,10 @@
+target_idx,target_field,source_idx,source_field,source_type,gate_lambda,prior
+55,net_actual_interchange_mw,31,total_pjm_rmpcp_cr,general,0.4633242189884186,0.11794625222682953
+55,net_actual_interchange_mw,39,da_as_total_mw_thirty_minutes_reserve,general,0.4402786195278168,0.13025984168052673
+55,net_actual_interchange_mw,37,da_as_total_mw_primary_reserve,general,0.431417852640152,0.12115512788295746
+55,net_actual_interchange_mw,15,gen_fuel_multiple_fuels_pct,general,0.40985220670700073,0.1409255415201187
+55,net_actual_interchange_mw,36,da_as_as_req_mw_thirty_minutes_reserve,general,0.3349444270133972,0.20552396774291992
+55,net_actual_interchange_mw,6,gen_fuel_nuclear_mw,general,0.324185311794281,0.3250444233417511
+55,net_actual_interchange_mw,35,da_as_as_req_mw_synchronized_reserve,general,0.3204863667488098,0.22710870206356049
+55,net_actual_interchange_mw,34,da_as_as_req_mw_primary_reserve,general,0.31881096959114075,0.22879481315612793
+55,net_actual_interchange_mw,53,gross_sched_interchange_mw,general,0.30724993348121643,0.44611358642578125

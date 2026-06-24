@@ -1,0 +1,69 @@
+{
+  "experiment": "single_net_actual_interchange_mw",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation39/outputs/single/net_actual_interchange_mw/20260623_041248",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 55,
+  "n_confidential": 1,
+  "n_nodes": 56,
+  "n_edges": 908,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.11439824104309082,
+  "final_test_mse_targets": 0.11439824104309082,
+  "final_test_mse_all": 0.11439824104309082,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "net_actual_interchange_mw"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.11439824104309082,
+  "final_alpha": {
+    "pearson": 0.01420515961945057,
+    "spearman": 0.01821456290781498,
+    "kendall": 0.9352566599845886,
+    "nmi": 0.01789621077477932,
+    "distance_corr": 0.014427351765334606
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "net_actual_interchange_mw": NaN
+  },
+  "final_target_loss_weights": {
+    "net_actual_interchange_mw": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.01420515961945057,
+    "spearman": 0.01821456290781498,
+    "kendall": 0.9352566599845886,
+    "nmi": 0.01789621077477932,
+    "distance_corr": 0.014427351765334606
+  },
+  "alpha_confidential_by_target_mean": {
+    "net_actual_interchange_mw": {
+      "pearson": 0.09548009186983109,
+      "spearman": 0.0809021145105362,
+      "kendall": 0.09947279840707779,
+      "nmi": 0.57016921043396,
+      "distance_corr": 0.15397581458091736
+    }
+  },
+  "per_target_r2": {
+    "net_actual_interchange_mw": 0.8872606754302979
+  },
+  "per_target_mse": {
+    "net_actual_interchange_mw": 0.11439825594425201
+  },
+  "top10_sensitive_fields": [
+    "total_gen",
+    "gross_sched_interchange_mw",
+    "da_as_as_req_mw_synchronized_reserve",
+    "da_as_as_req_mw_primary_reserve",
+    "forecast_load_mw_latest_available",
+    "forecast_load_mw_day_ahead",
+    "metered_load_mw",
+    "da_as_as_req_mw_thirty_minutes_reserve",
+    "gen_fuel_gas_mw",
+    "gen_fuel_nuclear_mw"
+  ]
+}

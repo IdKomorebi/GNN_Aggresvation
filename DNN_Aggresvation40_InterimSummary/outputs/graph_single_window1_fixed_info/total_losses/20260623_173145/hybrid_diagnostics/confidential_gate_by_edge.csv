@@ -1,0 +1,16 @@
+target_idx,target_field,source_idx,source_field,source_type,gate_lambda,prior
+44,total_losses,40,marginal_loss_price_rt,general,0.7738823890686035,0.6087803244590759
+44,total_losses,4,gen_fuel_nuclear_mw,general,0.5939500331878662,0.4850531220436096
+44,total_losses,9,gen_fuel_wind_mw,general,0.5735920071601868,0.18117770552635193
+44,total_losses,38,system_energy_price_da,general,0.4560406804084778,0.33496126532554626
+44,total_losses,19,forecast_load_mw_latest_available,general,0.44918087124824524,0.5301395654678345
+44,total_losses,16,gen_fuel_other_renewables_pct,general,0.41066956520080566,0.2545059621334076
+44,total_losses,14,gen_fuel_nuclear_pct,general,0.3787228465080261,0.3243677616119385
+44,total_losses,10,gen_fuel_coal_pct,general,0.3459974527359009,0.5938568711280823
+44,total_losses,20,forecast_load_mw_day_ahead,general,0.30462202429771423,0.3104057312011719
+44,total_losses,0,gen_fuel_coal_mw,general,0.298984169960022,0.39305204153060913
+44,total_losses,1,gen_fuel_gas_mw,general,0.19786155223846436,0.24853694438934326
+44,total_losses,39,total_lmp_rt,general,0.14839665591716766,0.2672831416130066
+44,total_losses,43,gross_inadv_interchange_mw,general,0.12881098687648773,0.1464371383190155
+44,total_losses,17,gen_fuel_solar_pct,general,0.10573617368936539,0.13016760349273682
+44,total_losses,7,gen_fuel_solar_mw,general,0.08326645195484161,0.08599898219108582
