@@ -1,0 +1,137 @@
+{
+  "n_subsets": 1437,
+  "n_unique_field_sets": 1431,
+  "duplicate_entry_count": 6,
+  "duplicate_groups": [
+    {
+      "fields": [
+        "rmpcp"
+      ],
+      "sids": [
+        "rs00",
+        "s22"
+      ],
+      "canonical_sid": "s22"
+    },
+    {
+      "fields": [
+        "da_as_ss_mw_thirty_minutes_reserve"
+      ],
+      "sids": [
+        "rs01",
+        "s36"
+      ],
+      "canonical_sid": "s36"
+    },
+    {
+      "fields": [
+        "gen_fuel_wind_pct"
+      ],
+      "sids": [
+        "rs02",
+        "s18"
+      ],
+      "canonical_sid": "s18"
+    },
+    {
+      "fields": [
+        "gen_fuel_storage_mw",
+        "total_pjm_loc_credit"
+      ],
+      "sids": [
+        "p08_23",
+        "rs04"
+      ],
+      "canonical_sid": "p08_23"
+    },
+    {
+      "fields": [
+        "gen_fuel_oil_pct"
+      ],
+      "sids": [
+        "rs05",
+        "s15"
+      ],
+      "canonical_sid": "s15"
+    },
+    {
+      "fields": [
+        "total_pjm_rmpcp_cr"
+      ],
+      "sids": [
+        "rs08",
+        "s28"
+      ],
+      "canonical_sid": "s28"
+    }
+  ],
+  "source_counts": {
+    "d60_random": 50,
+    "d67_single_pair": 990,
+    "d68_triple": 397
+  },
+  "group_counts": {
+    "wide_random": 50,
+    "single": 44,
+    "pair": 946,
+    "triple_top": 197,
+    "triple_rand": 200
+  },
+  "size_counts": {
+    "1": 49,
+    "4": 2,
+    "2": 947,
+    "3": 399,
+    "6": 4,
+    "5": 1,
+    "7": 3,
+    "8": 2,
+    "11": 2,
+    "14": 4,
+    "15": 1,
+    "13": 1,
+    "16": 1,
+    "12": 1,
+    "23": 2,
+    "22": 1,
+    "21": 3,
+    "20": 1,
+    "31": 1,
+    "24": 1,
+    "30": 1,
+    "33": 2,
+    "43": 1,
+    "42": 1,
+    "38": 2,
+    "36": 1,
+    "41": 3
+  },
+  "source_files": {
+    "DNN_Aggresvation60/outputs/subsets.json": "f6ae657ed8ba06f1a5bde5cf7bfebeab0779f936e95e221a44a4c5f4628c5a76",
+    "DNN_Aggresvation67/outputs/subsets.json": "180a83e9249ce0b9ca5391c515790ac5fc9cef0d9608f2e66acbe5ba5fb225fe",
+    "DNN_Aggresvation68/outputs/subsets.json": "2673eac27eec9a6bc8ec08c860297de1f46ae2cf62aae389bb3c6c7a7dc86ce7"
+  },
+  "base_yaml_sha256": "14a75b88410e76829bf75dc12c1d8734fb8d0563505d993d35c51ea108299663",
+  "metric_tensor_sha256": "43f3417d43bec79fc5cb8415864ec0b99f23d4c6bad5a6b147acdf60ed21169a",
+  "oracle_checkpoints": {
+    "oracle_gnn_seed0.pt": "3b7554b56c9a4b0ce58f59cc26a90fc7f5a10e0fbd860670f613db5ed95b7697",
+    "oracle_gnn_seed1.pt": "0d12fb772b13ed715f4c0dae1c03e67939ebf307dbd640f432d4230f75a23fad",
+    "oracle_gnn_seed2.pt": "e3bff82d911e21e4f25d2f58b3d9268361cfef49009c63b0e9316a2c2369d94b",
+    "oracle_mlp_seed0.pt": "b139c87f04f27c591053f533bb0efc0831cf9a13afc26dfe4895c72e200fae3e",
+    "oracle_mlp_seed1.pt": "a4f056fd183fe812f35ac1296fa12263063dd9d6cdeace8266ef137a1a9228c2",
+    "oracle_mlp_seed2.pt": "9c76cabe7679ebf2f5913deb79dcf13fd86d4908ae1456b3a4269c2ce96a2b2b"
+  },
+  "protocol": {
+    "split_seed": 42,
+    "retrain_seed": 0,
+    "oracle_finetune_seed": 0,
+    "k_grid": [
+      0,
+      10,
+      50,
+      200
+    ],
+    "truth_full_population": "dedicated DNN retrain",
+    "truth_structure_audit": "per-confidential max(DNN, GCN) on D60 plus stratified D67/D68 audit"
+  }
+}

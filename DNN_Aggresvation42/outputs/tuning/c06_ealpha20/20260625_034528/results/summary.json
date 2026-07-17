@@ -1,0 +1,69 @@
+{
+  "experiment": "c06_ealpha20",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation42/outputs/tuning/c06_ealpha20/20260625_034528",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 616,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.6177864670753479,
+  "final_test_mse_targets": 0.6177864670753479,
+  "final_test_mse_all": 0.6177864670753479,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "congestion_price_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.6177864670753479,
+  "final_alpha": {
+    "pearson": 0.3441794812679291,
+    "spearman": 0.17800624668598175,
+    "kendall": 0.17087015509605408,
+    "nmi": 0.12528321146965027,
+    "distance_corr": 0.18166081607341766
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "congestion_price_da": NaN
+  },
+  "final_target_loss_weights": {
+    "congestion_price_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.3441794812679291,
+    "spearman": 0.17800624668598175,
+    "kendall": 0.17087015509605408,
+    "nmi": 0.12528321146965027,
+    "distance_corr": 0.18166081607341766
+  },
+  "alpha_confidential_by_target_mean": {
+    "congestion_price_da": {
+      "pearson": 0.17837370932102203,
+      "spearman": 0.18014483153820038,
+      "kendall": 0.18293647468090057,
+      "nmi": 0.2301134467124939,
+      "distance_corr": 0.22843152284622192
+    }
+  },
+  "per_target_r2": {
+    "congestion_price_da": 0.43047577142715454
+  },
+  "per_target_mse": {
+    "congestion_price_da": 0.6177864670753479
+  },
+  "top10_sensitive_fields": [
+    "gen_fuel_coal_mw",
+    "gen_fuel_gas_mw",
+    "system_energy_price_da",
+    "forecast_load_mw_latest_available",
+    "gen_fuel_other_renewables_pct",
+    "forecast_load_mw_day_ahead",
+    "gen_fuel_nuclear_pct",
+    "gen_fuel_nuclear_mw",
+    "gross_inadv_interchange_mw",
+    "gen_fuel_oil_mw"
+  ]
+}

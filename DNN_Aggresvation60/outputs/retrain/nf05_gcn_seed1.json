@@ -1,0 +1,40 @@
+{
+  "subset_id": "nf05",
+  "group": "noise_floor",
+  "size": 16,
+  "fields": [
+    "gen_fuel_coal_mw",
+    "gen_fuel_hydro_mw",
+    "gen_fuel_nuclear_mw",
+    "gen_fuel_oil_mw",
+    "gen_fuel_solar_mw",
+    "gen_fuel_coal_pct",
+    "gen_fuel_gas_pct",
+    "gen_fuel_other_renewables_pct",
+    "total_pjm_rmpcp_cr",
+    "da_as_as_req_mw_synchronized_reserve",
+    "da_as_ss_mw_thirty_minutes_reserve",
+    "da_as_nsr_mw_primary_reserve",
+    "system_energy_price_da",
+    "marginal_loss_price_rt",
+    "gross_sched_interchange_mw",
+    "gross_inadv_interchange_mw"
+  ],
+  "struct": "gcn",
+  "seed": 1,
+  "mean_r2": 0.8570210933685303,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.8474571704864502,
+    "gross_actual_interchange_mw": 0.8061463236808777,
+    "total_gen": 0.9832836985588074,
+    "metered_load_mw": 0.9785381555557251,
+    "total_losses": 0.8424105048179626,
+    "congestion_price_da": 0.6517727375030518,
+    "congestion_price_rt": 0.634474515914917,
+    "marginal_loss_price_da": 0.8158006072044373,
+    "total_lmp_da": 0.9838284850120544,
+    "da_as_total_mw_primary_reserve": 0.9521303176879883,
+    "da_as_total_mw_synchronized_reserve": 0.9163265824317932,
+    "da_as_total_mw_thirty_minutes_reserve": 0.872083842754364
+  }
+}

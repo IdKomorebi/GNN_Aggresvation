@@ -1,0 +1,26 @@
+{
+  "subset_id": "p22_42",
+  "group": "pair",
+  "size": 2,
+  "fields": [
+    "rmpcp",
+    "gross_sched_interchange_mw"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.11471246927976608,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.2986346483230591,
+    "gross_actual_interchange_mw": 0.23815429210662842,
+    "total_gen": 0.16333812475204468,
+    "metered_load_mw": 0.12375384569168091,
+    "total_losses": 0.08855122327804565,
+    "congestion_price_da": 0.03498518466949463,
+    "congestion_price_rt": 0.0050392746925354,
+    "marginal_loss_price_da": 0.0452038049697876,
+    "total_lmp_da": 0.0833061933517456,
+    "da_as_total_mw_primary_reserve": 0.09050953388214111,
+    "da_as_total_mw_synchronized_reserve": 0.04973149299621582,
+    "da_as_total_mw_thirty_minutes_reserve": 0.1553419828414917
+  }
+}

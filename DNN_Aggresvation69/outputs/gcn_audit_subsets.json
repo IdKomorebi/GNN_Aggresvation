@@ -1,0 +1,245 @@
+{
+  "p09_18": {
+    "source": "d67_single_pair",
+    "group": "pair",
+    "size": 2,
+    "fields": [
+      "gen_fuel_wind_mw",
+      "gen_fuel_wind_pct"
+    ],
+    "canonical_sid": "p09_18",
+    "is_duplicate_entry": false,
+    "selection_reason": "pair_strong_dnn_synergy",
+    "dnn_max_synergy": 0.7653958797454834
+  },
+  "p03_13": {
+    "source": "d67_single_pair",
+    "group": "pair",
+    "size": 2,
+    "fields": [
+      "gen_fuel_multiple_fuels_mw",
+      "gen_fuel_multiple_fuels_pct"
+    ],
+    "canonical_sid": "p03_13",
+    "is_duplicate_entry": false,
+    "selection_reason": "pair_strong_dnn_synergy",
+    "dnn_max_synergy": 0.6956952214241028
+  },
+  "p02_12": {
+    "source": "d67_single_pair",
+    "group": "pair",
+    "size": 2,
+    "fields": [
+      "gen_fuel_hydro_mw",
+      "gen_fuel_hydro_pct"
+    ],
+    "canonical_sid": "p02_12",
+    "is_duplicate_entry": false,
+    "selection_reason": "pair_strong_dnn_synergy",
+    "dnn_max_synergy": 0.6651379466056824
+  },
+  "p31_32": {
+    "source": "d67_single_pair",
+    "group": "pair",
+    "size": 2,
+    "fields": [
+      "da_as_as_req_mw_primary_reserve",
+      "da_as_as_req_mw_synchronized_reserve"
+    ],
+    "canonical_sid": "p31_32",
+    "is_duplicate_entry": false,
+    "selection_reason": "pair_near_zero_dnn_synergy",
+    "dnn_max_synergy": 0.0002053976058959961
+  },
+  "p34_35": {
+    "source": "d67_single_pair",
+    "group": "pair",
+    "size": 2,
+    "fields": [
+      "da_as_ss_mw_primary_reserve",
+      "da_as_ss_mw_synchronized_reserve"
+    ],
+    "canonical_sid": "p34_35",
+    "is_duplicate_entry": false,
+    "selection_reason": "pair_near_zero_dnn_synergy",
+    "dnn_max_synergy": 0.0007395744323730469
+  },
+  "p34_36": {
+    "source": "d67_single_pair",
+    "group": "pair",
+    "size": 2,
+    "fields": [
+      "da_as_ss_mw_primary_reserve",
+      "da_as_ss_mw_thirty_minutes_reserve"
+    ],
+    "canonical_sid": "p34_36",
+    "is_duplicate_entry": false,
+    "selection_reason": "pair_near_zero_dnn_synergy",
+    "dnn_max_synergy": 0.0007395744323730469
+  },
+  "p06_13": {
+    "source": "d67_single_pair",
+    "group": "pair",
+    "size": 2,
+    "fields": [
+      "gen_fuel_other_renewables_mw",
+      "gen_fuel_multiple_fuels_pct"
+    ],
+    "canonical_sid": "p06_13",
+    "is_duplicate_entry": false,
+    "selection_reason": "pair_random",
+    "dnn_max_synergy": 0.10763263702392578
+  },
+  "p07_34": {
+    "source": "d67_single_pair",
+    "group": "pair",
+    "size": 2,
+    "fields": [
+      "gen_fuel_solar_mw",
+      "da_as_ss_mw_primary_reserve"
+    ],
+    "canonical_sid": "p07_34",
+    "is_duplicate_entry": false,
+    "selection_reason": "pair_random",
+    "dnn_max_synergy": 0.04559898376464844
+  },
+  "p00_01": {
+    "source": "d67_single_pair",
+    "group": "pair",
+    "size": 2,
+    "fields": [
+      "gen_fuel_coal_mw",
+      "gen_fuel_gas_mw"
+    ],
+    "canonical_sid": "p00_01",
+    "is_duplicate_entry": false,
+    "selection_reason": "pair_random",
+    "dnn_max_synergy": 0.13762080669403076
+  },
+  "t01_11_19": {
+    "source": "d68_triple",
+    "group": "triple_top",
+    "size": 3,
+    "fields": [
+      "gen_fuel_gas_mw",
+      "gen_fuel_gas_pct",
+      "forecast_load_mw_latest_available"
+    ],
+    "canonical_sid": "t01_11_19",
+    "is_duplicate_entry": false,
+    "selection_reason": "triple_strong_dnn_synergy",
+    "dnn_max_synergy": 0.4547143578529358
+  },
+  "t00_10_19": {
+    "source": "d68_triple",
+    "group": "triple_top",
+    "size": 3,
+    "fields": [
+      "gen_fuel_coal_mw",
+      "gen_fuel_coal_pct",
+      "forecast_load_mw_latest_available"
+    ],
+    "canonical_sid": "t00_10_19",
+    "is_duplicate_entry": false,
+    "selection_reason": "triple_strong_dnn_synergy",
+    "dnn_max_synergy": 0.42430543899536133
+  },
+  "t01_11_20": {
+    "source": "d68_triple",
+    "group": "triple_top",
+    "size": 3,
+    "fields": [
+      "gen_fuel_gas_mw",
+      "gen_fuel_gas_pct",
+      "forecast_load_mw_day_ahead"
+    ],
+    "canonical_sid": "t01_11_20",
+    "is_duplicate_entry": false,
+    "selection_reason": "triple_strong_dnn_synergy",
+    "dnn_max_synergy": 0.3614066243171692
+  },
+  "t03_09_18": {
+    "source": "d68_triple",
+    "group": "triple_top",
+    "size": 3,
+    "fields": [
+      "gen_fuel_multiple_fuels_mw",
+      "gen_fuel_wind_mw",
+      "gen_fuel_wind_pct"
+    ],
+    "canonical_sid": "t03_09_18",
+    "is_duplicate_entry": false,
+    "selection_reason": "triple_top_stratum_random",
+    "dnn_max_synergy": 0.18900680541992188
+  },
+  "t03_09_13": {
+    "source": "d68_triple",
+    "group": "triple_top",
+    "size": 3,
+    "fields": [
+      "gen_fuel_multiple_fuels_mw",
+      "gen_fuel_wind_mw",
+      "gen_fuel_multiple_fuels_pct"
+    ],
+    "canonical_sid": "t03_09_13",
+    "is_duplicate_entry": false,
+    "selection_reason": "triple_top_stratum_random",
+    "dnn_max_synergy": 0.180966317653656
+  },
+  "t04_07_17": {
+    "source": "d68_triple",
+    "group": "triple_top",
+    "size": 3,
+    "fields": [
+      "gen_fuel_nuclear_mw",
+      "gen_fuel_solar_mw",
+      "gen_fuel_solar_pct"
+    ],
+    "canonical_sid": "t04_07_17",
+    "is_duplicate_entry": false,
+    "selection_reason": "triple_top_stratum_random",
+    "dnn_max_synergy": 0.1745826005935669
+  },
+  "t07_24_31": {
+    "source": "d68_triple",
+    "group": "triple_rand",
+    "size": 3,
+    "fields": [
+      "gen_fuel_solar_mw",
+      "total_pjm_reg_purchases",
+      "da_as_as_req_mw_primary_reserve"
+    ],
+    "canonical_sid": "t07_24_31",
+    "is_duplicate_entry": false,
+    "selection_reason": "triple_random_stratum",
+    "dnn_max_synergy": 0.09460020065307617
+  },
+  "t23_25_31": {
+    "source": "d68_triple",
+    "group": "triple_rand",
+    "size": 3,
+    "fields": [
+      "total_pjm_loc_credit",
+      "total_pjm_self_sched_reg",
+      "da_as_as_req_mw_primary_reserve"
+    ],
+    "canonical_sid": "t23_25_31",
+    "is_duplicate_entry": false,
+    "selection_reason": "triple_random_stratum",
+    "dnn_max_synergy": 0.023944318294525146
+  },
+  "t02_33_40": {
+    "source": "d68_triple",
+    "group": "triple_rand",
+    "size": 3,
+    "fields": [
+      "gen_fuel_hydro_mw",
+      "da_as_as_req_mw_thirty_minutes_reserve",
+      "marginal_loss_price_rt"
+    ],
+    "canonical_sid": "t02_33_40",
+    "is_duplicate_entry": false,
+    "selection_reason": "triple_random_stratum",
+    "dnn_max_synergy": 0.09131848812103271
+  }
+}

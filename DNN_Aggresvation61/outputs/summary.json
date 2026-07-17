@@ -1,0 +1,74 @@
+{
+  "config": {
+    "experiment": {
+      "name": "dnn61_inference_chain"
+    },
+    "dataset": {
+      "csv_path": "../data/Processed/pjm_rto_hourly_2025_cleaned.csv",
+      "output_dir": "outputs",
+      "split_mode": "shuffle",
+      "train_ratio": 0.8,
+      "split_seed": 42
+    },
+    "fields": {
+      "drop_constant_columns": true,
+      "drop_columns": [],
+      "confidential": [
+        "net_actual_interchange_mw",
+        "gross_actual_interchange_mw",
+        "total_gen",
+        "metered_load_mw",
+        "total_losses",
+        "congestion_price_da",
+        "congestion_price_rt",
+        "marginal_loss_price_da",
+        "total_lmp_da",
+        "da_as_total_mw_primary_reserve",
+        "da_as_total_mw_synchronized_reserve",
+        "da_as_total_mw_thirty_minutes_reserve"
+      ]
+    },
+    "edges": {
+      "model": "hgb",
+      "hgb_max_iter": 100,
+      "knn_k": 25,
+      "n_jobs": 16,
+      "seed": 0
+    },
+    "sensitivity": {
+      "alpha": 0.8,
+      "edge_threshold": 0.05,
+      "top_chains_per_field": 5
+    },
+    "validation": {
+      "max_hops": 2,
+      "chain_edge_threshold": 0.05
+    }
+  },
+  "n_general": 44,
+  "n_confidential": 12,
+  "walk_scale": 0.1944390438792161,
+  "spearman_vs_realized_chained": {
+    "s_max": {
+      "spearman": 0.9859,
+      "p": 3.0474385912880203e-34
+    },
+    "s_or": {
+      "spearman": 0.9347,
+      "p": 1.758034250693315e-20
+    },
+    "s_walk": {
+      "spearman": 0.8646,
+      "p": 3.9171492221285867e-14
+    },
+    "s_1hop": {
+      "spearman": 0.9994,
+      "p": 1.5257935709806158e-63
+    },
+    "pearson_base": {
+      "spearman": 0.9461,
+      "p": 3.5101958807640203e-22
+    }
+  },
+  "runtime_sec": 1335.0
+}

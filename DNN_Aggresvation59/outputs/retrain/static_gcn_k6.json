@@ -1,0 +1,20 @@
+{
+  "ranking": "static",
+  "k": 6,
+  "struct": "gcn",
+  "mean_r2": 0.681854248046875,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.44604313373565674,
+    "gross_actual_interchange_mw": 0.6790412068367004,
+    "total_gen": 0.9760348200798035,
+    "metered_load_mw": 0.9868348836898804,
+    "total_losses": 0.6251834034919739,
+    "congestion_price_da": 0.33653706312179565,
+    "congestion_price_rt": 0.4957212805747986,
+    "marginal_loss_price_da": 0.7286686897277832,
+    "total_lmp_da": 0.9806484580039978,
+    "da_as_total_mw_primary_reserve": 0.7261378765106201,
+    "da_as_total_mw_synchronized_reserve": 0.5300770998001099,
+    "da_as_total_mw_thirty_minutes_reserve": 0.6713231801986694
+  }
+}

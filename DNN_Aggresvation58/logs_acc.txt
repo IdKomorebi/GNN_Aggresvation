@@ -1,0 +1,29 @@
+============================================================
+  [数据准备] 加载并预处理数据
+============================================================
+  删除常量列 (5): ['gen_fuel_storage_pct', 'da_as_mcp_thirty_minutes_reserve', 'da_as_ircmwt2_primary_reserve', 'da_as_ircmwt2_synchronized_reserve', 'da_as_ircmwt2_thirty_minutes_reserve']
+  删除含NaN的行: 8760 -> 6556
+  字段总数: 56
+  General字段: 44
+  Confidential字段: 12
+  时间步总数: 6556
+  切分方式: shuffle (seed=42)
+  训练集: 4589 行 (70%)
+  测试集: 1967 行 (30%)
+/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation58/scripts/topk_accuracy.py:70: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  mdl.load_state_dict(torch.load(path, map_location=DEV)); mdl.eval(); return mdl
+  DNN(44->12) ...
+  gcn_noprior ...
+  gcn_static ...
+  gcn_dynamic(zero-mask) ...
+  gcn_dynamic(masked) ...
+
+=== FAIR top-k (共同 oracle=遮蔽版) 前几个 k ===
+  k    DNN(44->12   gcn_noprio   gcn_static   gcn_dynami   gcn_dynami
+  1         0.279        0.279        0.279        0.279        0.335
+  2         0.361        0.361        0.458        0.361        0.457
+  4         0.599        0.533        0.533        0.599        0.599
+  8         0.657        0.726        0.745        0.726        0.729
+  16        0.779        0.785        0.789        0.785        0.782
+
+图: /data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation58/outputs/topk_accuracy.png

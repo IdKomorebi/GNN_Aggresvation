@@ -1,0 +1,69 @@
+{
+  "experiment": "sfull_marginal_loss_price_da",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation43/outputs/tuning/sfull_marginal_loss_price_da/20260625_215746",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 894,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.18381677567958832,
+  "final_test_mse_targets": 0.18381677567958832,
+  "final_test_mse_all": 0.18381677567958832,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "marginal_loss_price_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.18381677567958832,
+  "final_alpha": {
+    "pearson": 0.8568127155303955,
+    "spearman": 0.026318537071347237,
+    "kendall": 0.03062591888010502,
+    "nmi": 0.056789785623550415,
+    "distance_corr": 0.029453095048666
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "marginal_loss_price_da": NaN
+  },
+  "final_target_loss_weights": {
+    "marginal_loss_price_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.8568127155303955,
+    "spearman": 0.026318537071347237,
+    "kendall": 0.03062591888010502,
+    "nmi": 0.056789785623550415,
+    "distance_corr": 0.029453095048666
+  },
+  "alpha_confidential_by_target_mean": {
+    "marginal_loss_price_da": {
+      "pearson": 0.1852433979511261,
+      "spearman": 0.17932604253292084,
+      "kendall": 0.17274408042430878,
+      "nmi": 0.25875529646873474,
+      "distance_corr": 0.20393121242523193
+    }
+  },
+  "per_target_r2": {
+    "marginal_loss_price_da": 0.8128405213356018
+  },
+  "per_target_mse": {
+    "marginal_loss_price_da": 0.1838167905807495
+  },
+  "top10_sensitive_fields": [
+    "system_energy_price_da",
+    "gen_fuel_nuclear_pct",
+    "gen_fuel_nuclear_mw",
+    "forecast_load_mw_day_ahead",
+    "gen_fuel_other_renewables_pct",
+    "forecast_load_mw_latest_available",
+    "da_as_as_req_mw_thirty_minutes_reserve",
+    "gen_fuel_gas_pct",
+    "gross_sched_interchange_mw",
+    "da_as_as_req_mw_synchronized_reserve"
+  ]
+}

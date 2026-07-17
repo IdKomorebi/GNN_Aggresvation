@@ -1,0 +1,20 @@
+{
+  "registry_subsets": 1437,
+  "complete_truth_subsets": 1437,
+  "complete_estimate_subsets_by_arch": {
+    "gnn": 1437,
+    "mlp": 1437
+  },
+  "missing_truth_files": 0,
+  "missing_estimate_files": 0,
+  "k_grid": [
+    0,
+    10,
+    50,
+    200
+  ],
+  "truth_definition": {
+    "full": "dedicated DNN retrain",
+    "structure_audit": "per-conf max(dedicated DNN, dedicated GCN) on D60 50 + stratified 18"
+  }
+}

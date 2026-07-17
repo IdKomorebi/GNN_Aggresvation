@@ -1,0 +1,13 @@
+target,degree,entropy_norm,max_weight,uniform_weight,top_source
+da_as_total_mw_primary_reserve,18,0.5469,0.427,0.0556,da_as_nsr_mw_primary_reserve
+da_as_total_mw_synchronized_reserve,15,0.6006,0.3119,0.0667,da_as_nsr_mw_primary_reserve
+total_lmp_da,29,0.6851,0.4551,0.0345,system_energy_price_da
+metered_load_mw,30,0.7186,0.3089,0.0333,forecast_load_mw_latest_available
+gross_actual_interchange_mw,19,0.7217,0.4455,0.0526,gross_inadv_interchange_mw
+total_gen,27,0.7559,0.2769,0.037,forecast_load_mw_latest_available
+da_as_total_mw_thirty_minutes_reserve,24,0.8093,0.1883,0.0417,gen_fuel_nuclear_mw
+marginal_loss_price_da,23,0.8106,0.2661,0.0435,system_energy_price_da
+total_losses,22,0.8117,0.145,0.0455,gen_fuel_coal_mw
+congestion_price_rt,19,0.8225,0.2275,0.0526,marginal_loss_price_rt
+net_actual_interchange_mw,19,0.8559,0.2651,0.0526,gross_sched_interchange_mw
+congestion_price_da,20,0.937,0.1476,0.05,system_energy_price_da

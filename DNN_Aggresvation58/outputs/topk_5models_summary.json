@@ -1,0 +1,16 @@
+{
+  "upper_bounds": {
+    "DNN(44->12)": 0.8818840384483337,
+    "gcn_noprior": 0.8861494660377502,
+    "gcn_static": 0.8807299733161926,
+    "gcn_dynamic(zero-mask)": 0.8873577117919922,
+    "gcn_dynamic(masked)": 0.8519790172576904
+  },
+  "smallk_first10": {
+    "DNN(44->12)": 0.4388184189796448,
+    "gcn_noprior": 0.418385049700737,
+    "gcn_static": 0.4399902805685997,
+    "gcn_dynamic(zero-mask)": 0.398979714512825,
+    "gcn_dynamic(masked)": 0.6478425562381744
+  }
+}

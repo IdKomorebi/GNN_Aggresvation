@@ -1,0 +1,69 @@
+{
+  "experiment": "sfull_total_losses",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation43/outputs/tuning/sfull_total_losses/20260625_220626",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 892,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.08141250908374786,
+  "final_test_mse_targets": 0.08141250908374786,
+  "final_test_mse_all": 0.08141250908374786,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "total_losses"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.08141250908374786,
+  "final_alpha": {
+    "pearson": 0.09453947842121124,
+    "spearman": 0.04292511194944382,
+    "kendall": 0.05189436301589012,
+    "nmi": 0.7636711001396179,
+    "distance_corr": 0.046969976276159286
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "total_losses": NaN
+  },
+  "final_target_loss_weights": {
+    "total_losses": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.09453947842121124,
+    "spearman": 0.04292511194944382,
+    "kendall": 0.05189436301589012,
+    "nmi": 0.7636711001396179,
+    "distance_corr": 0.046969976276159286
+  },
+  "alpha_confidential_by_target_mean": {
+    "total_losses": {
+      "pearson": 0.1762109100818634,
+      "spearman": 0.17100436985492706,
+      "kendall": 0.1831943392753601,
+      "nmi": 0.2540968358516693,
+      "distance_corr": 0.21549361944198608
+    }
+  },
+  "per_target_r2": {
+    "total_losses": 0.9183767437934875
+  },
+  "per_target_mse": {
+    "total_losses": 0.08141250908374786
+  },
+  "top10_sensitive_fields": [
+    "marginal_loss_price_rt",
+    "gen_fuel_nuclear_mw",
+    "total_lmp_rt",
+    "gen_fuel_wind_mw",
+    "gen_fuel_wind_pct",
+    "system_energy_price_da",
+    "forecast_load_mw_latest_available",
+    "forecast_load_mw_day_ahead",
+    "gross_sched_interchange_mw",
+    "gen_fuel_other_renewables_mw"
+  ]
+}

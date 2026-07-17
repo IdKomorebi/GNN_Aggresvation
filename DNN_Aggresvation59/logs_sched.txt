@@ -1,0 +1,177 @@
+待跑 87 次重训（已跳过完成的）
+  [07:09:46] 启动 dnn_dnn_k1 on GPU 0
+  [07:09:46] 启动 dnn_dnn_k2 on GPU 1
+  [07:09:46] 启动 dnn_dnn_k3 on GPU 2
+  [07:09:46] 启动 dnn_dnn_k6 on GPU 3
+  [07:10:06] 完成 dnn_dnn_k1 [OK]
+  [07:10:06] 启动 dnn_dnn_k8 on GPU 0
+  [07:10:16] 完成 dnn_dnn_k2 [OK]
+  [07:10:16] 完成 dnn_dnn_k3 [OK]
+  [07:10:16] 完成 dnn_dnn_k6 [OK]
+  [07:10:16] 启动 dnn_dnn_k12 on GPU 1
+  [07:10:16] 启动 dnn_dnn_k16 on GPU 2
+  [07:10:16] 启动 dnn_dnn_k24 on GPU 3
+  [07:10:36] 完成 dnn_dnn_k8 [OK]
+  [07:10:36] 启动 dnn_dnn_k32 on GPU 0
+  [07:10:46] 完成 dnn_dnn_k16 [OK]
+  [07:10:46] 完成 dnn_dnn_k24 [OK]
+  [07:10:46] 启动 dnn_dnn_k44 on GPU 2
+  [07:10:46] 启动 dnn_gcn_k1 on GPU 3
+  [07:10:56] 完成 dnn_dnn_k12 [OK]
+  [07:10:56] 启动 dnn_gcn_k2 on GPU 1
+  [07:11:06] 完成 dnn_dnn_k32 [OK]
+  [07:11:06] 启动 dnn_gcn_k3 on GPU 0
+  [07:11:16] 完成 dnn_dnn_k44 [OK]
+  [07:11:16] 启动 dnn_gcn_k4 on GPU 2
+  [07:17:36] 完成 dnn_gcn_k1 [OK]
+  [07:17:36] 启动 dnn_gcn_k6 on GPU 3
+  [07:17:46] 完成 dnn_gcn_k2 [OK]
+  [07:17:46] 启动 dnn_gcn_k8 on GPU 1
+  [07:17:56] 完成 dnn_gcn_k3 [OK]
+  [07:17:56] 启动 dnn_gcn_k12 on GPU 0
+  [07:18:06] 完成 dnn_gcn_k4 [OK]
+  [07:18:06] 启动 dnn_gcn_k16 on GPU 2
+  [07:24:27] 完成 dnn_gcn_k6 [OK]
+  [07:24:27] 启动 dnn_gcn_k24 on GPU 3
+  [07:24:37] 完成 dnn_gcn_k8 [OK]
+  [07:24:37] 启动 dnn_gcn_k32 on GPU 1
+  [07:24:47] 完成 dnn_gcn_k12 [OK]
+  [07:24:47] 启动 dnn_gcn_k44 on GPU 0
+  [07:24:57] 完成 dnn_gcn_k16 [OK]
+  [07:24:57] 启动 noprior_dnn_k1 on GPU 2
+  [07:25:17] 完成 noprior_dnn_k1 [OK]
+  [07:25:17] 启动 noprior_dnn_k2 on GPU 2
+  [07:25:47] 完成 noprior_dnn_k2 [OK]
+  [07:25:47] 启动 noprior_dnn_k3 on GPU 2
+  [07:26:17] 完成 noprior_dnn_k3 [OK]
+  [07:26:17] 启动 noprior_dnn_k4 on GPU 2
+  [07:26:47] 完成 noprior_dnn_k4 [OK]
+  [07:26:47] 启动 noprior_dnn_k6 on GPU 2
+  [07:27:17] 完成 noprior_dnn_k6 [OK]
+  [07:27:17] 启动 noprior_dnn_k8 on GPU 2
+  [07:27:47] 完成 noprior_dnn_k8 [OK]
+  [07:27:47] 启动 noprior_dnn_k12 on GPU 2
+  [07:28:17] 完成 noprior_dnn_k12 [OK]
+  [07:28:17] 启动 noprior_dnn_k16 on GPU 2
+  [07:28:57] 完成 noprior_dnn_k16 [OK]
+  [07:28:57] 启动 noprior_dnn_k24 on GPU 2
+  [07:29:27] 完成 noprior_dnn_k24 [OK]
+  [07:29:27] 启动 noprior_dnn_k32 on GPU 2
+  [07:29:57] 完成 noprior_dnn_k32 [OK]
+  [07:29:57] 启动 noprior_dnn_k44 on GPU 2
+  [07:30:27] 完成 noprior_dnn_k44 [OK]
+  [07:30:27] 启动 noprior_gcn_k1 on GPU 2
+  [07:31:17] 完成 dnn_gcn_k24 [OK]
+  [07:31:17] 启动 noprior_gcn_k2 on GPU 3
+  [07:31:27] 完成 dnn_gcn_k32 [OK]
+  [07:31:27] 启动 noprior_gcn_k3 on GPU 1
+  [07:31:37] 完成 dnn_gcn_k44 [OK]
+  [07:31:37] 启动 noprior_gcn_k4 on GPU 0
+  [07:37:17] 完成 noprior_gcn_k1 [OK]
+  [07:37:17] 启动 noprior_gcn_k6 on GPU 2
+  [07:38:07] 完成 noprior_gcn_k2 [OK]
+  [07:38:07] 启动 noprior_gcn_k8 on GPU 3
+  [07:38:17] 完成 noprior_gcn_k3 [OK]
+  [07:38:17] 启动 noprior_gcn_k12 on GPU 1
+  [07:38:27] 完成 noprior_gcn_k4 [OK]
+  [07:38:27] 启动 noprior_gcn_k16 on GPU 0
+  [07:44:08] 完成 noprior_gcn_k6 [OK]
+  [07:44:08] 启动 noprior_gcn_k24 on GPU 2
+  [07:44:58] 完成 noprior_gcn_k8 [OK]
+  [07:44:58] 启动 noprior_gcn_k32 on GPU 3
+  [07:45:08] 完成 noprior_gcn_k12 [OK]
+  [07:45:08] 启动 noprior_gcn_k44 on GPU 1
+  [07:45:18] 完成 noprior_gcn_k16 [OK]
+  [07:45:18] 启动 static_dnn_k1 on GPU 0
+  [07:45:38] 完成 static_dnn_k1 [OK]
+  [07:45:38] 启动 static_dnn_k2 on GPU 0
+  [07:46:08] 完成 static_dnn_k2 [OK]
+  [07:46:08] 启动 static_dnn_k3 on GPU 0
+  [07:46:38] 完成 static_dnn_k3 [OK]
+  [07:46:38] 启动 static_dnn_k4 on GPU 0
+  [07:47:08] 完成 static_dnn_k4 [OK]
+  [07:47:08] 启动 static_dnn_k6 on GPU 0
+  [07:47:38] 完成 static_dnn_k6 [OK]
+  [07:47:38] 启动 static_dnn_k8 on GPU 0
+  [07:48:08] 完成 static_dnn_k8 [OK]
+  [07:48:08] 启动 static_dnn_k12 on GPU 0
+  [07:48:38] 完成 static_dnn_k12 [OK]
+  [07:48:38] 启动 static_dnn_k16 on GPU 0
+  [07:49:08] 完成 static_dnn_k16 [OK]
+  [07:49:08] 启动 static_dnn_k24 on GPU 0
+  [07:49:38] 完成 static_dnn_k24 [OK]
+  [07:49:38] 启动 static_dnn_k32 on GPU 0
+  [07:50:08] 完成 static_dnn_k32 [OK]
+  [07:50:08] 启动 static_dnn_k44 on GPU 0
+  [07:50:38] 完成 static_dnn_k44 [OK]
+  [07:50:38] 启动 static_gcn_k1 on GPU 0
+  [07:50:58] 完成 noprior_gcn_k24 [OK]
+  [07:50:58] 启动 static_gcn_k2 on GPU 2
+  [07:51:48] 完成 noprior_gcn_k32 [OK]
+  [07:51:48] 启动 static_gcn_k3 on GPU 3
+  [07:51:58] 完成 noprior_gcn_k44 [OK]
+  [07:51:58] 启动 static_gcn_k4 on GPU 1
+  [07:54:58] 完成 static_gcn_k2 [OK]
+  [07:54:58] 启动 static_gcn_k6 on GPU 2
+  [07:57:29] 完成 static_gcn_k1 [OK]
+  [07:57:29] 启动 static_gcn_k8 on GPU 0
+  [07:58:39] 完成 static_gcn_k3 [OK]
+  [07:58:39] 启动 static_gcn_k12 on GPU 3
+  [07:58:49] 完成 static_gcn_k4 [OK]
+  [07:58:49] 启动 static_gcn_k16 on GPU 1
+  [08:00:09] 完成 static_gcn_k6 [OK]
+  [08:00:09] 启动 static_gcn_k24 on GPU 2
+  [08:04:19] 完成 static_gcn_k8 [OK]
+  [08:04:19] 启动 static_gcn_k32 on GPU 0
+  [08:05:29] 完成 static_gcn_k12 [OK]
+  [08:05:29] 启动 static_gcn_k44 on GPU 3
+  [08:05:39] 完成 static_gcn_k16 [OK]
+  [08:05:39] 启动 zeromask_dnn_k1 on GPU 1
+  [08:05:59] 完成 zeromask_dnn_k1 [OK]
+  [08:05:59] 启动 zeromask_dnn_k2 on GPU 1
+  [08:06:29] 完成 zeromask_dnn_k2 [OK]
+  [08:06:29] 启动 zeromask_dnn_k3 on GPU 1
+  [08:06:59] 完成 zeromask_dnn_k3 [OK]
+  [08:06:59] 完成 static_gcn_k24 [OK]
+  [08:06:59] 启动 zeromask_dnn_k4 on GPU 1
+  [08:06:59] 启动 zeromask_dnn_k6 on GPU 2
+  [08:07:29] 完成 zeromask_dnn_k4 [OK]
+  [08:07:29] 完成 zeromask_dnn_k6 [OK]
+  [08:07:29] 启动 zeromask_dnn_k8 on GPU 1
+  [08:07:29] 启动 zeromask_dnn_k12 on GPU 2
+  [08:07:59] 完成 zeromask_dnn_k12 [OK]
+  [08:07:59] 启动 zeromask_dnn_k16 on GPU 2
+  [08:08:09] 完成 zeromask_dnn_k8 [OK]
+  [08:08:09] 启动 zeromask_dnn_k24 on GPU 1
+  [08:08:29] 完成 zeromask_dnn_k16 [OK]
+  [08:08:29] 启动 zeromask_dnn_k32 on GPU 2
+  [08:08:39] 完成 zeromask_dnn_k24 [OK]
+  [08:08:39] 启动 zeromask_dnn_k44 on GPU 1
+  [08:08:59] 完成 zeromask_dnn_k32 [OK]
+  [08:08:59] 启动 zeromask_gcn_k1 on GPU 2
+  [08:09:09] 完成 zeromask_dnn_k44 [OK]
+  [08:09:09] 启动 zeromask_gcn_k2 on GPU 1
+  [08:11:09] 完成 static_gcn_k32 [OK]
+  [08:11:09] 启动 zeromask_gcn_k3 on GPU 0
+  [08:12:19] 完成 static_gcn_k44 [OK]
+  [08:12:19] 启动 zeromask_gcn_k4 on GPU 3
+  [08:15:50] 完成 zeromask_gcn_k1 [OK]
+  [08:15:50] 启动 zeromask_gcn_k6 on GPU 2
+  [08:16:00] 完成 zeromask_gcn_k2 [OK]
+  [08:16:00] 启动 zeromask_gcn_k8 on GPU 1
+  [08:18:00] 完成 zeromask_gcn_k3 [OK]
+  [08:18:00] 启动 zeromask_gcn_k12 on GPU 0
+  [08:19:10] 完成 zeromask_gcn_k4 [OK]
+  [08:19:10] 启动 zeromask_gcn_k16 on GPU 3
+  [08:22:40] 完成 zeromask_gcn_k6 [OK]
+  [08:22:40] 启动 zeromask_gcn_k24 on GPU 2
+  [08:22:50] 完成 zeromask_gcn_k8 [OK]
+  [08:22:50] 启动 zeromask_gcn_k32 on GPU 1
+  [08:24:50] 完成 zeromask_gcn_k12 [OK]
+  [08:24:50] 启动 zeromask_gcn_k44 on GPU 0
+  [08:26:00] 完成 zeromask_gcn_k16 [OK]
+  [08:29:30] 完成 zeromask_gcn_k24 [OK]
+  [08:29:41] 完成 zeromask_gcn_k32 [OK]
+  [08:31:41] 完成 zeromask_gcn_k44 [OK]
+
+全部完成：87

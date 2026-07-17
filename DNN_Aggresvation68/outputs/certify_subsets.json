@@ -1,0 +1,3575 @@
+{
+ "t01_11_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_gas_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t04_14_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_nuclear_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t01_11_20": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_gas_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t00_10_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t00_10_20": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t04_14_20": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_nuclear_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t14_38_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "system_energy_price_da",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t02_12_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t09_18_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t00_10_14": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_nuclear_pct"
+  ]
+ },
+ "t09_18_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t11_14_17": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t07_11_14": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct"
+  ]
+ },
+ "t06_09_16": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t01_40_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t01_38_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "system_energy_price_da",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t01_07_11": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct"
+  ]
+ },
+ "t06_16_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t06_16_18": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t01_11_17": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t20_38_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "system_energy_price_da",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t03_04_29": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_nuclear_mw",
+   "da_as_mcp_primary_reserve"
+  ]
+ },
+ "t02_12_13": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "t00_38_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "system_energy_price_da",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t01_39_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "total_lmp_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t14_40_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t19_38_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "system_energy_price_da",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t00_40_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t02_03_12": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "t02_09_12": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "t09_14_18": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t06_13_16": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t20_39_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t03_06_16": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t19_39_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t11_17_20": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t13_33_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t07_11_20": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t11_17_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t07_11_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t01_11_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_gas_pct",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t03_09_13": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "t07_30_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "da_as_mcp_synchronized_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t09_18_39": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct",
+   "total_lmp_rt"
+  ]
+ },
+ "t06_16_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t03_13_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t00_10_13": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "t02_12_18": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t02_12_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t06_14_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t09_18_30": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t00_03_10": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_coal_pct"
+  ]
+ },
+ "t01_10_18": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t03_13_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t16_38_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "system_energy_price_da",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t00_12_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_hydro_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t14_39_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "total_lmp_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t01_11_14": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct"
+  ]
+ },
+ "t06_16_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t11_14_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t06_16_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t00_06_12": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "t09_18_29": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct",
+   "da_as_mcp_primary_reserve"
+  ]
+ },
+ "t14_19_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "forecast_load_mw_latest_available",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t04_07_17": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t01_14_17": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t06_16_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t05_09_18": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t07_17_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_solar_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t00_14_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t00_14_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t01_17_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t06_14_16": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t07_29_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "da_as_mcp_primary_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t13_31_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_as_req_mw_primary_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t03_13_18": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t01_17_20": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t00_14_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t02_06_10": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_coal_pct"
+  ]
+ },
+ "t13_32_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_as_req_mw_synchronized_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t01_07_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t00_03_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t06_30_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t07_10_12": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "t00_13_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t01_07_20": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t01_04_18": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t01_29_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "da_as_mcp_primary_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "t14_20_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "forecast_load_mw_day_ahead",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t00_02_06": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_other_renewables_mw"
+  ]
+ },
+ "t11_16_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t17_30_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_pct",
+   "da_as_mcp_synchronized_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t01_03_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t17_20_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_day_ahead",
+   "system_energy_price_da"
+  ]
+ },
+ "t07_13_17": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t07_20_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "forecast_load_mw_day_ahead",
+   "system_energy_price_da"
+  ]
+ },
+ "t11_20_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "forecast_load_mw_day_ahead",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t00_39_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t01_13_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t05_06_16": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t11_16_39": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct",
+   "total_lmp_rt"
+  ]
+ },
+ "t14_17_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_solar_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t00_11_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t01_07_14": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_nuclear_pct"
+  ]
+ },
+ "t06_30_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t00_10_15": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_oil_pct"
+  ]
+ },
+ "t06_16_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t01_04_09": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_wind_mw"
+  ]
+ },
+ "t20_29_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "da_as_mcp_primary_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "t01_09_10": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_coal_pct"
+  ]
+ },
+ "t05_15_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_oil_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t03_33_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t04_38_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "system_energy_price_da",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t11_38_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "system_energy_price_da",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t19_29_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "da_as_mcp_primary_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "t06_33_39": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "t05_15_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_oil_pct",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t00_05_10": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_coal_pct"
+  ]
+ },
+ "t11_19_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "forecast_load_mw_latest_available",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t03_09_18": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t00_06_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_other_renewables_mw",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t01_15_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_oil_pct",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t02_13_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t06_30_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t04_13_29": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_mcp_primary_reserve"
+  ]
+ },
+ "t06_29_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t02_04_13": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "t02_13_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t00_11_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t02_13_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t07_14_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_nuclear_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t01_39_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t00_11_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t10_38_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "system_energy_price_da",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t13_14_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t01_12_13": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "t01_03_12": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "t02_13_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t07_19_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "forecast_load_mw_latest_available",
+   "system_energy_price_da"
+  ]
+ },
+ "t00_02_10": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_coal_pct"
+  ]
+ },
+ "t01_02_13": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "t09_16_17": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t06_19_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "forecast_load_mw_latest_available",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t06_10_12": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "t06_29_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t07_38_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "system_energy_price_da",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t06_29_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t15_19_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_latest_available",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t01_02_03": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw"
+  ]
+ },
+ "t11_16_17": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t03_06_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_other_renewables_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t15_20_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_day_ahead",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t10_13_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t10_12_17": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t06_20_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "forecast_load_mw_day_ahead",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t09_14_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_nuclear_pct",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t06_15_16": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_oil_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t07_10_11": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_gas_pct"
+  ]
+ },
+ "t02_13_20": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t06_18_29": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_wind_pct",
+   "da_as_mcp_primary_reserve"
+  ]
+ },
+ "t20_40_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t12_13_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t06_14_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t12_13_20": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t11_13_16": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t17_19_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_latest_available",
+   "system_energy_price_da"
+  ]
+ },
+ "t01_19_40": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "forecast_load_mw_latest_available",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t02_12_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t01_29_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t06_14_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t02_12_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t00_06_11": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_gas_pct"
+  ]
+ },
+ "t16_40_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t02_07_12": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "t00_22_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "rmpcp",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t13_16_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_other_renewables_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t06_11_16": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t10_33_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "t00_13_14": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct"
+  ]
+ },
+ "t01_05_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_oil_mw",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t02_12_17": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t04_09_14": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_nuclear_pct"
+  ]
+ },
+ "t00_10_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t06_11_30": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_gas_pct",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t13_14_31": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t13_14_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t02_03_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t04_14_18": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t10_31_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "da_as_as_req_mw_primary_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "t00_10_12": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "t00_10_39": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "total_lmp_rt"
+  ]
+ },
+ "t06_12_16": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t00_10_32": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t10_32_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "da_as_as_req_mw_synchronized_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "t19_40_42": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t05_19_33": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "forecast_load_mw_latest_available",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t09_16_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_other_renewables_pct",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t11_40_43": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "marginal_loss_price_rt",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t13_14_38": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t03_12_19": {
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_hydro_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t08_14_25": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "gen_fuel_nuclear_pct",
+   "total_pjm_self_sched_reg"
+  ]
+ },
+ "t10_20_36": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "forecast_load_mw_day_ahead",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t18_28_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t18_28_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "total_pjm_rmpcp_cr",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t06_12_38": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_hydro_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t01_21_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "rmccp",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t08_25_39": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "total_pjm_self_sched_reg",
+   "total_lmp_rt"
+  ]
+ },
+ "t13_19_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "forecast_load_mw_latest_available",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t07_21_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "rmccp",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t22_26_34": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "rmpcp",
+   "total_pjm_assigned_reg",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "t00_13_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t00_04_28": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_mw",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "t02_35_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "da_as_ss_mw_synchronized_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t02_03_23": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "total_pjm_loc_credit"
+  ]
+ },
+ "t01_11_26": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_gas_pct",
+   "total_pjm_assigned_reg"
+  ]
+ },
+ "t05_24_34": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "total_pjm_reg_purchases",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "t15_19_24": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_latest_available",
+   "total_pjm_reg_purchases"
+  ]
+ },
+ "t34_35_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t16_26_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "total_pjm_assigned_reg",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t06_12_28": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_hydro_pct",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "t20_29_36": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t23_36_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_loc_credit",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t10_30_32": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t03_07_39": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_solar_mw",
+   "total_lmp_rt"
+  ]
+ },
+ "t11_42_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gross_sched_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t26_32_36": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_assigned_reg",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t00_11_16": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t06_35_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_ss_mw_synchronized_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t00_20_28": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "t18_25_29": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "total_pjm_self_sched_reg",
+   "da_as_mcp_primary_reserve"
+  ]
+ },
+ "t23_28_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_loc_credit",
+   "total_pjm_rmpcp_cr",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t21_23_26": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "rmccp",
+   "total_pjm_loc_credit",
+   "total_pjm_assigned_reg"
+  ]
+ },
+ "t06_08_39": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_storage_mw",
+   "total_lmp_rt"
+  ]
+ },
+ "t30_32_38": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "t03_09_15": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_oil_pct"
+  ]
+ },
+ "t04_20_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "forecast_load_mw_day_ahead",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t06_18_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_wind_pct",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t17_26_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_pct",
+   "total_pjm_assigned_reg",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t02_06_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_other_renewables_mw",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t02_40_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t00_38_39": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "system_energy_price_da",
+   "total_lmp_rt"
+  ]
+ },
+ "t04_06_32": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_other_renewables_mw",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t04_20_32": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "forecast_load_mw_day_ahead",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t03_26_28": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "t00_24_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "total_pjm_reg_purchases",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t01_02_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t09_12_14": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_nuclear_pct"
+  ]
+ },
+ "t01_04_39": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_mw",
+   "total_lmp_rt"
+  ]
+ },
+ "t31_36_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t21_27_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "rmccp",
+   "total_pjm_rmccp_cr",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t02_04_19": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_nuclear_mw",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t03_11_15": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_oil_pct"
+  ]
+ },
+ "t08_24_34": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "total_pjm_reg_purchases",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "t23_27_32": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_loc_credit",
+   "total_pjm_rmccp_cr",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t20_32_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t06_10_13": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "t18_20_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_day_ahead",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t05_06_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_other_renewables_mw",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t13_22_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "rmpcp",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t03_21_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "rmccp",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t03_30_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "da_as_mcp_synchronized_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t00_05_18": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t03_24_34": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "total_pjm_reg_purchases",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "t05_06_11": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_gas_pct"
+  ]
+ },
+ "t05_12_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_hydro_pct",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t00_21_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "rmccp",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t00_14_36": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_pct",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t04_09_38": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_wind_mw",
+   "system_energy_price_da"
+  ]
+ },
+ "t10_22_25": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "rmpcp",
+   "total_pjm_self_sched_reg"
+  ]
+ },
+ "t15_19_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_latest_available",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t08_29_32": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t02_19_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "forecast_load_mw_latest_available",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t04_16_20": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t24_26_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_reg_purchases",
+   "total_pjm_assigned_reg",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t06_29_36": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t10_19_34": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "forecast_load_mw_latest_available",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "t03_40_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t01_05_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_oil_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t03_18_19": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "t04_08_15": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_oil_pct"
+  ]
+ },
+ "t15_24_25": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "total_pjm_reg_purchases",
+   "total_pjm_self_sched_reg"
+  ]
+ },
+ "t08_32_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "da_as_as_req_mw_synchronized_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t10_36_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t14_33_39": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "t18_21_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "rmccp",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t16_21_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "rmccp",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t04_29_38": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "da_as_mcp_primary_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "t03_31_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t04_18_34": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_wind_pct",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "t09_25_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "total_pjm_self_sched_reg",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t03_35_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t10_24_36": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "total_pjm_reg_purchases",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t06_09_32": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_wind_mw",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t16_34_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "da_as_ss_mw_primary_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t08_33_36": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t02_15_38": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_oil_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t06_14_23": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_nuclear_pct",
+   "total_pjm_loc_credit"
+  ]
+ },
+ "t08_18_26": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "gen_fuel_wind_pct",
+   "total_pjm_assigned_reg"
+  ]
+ },
+ "t15_33_38": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "t22_24_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "rmpcp",
+   "total_pjm_reg_purchases",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t23_35_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_loc_credit",
+   "da_as_ss_mw_synchronized_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t07_08_28": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_storage_mw",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "t21_37_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "rmccp",
+   "da_as_nsr_mw_primary_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t39_40_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_lmp_rt",
+   "marginal_loss_price_rt",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t12_22_27": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_pct",
+   "rmpcp",
+   "total_pjm_rmccp_cr"
+  ]
+ },
+ "t00_16_18": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t00_09_15": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_oil_pct"
+  ]
+ },
+ "t23_25_31": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_loc_credit",
+   "total_pjm_self_sched_reg",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t11_23_26": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "total_pjm_loc_credit",
+   "total_pjm_assigned_reg"
+  ]
+ },
+ "t04_14_26": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_nuclear_pct",
+   "total_pjm_assigned_reg"
+  ]
+ },
+ "t05_18_31": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_wind_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t34_41_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "da_as_ss_mw_primary_reserve",
+   "net_inadv_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t05_18_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_wind_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t07_15_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_oil_pct",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t14_34_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t02_15_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_oil_pct",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t06_24_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "total_pjm_reg_purchases",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t04_11_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_gas_pct",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t00_14_38": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_pct",
+   "system_energy_price_da"
+  ]
+ },
+ "t25_33_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_self_sched_reg",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t17_40_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_pct",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t29_30_39": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_primary_reserve",
+   "da_as_mcp_synchronized_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "t14_19_34": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "forecast_load_mw_latest_available",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "t22_33_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "rmpcp",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t05_21_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "rmccp",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t04_12_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_hydro_pct",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t03_16_36": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_other_renewables_pct",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t25_30_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_self_sched_reg",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t09_14_15": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_oil_pct"
+  ]
+ },
+ "t23_29_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_loc_credit",
+   "da_as_mcp_primary_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t04_05_28": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_oil_mw",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "t18_27_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "total_pjm_rmccp_cr",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t18_27_28": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "total_pjm_rmccp_cr",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "t03_17_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_solar_pct",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t04_31_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t09_22_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "rmpcp",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t08_10_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "gen_fuel_coal_pct",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t08_13_16": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "t09_13_15": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_oil_pct"
+  ]
+ },
+ "t12_22_23": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_pct",
+   "rmpcp",
+   "total_pjm_loc_credit"
+  ]
+ },
+ "t10_13_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t20_28_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t04_20_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "forecast_load_mw_day_ahead",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t06_11_17": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "t20_25_38": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "total_pjm_self_sched_reg",
+   "system_energy_price_da"
+  ]
+ },
+ "t00_24_31": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "total_pjm_reg_purchases",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t05_12_24": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_hydro_pct",
+   "total_pjm_reg_purchases"
+  ]
+ },
+ "t06_10_32": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_coal_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t11_19_25": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "forecast_load_mw_latest_available",
+   "total_pjm_self_sched_reg"
+  ]
+ },
+ "t08_22_28": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "rmpcp",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "t00_13_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t03_06_22": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_other_renewables_mw",
+   "rmpcp"
+  ]
+ },
+ "t15_19_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_latest_available",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t05_22_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "rmpcp",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t03_18_23": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_wind_pct",
+   "total_pjm_loc_credit"
+  ]
+ },
+ "t35_37_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t02_15_18": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_oil_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "t07_24_31": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "total_pjm_reg_purchases",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t10_32_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "da_as_as_req_mw_synchronized_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t09_26_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "total_pjm_assigned_reg",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t03_10_25": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_coal_pct",
+   "total_pjm_self_sched_reg"
+  ]
+ },
+ "t05_20_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "forecast_load_mw_day_ahead",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t02_11_32": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_gas_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t02_33_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t05_33_36": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t12_34_41": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_pct",
+   "da_as_ss_mw_primary_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "t04_16_25": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_other_renewables_pct",
+   "total_pjm_self_sched_reg"
+  ]
+ },
+ "t17_24_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_pct",
+   "total_pjm_reg_purchases",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "t00_04_15": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_oil_pct"
+  ]
+ },
+ "t16_25_39": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "total_pjm_self_sched_reg",
+   "total_lmp_rt"
+  ]
+ },
+ "t24_25_26": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_reg_purchases",
+   "total_pjm_self_sched_reg",
+   "total_pjm_assigned_reg"
+  ]
+ },
+ "t14_25_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "total_pjm_self_sched_reg",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t00_09_10": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_coal_pct"
+  ]
+ },
+ "t07_15_28": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_oil_pct",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "t29_36_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t28_31_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t13_27_37": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "total_pjm_rmccp_cr",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "t18_30_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "da_as_mcp_synchronized_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t21_22_32": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "rmccp",
+   "rmpcp",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "t06_20_29": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "forecast_load_mw_day_ahead",
+   "da_as_mcp_primary_reserve"
+  ]
+ },
+ "t04_17_43": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_solar_pct",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "t10_28_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "total_pjm_rmpcp_cr",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t03_14_26": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_nuclear_pct",
+   "total_pjm_assigned_reg"
+  ]
+ },
+ "t15_16_31": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "gen_fuel_other_renewables_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "t02_05_07": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_solar_mw"
+  ]
+ },
+ "t12_13_29": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_mcp_primary_reserve"
+  ]
+ },
+ "t04_15_26": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_oil_pct",
+   "total_pjm_assigned_reg"
+  ]
+ },
+ "t19_29_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "da_as_mcp_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t00_10_35": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "t18_29_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "da_as_mcp_primary_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t23_34_40": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "total_pjm_loc_credit",
+   "da_as_ss_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "t11_15_20": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "t18_26_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "total_pjm_assigned_reg",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t00_09_14": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_nuclear_pct"
+  ]
+ },
+ "t02_30_33": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "t31_32_42": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "t01_25_30": {
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "total_pjm_self_sched_reg",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ }
+}

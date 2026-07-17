@@ -1,0 +1,111 @@
+{
+  "config": {
+    "recover_tau": 0.5,
+    "rhos": [
+      0.0,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "n_seeds": 20,
+    "alpha": 0.8,
+    "edge_threshold": 0.05
+  },
+  "results": [
+    {
+      "rho": 0.0,
+      "n_hidden_pairs": 528,
+      "mean_realized_chain": 0.1220232174026983,
+      "frac_recovered_all_gt0.5": 0.056818181818181816,
+      "frac_recovered_LEAKY_gt0.5": 0.8823529411764706,
+      "n_hidden_leaky_per_seed": 34.0,
+      "spearman_chain": 0.8949535889829217,
+      "spearman_pearson": 0.7793034917945443,
+      "spearman_1hop": NaN,
+      "missed_risk_fields_per_seed": 0.0
+    },
+    {
+      "rho": 0.3,
+      "n_hidden_pairs": 3217,
+      "mean_realized_chain": 0.12057328341267234,
+      "frac_recovered_all_gt0.5": 0.0587503885607709,
+      "frac_recovered_LEAKY_gt0.5": 0.8590909090909091,
+      "n_hidden_leaky_per_seed": 11.0,
+      "spearman_chain": 0.8837025293831654,
+      "spearman_pearson": 0.782618452051979,
+      "spearman_1hop": NaN,
+      "missed_risk_fields_per_seed": 0.0
+    },
+    {
+      "rho": 0.5,
+      "n_hidden_pairs": 5361,
+      "mean_realized_chain": 0.11314950535981409,
+      "frac_recovered_all_gt0.5": 0.05484051482932289,
+      "frac_recovered_LEAKY_gt0.5": 0.8212290502793296,
+      "n_hidden_leaky_per_seed": 17.9,
+      "spearman_chain": 0.8661130984857348,
+      "spearman_pearson": 0.7774051644087528,
+      "spearman_1hop": NaN,
+      "missed_risk_fields_per_seed": 0.0
+    },
+    {
+      "rho": 0.7,
+      "n_hidden_pairs": 7391,
+      "mean_realized_chain": 0.10027469664192049,
+      "frac_recovered_all_gt0.5": 0.04356649979705047,
+      "frac_recovered_LEAKY_gt0.5": 0.6722338204592901,
+      "n_hidden_leaky_per_seed": 23.95,
+      "spearman_chain": 0.8311420394120637,
+      "spearman_pearson": 0.7504408347632205,
+      "spearman_1hop": NaN,
+      "missed_risk_fields_per_seed": 0.35
+    },
+    {
+      "rho": 0.9,
+      "n_hidden_pairs": 9522,
+      "mean_realized_chain": 0.0595422038675089,
+      "frac_recovered_all_gt0.5": 0.02236925015752993,
+      "frac_recovered_LEAKY_gt0.5": 0.34521880064829824,
+      "n_hidden_leaky_per_seed": 30.85,
+      "spearman_chain": 0.7423168038383778,
+      "spearman_pearson": 0.7221295515042385,
+      "spearman_1hop": NaN,
+      "missed_risk_fields_per_seed": 3.45
+    }
+  ],
+  "detail": {
+    "0.0": {
+      "missed_risk_examples": []
+    },
+    "0.3": {
+      "missed_risk_examples": []
+    },
+    "0.5": {
+      "missed_risk_examples": []
+    },
+    "0.7": {
+      "missed_risk_examples": [
+        "gen_fuel_nuclear_mw --chain--> total_gen (R2=0.51)",
+        "total_lmp_rt --chain--> total_lmp_da (R2=0.50)",
+        "gen_fuel_gas_mw --chain--> total_gen (R2=0.87)",
+        "marginal_loss_price_rt --chain--> total_lmp_da (R2=0.50)",
+        "forecast_load_mw_latest_available --chain--> total_gen (R2=0.94)",
+        "gen_fuel_oil_pct --chain--> total_lmp_da (R2=0.53)",
+        "system_energy_price_da --chain--> total_lmp_da (R2=0.79)"
+      ]
+    },
+    "0.9": {
+      "missed_risk_examples": [
+        "gen_fuel_nuclear_pct --chain--> total_gen (R2=0.79)",
+        "forecast_load_mw_latest_available --chain--> total_gen (R2=0.89)",
+        "forecast_load_mw_day_ahead --chain--> total_gen (R2=0.89)",
+        "gen_fuel_coal_mw --chain--> total_gen (R2=0.76)",
+        "gen_fuel_oil_mw --chain--> total_lmp_da (R2=0.58)",
+        "gen_fuel_oil_pct --chain--> total_lmp_da (R2=0.51)",
+        "forecast_load_mw_day_ahead --chain--> total_gen (R2=0.97)",
+        "da_as_mcp_primary_reserve --chain--> total_lmp_da (R2=0.50)"
+      ]
+    }
+  }
+}

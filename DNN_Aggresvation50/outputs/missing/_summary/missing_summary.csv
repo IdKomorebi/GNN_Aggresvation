@@ -1,0 +1,5 @@
+frac,upper,top10_spread,best@top10
+25%,0.6352,0.4372,mask
+50%,0.7863,0.1453,single
+75%,0.829,0.1772,mask
+100%,0.8663,0.1413,shapley

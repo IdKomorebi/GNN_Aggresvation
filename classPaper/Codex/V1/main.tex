@@ -1,0 +1,552 @@
+\documentclass[UTF8,a4paper,zihao=5,fontset=fandol]{ctexart}
+
+% ============================================================
+% 课程信息：提交前只需修改下面四行
+% ============================================================
+\newcommand{\CourseName}{高级图论}
+\newcommand{\StudentName}{姓名待填写}
+\newcommand{\StudentID}{学号待填写}
+\newcommand{\Affiliation}{学院与专业待填写}
+
+\usepackage[left=2.45cm,right=2.45cm,top=2.35cm,bottom=2.35cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,bm,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs,multirow,tabularx,array,threeparttable}
+\usepackage{caption,subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks,bookmarksnumbered=true]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\definecolor{titleblue}{HTML}{244C78}
+\definecolor{graphblue}{HTML}{3B6FB6}
+\definecolor{warmred}{HTML}{C64D46}
+\definecolor{softgray}{HTML}{5C6670}
+
+\graphicspath{{figures/}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\linespread{1.18}
+\setlist{nosep,leftmargin=2em}
+\captionsetup{font=small,labelfont=bf,labelsep=quad}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\refname}{参考文献}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommand{\Rtwo}{R^2}
+\newcommand{\vtrue}{v_c(S)}
+\newcommand{\vhat}{\widehat v_c(S)}
+\newcommand{\indicator}{\mathbb{I}}
+\newcommand{\method}{GSSO}
+
+\ctexset{
+  section={
+    format=\large\bfseries\heiti\color{titleblue},
+    beforeskip=1.5ex plus .3ex minus .2ex,
+    afterskip=.9ex
+  },
+  subsection={
+    format=\normalsize\bfseries\heiti,
+    beforeskip=1.2ex plus .2ex minus .2ex,
+    afterskip=.5ex
+  },
+  subsubsection={
+    format=\normalsize\bfseries,
+    beforeskip=.9ex,
+    afterskip=.3ex
+  }
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \CourseName\ 课程论文}
+\fancyhead[R]{\small 图结构集合敏感度与协同推断}
+\fancyfoot[C]{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\hypersetup{
+  pdftitle={面向任意字段集合的图结构推断敏感度评估与协同泄露发现},
+  pdfauthor={\StudentName},
+  pdfsubject={高级图论课程论文},
+  pdfkeywords={推断图, 集合函数, 图神经网络, 数据敏感度, 协同推断}
+}
+
+\begin{document}
+\thispagestyle{empty}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lXr@{}}
+\small \StudentName\quad \StudentID & \centering\small \CourseName\ 课程论文 & \small 2026年7月\\
+\end{tabularx}
+\vspace{1.5mm}
+\hrule height 0.8pt
+
+\vspace{10mm}
+\begin{center}
+  {\zihao{2}\heiti\color{titleblue}
+  面向任意字段集合的图结构推断敏感度评估\\[2mm]
+  与协同泄露发现\par}
+  \vspace{5mm}
+  {\zihao{4}\fangsong \StudentName\quad（\StudentID）\par}
+  \vspace{2mm}
+  {\zihao{-4}\songti \Affiliation\par}
+\end{center}
+
+\vspace{6mm}
+\begin{abstract}
+传统数据敏感度评估通常为单个字段给出独立分数，但在电力数据中，多个单独风险较低的字段可能通过物理恒等式或统计耦合共同推断出机密字段，因此敏感度本质上是定义在字段幂集上的集合函数。本文提出一种面向任意字段集合的图结构推断敏感度框架。首先，将可见字段与机密字段表示为带权推断图，并将集合敏感度定义为攻击者仅观察集合 $S$ 时能够达到的截断决定系数 $v_c(S)$；其次，分别使用专用 DNN/GCN 攻击者刻画经验推断上限，使用随机掩码通用 Oracle 摊销指数级子集空间的扫描成本，并以少步微调和逐集合重训练完成候选认证；最后，从 $v_c(S)$ 中导出二阶协同边与三阶协同超边，使“任意集合敏感度”成为主问题，而协同推断成为集合函数上的结构化结果。
+
+在 8760 条 PJM RTO 小时级记录、44 个可见字段和 12 个机密字段上，50 个宽尺寸随机集合的最优经验推断能力随集合规模由 $0.2311$ 增至 $0.8647$。专用 GCN 在 5--8 和 9--16 字段区间分别比 DNN 高 $0.0235$ 和 $0.0130$，总体平均高 $0.0072$，表明图结构在中等规模、仍存在可用邻接关系的集合上能够小幅提高推断上限。与此同时，通用随机掩码 Oracle 中 MLP 比当前 GNN 更忠实，说明“图攻击者更强”与“图 Oracle 更准”是两个不同命题。采用 MLP Oracle 微调 500 步后，二阶协同排序相对重训真值的 Spearman 相关系数达到 $0.9597$，top-20 重合率为 $0.95$，单集合耗时约 $1.01$ s。重训认证进一步发现，风电功率与风电占比共同推断总发电量时产生 $0.765$ 的二阶增量协同；燃气功率、燃气占比与负荷预测共同推断净交换功率时产生 $0.455$ 的不可约三阶协同。结果说明，以推断图、集合函数和协同图联合描述数据风险，能够发现单字段排序无法表达的组合泄露路径。
+
+\noindent\textbf{关键词：}推断图；集合函数；图神经网络；数据敏感度；协同推断；高阶超图
+\end{abstract}
+
+\vspace{3mm}
+\begin{center}
+{\zihao{3}\bfseries Graph-Structured Inference Sensitivity for Arbitrary Field Sets\\
+and Synergistic Leakage Discovery\par}
+\end{center}
+
+\begingroup
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+Field-wise sensitivity scores cannot describe a key risk in power-system data: several fields that are weak individually may jointly reveal a confidential target through physical identities or statistical dependence. We formulate sensitivity as a set function over the power set of observable fields and propose a graph-structured sensitivity-oracle framework. Observable and confidential fields form a weighted inference graph. For a visible subset $S$, $v_c(S)$ is defined by the clipped test-set coefficient of determination attainable by an attacker predicting confidential field $c$. Dedicated DNN and GCN attackers estimate the empirical attack upper bound, while a random-mask universal oracle scans arbitrary subsets at low marginal cost; fine-tuning and subset-specific retraining are then used for certification. Pairwise synergy edges and third-order hyperedges are derived from the same set function instead of being treated as the primary objective.
+
+Experiments on 8,760 hourly PJM RTO records with 44 observable and 12 confidential fields show that the empirical attack score increases from 0.2311 to 0.8647 as the subset-size band grows. A dedicated GCN exceeds a DNN by 0.0235 and 0.0130 in the 5--8 and 9--16 bands, respectively, and by 0.0072 on average over 50 broad random subsets. However, the universal MLP oracle is more faithful than the current GNN oracle, revealing an important distinction between attack strength and oracle fidelity. With 500 fine-tuning steps, the pairwise-synergy ranking reaches a Spearman correlation of 0.9597 and a top-20 overlap of 0.95 against retraining truth at about 1.01 seconds per subset. Certified examples include a pairwise increment of 0.765 for wind generation and wind share inferring total generation, and an irreducible third-order increment of 0.455 for gas generation, gas share, and load forecast inferring net interchange.
+
+\noindent\textbf{Keywords:} inference graph; set function; graph neural network; data sensitivity; synergistic inference; hypergraph
+\end{abstract}
+\endgroup
+
+\pagestyle{fancy}
+
+\section{引言}
+
+电力系统公开数据通常同时包含负荷、燃料发电量、燃料占比、市场价格、辅助服务和交换功率等字段。即使某个机密字段从未被直接公开，攻击者仍可能利用可见字段之间的物理约束与统计关系进行间接推断。这类风险与传统“数据库是否被入侵”的问题不同：它关注的是在合法获得一组普通字段后，机密字段还剩下多少不可预测性。模型反演与属性推断研究已经表明，非敏感属性和模型输出能够被用于恢复未知敏感属性\citep{fredrikson2015model,mehnaz2022sensitive}；近期面向电力系统的 IGNN 工作进一步把字段间推断关系表示为图，并利用图注意力传播敏感度\citep{hu2026ignn}。
+
+然而，仅为每个字段分配一个独立敏感度仍不充分。以“燃料发电量”和“该燃料发电占比”为例，两者单独可能只提供有限信息，但合并后可通过近似关系
+\begin{equation}
+  \text{总发电量}\approx
+  \frac{\text{某燃料发电量}}{\text{该燃料发电占比}}
+\end{equation}
+恢复高敏感目标。此时，风险不是任一字段单独携带的，而是由集合形成的。若共有 $n$ 个可见字段，则潜在集合数为 $2^n$；本文数据中 $n=44$，无法为每个集合都从头训练攻击模型。进一步地，若直接在一个只见过完整输入的模型上把缺失字段置零，评估结果可能主要反映分布外失真，而不是“攻击者只拥有集合 $S$”时的真实能力。
+
+本文的核心问题因此不是“哪些字段两两协同”，而是：
+\begin{quote}
+\centering
+\emph{如何构造一个能够查询任意可见字段集合 $S$ 的敏感度 Oracle，并在此基础上可靠发现二阶和更高阶协同推断结构？}
+\end{quote}
+
+为回答该问题，本文提出图结构集合敏感度 Oracle 框架（Graph-structured Set Sensitivity Oracle，\method）。论文在引言后直接给出问题形式化和方法，不把方法叙事建立在某个既有电力敏感度模型之上。主要贡献如下。
+
+\begin{enumerate}
+  \item \textbf{集合函数形式化。} 将每个可见字段视为合作博弈中的“参与者”，把机密字段 $c$ 的可推断性写成 $v_c:2^{V_g}\rightarrow[0,1]$，从而统一描述单字段敏感度、任意集合敏感度和协同增量。
+  \item \textbf{图结构攻击上限与通用 Oracle 分层。} 用带权推断图上的专用 GCN 和 DNN 共同审计固定集合的经验推断上限；用随机掩码训练的通用 Oracle 低成本扫描指数级空间，再通过微调和重训认证闭合摊销误差。
+  \item \textbf{协同图与高阶超边。} 从同一个 $v_c(S)$ 导出保守的二阶协同边和三阶增量超边，并以噪声底决定边是否可信，避免把训练随机波动误写成协同。
+  \item \textbf{基于真实项目产物的系统实验。} 在 1437 个评测条目上区分“专用 GCN 攻击者是否更强”和“通用 GNN Oracle 是否更准”，并穷举 946 个字段对、扫描全部 $\binom{44}{3}=13244$ 个三元组，给出可解释的二阶与三阶案例。
+\end{enumerate}
+
+\section{问题定义与图论建模}
+
+\subsection{威胁模型与符号}
+
+设数据表由可见字段集合 $V_g=\{1,\dots,n\}$ 和机密字段集合 $V_c=\{1,\dots,q\}$ 构成。攻击者能够获得同分布辅助样本，并观察目标样本在集合 $S\subseteq V_g$ 上的取值 $X_S$，但不能直接观察 $Y_c$。攻击者可训练回归模型 $f_{\theta,S}:X_S\rightarrow Y_c$。本文关注字段关系导致的\emph{总体可推断性}，不声称恢复某一特定用户的训练记录；数据切分和指标都在独立测试集上计算。
+
+表\ref{tab:notation}列出主要符号。集合 $S$ 既可包含一个字段，也可包含任意多个字段。与传统单点打分相比，$S$ 是方法中的第一等对象。
+
+\begin{table}[H]
+  \centering
+  \caption{主要符号}
+  \label{tab:notation}
+  \begin{tabularx}{0.94\textwidth}{@{}lX@{}}
+    \toprule
+    符号 & 含义\\
+    \midrule
+    $G=(V,E,W)$ & 字段推断图，$V=V_g\cup V_c$，$W$ 为多关系权重\\
+    $S\subseteq V_g$ & 攻击者可观察的字段集合\\
+    $m_S\in\{0,1\}^{n}$ & 集合 $S$ 的可见性掩码\\
+    $v_c(S)$ & 集合 $S$ 对机密字段 $c$ 的理论推断敏感度\\
+    $\widehat v_c(S)$ & 通用 Oracle 或有限攻击模型给出的经验估计\\
+    $\Delta_c(i,j)$ & 字段 $i,j$ 对目标 $c$ 的二阶增量协同\\
+    $\Delta_c^{(3)}(i,j,k)$ & 三元组相对其最好二元子集的三阶增量协同\\
+    $\mathcal A$ & 允许的攻击模型族，例如 DNN 与 GCN\\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{字段推断图}
+
+将全部字段表示为带权有向图
+\begin{equation}
+  G=(V_g\cup V_c,E,W).
+\end{equation}
+可见字段之间的边描述冗余与替代关系，可见字段指向机密字段的边描述直接推断通道。对字段 $i,j$，本文计算 Pearson、Spearman、Kendall、归一化互信息和距离相关五种关系度量，经归一化后求平均得到初始权重
+\begin{equation}
+  \widetilde w_{ij}=\frac{1}{5}\sum_{r=1}^{5}\rho^{(r)}_{ij}.
+\end{equation}
+随后保留每个节点的 top-$k$ 关系并施加阈值 $\tau$，得到稀疏边集
+\begin{equation}
+  E=\{(i,j):\widetilde w_{ij}\ge \tau,\ j\in\operatorname{TopK}(i)\}.
+\end{equation}
+实验取 $k=8,\tau=0.15$，并对可见字段子图进行对称化。该构图方式不把相关性直接等同于泄露，只把它作为消息传递的结构先验；最终敏感度必须由测试集上的攻击效果定义。
+
+\subsection{任意集合敏感度}
+
+对给定机密字段 $c$ 和可见集合 $S$，理论敏感度定义为允许攻击模型族中的最优测试集推断能力：
+\begin{equation}
+  v_c(S)=\sup_{f\in\mathcal A}
+  \left[
+  1-\frac{\sum_{t\in\mathcal D_{\mathrm{te}}}
+  (y_{t,c}-f(x_{t,S}))^2}
+  {\sum_{t\in\mathcal D_{\mathrm{te}}}
+  (y_{t,c}-\overline y_c)^2+\epsilon}
+  \right]_+,
+  \label{eq:setvalue}
+\end{equation}
+其中 $[z]_+=\max(z,0)$。使用截断 $\Rtwo$ 的原因是：负 $\Rtwo$ 只表示攻击器比均值基线更差，不应被解释为“负敏感度”。多目标总分定义为
+\begin{equation}
+  v(S)=\frac{1}{q}\sum_{c=1}^{q}v_c(S).
+\end{equation}
+
+从图论角度看，原始字段图 $G$ 描述局部关系，而 $v_c$ 定义在布尔格 $2^{V_g}$ 上。理论上，当攻击模型族足够丰富且训练达到最优时，若 $S\subseteq T$，攻击者可以忽略 $T\setminus S$，故应有 $v_c(S)\le v_c(T)$。有限样本、有限优化和随机初始化会造成轻微非单调，因此本文使用多结构上包络、微调和重训认证逼近式\eqref{eq:setvalue}，而不把一次模型前向误认为数学上精确的上确界。
+
+\section{图结构集合敏感度 Oracle}
+
+\subsection{总体框架}
+
+如图\ref{fig:framework}所示，\method 包含三个层次。第一层是字段推断图和固定集合的专用攻击者，用于刻画强攻击能力；第二层是接受集合掩码的通用 Oracle，用一次训练覆盖大量集合；第三层由集合函数生成协同图和高阶超边。计算流程遵循“全空间扫描 $\rightarrow$ 少步微调 $\rightarrow$ 候选重训认证”，把计算预算集中在可能具有强协同的少量集合上。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{framework.png}
+  \caption{\method 总体框架。核心输出是任意集合的 $v_c(S)$；二阶协同图和三阶超边均由该集合函数导出。}
+  \label{fig:framework}
+\end{figure}
+
+\subsection{固定集合的专用 DNN/GCN 攻击者}
+
+对每个固定集合 $S$，专用攻击者只在 $X_S$ 上训练。DNN 将可见字段拼接后输入多层感知机；GCN 则在诱导可见子图 $G[S\cup V_c]$ 上共享消息传递参数。第 $\ell$ 层的可见性感知聚合写为
+\begin{align}
+  \alpha_{ij}^{(\ell)}(S)
+  &=
+  \frac{\indicator[j\in S]\,
+  \exp\left(e_{ij}^{(\ell)}+\lambda\log(w_{ij}+\epsilon)\right)}
+  {\sum_{r\in\mathcal N(i)\cap S}
+  \exp\left(e_{ir}^{(\ell)}+\lambda\log(w_{ir}+\epsilon)\right)},\\
+  h_i^{(\ell+1)}
+  &=
+  \sigma\left(
+  W_{\mathrm{self}}^{(\ell)}h_i^{(\ell)}
+  \sum_{j\in\mathcal N(i)\cap S}
+  \alpha_{ij}^{(\ell)}(S)W_{\mathrm{msg}}^{(\ell)}h_j^{(\ell)}
+  \right).
+  \label{eq:visible_gnn}
+\end{align}
+被遮蔽节点既不提供数值，也不参与 softmax 归一化。因此当某条直接路径不可见时，注意力能够沿仍可见的相关邻居重分配。该机制与 GCN 的局部结构编码\citep{kipf2017gcn}和 GAT 的邻域注意力\citep{velickovic2018gat}一致，但这里的节点是数据字段而不是电网母线。
+
+有限实验中不可能穷尽 $\mathcal A$。本文在具有两种重训结果的审计集合上使用逐目标经验上包络
+\begin{equation}
+  v_c^{\mathrm{audit}}(S)
+  =\max\{v_c^{\mathrm{DNN}}(S),v_c^{\mathrm{GCN}}(S)\}.
+  \label{eq:envelope}
+\end{equation}
+该量仍只是对理论上确界的下界，但比固定单一架构更接近强攻击者视角。特别需要区分：专用 GCN 的目标是把某个集合的攻击上限做强；通用 GNN Oracle 的目标是同时拟合大量集合的 $v_c(S)$。两者的优劣没有逻辑上的必然一致性。
+
+\subsection{随机掩码通用 Oracle}
+
+逐集合重训的代价随 $2^n$ 增长。为此，通用 Oracle $F_\theta$ 同时输入掩码后的数值与掩码本身：
+\begin{equation}
+  \widehat{\bm y}
+  =F_\theta(\bm x\odot\bm m_S,\bm m_S;G).
+  \label{eq:oracle}
+\end{equation}
+显式输入 $\bm m_S$ 可区分“字段不可见”和“字段真实值恰好为零”。训练时先均匀抽取集合规模 $K\sim\mathcal U\{1,\dots,n\}$，再从 $V_g$ 中均匀抽取 $K$ 个字段，由此避免掩码分布过度集中在中等规模。目标函数为
+\begin{equation}
+  \min_\theta\
+  \mathbb E_{(\bm x,\bm y)}
+  \mathbb E_{S\sim p(S)}
+  \left[
+  \frac{1}{q}\sum_{c=1}^{q}
+  \left(F_{\theta,c}(\bm x\odot\bm m_S,\bm m_S;G)-y_c\right)^2
+  \right].
+  \label{eq:masktrain}
+\end{equation}
+
+本文实现两种通用 Oracle。MLP-Oracle 将 $[\bm x\odot\bm m_S,\bm m_S]$ 输入三层隐藏维度为 256 的 MLP；GNN-Oracle 使用式\eqref{eq:visible_gnn}的可见性感知传播，三层、隐藏维度 128，并通过机密节点注意力头输出 12 个目标。给定 $S$ 后，在整个测试集使用固定掩码前向一次，再按式\eqref{eq:setvalue}计算 $\widehat v_c(S)$。因此，一个训练好的 Oracle 可以以近似常数的边际成本回答任意集合查询。这与摊销 Shapley 估计“用训练成本换取快速查询”的思想相近\citep{jethani2022fastshap}，但本文 Oracle 学习的是推断攻击的集合值函数，而非直接输出 Shapley 值。
+
+\subsection{微调、校准与重训认证}
+
+随机掩码训练学习的是跨集合的共享条件映射，可能系统性低估某个固定集合的专用最优值。本文在 Oracle 参数上进行 $K$ 步固定掩码微调：
+\begin{equation}
+  \theta_{S}^{(k+1)}
+  =\theta_S^{(k)}-\eta\nabla_{\theta}
+  \mathcal L_S(\theta_S^{(k)}),\qquad
+  \theta_S^{(0)}=\theta_{\mathrm{oracle}}.
+\end{equation}
+当 $K=0$ 时是一次前向的快速筛选；$K=50$ 或 200 用于折中扫描；$K=500$ 用于二阶协同图的高保真估计。对低 $K$ 的系统偏差，还可在不同集合规模内进行交叉拟合标量校准，但该平移不改变同规模集合的排序。最终仅对 top 候选和随机对照从头重训，形成认证真值。该设计把“便宜但有偏的筛选器”和“昂贵但可信的验证器”明确分开。
+
+\subsection{由集合敏感度导出的协同图}
+
+Shapley 值把合作博弈的总收益公平分摊到单个参与者\citep{shapley1953value}，Shapley 交互指数和 Harsanyi dividend 则描述组合贡献\citep{harsanyi1963bargaining,grabisch1999interaction}。本文更关心防护语义：“合并两个字段后，是否比最好单字段额外泄露更多”。因此定义保守二阶增量协同
+\begin{equation}
+  \Delta_c(i,j)=v_c(\{i,j\})
+  -\max\{v_c(\{i\}),v_c(\{j\})\}.
+  \label{eq:pair}
+\end{equation}
+若 $\Delta_c(i,j)>0$，则任一单字段分数都无法覆盖该组合风险。对每个机密目标 $c$，构造协同图
+\begin{equation}
+  H_c=(V_g,E_c,\omega_c),\quad
+  \omega_c(i,j)=\Delta_c(i,j),
+\end{equation}
+仅保留超过训练噪声底或业务阈值的正权边。为了给出总体视图，也可令 $\omega(i,j)=\max_c\Delta_c(i,j)$。
+
+三阶不可约协同定义为相对三个二元子集的增量：
+\begin{equation}
+  \Delta_c^{(3)}(i,j,k)
+  =
+  v_c(\{i,j,k\})-
+  \max\left\{
+  v_c(\{i,j\}),v_c(\{i,k\}),v_c(\{j,k\})
+  \right\}.
+  \label{eq:triple}
+\end{equation}
+它对应一个连接三个可见字段的加权超边。若只计算 $v_c(\{i,j,k\})-v_c(\{i\})-v_c(\{j\})-v_c(\{k\})$，则二阶结构会混入三阶结果；式\eqref{eq:triple}要求三元组超过所有二元解释，因此更适合筛选真正“缺一不可”的组合。
+
+\section{实验设计}
+
+\subsection{数据、切分与实现}
+
+实验数据来自 PJM Data Miner 公共数据接口\citep{pjmdataminer}，为 2025 年 8760 条小时级记录。预处理后保留 56 个数值字段，其中 44 个为可见字段，12 个为机密目标。可见字段包括不同燃料的发电功率与占比、负荷预测、市场价格和辅助服务量；机密目标包括总发电量、计量负荷、总损耗、交换功率、拥塞与边际损耗价格等。
+
+全部实验固定随机切分种子 42，训练集占 70\%，测试集占 30\%；标准化统计量只由训练集计算。该切分用于测量同分布字段推断能力，而不是时间外推能力，相关边界将在讨论中说明。专用攻击者训练种子为 0；噪声底实验对 10 个代表性集合各使用 5 个训练种子。通用 Oracle 的 $K=0$ 结果额外使用 3 个种子复核稳定性。
+
+评测注册表包含 1437 个条目、1431 个不同字段集合：
+\begin{itemize}
+  \item 50 个宽尺寸随机集合，每个规模带 10 个；
+  \item 44 个单字段与全部 $\binom{44}{2}=946$ 个字段对；
+  \item 197 个 Oracle 筛选三元组与 200 个随机三元组。
+\end{itemize}
+全量集合具有专用 DNN 重训结果；50 个宽尺寸集合另有完整 GCN 重训，字段对和三元组各有 9 个分层 GCN 审计样本。本文不会把缺少 GCN 的集合误称为“两结构最优真值”。
+
+\subsection{评价问题与指标}
+
+实验回答四个问题：
+\begin{description}[style=nextline,leftmargin=2em,labelindent=0pt]
+  \item[RQ1：图结构何时提高推断上限？]
+  比较固定集合专用 DNN 与 GCN 的测试集平均 $\Rtwo$，并按 $|S|$ 分层。
+  \item[RQ2：通用 Oracle 能否忠实估计任意集合？]
+  使用逐目标 MAE、偏差、Spearman 相关和单集合耗时比较 MLP/GNN Oracle 及微调步数。
+  \item[RQ3：集合函数能否发现可靠协同？]
+  使用协同值 MAE、Spearman、top-$k$ 重合率和重训认证率评价二阶/三阶结果。
+  \item[RQ4：结论是否超过训练噪声与近似伪影？]
+  使用多种子噪声底、零填充对照和随机三元组对照检验显著性。
+\end{description}
+
+\section{实验结果与分析}
+
+\subsection{RQ1：集合规模与图结构推断能力}
+
+图\ref{fig:attacker-scale}和表\ref{tab:attacker}给出 50 个宽尺寸随机集合的结果。随着可见字段集合从 1--4 增长到 33--44，逐目标结构上包络的平均 $\Rtwo$ 从 0.2311 单调增至 0.8647，说明集合规模越大，攻击者可利用的冗余路径越多，推断能力越强。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{attacker_scale.png}
+  \caption{专用攻击者随可见集合规模的表现。左图显示集合规模效应；右图显示 GCN 相对 DNN 的增益。}
+  \label{fig:attacker-scale}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{50 个宽尺寸随机集合上的专用攻击者比较}
+  \label{tab:attacker}
+  \begin{threeparttable}
+  \begin{tabular}{@{}lrrrrr@{}}
+    \toprule
+    $|S|$ 区间 & 集合数 & DNN 平均 $\Rtwo$ & GCN 平均 $\Rtwo$
+    & GCN$-$DNN & GCN 胜率\\
+    \midrule
+    1--4   & 10 & 0.2281 & 0.2167 & $-0.0114$ & 0.20\\
+    5--8   & 10 & 0.5460 & \textbf{0.5695} & \textbf{+0.0235} & 0.70\\
+    9--16  & 10 & 0.7200 & \textbf{0.7330} & \textbf{+0.0130} & 0.80\\
+    17--32 & 10 & 0.8065 & \textbf{0.8162} & +0.0097 & 0.90\\
+    33--44 & 10 & 0.8601 & 0.8612 & +0.0011 & 0.40\\
+    \midrule
+    全部   & 50 & 0.6321 & \textbf{0.6393} & +0.0072 & 0.60\\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}\footnotesize
+    \item “胜率”表示在同一集合上 GCN 的 12 目标平均 $\Rtwo$ 高于 DNN 的比例。差值超过 0.02 可视为强于两架构平均噪声底的参考量级。
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+图结构优势具有明确区间，而不是“规模越大，GCN 优势越大”。极小集合中可见边过少，GCN 无法充分聚合，DNN 反而高 0.0114；中等集合中既保留了可用的 general-general 关系，又远离完整输入，GCN 的邻居替代机制最有效；当接近完整输入时，两种模型都已达到较高 $\Rtwo$，增益趋于饱和。严格表述应是：\emph{推断能力本身随集合规模显著上升，而 GCN 相对 DNN 的小幅优势主要出现在 5--16 个字段的中等规模集合。}
+
+\subsection{RQ2：任意集合 Oracle 的保真度}
+
+图\ref{fig:oracle}和表\ref{tab:oracle}显示，当前通用 MLP-Oracle 在所有集合类型和相同步数下都比 GNN-Oracle 更接近专用 DNN 重训。以宽尺寸集合为例，$K=0$ 时逐目标 MAE 为 0.0767 对 0.1362；$K=200$ 后为 0.0194 对 0.0784。三个 Oracle 种子的复核保持同一结论，因此不能把专用 GCN 在中等规模集合上的优势外推为“通用 GNN-Oracle 更准确”。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{oracle_fidelity.png}
+  \caption{通用 MLP/GNN Oracle 的保真度。左：宽尺寸集合的绝对误差；右：二阶与三阶协同排序相对重训真值的一致性。}
+  \label{fig:oracle}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{通用 Oracle 相对专用 DNN 重训的逐目标 MAE}
+  \label{tab:oracle}
+  \begin{tabular}{@{}llrrrr@{}}
+    \toprule
+    集合类型 & 架构 & $K=0$ MAE & $K=200$ MAE & $K=200$ 秒/集合 & 误差降幅\\
+    \midrule
+    \multirow{2}{*}{宽尺寸集合}
+      & MLP & 0.0767 & \textbf{0.0194} & 0.392 & 74.7\%\\
+      & GNN & 0.1362 & 0.0784 & 3.076 & 42.4\%\\
+    \midrule
+    \multirow{2}{*}{字段对}
+      & MLP & 0.0495 & \textbf{0.0150} & 0.402 & 69.7\%\\
+      & GNN & 0.0813 & 0.0350 & 3.104 & 57.0\%\\
+    \midrule
+    \multirow{2}{*}{三元组}
+      & MLP & 0.0912 & \textbf{0.0213} & 0.394 & 76.6\%\\
+      & GNN & 0.1381 & 0.0436 & 3.109 & 68.4\%\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+原因在于两个任务的归纳偏置不同。专用 GCN 只需优化一个 $S$，结构先验能够帮助沿相关边重组信息；通用 GNN-Oracle 必须用同一组消息传递参数拟合大量不同诱导子图，静态相关图和注意力瓶颈造成系统性低估。MLP 虽不显式使用图，但其宽隐藏层更容易拟合从 $[\bm x\odot\bm m,\bm m]$ 到多目标条件期望的复杂映射。
+
+这不是框架失败，而是给出了可执行的模型选择：使用专用 GCN 增强攻击上限审计，使用 MLP-Oracle 扫描集合空间。对二阶协同，MLP-Oracle 从 $K=0$ 的 Spearman 0.6708 提升到 $K=200$ 的 0.9279；扩展到 $K=500$ 后达到 0.9597，top-20 重合率 0.95，单集合耗时 1.008 s。相比每个集合约数分钟的从头重训，该方案把 946 个字段对的高保真计算压缩到分钟量级。
+
+\subsection{RQ3：二阶协同图}
+
+对 44 个字段的全部 946 个无序对逐目标计算式\eqref{eq:pair}。图\ref{fig:synergy-graph}展示最大目标协同权重最高的一组可解释子图。粗边集中在同一燃料的“发电功率--发电占比”字段对，说明协同图捕捉到了稳定的物理关系，而不是随机相关。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{synergy_graph.png}
+  \caption{重训认证得到的高权重二阶协同子图。边权为 12 个机密目标中的最大 $\Delta_c(i,j)$。}
+  \label{fig:synergy-graph}
+\end{figure}
+
+表\ref{tab:pair-synergy}给出强协同案例。风电功率单独推断总发电量的 $\Rtwo$ 仅为 0.0638，风电占比单独为 0.1623，但二者合并后达到 0.9277，增量协同为 0.7654。光伏功率单独几乎无预测力（0.0057），与光伏占比合并后却达到 0.6954。这正是单字段敏感度最容易漏掉的“单看安全、合体泄露”。
+
+\begin{table}[H]
+  \centering
+  \caption{重训认证的代表性二阶协同}
+  \label{tab:pair-synergy}
+  \begin{tabularx}{\textwidth}{@{}llYrrrr@{}}
+    \toprule
+    字段 $i$ & 字段 $j$ & 机密目标 $c$
+    & $v_c(i)$ & $v_c(j)$ & $v_c(ij)$ & $\Delta_c(i,j)$\\
+    \midrule
+    风电功率 & 风电占比 & 总发电量
+      & 0.0638 & 0.1623 & 0.9277 & \textbf{0.7654}\\
+    风电功率 & 风电占比 & 计量负荷
+      & 0.0586 & 0.1527 & 0.9033 & 0.7506\\
+    多燃料功率 & 多燃料占比 & 总发电量
+      & 0.2010 & 0.0779 & 0.8967 & 0.6957\\
+    水电功率 & 水电占比 & 总发电量
+      & 0.2921 & 0.1346 & 0.9572 & 0.6651\\
+    光伏功率 & 光伏占比 & 总发电量
+      & 0.0057 & 0.0992 & 0.6954 & 0.5962\\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{RQ3：三阶不可约协同}
+
+二阶协同仍不能描述“发电侧两个字段加负荷侧一个字段”共同决定交换功率的关系。本文用 $K=200$ 的 MLP-Oracle 扫描全部 $\binom{44}{3}=13244$ 个三元组，再重训 197 个高分候选和 200 个随机三元组。每个三元组对 12 个机密目标产生一条三阶增量记录。
+
+如图\ref{fig:triple}所示，候选组中有 314/2364 条逐目标记录满足 $\Delta_c^{(3)}>0.1$，随机组只有 19/2400 条；候选组最大值为 0.4547。对具有扫描估计和重训结果的记录，Spearman 为 0.800，说明 Oracle 适合排序筛选，但最终幅值仍应由重训认证。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{triple_certification.png}
+  \caption{三阶协同筛选与重训认证。候选组的右尾明显强于随机组；Oracle 估计与重训真值保持较高排序一致性。}
+  \label{fig:triple}
+\end{figure}
+
+最强案例是“燃气发电功率 + 燃气发电占比 + 最新负荷预测”推断净实际交换功率。三元组 $\Rtwo$ 为 0.6930，最好二元子集只有 0.2383，因此 $\Delta^{(3)}=0.4547$。其物理解释为：燃气功率与占比共同提供总发电量线索，负荷预测提供负荷侧线索，而净交换近似由发电与负荷差决定。只缺任一类信息时都不能完整恢复目标，故该结构是不可约三方超边，而不是两两强边的简单重复。
+
+\subsection{RQ4：噪声底与近似边界}
+
+\textbf{训练噪声底。} 对同一集合、同一切分仅改变训练随机种子，专用 DNN 的 12 目标平均 $\Rtwo$ 标准差中位数为 0.0015、最大值为 0.0023；GCN 分别为 0.0039 和 0.0114。因而中等规模集合上 0.0235 的 GCN 增益超过平均噪声量级，而 33--44 区间的 0.0011 不能解释为实质优势。
+
+\textbf{零填充伪影。} 将完整输入模型的缺失字段直接置零，得到的二阶协同与逐集合重训真值 Spearman 仅为 0.351；平均协同为 0.012，而重训为 0.041，低估约 3.4 倍。这验证了随机掩码训练和重训认证的必要性。
+
+\textbf{协同比直接敏感度更难。} $v_c(ij)$、$v_c(i)$ 和 $v_c(j)$ 的估计误差会在式\eqref{eq:pair}中相减叠加。通用 MLP-Oracle 对直接集合值的排序在宽尺寸集合上接近 0.99，但 $K=0$ 的二阶协同排序只有 0.67。只有微调闭合各集合的系统偏差后，协同排序才提升到 0.96。因此，不能用“直接敏感度排序很好”替代协同保真度验证。
+
+\section{讨论}
+
+\subsection{为什么本文首先是集合敏感度方法，而非协同检测器}
+
+如果只从协同案例出发，容易把方法误写成“枚举字段对并寻找高分边”。本文真正的对象是布尔格上的 $v_c(S)$：单字段分数是 $|S|=1$ 的截面，二阶协同是相邻格点之间的增量，三阶协同是三元集合相对其覆盖关系中三个二元前驱的剩余增量。只要能够忠实查询任意 $S$，就可以进一步计算 Shapley 值、最小防护集合、冗余簇或更高阶 Harsanyi 结构；反之，若没有可信的集合 Oracle，任何协同定义都只是对模型置零行为的再加工。
+
+这一视角把三种图结构连接起来：
+\begin{enumerate}
+  \item 字段推断图 $G$ 描述字段间的局部关系和消息传递通道；
+  \item 集合格 $2^{V_g}$ 描述不同攻击者知识状态之间的包含关系；
+  \item 协同图/超图描述集合值函数中超过低阶解释的组合增量。
+\end{enumerate}
+因此，图神经网络只是估计 $v_c(S)$ 的一种归纳偏置，并不等同于整个方法。
+
+\subsection{专用图攻击者与通用图 Oracle 的角色分离}
+
+实验给出了一个有价值的负结果：专用 GCN 在中等规模集合上比 DNN 略强，但通用 GNN-Oracle 比 MLP-Oracle 误差更大、速度更慢。若只报告前一结果，会过度宣传 GNN；若只报告后一结果，又会漏掉图结构对强攻击上限的贡献。
+
+二者可同时成立。专用攻击者面对一个固定诱导子图，能够针对该图优化；通用 Oracle 面对的是大量不同节点集合、不同有效邻域和不同条件分布的混合任务。当前静态相关图可能在固定集合上提供有用先验，却限制了对所有掩码共同拟合的容量。本文因此采用“GCN 增强上限、MLP 负责扫描”的混合方案，而不是为了形式上的统一强行让所有组件都使用 GNN。
+
+\subsection{结构迁移潜力与尚未完成的验证}
+
+图模型把关系结构作为归纳偏置并通过邻域聚合共享参数\citep{battaglia2018relational}，原则上不要求固定节点编号；GraphSAGE 等归纳式图表示方法已经证明共享聚合器可用于未见节点乃至未见图\citep{hamilton2017graphsage}。相较之下，输入维数固定的 MLP 与具体 44 个字段位置绑定。若不同区域市场能够把字段映射为统一类型（负荷、燃料功率、占比、价格、备用等），并按相同关系度量重建推断图，则 GCN 的消息函数具有跨系统复用的结构基础。
+
+但本文只有 PJM RTO 数据，\textbf{没有完成跨区域系统实验}，因此“迁移性更好”只能写为结构性潜力，不能写成实验证明。合理的后续验证应在 CAISO、NYISO 等系统上进行：去除节点身份嵌入，使用字段类型和统计量作为节点特征；在源系统训练共享消息函数，在目标系统仅重建图并微调目标头；分别报告零样本、少样本和全量训练结果。只有当 GCN 在该协议下优于固定维 MLP，才能把迁移性升级为实验结论。
+
+\subsection{与相关工作的关系}
+
+GCN、GAT 和 GIN 分别从谱近似、注意力聚合和图同构判别能力角度建立了现代图神经网络基础\citep{kipf2017gcn,velickovic2018gat,xu2019gin}。本文不提出新的通用 GNN 层，而是把可见性约束写入邻域归一化，并研究图归纳偏置在集合条件攻击中的适用区间。
+
+电力系统 IGNN 将物理与数据关系组成推断图，再传播由 AHP 给出的初始敏感度\citep{hu2026ignn}。本文的区别在于，节点敏感度不来自主观先验，而来自攻击者在任意字段集合上的测试集推断能力；同时显式处理组合风险、摊销误差和重训认证。属性推断研究通常评估给定攻击条件下能否恢复未知属性\citep{mehnaz2022sensitive}，本文进一步把“攻击者已知哪些字段”参数化为集合 $S$。
+
+在可解释学习中，SHAP 用 Shapley 值分摊预测贡献\citep{lundberg2017shap}，FastSHAP 学习摊销估计器降低查询成本\citep{jethani2022fastshap}。本文借鉴合作博弈和摊销估计思想，但价值函数是独立攻击模型的泛化推断能力，而不是固定预测模型在单个样本上的输出变化；协同边也采用相对最好低阶子集的保守增量，直接对应数据发布中的联合暴露风险。
+
+\subsection{局限性}
+
+本文仍有五项主要局限。第一，经验真值来自有限的 DNN/GCN 攻击模型和有限训练种子，并非数学上的攻击者上确界。第二，随机切分评估的是同分布推断能力，可能高于跨时间部署性能；时间切分应作为独立外推实验。第三，完整 GCN 重训只覆盖 50 个宽尺寸集合及 18 个分层小集合，不能把小集合审计外推为全体。第四，三阶候选由早期 MLP 扫描产生，候选组存在选择偏差，因此本文保留了 200 个随机三元组作为无偏对照。第五，结构迁移尚未实证，且协同分析目前只到三阶；更高阶组合需要稀疏搜索、子模界或超图采样以控制组合爆炸\citep{berge1989hypergraphs}。
+
+\section{结论}
+
+本文围绕“任意集合敏感度 Oracle”而不是单一协同案例，构建了推断图、集合函数和协同超图相连接的课程论文框架。实验表明，攻击者推断能力随可见集合规模显著增强；专用 GCN 在 5--16 个字段的中等规模集合上比 DNN 小幅但可测地更强，说明图结构能够利用仍可见的关系边补充推断路径。与此同时，通用 GNN-Oracle 并未优于 MLP-Oracle，促使本文将“攻击上限”和“Oracle 保真度”分开建模，并采用 MLP 扫描、微调、重训认证的分层方案。
+
+由集合值函数导出的二阶协同图发现了燃料功率与占比共同泄露总发电量的强边，三阶扫描则发现了发电侧与负荷侧共同泄露净交换功率的不可约超边。这些结果说明：数据敏感度不能只看单个字段，也不能只看静态相关边；更完整的对象是攻击者知识集合在 $2^{V_g}$ 上的价值函数。未来工作将重点验证跨区域系统的结构迁移，并将协同图用于最小防护集合和分级数据发布策略。
+
+\input{references.tex}
+
+\appendix
+\section{复现实验口径}
+
+本文图表均由项目既有 CSV/JSON 产物重新生成，未手工填写绘图数据。关键来源如下：
+\begin{itemize}
+  \item 集合规模与专用 DNN/GCN：\texttt{DNN\_Aggresvation60/outputs/random\_eval.csv}；
+  \item 噪声底：\texttt{DNN\_Aggresvation60/outputs/noise\_floor.csv}；
+  \item 二阶微调扫描：\texttt{DNN\_Aggresvation67/outputs/synergy\_ksweep.csv}；
+  \item 二阶、三阶认证：\texttt{DNN\_Aggresvation68/outputs/}；
+  \item 架构公平比较：\texttt{DNN\_Aggresvation69/outputs/}。
+\end{itemize}
+在论文目录运行
+\begin{verbatim}
+conda run --no-capture-output -n Pytorch310_codex \
+  python scripts/make_figures.py
+\end{verbatim}
+即可从上述结果重新生成所有插图。
+
+\end{document}

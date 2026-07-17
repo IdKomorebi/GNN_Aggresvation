@@ -1,0 +1,2 @@
+target_field,n_valid_sources,pearson,spearman,kendall,nmi,distance_corr
+metered_load_mw,22,0.19267402589321136,0.1889277994632721,0.1960611790418625,0.23144787549972534,0.1908891201019287

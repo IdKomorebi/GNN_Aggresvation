@@ -1,0 +1,10 @@
+encoder,mode,classic_r2,transformer_r2,delta_classic_minus_tf,probe,gcn_dynamic_ref
+enc1_linear_noact,gat_noprior,0.8308,0.8244,0.0064,0.8937,0.8646
+enc1_linear_noact,gat_static,0.8446,0.8382,0.0064,0.8937,0.8646
+enc1_linear_noact,gat_dynamic,0.8463,0.847,-0.0007,0.8937,0.8646
+enc2_linear,gat_noprior,0.8551,0.8509,0.0042,0.8937,0.8667
+enc2_linear,gat_static,0.8547,0.8532,0.0015,0.8937,0.8667
+enc2_linear,gat_dynamic,0.8489,0.8552,-0.0063,0.8937,0.8667
+enc3_mlp,gat_noprior,0.8604,0.8506,0.0098,0.8937,0.8746
+enc3_mlp,gat_static,0.8613,0.8523,0.009,0.8937,0.8746
+enc3_mlp,gat_dynamic,0.8628,0.8727,-0.0099,0.8937,0.8746

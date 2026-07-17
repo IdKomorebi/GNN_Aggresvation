@@ -1,0 +1,26 @@
+{
+  "subset_id": "p29_36",
+  "group": "pair",
+  "size": 2,
+  "fields": [
+    "da_as_mcp_primary_reserve",
+    "da_as_ss_mw_thirty_minutes_reserve"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.17760378122329712,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.038427889347076416,
+    "gross_actual_interchange_mw": 0.05323511362075806,
+    "total_gen": 0.15233564376831055,
+    "metered_load_mw": 0.16961634159088135,
+    "total_losses": 0.06780314445495605,
+    "congestion_price_da": 0.06415629386901855,
+    "congestion_price_rt": 0.07960236072540283,
+    "marginal_loss_price_da": 0.3461868166923523,
+    "total_lmp_da": 0.6082258820533752,
+    "da_as_total_mw_primary_reserve": 0.1062125563621521,
+    "da_as_total_mw_synchronized_reserve": 0.11303532123565674,
+    "da_as_total_mw_thirty_minutes_reserve": 0.33240801095962524
+  }
+}

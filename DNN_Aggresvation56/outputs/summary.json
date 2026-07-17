@@ -1,0 +1,10 @@
+{
+  "full_field_R2": 0.8873577117919922,
+  "n_pairs": 946,
+  "synergy_median": 0.00010828155791386962,
+  "synergy_max": 0.08455733209848404,
+  "n_pairs_synergy>0.1": 0,
+  "n_true_synergy(max_single<0.3 & pair>0.5)": 0,
+  "superadd_max": 0.06246519088745117,
+  "n_superadd>0.05": 1
+}

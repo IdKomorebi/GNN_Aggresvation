@@ -1,0 +1,8 @@
+{
+  "n_pairs": 946,
+  "synergy_median": 0.002,
+  "synergy_max": 0.46,
+  "n>0.2": 7,
+  "n>0.3": 4,
+  "n_both_single<0.1_pair>0.2": 3
+}

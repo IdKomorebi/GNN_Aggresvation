@@ -1,0 +1,24 @@
+============================================================
+  [数据准备] 加载并预处理数据
+============================================================
+  删除常量列 (5): ['gen_fuel_storage_pct', 'da_as_mcp_thirty_minutes_reserve', 'da_as_ircmwt2_primary_reserve', 'da_as_ircmwt2_synchronized_reserve', 'da_as_ircmwt2_thirty_minutes_reserve']
+  删除含NaN的行: 8760 -> 6556
+  字段总数: 56
+  General字段: 44
+  Confidential字段: 12
+  时间步总数: 6556
+  切分方式: shuffle (seed=42)
+  训练集: 4589 行 (70%)
+  测试集: 1967 行 (30%)
+  ep  0 unmasked_test_mse=0.6299
+  ep 50 unmasked_test_mse=0.2778
+  ep100 unmasked_test_mse=0.2553
+  ep150 unmasked_test_mse=0.2323
+  ep200 unmasked_test_mse=0.2180
+  ep250 unmasked_test_mse=0.2024
+  ep300 unmasked_test_mse=0.2006
+  ep350 unmasked_test_mse=0.1908
+  ep400 unmasked_test_mse=0.1846
+  ep450 unmasked_test_mse=0.1812
+遮蔽训练版 全字段 12-conf 平均 R² = 0.8301
+已保存 /data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation58/trained/gcn_dynamic_masked.pt

@@ -1,0 +1,69 @@
+{
+  "experiment": "sfull_total_lmp_da",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation43/outputs/tuning/sfull_total_lmp_da/20260625_220618",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 906,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.01739717274904251,
+  "final_test_mse_targets": 0.01739717274904251,
+  "final_test_mse_all": 0.01739717274904251,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "total_lmp_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.01739717274904251,
+  "final_alpha": {
+    "pearson": 0.19756335020065308,
+    "spearman": 0.16859225928783417,
+    "kendall": 0.1770361065864563,
+    "nmi": 0.29233378171920776,
+    "distance_corr": 0.16447453200817108
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "total_lmp_da": NaN
+  },
+  "final_target_loss_weights": {
+    "total_lmp_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.19756335020065308,
+    "spearman": 0.16859225928783417,
+    "kendall": 0.1770361065864563,
+    "nmi": 0.29233378171920776,
+    "distance_corr": 0.16447453200817108
+  },
+  "alpha_confidential_by_target_mean": {
+    "total_lmp_da": {
+      "pearson": 0.1826871782541275,
+      "spearman": 0.18901441991329193,
+      "kendall": 0.214583620429039,
+      "nmi": 0.23081812262535095,
+      "distance_corr": 0.18289664387702942
+    }
+  },
+  "per_target_r2": {
+    "total_lmp_da": 0.9847672581672668
+  },
+  "per_target_mse": {
+    "total_lmp_da": 0.01739717461168766
+  },
+  "top10_sensitive_fields": [
+    "system_energy_price_da",
+    "forecast_load_mw_day_ahead",
+    "forecast_load_mw_latest_available",
+    "gen_fuel_nuclear_pct",
+    "gen_fuel_coal_mw",
+    "gen_fuel_oil_mw",
+    "gen_fuel_coal_pct",
+    "gross_inadv_interchange_mw",
+    "da_as_mcp_synchronized_reserve",
+    "total_pjm_reg_purchases"
+  ]
+}

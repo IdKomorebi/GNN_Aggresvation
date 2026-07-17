@@ -1,0 +1,76 @@
+\begin{tikzpicture}[
+  x=1cm,y=1cm,
+  font=\zihao{-5},
+  flow/.style={-{Stealth[length=2.2mm,width=1.5mm]},line width=0.85pt,draw=black!62},
+  panel/.style={rounded corners=2.5pt,draw=black!38,fill=white,line width=0.7pt,align=center},
+  stage/.style={font=\zihao{-5}\bfseries\heiti,text=black!78,align=center},
+  note/.style={font=\zihao{-5},text=black!62,align=center},
+  visible/.style={rounded corners=1.5pt,draw=blue!58!black,fill=blue!8,line width=0.55pt,
+                  minimum width=1.55cm,minimum height=0.43cm,align=center},
+  absent/.style={rounded corners=1.5pt,draw=black!28,fill=black!3,dashed,line width=0.55pt,
+                 minimum width=1.55cm,minimum height=0.43cm,align=center,text=black!48},
+  graphnode/.style={circle,draw=blue!58!black,fill=blue!6,line width=0.7pt,minimum size=0.62cm,inner sep=0pt},
+  masked/.style={circle,draw=black!32,fill=black!3,dashed,line width=0.6pt,minimum size=0.62cm,inner sep=0pt,text=black!45},
+  model/.style={rounded corners=2.5pt,draw=teal!58!black,fill=teal!6,line width=0.75pt,
+                minimum width=2.05cm,minimum height=1.30cm,align=center},
+  readout/.style={rounded corners=2.5pt,draw=green!52!black,fill=green!6,line width=0.75pt,
+                  minimum width=1.80cm,minimum height=1.25cm,align=center},
+  output/.style={rounded corners=1.5pt,draw=green!50!black,fill=green!4,line width=0.55pt,
+                 minimum width=1.60cm,minimum height=0.42cm,align=center}
+]
+
+% Overall frame and stage labels
+\draw[rounded corners=3pt,draw=black!24,fill=black!0.8,line width=0.65pt] (0,0) rectangle (16.05,4.75);
+\node[stage] at (1.30,4.38) {1\quad 任意集合输入};
+\node[stage] at (4.00,4.38) {2\quad 掩码条件编码};
+\node[stage] at (6.73,4.38) {3\quad 可见诱导子图};
+\node[stage] at (9.33,4.38) {4\quad 共享图传播};
+\node[stage] at (12.00,4.38) {5\quad 目标条件读出};
+\node[stage] at (14.65,4.38) {6\quad 集合敏感度};
+
+% 1. Arbitrary visible subset
+\node[panel,minimum width=2.15cm,minimum height=3.10cm] (input) at (1.30,2.55) {};
+\node[visible] at (1.30,3.52) {$f_1$：可见};
+\node[visible] at (1.30,2.94) {$f_2$：可见};
+\node[absent]  at (1.30,2.36) {$f_3$：遮蔽};
+\node[visible] at (1.30,1.78) {$f_4$：可见};
+
+% 2. Mask-conditioned encoding
+\node[panel,draw=blue!58!black,fill=blue!5,minimum width=2.10cm,minimum height=1.50cm] (encoder) at (4.00,2.62)
+  {共享节点编码器 $\phi$\\[1.2mm]输入：字段值 $+$ 可见位};
+\draw[flow] (input.east) -- (encoder.west);
+
+% 3. Visible induced graph
+\node[graphnode] (gi)  at (6.25,2.80) {$i$};
+\node[graphnode] (gj1) at (7.18,3.48) {$j_1$};
+\node[graphnode] (gj2) at (7.30,2.35) {$j_2$};
+\node[masked]   (gj3) at (6.40,1.52) {$j_3$};
+\draw[line width=0.75pt,draw=blue!55!black] (gi) -- (gj1);
+\draw[line width=0.75pt,draw=blue!55!black] (gi) -- (gj2);
+\draw[line width=0.6pt,draw=black!24,dashed] (gi) -- (gj3);
+\draw[line width=0.6pt,draw=black!24,dashed] (gj2) -- (gj3);
+\draw[orange!85!black,line width=1.0pt] ($(gj3.center)+(-0.16,-0.16)$) -- ($(gj3.center)+(0.16,0.16)$);
+\draw[orange!85!black,line width=1.0pt] ($(gj3.center)+(-0.16,0.16)$) -- ($(gj3.center)+(0.16,-0.16)$);
+\draw[flow] (encoder.east) -- (gi.west);
+
+% 4. Shared graph propagation
+\node[model] (gnn) at (9.33,2.62) {可见性感知 GNN\\[1.2mm]$L$ 层共享消息传递};
+\draw[flow] (gj1.east) -- ++(0.32,0) |- (gnn.west);
+\draw[flow] (gj2.east) -- ++(0.32,0) |- (gnn.west);
+
+% 5. Target-conditioned readout
+\node[readout] (reader) at (12.00,2.62) {目标查询 $q_c$\\[1.2mm]注意力池化};
+\draw[flow] (gnn.east) -- (reader.west);
+
+% 6. Outputs and set sensitivity
+\node[panel,draw=green!45!black,fill=green!2,minimum width=2.18cm,minimum height=3.10cm] (score) at (14.65,2.55) {};
+\node[output] at (14.65,3.50) {总发电量};
+\node[output] at (14.65,2.94) {净交换功率};
+\node[output] at (14.65,2.38) {计量负荷等};
+\node[stage] at (14.65,1.52) {$\widehat y_c\xrightarrow{R^2}\widehat v_c(S)$};
+\draw[flow] (reader.east) -- (score.west);
+
+\node[note,text width=13.5cm] at (8.02,0.35)
+  {编码输入 $[x_i m_i,m_i]$；若 $j\notin S$，则 $\alpha_{ij}(S)=0$；同一组共享参数可处理不同可见集合};
+
+\end{tikzpicture}

@@ -1,0 +1,1471 @@
+{
+ "bt000": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_self_sched_reg",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "bt001": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_nuclear_pct",
+   "rmpcp",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_primary_reserve"
+  ]
+ },
+ "bt002": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_day_ahead",
+   "rmpcp",
+   "total_pjm_loc_credit",
+   "total_lmp_rt"
+  ]
+ },
+ "bt003": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "forecast_load_mw_day_ahead",
+   "rmpcp",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt004": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_rmccp_cr",
+   "da_as_ss_mw_synchronized_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt005": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_solar_pct",
+   "rmccp",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "bt006": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "bt007": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_other_renewables_mw",
+   "total_pjm_self_sched_reg",
+   "total_pjm_assigned_reg",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "bt008": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_oil_pct",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "bt009": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_wind_mw",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "bt010": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "rmpcp",
+   "total_pjm_reg_purchases",
+   "total_pjm_rmpcp_cr",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt011": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "forecast_load_mw_day_ahead",
+   "rmccp",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "bt012": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "da_as_mcp_synchronized_reserve"
+  ]
+ },
+ "bt013": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_oil_pct",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "bt014": {
+  "group": "band_truth",
+  "size": 5,
+  "fields": [
+   "gen_fuel_storage_mw",
+   "rmccp",
+   "da_as_as_req_mw_primary_reserve",
+   "system_energy_price_da",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt015": {
+  "group": "band_truth",
+  "size": 7,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_wind_pct",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt016": {
+  "group": "band_truth",
+  "size": 6,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_nuclear_pct",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt017": {
+  "group": "band_truth",
+  "size": 6,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt018": {
+  "group": "band_truth",
+  "size": 7,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_coal_pct",
+   "forecast_load_mw_latest_available",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_loc_credit",
+   "da_as_as_req_mw_synchronized_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "bt019": {
+  "group": "band_truth",
+  "size": 7,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_wind_pct",
+   "total_pjm_reg_purchases",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "net_inadv_interchange_mw",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt020": {
+  "group": "band_truth",
+  "size": 6,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "net_inadv_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt021": {
+  "group": "band_truth",
+  "size": 7,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "rmccp",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "system_energy_price_da",
+   "total_lmp_rt"
+  ]
+ },
+ "bt022": {
+  "group": "band_truth",
+  "size": 9,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_latest_available",
+   "rmpcp",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "bt023": {
+  "group": "band_truth",
+  "size": 7,
+  "fields": [
+   "gen_fuel_hydro_pct",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct",
+   "total_pjm_self_sched_reg",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "bt024": {
+  "group": "band_truth",
+  "size": 6,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_day_ahead",
+   "rmccp",
+   "rmpcp",
+   "total_pjm_self_sched_reg",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "bt025": {
+  "group": "band_truth",
+  "size": 7,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_oil_pct",
+   "gen_fuel_other_renewables_pct",
+   "total_pjm_self_sched_reg"
+  ]
+ },
+ "bt026": {
+  "group": "band_truth",
+  "size": 7,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "rmccp",
+   "total_pjm_rmpcp_cr",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "bt027": {
+  "group": "band_truth",
+  "size": 8,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "rmccp",
+   "total_pjm_rmpcp_cr",
+   "marginal_loss_price_rt",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt028": {
+  "group": "band_truth",
+  "size": 8,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_oil_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_solar_pct",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "bt029": {
+  "group": "band_truth",
+  "size": 8,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_oil_pct",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "net_inadv_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt030": {
+  "group": "band_truth",
+  "size": 7,
+  "fields": [
+   "rmccp",
+   "total_pjm_self_sched_reg",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "bt031": {
+  "group": "band_truth",
+  "size": 8,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "rmpcp",
+   "total_pjm_reg_purchases",
+   "total_pjm_self_sched_reg",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "bt032": {
+  "group": "band_truth",
+  "size": 6,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_latest_available",
+   "total_pjm_loc_credit",
+   "total_pjm_rmpcp_cr",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt033": {
+  "group": "band_truth",
+  "size": 7,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_gas_pct",
+   "total_pjm_assigned_reg",
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "bt034": {
+  "group": "band_truth",
+  "size": 6,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_reg_purchases",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "bt035": {
+  "group": "band_truth",
+  "size": 12,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available",
+   "rmpcp",
+   "total_pjm_rmccp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "system_energy_price_da",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "bt036": {
+  "group": "band_truth",
+  "size": 10,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_oil_pct",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmccp_cr",
+   "da_as_nsr_mw_primary_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "bt037": {
+  "group": "band_truth",
+  "size": 13,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_nuclear_pct",
+   "rmpcp",
+   "total_pjm_self_sched_reg",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "bt038": {
+  "group": "band_truth",
+  "size": 10,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "total_pjm_loc_credit",
+   "total_pjm_rmccp_cr",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "bt039": {
+  "group": "band_truth",
+  "size": 12,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "total_pjm_rmccp_cr",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "gross_sched_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt040": {
+  "group": "band_truth",
+  "size": 11,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct",
+   "rmccp",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "marginal_loss_price_rt",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "bt041": {
+  "group": "band_truth",
+  "size": 11,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "total_pjm_rmccp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "bt042": {
+  "group": "band_truth",
+  "size": 11,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_day_ahead",
+   "rmpcp",
+   "total_pjm_loc_credit",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "bt043": {
+  "group": "band_truth",
+  "size": 10,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "rmccp",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "marginal_loss_price_rt",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt044": {
+  "group": "band_truth",
+  "size": 10,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_wind_pct",
+   "total_pjm_rmccp_cr",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "bt045": {
+  "group": "band_truth",
+  "size": 12,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct",
+   "forecast_load_mw_latest_available",
+   "rmccp",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt",
+   "net_inadv_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt046": {
+  "group": "band_truth",
+  "size": 13,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_wind_mw",
+   "forecast_load_mw_latest_available",
+   "rmccp",
+   "rmpcp",
+   "total_pjm_reg_purchases",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "system_energy_price_da",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "bt047": {
+  "group": "band_truth",
+  "size": 11,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_oil_pct",
+   "rmpcp",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt048": {
+  "group": "band_truth",
+  "size": 13,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_day_ahead",
+   "rmpcp",
+   "total_pjm_loc_credit",
+   "total_pjm_assigned_reg",
+   "system_energy_price_da",
+   "marginal_loss_price_rt",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "bt049": {
+  "group": "band_truth",
+  "size": 12,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available",
+   "forecast_load_mw_day_ahead",
+   "rmpcp",
+   "total_pjm_self_sched_reg",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "total_lmp_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt050": {
+  "group": "band_truth",
+  "size": 12,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct",
+   "total_pjm_loc_credit",
+   "total_pjm_rmccp_cr",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "bt051": {
+  "group": "band_truth",
+  "size": 11,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_storage_mw",
+   "forecast_load_mw_day_ahead",
+   "rmccp",
+   "total_pjm_self_sched_reg",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "total_lmp_rt",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt052": {
+  "group": "band_truth",
+  "size": 10,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_latest_available",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "bt053": {
+  "group": "band_truth",
+  "size": 11,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "total_pjm_assigned_reg",
+   "da_as_ss_mw_primary_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt054": {
+  "group": "band_truth",
+  "size": 12,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_solar_pct",
+   "total_pjm_loc_credit",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmccp_cr",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "marginal_loss_price_rt",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt055": {
+  "group": "band_truth",
+  "size": 17,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_oil_pct",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_latest_available",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "total_pjm_assigned_reg",
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "system_energy_price_da",
+   "total_lmp_rt",
+   "net_inadv_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt056": {
+  "group": "band_truth",
+  "size": 14,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_latest_available",
+   "rmccp",
+   "total_pjm_loc_credit",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt057": {
+  "group": "band_truth",
+  "size": 17,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct",
+   "rmpcp",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "total_pjm_self_sched_reg",
+   "total_pjm_rmccp_cr",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "bt058": {
+  "group": "band_truth",
+  "size": 16,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_latest_available",
+   "rmpcp",
+   "total_pjm_reg_purchases",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "bt059": {
+  "group": "band_truth",
+  "size": 14,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_oil_pct",
+   "rmpcp",
+   "total_pjm_assigned_reg",
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "system_energy_price_da",
+   "total_lmp_rt",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt060": {
+  "group": "band_truth",
+  "size": 14,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_solar_pct",
+   "rmccp",
+   "rmpcp",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "total_lmp_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt061": {
+  "group": "band_truth",
+  "size": 14,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "gross_sched_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt062": {
+  "group": "band_truth",
+  "size": 14,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available",
+   "rmpcp",
+   "total_pjm_assigned_reg",
+   "da_as_mcp_primary_reserve",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "total_lmp_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt063": {
+  "group": "band_truth",
+  "size": 16,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_solar_pct",
+   "rmccp",
+   "total_pjm_loc_credit",
+   "total_pjm_rmccp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "total_lmp_rt",
+   "net_inadv_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt064": {
+  "group": "band_truth",
+  "size": 14,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available",
+   "forecast_load_mw_day_ahead",
+   "rmpcp",
+   "total_pjm_assigned_reg",
+   "da_as_mcp_primary_reserve",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "bt065": {
+  "group": "band_truth",
+  "size": 15,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_oil_pct",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_latest_available",
+   "rmccp",
+   "total_pjm_self_sched_reg",
+   "total_pjm_rmccp_cr",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "net_inadv_interchange_mw",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt066": {
+  "group": "band_truth",
+  "size": 16,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_oil_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_day_ahead",
+   "rmccp",
+   "total_pjm_reg_purchases",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "bt067": {
+  "group": "band_truth",
+  "size": 16,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_oil_pct",
+   "gen_fuel_wind_pct",
+   "total_pjm_loc_credit",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmccp_cr",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "bt068": {
+  "group": "band_truth",
+  "size": 15,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_storage_mw",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_rmccp_cr",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "marginal_loss_price_rt",
+   "net_inadv_interchange_mw",
+   "gross_sched_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt069": {
+  "group": "band_truth",
+  "size": 15,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_latest_available",
+   "rmccp",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "total_pjm_rmccp_cr",
+   "da_as_ss_mw_primary_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "bt070": {
+  "group": "band_truth",
+  "size": 15,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_oil_pct",
+   "total_pjm_loc_credit",
+   "total_pjm_self_sched_reg",
+   "da_as_mcp_primary_reserve",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt071": {
+  "group": "band_truth",
+  "size": 15,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_wind_pct",
+   "total_pjm_self_sched_reg",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "system_energy_price_da",
+   "net_inadv_interchange_mw",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt072": {
+  "group": "band_truth",
+  "size": 15,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_latest_available",
+   "rmpcp",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "bt073": {
+  "group": "band_truth",
+  "size": 15,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_day_ahead",
+   "rmccp",
+   "total_pjm_reg_purchases",
+   "total_pjm_assigned_reg",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "bt074": {
+  "group": "band_truth",
+  "size": 16,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_reg_purchases",
+   "total_pjm_self_sched_reg",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "system_energy_price_da",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "bt075": {
+  "group": "band_truth",
+  "size": 19,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_latest_available",
+   "total_pjm_self_sched_reg",
+   "total_pjm_rmccp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "net_inadv_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt076": {
+  "group": "band_truth",
+  "size": 22,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "total_pjm_self_sched_reg",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "bt077": {
+  "group": "band_truth",
+  "size": 23,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_oil_pct",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available",
+   "forecast_load_mw_day_ahead",
+   "rmpcp",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "total_pjm_self_sched_reg",
+   "total_pjm_rmccp_cr",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "marginal_loss_price_rt",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt078": {
+  "group": "band_truth",
+  "size": 21,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_oil_pct",
+   "forecast_load_mw_day_ahead",
+   "rmccp",
+   "total_pjm_self_sched_reg",
+   "total_pjm_rmccp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "system_energy_price_da",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "bt079": {
+  "group": "band_truth",
+  "size": 24,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available",
+   "rmccp",
+   "rmpcp",
+   "total_pjm_reg_purchases",
+   "total_pjm_self_sched_reg",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmccp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "total_lmp_rt",
+   "net_inadv_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt080": {
+  "group": "band_truth",
+  "size": 22,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_day_ahead",
+   "rmccp",
+   "rmpcp",
+   "total_pjm_reg_purchases",
+   "total_pjm_self_sched_reg",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "bt081": {
+  "group": "band_truth",
+  "size": 18,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_day_ahead",
+   "rmccp",
+   "rmpcp",
+   "total_pjm_reg_purchases",
+   "total_pjm_assigned_reg",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "net_inadv_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "bt082": {
+  "group": "band_truth",
+  "size": 25,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_storage_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_oil_pct",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_day_ahead",
+   "rmccp",
+   "rmpcp",
+   "total_pjm_loc_credit",
+   "total_pjm_reg_purchases",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "bt083": {
+  "group": "band_truth",
+  "size": 22,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_oil_pct",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_latest_available",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_reg_purchases",
+   "total_pjm_assigned_reg",
+   "total_pjm_rmccp_cr",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "system_energy_price_da",
+   "total_lmp_rt",
+   "net_inadv_interchange_mw",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "bt084": {
+  "group": "band_truth",
+  "size": 18,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_hydro_mw",
+   "gen_fuel_oil_mw",
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_oil_pct",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct",
+   "forecast_load_mw_latest_available",
+   "rmccp",
+   "rmpcp",
+   "total_pjm_rmccp_cr",
+   "total_pjm_rmpcp_cr",
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ }
+}

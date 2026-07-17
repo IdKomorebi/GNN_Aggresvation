@@ -1,0 +1,61 @@
+{
+  "accuracy": {
+    "dnn": 0.8644838333129883,
+    "gcn_noprior": 0.8737020492553711,
+    "gcn_static": 0.8663568496704102,
+    "gcn_dynamic": 0.8746004104614258
+  },
+  "probe": 0.8937,
+  "spearman": {
+    "dnn": {
+      "dnn": 1.0,
+      "gcn_noprior": 0.937,
+      "gcn_static": 0.902,
+      "gcn_dynamic": 0.888
+    },
+    "gcn_noprior": {
+      "dnn": 0.937,
+      "gcn_noprior": 1.0,
+      "gcn_static": 0.94,
+      "gcn_dynamic": 0.952
+    },
+    "gcn_static": {
+      "dnn": 0.902,
+      "gcn_noprior": 0.94,
+      "gcn_static": 1.0,
+      "gcn_dynamic": 0.912
+    },
+    "gcn_dynamic": {
+      "dnn": 0.888,
+      "gcn_noprior": 0.952,
+      "gcn_static": 0.912,
+      "gcn_dynamic": 1.0
+    }
+  },
+  "top10_overlap": {
+    "dnn": {
+      "dnn": 1.0,
+      "gcn_noprior": 0.8,
+      "gcn_static": 0.8,
+      "gcn_dynamic": 0.8
+    },
+    "gcn_noprior": {
+      "dnn": 0.8,
+      "gcn_noprior": 1.0,
+      "gcn_static": 0.9,
+      "gcn_dynamic": 0.9
+    },
+    "gcn_static": {
+      "dnn": 0.8,
+      "gcn_noprior": 0.9,
+      "gcn_static": 1.0,
+      "gcn_dynamic": 1.0
+    },
+    "gcn_dynamic": {
+      "dnn": 0.8,
+      "gcn_noprior": 0.9,
+      "gcn_static": 1.0,
+      "gcn_dynamic": 1.0
+    }
+  }
+}

@@ -1,0 +1,397 @@
+待跑 197 次重训（已跳过完成的）
+  [04:15:04] 启动 nf00_gcn_seed0 on GPU 0
+  [04:15:04] 启动 nf00_gcn_seed1 on GPU 1
+  [04:15:04] 启动 nf00_gcn_seed2 on GPU 2
+  [04:15:04] 启动 nf00_gcn_seed3 on GPU 3
+  [04:19:15] 完成 nf00_gcn_seed0 [OK]
+  [04:19:15] 完成 nf00_gcn_seed2 [OK]
+  [04:19:15] 启动 nf00_gcn_seed4 on GPU 0
+  [04:19:15] 启动 nf01_gcn_seed0 on GPU 2
+  [04:20:55] 完成 nf00_gcn_seed3 [OK]
+  [04:20:55] 启动 nf01_gcn_seed1 on GPU 3
+  [04:21:55] 完成 nf00_gcn_seed1 [OK]
+  [04:21:55] 启动 nf01_gcn_seed2 on GPU 1
+  [04:25:45] 完成 nf00_gcn_seed4 [OK]
+  [04:25:45] 完成 nf01_gcn_seed0 [OK]
+  [04:25:45] 启动 nf01_gcn_seed3 on GPU 0
+  [04:25:45] 启动 nf01_gcn_seed4 on GPU 2
+  [04:27:25] 完成 nf01_gcn_seed2 [OK]
+  [04:27:25] 启动 nf02_gcn_seed1 on GPU 1
+  [04:27:45] 完成 nf01_gcn_seed1 [OK]
+  [04:27:45] 启动 nf02_gcn_seed2 on GPU 3
+  [04:32:35] 完成 nf01_gcn_seed3 [OK]
+  [04:32:35] 完成 nf01_gcn_seed4 [OK]
+  [04:32:35] 启动 nf02_gcn_seed3 on GPU 0
+  [04:32:35] 启动 nf02_gcn_seed4 on GPU 2
+  [04:34:16] 完成 nf02_gcn_seed1 [OK]
+  [04:34:16] 启动 nf03_gcn_seed0 on GPU 1
+  [04:34:36] 完成 nf02_gcn_seed2 [OK]
+  [04:34:36] 启动 nf03_gcn_seed1 on GPU 3
+  [04:38:16] 完成 nf02_gcn_seed4 [OK]
+  [04:38:16] 启动 nf03_gcn_seed2 on GPU 2
+  [04:39:26] 完成 nf02_gcn_seed3 [OK]
+  [04:39:26] 启动 nf03_gcn_seed3 on GPU 0
+  [04:41:06] 完成 nf03_gcn_seed0 [OK]
+  [04:41:06] 启动 nf03_gcn_seed4 on GPU 1
+  [04:41:26] 完成 nf03_gcn_seed1 [OK]
+  [04:41:26] 启动 nf04_gcn_seed0 on GPU 3
+  [04:45:06] 完成 nf03_gcn_seed2 [OK]
+  [04:45:06] 启动 nf04_gcn_seed1 on GPU 2
+  [04:46:16] 完成 nf03_gcn_seed3 [OK]
+  [04:46:16] 启动 nf04_gcn_seed2 on GPU 0
+  [04:47:56] 完成 nf03_gcn_seed4 [OK]
+  [04:47:56] 启动 nf04_gcn_seed3 on GPU 1
+  [04:48:16] 完成 nf04_gcn_seed0 [OK]
+  [04:48:16] 启动 nf04_gcn_seed4 on GPU 3
+  [04:51:57] 完成 nf04_gcn_seed1 [OK]
+  [04:51:57] 启动 nf05_gcn_seed0 on GPU 2
+  [04:53:07] 完成 nf04_gcn_seed2 [OK]
+  [04:53:07] 启动 nf05_gcn_seed1 on GPU 0
+  [04:54:47] 完成 nf04_gcn_seed3 [OK]
+  [04:54:47] 启动 nf05_gcn_seed2 on GPU 1
+  [04:55:07] 完成 nf04_gcn_seed4 [OK]
+  [04:55:07] 启动 nf05_gcn_seed3 on GPU 3
+  [04:58:47] 完成 nf05_gcn_seed0 [OK]
+  [04:58:47] 启动 nf05_gcn_seed4 on GPU 2
+  [04:59:57] 完成 nf05_gcn_seed1 [OK]
+  [04:59:57] 启动 nf06_gcn_seed0 on GPU 0
+  [05:01:37] 完成 nf05_gcn_seed2 [OK]
+  [05:01:37] 启动 nf06_gcn_seed1 on GPU 1
+  [05:01:57] 完成 nf05_gcn_seed3 [OK]
+  [05:01:57] 启动 nf06_gcn_seed2 on GPU 3
+  [05:05:37] 完成 nf05_gcn_seed4 [OK]
+  [05:05:37] 启动 nf06_gcn_seed3 on GPU 2
+  [05:06:47] 完成 nf06_gcn_seed0 [OK]
+  [05:06:47] 启动 nf06_gcn_seed4 on GPU 0
+  [05:08:27] 完成 nf06_gcn_seed1 [OK]
+  [05:08:27] 启动 nf07_gcn_seed0 on GPU 1
+  [05:08:47] 完成 nf06_gcn_seed2 [OK]
+  [05:08:47] 启动 nf07_gcn_seed1 on GPU 3
+  [05:12:28] 完成 nf06_gcn_seed3 [OK]
+  [05:12:28] 启动 nf07_gcn_seed2 on GPU 2
+  [05:13:38] 完成 nf06_gcn_seed4 [OK]
+  [05:13:38] 启动 nf07_gcn_seed3 on GPU 0
+  [05:15:18] 完成 nf07_gcn_seed0 [OK]
+  [05:15:18] 启动 nf07_gcn_seed4 on GPU 1
+  [05:15:38] 完成 nf07_gcn_seed1 [OK]
+  [05:15:38] 启动 nf08_gcn_seed0 on GPU 3
+  [05:19:18] 完成 nf07_gcn_seed2 [OK]
+  [05:19:18] 启动 nf08_gcn_seed1 on GPU 2
+  [05:20:28] 完成 nf07_gcn_seed3 [OK]
+  [05:20:28] 启动 nf08_gcn_seed2 on GPU 0
+  [05:22:08] 完成 nf07_gcn_seed4 [OK]
+  [05:22:08] 启动 nf08_gcn_seed3 on GPU 1
+  [05:22:28] 完成 nf08_gcn_seed0 [OK]
+  [05:22:28] 启动 nf08_gcn_seed4 on GPU 3
+  [05:26:08] 完成 nf08_gcn_seed1 [OK]
+  [05:26:08] 启动 nf09_gcn_seed0 on GPU 2
+  [05:27:19] 完成 nf08_gcn_seed2 [OK]
+  [05:27:19] 启动 nf09_gcn_seed1 on GPU 0
+  [05:28:59] 完成 nf08_gcn_seed3 [OK]
+  [05:28:59] 启动 nf09_gcn_seed2 on GPU 1
+  [05:29:19] 完成 nf08_gcn_seed4 [OK]
+  [05:29:19] 启动 nf09_gcn_seed3 on GPU 3
+  [05:32:59] 完成 nf09_gcn_seed0 [OK]
+  [05:32:59] 启动 nf09_gcn_seed4 on GPU 2
+  [05:34:09] 完成 nf09_gcn_seed1 [OK]
+  [05:34:09] 启动 rs00_gcn_seed0 on GPU 0
+  [05:35:49] 完成 nf09_gcn_seed2 [OK]
+  [05:35:49] 启动 rs01_gcn_seed0 on GPU 1
+  [05:36:09] 完成 nf09_gcn_seed3 [OK]
+  [05:36:09] 启动 rs02_gcn_seed0 on GPU 3
+  [05:38:19] 完成 rs00_gcn_seed0 [OK]
+  [05:38:19] 启动 rs03_gcn_seed0 on GPU 0
+  [05:39:49] 完成 nf09_gcn_seed4 [OK]
+  [05:39:49] 启动 rs04_gcn_seed0 on GPU 2
+  [05:41:09] 完成 rs01_gcn_seed0 [OK]
+  [05:41:09] 启动 rs05_gcn_seed0 on GPU 1
+  [05:41:39] 完成 rs02_gcn_seed0 [OK]
+  [05:41:39] 启动 rs06_gcn_seed0 on GPU 3
+  [05:43:09] 完成 rs04_gcn_seed0 [OK]
+  [05:43:09] 启动 rs07_gcn_seed0 on GPU 2
+  [05:44:50] 完成 rs05_gcn_seed0 [OK]
+  [05:44:50] 启动 rs08_gcn_seed0 on GPU 1
+  [05:45:10] 完成 rs03_gcn_seed0 [OK]
+  [05:45:10] 启动 rs09_gcn_seed0 on GPU 0
+  [05:48:30] 完成 rs06_gcn_seed0 [OK]
+  [05:48:30] 启动 rs10_gcn_seed0 on GPU 3
+  [05:49:50] 完成 rs07_gcn_seed0 [OK]
+  [05:49:50] 启动 rs11_gcn_seed0 on GPU 2
+  [05:51:40] 完成 rs08_gcn_seed0 [OK]
+  [05:51:40] 启动 rs12_gcn_seed0 on GPU 1
+  [05:52:00] 完成 rs09_gcn_seed0 [OK]
+  [05:52:00] 启动 rs13_gcn_seed0 on GPU 0
+  [05:55:00] 完成 rs10_gcn_seed0 [OK]
+  [05:55:00] 启动 rs14_gcn_seed0 on GPU 3
+  [05:56:40] 完成 rs11_gcn_seed0 [OK]
+  [05:56:40] 完成 rs13_gcn_seed0 [OK]
+  [05:56:40] 启动 rs15_gcn_seed0 on GPU 2
+  [05:56:40] 启动 rs16_gcn_seed0 on GPU 0
+  [05:58:30] 完成 rs12_gcn_seed0 [OK]
+  [05:58:30] 启动 rs17_gcn_seed0 on GPU 1
+  [06:01:51] 完成 rs14_gcn_seed0 [OK]
+  [06:01:51] 启动 rs18_gcn_seed0 on GPU 3
+  [06:03:31] 完成 rs15_gcn_seed0 [OK]
+  [06:03:31] 完成 rs16_gcn_seed0 [OK]
+  [06:03:31] 启动 rs19_gcn_seed0 on GPU 2
+  [06:03:31] 启动 rs20_gcn_seed0 on GPU 0
+  [06:04:41] 完成 rs17_gcn_seed0 [OK]
+  [06:04:41] 启动 rs21_gcn_seed0 on GPU 1
+  [06:08:41] 完成 rs18_gcn_seed0 [OK]
+  [06:08:41] 启动 rs22_gcn_seed0 on GPU 3
+  [06:10:21] 完成 rs19_gcn_seed0 [OK]
+  [06:10:21] 完成 rs20_gcn_seed0 [OK]
+  [06:10:21] 启动 rs23_gcn_seed0 on GPU 2
+  [06:10:21] 启动 rs24_gcn_seed0 on GPU 0
+  [06:11:31] 完成 rs21_gcn_seed0 [OK]
+  [06:11:31] 启动 rs25_gcn_seed0 on GPU 1
+  [06:15:31] 完成 rs22_gcn_seed0 [OK]
+  [06:15:31] 启动 rs26_gcn_seed0 on GPU 3
+  [06:17:11] 完成 rs24_gcn_seed0 [OK]
+  [06:17:11] 启动 rs27_gcn_seed0 on GPU 0
+  [06:17:21] 完成 rs23_gcn_seed0 [OK]
+  [06:17:21] 启动 rs28_gcn_seed0 on GPU 2
+  [06:18:11] 完成 rs25_gcn_seed0 [OK]
+  [06:18:11] 启动 rs29_gcn_seed0 on GPU 1
+  [06:22:02] 完成 rs26_gcn_seed0 [OK]
+  [06:22:02] 启动 rs30_gcn_seed0 on GPU 3
+  [06:23:52] 完成 rs27_gcn_seed0 [OK]
+  [06:23:52] 启动 rs31_gcn_seed0 on GPU 0
+  [06:24:02] 完成 rs28_gcn_seed0 [OK]
+  [06:24:02] 启动 rs32_gcn_seed0 on GPU 2
+  [06:24:52] 完成 rs29_gcn_seed0 [OK]
+  [06:24:52] 启动 rs33_gcn_seed0 on GPU 1
+  [06:28:52] 完成 rs30_gcn_seed0 [OK]
+  [06:28:52] 启动 rs34_gcn_seed0 on GPU 3
+  [06:30:42] 完成 rs31_gcn_seed0 [OK]
+  [06:30:42] 启动 rs35_gcn_seed0 on GPU 0
+  [06:30:52] 完成 rs32_gcn_seed0 [OK]
+  [06:30:52] 启动 rs36_gcn_seed0 on GPU 2
+  [06:31:42] 完成 rs33_gcn_seed0 [OK]
+  [06:31:42] 启动 rs37_gcn_seed0 on GPU 1
+  [06:35:42] 完成 rs34_gcn_seed0 [OK]
+  [06:35:42] 启动 rs38_gcn_seed0 on GPU 3
+  [06:37:33] 完成 rs35_gcn_seed0 [OK]
+  [06:37:33] 启动 rs39_gcn_seed0 on GPU 0
+  [06:37:43] 完成 rs36_gcn_seed0 [OK]
+  [06:37:43] 启动 rs40_gcn_seed0 on GPU 2
+  [06:38:33] 完成 rs37_gcn_seed0 [OK]
+  [06:38:33] 启动 rs41_gcn_seed0 on GPU 1
+  [06:42:33] 完成 rs38_gcn_seed0 [OK]
+  [06:42:33] 启动 rs42_gcn_seed0 on GPU 3
+  [06:44:23] 完成 rs39_gcn_seed0 [OK]
+  [06:44:23] 启动 rs43_gcn_seed0 on GPU 0
+  [06:44:33] 完成 rs40_gcn_seed0 [OK]
+  [06:44:33] 启动 rs44_gcn_seed0 on GPU 2
+  [06:45:23] 完成 rs41_gcn_seed0 [OK]
+  [06:45:23] 启动 rs45_gcn_seed0 on GPU 1
+  [06:49:23] 完成 rs42_gcn_seed0 [OK]
+  [06:49:23] 启动 rs46_gcn_seed0 on GPU 3
+  [06:51:13] 完成 rs43_gcn_seed0 [OK]
+  [06:51:13] 启动 rs47_gcn_seed0 on GPU 0
+  [06:51:23] 完成 rs44_gcn_seed0 [OK]
+  [06:51:23] 启动 rs48_gcn_seed0 on GPU 2
+  [06:52:13] 完成 rs45_gcn_seed0 [OK]
+  [06:52:13] 启动 rs49_gcn_seed0 on GPU 1
+  [06:56:14] 完成 rs46_gcn_seed0 [OK]
+  [06:56:14] 启动 nf00_dnn_seed0 on GPU 3
+  [06:56:44] 完成 nf00_dnn_seed0 [OK]
+  [06:56:44] 启动 nf00_dnn_seed1 on GPU 3
+  [06:57:04] 完成 nf00_dnn_seed1 [OK]
+  [06:57:04] 启动 nf00_dnn_seed2 on GPU 3
+  [06:57:24] 完成 nf00_dnn_seed2 [OK]
+  [06:57:24] 启动 nf00_dnn_seed3 on GPU 3
+  [06:57:44] 完成 nf00_dnn_seed3 [OK]
+  [06:57:44] 启动 nf00_dnn_seed4 on GPU 3
+  [06:58:04] 完成 rs47_gcn_seed0 [OK]
+  [06:58:04] 完成 nf00_dnn_seed4 [OK]
+  [06:58:04] 启动 nf01_dnn_seed0 on GPU 0
+  [06:58:04] 启动 nf01_dnn_seed1 on GPU 3
+  [06:58:14] 完成 rs48_gcn_seed0 [OK]
+  [06:58:14] 启动 nf01_dnn_seed2 on GPU 2
+  [06:58:34] 完成 nf01_dnn_seed0 [OK]
+  [06:58:34] 完成 nf01_dnn_seed1 [OK]
+  [06:58:34] 启动 nf01_dnn_seed3 on GPU 0
+  [06:58:34] 启动 nf01_dnn_seed4 on GPU 3
+  [06:58:44] 完成 nf01_dnn_seed2 [OK]
+  [06:58:44] 启动 nf02_dnn_seed2 on GPU 2
+  [06:59:04] 完成 rs49_gcn_seed0 [OK]
+  [06:59:04] 完成 nf01_dnn_seed3 [OK]
+  [06:59:04] 完成 nf01_dnn_seed4 [OK]
+  [06:59:04] 启动 nf02_dnn_seed3 on GPU 1
+  [06:59:04] 启动 nf02_dnn_seed4 on GPU 0
+  [06:59:04] 启动 nf03_dnn_seed0 on GPU 3
+  [06:59:14] 完成 nf02_dnn_seed2 [OK]
+  [06:59:14] 启动 nf03_dnn_seed1 on GPU 2
+  [06:59:34] 完成 nf02_dnn_seed3 [OK]
+  [06:59:34] 完成 nf02_dnn_seed4 [OK]
+  [06:59:34] 完成 nf03_dnn_seed0 [OK]
+  [06:59:34] 启动 nf03_dnn_seed2 on GPU 1
+  [06:59:34] 启动 nf03_dnn_seed3 on GPU 0
+  [06:59:34] 启动 nf03_dnn_seed4 on GPU 3
+  [06:59:44] 完成 nf03_dnn_seed1 [OK]
+  [06:59:44] 启动 nf04_dnn_seed0 on GPU 2
+  [07:00:04] 完成 nf03_dnn_seed2 [OK]
+  [07:00:04] 完成 nf03_dnn_seed3 [OK]
+  [07:00:04] 完成 nf03_dnn_seed4 [OK]
+  [07:00:04] 启动 nf04_dnn_seed1 on GPU 1
+  [07:00:04] 启动 nf04_dnn_seed2 on GPU 0
+  [07:00:04] 启动 nf04_dnn_seed3 on GPU 3
+  [07:00:14] 完成 nf04_dnn_seed0 [OK]
+  [07:00:14] 启动 nf04_dnn_seed4 on GPU 2
+  [07:00:34] 完成 nf04_dnn_seed1 [OK]
+  [07:00:34] 完成 nf04_dnn_seed2 [OK]
+  [07:00:34] 完成 nf04_dnn_seed3 [OK]
+  [07:00:34] 启动 nf05_dnn_seed0 on GPU 1
+  [07:00:34] 启动 nf05_dnn_seed1 on GPU 0
+  [07:00:34] 启动 nf05_dnn_seed2 on GPU 3
+  [07:00:44] 完成 nf04_dnn_seed4 [OK]
+  [07:00:44] 启动 nf05_dnn_seed3 on GPU 2
+  [07:01:04] 完成 nf05_dnn_seed0 [OK]
+  [07:01:04] 完成 nf05_dnn_seed1 [OK]
+  [07:01:04] 启动 nf05_dnn_seed4 on GPU 1
+  [07:01:04] 启动 nf06_dnn_seed0 on GPU 0
+  [07:01:14] 完成 nf05_dnn_seed2 [OK]
+  [07:01:14] 启动 nf06_dnn_seed1 on GPU 3
+  [07:01:24] 完成 nf05_dnn_seed3 [OK]
+  [07:01:24] 启动 nf06_dnn_seed2 on GPU 2
+  [07:01:34] 完成 nf05_dnn_seed4 [OK]
+  [07:01:34] 完成 nf06_dnn_seed0 [OK]
+  [07:01:34] 启动 nf06_dnn_seed3 on GPU 1
+  [07:01:34] 启动 nf06_dnn_seed4 on GPU 0
+  [07:01:54] 完成 nf06_dnn_seed1 [OK]
+  [07:01:54] 完成 nf06_dnn_seed2 [OK]
+  [07:01:54] 启动 nf07_dnn_seed0 on GPU 3
+  [07:01:54] 启动 nf07_dnn_seed1 on GPU 2
+  [07:02:04] 完成 nf06_dnn_seed3 [OK]
+  [07:02:04] 完成 nf06_dnn_seed4 [OK]
+  [07:02:04] 启动 nf07_dnn_seed2 on GPU 1
+  [07:02:04] 启动 nf07_dnn_seed3 on GPU 0
+  [07:02:24] 完成 nf07_dnn_seed0 [OK]
+  [07:02:24] 完成 nf07_dnn_seed1 [OK]
+  [07:02:24] 启动 nf07_dnn_seed4 on GPU 3
+  [07:02:24] 启动 nf08_dnn_seed0 on GPU 2
+  [07:02:34] 完成 nf07_dnn_seed2 [OK]
+  [07:02:34] 启动 nf08_dnn_seed1 on GPU 1
+  [07:02:44] 完成 nf07_dnn_seed3 [OK]
+  [07:02:44] 启动 nf08_dnn_seed2 on GPU 0
+  [07:02:54] 完成 nf07_dnn_seed4 [OK]
+  [07:02:54] 完成 nf08_dnn_seed0 [OK]
+  [07:02:54] 启动 nf08_dnn_seed3 on GPU 3
+  [07:02:54] 启动 nf08_dnn_seed4 on GPU 2
+  [07:03:04] 完成 nf08_dnn_seed1 [OK]
+  [07:03:04] 启动 nf09_dnn_seed0 on GPU 1
+  [07:03:14] 完成 nf08_dnn_seed2 [OK]
+  [07:03:14] 启动 nf09_dnn_seed1 on GPU 0
+  [07:03:24] 完成 nf08_dnn_seed4 [OK]
+  [07:03:24] 启动 nf09_dnn_seed2 on GPU 2
+  [07:03:34] 完成 nf08_dnn_seed3 [OK]
+  [07:03:34] 完成 nf09_dnn_seed0 [OK]
+  [07:03:34] 启动 nf09_dnn_seed3 on GPU 3
+  [07:03:34] 启动 nf09_dnn_seed4 on GPU 1
+  [07:03:54] 完成 nf09_dnn_seed1 [OK]
+  [07:03:54] 完成 nf09_dnn_seed2 [OK]
+  [07:03:54] 启动 rs00_dnn_seed0 on GPU 0
+  [07:03:54] 启动 rs01_dnn_seed0 on GPU 2
+  [07:04:04] 完成 nf09_dnn_seed3 [OK]
+  [07:04:04] 完成 nf09_dnn_seed4 [OK]
+  [07:04:04] 启动 rs02_dnn_seed0 on GPU 3
+  [07:04:04] 启动 rs03_dnn_seed0 on GPU 1
+  [07:04:14] 完成 rs01_dnn_seed0 [OK]
+  [07:04:14] 启动 rs04_dnn_seed0 on GPU 2
+  [07:04:24] 完成 rs00_dnn_seed0 [OK]
+  [07:04:24] 完成 rs02_dnn_seed0 [OK]
+  [07:04:24] 启动 rs05_dnn_seed0 on GPU 0
+  [07:04:24] 启动 rs06_dnn_seed0 on GPU 3
+  [07:04:34] 完成 rs03_dnn_seed0 [OK]
+  [07:04:34] 完成 rs04_dnn_seed0 [OK]
+  [07:04:34] 启动 rs07_dnn_seed0 on GPU 1
+  [07:04:34] 启动 rs08_dnn_seed0 on GPU 2
+  [07:04:54] 完成 rs05_dnn_seed0 [OK]
+  [07:04:54] 完成 rs06_dnn_seed0 [OK]
+  [07:04:54] 启动 rs09_dnn_seed0 on GPU 0
+  [07:04:54] 启动 rs10_dnn_seed0 on GPU 3
+  [07:05:04] 完成 rs07_dnn_seed0 [OK]
+  [07:05:04] 完成 rs08_dnn_seed0 [OK]
+  [07:05:04] 启动 rs11_dnn_seed0 on GPU 1
+  [07:05:04] 启动 rs12_dnn_seed0 on GPU 2
+  [07:05:24] 完成 rs09_dnn_seed0 [OK]
+  [07:05:24] 完成 rs10_dnn_seed0 [OK]
+  [07:05:24] 启动 rs13_dnn_seed0 on GPU 0
+  [07:05:24] 启动 rs14_dnn_seed0 on GPU 3
+  [07:05:34] 完成 rs11_dnn_seed0 [OK]
+  [07:05:34] 完成 rs12_dnn_seed0 [OK]
+  [07:05:34] 启动 rs15_dnn_seed0 on GPU 1
+  [07:05:34] 启动 rs16_dnn_seed0 on GPU 2
+  [07:05:54] 完成 rs13_dnn_seed0 [OK]
+  [07:05:54] 完成 rs14_dnn_seed0 [OK]
+  [07:05:54] 启动 rs17_dnn_seed0 on GPU 0
+  [07:05:54] 启动 rs18_dnn_seed0 on GPU 3
+  [07:06:04] 完成 rs15_dnn_seed0 [OK]
+  [07:06:04] 完成 rs16_dnn_seed0 [OK]
+  [07:06:04] 启动 rs19_dnn_seed0 on GPU 1
+  [07:06:04] 启动 rs20_dnn_seed0 on GPU 2
+  [07:06:24] 完成 rs17_dnn_seed0 [OK]
+  [07:06:24] 完成 rs18_dnn_seed0 [OK]
+  [07:06:24] 启动 rs21_dnn_seed0 on GPU 0
+  [07:06:24] 启动 rs22_dnn_seed0 on GPU 3
+  [07:06:34] 完成 rs19_dnn_seed0 [OK]
+  [07:06:34] 完成 rs20_dnn_seed0 [OK]
+  [07:06:34] 启动 rs23_dnn_seed0 on GPU 1
+  [07:06:34] 启动 rs24_dnn_seed0 on GPU 2
+  [07:06:54] 完成 rs21_dnn_seed0 [OK]
+  [07:06:54] 完成 rs22_dnn_seed0 [OK]
+  [07:06:54] 启动 rs25_dnn_seed0 on GPU 0
+  [07:06:54] 启动 rs26_dnn_seed0 on GPU 3
+  [07:07:04] 完成 rs23_dnn_seed0 [OK]
+  [07:07:04] 完成 rs24_dnn_seed0 [OK]
+  [07:07:04] 启动 rs27_dnn_seed0 on GPU 1
+  [07:07:04] 启动 rs28_dnn_seed0 on GPU 2
+  [07:07:24] 完成 rs25_dnn_seed0 [OK]
+  [07:07:24] 启动 rs29_dnn_seed0 on GPU 0
+  [07:07:34] 完成 rs26_dnn_seed0 [OK]
+  [07:07:34] 完成 rs27_dnn_seed0 [OK]
+  [07:07:34] 完成 rs28_dnn_seed0 [OK]
+  [07:07:34] 启动 rs30_dnn_seed0 on GPU 3
+  [07:07:34] 启动 rs31_dnn_seed0 on GPU 1
+  [07:07:34] 启动 rs32_dnn_seed0 on GPU 2
+  [07:07:54] 完成 rs29_dnn_seed0 [OK]
+  [07:07:54] 启动 rs33_dnn_seed0 on GPU 0
+  [07:08:04] 完成 rs30_dnn_seed0 [OK]
+  [07:08:04] 完成 rs31_dnn_seed0 [OK]
+  [07:08:04] 完成 rs32_dnn_seed0 [OK]
+  [07:08:04] 启动 rs34_dnn_seed0 on GPU 3
+  [07:08:04] 启动 rs35_dnn_seed0 on GPU 1
+  [07:08:04] 启动 rs36_dnn_seed0 on GPU 2
+  [07:08:24] 完成 rs33_dnn_seed0 [OK]
+  [07:08:24] 启动 rs37_dnn_seed0 on GPU 0
+  [07:08:34] 完成 rs34_dnn_seed0 [OK]
+  [07:08:34] 完成 rs35_dnn_seed0 [OK]
+  [07:08:34] 完成 rs36_dnn_seed0 [OK]
+  [07:08:34] 启动 rs38_dnn_seed0 on GPU 3
+  [07:08:34] 启动 rs39_dnn_seed0 on GPU 1
+  [07:08:34] 启动 rs40_dnn_seed0 on GPU 2
+  [07:08:55] 完成 rs37_dnn_seed0 [OK]
+  [07:08:55] 启动 rs41_dnn_seed0 on GPU 0
+  [07:09:05] 完成 rs39_dnn_seed0 [OK]
+  [07:09:05] 完成 rs40_dnn_seed0 [OK]
+  [07:09:05] 启动 rs42_dnn_seed0 on GPU 1
+  [07:09:05] 启动 rs43_dnn_seed0 on GPU 2
+  [07:09:15] 完成 rs38_dnn_seed0 [OK]
+  [07:09:15] 启动 rs44_dnn_seed0 on GPU 3
+  [07:09:25] 完成 rs41_dnn_seed0 [OK]
+  [07:09:25] 启动 rs45_dnn_seed0 on GPU 0
+  [07:09:35] 完成 rs42_dnn_seed0 [OK]
+  [07:09:35] 完成 rs43_dnn_seed0 [OK]
+  [07:09:35] 启动 rs46_dnn_seed0 on GPU 1
+  [07:09:35] 启动 rs47_dnn_seed0 on GPU 2
+  [07:09:45] 完成 rs44_dnn_seed0 [OK]
+  [07:09:45] 启动 rs48_dnn_seed0 on GPU 3
+  [07:09:55] 完成 rs45_dnn_seed0 [OK]
+  [07:09:55] 启动 rs49_dnn_seed0 on GPU 0
+  [07:10:05] 完成 rs46_dnn_seed0 [OK]
+  [07:10:05] 完成 rs47_dnn_seed0 [OK]
+  [07:10:15] 完成 rs48_dnn_seed0 [OK]
+  [07:10:15] 完成 rs49_dnn_seed0 [OK]
+
+全部完成：197

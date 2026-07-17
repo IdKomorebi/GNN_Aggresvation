@@ -1,0 +1,21 @@
+{
+  "tag": "transformer_gated",
+  "conf_variant": "transformer",
+  "arch": "gated",
+  "mean_r2_12conf": 0.8662618498007456,
+  "per_target_r2": {
+    "net_actual_interchange_mw": 0.8634216785430908,
+    "gross_actual_interchange_mw": 0.7918587327003479,
+    "total_gen": 0.9885179400444031,
+    "metered_load_mw": 0.990700900554657,
+    "total_losses": 0.8805212378501892,
+    "congestion_price_da": 0.6732138991355896,
+    "congestion_price_rt": 0.6638534069061279,
+    "marginal_loss_price_da": 0.8125969171524048,
+    "total_lmp_da": 0.9813812375068665,
+    "da_as_total_mw_primary_reserve": 0.9509455561637878,
+    "da_as_total_mw_synchronized_reserve": 0.9190999269485474,
+    "da_as_total_mw_thirty_minutes_reserve": 0.8790307641029358
+  },
+  "seed": 42
+}

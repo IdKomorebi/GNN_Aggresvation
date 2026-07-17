@@ -1,0 +1,30 @@
+{
+  "estimate_counts": {
+    "mlp": 1437,
+    "gnn": 1437
+  },
+  "estimate_expected_per_arch": 1437,
+  "estimate_k_grid_mismatches": [],
+  "estimate_field_mismatches": [],
+  "d67_mlp_replay_files": 990,
+  "d67_mlp_replay_max_abs_diff": 0.0,
+  "d67_pair_synergy_spearman_diff": {
+    "0": 0.0,
+    "10": 0.0,
+    "50": 0.0,
+    "200": 0.0
+  },
+  "duplicate_retrain_mean_r2_diff": {
+    "rs00->s22": 0.0,
+    "rs01->s36": 0.0,
+    "rs02->s18": 0.0,
+    "rs04->p08_23": 0.0,
+    "rs05->s15": 0.0,
+    "rs08->s28": 0.0
+  },
+  "gcn_audit_expected": 18,
+  "gcn_audit_completed": 18,
+  "gcn_audit_missing": [],
+  "gcn_audit_unexpected": [],
+  "pass": true
+}

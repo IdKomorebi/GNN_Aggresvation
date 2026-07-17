@@ -1,0 +1,69 @@
+{
+  "experiment": "c02_mlp_enc",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation42/outputs/tuning/c02_mlp_enc/20260625_034019",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 616,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.5378448963165283,
+  "final_test_mse_targets": 0.5378448963165283,
+  "final_test_mse_all": 0.5378448963165283,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "congestion_price_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.5378448963165283,
+  "final_alpha": {
+    "pearson": 0.9656451940536499,
+    "spearman": 0.008008992299437523,
+    "kendall": 0.008676438592374325,
+    "nmi": 0.007658941671252251,
+    "distance_corr": 0.010010470636188984
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "congestion_price_da": NaN
+  },
+  "final_target_loss_weights": {
+    "congestion_price_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.9656451940536499,
+    "spearman": 0.008008992299437523,
+    "kendall": 0.008676438592374325,
+    "nmi": 0.007658941671252251,
+    "distance_corr": 0.010010470636188984
+  },
+  "alpha_confidential_by_target_mean": {
+    "congestion_price_da": {
+      "pearson": 0.05630591884255409,
+      "spearman": 0.08400194346904755,
+      "kendall": 0.20310097932815552,
+      "nmi": 0.45609551668167114,
+      "distance_corr": 0.2004956305027008
+    }
+  },
+  "per_target_r2": {
+    "congestion_price_da": 0.5041723251342773
+  },
+  "per_target_mse": {
+    "congestion_price_da": 0.5378448367118835
+  },
+  "top10_sensitive_fields": [
+    "gen_fuel_coal_mw",
+    "gen_fuel_nuclear_pct",
+    "system_energy_price_da",
+    "gen_fuel_other_renewables_pct",
+    "gen_fuel_oil_mw",
+    "gross_inadv_interchange_mw",
+    "gen_fuel_nuclear_mw",
+    "forecast_load_mw_latest_available",
+    "gen_fuel_coal_pct",
+    "gen_fuel_gas_mw"
+  ]
+}

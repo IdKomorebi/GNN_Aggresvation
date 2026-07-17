@@ -1,0 +1,2 @@
+target_field,n_valid_sources,pearson,spearman,kendall,nmi,distance_corr
+da_as_total_mw_synchronized_reserve,8,0.1989336460828781,0.198320209980011,0.20422962307929993,0.2049981951713562,0.19351829588413239

@@ -1,0 +1,69 @@
+{
+  "experiment": "c09_attn15",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation42/outputs/tuning/c09_attn15/20260625_035028",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 616,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.6948976516723633,
+  "final_test_mse_targets": 0.6948976516723633,
+  "final_test_mse_all": 0.6948976516723633,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "congestion_price_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.6948976516723633,
+  "final_alpha": {
+    "pearson": 0.969092845916748,
+    "spearman": 0.008420804515480995,
+    "kendall": 0.008707349188625813,
+    "nmi": 0.004632394760847092,
+    "distance_corr": 0.009146643802523613
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "congestion_price_da": NaN
+  },
+  "final_target_loss_weights": {
+    "congestion_price_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.969092845916748,
+    "spearman": 0.008420804515480995,
+    "kendall": 0.008707349188625813,
+    "nmi": 0.004632394760847092,
+    "distance_corr": 0.009146643802523613
+  },
+  "alpha_confidential_by_target_mean": {
+    "congestion_price_da": {
+      "pearson": 0.047391727566719055,
+      "spearman": 0.07534310966730118,
+      "kendall": 0.20174863934516907,
+      "nmi": 0.40843358635902405,
+      "distance_corr": 0.26708292961120605
+    }
+  },
+  "per_target_r2": {
+    "congestion_price_da": 0.3593885898590088
+  },
+  "per_target_mse": {
+    "congestion_price_da": 0.6948977112770081
+  },
+  "top10_sensitive_fields": [
+    "gen_fuel_gas_mw",
+    "gen_fuel_nuclear_pct",
+    "system_energy_price_da",
+    "forecast_load_mw_day_ahead",
+    "gen_fuel_oil_mw",
+    "gen_fuel_coal_mw",
+    "forecast_load_mw_latest_available",
+    "gen_fuel_other_renewables_pct",
+    "gen_fuel_oil_pct",
+    "gen_fuel_nuclear_mw"
+  ]
+}

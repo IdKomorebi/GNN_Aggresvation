@@ -1,0 +1,26 @@
+{
+  "subset_id": "p01_16",
+  "group": "pair",
+  "size": 2,
+  "fields": [
+    "gen_fuel_gas_mw",
+    "gen_fuel_other_renewables_pct"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.32831040024757385,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.16307330131530762,
+    "gross_actual_interchange_mw": 0.1668640375137329,
+    "total_gen": 0.88695228099823,
+    "metered_load_mw": 0.8653481006622314,
+    "total_losses": 0.26476627588272095,
+    "congestion_price_da": 0.11917251348495483,
+    "congestion_price_rt": 0.09346401691436768,
+    "marginal_loss_price_da": 0.27380186319351196,
+    "total_lmp_da": 0.48791277408599854,
+    "da_as_total_mw_primary_reserve": 0.13499897718429565,
+    "da_as_total_mw_synchronized_reserve": 0.13891851902008057,
+    "da_as_total_mw_thirty_minutes_reserve": 0.344451904296875
+  }
+}

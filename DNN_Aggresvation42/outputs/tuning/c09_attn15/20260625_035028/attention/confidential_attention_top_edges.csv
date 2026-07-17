@@ -1,0 +1,9 @@
+target_field,rank,source_field,source_type,attention
+congestion_price_da,1,gen_fuel_nuclear_pct,general,0.3322160243988037
+congestion_price_da,2,gen_fuel_gas_mw,general,0.30302849411964417
+congestion_price_da,3,forecast_load_mw_latest_available,general,0.12240417301654816
+congestion_price_da,4,forecast_load_mw_day_ahead,general,0.12074699997901917
+congestion_price_da,5,gen_fuel_coal_mw,general,0.048652637749910355
+congestion_price_da,6,system_energy_price_da,general,0.027616996318101883
+congestion_price_da,7,gen_fuel_oil_mw,general,0.022910885512828827
+congestion_price_da,8,da_as_mcp_primary_reserve,general,0.02242380566895008

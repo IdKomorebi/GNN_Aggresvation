@@ -1,0 +1,9 @@
+target_idx,target_field,source_idx,source_field,source_type,gate_lambda,prior
+44,congestion_price_da,20,forecast_load_mw_day_ahead,general,0.5918728709220886,0.24367168545722961
+44,congestion_price_da,19,forecast_load_mw_latest_available,general,0.5641820430755615,0.26250243186950684
+44,congestion_price_da,0,gen_fuel_coal_mw,general,0.5534419417381287,0.17453309893608093
+44,congestion_price_da,29,da_as_mcp_primary_reserve,general,0.5459219217300415,0.13554492592811584
+44,congestion_price_da,38,system_energy_price_da,general,0.512420654296875,0.4173329472541809
+44,congestion_price_da,1,gen_fuel_gas_mw,general,0.48498713970184326,0.19438856840133667
+44,congestion_price_da,5,gen_fuel_oil_mw,general,0.4294554591178894,0.31193670630455017
+44,congestion_price_da,14,gen_fuel_nuclear_pct,general,0.2989369034767151,0.1705462634563446

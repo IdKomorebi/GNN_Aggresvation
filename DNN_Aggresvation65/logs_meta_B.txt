@@ -1,0 +1,25 @@
+============================================================
+  [数据准备] 加载并预处理数据
+============================================================
+  删除常量列 (5): ['gen_fuel_storage_pct', 'da_as_mcp_thirty_minutes_reserve', 'da_as_ircmwt2_primary_reserve', 'da_as_ircmwt2_synchronized_reserve', 'da_as_ircmwt2_thirty_minutes_reserve']
+  删除含NaN的行: 8760 -> 6556
+  字段总数: 56
+  General字段: 44
+  Confidential字段: 12
+  时间步总数: 6556
+  切分方式: shuffle (seed=42)
+  训练集: 4589 行 (70%)
+  测试集: 1967 行 (30%)
+  it=500 held-out K10 平均 R²=0.6691 (60s)
+  it=1000 held-out K10 平均 R²=0.6435 (119s)
+  it=1500 held-out K10 平均 R²=0.6243 (178s)
+  it=2000 held-out K10 平均 R²=0.6030 (237s)
+  it=2500 held-out K10 平均 R²=0.6019 (296s)
+  it=3000 held-out K10 平均 R²=0.5872 (355s)
+  it=3500 held-out K10 平均 R²=0.5821 (414s)
+  it=4000 held-out K10 平均 R²=0.5747 (472s)
+  it=4500 held-out K10 平均 R²=0.5641 (531s)
+  it=5000 held-out K10 平均 R²=0.5594 (590s)
+  it=5500 held-out K10 平均 R²=0.5578 (649s)
+  it=6000 held-out K10 平均 R²=0.5571 (708s)
+[reptile_ws seed2] 完成 -> reptile_init_ws_seed2.pt (708s)

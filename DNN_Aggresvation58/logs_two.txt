@@ -1,0 +1,35 @@
+============================================================
+  [数据准备] 加载并预处理数据
+============================================================
+  删除常量列 (5): ['gen_fuel_storage_pct', 'da_as_mcp_thirty_minutes_reserve', 'da_as_ircmwt2_primary_reserve', 'da_as_ircmwt2_synchronized_reserve', 'da_as_ircmwt2_thirty_minutes_reserve']
+  删除含NaN的行: 8760 -> 6556
+  字段总数: 56
+  General字段: 44
+  Confidential字段: 12
+  时间步总数: 6556
+  切分方式: shuffle (seed=42)
+  训练集: 4589 行 (70%)
+  测试集: 1967 行 (30%)
+/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation58/scripts/topk_two_oracles.py:69: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  mdl.load_state_dict(torch.load(path, map_location=DEV)); mdl.eval(); return mdl
+计算 5 个模型的 Shapley 排名 ...
+
+=== oracle=DNN(44->12) — top-k 平均 R² ===
+  k     DNN(44->12)  gcn_noprior   gcn_static  gcn_dynamic  gcn_dynamic
+  1           0.160        0.160        0.160        0.160        0.051
+  2           0.249        0.249        0.197        0.249        0.180
+  4           0.354        0.283        0.283        0.354        0.338
+  8           0.532        0.470        0.416        0.470        0.507
+  16          0.717        0.679        0.648        0.679        0.695
+  24          0.803        0.789        0.810        0.792        0.775
+  图: outputs/topk_oracle_dnn.png
+
+=== oracle=gcn_dynamic(best acc) — top-k 平均 R² ===
+  k     DNN(44->12)  gcn_noprior   gcn_static  gcn_dynamic  gcn_dynamic
+  1           0.138        0.138        0.138        0.138        0.042
+  2           0.216        0.216        0.153        0.216        0.150
+  4           0.288        0.315        0.315        0.288        0.286
+  8           0.476        0.509        0.465        0.509        0.491
+  16          0.762        0.747        0.727        0.747        0.752
+  24          0.833        0.840        0.823        0.833        0.833
+  图: outputs/topk_oracle_gcndyn.png

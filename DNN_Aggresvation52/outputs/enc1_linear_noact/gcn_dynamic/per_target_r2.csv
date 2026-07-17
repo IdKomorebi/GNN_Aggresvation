@@ -1,0 +1,13 @@
+confidential_field,test_r2
+metered_load_mw,0.9899494647979736
+total_gen,0.9883966445922852
+total_lmp_da,0.9840452075004578
+da_as_total_mw_primary_reserve,0.9513950943946838
+da_as_total_mw_synchronized_reserve,0.9173375964164734
+da_as_total_mw_thirty_minutes_reserve,0.869644284248352
+total_losses,0.868443489074707
+net_actual_interchange_mw,0.8533331155776978
+marginal_loss_price_da,0.8246640563011169
+gross_actual_interchange_mw,0.793323278427124
+congestion_price_rt,0.6873408555984497
+congestion_price_da,0.6476091742515564

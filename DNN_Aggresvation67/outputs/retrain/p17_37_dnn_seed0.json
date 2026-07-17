@@ -1,0 +1,26 @@
+{
+  "subset_id": "p17_37",
+  "group": "pair",
+  "size": 2,
+  "fields": [
+    "gen_fuel_solar_pct",
+    "da_as_nsr_mw_primary_reserve"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.24177873134613037,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.14936208724975586,
+    "gross_actual_interchange_mw": 0.1958053708076477,
+    "total_gen": 0.2791549563407898,
+    "metered_load_mw": 0.2719823122024536,
+    "total_losses": 0.2660415768623352,
+    "congestion_price_da": 0.047735393047332764,
+    "congestion_price_rt": 0.05979210138320923,
+    "marginal_loss_price_da": 0.08574181795120239,
+    "total_lmp_da": 0.18695104122161865,
+    "da_as_total_mw_primary_reserve": 0.6412903070449829,
+    "da_as_total_mw_synchronized_reserve": 0.3751260042190552,
+    "da_as_total_mw_thirty_minutes_reserve": 0.34236180782318115
+  }
+}

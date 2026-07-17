@@ -1,0 +1,7 @@
+variant,uses_gat,gat_scope,corr_weight,mixing,mean_r2_12conf,delta_vs_baseline,gap_to_probe,desc
+split_baseline,是,仅confidential(G→C),部分静态,G-G:GCN静态邻接 / G→C:逐对动态gate(q·k与逐边先验),0.8663,0.0,-0.0274,当前设计：分裂聚合
+gcn_noprior,否,无,无,GCN，均匀邻接(行归一),0.8737,0.0074,-0.02,全图GCN，仅用相关性筛出的拓扑、边不加权
+gcn_prior,否,无,全局静态,GCN，先验加权静态邻接(行归一),0.8667,0.0004,-0.027,全图GCN，全局alpha先验加权
+gat_noprior,是,全图,无,纯动态 q·k 注意力,0.8506,-0.0157,-0.0431,全图GAT，无先验
+gat_prior_static,是,全图,全局静态,动态q·k + 单一全局scale×log先验(no_gate),0.8523,-0.014,-0.0414,全图GAT + 全局静态注意力(no_gate)
+gat_prior,是,全图,全局动态,逐对动态gate混合(q·k与全局先验),0.8727,0.0064,-0.021,全图GAT + 全局动态gate

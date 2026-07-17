@@ -1,0 +1,69 @@
+{
+  "experiment": "sfull_gross_actual_interchange_mw",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation43/outputs/tuning/sfull_gross_actual_interchange_mw/20260625_215705",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 884,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.19237811863422394,
+  "final_test_mse_targets": 0.19237811863422394,
+  "final_test_mse_all": 0.19237811863422394,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "gross_actual_interchange_mw"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.19237811863422394,
+  "final_alpha": {
+    "pearson": 0.8257250189781189,
+    "spearman": 0.038576263934373856,
+    "kendall": 0.04578205943107605,
+    "nmi": 0.043821774423122406,
+    "distance_corr": 0.04609488695859909
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "gross_actual_interchange_mw": NaN
+  },
+  "final_target_loss_weights": {
+    "gross_actual_interchange_mw": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.8257250189781189,
+    "spearman": 0.038576263934373856,
+    "kendall": 0.04578205943107605,
+    "nmi": 0.043821774423122406,
+    "distance_corr": 0.04609488695859909
+  },
+  "alpha_confidential_by_target_mean": {
+    "gross_actual_interchange_mw": {
+      "pearson": 0.14497847855091095,
+      "spearman": 0.12888936698436737,
+      "kendall": 0.1347498893737793,
+      "nmi": 0.4098897874355316,
+      "distance_corr": 0.18149244785308838
+    }
+  },
+  "per_target_r2": {
+    "gross_actual_interchange_mw": 0.8151266574859619
+  },
+  "per_target_mse": {
+    "gross_actual_interchange_mw": 0.19237813353538513
+  },
+  "top10_sensitive_fields": [
+    "gross_inadv_interchange_mw",
+    "gen_fuel_nuclear_mw",
+    "gross_sched_interchange_mw",
+    "total_pjm_reg_purchases",
+    "gen_fuel_multiple_fuels_mw",
+    "marginal_loss_price_rt",
+    "forecast_load_mw_day_ahead",
+    "gen_fuel_gas_mw",
+    "gen_fuel_coal_mw",
+    "gen_fuel_nuclear_pct"
+  ]
+}

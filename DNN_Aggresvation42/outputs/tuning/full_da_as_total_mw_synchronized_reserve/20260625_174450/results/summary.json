@@ -1,0 +1,69 @@
+{
+  "experiment": "full_da_as_total_mw_synchronized_reserve",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation42/outputs/tuning/full_da_as_total_mw_synchronized_reserve/20260625_174450",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 610,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.07874331623315811,
+  "final_test_mse_targets": 0.07874331623315811,
+  "final_test_mse_all": 0.07874331623315811,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "da_as_total_mw_synchronized_reserve"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.07874331623315811,
+  "final_alpha": {
+    "pearson": 0.2655920386314392,
+    "spearman": 0.1719508171081543,
+    "kendall": 0.15488499402999878,
+    "nmi": 0.21179234981536865,
+    "distance_corr": 0.19577980041503906
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "da_as_total_mw_synchronized_reserve": NaN
+  },
+  "final_target_loss_weights": {
+    "da_as_total_mw_synchronized_reserve": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.2655920386314392,
+    "spearman": 0.1719508171081543,
+    "kendall": 0.15488499402999878,
+    "nmi": 0.21179234981536865,
+    "distance_corr": 0.19577980041503906
+  },
+  "alpha_confidential_by_target_mean": {
+    "da_as_total_mw_synchronized_reserve": {
+      "pearson": 0.1989336460828781,
+      "spearman": 0.198320209980011,
+      "kendall": 0.20422962307929993,
+      "nmi": 0.2049981951713562,
+      "distance_corr": 0.19351829588413239
+    }
+  },
+  "per_target_r2": {
+    "da_as_total_mw_synchronized_reserve": 0.9236430525779724
+  },
+  "per_target_mse": {
+    "da_as_total_mw_synchronized_reserve": 0.07874331623315811
+  },
+  "top10_sensitive_fields": [
+    "da_as_nsr_mw_primary_reserve",
+    "da_as_as_req_mw_primary_reserve",
+    "da_as_as_req_mw_synchronized_reserve",
+    "da_as_as_req_mw_thirty_minutes_reserve",
+    "da_as_mcp_synchronized_reserve",
+    "da_as_mcp_primary_reserve",
+    "system_energy_price_da",
+    "gen_fuel_nuclear_mw",
+    "gen_fuel_hydro_mw",
+    "gen_fuel_storage_mw"
+  ]
+}

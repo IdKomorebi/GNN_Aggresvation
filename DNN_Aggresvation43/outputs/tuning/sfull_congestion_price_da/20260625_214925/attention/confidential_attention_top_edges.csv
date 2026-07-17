@@ -1,0 +1,13 @@
+target_field,rank,source_field,source_type,attention
+congestion_price_da,1,gen_fuel_hydro_pct,general,0.09026607871055603
+congestion_price_da,2,gen_fuel_coal_mw,general,0.08348006010055542
+congestion_price_da,3,gen_fuel_nuclear_mw,general,0.07805413007736206
+congestion_price_da,4,gen_fuel_oil_mw,general,0.07213316112756729
+congestion_price_da,5,da_as_mcp_synchronized_reserve,general,0.06341156363487244
+congestion_price_da,6,total_lmp_rt,general,0.06279128789901733
+congestion_price_da,7,system_energy_price_da,general,0.05933857709169388
+congestion_price_da,8,marginal_loss_price_rt,general,0.05862940102815628
+congestion_price_da,9,gen_fuel_oil_pct,general,0.05829335376620293
+congestion_price_da,10,da_as_mcp_primary_reserve,general,0.050168346613645554
+congestion_price_da,11,gen_fuel_hydro_mw,general,0.045492108911275864
+congestion_price_da,12,da_as_as_req_mw_thirty_minutes_reserve,general,0.04290778934955597

@@ -1,0 +1,13 @@
+============================================================
+  [数据准备] 加载并预处理数据
+============================================================
+  删除常量列 (5): ['gen_fuel_storage_pct', 'da_as_mcp_thirty_minutes_reserve', 'da_as_ircmwt2_primary_reserve', 'da_as_ircmwt2_synchronized_reserve', 'da_as_ircmwt2_thirty_minutes_reserve']
+  删除含NaN的行: 8760 -> 6556
+  字段总数: 56
+  General字段: 44
+  Confidential字段: 12
+  时间步总数: 6556
+  切分方式: shuffle (seed=42)
+  训练集: 4589 行 (70%)
+  测试集: 1967 行 (30%)
+[hyper seed1] val_loss=0.3306 满输入 R²=0.8521 -> hyper_seed1.pt

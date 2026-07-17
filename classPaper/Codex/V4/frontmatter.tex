@@ -1,0 +1,43 @@
+\thispagestyle{empty}
+\vspace*{-9mm}
+\noindent{\zihao{-5}\StudentName\hfill 《\CourseName》课程论文\hfill 2026 年 7 月}\par
+\vspace{1mm}
+\noindent\rule{\textwidth}{0.8pt}
+
+\begin{center}
+\vspace{7mm}
+{\zihao{2}\heiti 面向任意字段集合的图结构推断敏感度评估\\[1mm]
+与协同泄露发现\par}
+\vspace{4mm}
+{\zihao{4}\fangsong \StudentName\par}
+\vspace{2mm}
+{\zihao{5}\songti（\Affiliation）\par}
+\end{center}
+
+\vspace{4mm}
+{\zihao{5}\setlength{\baselineskip}{16pt}\selectfont
+\noindent{\heiti 摘\quad 要\quad}
+传统数据敏感度评估通常为单个字段给出独立分数，但在电力数据中，多个单独风险较低的字段可能通过物理恒等式或统计耦合共同推断出机密字段，因此敏感度本质上是定义在字段幂集上的集合函数。本文提出一种面向任意字段集合的图结构推断敏感度框架。首先，将可见字段与机密字段表示为带权推断图，并将集合敏感度定义为攻击者仅观察集合 $S$ 时能够达到的截断决定系数 $v_c(S)$；其次，分别使用专用 DNN/GCN 攻击者刻画经验推断上限，使用随机掩码通用 Oracle 摊销指数级子集空间的扫描成本，并以少步微调和逐集合重训练完成候选认证；最后，从 $v_c(S)$ 中导出二阶协同边与三阶协同超边，使“任意集合敏感度”成为主问题，而协同推断成为集合函数上的结构化结果。在 8760 条 PJM RTO 小时级记录、44 个可见字段和 12 个机密字段上，50 个宽尺寸随机集合的最优经验推断能力随集合规模由 $0.2311$ 增至 $0.8647$。专用 GCN 在 5--8 和 9--16 字段区间分别比 DNN 高 $0.0235$ 和 $0.0130$，总体平均高 $0.0072$。采用 MLP Oracle 微调 500 步后，二阶协同排序相对重训真值的 Spearman 相关系数达到 $0.9597$，top-20 重合率为 $0.95$，单集合耗时约 $1.01$ s。重训认证进一步发现 $0.765$ 的二阶增量协同与 $0.455$ 的不可约三阶协同。结果说明，以推断图、集合函数和协同图联合描述数据风险，能够发现单字段排序无法表达的组合泄露路径。\par}
+
+\vspace{2mm}
+\noindent{\zihao{5}\heiti 关键词\quad}
+{\zihao{5}推断图；集合函数；图神经网络；数据敏感度；协同推断；高阶超图}
+
+\begin{center}
+\vspace{6mm}
+{\zihao{3}\heiti Graph-Structured Inference Sensitivity for Arbitrary Field Sets\\[-0.5mm]
+and Synergistic Leakage Discovery\par}
+\vspace{3mm}
+{\zihao{5}DU Hao-Cun\par}
+\vspace{1mm}
+{\zihao{-5}(Xi'an Jiaotong University, Xi'an 710049, China)\par}
+\end{center}
+
+\vspace{3mm}
+{\zihao{5}\setlength{\baselineskip}{17pt}\selectfont
+\noindent\textbf{Abstract}\quad
+Field-wise sensitivity scores cannot describe a key risk in power-system data: several fields that are weak individually may jointly reveal a confidential target through physical identities or statistical dependence. We formulate sensitivity as a set function over the power set of observable fields and propose a graph-structured sensitivity-oracle framework. Observable and confidential fields form a weighted inference graph. Dedicated DNN and GCN attackers estimate the empirical attack upper bound, while a random-mask universal oracle scans arbitrary subsets at low marginal cost; fine-tuning and subset-specific retraining are then used for certification. Experiments on 8,760 hourly PJM RTO records with 44 observable and 12 confidential fields show that the empirical attack score increases from 0.2311 to 0.8647 as the subset-size band grows. A dedicated GCN exceeds a DNN by 0.0235 and 0.0130 in the 5--8 and 9--16 bands. With 500 fine-tuning steps, the pairwise-synergy ranking reaches a Spearman correlation of 0.9597 and a top-20 overlap of 0.95 against retraining truth at about 1.01 seconds per subset. Certified examples include a pairwise increment of 0.765 for wind generation and wind share inferring total generation, and an irreducible third-order increment of 0.455 for gas generation, gas share, and load forecast inferring net interchange.\par}
+
+\vspace{2mm}
+\noindent\textbf{Keywords}\quad graph neural network; set function; data sensitivity; synergistic inference; hypergraph
+\vspace{7mm}

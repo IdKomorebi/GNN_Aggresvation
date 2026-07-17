@@ -1,0 +1,69 @@
+{
+  "experiment": "sfull_da_as_total_mw_primary_reserve",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation43/outputs/tuning/sfull_da_as_total_mw_primary_reserve/20260625_214925",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 880,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.045629702508449554,
+  "final_test_mse_targets": 0.045629702508449554,
+  "final_test_mse_all": 0.045629702508449554,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "da_as_total_mw_primary_reserve"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.045629702508449554,
+  "final_alpha": {
+    "pearson": 0.17902640998363495,
+    "spearman": 0.19645701348781586,
+    "kendall": 0.1984432488679886,
+    "nmi": 0.19611704349517822,
+    "distance_corr": 0.22995632886886597
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "da_as_total_mw_primary_reserve": NaN
+  },
+  "final_target_loss_weights": {
+    "da_as_total_mw_primary_reserve": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.17902640998363495,
+    "spearman": 0.19645701348781586,
+    "kendall": 0.1984432488679886,
+    "nmi": 0.19611704349517822,
+    "distance_corr": 0.22995632886886597
+  },
+  "alpha_confidential_by_target_mean": {
+    "da_as_total_mw_primary_reserve": {
+      "pearson": 0.19533656537532806,
+      "spearman": 0.19305473566055298,
+      "kendall": 0.20055291056632996,
+      "nmi": 0.21940451860427856,
+      "distance_corr": 0.19165121018886566
+    }
+  },
+  "per_target_r2": {
+    "da_as_total_mw_primary_reserve": 0.9566184282302856
+  },
+  "per_target_mse": {
+    "da_as_total_mw_primary_reserve": 0.04562970623373985
+  },
+  "top10_sensitive_fields": [
+    "da_as_nsr_mw_primary_reserve",
+    "da_as_as_req_mw_primary_reserve",
+    "da_as_as_req_mw_synchronized_reserve",
+    "da_as_as_req_mw_thirty_minutes_reserve",
+    "gen_fuel_multiple_fuels_pct",
+    "gen_fuel_nuclear_mw",
+    "da_as_mcp_primary_reserve",
+    "da_as_mcp_synchronized_reserve",
+    "system_energy_price_da",
+    "gen_fuel_gas_mw"
+  ]
+}

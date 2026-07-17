@@ -1,0 +1,27 @@
+{
+  "subset_id": "t09_16_17",
+  "group": "triple_top",
+  "size": 3,
+  "fields": [
+    "gen_fuel_wind_mw",
+    "gen_fuel_other_renewables_pct",
+    "gen_fuel_solar_pct"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.24707795679569244,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.08589106798171997,
+    "gross_actual_interchange_mw": 0.22890794277191162,
+    "total_gen": 0.5667179822921753,
+    "metered_load_mw": 0.5741224884986877,
+    "total_losses": 0.4120739698410034,
+    "congestion_price_da": 0.09830325841903687,
+    "congestion_price_rt": 0.06999772787094116,
+    "marginal_loss_price_da": 0.2717370390892029,
+    "total_lmp_da": 0.3144912123680115,
+    "da_as_total_mw_primary_reserve": 0.06578320264816284,
+    "da_as_total_mw_synchronized_reserve": 0.1502559781074524,
+    "da_as_total_mw_thirty_minutes_reserve": 0.1266534924507141
+  }
+}

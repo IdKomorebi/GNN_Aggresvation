@@ -1,0 +1,22 @@
+{
+  "inference_model_meanR2": 0.874600350856781,
+  "spearman_direct_vs_diffused": 0.9885819100193581,
+  "spearman_diffused_vs_mask": 0.7495419309372798,
+  "spearman_direct_vs_mask": 0.797152531179163,
+  "spearman_diffused_vs_single": 0.7370685573697899,
+  "spearman_direct_vs_single": 0.786232465994887,
+  "topk_smallk_mean(first10)": {
+    "direct(corr)": 0.2917343400418758,
+    "diffused(.7)": 0.2797620318830013,
+    "mask(model)": 0.38639840483665466,
+    "single(model)": 0.38928232789039613,
+    "random": 0.14538246009251451
+  },
+  "topk_auc": {
+    "direct(corr)": 0.662045174786313,
+    "diffused(.7)": 0.6384661841968243,
+    "mask(model)": 0.7195952328091318,
+    "single(model)": 0.711537681858648,
+    "random": 0.4430097426913397
+  }
+}

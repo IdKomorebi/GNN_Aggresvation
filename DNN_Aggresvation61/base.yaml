@@ -1,0 +1,37 @@
+experiment:
+  name: dnn61_inference_chain
+dataset:
+  csv_path: ../data/Processed/pjm_rto_hourly_2025_cleaned.csv
+  output_dir: outputs
+  split_mode: shuffle
+  train_ratio: 0.8
+  split_seed: 42
+fields:
+  drop_constant_columns: true
+  drop_columns: []          # cleaned csv 已完成删列
+  confidential:
+  - net_actual_interchange_mw
+  - gross_actual_interchange_mw
+  - total_gen
+  - metered_load_mw
+  - total_losses
+  - congestion_price_da
+  - congestion_price_rt
+  - marginal_loss_price_da
+  - total_lmp_da
+  - da_as_total_mw_primary_reserve
+  - da_as_total_mw_synchronized_reserve
+  - da_as_total_mw_thirty_minutes_reserve
+edges:
+  model: hgb                # hgb=HistGradientBoosting, knn=K近邻回归
+  hgb_max_iter: 100
+  knn_k: 25
+  n_jobs: 16
+  seed: 0
+sensitivity:
+  alpha: 0.8                # 每多推一跳的信息保真折扣
+  edge_threshold: 0.05      # 低于此可推断度的边不进图
+  top_chains_per_field: 5   # 泄露报告中每个字段列出的推断链数
+validation:
+  max_hops: 2               # 链式攻击验证的最大跳数
+  chain_edge_threshold: 0.05

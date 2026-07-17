@@ -1,0 +1,27 @@
+{
+  "subset_id": "t08_29_32",
+  "group": "triple_rand",
+  "size": 3,
+  "fields": [
+    "gen_fuel_storage_mw",
+    "da_as_mcp_primary_reserve",
+    "da_as_as_req_mw_synchronized_reserve"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.3462039530277252,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.324871301651001,
+    "gross_actual_interchange_mw": 0.10104680061340332,
+    "total_gen": 0.307553768157959,
+    "metered_load_mw": 0.29019594192504883,
+    "total_losses": 0.2276456356048584,
+    "congestion_price_da": 0.11983716487884521,
+    "congestion_price_rt": 0.12288355827331543,
+    "marginal_loss_price_da": 0.36734747886657715,
+    "total_lmp_da": 0.6363148093223572,
+    "da_as_total_mw_primary_reserve": 0.5705927610397339,
+    "da_as_total_mw_synchronized_reserve": 0.6227906346321106,
+    "da_as_total_mw_thirty_minutes_reserve": 0.46336793899536133
+  }
+}

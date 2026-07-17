@@ -1,0 +1,26 @@
+{
+  "subset_id": "p12_27",
+  "group": "pair",
+  "size": 2,
+  "fields": [
+    "gen_fuel_hydro_pct",
+    "total_pjm_rmccp_cr"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.15033270418643951,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.03800874948501587,
+    "gross_actual_interchange_mw": 0.07244890928268433,
+    "total_gen": 0.17468613386154175,
+    "metered_load_mw": 0.1996275782585144,
+    "total_losses": 0.10123765468597412,
+    "congestion_price_da": 0.0478518009185791,
+    "congestion_price_rt": 0.17896848917007446,
+    "marginal_loss_price_da": 0.24124360084533691,
+    "total_lmp_da": 0.39909201860427856,
+    "da_as_total_mw_primary_reserve": 0.07556694746017456,
+    "da_as_total_mw_synchronized_reserve": 0.0872952938079834,
+    "da_as_total_mw_thirty_minutes_reserve": 0.1879652738571167
+  }
+}

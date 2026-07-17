@@ -1,0 +1,128 @@
+\documentclass[UTF8,fontset=fandol]{ctexart}
+\usepackage{amsmath,amssymb,bm}
+\usepackage[paperwidth=19.0cm,paperheight=6.75cm,margin=0cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,backgrounds}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\definecolor{navy}{HTML}{173F67}
+\definecolor{blue}{HTML}{2B73B9}
+\definecolor{teal}{HTML}{168B8C}
+\definecolor{green}{HTML}{3C8B68}
+\definecolor{orange}{HTML}{E47B36}
+\definecolor{ink}{HTML}{263746}
+\definecolor{muted}{HTML}{667784}
+\definecolor{mist}{HTML}{EDF4F7}
+\definecolor{ghost}{HTML}{D8E0E5}
+
+\begin{document}
+\noindent
+\begin{tikzpicture}[x=1cm,y=1cm,
+  font=\heiti\fontsize{10}{12}\selectfont,
+  flow/.style={-{Stealth[length=2.6mm,width=1.7mm]},draw=navy!68,line width=1.05pt},
+  subflow/.style={-{Stealth[length=2.0mm,width=1.25mm]},draw=teal!74,line width=.75pt},
+  caption/.style={text=ink,font=\heiti\bfseries\fontsize{10}{12}\selectfont,align=center},
+  small/.style={text=muted,font=\heiti\fontsize{10}{12}\selectfont,align=center,scale=.78},
+  vnode/.style={circle,draw=white,line width=1pt,fill=blue,minimum size=7.2mm,inner sep=0pt,text=white,font=\bfseries},
+  tnode/.style={circle,draw=white,line width=1pt,fill=teal,minimum size=7.2mm,inner sep=0pt,text=white,font=\bfseries},
+  mnode/.style={circle,draw=ghost,line width=.9pt,dashed,fill=white,minimum size=7.2mm,inner sep=0pt,text=muted},
+  chip/.style={rounded corners=5pt,draw=none,fill=mist,minimum height=7.2mm,inner xsep=3mm,align=center,text=ink},
+  output/.style={rounded corners=5pt,draw=green!55,line width=.7pt,fill=green!7,minimum height=7.2mm,inner xsep=2.8mm,align=center,text=ink}
+]
+
+% A single soft information stream, intentionally without slide-like panels.
+\begin{scope}[on background layer]
+  \path[fill=mist,rounded corners=18pt]
+    (0.2,1.0) -- (3.25,1.0)
+    .. controls (4.25,1.0) and (4.45,.45) .. (5.35,.45)
+    -- (11.15,.45)
+    .. controls (12.05,.45) and (12.25,1.0) .. (13.25,1.0)
+    -- (18.25,1.0) -- (18.25,5.65) -- (13.25,5.65)
+    .. controls (12.25,5.65) and (12.05,6.20) .. (11.15,6.20)
+    -- (5.35,6.20)
+    .. controls (4.45,6.20) and (4.25,5.65) .. (3.25,5.65)
+    -- (.2,5.65) -- cycle;
+  \draw[navy!10,line width=1.1pt] (.4,3.35) .. controls (4.0,4.75) and (8.1,1.7) .. (12.0,3.35)
+    .. controls (14.3,4.35) and (16.0,3.55) .. (18.0,3.35);
+\end{scope}
+
+% Input subset and mask
+\node[caption,anchor=west] at (.55,5.18) {任意可见集合 $S$};
+\node[small,anchor=west] at (.55,4.78) {同一数据表，不同字段发布状态};
+\foreach \r/\yv in {1/4.15,2/3.70,3/3.25,4/2.80,5/2.35} {
+  \foreach \c/\xv in {1/.72,2/1.17,3/1.62,4/2.07} {
+    \pgfmathtruncatemacro{\z}{mod(\r+2*\c,5)}
+    \ifnum\z=0
+      \fill[ghost] (\xv,\yv) circle (1.45mm);
+    \else
+      \fill[blue!82] (\xv,\yv) circle (1.45mm);
+    \fi
+  }
+}
+\draw[ink!28,rounded corners=3pt,line width=.65pt] (.5,2.10) rectangle (2.30,4.40);
+\node[small,anchor=west] at (.55,1.68) {蓝色：可见\quad 灰色：遮蔽};
+\node[chip,fill=white,draw=navy!18,line width=.6pt] (mask) at (3.82,3.35)
+  {掩码编码\\[-1mm]$[\,\bm{x}\!\odot\!\bm m,\,\bm m\,]$};
+\draw[flow] (2.38,3.35) -- (mask.west);
+
+% Field graph with visible-only propagation
+\node[caption] at (7.60,5.32) {字段推断图 $G$};
+\node[small] at (7.60,4.94) {可见性感知消息传递};
+\coordinate (g0) at (7.55,3.30);
+\node[vnode] (g1) at (6.05,4.15) {$1$};
+\node[tnode] (g2) at (7.50,4.38) {$2$};
+\node[vnode] (g3) at (8.95,4.02) {$3$};
+\node[vnode] (g4) at (6.18,2.85) {$4$};
+\node[tnode] (g5) at (7.58,3.18) {$5$};
+\node[mnode] (g6) at (9.05,2.78) {$6$};
+\node[tnode] (g7) at (6.80,1.78) {$7$};
+\node[vnode] (g8) at (8.35,1.82) {$8$};
+\foreach \a/\b in {g1/g2,g1/g4,g2/g3,g2/g5,g3/g5,g3/g6,g4/g5,g4/g7,g5/g7,g5/g8,g7/g8} {
+  \draw[navy!32,line width=.7pt] (\a) -- (\b);
+}
+\draw[ghost,line width=.7pt,dashed] (g5)--(g6);
+\draw[ghost,line width=.7pt,dashed] (g6)--(g8);
+\draw[orange,line width=1.1pt] ($(g6)+(-.16,-.16)$)--($(g6)+(.16,.16)$)
+  ($(g6)+(-.16,.16)$)--($(g6)+(.16,-.16)$);
+\draw[subflow,bend left=24] (g1) to (g5);
+\draw[subflow,bend right=22] (g4) to (g8);
+\draw[subflow,bend left=18] (g7) to (g3);
+\draw[flow] (mask.east) -- ++(.62,0) -- (5.42,3.35);
+\node[small] at (7.60,1.19) {遮蔽节点不传递，邻域权重随 $S$ 重新归一化};
+
+% Target queries read the graph, using curved attention paths.
+\node[caption] at (11.65,5.18) {目标条件读出};
+\node[small] at (11.65,4.78) {每个机密目标学习一个查询};
+\node[tnode,fill=green,minimum size=8.2mm] (q1) at (11.25,3.95) {$q_1$};
+\node[tnode,fill=green,minimum size=8.2mm] (q2) at (11.82,3.28) {$q_2$};
+\node[tnode,fill=green,minimum size=8.2mm] (q3) at (11.25,2.52) {$q_c$};
+\draw[teal!55,-{Stealth[length=1.8mm]},line width=.65pt,bend left=12] (g3) to (q1);
+\draw[teal!55,-{Stealth[length=1.8mm]},line width=.65pt,bend left=8] (g5) to (q2);
+\draw[teal!55,-{Stealth[length=1.8mm]},line width=.65pt,bend right=12] (g8) to (q3);
+\node[small] at (11.50,1.61) {内容注意力 $+$ 目标边先验};
+
+% Prediction to measured sensitivity: one continuous metric chain.
+\node[output] (pred) at (13.95,3.35) {机密字段预测\\$\widehat{\bm y}_c$};
+\draw[flow] (q2.east) -- (pred.west);
+\node[circle,fill=orange!12,draw=orange!70,line width=.8pt,minimum size=10mm,text=ink,font=\bfseries] (r2) at (15.85,3.35) {$R^2$};
+\draw[flow] (pred.east) -- (r2.west);
+\node[rounded corners=8pt,fill=navy,draw=none,minimum width=1.65cm,minimum height=1.02cm,text=white,align=center,font=\bfseries] (score) at (17.38,3.35)
+  {集合敏感度\\$\widehat v_c(S)$};
+\draw[flow] (r2.east) -- (score.west);
+\node[small,text width=4.0cm] at (15.62,1.55) {固定掩码测试集评估\\以预测能力定义风险};
+
+% Bottom scan-to-certification ribbon.
+\draw[navy!32,line width=.7pt] (3.2,.30) -- (15.20,.30);
+\fill[navy] (3.2,.30) circle (1.4mm);
+\fill[teal] (7.05,.30) circle (1.4mm);
+\fill[green] (11.10,.30) circle (1.4mm);
+\fill[orange] (15.20,.30) circle (1.4mm);
+\node[small,anchor=south] at (3.2,.45) {随机掩码训练};
+\node[small,anchor=south] at (7.05,.45) {全空间快速扫描};
+\node[small,anchor=south] at (11.10,.45) {$K$ 步任务微调};
+\node[small,anchor=south] at (15.20,.45) {候选重训认证};
+\node[font=\heiti\bfseries\fontsize{10}{12}\selectfont,text=navy,anchor=east,scale=.82] at (2.75,.30) {扫描--认证};
+
+\end{tikzpicture}
+\end{document}

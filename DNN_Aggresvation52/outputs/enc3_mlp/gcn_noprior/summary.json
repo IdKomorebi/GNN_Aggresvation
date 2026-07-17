@@ -1,0 +1,29 @@
+{
+  "encoder": "mlp",
+  "encoder_tag": "enc3_mlp",
+  "mode": "gcn_noprior",
+  "mean_r2_12conf": 0.8737019648154577,
+  "per_target_r2": {
+    "net_actual_interchange_mw": 0.8690831661224365,
+    "gross_actual_interchange_mw": 0.8264660835266113,
+    "total_gen": 0.9887751936912537,
+    "metered_load_mw": 0.9901702404022217,
+    "total_losses": 0.8838368654251099,
+    "congestion_price_da": 0.6738569736480713,
+    "congestion_price_rt": 0.6725775003433228,
+    "marginal_loss_price_da": 0.8437802791595459,
+    "total_lmp_da": 0.9838141202926636,
+    "da_as_total_mw_primary_reserve": 0.9501702189445496,
+    "da_as_total_mw_synchronized_reserve": 0.9182997345924377,
+    "da_as_total_mw_thirty_minutes_reserve": 0.8835932016372681
+  },
+  "final_alpha": {
+    "pearson": 0.23355329036712646,
+    "spearman": 0.2104966640472412,
+    "kendall": 0.22191540896892548,
+    "nmi": 0.22145770490169525,
+    "distance_corr": 0.1125769391655922
+  },
+  "n_general": 44,
+  "seed": 42
+}

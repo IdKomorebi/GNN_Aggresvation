@@ -1,0 +1,69 @@
+{
+  "experiment": "full_marginal_loss_price_da",
+  "run_dir": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation42/outputs/tuning/full_marginal_loss_price_da/20260625_175359",
+  "seed": 42,
+  "architecture": "hybrid_bilinear_gated",
+  "n_general": 44,
+  "n_confidential": 1,
+  "n_nodes": 45,
+  "n_edges": 630,
+  "train_samples": 4589,
+  "test_samples": 1967,
+  "best_test_loss": 0.18960531055927277,
+  "final_test_mse_targets": 0.18960531055927277,
+  "final_test_mse_all": 0.18960531055927277,
+  "final_test_mse_excluded": NaN,
+  "loss_target_names": [
+    "marginal_loss_price_da"
+  ],
+  "excluded_target_names": [],
+  "baseline_loss_masking": 0.18960531055927277,
+  "final_alpha": {
+    "pearson": 0.836629331111908,
+    "spearman": 0.05012928694486618,
+    "kendall": 0.04706708714365959,
+    "nmi": 0.022247161716222763,
+    "distance_corr": 0.04392717778682709
+  },
+  "target_loss_weighting": "static",
+  "final_target_loss_log_vars": {
+    "marginal_loss_price_da": NaN
+  },
+  "final_target_loss_weights": {
+    "marginal_loss_price_da": 1.0
+  },
+  "alpha_general": {
+    "pearson": 0.836629331111908,
+    "spearman": 0.05012928694486618,
+    "kendall": 0.04706708714365959,
+    "nmi": 0.022247161716222763,
+    "distance_corr": 0.04392717778682709
+  },
+  "alpha_confidential_by_target_mean": {
+    "marginal_loss_price_da": {
+      "pearson": 0.16655802726745605,
+      "spearman": 0.14987151324748993,
+      "kendall": 0.19014593958854675,
+      "nmi": 0.24494168162345886,
+      "distance_corr": 0.2484828531742096
+    }
+  },
+  "per_target_r2": {
+    "marginal_loss_price_da": 0.8069467544555664
+  },
+  "per_target_mse": {
+    "marginal_loss_price_da": 0.18960532546043396
+  },
+  "top10_sensitive_fields": [
+    "system_energy_price_da",
+    "gen_fuel_nuclear_pct",
+    "forecast_load_mw_latest_available",
+    "gen_fuel_other_renewables_pct",
+    "marginal_loss_price_rt",
+    "forecast_load_mw_day_ahead",
+    "gen_fuel_coal_pct",
+    "total_lmp_rt",
+    "gen_fuel_oil_pct",
+    "da_as_mcp_synchronized_reserve"
+  ]
+}

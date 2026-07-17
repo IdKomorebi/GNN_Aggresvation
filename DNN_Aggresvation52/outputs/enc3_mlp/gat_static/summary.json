@@ -1,0 +1,29 @@
+{
+  "encoder": "mlp",
+  "encoder_tag": "enc3_mlp",
+  "mode": "gat_static",
+  "mean_r2_12conf": 0.8522945543130239,
+  "per_target_r2": {
+    "net_actual_interchange_mw": 0.8733080625534058,
+    "gross_actual_interchange_mw": 0.7824525833129883,
+    "total_gen": 0.9901232719421387,
+    "metered_load_mw": 0.9906238317489624,
+    "total_losses": 0.8655133843421936,
+    "congestion_price_da": 0.6061401963233948,
+    "congestion_price_rt": 0.6203358173370361,
+    "marginal_loss_price_da": 0.7843952178955078,
+    "total_lmp_da": 0.9823381900787354,
+    "da_as_total_mw_primary_reserve": 0.9520922899246216,
+    "da_as_total_mw_synchronized_reserve": 0.9154627323150635,
+    "da_as_total_mw_thirty_minutes_reserve": 0.8647490739822388
+  },
+  "final_alpha": {
+    "pearson": 0.2206823080778122,
+    "spearman": 0.191856250166893,
+    "kendall": 0.23906223475933075,
+    "nmi": 0.13321083784103394,
+    "distance_corr": 0.21518836915493011
+  },
+  "n_general": 44,
+  "seed": 42
+}
