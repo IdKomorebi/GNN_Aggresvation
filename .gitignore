@@ -9,3 +9,7 @@ __pycache__/
 venv/
 env/
 *.log
+
+# Generated model weights and NumPy archives
+*.pt
+*.npz

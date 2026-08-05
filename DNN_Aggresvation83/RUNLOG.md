@@ -1,0 +1,42 @@
+# DNN_Aggresvation83 运行流水
+
+> 自动记录；结论见 `CHANGELOG.md`。
+
+- `2026-07-24 23:13:42` ▶ **[TRAIN] START**　cvar50/seed0；q=0.5, lambda=1.0
+- `2026-07-24 23:13:43` ▶ **[TRAIN] START**　mix25_cvar25/seed0；q=0.25, lambda=0.25
+- `2026-07-24 23:13:57` ✔ **[TRAIN] DONE**　cvar50/seed0 完成，epoch=229
+- `2026-07-24 23:13:59` ✔ **[TRAIN] DONE**　mix25_cvar25/seed0 完成，epoch=229
+- `2026-07-24 23:14:00` ▶ **[TRAIN] START**　cvar25/seed0；q=0.25, lambda=1.0
+- `2026-07-24 23:14:01` ▶ **[TRAIN] START**　mix50_cvar25/seed0；q=0.25, lambda=0.5
+- `2026-07-24 23:14:14` ✔ **[TRAIN] DONE**　cvar25/seed0 完成，epoch=203
+- `2026-07-24 23:14:16` ✔ **[TRAIN] DONE**　mix50_cvar25/seed0 完成，epoch=229
+- `2026-07-24 23:14:17` ▶ **[TRAIN] START**　cvar10/seed0；q=0.1, lambda=1.0
+- `2026-07-24 23:14:19` ▶ **[TRAIN] START**　mix75_cvar25/seed0；q=0.25, lambda=0.75
+- `2026-07-24 23:14:26` ✔ **[TRAIN] DONE**　cvar10/seed0 完成，epoch=122
+- `2026-07-24 23:14:42` ✔ **[TRAIN] DONE**　mix75_cvar25/seed0 完成，epoch=348
+- `2026-07-24 23:14:56` ▶ **[K0] START**　cvar50/seed0 全低阶空间前向
+- `2026-07-24 23:14:58` ✔ **[K0] DONE**　cvar50/seed0 完成
+- `2026-07-24 23:15:01` ▶ **[K0] START**　cvar25/seed0 全低阶空间前向
+- `2026-07-24 23:15:01` ▶ **[K0] START**　mix25_cvar25/seed0 全低阶空间前向
+- `2026-07-24 23:15:04` ✔ **[K0] DONE**　cvar25/seed0 完成
+- `2026-07-24 23:15:04` ✔ **[K0] DONE**　mix25_cvar25/seed0 完成
+- `2026-07-24 23:15:06` ▶ **[K0] START**　cvar10/seed0 全低阶空间前向
+- `2026-07-24 23:15:06` ▶ **[K0] START**　mix50_cvar25/seed0 全低阶空间前向
+- `2026-07-24 23:15:09` ✔ **[K0] DONE**　cvar10/seed0 完成
+- `2026-07-24 23:15:09` ✔ **[K0] DONE**　mix50_cvar25/seed0 完成
+- `2026-07-24 23:15:12` ▶ **[K0] START**　mix75_cvar25/seed0 全低阶空间前向
+- `2026-07-24 23:15:14` ✔ **[K0] DONE**　mix75_cvar25/seed0 完成
+- `2026-07-24 23:17:19` ▶ **[STRUCTURED] START**　显式算术特征闭式低阶攻击者
+- `2026-07-24 23:17:55` ✔ **[STRUCTURED] DONE**　闭式低阶攻击者完成
+- `2026-07-24 23:19:36` ▶ **[STRUCTURED] START**　显式算术特征闭式低阶攻击者
+- `2026-07-24 23:20:12` ✔ **[STRUCTURED] DONE**　闭式低阶攻击者完成
+- `2026-07-24 23:20:56` ▶ **[STRUCTURED] START**　显式算术特征闭式低阶攻击者；scope=all, models=('poly2', 'arith')
+- `2026-07-24 23:23:08` ✔ **[STRUCTURED] DONE**　闭式低阶攻击者完成
+- `2026-07-24 23:23:46` ▶ **[FEATURE-TRAIN] START**　poly2/seed0
+- `2026-07-24 23:23:50` ▶ **[FEATURE-TRAIN] START**　rawwide/seed0
+- `2026-07-24 23:24:10` ✔ **[FEATURE-TRAIN] DONE**　poly2/seed0 完成
+- `2026-07-24 23:24:17` ✔ **[FEATURE-TRAIN] DONE**　rawwide/seed0 完成
+- `2026-07-24 23:24:38` ▶ **[FEATURE-K0] START**　poly2/seed0
+- `2026-07-24 23:24:42` ▶ **[FEATURE-K0] START**　rawwide/seed0
+- `2026-07-24 23:24:45` ✔ **[FEATURE-K0] DONE**　poly2/seed0 完成
+- `2026-07-24 23:24:46` ✔ **[FEATURE-K0] DONE**　rawwide/seed0 完成

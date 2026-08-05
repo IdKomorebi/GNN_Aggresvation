@@ -1,0 +1,27 @@
+experiment:
+  name: dnn95_caiso
+dataset:
+  csv_path: ../data/Processed/caiso_2025_hourly_cleaned.csv
+  output_dir: outputs
+  split_mode: shuffle
+fields:
+  drop_constant_columns: true
+  drop_columns: []
+  confidential:
+  - actual_load__mw__ca_iso_tac
+  - dam_schedule__mw__generation__caiso_totals
+  - dam_schedule__mw__import__caiso_totals
+  - dam_schedule__mw__export__caiso_totals
+  - dam_lmp__lmp_usd_per_mwh__th_sp15_gen_apnd
+  - dam_lmp__congestion_usd_per_mwh__th_sp15_gen_apnd
+  - dam_lmp__loss_usd_per_mwh__th_sp15_gen_apnd
+  - rt15_lmp_hourly_mean__congestion_usd_per_mwh__th_sp15_gen_apnd
+  - dam_as_total_procured__mw__ru__as_caiso
+  - dam_as_total_procured__mw__rd__as_caiso
+  - dam_as_total_procured__mw__sr__as_caiso
+  - dam_as_total_procured__mw__nr__as_caiso
+training:
+  train_ratio: 0.7
+runtime:
+  seed: 42
+  device: cuda

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "n_seed0_new_schemes": 13,
+  "confirmed_schemes": [
+    "local234_uniform10",
+    "triple50_pair40_uniform10"
+  ],
+  "kgrid_rows": 30
+}

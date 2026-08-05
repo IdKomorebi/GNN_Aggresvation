@@ -1,0 +1,4 @@
+method,n_sets,sec,ms_per_set,vs_ft_speedup
+oracle,200,0.064,0.321,172.9
+L0[last],200,0.495,2.475,22.4
+ft25,200,11.098,55.491,1.0

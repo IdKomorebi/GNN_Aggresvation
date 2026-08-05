@@ -1,0 +1,23 @@
+{
+  "n_extreme": 15,
+  "k10_negative_same_conf_count": 4,
+  "k10_parent_underestimated_count": 15,
+  "k10_pair_overestimated_count": 1,
+  "k10_parent_more_underfit_than_pair_count": 15,
+  "k10_s1_top30_count": 5,
+  "k10_s2_top20_count": 9,
+  "k10_s1_conf_match_count": 4,
+  "k10_s2_conf_match_count": 0,
+  "k10_s2_top20_but_s1_not_top30_count": 5,
+  "k10_s2_rescue_conf_match_count": 0,
+  "selected_protocol_extreme_stages": {
+    "pure_s1_k10_top60": 8,
+    "s1_s2_k10_top60": 12,
+    "newly_rescued_by_s2": 4,
+    "protected_at_final": 3,
+    "d79_final": 7,
+    "d81_final": 11,
+    "d81_minus_d79_new_hits": 4,
+    "d79_hits_lost_by_d81": 0
+  }
+}

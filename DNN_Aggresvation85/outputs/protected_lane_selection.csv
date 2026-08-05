@@ -1,0 +1,13 @@
+method,keep,chosen_lane,tune_recall_gt_010,n_tune_strong
+k0_s1_plus_s2,0.05,0.0,0.435428986869287,197
+k0_s1_plus_s2,0.1,0.0,0.6238383175664294,197
+k0_s1_plus_s2,0.2,0.0,0.7505084715708092,197
+k0_s1_plus_s2,0.3,0.1,0.823418950429563,197
+residual_arith_plus_s2,0.05,0.0,0.38855384833627393,197
+residual_arith_plus_s2,0.1,0.0,0.6746881344811995,197
+residual_arith_plus_s2,0.2,0.0,0.8845011481616114,197
+residual_arith_plus_s2,0.3,0.0,0.9414526239260921,197
+residual_arith_plus_poly2,0.05,0.0,0.38855384833627393,197
+residual_arith_plus_poly2,0.1,0.5,0.6958728244775643,197
+residual_arith_plus_poly2,0.2,0.0,0.8845011481616114,197
+residual_arith_plus_poly2,0.3,0.0,0.9414526239260921,197

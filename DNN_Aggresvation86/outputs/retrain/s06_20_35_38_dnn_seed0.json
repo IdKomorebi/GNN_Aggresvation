@@ -1,0 +1,28 @@
+{
+  "subset_id": "s06_20_35_38",
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+    "gen_fuel_other_renewables_mw",
+    "forecast_load_mw_day_ahead",
+    "da_as_ss_mw_synchronized_reserve",
+    "system_energy_price_da"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.5507104992866516,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.4002342224121094,
+    "gross_actual_interchange_mw": 0.27508264780044556,
+    "total_gen": 0.9718838930130005,
+    "metered_load_mw": 0.9806965589523315,
+    "total_losses": 0.5700692534446716,
+    "congestion_price_da": 0.2809043526649475,
+    "congestion_price_rt": 0.21071857213974,
+    "marginal_loss_price_da": 0.7393384575843811,
+    "total_lmp_da": 0.9832883477210999,
+    "da_as_total_mw_primary_reserve": 0.2866070866584778,
+    "da_as_total_mw_synchronized_reserve": 0.25680768489837646,
+    "da_as_total_mw_thirty_minutes_reserve": 0.6528948545455933
+  }
+}

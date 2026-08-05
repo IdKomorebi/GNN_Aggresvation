@@ -1,0 +1,27 @@
+{
+  "subset_id": "s09_18_20_38",
+  "indices": [
+    9,
+    18,
+    20,
+    38
+  ],
+  "size": 4,
+  "seed": 1,
+  "best_epoch": 392,
+  "evaluation_split": "audit",
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.5213308334350586,
+    "gross_actual_interchange_mw": 0.2240734100341797,
+    "total_gen": 0.9856536984443665,
+    "metered_load_mw": 0.9861223697662354,
+    "total_losses": 0.6190587878227234,
+    "congestion_price_da": 0.14240974187850952,
+    "congestion_price_rt": 0.21518027782440186,
+    "marginal_loss_price_da": 0.7530921697616577,
+    "total_lmp_da": 0.9800593256950378,
+    "da_as_total_mw_primary_reserve": 0.23673373460769653,
+    "da_as_total_mw_synchronized_reserve": 0.1808144450187683,
+    "da_as_total_mw_thirty_minutes_reserve": 0.6326043605804443
+  }
+}

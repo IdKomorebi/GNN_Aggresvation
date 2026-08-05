@@ -1,0 +1,8 @@
+{
+  "worker": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation77/scripts/retrain_worker.py",
+  "test_used_for_early_stopping": true,
+  "final_test_reused_after_selection": true,
+  "seed_count_for_h2_extension": 1,
+  "status": "needs_new_gpu_retraining",
+  "required_fix": "训练集更新参数；独立验证集早停；测试集只在模型冻结后评估一次；对阳性与阈值附近样本增加多 seed。"
+}

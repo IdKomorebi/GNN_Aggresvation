@@ -1,0 +1,51 @@
+{
+  "status": "ready",
+  "checks": {
+    "score_cube": {
+      "rows": 79464,
+      "triples": 13244,
+      "kgrid": [
+        0,
+        1,
+        5,
+        10,
+        25,
+        50
+      ]
+    },
+    "sweep_rows": {
+      "single": 2316,
+      "staged": 54720,
+      "protected": 3584
+    },
+    "selected_vs_baseline": {
+      "cost_updates": 19.0,
+      "test_recall_baseline": 0.8988967368310425,
+      "test_recall_selected": 0.9037474298064304,
+      "test_precision_baseline": 0.2694359843829577,
+      "test_precision_selected": 0.2710870082729337,
+      "extreme_raw_baseline": 7,
+      "extreme_raw_selected": 11
+    },
+    "bootstrap": {
+      "n_bootstrap": 5000,
+      "seed": 8101,
+      "delta_recall_mean": 0.004924423508614024,
+      "delta_recall_ci95": [
+        0.0,
+        0.012126732438470289
+      ],
+      "delta_precision_mean": 0.0018730452048547257,
+      "delta_precision_ci95": [
+        -0.016415390707626768,
+        0.02057990731376705
+      ]
+    },
+    "figures": [
+      "final_protocol_comparison_zh.png",
+      "k10_top60_fusion_zh.png",
+      "protected_lane_sweep_zh.png",
+      "single_stage_fixed30_heatmaps_zh.png"
+    ]
+  }
+}

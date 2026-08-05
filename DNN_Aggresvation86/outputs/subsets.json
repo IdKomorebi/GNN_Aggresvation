@@ -1,0 +1,1716 @@
+{
+ "s01_05_39_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_oil_mw",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s05_39_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s01_39_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s01_05_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_oil_mw",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s01_05_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_oil_mw",
+   "total_lmp_rt"
+  ]
+ },
+ "s20_38_39_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "system_energy_price_da",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s38_39_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "system_energy_price_da",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s20_39_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s20_38_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "system_energy_price_da",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s20_38_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "system_energy_price_da",
+   "total_lmp_rt"
+  ]
+ },
+ "s19_38_39_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "system_energy_price_da",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s19_39_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s19_38_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "system_energy_price_da",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s19_38_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_latest_available",
+   "system_energy_price_da",
+   "total_lmp_rt"
+  ]
+ },
+ "s06_11_16_17": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s11_16_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s06_16_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_other_renewables_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s06_11_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s06_11_16": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "s05_20_39_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "forecast_load_mw_day_ahead",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s05_20_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "forecast_load_mw_day_ahead",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s05_20_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "forecast_load_mw_day_ahead",
+   "total_lmp_rt"
+  ]
+ },
+ "s01_30_39_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "da_as_mcp_synchronized_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s30_39_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_synchronized_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s01_30_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "da_as_mcp_synchronized_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s01_30_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "da_as_mcp_synchronized_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "s01_29_39_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "da_as_mcp_primary_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s29_39_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_primary_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s01_29_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "da_as_mcp_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s01_29_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "da_as_mcp_primary_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "s06_07_11_16": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "s07_11_16": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "s06_07_16": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "s06_07_11": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct"
+  ]
+ },
+ "s05_19_39_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "forecast_load_mw_latest_available",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s05_19_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "forecast_load_mw_latest_available",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s05_19_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "forecast_load_mw_latest_available",
+   "total_lmp_rt"
+  ]
+ },
+ "s02_11_12_17": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s11_12_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s02_12_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s02_11_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s02_11_12": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "s01_07_17_19": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "s07_17_19": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "s01_17_19": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "s01_07_19": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "forecast_load_mw_latest_available"
+  ]
+ },
+ "s01_07_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s03_11_13_17": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s11_13_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s03_13_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_multiple_fuels_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s03_11_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s03_11_13": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "s07_09_17_18": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "s09_17_18": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "s07_17_18": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_solar_pct",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "s07_09_18": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct"
+  ]
+ },
+ "s07_09_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_wind_mw",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s00_03_10_42": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_coal_pct",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s03_10_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_coal_pct",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s00_10_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_coal_pct",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s00_03_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s00_03_10": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_mw",
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_coal_pct"
+  ]
+ },
+ "s05_32_39_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "da_as_as_req_mw_synchronized_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s32_39_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_as_req_mw_synchronized_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s05_32_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "da_as_as_req_mw_synchronized_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s05_32_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "da_as_as_req_mw_synchronized_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "s05_31_39_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s31_39_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_as_req_mw_primary_reserve",
+   "total_lmp_rt",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s05_31_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s05_31_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "s02_07_11_12": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "s07_11_12": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "s02_07_12": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_hydro_pct"
+  ]
+ },
+ "s02_07_11": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct"
+  ]
+ },
+ "s03_07_11_13": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "s07_11_13": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "s03_07_13": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_multiple_fuels_pct"
+  ]
+ },
+ "s03_07_11": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_gas_pct"
+  ]
+ },
+ "s01_07_17_20": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "s07_17_20": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "s01_17_20": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "s01_07_20": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "s02_10_11_17": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_gas_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s10_11_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_coal_pct",
+   "gen_fuel_gas_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s02_10_17": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_solar_pct"
+  ]
+ },
+ "s02_10_11": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_coal_pct",
+   "gen_fuel_gas_pct"
+  ]
+ },
+ "s02_29_31_42": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s29_31_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_primary_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s02_31_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s02_29_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "da_as_mcp_primary_reserve",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s02_29_31": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "da_as_mcp_primary_reserve",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "s04_14_16_20": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "s14_16_20": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "s04_16_20": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_other_renewables_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "s04_14_20": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_nuclear_pct",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "s04_14_16": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_nuclear_pct",
+   "gen_fuel_other_renewables_pct"
+  ]
+ },
+ "s09_18_34_43": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct",
+   "da_as_ss_mw_primary_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s18_34_43": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_pct",
+   "da_as_ss_mw_primary_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s09_34_43": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "da_as_ss_mw_primary_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s09_18_43": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s09_18_34": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_wind_pct",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "s11_34_37_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s34_37_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_ss_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s11_37_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "da_as_nsr_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s11_34_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "da_as_ss_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s11_34_37": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "s15_16_42_43": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "gen_fuel_other_renewables_pct",
+   "gross_sched_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s16_42_43": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "gross_sched_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s15_42_43": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "gross_sched_interchange_mw",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s15_16_43": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "gen_fuel_other_renewables_pct",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s15_16_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_pct",
+   "gen_fuel_other_renewables_pct",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s01_20_28_33": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "s20_28_33": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "s01_28_33": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "s01_20_33": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "forecast_load_mw_day_ahead",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "s01_20_28": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "forecast_load_mw_day_ahead",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "s05_07_20_41": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_solar_mw",
+   "forecast_load_mw_day_ahead",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s07_20_41": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_mw",
+   "forecast_load_mw_day_ahead",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s05_20_41": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "forecast_load_mw_day_ahead",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s05_07_41": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_solar_mw",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s05_07_20": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_oil_mw",
+   "gen_fuel_solar_mw",
+   "forecast_load_mw_day_ahead"
+  ]
+ },
+ "s30_34_36_37": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "s34_36_37": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "s30_36_37": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "s30_34_37": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "s30_34_36": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_thirty_minutes_reserve"
+  ]
+ },
+ "s16_30_37_41": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s30_37_41": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s16_37_41": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "da_as_nsr_mw_primary_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s16_30_41": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "da_as_mcp_synchronized_reserve",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s16_30_37": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_pct",
+   "da_as_mcp_synchronized_reserve",
+   "da_as_nsr_mw_primary_reserve"
+  ]
+ },
+ "s32_34_35_43": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s34_35_43": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s32_35_43": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s32_34_43": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "gross_inadv_interchange_mw"
+  ]
+ },
+ "s32_34_35": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "s29_34_35_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s34_35_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s29_35_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s29_34_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s29_34_35": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_mcp_primary_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "s27_38_40_42": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "total_pjm_rmccp_cr",
+   "system_energy_price_da",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s38_40_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "system_energy_price_da",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s27_40_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "total_pjm_rmccp_cr",
+   "marginal_loss_price_rt",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s27_38_42": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "total_pjm_rmccp_cr",
+   "system_energy_price_da",
+   "gross_sched_interchange_mw"
+  ]
+ },
+ "s27_38_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "total_pjm_rmccp_cr",
+   "system_energy_price_da",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s01_04_07_41": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_solar_mw",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s04_07_41": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_solar_mw",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s01_07_41": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_solar_mw",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s01_04_41": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_mw",
+   "net_inadv_interchange_mw"
+  ]
+ },
+ "s01_04_07": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_mw",
+   "gen_fuel_nuclear_mw",
+   "gen_fuel_solar_mw"
+  ]
+ },
+ "s02_12_32_35": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "s12_32_35": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_pct",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "s02_32_35": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "da_as_as_req_mw_synchronized_reserve",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "s02_12_35": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "s02_12_32": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "gen_fuel_hydro_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "s13_28_35_39": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "total_pjm_rmpcp_cr",
+   "da_as_ss_mw_synchronized_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "s28_35_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "total_pjm_rmpcp_cr",
+   "da_as_ss_mw_synchronized_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "s13_35_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "da_as_ss_mw_synchronized_reserve",
+   "total_lmp_rt"
+  ]
+ },
+ "s13_28_39": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "total_pjm_rmpcp_cr",
+   "total_lmp_rt"
+  ]
+ },
+ "s13_28_35": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_pct",
+   "total_pjm_rmpcp_cr",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "s03_31_34_40": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s31_34_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s03_34_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "da_as_ss_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s03_31_40": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "marginal_loss_price_rt"
+  ]
+ },
+ "s03_31_34": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_multiple_fuels_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "s06_20_35_38": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "forecast_load_mw_day_ahead",
+   "da_as_ss_mw_synchronized_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "s20_35_38": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "forecast_load_mw_day_ahead",
+   "da_as_ss_mw_synchronized_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "s06_35_38": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "da_as_ss_mw_synchronized_reserve",
+   "system_energy_price_da"
+  ]
+ },
+ "s06_20_38": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "forecast_load_mw_day_ahead",
+   "system_energy_price_da"
+  ]
+ },
+ "s06_20_35": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_other_renewables_mw",
+   "forecast_load_mw_day_ahead",
+   "da_as_ss_mw_synchronized_reserve"
+  ]
+ },
+ "s09_17_31_32": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_solar_pct",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "s17_31_32": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_solar_pct",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "s09_31_32": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "da_as_as_req_mw_primary_reserve",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "s09_17_32": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_solar_pct",
+   "da_as_as_req_mw_synchronized_reserve"
+  ]
+ },
+ "s09_17_31": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_solar_pct",
+   "da_as_as_req_mw_primary_reserve"
+  ]
+ },
+ "s02_21_28_33": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "rmccp",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "s21_28_33": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "rmccp",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "s02_28_33": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "total_pjm_rmpcp_cr",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "s02_21_33": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "rmccp",
+   "da_as_as_req_mw_thirty_minutes_reserve"
+  ]
+ },
+ "s02_21_28": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_hydro_mw",
+   "rmccp",
+   "total_pjm_rmpcp_cr"
+  ]
+ },
+ "s09_11_14_34": {
+  "group": "cert4",
+  "size": 4,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "s11_14_34": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "s09_14_34": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_nuclear_pct",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "s09_11_34": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_gas_pct",
+   "da_as_ss_mw_primary_reserve"
+  ]
+ },
+ "s09_11_14": {
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+   "gen_fuel_wind_mw",
+   "gen_fuel_gas_pct",
+   "gen_fuel_nuclear_pct"
+  ]
+ }
+}

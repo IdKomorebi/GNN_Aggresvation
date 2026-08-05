@@ -1,0 +1,27 @@
+{
+  "subset_id": "r00_20_42",
+  "group": "triple_rand_ext",
+  "size": 3,
+  "fields": [
+    "gen_fuel_coal_mw",
+    "forecast_load_mw_day_ahead",
+    "gross_sched_interchange_mw"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.45983800292015076,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.384154736995697,
+    "gross_actual_interchange_mw": 0.32483959197998047,
+    "total_gen": 0.9760070443153381,
+    "metered_load_mw": 0.982822597026825,
+    "total_losses": 0.5815256237983704,
+    "congestion_price_da": 0.17153000831604004,
+    "congestion_price_rt": 0.13193374872207642,
+    "marginal_loss_price_da": 0.5606921315193176,
+    "total_lmp_da": 0.6881831884384155,
+    "da_as_total_mw_primary_reserve": 0.15738284587860107,
+    "da_as_total_mw_synchronized_reserve": 0.17359185218811035,
+    "da_as_total_mw_thirty_minutes_reserve": 0.38539206981658936
+  }
+}

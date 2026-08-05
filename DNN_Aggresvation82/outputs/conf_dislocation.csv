@@ -1,0 +1,15 @@
+tri,c_syn,c_v,match,syn_at_csyn,pair_at_csyn,vijk_at_cv,pair_at_cv,ms_at_cv
+"('gen_fuel_coal_mw', 'gen_fuel_coal_pct', 'forecast_load_mw_day_ahead')",net_actual_interchange_mw,total_gen,False,0.3322914838790893,0.2771430015563965,0.9955407977104188,0.9946751594543456,0.9681771993637085
+"('gen_fuel_coal_mw', 'gen_fuel_coal_pct', 'forecast_load_mw_latest_available')",net_actual_interchange_mw,total_gen,False,0.4243054389953613,0.2771430015563965,0.995461404323578,0.9946751594543456,0.973801851272583
+"('gen_fuel_coal_mw', 'gen_fuel_coal_pct', 'gen_fuel_nuclear_pct')",da_as_total_mw_thirty_minutes_reserve,total_gen,False,0.2397216558456421,0.4185510873794555,0.9941940307617188,0.9946751594543456,0.8604185581207275
+"('gen_fuel_gas_mw', 'gen_fuel_gas_pct', 'forecast_load_mw_day_ahead')",net_actual_interchange_mw,total_gen,False,0.3614066243171692,0.2261912226676941,0.995944321155548,0.9949229955673218,0.9681771993637085
+"('gen_fuel_gas_mw', 'gen_fuel_gas_pct', 'forecast_load_mw_latest_available')",net_actual_interchange_mw,total_gen,False,0.4547143578529358,0.2383260130882263,0.9956321120262146,0.9949229955673218,0.973801851272583
+"('gen_fuel_hydro_mw', 'gen_fuel_hydro_pct', 'gen_fuel_multiple_fuels_pct')",da_as_total_mw_thirty_minutes_reserve,total_gen,False,0.2055107355117797,0.3604078292846679,0.9562326073646544,0.9572354555130004,0.2920975089073181
+"('gen_fuel_hydro_mw', 'gen_fuel_hydro_pct', 'system_energy_price_da')",net_actual_interchange_mw,total_lmp_da,False,0.2442471385002136,0.1832896471023559,0.9837461113929749,0.9818376302719116,0.9828075170516968
+"('gen_fuel_hydro_mw', 'gen_fuel_multiple_fuels_mw', 'gen_fuel_hydro_pct')",da_as_total_mw_thirty_minutes_reserve,total_gen,False,0.202400803565979,0.3604078292846679,0.9579571485519408,0.9572354555130004,0.2920975089073181
+"('gen_fuel_nuclear_mw', 'gen_fuel_nuclear_pct', 'forecast_load_mw_day_ahead')",net_actual_interchange_mw,total_gen,False,0.272340178489685,0.3511881828308105,0.994922399520874,0.9942043423652648,0.9681771993637085
+"('gen_fuel_nuclear_mw', 'gen_fuel_nuclear_pct', 'forecast_load_mw_latest_available')",net_actual_interchange_mw,total_gen,False,0.3577265739440918,0.3549847602844238,0.9946032166481018,0.9942043423652648,0.973801851272583
+"('gen_fuel_nuclear_pct', 'system_energy_price_da', 'gross_sched_interchange_mw')",net_actual_interchange_mw,total_lmp_da,False,0.2253326773643493,0.378265917301178,0.982476770877838,0.9830707311630248,0.9828075170516968
+"('gen_fuel_wind_mw', 'gen_fuel_nuclear_pct', 'gen_fuel_wind_pct')",da_as_total_mw_thirty_minutes_reserve,total_gen,False,0.3154791593551636,0.2418473958969116,0.9817414879798888,0.9277228713035583,0.8604185581207275
+"('gen_fuel_wind_mw', 'gen_fuel_wind_pct', 'marginal_loss_price_rt')",net_actual_interchange_mw,total_gen,False,0.2326966524124145,0.1397128105163574,0.9425132274627686,0.9277228713035583,0.3363755941390991
+"('gen_fuel_wind_mw', 'gen_fuel_wind_pct', 'system_energy_price_da')",net_actual_interchange_mw,total_lmp_da,False,0.2803035378456116,0.1552299261093139,0.9832950830459596,0.9822670817375184,0.9828075170516968

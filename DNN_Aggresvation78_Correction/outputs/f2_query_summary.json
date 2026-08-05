@@ -1,0 +1,36 @@
+{
+  "split_seed": 7801,
+  "tune_pairs": 568,
+  "test_pairs": 378,
+  "chosen_rule": {
+    "eps": 0.01,
+    "delta": 0.01,
+    "patience": 2
+  },
+  "test": [
+    {
+      "scope": "test",
+      "rule": "fixed_k50",
+      "mean_steps": 50.0,
+      "recall": 0.9272727272727272,
+      "fp": 0.0,
+      "n_pairs": 378,
+      "n_strong_entries": 55,
+      "eps": null,
+      "delta": null,
+      "patience": null
+    },
+    {
+      "scope": "test",
+      "rule": "query_maxconf_tuned",
+      "mean_steps": 15.665784832451498,
+      "recall": 0.9393939393939394,
+      "fp": 0.0,
+      "n_pairs": 378,
+      "n_strong_entries": 55,
+      "eps": 0.01,
+      "delta": 0.01,
+      "patience": 2.0
+    }
+  ]
+}

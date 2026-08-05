@@ -1,0 +1,18 @@
+{
+  "selection_split": "search",
+  "evaluation_split": "audit",
+  "parent_score_any": "max over parent and confidential",
+  "parent_score_aligned": "max over parent at audit child argmax-conf",
+  "beams": [
+    200,
+    500,
+    1000,
+    2000,
+    5000
+  ],
+  "thresholds": [
+    0.05,
+    0.1,
+    0.15
+  ]
+}

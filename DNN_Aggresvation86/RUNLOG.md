@@ -1,0 +1,45 @@
+# DNN_Aggresvation85 运行流水
+
+> 自动记录；实验结论见 `CHANGELOG.md`。
+
+- `2026-07-25 00:24:12` · **[ENUM4] PROGRESS**　20000 quads, 1656/s
+- `2026-07-25 00:24:20` · **[ENUM4] PROGRESS**　40000 quads, 1973/s
+- `2026-07-25 00:24:28` · **[ENUM4] PROGRESS**　60000 quads, 2150/s
+- `2026-07-25 00:24:36` · **[ENUM4] PROGRESS**　80000 quads, 2253/s
+- `2026-07-25 00:24:43` · **[ENUM4] PROGRESS**　100000 quads, 2338/s
+- `2026-07-25 00:24:50` · **[ENUM4] PROGRESS**　120000 quads, 2388/s
+- `2026-07-25 00:24:57` ✔ **[ENUM4] DONE**　135751 quads in 56.3s
+- `2026-07-25 00:24:57` · **[SEARCH] GT**　>0.1:230; >0.15:11; >0.2:0
+- `2026-07-25 00:24:57` · **[SEARCH] BEAM**　B=50 key=vmax touch=1173(0.009) cov>0.15=0.0 in 0s
+- `2026-07-25 00:24:57` · **[SEARCH] BEAM**　B=50 key=syn touch=1938(0.014) cov>0.15=0.0909 in 0s
+- `2026-07-25 00:24:57` · **[SEARCH] BEAM**　B=50 key=hybrid touch=2744(0.020) cov>0.15=0.0909 in 0s
+- `2026-07-25 00:24:57` · **[SEARCH] BEAM**　B=100 key=vmax touch=2255(0.017) cov>0.15=0.0 in 0s
+- `2026-07-25 00:24:58` · **[SEARCH] BEAM**　B=100 key=syn touch=3777(0.028) cov>0.15=0.0909 in 0s
+- `2026-07-25 00:24:58` · **[SEARCH] BEAM**　B=100 key=hybrid touch=5455(0.040) cov>0.15=0.2727 in 0s
+- `2026-07-25 00:24:58` · **[SEARCH] BEAM**　B=200 key=vmax touch=4279(0.032) cov>0.15=0.0909 in 0s
+- `2026-07-25 00:24:59` · **[SEARCH] BEAM**　B=200 key=syn touch=7301(0.054) cov>0.15=0.3636 in 0s
+- `2026-07-25 00:25:00` · **[SEARCH] BEAM**　B=200 key=hybrid touch=10237(0.075) cov>0.15=0.3636 in 1s
+- `2026-07-25 00:25:00` · **[SEARCH] BEAM**　B=500 key=vmax touch=10008(0.074) cov>0.15=0.2727 in 0s
+- `2026-07-25 00:25:01` · **[SEARCH] BEAM**　B=500 key=syn touch=17098(0.126) cov>0.15=0.5455 in 1s
+- `2026-07-25 00:25:02` · **[SEARCH] BEAM**　B=500 key=hybrid touch=24404(0.180) cov>0.15=0.6364 in 1s
+- `2026-07-25 00:25:03` · **[SEARCH] BEAM**　B=1000 key=vmax touch=14794(0.109) cov>0.15=0.2727 in 1s
+- `2026-07-25 00:25:05` · **[SEARCH] BEAM**　B=1000 key=syn touch=30967(0.228) cov>0.15=0.8182 in 1s
+- `2026-07-25 00:25:07` · **[SEARCH] BEAM**　B=1000 key=hybrid touch=40977(0.302) cov>0.15=0.9091 in 2s
+- `2026-07-25 00:27:58` · **[ENUM] PROG**　order5 100000 1254/s
+- `2026-07-25 00:28:47` · **[ENUM] PROG**　order5 200000 1552/s
+- `2026-07-25 00:29:28` · **[ENUM] PROG**　order5 300000 1772/s
+- `2026-07-25 00:30:08` · **[ENUM] PROG**　order5 400000 1908/s
+- `2026-07-25 00:30:48` · **[ENUM] PROG**　order5 500000 2002/s
+- `2026-07-25 00:31:29` · **[ENUM] PROG**　order5 600000 2067/s
+- `2026-07-25 00:32:09` · **[ENUM] PROG**　order5 700000 2119/s
+- `2026-07-25 00:32:49` · **[ENUM] PROG**　order5 800000 2162/s
+- `2026-07-25 00:33:29` · **[ENUM] PROG**　order5 900000 2194/s
+- `2026-07-25 00:34:09` · **[ENUM] PROG**　order5 1000000 2222/s
+- `2026-07-25 00:34:43` ✔ **[ENUM] DONE**　order5 1086008 in 485s
+- `2026-07-25 00:34:44` · **[SCALE] GT**　order5: >0.1:111; >0.15:6
+- `2026-07-25 00:34:50` · **[SCALE] BEAM**　order5 B=500 syn touch=18182(0.0167) 6s
+- `2026-07-25 00:34:54` · **[SCALE] BEAM**　order5 B=500 hybrid touch=27937(0.0257) 3s
+- `2026-07-25 00:34:57` · **[SCALE] BEAM**　order5 B=1000 syn touch=35141(0.0324) 3s
+- `2026-07-25 00:35:02` · **[SCALE] BEAM**　order5 B=1000 hybrid touch=50405(0.0464) 4s
+- `2026-07-25 00:35:08` · **[SCALE] BEAM**　order5 B=2000 syn touch=66633(0.0614) 5s
+- `2026-07-25 00:35:16` · **[SCALE] BEAM**　order5 B=2000 hybrid touch=91376(0.0841) 6s

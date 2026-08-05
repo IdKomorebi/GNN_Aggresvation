@@ -1,0 +1,4 @@
+child_tau,n_strong,n_aligned_selected,n_cross_conf_selected,n_blind_selected,parent_conf_match,aligned_parent_gt005,aligned_parent_gt010,mean_parent_any,mean_parent_aligned
+0.05,20,8,7,5,0.7,1.0,0.85,0.16745594888925552,0.1525127187371254
+0.1,8,3,5,0,0.5,1.0,0.875,0.13346608728170395,0.11775270476937294
+0.15,1,1,0,0,1.0,1.0,1.0,0.13388285040855408,0.13388285040855408

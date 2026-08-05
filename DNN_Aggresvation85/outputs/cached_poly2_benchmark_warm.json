@@ -1,0 +1,21 @@
+{
+  "cache_build_seconds": 0.0,
+  "cache_load_seconds": 0.03510131686925888,
+  "scan_seconds": 4.958703072741628,
+  "n_sets": 14190,
+  "sets_per_second": 2861.6353493726056,
+  "max_abs_r2_delta_vs_d83": 1.1578382697052803e-10,
+  "model": "cached_poly2",
+  "test_parent_mae": 0.061348899814788686,
+  "test_parent_bias": -0.061248208237087105,
+  "test_syn_mae": 0.015431762889864873,
+  "test_s1_spearman": 0.7845437924126247,
+  "pool_top30_recall": 0.962954179815189,
+  "global_top30_recall": 0.962954179815189,
+  "extreme_parent_error_mean": -0.08040871629702775,
+  "extreme_pair_error_mean": -0.06567202426624812,
+  "extreme_syn_est_mean": 0.27728920388266237,
+  "extreme_negative_count": 0,
+  "truth_parent_exceeded_rate": 0.027575481717493553,
+  "truth_pair_exceeded_rate": 0.029661659839174633
+}

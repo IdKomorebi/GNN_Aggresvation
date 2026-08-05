@@ -1,0 +1,3 @@
+order,n,spearman_t_all,spearman_syn_all,spearman_t_topB100,spearman_syn_topB100,overlap_t_top100,overlap_syn_top100,spearman_t_topB300,spearman_syn_topB300,overlap_t_top300,overlap_syn_top300
+3,3000,0.6436,0.6278,0.4501,0.4728,0.45,0.58,0.3454,0.4664,0.53,0.58
+4,3000,0.4431,0.5313,-0.0835,0.4372,0.16,0.34,0.199,0.3492,0.3067,0.51

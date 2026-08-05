@@ -1,0 +1,151 @@
+{"time": "2026-07-26T02:04:03", "stage": "CERT", "status": "START", "note": "order-5 shard0/60: 1 个集合（strong 1 / control 0），已完成 0"}
+{"time": "2026-07-26T02:07:00", "stage": "CERT", "status": "DONE", "note": "shard0 用时 177s"}
+{"time": "2026-07-26T02:07:55", "stage": "FDR", "status": "START", "note": "order-3: 13244 个集合 + 946 个子集，kind=cat3，search=983 audit=984"}
+{"time": "2026-07-26T02:08:02", "stage": "CERT", "status": "START", "note": "order-5 shard0/2: 30 个集合（strong 20 / control 10），已完成 0"}
+{"time": "2026-07-26T02:12:02", "stage": "FDR", "status": "SEARCH", "note": "search 侧完成 248s"}
+{"time": "2026-07-26T02:16:10", "stage": "FDR", "status": "AUDIT", "note": "audit 侧完成 496s"}
+{"time": "2026-07-26T02:16:12", "stage": "FDR", "status": "DONE", "note": "order-3 cat3: 7621/13244 通过 FDR，用时 497s"}
+{"time": "2026-07-26T02:17:07", "stage": "L1", "status": "START", "note": "seed0 aug=0 B_MASK=4 sup/qry=512/256 step/ep=8"}
+{"time": "2026-07-26T02:17:56", "stage": "L1", "status": "DONE", "note": "[L1 seed0 aug0] ep=400/400 val=0.31112 lam=1.014 [49s] -> oracle_l1_seed0.pt"}
+{"time": "2026-07-26T02:18:28", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T02:18:28", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T02:18:29", "stage": "E2", "status": "DONE", "note": "oracle rho=-0.0216 tail=0.1298 hit20=0.250 1s"}
+{"time": "2026-07-26T02:18:31", "stage": "E2", "status": "DONE", "note": "last rho=0.7995 tail=0.8169 hit20=1.000 2s"}
+{"time": "2026-07-26T02:18:49", "stage": "E2", "status": "DONE", "note": "cat3 rho=0.6357 tail=0.7708 hit20=0.400 18s"}
+{"time": "2026-07-26T02:19:22", "stage": "E3", "status": "START", "note": "200 无偏三元组 × 2400 条真值，447 个二阶子集，audit=984 行"}
+{"time": "2026-07-26T02:19:24", "stage": "E3", "status": "DONE", "note": "last rho=0.6267 tail=0.6620 2s"}
+{"time": "2026-07-26T02:19:31", "stage": "CERT", "status": "START", "note": "order-5 shard1/2: 30 个集合（strong 20 / control 10），已完成 0"}
+{"time": "2026-07-26T02:19:36", "stage": "E3", "status": "DONE", "note": "cat3 rho=0.5624 tail=0.5948 12s"}
+{"time": "2026-07-26T02:20:08", "stage": "L1", "status": "START", "note": "seed0 aug=0 ep=2500 B_MASK=4 sup/qry=512/256 step/ep=8"}
+{"time": "2026-07-26T02:20:11", "stage": "L1", "status": "START", "note": "seed0 aug=8 ep=2500 B_MASK=4 sup/qry=512/256 step/ep=8"}
+{"time": "2026-07-26T02:21:17", "stage": "L1", "status": "DONE", "note": "[L1 seed0 aug8] ep=239/2500 val=0.35663 lam=1.122 [66s] -> oracle_l1_aug8_seed0.pt"}
+{"time": "2026-07-26T02:21:24", "stage": "L1", "status": "DONE", "note": "[L1 seed0 aug0] ep=583/2500 val=0.30346 lam=1.014 [76s] -> oracle_l1_long_seed0.pt"}
+{"time": "2026-07-26T02:21:47", "stage": "FDR", "status": "START", "note": "order-3: 13244 个集合 + 946 个子集，kind=cat3，search=983 audit=984"}
+{"time": "2026-07-26T02:23:10", "stage": "CERT", "status": "START", "note": "order-5 shard1/4: 15 个集合（strong 10 / control 5），已完成 4"}
+{"time": "2026-07-26T02:23:10", "stage": "CERT", "status": "START", "note": "order-5 shard3/4: 15 个集合（strong 10 / control 5），已完成 4"}
+{"time": "2026-07-26T02:23:11", "stage": "CERT", "status": "START", "note": "order-5 shard2/4: 15 个集合（strong 10 / control 5），已完成 4"}
+{"time": "2026-07-26T02:23:11", "stage": "CERT", "status": "START", "note": "order-5 shard0/4: 15 个集合（strong 10 / control 5），已完成 4"}
+{"time": "2026-07-26T02:23:32", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T02:23:32", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T02:23:36", "stage": "E2", "status": "DONE", "note": "last rho=0.7934 tail=0.8382 hit20=1.000 3s"}
+{"time": "2026-07-26T02:23:39", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T02:23:39", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T02:23:42", "stage": "E2", "status": "DONE", "note": "last rho=0.8083 tail=0.8581 hit20=1.000 3s"}
+{"time": "2026-07-26T02:24:39", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T02:24:39", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T02:24:42", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T02:24:42", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T02:24:42", "stage": "E2", "status": "DONE", "note": "last rho=0.7934 tail=0.8382 hit20=1.000 3s"}
+{"time": "2026-07-26T02:24:45", "stage": "E2", "status": "DONE", "note": "last rho=0.8083 tail=0.8581 hit20=1.000 3s"}
+{"time": "2026-07-26T02:25:05", "stage": "E2", "status": "DONE", "note": "cat3 rho=0.6412 tail=0.7634 hit20=0.800 23s"}
+{"time": "2026-07-26T02:25:07", "stage": "E2", "status": "DONE", "note": "cat3 rho=0.6482 tail=0.8126 hit20=0.900 22s"}
+{"time": "2026-07-26T02:25:33", "stage": "E3", "status": "START", "note": "200 无偏三元组 × 2400 条真值，447 个二阶子集，audit=984 行"}
+{"time": "2026-07-26T02:25:36", "stage": "E3", "status": "DONE", "note": "last rho=0.6222 tail=0.6172 2s"}
+{"time": "2026-07-26T02:25:50", "stage": "E3", "status": "DONE", "note": "cat3 rho=0.5541 tail=0.5387 14s"}
+{"time": "2026-07-26T02:25:54", "stage": "E1", "status": "DATA", "note": "train=(4589, 44) audit=(984, 44) raw_mean=0.0000 raw_std=0.9999"}
+{"time": "2026-07-26T02:25:55", "stage": "E1", "status": "SETS", "note": "注入 24 + 随机 400 四元组，三阶子集 1583 个；Y 拼成 24 列一次算"}
+{"time": "2026-07-26T02:26:02", "stage": "E1", "status": "DONE", "note": "last 用时 7s"}
+{"time": "2026-07-26T02:26:48", "stage": "FDR", "status": "SEARCH", "note": "search 侧完成 301s"}
+{"time": "2026-07-26T02:26:49", "stage": "E1", "status": "DONE", "note": "cat3 用时 48s"}
+{"time": "2026-07-26T02:26:50", "stage": "E1", "status": "DONE", "note": "t_test 用时 1s"}
+{"time": "2026-07-26T02:31:44", "stage": "FDR", "status": "AUDIT", "note": "audit 侧完成 597s"}
+{"time": "2026-07-26T02:33:40", "stage": "FDR", "status": "START", "note": "order-3: 13244 个集合 + 946 个子集，kind=cat3，search=983 audit=984"}
+{"time": "2026-07-26T02:38:53", "stage": "FDR", "status": "SEARCH", "note": "search 侧完成 314s"}
+{"time": "2026-07-26T02:42:29", "stage": "L0CERT", "status": "START", "note": "28 个已认证五元组 + 125 个四阶子集"}
+{"time": "2026-07-26T02:42:30", "stage": "L0CERT", "status": "DONE", "note": "oracle mean_est=0.0079"}
+{"time": "2026-07-26T02:42:30", "stage": "L0CERT", "status": "DONE", "note": "poly2 mean_est=0.0111"}
+{"time": "2026-07-26T02:42:30", "stage": "L0CERT", "status": "DONE", "note": "full mean_est=0.3979"}
+{"time": "2026-07-26T02:42:31", "stage": "L0CERT", "status": "DONE", "note": "last mean_est=0.0228"}
+{"time": "2026-07-26T02:42:34", "stage": "L0CERT", "status": "DONE", "note": "cat3 mean_est=0.0261"}
+{"time": "2026-07-26T02:44:07", "stage": "FDR", "status": "AUDIT", "note": "audit 侧完成 628s"}
+{"time": "2026-07-26T02:44:08", "stage": "FDR", "status": "DONE", "note": "order-3 cat3: τ=0.0:7621 | τ=0.05:1266 | τ=0.1:66 | τ=0.15:12，用时 629s"}
+{"time": "2026-07-26T02:47:37", "stage": "CERT", "status": "PROGRESS", "note": "shard0 10/15 1465s"}
+{"time": "2026-07-26T02:49:02", "stage": "CERT", "status": "PROGRESS", "note": "shard2 10/15 1551s"}
+{"time": "2026-07-26T02:53:44", "stage": "CERT", "status": "PROGRESS", "note": "shard1 10/15 1833s"}
+{"time": "2026-07-26T02:53:57", "stage": "CERT", "status": "PROGRESS", "note": "shard3 10/15 1846s"}
+{"time": "2026-07-26T03:02:43", "stage": "CERT", "status": "DONE", "note": "shard0 用时 2372s"}
+{"time": "2026-07-26T03:06:58", "stage": "CERT", "status": "DONE", "note": "shard2 用时 2627s"}
+{"time": "2026-07-26T03:09:33", "stage": "CERT", "status": "DONE", "note": "shard1 用时 2782s"}
+{"time": "2026-07-26T03:09:43", "stage": "CERT", "status": "DONE", "note": "shard3 用时 2793s"}
+{"time": "2026-07-26T03:11:10", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard0/1: 135751 个 4 阶子集，缓存待建"}
+{"time": "2026-07-26T03:16:04", "stage": "SCAN5", "status": "SUBS", "note": "135751 个子集算完并存盘 294s"}
+{"time": "2026-07-26T03:16:21", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard0/4: 135751 个 4 阶子集，缓存命中"}
+{"time": "2026-07-26T03:16:21", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy"}
+{"time": "2026-07-26T03:16:21", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard3/4: 135751 个 4 阶子集，缓存命中"}
+{"time": "2026-07-26T03:16:21", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy"}
+{"time": "2026-07-26T03:16:21", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard2/4: 135751 个 4 阶子集，缓存命中"}
+{"time": "2026-07-26T03:16:21", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy"}
+{"time": "2026-07-26T03:16:21", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard1/4: 135751 个 4 阶子集，缓存命中"}
+{"time": "2026-07-26T03:16:21", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy"}
+{"time": "2026-07-26T03:26:04", "stage": "SCAN5", "status": "SETS", "note": "271502 个 5 阶完成 583s"}
+{"time": "2026-07-26T03:26:06", "stage": "SCAN5", "status": "DONE", "note": "shard1 585s max_syn=0.1315 n>0.2=0"}
+{"time": "2026-07-26T03:26:07", "stage": "SCAN5", "status": "SETS", "note": "271502 个 5 阶完成 586s"}
+{"time": "2026-07-26T03:26:09", "stage": "SCAN5", "status": "DONE", "note": "shard0 588s max_syn=0.1569 n>0.2=0"}
+{"time": "2026-07-26T03:27:39", "stage": "SCAN5", "status": "SETS", "note": "271502 个 5 阶完成 678s"}
+{"time": "2026-07-26T03:27:41", "stage": "SCAN5", "status": "DONE", "note": "shard2 680s max_syn=0.1322 n>0.2=0"}
+{"time": "2026-07-26T03:56:46", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard3/4: 135751 个 4 阶子集，缓存命中"}
+{"time": "2026-07-26T03:56:46", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy"}
+{"time": "2026-07-26T03:57:21", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard3/4: 135751 个 4 阶子集，缓存命中"}
+{"time": "2026-07-26T03:57:21", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy"}
+{"time": "2026-07-26T04:14:49", "stage": "SCAN5", "status": "SETS", "note": "271502 个 5 阶完成 1048s"}
+{"time": "2026-07-26T04:14:51", "stage": "SCAN5", "status": "DONE", "note": "shard3 1050s max_syn=0.1425 n>0.2=0"}
+{"time": "2026-07-26T04:31:37", "stage": "CERT", "status": "START", "note": "order-5 shard0/3: 7 个集合（strong 7 / control 0），已完成 60"}
+{"time": "2026-07-26T04:31:37", "stage": "CERT", "status": "START", "note": "order-5 shard2/3: 7 个集合（strong 7 / control 0），已完成 60"}
+{"time": "2026-07-26T04:31:38", "stage": "CERT", "status": "START", "note": "order-5 shard1/3: 7 个集合（strong 7 / control 0），已完成 60"}
+{"time": "2026-07-26T04:53:45", "stage": "CERT", "status": "DONE", "note": "shard2 用时 1328s"}
+{"time": "2026-07-26T04:54:13", "stage": "CERT", "status": "DONE", "note": "shard0 用时 1356s"}
+{"time": "2026-07-26T04:57:18", "stage": "CERT", "status": "DONE", "note": "shard1 用时 1541s"}
+{"time": "2026-07-26T17:32:04", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard0/1: 13244 个 3 阶子集，缓存待建"}
+{"time": "2026-07-26T17:32:32", "stage": "SCAN5", "status": "SUBS", "note": "13244 个子集算完并存盘 29s"}
+{"time": "2026-07-26T17:32:45", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard0/2: 13244 个 3 阶子集，缓存命中"}
+{"time": "2026-07-26T17:32:45", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o3_oracle_l1_aug8_seed0_last.npy"}
+{"time": "2026-07-26T17:32:45", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed0/last shard1/2: 13244 个 3 阶子集，缓存命中"}
+{"time": "2026-07-26T17:32:45", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o3_oracle_l1_aug8_seed0_last.npy"}
+{"time": "2026-07-26T17:37:24", "stage": "SCAN5", "status": "SETS", "note": "67875 个 4 阶完成 279s"}
+{"time": "2026-07-26T17:37:25", "stage": "SCAN5", "status": "DONE", "note": "shard1 280s max_syn=0.1802 n>0.2=0"}
+{"time": "2026-07-26T17:37:27", "stage": "SCAN5", "status": "SETS", "note": "67876 个 4 阶完成 282s"}
+{"time": "2026-07-26T17:37:28", "stage": "SCAN5", "status": "DONE", "note": "shard0 283s max_syn=0.1582 n>0.2=0"}
+{"time": "2026-07-26T17:38:11", "stage": "CERT", "status": "START", "note": "order-4 shard2/4: 7 个集合（strong 5 / control 2），已完成 0"}
+{"time": "2026-07-26T17:38:12", "stage": "CERT", "status": "START", "note": "order-4 shard0/4: 8 个集合（strong 5 / control 3），已完成 0"}
+{"time": "2026-07-26T17:38:12", "stage": "CERT", "status": "START", "note": "order-4 shard3/4: 7 个集合（strong 5 / control 2），已完成 0"}
+{"time": "2026-07-26T17:38:12", "stage": "CERT", "status": "START", "note": "order-4 shard1/4: 8 个集合（strong 5 / control 3），已完成 0"}
+{"time": "2026-07-26T17:56:27", "stage": "CERT", "status": "DONE", "note": "shard3 用时 1095s"}
+{"time": "2026-07-26T17:56:44", "stage": "CERT", "status": "DONE", "note": "shard2 用时 1113s"}
+{"time": "2026-07-26T17:59:23", "stage": "CERT", "status": "DONE", "note": "shard0 用时 1272s"}
+{"time": "2026-07-26T18:00:25", "stage": "CERT", "status": "DONE", "note": "shard1 用时 1332s"}
+{"time": "2026-07-26T18:24:00", "stage": "CERT", "status": "START", "note": "order-4 shard1/2: 10 个集合（strong 10 / control 0），已完成 0"}
+{"time": "2026-07-26T18:24:00", "stage": "CERT", "status": "START", "note": "order-4 shard0/2: 10 个集合（strong 10 / control 0），已完成 0"}
+{"time": "2026-07-26T18:24:17", "stage": "L1", "status": "START", "note": "seed2 aug=8 ep=2500 B_MASK=4 sup/qry=512/256 step/ep=8"}
+{"time": "2026-07-26T18:24:17", "stage": "L1", "status": "START", "note": "seed1 aug=8 ep=2500 B_MASK=4 sup/qry=512/256 step/ep=8"}
+{"time": "2026-07-26T18:25:02", "stage": "L1", "status": "DONE", "note": "[L1 seed2 aug8] ep=162/2500 val=0.37475 lam=1.050 [45s] -> oracle_l1_aug8_seed2.pt"}
+{"time": "2026-07-26T18:26:20", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T18:26:20", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T18:26:24", "stage": "E2", "status": "DONE", "note": "last rho=0.7922 tail=0.8506 hit20=1.000 4s"}
+{"time": "2026-07-26T18:28:10", "stage": "L1", "status": "DONE", "note": "[L1 seed1 aug8] ep=832/2500 val=0.32254 lam=1.102 [234s] -> oracle_l1_aug8_seed1.pt"}
+{"time": "2026-07-26T18:28:15", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed2/last shard0/1: 13244 个 3 阶子集，缓存待建"}
+{"time": "2026-07-26T18:28:52", "stage": "SCAN5", "status": "SUBS", "note": "13244 个子集算完并存盘 38s"}
+{"time": "2026-07-26T18:28:54", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T18:28:54", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T18:28:55", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed2/last shard0/1: 13244 个 3 阶子集，缓存命中"}
+{"time": "2026-07-26T18:28:55", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o3_oracle_l1_aug8_seed2_last.npy"}
+{"time": "2026-07-26T18:28:58", "stage": "E2", "status": "DONE", "note": "last rho=0.7747 tail=0.7691 hit20=1.000 4s"}
+{"time": "2026-07-26T18:29:00", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed1/last shard0/1: 13244 个 3 阶子集，缓存待建"}
+{"time": "2026-07-26T18:29:36", "stage": "SCAN5", "status": "SUBS", "note": "13244 个子集算完并存盘 36s"}
+{"time": "2026-07-26T18:29:39", "stage": "SCAN5", "status": "START", "note": "oracle_l1_aug8_seed1/last shard0/1: 13244 个 3 阶子集，缓存命中"}
+{"time": "2026-07-26T18:29:39", "stage": "SCAN5", "status": "SUBS", "note": "读缓存 subs_o3_oracle_l1_aug8_seed1_last.npy"}
+{"time": "2026-07-26T18:33:17", "stage": "CERT", "status": "START", "note": "order-5 shard2/4: 9 个集合（strong 6 / control 3），已完成 60"}
+{"time": "2026-07-26T18:33:17", "stage": "CERT", "status": "START", "note": "order-5 shard1/4: 9 个集合（strong 6 / control 3），已完成 60"}
+{"time": "2026-07-26T18:33:17", "stage": "CERT", "status": "START", "note": "order-5 shard0/4: 9 个集合（strong 6 / control 3），已完成 60"}
+{"time": "2026-07-26T18:33:18", "stage": "CERT", "status": "START", "note": "order-5 shard3/4: 9 个集合（strong 6 / control 3），已完成 60"}
+{"time": "2026-07-26T18:35:29", "stage": "SCAN5", "status": "SETS", "note": "135751 个 4 阶完成 394s"}
+{"time": "2026-07-26T18:35:30", "stage": "SCAN5", "status": "DONE", "note": "shard0 395s max_syn=0.3529 n>0.2=5"}
+{"time": "2026-07-26T18:36:17", "stage": "SCAN5", "status": "SETS", "note": "135751 个 4 阶完成 398s"}
+{"time": "2026-07-26T18:36:20", "stage": "SCAN5", "status": "DONE", "note": "shard0 401s max_syn=0.2304 n>0.2=3"}
+{"time": "2026-07-26T18:52:14", "stage": "CERT", "status": "PROGRESS", "note": "shard0 10/10 1694s"}
+{"time": "2026-07-26T18:52:14", "stage": "CERT", "status": "DONE", "note": "shard0 用时 1694s"}
+{"time": "2026-07-26T18:53:10", "stage": "CERT", "status": "PROGRESS", "note": "shard1 10/10 1750s"}
+{"time": "2026-07-26T18:53:10", "stage": "CERT", "status": "DONE", "note": "shard1 用时 1750s"}
+{"time": "2026-07-26T19:06:34", "stage": "CERT", "status": "DONE", "note": "shard3 用时 1996s"}
+{"time": "2026-07-26T19:09:03", "stage": "CERT", "status": "DONE", "note": "shard0 用时 2145s"}
+{"time": "2026-07-26T19:10:49", "stage": "CERT", "status": "DONE", "note": "shard1 用时 2251s"}
+{"time": "2026-07-26T19:11:16", "stage": "CERT", "status": "DONE", "note": "shard2 用时 2278s"}

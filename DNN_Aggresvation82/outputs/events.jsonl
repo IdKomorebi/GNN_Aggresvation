@@ -1,0 +1,113 @@
+{"ts": "2026-07-24T21:39:47", "phase": "VERIFY", "event": "DONE", "note": "conf错位占100%；S2=syn3上界筛(高召回低精度)；高v(ijk)与有协同重叠源于同一物理枢纽字段簇", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 1039814}
+{"ts": "2026-07-24T22:10:02", "phase": "SCHED", "event": "START", "note": "train待运行9个任务；GPU=[0, 3]", "elapsed_s": null, "pid": 1087474, "phase_name": "train", "jobs": 9, "gpus": "0,3"}
+{"ts": "2026-07-24T22:10:04", "phase": "TRAIN", "event": "START", "note": "triple_only/seed0；从头训练", "elapsed_s": null, "pid": 1087475, "scheme": "triple_only", "seed": 0}
+{"ts": "2026-07-24T22:10:04", "phase": "TRAIN", "event": "START", "note": "triple90_pair10/seed0；从头训练", "elapsed_s": null, "pid": 1087476, "scheme": "triple90_pair10", "seed": 0}
+{"ts": "2026-07-24T22:10:32", "phase": "TRAIN", "event": "DONE", "note": "triple90_pair10/seed0训练完成", "elapsed_s": 27.823986291885376, "pid": 1087476, "scheme": "triple90_pair10", "seed": 0, "epochs": 318, "val_loss": 0.754337}
+{"ts": "2026-07-24T22:10:37", "phase": "TRAIN", "event": "START", "note": "triple70_pair20_uniform10/seed0；从头训练", "elapsed_s": null, "pid": 1088407, "scheme": "triple70_pair20_uniform10", "seed": 0}
+{"ts": "2026-07-24T22:10:39", "phase": "TRAIN", "event": "DONE", "note": "triple_only/seed0训练完成", "elapsed_s": 34.67256045341492, "pid": 1087475, "scheme": "triple_only", "seed": 0, "epochs": 400, "val_loss": 0.775981}
+{"ts": "2026-07-24T22:10:43", "phase": "TRAIN", "event": "START", "note": "triple50_pair40_uniform10/seed0；从头训练", "elapsed_s": null, "pid": 1088667, "scheme": "triple50_pair40_uniform10", "seed": 0}
+{"ts": "2026-07-24T22:10:52", "phase": "TRAIN", "event": "DONE", "note": "triple70_pair20_uniform10/seed0训练完成", "elapsed_s": 15.251322984695435, "pid": 1088407, "scheme": "triple70_pair20_uniform10", "seed": 0, "epochs": 165, "val_loss": 0.749248}
+{"ts": "2026-07-24T22:10:55", "phase": "TRAIN", "event": "START", "note": "triple40_pair30_uniform30/seed0；从头训练", "elapsed_s": null, "pid": 1089042, "scheme": "triple40_pair30_uniform30", "seed": 0}
+{"ts": "2026-07-24T22:10:58", "phase": "TRAIN", "event": "DONE", "note": "triple50_pair40_uniform10/seed0训练完成", "elapsed_s": 15.168455600738525, "pid": 1088667, "scheme": "triple50_pair40_uniform10", "seed": 0, "epochs": 165, "val_loss": 0.761661}
+{"ts": "2026-07-24T22:11:01", "phase": "TRAIN", "event": "START", "note": "local234_20_60_20/seed0；从头训练", "elapsed_s": null, "pid": 1089328, "scheme": "local234_20_60_20", "seed": 0}
+{"ts": "2026-07-24T22:11:20", "phase": "TRAIN", "event": "DONE", "note": "triple40_pair30_uniform30/seed0训练完成", "elapsed_s": 24.603362798690796, "pid": 1089042, "scheme": "triple40_pair30_uniform30", "seed": 0, "epochs": 268, "val_loss": 0.674042}
+{"ts": "2026-07-24T22:11:25", "phase": "TRAIN", "event": "START", "note": "local234_uniform10/seed0；从头训练", "elapsed_s": null, "pid": 1089840, "scheme": "local234_uniform10", "seed": 0}
+{"ts": "2026-07-24T22:11:34", "phase": "TRAIN", "event": "DONE", "note": "local234_20_60_20/seed0训练完成", "elapsed_s": 32.35379934310913, "pid": 1089328, "scheme": "local234_20_60_20", "seed": 0, "epochs": 400, "val_loss": 0.749793}
+{"ts": "2026-07-24T22:11:37", "phase": "TRAIN", "event": "START", "note": "warm_triple70/seed0；uniform暖启动", "elapsed_s": null, "pid": 1090376, "scheme": "warm_triple70", "seed": 0}
+{"ts": "2026-07-24T22:11:44", "phase": "TRAIN", "event": "DONE", "note": "warm_triple70/seed0训练完成", "elapsed_s": 7.107473373413086, "pid": 1090376, "scheme": "warm_triple70", "seed": 0, "epochs": 61, "val_loss": 0.743669}
+{"ts": "2026-07-24T22:11:49", "phase": "TRAIN", "event": "START", "note": "warm_local234/seed0；uniform暖启动", "elapsed_s": null, "pid": 1090825, "scheme": "warm_local234", "seed": 0}
+{"ts": "2026-07-24T22:11:56", "phase": "TRAIN", "event": "DONE", "note": "warm_local234/seed0训练完成", "elapsed_s": 7.07399845123291, "pid": 1090825, "scheme": "warm_local234", "seed": 0, "epochs": 60, "val_loss": 0.717811}
+{"ts": "2026-07-24T22:11:58", "phase": "TRAIN", "event": "DONE", "note": "local234_uniform10/seed0训练完成", "elapsed_s": 32.54365086555481, "pid": 1089840, "scheme": "local234_uniform10", "seed": 0, "epochs": 400, "val_loss": 0.718201}
+{"ts": "2026-07-24T22:11:59", "phase": "SCHED", "event": "DONE", "note": "train全部任务成功", "elapsed_s": 117.12653088569641, "pid": 1087474}
+{"ts": "2026-07-24T22:12:19", "phase": "SCHED", "event": "START", "note": "k0待运行13个任务；GPU=[0, 3]", "elapsed_s": null, "pid": 1091803, "phase_name": "k0", "jobs": 13, "gpus": "0,3"}
+{"ts": "2026-07-24T22:12:21", "phase": "K0", "event": "START", "note": "triple90_pair10/seed0全空间批量前向", "elapsed_s": null, "pid": 1091805, "scheme": "triple90_pair10", "seed": 0}
+{"ts": "2026-07-24T22:12:21", "phase": "K0", "event": "START", "note": "triple_only/seed0全空间批量前向", "elapsed_s": null, "pid": 1091804, "scheme": "triple_only", "seed": 0}
+{"ts": "2026-07-24T22:12:24", "phase": "K0", "event": "DONE", "note": "triple90_pair10/seed0完成全部14234个集合", "elapsed_s": 2.856088638305664, "pid": 1091805, "scheme": "triple90_pair10", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:24", "phase": "K0", "event": "DONE", "note": "triple_only/seed0完成全部14234个集合", "elapsed_s": 3.106355905532837, "pid": 1091804, "scheme": "triple_only", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:27", "phase": "K0", "event": "START", "note": "triple70_pair20_uniform10/seed0全空间批量前向", "elapsed_s": null, "pid": 1092243, "scheme": "triple70_pair20_uniform10", "seed": 0}
+{"ts": "2026-07-24T22:12:27", "phase": "K0", "event": "START", "note": "triple50_pair40_uniform10/seed0全空间批量前向", "elapsed_s": null, "pid": 1092244, "scheme": "triple50_pair40_uniform10", "seed": 0}
+{"ts": "2026-07-24T22:12:30", "phase": "K0", "event": "DONE", "note": "triple70_pair20_uniform10/seed0完成全部14234个集合", "elapsed_s": 2.643407106399536, "pid": 1092243, "scheme": "triple70_pair20_uniform10", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:30", "phase": "K0", "event": "DONE", "note": "triple50_pair40_uniform10/seed0完成全部14234个集合", "elapsed_s": 2.978630304336548, "pid": 1092244, "scheme": "triple50_pair40_uniform10", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:33", "phase": "K0", "event": "START", "note": "triple40_pair30_uniform30/seed0全空间批量前向", "elapsed_s": null, "pid": 1092692, "scheme": "triple40_pair30_uniform30", "seed": 0}
+{"ts": "2026-07-24T22:12:33", "phase": "K0", "event": "START", "note": "local234_20_60_20/seed0全空间批量前向", "elapsed_s": null, "pid": 1092693, "scheme": "local234_20_60_20", "seed": 0}
+{"ts": "2026-07-24T22:12:36", "phase": "K0", "event": "DONE", "note": "triple40_pair30_uniform30/seed0完成全部14234个集合", "elapsed_s": 2.5045411586761475, "pid": 1092692, "scheme": "triple40_pair30_uniform30", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:36", "phase": "K0", "event": "DONE", "note": "local234_20_60_20/seed0完成全部14234个集合", "elapsed_s": 3.0335159301757812, "pid": 1092693, "scheme": "local234_20_60_20", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:39", "phase": "K0", "event": "START", "note": "local234_uniform10/seed0全空间批量前向", "elapsed_s": null, "pid": 1093135, "scheme": "local234_uniform10", "seed": 0}
+{"ts": "2026-07-24T22:12:39", "phase": "K0", "event": "START", "note": "warm_triple70/seed0全空间批量前向", "elapsed_s": null, "pid": 1093136, "scheme": "warm_triple70", "seed": 0}
+{"ts": "2026-07-24T22:12:42", "phase": "K0", "event": "DONE", "note": "local234_uniform10/seed0完成全部14234个集合", "elapsed_s": 2.6927831172943115, "pid": 1093135, "scheme": "local234_uniform10", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:42", "phase": "K0", "event": "DONE", "note": "warm_triple70/seed0完成全部14234个集合", "elapsed_s": 2.6028947830200195, "pid": 1093136, "scheme": "warm_triple70", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:45", "phase": "K0", "event": "START", "note": "warm_local234/seed0全空间批量前向", "elapsed_s": null, "pid": 1093559, "scheme": "warm_local234", "seed": 0}
+{"ts": "2026-07-24T22:12:45", "phase": "K0", "event": "START", "note": "uniform/seed0全空间批量前向", "elapsed_s": null, "pid": 1093560, "scheme": "uniform", "seed": 0}
+{"ts": "2026-07-24T22:12:48", "phase": "K0", "event": "DONE", "note": "warm_local234/seed0完成全部14234个集合", "elapsed_s": 2.5059328079223633, "pid": 1093559, "scheme": "warm_local234", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:48", "phase": "K0", "event": "DONE", "note": "uniform/seed0完成全部14234个集合", "elapsed_s": 2.93204402923584, "pid": 1093560, "scheme": "uniform", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:51", "phase": "K0", "event": "START", "note": "logunif/seed0全空间批量前向", "elapsed_s": null, "pid": 1094102, "scheme": "logunif", "seed": 0}
+{"ts": "2026-07-24T22:12:51", "phase": "K0", "event": "START", "note": "small80/seed0全空间批量前向", "elapsed_s": null, "pid": 1094103, "scheme": "small80", "seed": 0}
+{"ts": "2026-07-24T22:12:54", "phase": "K0", "event": "DONE", "note": "logunif/seed0完成全部14234个集合", "elapsed_s": 2.5424821376800537, "pid": 1094102, "scheme": "logunif", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:54", "phase": "K0", "event": "DONE", "note": "small80/seed0完成全部14234个集合", "elapsed_s": 2.5143513679504395, "pid": 1094103, "scheme": "small80", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:12:57", "phase": "K0", "event": "START", "note": "workload_hard/seed0全空间批量前向", "elapsed_s": null, "pid": 1094570, "scheme": "workload_hard", "seed": 0}
+{"ts": "2026-07-24T22:13:00", "phase": "K0", "event": "DONE", "note": "workload_hard/seed0完成全部14234个集合", "elapsed_s": 2.780174493789673, "pid": 1094570, "scheme": "workload_hard", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:13:01", "phase": "SCHED", "event": "DONE", "note": "k0全部任务成功", "elapsed_s": 42.0543417930603, "pid": 1091803}
+{"ts": "2026-07-24T22:13:10", "phase": "ANALYZE-K0", "event": "START", "note": "评价三元父集合、S1和极强协同", "elapsed_s": null, "pid": 1094993}
+{"ts": "2026-07-24T22:13:23", "phase": "ANALYZE-K0", "event": "DECISION", "note": "parent胜者=triple50_pair40_uniform10/single；S1胜者=local234_uniform10/single", "elapsed_s": null, "pid": 1094993}
+{"ts": "2026-07-24T22:13:34", "phase": "SCHED", "event": "START", "note": "confirm待运行2个任务；GPU=[0, 3]", "elapsed_s": null, "pid": 1095669, "phase_name": "confirm", "jobs": 2, "gpus": "0,3"}
+{"ts": "2026-07-24T22:13:36", "phase": "TRAIN", "event": "START", "note": "local234_uniform10/seed1；从头训练", "elapsed_s": null, "pid": 1095670, "scheme": "local234_uniform10", "seed": 1}
+{"ts": "2026-07-24T22:13:36", "phase": "TRAIN", "event": "START", "note": "triple50_pair40_uniform10/seed1；从头训练", "elapsed_s": null, "pid": 1095671, "scheme": "triple50_pair40_uniform10", "seed": 1}
+{"ts": "2026-07-24T22:14:00", "phase": "TRAIN", "event": "DONE", "note": "triple50_pair40_uniform10/seed1训练完成", "elapsed_s": 23.94705104827881, "pid": 1095671, "scheme": "triple50_pair40_uniform10", "seed": 1, "epochs": 285, "val_loss": 0.713888}
+{"ts": "2026-07-24T22:14:02", "phase": "TRAIN", "event": "DONE", "note": "local234_uniform10/seed1训练完成", "elapsed_s": 26.032305479049683, "pid": 1095670, "scheme": "local234_uniform10", "seed": 1, "epochs": 271, "val_loss": 0.679009}
+{"ts": "2026-07-24T22:14:04", "phase": "SCHED", "event": "DONE", "note": "confirm全部任务成功", "elapsed_s": 30.027479887008667, "pid": 1095669}
+{"ts": "2026-07-24T22:14:06", "phase": "SCHED", "event": "START", "note": "confirm_k0待运行3个任务；GPU=[0, 3]", "elapsed_s": null, "pid": 1096615, "phase_name": "confirm_k0", "jobs": 3, "gpus": "0,3"}
+{"ts": "2026-07-24T22:14:08", "phase": "K0", "event": "START", "note": "triple50_pair40_uniform10/seed1全空间批量前向", "elapsed_s": null, "pid": 1096617, "scheme": "triple50_pair40_uniform10", "seed": 1}
+{"ts": "2026-07-24T22:14:08", "phase": "K0", "event": "START", "note": "local234_uniform10/seed1全空间批量前向", "elapsed_s": null, "pid": 1096616, "scheme": "local234_uniform10", "seed": 1}
+{"ts": "2026-07-24T22:14:10", "phase": "K0", "event": "DONE", "note": "local234_uniform10/seed1完成全部14234个集合", "elapsed_s": 2.5841920375823975, "pid": 1096616, "scheme": "local234_uniform10", "seed": 1, "rows": 170808}
+{"ts": "2026-07-24T22:14:11", "phase": "K0", "event": "DONE", "note": "triple50_pair40_uniform10/seed1完成全部14234个集合", "elapsed_s": 2.9302966594696045, "pid": 1096617, "scheme": "triple50_pair40_uniform10", "seed": 1, "rows": 170808}
+{"ts": "2026-07-24T22:14:13", "phase": "K0", "event": "START", "note": "uniform/seed1全空间批量前向", "elapsed_s": null, "pid": 1097070, "scheme": "uniform", "seed": 1}
+{"ts": "2026-07-24T22:14:17", "phase": "K0", "event": "DONE", "note": "uniform/seed1完成全部14234个集合", "elapsed_s": 3.0404069423675537, "pid": 1097070, "scheme": "uniform", "seed": 1, "rows": 170808}
+{"ts": "2026-07-24T22:14:18", "phase": "SCHED", "event": "DONE", "note": "confirm_k0全部任务成功", "elapsed_s": 12.016205549240112, "pid": 1096615}
+{"ts": "2026-07-24T22:14:22", "phase": "ANALYZE-K0", "event": "START", "note": "评价三元父集合、S1和极强协同", "elapsed_s": null, "pid": 1097496}
+{"ts": "2026-07-24T22:14:38", "phase": "ANALYZE-K0", "event": "DECISION", "note": "parent胜者=triple50_pair40_uniform10/single；S1胜者=local234_uniform10/single", "elapsed_s": null, "pid": 1097496}
+{"ts": "2026-07-24T22:15:08", "phase": "SCHED", "event": "START", "note": "kgrid待运行6个任务；GPU=[0, 3]", "elapsed_s": null, "pid": 1098392, "phase_name": "kgrid", "jobs": 6, "gpus": "0,3"}
+{"ts": "2026-07-24T22:15:10", "phase": "KGRID", "event": "START", "note": "local234_uniform10/triple shard0/2", "elapsed_s": null, "pid": 1098394, "scheme": "local234_uniform10", "kind": "triple", "shard": 0, "nshard": 2}
+{"ts": "2026-07-24T22:15:10", "phase": "KGRID", "event": "START", "note": "local234_uniform10/low shard0/1", "elapsed_s": null, "pid": 1098393, "scheme": "local234_uniform10", "kind": "low", "shard": 0, "nshard": 1}
+{"ts": "2026-07-24T22:16:55", "phase": "KGRID", "event": "DONE", "note": "local234_uniform10/low shard0完成", "elapsed_s": 104.9938473701477, "pid": 1098393, "scheme": "local234_uniform10", "kind": "low", "shard": 0, "n_rows": 71280}
+{"ts": "2026-07-24T22:16:58", "phase": "KGRID", "event": "START", "note": "local234_uniform10/triple shard1/2", "elapsed_s": null, "pid": 1100838, "scheme": "local234_uniform10", "kind": "triple", "shard": 1, "nshard": 2}
+{"ts": "2026-07-24T22:26:39", "phase": "KGRID", "event": "DONE", "note": "local234_uniform10/triple shard0完成", "elapsed_s": 689.9256513118744, "pid": 1098394, "scheme": "local234_uniform10", "kind": "triple", "shard": 0, "n_rows": 476784}
+{"ts": "2026-07-24T22:26:43", "phase": "KGRID", "event": "START", "note": "triple50_pair40_uniform10/low shard0/1", "elapsed_s": null, "pid": 1112313, "scheme": "triple50_pair40_uniform10", "kind": "low", "shard": 0, "nshard": 1}
+{"ts": "2026-07-24T22:28:27", "phase": "KGRID", "event": "DONE", "note": "triple50_pair40_uniform10/low shard0完成", "elapsed_s": 103.69384980201721, "pid": 1112313, "scheme": "triple50_pair40_uniform10", "kind": "low", "shard": 0, "n_rows": 71280}
+{"ts": "2026-07-24T22:28:29", "phase": "KGRID", "event": "DONE", "note": "local234_uniform10/triple shard1完成", "elapsed_s": 691.2349050045013, "pid": 1100838, "scheme": "local234_uniform10", "kind": "triple", "shard": 1, "n_rows": 476784}
+{"ts": "2026-07-24T22:28:31", "phase": "KGRID", "event": "START", "note": "triple50_pair40_uniform10/triple shard0/2", "elapsed_s": null, "pid": 1114386, "scheme": "triple50_pair40_uniform10", "kind": "triple", "shard": 0, "nshard": 2}
+{"ts": "2026-07-24T22:28:34", "phase": "KGRID", "event": "START", "note": "triple50_pair40_uniform10/triple shard1/2", "elapsed_s": null, "pid": 1114603, "scheme": "triple50_pair40_uniform10", "kind": "triple", "shard": 1, "nshard": 2}
+{"ts": "2026-07-24T22:31:11", "phase": "SCHED", "event": "START", "note": "train待运行4个任务；GPU=[1]", "elapsed_s": null, "pid": 1117421, "phase_name": "train", "jobs": 4, "gpus": "1"}
+{"ts": "2026-07-24T22:31:12", "phase": "TRAIN", "event": "START", "note": "triple70_group8/seed0；从头训练", "elapsed_s": null, "pid": 1117422, "scheme": "triple70_group8", "seed": 0}
+{"ts": "2026-07-24T22:31:27", "phase": "TRAIN", "event": "DONE", "note": "triple70_group8/seed0训练完成", "elapsed_s": 14.857998609542847, "pid": 1117422, "scheme": "triple70_group8", "seed": 0, "epochs": 191, "val_loss": 0.751592}
+{"ts": "2026-07-24T22:31:31", "phase": "TRAIN", "event": "START", "note": "triple70_group32/seed0；从头训练", "elapsed_s": null, "pid": 1117863, "scheme": "triple70_group32", "seed": 0}
+{"ts": "2026-07-24T22:31:44", "phase": "TRAIN", "event": "DONE", "note": "triple70_group32/seed0训练完成", "elapsed_s": 13.824135065078735, "pid": 1117863, "scheme": "triple70_group32", "seed": 0, "epochs": 206, "val_loss": 0.751179}
+{"ts": "2026-07-24T22:31:49", "phase": "TRAIN", "event": "START", "note": "local234_group8/seed0；从头训练", "elapsed_s": null, "pid": 1118393, "scheme": "local234_group8", "seed": 0}
+{"ts": "2026-07-24T22:32:12", "phase": "TRAIN", "event": "DONE", "note": "local234_group8/seed0训练完成", "elapsed_s": 23.576159477233887, "pid": 1118393, "scheme": "local234_group8", "seed": 0, "epochs": 307, "val_loss": 0.72264}
+{"ts": "2026-07-24T22:32:16", "phase": "TRAIN", "event": "START", "note": "local234_group32/seed0；从头训练", "elapsed_s": null, "pid": 1118899, "scheme": "local234_group32", "seed": 0}
+{"ts": "2026-07-24T22:32:33", "phase": "TRAIN", "event": "DONE", "note": "local234_group32/seed0训练完成", "elapsed_s": 17.326358556747437, "pid": 1118899, "scheme": "local234_group32", "seed": 0, "epochs": 333, "val_loss": 0.721638}
+{"ts": "2026-07-24T22:32:35", "phase": "SCHED", "event": "DONE", "note": "train全部任务成功", "elapsed_s": 84.07457041740417, "pid": 1117421}
+{"ts": "2026-07-24T22:32:47", "phase": "SCHED", "event": "START", "note": "k0待运行4个任务；GPU=[1]", "elapsed_s": null, "pid": 1119765, "phase_name": "k0", "jobs": 4, "gpus": "1"}
+{"ts": "2026-07-24T22:32:49", "phase": "K0", "event": "START", "note": "triple70_group8/seed0全空间批量前向", "elapsed_s": null, "pid": 1119766, "scheme": "triple70_group8", "seed": 0}
+{"ts": "2026-07-24T22:32:53", "phase": "K0", "event": "DONE", "note": "triple70_group8/seed0完成全部14234个集合", "elapsed_s": 3.9322731494903564, "pid": 1119766, "scheme": "triple70_group8", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:32:58", "phase": "K0", "event": "START", "note": "triple70_group32/seed0全空间批量前向", "elapsed_s": null, "pid": 1120104, "scheme": "triple70_group32", "seed": 0}
+{"ts": "2026-07-24T22:33:02", "phase": "K0", "event": "DONE", "note": "triple70_group32/seed0完成全部14234个集合", "elapsed_s": 4.124401330947876, "pid": 1120104, "scheme": "triple70_group32", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:33:07", "phase": "K0", "event": "START", "note": "local234_group8/seed0全空间批量前向", "elapsed_s": null, "pid": 1120425, "scheme": "local234_group8", "seed": 0}
+{"ts": "2026-07-24T22:33:11", "phase": "K0", "event": "DONE", "note": "local234_group8/seed0完成全部14234个集合", "elapsed_s": 4.234755516052246, "pid": 1120425, "scheme": "local234_group8", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:33:16", "phase": "K0", "event": "START", "note": "local234_group32/seed0全空间批量前向", "elapsed_s": null, "pid": 1120752, "scheme": "local234_group32", "seed": 0}
+{"ts": "2026-07-24T22:33:20", "phase": "K0", "event": "DONE", "note": "local234_group32/seed0完成全部14234个集合", "elapsed_s": 4.219595909118652, "pid": 1120752, "scheme": "local234_group32", "seed": 0, "rows": 170808}
+{"ts": "2026-07-24T22:33:23", "phase": "SCHED", "event": "DONE", "note": "k0全部任务成功", "elapsed_s": 36.03491497039795, "pid": 1119765}
+{"ts": "2026-07-24T22:33:27", "phase": "ANALYZE-K0", "event": "START", "note": "评价三元父集合、S1和极强协同", "elapsed_s": null, "pid": 1121098}
+{"ts": "2026-07-24T22:33:50", "phase": "ANALYZE-K0", "event": "DECISION", "note": "parent胜者=triple50_pair40_uniform10/single；S1胜者=warm_triple70/single", "elapsed_s": null, "pid": 1121098}
+{"ts": "2026-07-24T22:34:24", "phase": "ANALYZE-K0", "event": "START", "note": "评价三元父集合、S1和极强协同", "elapsed_s": null, "pid": 1122319}
+{"ts": "2026-07-24T22:34:45", "phase": "ANALYZE-K0", "event": "DECISION", "note": "parent胜者=triple50_pair40_uniform10/single；S1胜者=local234_uniform10/single", "elapsed_s": null, "pid": 1122319}
+{"ts": "2026-07-24T22:35:02", "phase": "SCHED", "event": "START", "note": "confirm待运行0个任务；GPU=[1]", "elapsed_s": null, "pid": 1123077, "phase_name": "confirm", "jobs": 0, "gpus": "1"}
+{"ts": "2026-07-24T22:35:02", "phase": "SCHED", "event": "DONE", "note": "confirm输出均已存在", "elapsed_s": null, "pid": 1123077}
+{"ts": "2026-07-24T22:35:04", "phase": "SCHED", "event": "START", "note": "confirm_k0待运行0个任务；GPU=[1]", "elapsed_s": null, "pid": 1123154, "phase_name": "confirm_k0", "jobs": 0, "gpus": "1"}
+{"ts": "2026-07-24T22:35:04", "phase": "SCHED", "event": "DONE", "note": "confirm_k0输出均已存在", "elapsed_s": null, "pid": 1123154}
+{"ts": "2026-07-24T22:35:08", "phase": "ANALYZE-K0", "event": "START", "note": "评价三元父集合、S1和极强协同", "elapsed_s": null, "pid": 1123186}
+{"ts": "2026-07-24T22:35:29", "phase": "ANALYZE-K0", "event": "DECISION", "note": "parent胜者=triple50_pair40_uniform10/single；S1胜者=local234_uniform10/single", "elapsed_s": null, "pid": 1123186}
+{"ts": "2026-07-24T22:39:54", "phase": "KGRID", "event": "DONE", "note": "triple50_pair40_uniform10/triple shard0完成", "elapsed_s": 683.1207103729248, "pid": 1114386, "scheme": "triple50_pair40_uniform10", "kind": "triple", "shard": 0, "n_rows": 476784}
+{"ts": "2026-07-24T22:40:21", "phase": "KGRID", "event": "DONE", "note": "triple50_pair40_uniform10/triple shard1完成", "elapsed_s": 706.4810211658478, "pid": 1114603, "scheme": "triple50_pair40_uniform10", "kind": "triple", "shard": 1, "n_rows": 476784}
+{"ts": "2026-07-24T22:40:24", "phase": "SCHED", "event": "DONE", "note": "kgrid全部任务成功", "elapsed_s": 1516.3709020614624, "pid": 1098392}
+{"ts": "2026-07-24T22:40:31", "phase": "ANALYZE-KGRID", "event": "START", "note": "比较uniform与两个K0胜者", "elapsed_s": null, "pid": 1128636}
+{"ts": "2026-07-24T22:40:48", "phase": "ANALYZE-KGRID", "event": "DONE", "note": "完成30个方案×K比较", "elapsed_s": null, "pid": 1128636}

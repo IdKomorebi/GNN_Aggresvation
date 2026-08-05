@@ -1,0 +1,27 @@
+{
+  "subset_id": "r18_22_24",
+  "group": "triple_rand_ext",
+  "size": 3,
+  "fields": [
+    "gen_fuel_wind_pct",
+    "rmpcp",
+    "total_pjm_reg_purchases"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.17875641584396362,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.22326111793518066,
+    "gross_actual_interchange_mw": 0.16509562730789185,
+    "total_gen": 0.3129503130912781,
+    "metered_load_mw": 0.303855836391449,
+    "total_losses": 0.14361119270324707,
+    "congestion_price_da": 0.054716408252716064,
+    "congestion_price_rt": 0.045166611671447754,
+    "marginal_loss_price_da": 0.12074899673461914,
+    "total_lmp_da": 0.24994933605194092,
+    "da_as_total_mw_primary_reserve": 0.13657689094543457,
+    "da_as_total_mw_synchronized_reserve": 0.12523508071899414,
+    "da_as_total_mw_thirty_minutes_reserve": 0.2639095187187195
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "selection_uses_test": false,
+  "selection_seed": 0,
+  "best_parent_scheme": "triple50_pair40_uniform10",
+  "best_parent_mode": "single",
+  "best_s1_scheme": "local234_uniform10",
+  "best_s1_mode": "single",
+  "parent_selection_metric": "seed0 tune_parent_mae minimum",
+  "s1_selection_metric": "seed0 tune_top30_f1 maximum",
+  "confirmation_seed": 1,
+  "confirmation_does_not_reselect": true
+}

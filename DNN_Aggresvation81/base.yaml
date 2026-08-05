@@ -1,0 +1,33 @@
+experiment:
+  name: DNN_Aggresvation81
+  source_grid: ../DNN_Aggresvation79/outputs
+  objective: "先做少量集合级微调，再用 S1(协同增量) + S2(父集合总泄露)互补筛选"
+  k_grid: [0, 1, 5, 10, 25, 50]
+  n_general: 44
+  n_triples: 13244
+  strong_threshold: 0.10
+
+single_stage:
+  fixed_budgets: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50, 0.60]
+  rescue_fractions: [0.005, 0.01, 0.02, 0.03, 0.05, 0.075, 0.10, 0.15, 0.20]
+  fusion_alphas: [0.05, 0.10, 0.20, 0.30, 0.40, 0.50]
+
+staged:
+  first_k: [0, 1, 5, 10, 25]
+  first_retention: [0.30, 0.40, 0.50, 0.60, 0.80]
+  final_k: [10, 25, 50]
+  final_retention: [0.10, 0.20, 0.30]
+  first_rescue_fractions: [0.01, 0.02, 0.05, 0.10]
+  first_fusion_alphas: [0.10, 0.20, 0.30, 0.40, 0.50]
+  final_rescue_fractions: [0.02, 0.05]
+  final_fusion_alphas: [0.10, 0.20, 0.30, 0.40, 0.50]
+
+evaluation:
+  parameter_selection_split: tune
+  final_validation_split: test
+  strength_bands:
+    - [0.10, 0.12]
+    - [0.12, 0.15]
+    - [0.15, 0.20]
+    - [0.20, 1.01]
+  report_weighted_and_raw: true

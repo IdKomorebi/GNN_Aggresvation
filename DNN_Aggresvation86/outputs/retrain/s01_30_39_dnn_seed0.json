@@ -1,0 +1,27 @@
+{
+  "subset_id": "s01_30_39",
+  "group": "cert3",
+  "size": 3,
+  "fields": [
+    "gen_fuel_gas_mw",
+    "da_as_mcp_synchronized_reserve",
+    "total_lmp_rt"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.4922851026058197,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.35732531547546387,
+    "gross_actual_interchange_mw": 0.2138047218322754,
+    "total_gen": 0.8886700868606567,
+    "metered_load_mw": 0.8719350695610046,
+    "total_losses": 0.44905394315719604,
+    "congestion_price_da": 0.16131651401519775,
+    "congestion_price_rt": 0.5271056890487671,
+    "marginal_loss_price_da": 0.5731064081192017,
+    "total_lmp_da": 0.8412184715270996,
+    "da_as_total_mw_primary_reserve": 0.24829983711242676,
+    "da_as_total_mw_synchronized_reserve": 0.213334321975708,
+    "da_as_total_mw_thirty_minutes_reserve": 0.562251091003418
+  }
+}

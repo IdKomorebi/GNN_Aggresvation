@@ -1,0 +1,23 @@
+{
+  "truth_test_counts": {
+    "0.1": 130,
+    "0.15": 43,
+    "0.2": 5
+  },
+  "top30_recall_gt_010": {
+    "rankmax_residual_poly2": 0.9653795263028827,
+    "rankmean_residual_poly2": 0.9653795263028827,
+    "cached_poly2_s1": 0.962954179815189,
+    "residual_arith_s1": 0.9605288333274948,
+    "residual_arith_plus_poly2": 0.9605288333274948,
+    "residual_arith_plus_s2": 0.9605288333274948,
+    "residual_poly2_s1": 0.9581034868398007,
+    "standalone_arith_s1": 0.9383679035035479,
+    "rankmax_residual_s2": 0.9283337061180715,
+    "uniform_k50_s1": 0.9110234692695128,
+    "uniform_k25_s1": 0.8988967368310425,
+    "uniform_k10_s1": 0.8916206973679603,
+    "uniform_k0_s1": 0.8424481447446787,
+    "k0_s1_plus_s2": 0.8400227982569846
+  }
+}

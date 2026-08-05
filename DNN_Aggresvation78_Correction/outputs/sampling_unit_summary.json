@@ -1,0 +1,21 @@
+{
+  "design": {
+    "all_triples": 13244,
+    "exact_known_triples": 397,
+    "remainder_triples": 12847,
+    "remainder_sample": 1800,
+    "remainder_weight": 7.137222222222222
+  },
+  "reported_pool_unweighted": {
+    "strong_entry_rate": 0.0070416666666666666,
+    "strong_triple_rate": 0.065,
+    "pure_share_among_strong_entries": 0.09467455621301775,
+    "pure_share_among_strong_triples": 0.007692307692307693
+  },
+  "stratified_population_estimate": {
+    "strong_entry_rate": 0.008831567334474311,
+    "strong_triple_rate": 0.07844441088627134,
+    "pure_share_among_strong_entries": 0.11047319361158937,
+    "pure_share_among_strong_triples": 0.006869862442327807
+  }
+}

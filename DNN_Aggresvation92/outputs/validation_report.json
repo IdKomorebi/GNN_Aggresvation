@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "checks": {
+    "trajectory_shards": {
+      "passed": true,
+      "n_shards": 3,
+      "n_tasks": 865,
+      "n_unique": 865
+    },
+    "exact_task_leakage": {
+      "passed": true,
+      "n_basis": 384,
+      "n_forbidden_overlap": 0,
+      "overlap": []
+    },
+    "finite_estimates": {
+      "passed": true,
+      "n_rows": 588744,
+      "n_methods": 102
+    },
+    "d69_k0_reproduction": {
+      "passed": true,
+      "n_compared": 5772,
+      "max_abs_difference": 1.1102230246251565e-16
+    },
+    "subspace_energy_monotonic": {
+      "passed": true,
+      "max_rank": 320
+    },
+    "validation_selected_methods_exist": {
+      "passed": true,
+      "selections": {
+        "selected_for_direct_v": {
+          "method": "gradmask_1024",
+          "rank": 192,
+          "validation_mae": 0.05817539365882547
+        },
+        "selected_for_syn3": {
+          "method": "gradmask_1024",
+          "rank": 320,
+          "validation_per_conf_mae": 0.02454892036815484
+        },
+        "selected_lora_for_direct_v": {
+          "method": "lora_lr0.005_K25",
+          "rank": 16,
+          "validation_mae": 0.03944153160366238
+        },
+        "selected_lora_for_syn3": {
+          "method": "lora_lr0.005_K25",
+          "rank": 16,
+          "validation_per_conf_mae": 0.01786951944231987
+        },
+        "selected_lora_K1_for_direct_v": {
+          "method": "lora_lr0.005_K1",
+          "rank": 16,
+          "validation_mae": 0.06153915281224455
+        },
+        "selected_lora_K1_for_syn3": {
+          "method": "lora_lr0.01_K1",
+          "rank": 16,
+          "validation_per_conf_mae": 0.024001824359099068
+        }
+      }
+    },
+    "lora_task_coverage": {
+      "passed": true,
+      "min_tasks": 481,
+      "max_tasks": 481,
+      "n_configurations": 26
+    },
+    "required_outputs": {
+      "passed": true,
+      "missing": []
+    }
+  }
+}

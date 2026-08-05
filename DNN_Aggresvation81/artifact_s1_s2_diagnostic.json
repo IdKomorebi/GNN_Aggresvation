@@ -1,0 +1,371 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "为什么极强三阶协同会被 S1 漏掉",
+    "description": "对三元父集合、最强二元子集合和 S2 救援路径的同目标误差分解。",
+    "generatedAt": "2026-07-24T05:00:00+08:00",
+    "cards": [],
+    "charts": [
+      {
+        "id": "component_by_k",
+        "title": "极强三阶组合的父集合与二元子集合 R²",
+        "subtitle": "15个 syn3 真值大于0.20的三元组，按真实协同目标计算原始样本均值",
+        "type": "bar",
+        "intent": "comparison",
+        "question": "微调增加时，三元父集合和最好二元子集合分别离真值多远？",
+        "rationale": "K是离散的微调预算，分组柱形图可以直接比较同一K下父集合与子集合的真值和估计值。",
+        "comparisonContext": {
+          "baseline": "逐集合完整重训真值",
+          "denominator": "15个极强三元组",
+          "grain": "K与数值类型",
+          "unit": "R²"
+        },
+        "dataset": "component_by_k",
+        "sourceId": "extreme_kgrid_raw",
+        "encodings": {
+          "x": {
+            "field": "K",
+            "type": "ordinal",
+            "label": "微调更新步数 K"
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative",
+            "label": "平均 R²"
+          },
+          "color": {
+            "field": "series",
+            "type": "nominal",
+            "label": "数值类型"
+          },
+          "tooltip": [
+            {
+              "field": "value",
+              "type": "quantitative",
+              "label": "平均值",
+              "format": "number"
+            }
+          ]
+        },
+        "palette": {
+          "kind": "categorical",
+          "name": "parent-pair-comparison"
+        },
+        "legend": {
+          "position": "bottom",
+          "sort": "spec",
+          "title": "数值类型"
+        },
+        "labels": {
+          "values": "none"
+        }
+      },
+      {
+        "id": "stage_hits",
+        "title": "极强三阶组合在81号分层筛选中的保留数量",
+        "subtitle": "每个阶段的分母均为15；最终候选预算保持Top30%",
+        "type": "bar",
+        "intent": "funnel",
+        "question": "S2是在什么阶段增加了极强协同的命中？",
+        "rationale": "阶段数量是少量离散比较，柱形图能清楚显示S2宽进、保护通道和最终命中的变化。",
+        "comparisonContext": {
+          "baseline": "79号纯S1协议",
+          "denominator": "15个极强三元组",
+          "grain": "筛选阶段",
+          "unit": "命中个数"
+        },
+        "dataset": "stage_hits",
+        "sourceId": "protocol_stages",
+        "encodings": {
+          "x": {
+            "field": "stage",
+            "type": "nominal",
+            "label": "筛选阶段"
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative",
+            "label": "保留个数"
+          },
+          "tooltip": [
+            {
+              "field": "count",
+              "type": "quantitative",
+              "label": "个数",
+              "format": "number"
+            }
+          ]
+        },
+        "palette": {
+          "kind": "sequential",
+          "name": "blue"
+        },
+        "labels": {
+          "values": "all"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "strength_errors",
+        "title": "K=10时不同真值强度的误差分解",
+        "subtitle": "误差=估计值−重训真值；负值表示低估",
+        "dataset": "strength_errors",
+        "sourceId": "strength_k10_raw",
+        "defaultSort": {
+          "field": "band",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "band",
+            "label": "真实syn3区间",
+            "type": "text"
+          },
+          {
+            "field": "n",
+            "label": "样本数",
+            "format": "number"
+          },
+          {
+            "field": "parent_error",
+            "label": "三元父集合误差",
+            "format": "number"
+          },
+          {
+            "field": "pair_error",
+            "label": "最好二元组误差",
+            "format": "number"
+          },
+          {
+            "field": "syn_error",
+            "label": "协同误差",
+            "format": "number"
+          },
+          {
+            "field": "s1_top30_rate",
+            "label": "S1 Top30命中率",
+            "format": "percent"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "diagnostic_summary",
+        "label": "S1/S2诊断汇总",
+        "path": "outputs/s1_s2_error_summary.json"
+      },
+      {
+        "id": "extreme_kgrid_raw",
+        "label": "极强协同K网格原始均值",
+        "path": "outputs/s1_s2_extreme_kgrid_raw.csv"
+      },
+      {
+        "id": "strength_k10_raw",
+        "label": "K10分强度误差表",
+        "path": "outputs/s1_s2_strength_k10_raw.csv"
+      },
+      {
+        "id": "protocol_stages",
+        "label": "极强协同协议阶段明细",
+        "path": "outputs/s1_s2_extreme_protocol_stages.csv"
+      },
+      {
+        "id": "diagnostic_code",
+        "label": "诊断复现脚本",
+        "path": "scripts/diagnose_s1_s2_gap.py"
+      },
+      {
+        "id": "kgrid_training_protocol",
+        "label": "DNN_Aggresvation79微调协议",
+        "path": "DNN_Aggresvation79/scripts/scan_kgrid.py"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# 为什么极强三阶协同会被 S1 漏掉"
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "sourceId": "diagnostic_summary",
+        "body": "## 结论：你的代数推理是对的，出错的是两个前提\n\n对同一个三元组和同一个 confidential 目标，若三元绝对值估计确实很高、二元估计又接近真值，那么差值当然也应当很高。当前结果之所以看似矛盾，是因为：\n\n- **真正发生协同的目标上，三元绝对值并没有被估高，而是被严重低估。**K=10时，15个极强组合的三元父集合全部被低估，而且全部比对应二元组欠拟合得更严重。\n- **81号的 S2-any 是12个目标中的最高绝对泄露，不一定来自真实协同目标。**K=10时，它与真实协同目标在15个极强组合中一次也没有对齐。\n- 因此，S2的作用不是证明协同，而是暂时保留一批“总体泄露高、S1学习慢”的三元组，让它们继续微调后再由S1或重训认证。"
+      },
+      {
+        "id": "error_identity",
+        "type": "markdown",
+        "body": "## 负差值主要来自三元父集合低估\n\n同一目标上的误差严格满足：\n\n`估计syn3误差 = 三元父集合误差 − 最好二元组误差`。\n\n二元组并不需要被高估才会产生负差值。只要三元组比二元组低估得更多，差值就会被压低，甚至违反真实集合价值应有的单调性，出现 `估计v(ijk) < 估计v(ij)`。当前父集合和子集合是从同一通用权重分别微调的独立模型，没有任何单调约束，所以这种现象在数值上完全可能发生。"
+      },
+      {
+        "id": "component_chart_intro",
+        "type": "markdown",
+        "sourceId": "extreme_kgrid_raw",
+        "body": "## 三元组的收敛速度远慢于二元组\n\n15个极强组合的真实三元值平均为0.571，真实最好二元值为0.279。K=10时，三元估计只有0.257，低估0.314；二元估计为0.232，只低估0.047。因此真实协同均值0.292被压成同目标估计0.026。到K=50，三元估计仍只有0.383，说明50个mini-batch更新仍未闭合父集合的优化缺口。"
+      },
+      {
+        "id": "component_chart_block",
+        "type": "chart",
+        "chartId": "component_by_k"
+      },
+      {
+        "id": "strength_table_intro",
+        "type": "markdown",
+        "sourceId": "strength_k10_raw",
+        "body": "## 越强的真实协同，父集合欠拟合反而越严重\n\nK=10时，0.10–0.15档的协同误差约为−0.035；0.15–0.20档扩大到−0.074；大于0.20档则达到−0.267。最强档的问题不是二元项突然高估，而是需要学习的三字段联合关系最强、也最偏离通用oracle的平均解。"
+      },
+      {
+        "id": "strength_table_block",
+        "type": "table",
+        "tableId": "strength_errors"
+      },
+      {
+        "id": "s2_mechanism",
+        "type": "markdown",
+        "sourceId": "protocol_stages",
+        "body": "## S2提供的是继续学习的资格，不是协同证据\n\nK=10时，纯S1 Top60只留下15个极强组合中的8个；加入S2-any后留下12个，新救回4个。最终81号比79号多命中4个，恰好就是这4个被S2新救回的组合：其中3个靠保护通道保留，另1个继续训练到K=25后由S1自己升回最终名单。这个过程说明S2真正购买的是“继续微调的机会”。"
+      },
+      {
+        "id": "stage_chart_block",
+        "type": "chart",
+        "chartId": "stage_hits"
+      },
+      {
+        "id": "definitions",
+        "type": "markdown",
+        "body": "## 三个分数必须严格区分\n\n- `S1(S)=max_c[v̂(S,c)−max_T v̂(T,c)]`：估计的不可约三阶增量，是主协同分数。\n- `S2-any(S)=max_c v̂(S,c)`：三元组对任意一个目标的最高绝对泄露，是跨目标危险信号。\n- “同目标S2”：固定在真实协同目标上的 `v̂(S,c_true)`。它才参与你的代数推理，但真实搜索时并不知道 `c_true`。\n\n当前81号正式协议使用的是S2-any。因此“S2-any高”和“真实目标上的三元值估得高”不是同义句。"
+      },
+      {
+        "id": "methodology",
+        "type": "markdown",
+        "sourceId": "diagnostic_code",
+        "body": "## 诊断方法\n\n分析以每个三元组的真值最大confidential目标为对齐目标，连接79号同K的三元估计、三个二元子集中的最大估计以及68/77号重训真值。对15个 `syn3_true>0.20` 的三元组逐K复算父集合误差、二元误差、协同误差、S1/S2排名和81号每层保留状态。误差恒等式的最大数值残差小于1e−10。"
+      },
+      {
+        "id": "why_slow",
+        "type": "markdown",
+        "sourceId": "kgrid_training_protocol",
+        "body": "## 为什么三元父集合学得更慢\n\n当前K是mini-batch更新次数，不是epoch：K=10约0.56个epoch，K=25约1.39个epoch，K=50约2.79个epoch。每次微调还同时优化12个目标的平均MSE。强三阶关系只在特定三字段同时出现、且往往只影响某个目标；随机掩码通用oracle主要学到常见的边际和低阶关系，少量更新更容易恢复二元任务，却不足以重建稀有的三字段联合映射。这个解释与观测一致，但属于机制推断，尚未由单目标微调消融实验直接证明。"
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "body": "## 局限：S2当前可能利用了跨目标相关性和历史筛选偏差\n\n15个极强三元组中14个来自早期估计器筛出的exact397池，只有1个来自无偏随机扩展池；样本很小且并非纯随机。S2-any在真实协同目标上0/15对齐，说明它可能依赖这些三元组对 `metered_load_mw`、`total_gen` 等其他目标的高可预测性，也可能利用了早期候选池的结构偏差。81号提升是真实的历史样本现象，但不能据此声称S2具有普遍的协同识别能力。"
+      },
+      {
+        "id": "next_steps",
+        "type": "markdown",
+        "body": "## 下一步：直接验证“慢学习”而不是继续猜\n\n1. 冻结一批全新的强、中、弱三阶真值组合。\n2. 分别做12目标联合微调和真实conf单目标微调，记录K=0/10/25/50/100/200的父集合与二元收敛曲线。\n3. 增加单调约束或投影：要求同目标 `v̂(ijk)≥max v̂(pair)`，观察负协同和召回是否改善。\n4. 把S2保护条件改成“高S2 + 父集合增长快 + 同目标对齐稳定”，降低纯跨目标代理带来的误报。"
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "body": "## 仍需回答的问题\n\n- 单目标微调是否能用更少K恢复极强协同？\n- 极强协同的慢收敛是共享12目标损失造成，还是三字段函数本身更难优化？\n- 在新的无偏lockbox中，S2-any的4个新增命中能否复现？"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-07-24T05:00:00+08:00",
+    "status": "ready",
+    "datasets": {
+      "component_by_k": [
+        {"K": "0", "series": "三元真值", "value": 0.570968},
+        {"K": "0", "series": "三元估计", "value": 0.213463},
+        {"K": "0", "series": "二元真值", "value": 0.278942},
+        {"K": "0", "series": "二元估计", "value": 0.209003},
+        {"K": "1", "series": "三元真值", "value": 0.570968},
+        {"K": "1", "series": "三元估计", "value": 0.210432},
+        {"K": "1", "series": "二元真值", "value": 0.278942},
+        {"K": "1", "series": "二元估计", "value": 0.203927},
+        {"K": "5", "series": "三元真值", "value": 0.570968},
+        {"K": "5", "series": "三元估计", "value": 0.242883},
+        {"K": "5", "series": "二元真值", "value": 0.278942},
+        {"K": "5", "series": "二元估计", "value": 0.220550},
+        {"K": "10", "series": "三元真值", "value": 0.570968},
+        {"K": "10", "series": "三元估计", "value": 0.257197},
+        {"K": "10", "series": "二元真值", "value": 0.278942},
+        {"K": "10", "series": "二元估计", "value": 0.231692},
+        {"K": "25", "series": "三元真值", "value": 0.570968},
+        {"K": "25", "series": "三元估计", "value": 0.305830},
+        {"K": "25", "series": "二元真值", "value": 0.278942},
+        {"K": "25", "series": "二元估计", "value": 0.244776},
+        {"K": "50", "series": "三元真值", "value": 0.570968},
+        {"K": "50", "series": "三元估计", "value": 0.383243},
+        {"K": "50", "series": "二元真值", "value": 0.278942},
+        {"K": "50", "series": "二元估计", "value": 0.252841}
+      ],
+      "stage_hits": [
+        {"stage": "K10纯S1 Top60", "count": 8},
+        {"stage": "K10加入S2 Top60", "count": 12},
+        {"stage": "S2新救回", "count": 4},
+        {"stage": "最终保护通道", "count": 3},
+        {"stage": "79号最终命中", "count": 7},
+        {"stage": "81号最终命中", "count": 11}
+      ],
+      "strength_errors": [
+        {"order": 1, "band": "0.10–0.12", "n": 89, "parent_error": 0.1043, "pair_error": 0.1391, "syn_error": -0.0348, "s1_top30_rate": 0.8989},
+        {"order": 2, "band": "0.12–0.15", "n": 127, "parent_error": -0.0338, "pair_error": 0.0017, "syn_error": -0.0355, "s1_top30_rate": 0.9685},
+        {"order": 3, "band": "0.15–0.20", "n": 96, "parent_error": -0.1215, "pair_error": -0.0475, "syn_error": -0.0739, "s1_top30_rate": 0.8125},
+        {"order": 4, "band": ">0.20", "n": 15, "parent_error": -0.3138, "pair_error": -0.0473, "syn_error": -0.2665, "s1_top30_rate": 0.3333}
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "diagnostic_summary",
+      "label": "S1/S2诊断汇总",
+      "path": "outputs/s1_s2_error_summary.json"
+    },
+    {
+      "id": "extreme_kgrid_raw",
+      "label": "极强协同K网格原始均值",
+      "path": "outputs/s1_s2_extreme_kgrid_raw.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "将极强三阶组合的父集合与二元集合真值和估计值转成长表。",
+        "tables_used": ["outputs/s1_s2_extreme_kgrid_raw.csv"],
+        "sql": "SELECT CAST(K AS VARCHAR) AS K, '三元真值' AS series, parent_true AS value FROM read_csv_auto('outputs/s1_s2_extreme_kgrid_raw.csv') UNION ALL SELECT CAST(K AS VARCHAR), '三元估计', parent_est FROM read_csv_auto('outputs/s1_s2_extreme_kgrid_raw.csv') UNION ALL SELECT CAST(K AS VARCHAR), '二元真值', pair_true FROM read_csv_auto('outputs/s1_s2_extreme_kgrid_raw.csv') UNION ALL SELECT CAST(K AS VARCHAR), '二元估计', pair_est FROM read_csv_auto('outputs/s1_s2_extreme_kgrid_raw.csv')"
+      }
+    },
+    {
+      "id": "strength_k10_raw",
+      "label": "K10分强度误差表",
+      "path": "outputs/s1_s2_strength_k10_raw.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "读取K10下按真实协同强度分组的父集合、二元集合和差值误差。",
+        "tables_used": ["outputs/s1_s2_strength_k10_raw.csv"],
+        "sql": "SELECT band, n, parent_error, pair_error, syn_error, s1_top30_rate FROM read_csv_auto('outputs/s1_s2_strength_k10_raw.csv')"
+      }
+    },
+    {
+      "id": "protocol_stages",
+      "label": "极强协同协议阶段明细",
+      "path": "outputs/s1_s2_extreme_protocol_stages.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "汇总15个极强三元组在S1基线、S2宽进、保护通道和最终方案中的保留数。",
+        "tables_used": ["outputs/s1_s2_extreme_protocol_stages.csv"],
+        "sql": "SELECT 'K10纯S1 Top60' AS stage, SUM(CAST(pure_s1_k10_top60 AS INTEGER)) AS count FROM read_csv_auto('outputs/s1_s2_extreme_protocol_stages.csv') UNION ALL SELECT 'K10加入S2 Top60', SUM(CAST(s1_s2_k10_top60 AS INTEGER)) FROM read_csv_auto('outputs/s1_s2_extreme_protocol_stages.csv') UNION ALL SELECT 'S2新救回', SUM(CAST(newly_rescued_by_s2 AS INTEGER)) FROM read_csv_auto('outputs/s1_s2_extreme_protocol_stages.csv') UNION ALL SELECT '最终保护通道', SUM(CAST(protected_at_final AS INTEGER)) FROM read_csv_auto('outputs/s1_s2_extreme_protocol_stages.csv') UNION ALL SELECT '79号最终命中', SUM(CAST(d79_final AS INTEGER)) FROM read_csv_auto('outputs/s1_s2_extreme_protocol_stages.csv') UNION ALL SELECT '81号最终命中', SUM(CAST(d81_final AS INTEGER)) FROM read_csv_auto('outputs/s1_s2_extreme_protocol_stages.csv')"
+      }
+    },
+    {
+      "id": "diagnostic_code",
+      "label": "诊断复现脚本",
+      "path": "scripts/diagnose_s1_s2_gap.py"
+    },
+    {
+      "id": "kgrid_training_protocol",
+      "label": "DNN_Aggresvation79微调协议",
+      "path": "DNN_Aggresvation79/scripts/scan_kgrid.py"
+    }
+  ]
+}

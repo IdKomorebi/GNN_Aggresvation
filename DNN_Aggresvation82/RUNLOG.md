@@ -1,0 +1,120 @@
+# DNN_Aggresvation82 运行流水
+
+> 本文件由 `src/runlog.py` 自动追加，与 `CHANGELOG.md`（结论）并列。
+> 机器可读版本：`outputs/events.jsonl`
+
+## 2026-07-24
+- `21:39:47` ✔ **[VERIFY] DONE**　conf错位占100%；S2=syn3上界筛(高召回低精度)；高v(ijk)与有协同重叠源于同一物理枢纽字段簇
+- `22:10:02` ▶ **[SCHED] START**　train待运行9个任务；GPU=[0, 3]　　phase_name=train　jobs=9　gpus=0,3
+- `22:10:04` ▶ **[TRAIN] START**　triple_only/seed0；从头训练　　scheme=triple_only　seed=0
+- `22:10:04` ▶ **[TRAIN] START**　triple90_pair10/seed0；从头训练　　scheme=triple90_pair10　seed=0
+- `22:10:32` ✔ **[TRAIN] DONE**　triple90_pair10/seed0训练完成　　实耗 28s　scheme=triple90_pair10　seed=0　epochs=318　val_loss=0.754337
+- `22:10:37` ▶ **[TRAIN] START**　triple70_pair20_uniform10/seed0；从头训练　　scheme=triple70_pair20_uniform10　seed=0
+- `22:10:39` ✔ **[TRAIN] DONE**　triple_only/seed0训练完成　　实耗 35s　scheme=triple_only　seed=0　epochs=400　val_loss=0.775981
+- `22:10:43` ▶ **[TRAIN] START**　triple50_pair40_uniform10/seed0；从头训练　　scheme=triple50_pair40_uniform10　seed=0
+- `22:10:52` ✔ **[TRAIN] DONE**　triple70_pair20_uniform10/seed0训练完成　　实耗 15s　scheme=triple70_pair20_uniform10　seed=0　epochs=165　val_loss=0.749248
+- `22:10:55` ▶ **[TRAIN] START**　triple40_pair30_uniform30/seed0；从头训练　　scheme=triple40_pair30_uniform30　seed=0
+- `22:10:58` ✔ **[TRAIN] DONE**　triple50_pair40_uniform10/seed0训练完成　　实耗 15s　scheme=triple50_pair40_uniform10　seed=0　epochs=165　val_loss=0.761661
+- `22:11:01` ▶ **[TRAIN] START**　local234_20_60_20/seed0；从头训练　　scheme=local234_20_60_20　seed=0
+- `22:11:20` ✔ **[TRAIN] DONE**　triple40_pair30_uniform30/seed0训练完成　　实耗 25s　scheme=triple40_pair30_uniform30　seed=0　epochs=268　val_loss=0.674042
+- `22:11:25` ▶ **[TRAIN] START**　local234_uniform10/seed0；从头训练　　scheme=local234_uniform10　seed=0
+- `22:11:34` ✔ **[TRAIN] DONE**　local234_20_60_20/seed0训练完成　　实耗 32s　scheme=local234_20_60_20　seed=0　epochs=400　val_loss=0.749793
+- `22:11:37` ▶ **[TRAIN] START**　warm_triple70/seed0；uniform暖启动　　scheme=warm_triple70　seed=0
+- `22:11:44` ✔ **[TRAIN] DONE**　warm_triple70/seed0训练完成　　实耗 7s　scheme=warm_triple70　seed=0　epochs=61　val_loss=0.743669
+- `22:11:49` ▶ **[TRAIN] START**　warm_local234/seed0；uniform暖启动　　scheme=warm_local234　seed=0
+- `22:11:56` ✔ **[TRAIN] DONE**　warm_local234/seed0训练完成　　实耗 7s　scheme=warm_local234　seed=0　epochs=60　val_loss=0.717811
+- `22:11:58` ✔ **[TRAIN] DONE**　local234_uniform10/seed0训练完成　　实耗 33s　scheme=local234_uniform10　seed=0　epochs=400　val_loss=0.718201
+- `22:11:59` ✔ **[SCHED] DONE**　train全部任务成功　　实耗 1m57s
+- `22:12:19` ▶ **[SCHED] START**　k0待运行13个任务；GPU=[0, 3]　　phase_name=k0　jobs=13　gpus=0,3
+- `22:12:21` ▶ **[K0] START**　triple90_pair10/seed0全空间批量前向　　scheme=triple90_pair10　seed=0
+- `22:12:21` ▶ **[K0] START**　triple_only/seed0全空间批量前向　　scheme=triple_only　seed=0
+- `22:12:24` ✔ **[K0] DONE**　triple90_pair10/seed0完成全部14234个集合　　实耗 3s　scheme=triple90_pair10　seed=0　rows=170808
+- `22:12:24` ✔ **[K0] DONE**　triple_only/seed0完成全部14234个集合　　实耗 3s　scheme=triple_only　seed=0　rows=170808
+- `22:12:27` ▶ **[K0] START**　triple70_pair20_uniform10/seed0全空间批量前向　　scheme=triple70_pair20_uniform10　seed=0
+- `22:12:27` ▶ **[K0] START**　triple50_pair40_uniform10/seed0全空间批量前向　　scheme=triple50_pair40_uniform10　seed=0
+- `22:12:30` ✔ **[K0] DONE**　triple70_pair20_uniform10/seed0完成全部14234个集合　　实耗 3s　scheme=triple70_pair20_uniform10　seed=0　rows=170808
+- `22:12:30` ✔ **[K0] DONE**　triple50_pair40_uniform10/seed0完成全部14234个集合　　实耗 3s　scheme=triple50_pair40_uniform10　seed=0　rows=170808
+- `22:12:33` ▶ **[K0] START**　triple40_pair30_uniform30/seed0全空间批量前向　　scheme=triple40_pair30_uniform30　seed=0
+- `22:12:33` ▶ **[K0] START**　local234_20_60_20/seed0全空间批量前向　　scheme=local234_20_60_20　seed=0
+- `22:12:36` ✔ **[K0] DONE**　triple40_pair30_uniform30/seed0完成全部14234个集合　　实耗 3s　scheme=triple40_pair30_uniform30　seed=0　rows=170808
+- `22:12:36` ✔ **[K0] DONE**　local234_20_60_20/seed0完成全部14234个集合　　实耗 3s　scheme=local234_20_60_20　seed=0　rows=170808
+- `22:12:39` ▶ **[K0] START**　local234_uniform10/seed0全空间批量前向　　scheme=local234_uniform10　seed=0
+- `22:12:39` ▶ **[K0] START**　warm_triple70/seed0全空间批量前向　　scheme=warm_triple70　seed=0
+- `22:12:42` ✔ **[K0] DONE**　local234_uniform10/seed0完成全部14234个集合　　实耗 3s　scheme=local234_uniform10　seed=0　rows=170808
+- `22:12:42` ✔ **[K0] DONE**　warm_triple70/seed0完成全部14234个集合　　实耗 3s　scheme=warm_triple70　seed=0　rows=170808
+- `22:12:45` ▶ **[K0] START**　warm_local234/seed0全空间批量前向　　scheme=warm_local234　seed=0
+- `22:12:45` ▶ **[K0] START**　uniform/seed0全空间批量前向　　scheme=uniform　seed=0
+- `22:12:48` ✔ **[K0] DONE**　warm_local234/seed0完成全部14234个集合　　实耗 3s　scheme=warm_local234　seed=0　rows=170808
+- `22:12:48` ✔ **[K0] DONE**　uniform/seed0完成全部14234个集合　　实耗 3s　scheme=uniform　seed=0　rows=170808
+- `22:12:51` ▶ **[K0] START**　logunif/seed0全空间批量前向　　scheme=logunif　seed=0
+- `22:12:51` ▶ **[K0] START**　small80/seed0全空间批量前向　　scheme=small80　seed=0
+- `22:12:54` ✔ **[K0] DONE**　logunif/seed0完成全部14234个集合　　实耗 3s　scheme=logunif　seed=0　rows=170808
+- `22:12:54` ✔ **[K0] DONE**　small80/seed0完成全部14234个集合　　实耗 3s　scheme=small80　seed=0　rows=170808
+- `22:12:57` ▶ **[K0] START**　workload_hard/seed0全空间批量前向　　scheme=workload_hard　seed=0
+- `22:13:00` ✔ **[K0] DONE**　workload_hard/seed0完成全部14234个集合　　实耗 3s　scheme=workload_hard　seed=0　rows=170808
+- `22:13:01` ✔ **[SCHED] DONE**　k0全部任务成功　　实耗 42s
+- `22:13:10` ▶ **[ANALYZE-K0] START**　评价三元父集合、S1和极强协同
+- `22:13:23` ◆ **[ANALYZE-K0] DECISION**　parent胜者=triple50_pair40_uniform10/single；S1胜者=local234_uniform10/single
+- `22:13:34` ▶ **[SCHED] START**　confirm待运行2个任务；GPU=[0, 3]　　phase_name=confirm　jobs=2　gpus=0,3
+- `22:13:36` ▶ **[TRAIN] START**　local234_uniform10/seed1；从头训练　　scheme=local234_uniform10　seed=1
+- `22:13:36` ▶ **[TRAIN] START**　triple50_pair40_uniform10/seed1；从头训练　　scheme=triple50_pair40_uniform10　seed=1
+- `22:14:00` ✔ **[TRAIN] DONE**　triple50_pair40_uniform10/seed1训练完成　　实耗 24s　scheme=triple50_pair40_uniform10　seed=1　epochs=285　val_loss=0.713888
+- `22:14:02` ✔ **[TRAIN] DONE**　local234_uniform10/seed1训练完成　　实耗 26s　scheme=local234_uniform10　seed=1　epochs=271　val_loss=0.679009
+- `22:14:04` ✔ **[SCHED] DONE**　confirm全部任务成功　　实耗 30s
+- `22:14:06` ▶ **[SCHED] START**　confirm_k0待运行3个任务；GPU=[0, 3]　　phase_name=confirm_k0　jobs=3　gpus=0,3
+- `22:14:08` ▶ **[K0] START**　triple50_pair40_uniform10/seed1全空间批量前向　　scheme=triple50_pair40_uniform10　seed=1
+- `22:14:08` ▶ **[K0] START**　local234_uniform10/seed1全空间批量前向　　scheme=local234_uniform10　seed=1
+- `22:14:10` ✔ **[K0] DONE**　local234_uniform10/seed1完成全部14234个集合　　实耗 3s　scheme=local234_uniform10　seed=1　rows=170808
+- `22:14:11` ✔ **[K0] DONE**　triple50_pair40_uniform10/seed1完成全部14234个集合　　实耗 3s　scheme=triple50_pair40_uniform10　seed=1　rows=170808
+- `22:14:13` ▶ **[K0] START**　uniform/seed1全空间批量前向　　scheme=uniform　seed=1
+- `22:14:17` ✔ **[K0] DONE**　uniform/seed1完成全部14234个集合　　实耗 3s　scheme=uniform　seed=1　rows=170808
+- `22:14:18` ✔ **[SCHED] DONE**　confirm_k0全部任务成功　　实耗 12s
+- `22:14:22` ▶ **[ANALYZE-K0] START**　评价三元父集合、S1和极强协同
+- `22:14:38` ◆ **[ANALYZE-K0] DECISION**　parent胜者=triple50_pair40_uniform10/single；S1胜者=local234_uniform10/single
+- `22:15:08` ▶ **[SCHED] START**　kgrid待运行6个任务；GPU=[0, 3]　　phase_name=kgrid　jobs=6　gpus=0,3
+- `22:15:10` ▶ **[KGRID] START**　local234_uniform10/triple shard0/2　　scheme=local234_uniform10　kind=triple　shard=0　nshard=2
+- `22:15:10` ▶ **[KGRID] START**　local234_uniform10/low shard0/1　　scheme=local234_uniform10　kind=low　shard=0　nshard=1
+- `22:16:55` ✔ **[KGRID] DONE**　local234_uniform10/low shard0完成　　实耗 1m45s　scheme=local234_uniform10　kind=low　shard=0　n_rows=71280
+- `22:16:58` ▶ **[KGRID] START**　local234_uniform10/triple shard1/2　　scheme=local234_uniform10　kind=triple　shard=1　nshard=2
+- `22:26:39` ✔ **[KGRID] DONE**　local234_uniform10/triple shard0完成　　实耗 11m30s　scheme=local234_uniform10　kind=triple　shard=0　n_rows=476784
+- `22:26:43` ▶ **[KGRID] START**　triple50_pair40_uniform10/low shard0/1　　scheme=triple50_pair40_uniform10　kind=low　shard=0　nshard=1
+- `22:28:27` ✔ **[KGRID] DONE**　triple50_pair40_uniform10/low shard0完成　　实耗 1m44s　scheme=triple50_pair40_uniform10　kind=low　shard=0　n_rows=71280
+- `22:28:29` ✔ **[KGRID] DONE**　local234_uniform10/triple shard1完成　　实耗 11m31s　scheme=local234_uniform10　kind=triple　shard=1　n_rows=476784
+- `22:28:31` ▶ **[KGRID] START**　triple50_pair40_uniform10/triple shard0/2　　scheme=triple50_pair40_uniform10　kind=triple　shard=0　nshard=2
+- `22:28:34` ▶ **[KGRID] START**　triple50_pair40_uniform10/triple shard1/2　　scheme=triple50_pair40_uniform10　kind=triple　shard=1　nshard=2
+- `22:31:11` ▶ **[SCHED] START**　train待运行4个任务；GPU=[1]　　phase_name=train　jobs=4　gpus=1
+- `22:31:12` ▶ **[TRAIN] START**　triple70_group8/seed0；从头训练　　scheme=triple70_group8　seed=0
+- `22:31:27` ✔ **[TRAIN] DONE**　triple70_group8/seed0训练完成　　实耗 15s　scheme=triple70_group8　seed=0　epochs=191　val_loss=0.751592
+- `22:31:31` ▶ **[TRAIN] START**　triple70_group32/seed0；从头训练　　scheme=triple70_group32　seed=0
+- `22:31:44` ✔ **[TRAIN] DONE**　triple70_group32/seed0训练完成　　实耗 14s　scheme=triple70_group32　seed=0　epochs=206　val_loss=0.751179
+- `22:31:49` ▶ **[TRAIN] START**　local234_group8/seed0；从头训练　　scheme=local234_group8　seed=0
+- `22:32:12` ✔ **[TRAIN] DONE**　local234_group8/seed0训练完成　　实耗 24s　scheme=local234_group8　seed=0　epochs=307　val_loss=0.72264
+- `22:32:16` ▶ **[TRAIN] START**　local234_group32/seed0；从头训练　　scheme=local234_group32　seed=0
+- `22:32:33` ✔ **[TRAIN] DONE**　local234_group32/seed0训练完成　　实耗 17s　scheme=local234_group32　seed=0　epochs=333　val_loss=0.721638
+- `22:32:35` ✔ **[SCHED] DONE**　train全部任务成功　　实耗 1m24s
+- `22:32:47` ▶ **[SCHED] START**　k0待运行4个任务；GPU=[1]　　phase_name=k0　jobs=4　gpus=1
+- `22:32:49` ▶ **[K0] START**　triple70_group8/seed0全空间批量前向　　scheme=triple70_group8　seed=0
+- `22:32:53` ✔ **[K0] DONE**　triple70_group8/seed0完成全部14234个集合　　实耗 4s　scheme=triple70_group8　seed=0　rows=170808
+- `22:32:58` ▶ **[K0] START**　triple70_group32/seed0全空间批量前向　　scheme=triple70_group32　seed=0
+- `22:33:02` ✔ **[K0] DONE**　triple70_group32/seed0完成全部14234个集合　　实耗 4s　scheme=triple70_group32　seed=0　rows=170808
+- `22:33:07` ▶ **[K0] START**　local234_group8/seed0全空间批量前向　　scheme=local234_group8　seed=0
+- `22:33:11` ✔ **[K0] DONE**　local234_group8/seed0完成全部14234个集合　　实耗 4s　scheme=local234_group8　seed=0　rows=170808
+- `22:33:16` ▶ **[K0] START**　local234_group32/seed0全空间批量前向　　scheme=local234_group32　seed=0
+- `22:33:20` ✔ **[K0] DONE**　local234_group32/seed0完成全部14234个集合　　实耗 4s　scheme=local234_group32　seed=0　rows=170808
+- `22:33:23` ✔ **[SCHED] DONE**　k0全部任务成功　　实耗 36s
+- `22:33:27` ▶ **[ANALYZE-K0] START**　评价三元父集合、S1和极强协同
+- `22:33:50` ⚠ **[ANALYZE-K0] INVALIDATED**　这次临时汇总误把旧胜者的2-seed均值与新方案单seed混排；未用于后续结论
+- `22:34:24` ▶ **[ANALYZE-K0] START**　评价三元父集合、S1和极强协同
+- `22:34:45` ◆ **[ANALYZE-K0] DECISION**　parent胜者=triple50_pair40_uniform10/single；S1胜者=local234_uniform10/single
+- `22:35:02` ▶ **[SCHED] START**　confirm待运行0个任务；GPU=[1]　　phase_name=confirm　jobs=0　gpus=1
+- `22:35:02` ✔ **[SCHED] DONE**　confirm输出均已存在
+- `22:35:04` ▶ **[SCHED] START**　confirm_k0待运行0个任务；GPU=[1]　　phase_name=confirm_k0　jobs=0　gpus=1
+- `22:35:04` ✔ **[SCHED] DONE**　confirm_k0输出均已存在
+- `22:35:08` ▶ **[ANALYZE-K0] START**　评价三元父集合、S1和极强协同
+- `22:35:29` ◆ **[ANALYZE-K0] DECISION**　parent胜者=triple50_pair40_uniform10/single；S1胜者=local234_uniform10/single
+- `22:39:54` ✔ **[KGRID] DONE**　triple50_pair40_uniform10/triple shard0完成　　实耗 11m23s　scheme=triple50_pair40_uniform10　kind=triple　shard=0　n_rows=476784
+- `22:40:21` ✔ **[KGRID] DONE**　triple50_pair40_uniform10/triple shard1完成　　实耗 11m46s　scheme=triple50_pair40_uniform10　kind=triple　shard=1　n_rows=476784
+- `22:40:24` ✔ **[SCHED] DONE**　kgrid全部任务成功　　实耗 25m16s
+- `22:40:31` ▶ **[ANALYZE-KGRID] START**　比较uniform与两个K0胜者
+- `22:40:48` ✔ **[ANALYZE-KGRID] DONE**　完成30个方案×K比较
+- `22:44:00` ✔ **[VALIDATE] PASS**　13个seed0新方案、2个seed1确认、完整K网格、选型隔离、行数/唯一性/代数与两张结果图均通过检查

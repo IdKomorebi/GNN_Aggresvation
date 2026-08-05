@@ -1,0 +1,16 @@
+{
+  "order": 6,
+  "mode": "sample",
+  "n_scanned": 150000,
+  "space": 7059052,
+  "shard": 1,
+  "nshard": 2,
+  "max_syn": 0.1195184588432312,
+  "mean_syn": 0.009398359805345535,
+  "n_gt_005": 249,
+  "n_gt_010": 4,
+  "n_gt_015": 0,
+  "n_gt_020": 0,
+  "sec": 352.6,
+  "ckpt": "oracle_l1_aug8_seed0"
+}

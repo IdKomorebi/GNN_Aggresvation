@@ -1,0 +1,129 @@
+{
+  "f2": {
+    "split_seed": 7801,
+    "tune_pairs": 568,
+    "test_pairs": 378,
+    "chosen_rule": {
+      "eps": 0.01,
+      "delta": 0.01,
+      "patience": 2
+    },
+    "test": [
+      {
+        "scope": "test",
+        "rule": "fixed_k50",
+        "mean_steps": 50.0,
+        "recall": 0.9272727272727272,
+        "fp": 0.0,
+        "n_pairs": 378,
+        "n_strong_entries": 55,
+        "eps": null,
+        "delta": null,
+        "patience": null
+      },
+      {
+        "scope": "test",
+        "rule": "query_maxconf_tuned",
+        "mean_steps": 15.665784832451498,
+        "recall": 0.9393939393939394,
+        "fp": 0.0,
+        "n_pairs": 378,
+        "n_strong_entries": 55,
+        "eps": 0.01,
+        "delta": 0.01,
+        "patience": 2.0
+      }
+    ]
+  },
+  "sampling": {
+    "design": {
+      "all_triples": 13244,
+      "exact_known_triples": 397,
+      "remainder_triples": 12847,
+      "remainder_sample": 1800,
+      "remainder_weight": 7.137222222222222
+    },
+    "reported_pool_unweighted": {
+      "strong_entry_rate": 0.0070416666666666666,
+      "strong_triple_rate": 0.065,
+      "pure_share_among_strong_entries": 0.09467455621301775,
+      "pure_share_among_strong_triples": 0.007692307692307693
+    },
+    "stratified_population_estimate": {
+      "strong_entry_rate": 0.008831567334474311,
+      "strong_triple_rate": 0.07844441088627134,
+      "pure_share_among_strong_entries": 0.11047319361158937,
+      "pure_share_among_strong_triples": 0.006869862442327807
+    }
+  },
+  "retrain_audit": {
+    "worker": "/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation77/scripts/retrain_worker.py",
+    "test_used_for_early_stopping": true,
+    "final_test_reused_after_selection": true,
+    "seed_count_for_h2_extension": 1,
+    "status": "needs_new_gpu_retraining",
+    "required_fix": "训练集更新参数；独立验证集早停；测试集只在模型冻结后评估一次；对阳性与阈值附近样本增加多 seed。"
+  },
+  "syn3_metrics": [
+    {
+      "scope": "reported_pool_all",
+      "estimator": "syn3_k0",
+      "n": 24000,
+      "rho": 0.44946793289919673,
+      "mae": 0.019463400562604233,
+      "bias": -0.01760888764758902,
+      "n_strong_entries": 169,
+      "strong_true_mean": 0.1166455491760073,
+      "strong_est_mean": 0.06135078576894905,
+      "strong_threshold_detection": 0.1301775147928994
+    },
+    {
+      "scope": "stage2_covered_common",
+      "estimator": "syn3_k0",
+      "n": 6432,
+      "rho": 0.6363347793374684,
+      "mae": 0.020182035974602174,
+      "bias": -0.018318465581877292,
+      "n_strong_entries": 144,
+      "strong_true_mean": 0.11568525971637827,
+      "strong_est_mean": 0.07162910451491672,
+      "strong_threshold_detection": 0.1527777777777778
+    },
+    {
+      "scope": "stage2_covered_common",
+      "estimator": "syn3_k25_mixed",
+      "n": 6432,
+      "rho": 0.6808671422231528,
+      "mae": 0.01868399614421884,
+      "bias": 0.011830590832144511,
+      "n_strong_entries": 144,
+      "strong_true_mean": 0.11568525971637827,
+      "strong_est_mean": 0.1215664769212405,
+      "strong_threshold_detection": 0.8333333333333334
+    },
+    {
+      "scope": "stage2_covered_common",
+      "estimator": "syn3_k25_consistent",
+      "n": 6432,
+      "rho": 0.8068902122860101,
+      "mae": 0.013333495604383969,
+      "bias": -0.011087366569768687,
+      "n_strong_entries": 144,
+      "strong_true_mean": 0.11568525971637827,
+      "strong_est_mean": 0.08732623938057157,
+      "strong_threshold_detection": 0.24305555555555555
+    },
+    {
+      "scope": "reported_pool_triple_max",
+      "estimator": "syn3_k0",
+      "n": 2000,
+      "rho": 0.7011334393561385,
+      "mae": 0.02462853527069091,
+      "bias": -0.023250599145889277,
+      "n_strong_entries": 130,
+      "strong_true_mean": 0.11750852924126842,
+      "strong_est_mean": 0.07042282315400927,
+      "strong_threshold_detection": 0.16153846153846155
+    }
+  ]
+}

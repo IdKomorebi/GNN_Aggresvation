@@ -1,0 +1,23 @@
+{"ts": "2026-07-24T03:11:50", "phase": "BUILD", "event": "START", "note": "构造同K的S1与两种S2", "elapsed_s": null, "pid": 3816666}
+{"ts": "2026-07-24T03:11:52", "phase": "BUILD", "event": "DONE", "note": "S1与79号完全一致；新增S2-any和S2-aligned", "elapsed_s": 1.7024626731872559, "pid": 3816666, "rows": 79464, "max_s1_diff": 0.0}
+{"ts": "2026-07-24T03:11:59", "phase": "SINGLE", "event": "START", "note": "同K固定预算全参数扫描", "elapsed_s": null, "pid": 3816960}
+{"ts": "2026-07-24T03:12:31", "phase": "SINGLE", "event": "DONE", "note": "完成K×预算×S2参数扫描", "elapsed_s": 31.674067735671997, "pid": 3816960, "rows": 2316}
+{"ts": "2026-07-24T03:12:37", "phase": "STAGED", "event": "START", "note": "两层S1+S2端到端参数扫描", "elapsed_s": null, "pid": 3817508}
+{"ts": "2026-07-24T03:17:12", "phase": "STAGED", "event": "DONE", "note": "完成先微调、S1+S2宽进、继续微调精排的全扫描", "elapsed_s": 275.4089298248291, "pid": 3817508, "rows": 14040}
+{"ts": "2026-07-24T03:18:20", "phase": "STAGED", "event": "START", "note": "两层S1+S2端到端参数扫描", "elapsed_s": null, "pid": 3821497}
+{"ts": "2026-07-24T03:35:04", "phase": "STAGED", "event": "DONE", "note": "完成先微调、S1+S2宽进、继续微调精排的全扫描", "elapsed_s": 1003.5440838336945, "pid": 3821497, "rows": 54720}
+{"ts": "2026-07-24T03:36:28", "phase": "PROTECT", "event": "START", "note": "扫描S2救回候选的保护名额", "elapsed_s": null, "pid": 3832482}
+{"ts": "2026-07-24T03:37:06", "phase": "PROTECT", "event": "DONE", "note": "保护通道扫描完成", "elapsed_s": 38.1876380443573, "pid": 3832482, "rows": 3584}
+{"ts": "2026-07-24T03:40:01", "phase": "SUMMARY", "event": "START", "note": "tune选协议；test只作一次最终验证", "elapsed_s": null, "pid": 3835543}
+{"ts": "2026-07-24T03:40:04", "phase": "SUMMARY", "event": "DONE", "note": "主方案由tune F1选中；完成test配对bootstrap", "elapsed_s": 2.710692882537842, "pid": 3835543, "selected_first_k": 10, "selected_first_s2": "any", "selected_first_parameter": 0.2, "selected_protect": 0.03}
+{"ts": "2026-07-24T03:40:22", "phase": "FIGURES", "event": "START", "note": "生成参数与最终方案图", "elapsed_s": null, "pid": 3835942}
+{"ts": "2026-07-24T03:40:24", "phase": "FIGURES", "event": "DONE", "note": "完成4张中文图", "elapsed_s": 1.5861210823059082, "pid": 3835942}
+{"ts": "2026-07-24T03:41:00", "phase": "FIGURES", "event": "START", "note": "生成参数与最终方案图", "elapsed_s": null, "pid": 3836678}
+{"ts": "2026-07-24T03:41:01", "phase": "FIGURES", "event": "DONE", "note": "完成4张中文图", "elapsed_s": 1.350639820098877, "pid": 3836678}
+{"ts": "2026-07-24T03:41:57", "phase": "FIGURES", "event": "START", "note": "生成参数与最终方案图", "elapsed_s": null, "pid": 3837562}
+{"ts": "2026-07-24T03:42:51", "phase": "FIGURES", "event": "START", "note": "生成参数与最终方案图", "elapsed_s": null, "pid": 3838314}
+{"ts": "2026-07-24T03:42:53", "phase": "FIGURES", "event": "DONE", "note": "完成4张中文图", "elapsed_s": 1.6405084133148193, "pid": 3838314}
+{"ts": "2026-07-24T03:44:11", "phase": "SUMMARY", "event": "START", "note": "tune选协议；test只作一次最终验证", "elapsed_s": null, "pid": 3839370}
+{"ts": "2026-07-24T03:44:14", "phase": "SUMMARY", "event": "DONE", "note": "主方案由tune F1选中；完成test配对bootstrap", "elapsed_s": 2.6190497875213623, "pid": 3839370, "selected_first_k": 10, "selected_first_s2": "any", "selected_first_parameter": 0.2, "selected_protect": 0.03}
+{"ts": "2026-07-24T03:44:16", "phase": "FIGURES", "event": "START", "note": "生成参数与最终方案图", "elapsed_s": null, "pid": 3839594}
+{"ts": "2026-07-24T03:44:18", "phase": "FIGURES", "event": "DONE", "note": "完成4张中文图", "elapsed_s": 1.6220405101776123, "pid": 3839594}

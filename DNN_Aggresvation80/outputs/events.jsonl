@@ -1,0 +1,7 @@
+{"ts": "2026-07-24T02:27:36", "phase": "BUILD", "event": "START", "note": "构造候选排序键", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 3781394}
+{"ts": "2026-07-24T02:27:49", "phase": "BUILD", "event": "DONE", "note": "13244 三元组 × 5 K；带真值 2197 个", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": 66220, "pid": 3781394}
+{"ts": "2026-07-24T02:29:04", "phase": "EVAL", "event": "DECISION", "note": "最强档 K=0 Top30%：现状 S1=0.047，最优键 S2_vijk=0.811", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 3783172}
+{"ts": "2026-07-24T02:30:07", "phase": "UNION", "event": "DONE", "note": "组合排序方案评估完成，见 outputs/union_eval（stdout）", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 3784515}
+{"ts": "2026-07-24T02:32:03", "phase": "DIAG", "event": "DONE", "note": "信号上限 + 层级生成覆盖率诊断完成", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 3786788}
+{"ts": "2026-07-24T02:33:23", "phase": "CONCLUDE", "event": "DECISION", "note": "问题1机制钉死:syn3与v_ijk排序偏好相反且在最强档交叉(v_ijk百分位58→84单调升,syn3 94→26骤降);K=0免费筛选有内在天花板,最强档并集救到28%", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 3788522}
+{"ts": "2026-07-24T02:33:23", "phase": "CONCLUDE", "event": "DECISION", "note": "问题2出路:层级候选生成(强二阶阈值0.1扩展)9841候选覆盖99.3%强三阶,四阶可从强三阶扩展绕开全空间;剥离法只做防护集不做发现,判定正确", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 3788522}

@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "cached_poly2_matches_original",
+      "value": 1.1578382697052803e-10,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "check": "cached_scan_all_pair_triple",
+      "value": 14190,
+      "expected": 14190,
+      "pass": true
+    },
+    {
+      "check": "uniform_k0_matches_D79",
+      "value": 2.800506105599121e-06,
+      "limit": 1e-05,
+      "n_rows": 170280,
+      "pass": true
+    },
+    {
+      "check": "k0_residual_arith_truth_full_reproducible",
+      "value": 2.415385819132254e-08,
+      "limit": 1e-06,
+      "n_rows": 37716,
+      "pass": true
+    },
+    {
+      "check": "k0_residual_poly2_truth_full_reproducible",
+      "value": 2.3721770325835223e-08,
+      "limit": 1e-06,
+      "n_rows": 37716,
+      "pass": true
+    },
+    {
+      "check": "truth_source_split_counts",
+      "value": {
+        "('exact397', 'test')": 158,
+        "('exact397', 'tune')": 239,
+        "('remainder1800', 'test')": 720,
+        "('remainder1800', 'tune')": 1080
+      },
+      "expected": {
+        "('exact397', 'test')": 158,
+        "('exact397', 'tune')": 239,
+        "('remainder1800', 'test')": 720,
+        "('remainder1800', 'tune')": 1080
+      },
+      "pass": true
+    },
+    {
+      "check": "global_curve_method_coverage",
+      "value": 14,
+      "expected_min": 14,
+      "pass": true
+    },
+    {
+      "check": "global_curve_metric_ranges",
+      "value": [
+        0.1956521739130433,
+        1.0
+      ],
+      "pass": true
+    },
+    {
+      "check": "high_order_truth_coverage",
+      "value": 105,
+      "expected": 105,
+      "pass": true
+    },
+    {
+      "check": "evaluation_isolation",
+      "value": "ridge alpha only uses train-internal fit/validation; protected-lane hyperparameters use tune; headline uses test; pair-edge selection uses estimator scores only",
+      "pass": true,
+      "code_audit": true
+    }
+  ],
+  "caveats": [
+    "test random pool has 720 triples and 46 with syn3>0.10, but none with syn3>0.20",
+    "syn3>0.20 test recall is based on only 5 targeted triples",
+    "D63 arbitrary-size truth has only 105 subsets; 50 are random and 55 are selected top-k",
+    "cached/sparse poly2 estimates a restricted attack-family lower bound, not the mathematical supremum"
+  ]
+}

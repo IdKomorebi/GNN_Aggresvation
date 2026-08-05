@@ -1,0 +1,12 @@
+experiment:
+  name: DNN_Aggresvation85
+  purpose:
+    - 用充分统计量缓存压缩逐集合闭式解算成本
+    - 测试 K0 oracle 加一次闭式残差修正能否兼顾整体精度与强协同
+  folder_coordination:
+    previous_codex: DNN_Aggresvation83
+    claude_parallel: DNN_Aggresvation84
+    current: DNN_Aggresvation85
+  truth:
+    loader: DNN_Aggresvation83/src/truth.py
+    note: 修复 D82 将 syn2_true_max 误作 pair R2 的问题

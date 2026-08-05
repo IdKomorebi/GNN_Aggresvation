@@ -1,0 +1,10 @@
+{"ts": "2026-07-24T00:05:25", "phase": "ALL", "event": "START", "note": "纯 CPU 复算：F2 停机单位、三阶同 K、抽样权重、entry/triple 口径", "elapsed_s": null, "pid": 16}
+{"ts": "2026-07-24T00:05:25", "phase": "F2-UNIT", "event": "START", "note": "把 11352 个独立 entry 停机改为 946 个字段对各自一个停机 K", "elapsed_s": null, "pid": 16}
+{"ts": "2026-07-24T00:05:36", "phase": "F2-UNIT", "event": "DECISION", "note": "独立 test：逐查询早停平均 15.7 步、召回 93.9%；固定 K50 召回 92.7%。", "elapsed_s": null, "pid": 16, "eps": 0.01, "delta": 0.01, "patience": 2}
+{"ts": "2026-07-24T00:05:36", "phase": "SYN3-K", "event": "START", "note": "将 v_K25(ijk)-max v_K0(pair) 改为 K25-K25；候选集合保持不变", "elapsed_s": null, "pid": 16}
+{"ts": "2026-07-24T00:05:37", "phase": "SYN3-K", "event": "DECISION", "note": "同保真度后：stage2 覆盖条目的 rho 0.636→0.807，MAE 0.0202→0.0133；不再接受 mixed-K 的“均值命中真值”。", "elapsed_s": null, "pid": 16}
+{"ts": "2026-07-24T00:05:37", "phase": "SAMPLE-UNIT", "event": "START", "note": "397 个旧认证视为已知层；1800 个视为剩余 12847 个空间的简单随机样本", "elapsed_s": null, "pid": 16}
+{"ts": "2026-07-24T00:05:38", "phase": "SAMPLE-UNIT", "event": "DECISION", "note": "强三元组率：未加权池 6.50%，分层总体估计 7.84%；纯高阶份额必须区分 entry 11.05% 与 triple 0.69%。", "elapsed_s": null, "pid": 16}
+{"ts": "2026-07-24T00:05:38", "phase": "TRUTH-AUDIT", "event": "NOTE", "note": "检测到 retrain_worker 使用 Xte/Yte 选择最佳 epoch 后又在同一测试集报 R²；78 号只记录问题，不把旧真值伪装成已修复。", "elapsed_s": null, "pid": 16}
+{"ts": "2026-07-24T00:05:38", "phase": "ALL", "event": "DONE", "note": "所有修正输出完成；未使用 GPU，未改写 76/77 原始结果", "elapsed_s": 12.346774816513062, "pid": 16}
+{"ts": "2026-07-24T00:05:43", "phase": "FIGURES", "event": "DONE", "note": "生成 F2 查询级早停、三阶召回、三阶同保真数值三张中文图", "elapsed_s": null, "pid": 151}

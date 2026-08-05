@@ -1,0 +1,15 @@
+{
+  "shard": 0,
+  "nshard": 3,
+  "n_tasks": 289,
+  "parameter_count": 157452,
+  "dtype_vectors": "float16",
+  "gradient_protocol": "eval-mode deterministic same rows",
+  "teacher": {
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0005,
+    "K": 25
+  },
+  "seconds": 36.67428517341614
+}

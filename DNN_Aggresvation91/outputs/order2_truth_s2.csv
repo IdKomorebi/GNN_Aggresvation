@@ -1,0 +1,6 @@
+kind,n,rho,rho_tail,hit20,hit100,med_rank_true_top10,n_strong,sec,ckpt
+oracle,11352,0.6348,0.1182,1.0,0.74,6540.5,143,0.5,oracle_uniform_seed2
+oracle_affine,11352,0.6901,0.1445,1.0,0.77,3021.5,143,0.8,oracle_uniform_seed2
+poly2,11352,0.6795,0.7596,1.0,0.87,4.5,143,0.2,oracle_uniform_seed2
+last,11352,0.7301,0.8063,1.0,0.81,4.5,143,2.4,oracle_uniform_seed2
+cat3,11352,0.6582,0.7859,1.0,0.87,4.5,143,16.1,oracle_uniform_seed2

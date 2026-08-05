@@ -1,0 +1,27 @@
+{
+  "subset_id": "r07_24_26",
+  "group": "triple_rand_ext",
+  "size": 3,
+  "fields": [
+    "gen_fuel_solar_mw",
+    "total_pjm_reg_purchases",
+    "total_pjm_assigned_reg"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.15631704032421112,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.22326922416687012,
+    "gross_actual_interchange_mw": 0.1936987042427063,
+    "total_gen": 0.2326717972755432,
+    "metered_load_mw": 0.2334439754486084,
+    "total_losses": 0.1392880082130432,
+    "congestion_price_da": 0.035654664039611816,
+    "congestion_price_rt": 0.05458188056945801,
+    "marginal_loss_price_da": 0.10622894763946533,
+    "total_lmp_da": 0.22177517414093018,
+    "da_as_total_mw_primary_reserve": 0.1437639594078064,
+    "da_as_total_mw_synchronized_reserve": 0.07941818237304688,
+    "da_as_total_mw_thirty_minutes_reserve": 0.21200984716415405
+  }
+}

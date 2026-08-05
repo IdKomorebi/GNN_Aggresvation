@@ -1,0 +1,2 @@
+kind,n,rho,rho_tail,hit20,hit100,med_rank_true_top10,n_strong,sec,ckpt
+last,11352,0.9449,0.9653,1.0,1.0,4.5,220,3.0,oracle_l1_aug8_seed2

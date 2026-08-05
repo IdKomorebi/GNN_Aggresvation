@@ -1,0 +1,62 @@
+{
+  "validation_files": 3,
+  "validation_rows": 84,
+  "validation_seeds": [
+    0,
+    1,
+    2
+  ],
+  "validation_expected_rows": 84,
+  "cross_files": 6,
+  "cross_rows": 102,
+  "cross_expected_rows": 102,
+  "cross_candidate_match": true,
+  "cross_arch_seed_pairs": [
+    [
+      "gnn",
+      0
+    ],
+    [
+      "gnn",
+      1
+    ],
+    [
+      "gnn",
+      2
+    ],
+    [
+      "mlp",
+      0
+    ],
+    [
+      "mlp",
+      1
+    ],
+    [
+      "mlp",
+      2
+    ]
+  ],
+  "clean_retrain_files": 51,
+  "clean_retrain_expected": 51,
+  "clean_retrain_candidate_match": true,
+  "clean_retrain_seeds": [
+    0,
+    1,
+    2
+  ],
+  "all_test_after_retrain_selection": true,
+  "candidate_selection_reused_test": true,
+  "split_sizes": [
+    [
+      4589,
+      3901,
+      688,
+      1967
+    ]
+  ],
+  "all_max_epochs_800": true,
+  "all_three_seeds_per_candidate": true,
+  "missing_required_outputs": [],
+  "pass": true
+}

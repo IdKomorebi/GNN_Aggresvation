@@ -1,0 +1,16 @@
+indices,pure_s1_k10_top60,s1_s2_k10_top60,newly_rescued_by_s2,protected_at_final,d79_final,d81_final
+"(0, 10, 14)",True,True,False,False,True,True
+"(0, 10, 19)",False,True,True,True,False,True
+"(0, 10, 20)",False,True,True,True,False,True
+"(1, 11, 19)",False,True,True,True,False,True
+"(1, 11, 20)",False,True,True,False,False,True
+"(2, 3, 12)",True,True,False,False,False,False
+"(2, 12, 13)",True,True,False,False,True,True
+"(2, 12, 14)",False,False,False,False,False,False
+"(2, 12, 38)",True,True,False,False,True,True
+"(4, 14, 19)",True,True,False,False,True,True
+"(4, 14, 20)",True,True,False,False,True,True
+"(9, 14, 18)",False,False,False,False,False,False
+"(9, 18, 38)",True,True,False,False,True,True
+"(9, 18, 40)",False,False,False,False,False,False
+"(14, 38, 42)",True,True,False,False,True,True

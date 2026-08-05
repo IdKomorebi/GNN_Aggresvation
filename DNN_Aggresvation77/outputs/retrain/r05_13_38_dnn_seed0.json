@@ -1,0 +1,27 @@
+{
+  "subset_id": "r05_13_38",
+  "group": "triple_rand_ext",
+  "size": 3,
+  "fields": [
+    "gen_fuel_oil_mw",
+    "gen_fuel_multiple_fuels_pct",
+    "system_energy_price_da"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.4051237106323242,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.327014684677124,
+    "gross_actual_interchange_mw": 0.10604482889175415,
+    "total_gen": 0.6015368103981018,
+    "metered_load_mw": 0.6331926584243774,
+    "total_losses": 0.33423691987991333,
+    "congestion_price_da": 0.21965450048446655,
+    "congestion_price_rt": 0.23841017484664917,
+    "marginal_loss_price_da": 0.6895108819007874,
+    "total_lmp_da": 0.9834062457084656,
+    "da_as_total_mw_primary_reserve": 0.1467653512954712,
+    "da_as_total_mw_synchronized_reserve": 0.1360751986503601,
+    "da_as_total_mw_thirty_minutes_reserve": 0.4456365704536438
+  }
+}

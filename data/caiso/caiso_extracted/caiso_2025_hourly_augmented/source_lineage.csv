@@ -1,0 +1,5 @@
+artifact,path,bytes,sha256
+GPT Work original CAISO bundle,/Users/haocun/Documents/Codex/2026-07-25/pjm-chatgpt-conversation-6a63d9bb-2584-83ee/work/gptwork_original/caiso_2025_hourly_bundle_original.zip,3504600,3bf71b191bf2aeafb04a1f2dd0026e11e1e307955f965351ee015409787248f5
+GPT Work original aligned dataset,/Users/haocun/Documents/Codex/2026-07-25/pjm-chatgpt-conversation-6a63d9bb-2584-83ee/work/gptwork_original/caiso_extracted/caiso_2025_hourly/caiso_2025_hourly_aligned_full.csv.gz,3460380,48dc76365e2ec75d9fb3e8127a6ec973ccfc077388d7600f95c7ae1405bccd72
+Chrome normal-client download,/Users/haocun/Documents/Codex/2026-07-25/pjm-chatgpt-conversation-6a63d9bb-2584-83ee/work/downloads/20250101_20250101_DAM_PRC_AS_GRP_N_N_v12_csv.zip,3604,8eb1a4282d960da30eed1ff180d41de17c5d22f78e81f2a0743eb237fe70f670
+command-line unverified-TLS control download,/Users/haocun/Documents/Codex/2026-07-25/pjm-chatgpt-conversation-6a63d9bb-2584-83ee/work/downloads/test_prc_as_shell.zip,3604,8eb1a4282d960da30eed1ff180d41de17c5d22f78e81f2a0743eb237fe70f670

@@ -1,0 +1,13 @@
+conf,ceiling
+congestion_price_da,0.6488727331161499
+congestion_price_rt,0.6632164716720581
+da_as_total_mw_primary_reserve,0.9481419324874878
+da_as_total_mw_synchronized_reserve,0.9144001007080078
+da_as_total_mw_thirty_minutes_reserve,0.8811407685279846
+gross_actual_interchange_mw,0.8276033401489258
+marginal_loss_price_da,0.853216826915741
+metered_load_mw,0.9912244081497192
+net_actual_interchange_mw,0.883581280708313
+total_gen,0.9937534928321838
+total_lmp_da,0.9834845066070556
+total_losses,0.8792485594749451

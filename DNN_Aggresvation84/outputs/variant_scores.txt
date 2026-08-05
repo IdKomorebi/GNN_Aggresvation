@@ -1,0 +1,13 @@
+             variant  S1<0_all  S1<0_strong  n_strong  parent_gap_strong  spearman_S1  rec_all  recS1_0.1-0.12  recS1_0.12-0.15  recS1_0.15-0.2  recS1_0.2-1.01  recS2_>0.2
+baseline_uniform(75)        10            0        15              0.026        0.703    0.826           0.852            0.882           0.691           0.047       0.811
+        none(sanity)        10            0        15              0.026        0.703    0.826           0.852            0.882           0.691           0.047       0.811
+           mono_lam2         0            0        15              0.039        0.669    0.807           0.838            0.856           0.658           0.047       0.520
+          mono_lam10         0            0        15              0.076        0.551    0.703           0.689            0.786           0.649           0.142       0.473
+           incr_lam2         0            0        15              0.045        0.631    0.818           0.851            0.875           0.649           0.047       0.473
+          incr_lam10         0            0        15              0.086        0.524    0.723           0.738            0.760           0.674           0.047       0.473
+      mono_incr_lam5         0            0        15              0.080        0.507    0.675           0.652            0.744           0.699           0.142       0.473
+/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation84/scripts/make_figs.py:64: UserWarning: Glyph 10233 (\N{LONG RIGHTWARDS DOUBLE ARROW}) missing from font(s) Noto Sans CJK JP.
+  fig.tight_layout()
+/data1/duhaocun/projects/GNN_Aggresvation/DNN_Aggresvation84/scripts/make_figs.py:65: UserWarning: Glyph 10233 (\N{LONG RIGHTWARDS DOUBLE ARROW}) missing from font(s) Noto Sans CJK JP.
+  fig.savefig(ROOT / "figures/leverA_and_cascade_zh.png", dpi=150)
+已写出 figures/leverA_and_cascade_zh.png

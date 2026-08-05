@@ -1,0 +1,183 @@
+# DNN_Aggresvation96 运行流水
+
+> 自动记录；实验结论见 `CHANGELOG.md`。
+
+- `2026-07-29 01:10:33` ▶ **[SCAN] START**　sample o5: 1500 个候选（空间 1086008）
+- `2026-07-29 01:10:56` ✔ **[SCAN] DONE**　o5 sample 分片0: 1500 集合 max=0.0849 >0.10=0 23s
+- `2026-07-29 01:11:42` ▶ **[SCAN] START**　build_subs o5: 分片 1/2 [543004,1086008) / 1086008
+- `2026-07-29 01:11:42` ▶ **[SCAN] START**　build_subs o5: 分片 0/2 [0,543004) / 1086008
+- `2026-07-29 01:32:53` ✔ **[SCAN] DONE**　build_subs 分片 1 完成 1272s → subs_o5_oracle_l1_aug8_seed0_last_part1of2.npy
+- `2026-07-29 01:33:44` ✔ **[SCAN] DONE**　build_subs 分片 0 完成 1322s → subs_o5_oracle_l1_aug8_seed0_last_part0of2.npy
+- `2026-07-29 01:35:44` · **[SCAN] SUBS**　子集缓存就绪 (1086008, 12)
+- `2026-07-29 01:35:44` ▶ **[SCAN] START**　full o6: 分片 0/2 [0,3529526) / 7059052
+- `2026-07-29 01:35:44` · **[SCAN] SUBS**　子集缓存就绪 (1086008, 12)
+- `2026-07-29 01:35:44` ▶ **[SCAN] START**　full o6: 分片 1/2 [3529526,7059052) / 7059052
+- `2026-07-29 01:43:26` ▶ **[SCAN] START**　sample o6: 150000 个候选（空间 7059052）
+- `2026-07-29 01:43:26` ▶ **[SCAN] START**　sample o6: 150000 个候选（空间 7059052）
+- `2026-07-29 01:49:04` ✔ **[SCAN] DONE**　o6 sample 分片0: 150000 集合 max=0.1065 >0.10=3 338s
+- `2026-07-29 01:49:07` ▶ **[SCAN] START**　sample o7: 30000 个候选（空间 38320568）
+- `2026-07-29 01:49:19` ✔ **[SCAN] DONE**　o6 sample 分片1: 150000 集合 max=0.1195 >0.10=4 353s
+- `2026-07-29 01:49:21` ▶ **[SCAN] START**　sample o7: 30000 个候选（空间 38320568）
+- `2026-07-29 01:58:21` ✔ **[SCAN] DONE**　o7 sample 分片0: 30000 集合 max=0.0835 >0.10=0 554s
+- `2026-07-29 01:58:24` ▶ **[SCAN] START**　sample o8: 30000 个候选（空间 177232627）
+- `2026-07-29 02:08:54` ✔ **[SCAN] DONE**　o8 sample 分片0: 30000 集合 max=0.0716 >0.10=0 631s
+- `2026-07-29 02:27:11` ▶ **[SCAN] START**　sample o7: 30000 个候选（空间 38320568）
+- `2026-07-29 02:27:11` ▶ **[SCAN] START**　sample o8: 30000 个候选（空间 177232627）
+- `2026-07-29 02:34:21` ▶ **[CERT] START**　order-6 shard0/3: 7 个集合（strong 4 / control 3），已完成 0
+- `2026-07-29 02:34:21` ▶ **[CERT] START**　order-6 shard1/3: 7 个集合（strong 3 / control 4），已完成 0
+- `2026-07-29 02:34:21` ▶ **[CERT] START**　order-6 shard2/3: 6 个集合（strong 3 / control 3），已完成 0
+- `2026-07-29 02:36:31` ✔ **[SCAN] DONE**　o7 sample 分片1: 30000 集合 max=0.0729 >0.10=0 560s
+- `2026-07-29 02:36:47` ▶ **[CERT] START**　order-7 shard0/4: 5 个集合（strong 3 / control 2），已完成 0
+- `2026-07-29 02:46:34` ▶ **[CERT] START**　order-7 shard1/4: 5 个集合（strong 3 / control 2），已完成 2
+- `2026-07-29 02:46:34` ▶ **[CERT] START**　order-7 shard3/4: 5 个集合（strong 2 / control 3），已完成 2
+- `2026-07-29 02:46:34` ▶ **[CERT] START**　order-7 shard2/4: 5 个集合（strong 2 / control 3），已完成 2
+- `2026-07-29 02:59:54` ✔ **[CERT] DONE**　shard0 用时 1386s
+- `2026-07-29 03:02:45` ✔ **[CERT] DONE**　shard1 用时 1704s
+- `2026-07-29 03:03:52` ✔ **[CERT] DONE**　shard2 用时 1771s
+- `2026-07-29 03:07:24` ✔ **[CERT] DONE**　shard0 用时 1983s
+- `2026-07-29 03:10:14` ✔ **[CERT] DONE**　shard3 用时 1420s
+- `2026-07-29 03:14:34` ✔ **[CERT] DONE**　shard1 用时 1680s
+- `2026-07-29 03:14:53` ✔ **[CERT] DONE**　shard2 用时 1700s
+- `2026-07-30 18:48:46` ▶ **[INJ] START**　orders=[2] r2s=[0.05, 0.1, 0.2, 0.35] trials=2 seeds=[0] 本分片 2/2 个元组 mode=both
+- `2026-07-30 18:49:53` · **[INJ] TRUTH**　分片0 真值端完成 68s → inject_truth_selfcheck_s0of1.csv
+- `2026-07-30 18:49:55` · **[INJ] SEARCH**　分片0 搜索端完成 1s
+- `2026-07-30 18:56:00` ▶ **[INJ] START**　orders=[2] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth
+- `2026-07-30 18:57:01` · **[INJ] TRUTH**　分片0 真值端完成 61s → inject_truth_selfcheck2_s0of1.csv
+- `2026-07-30 18:57:36` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=both
+- `2026-07-30 18:57:37` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=both
+- `2026-07-30 18:57:37` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=both
+- `2026-07-30 18:57:37` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=both
+- `2026-07-30 19:05:37` · **[INJ] TRUTH**　分片0 真值端完成 480s → inject_truth_s0of4.csv
+- `2026-07-30 19:06:59` · **[INJ] TRUTH**　分片1 真值端完成 563s → inject_truth_s1of4.csv
+- `2026-07-30 19:07:14` · **[INJ] TRUTH**　分片3 真值端完成 577s → inject_truth_s3of4.csv
+- `2026-07-30 19:07:20` · **[INJ] TRUTH**　分片2 真值端完成 583s → inject_truth_s2of4.csv
+- `2026-07-30 19:33:32` ▶ **[INJ] START**　orders=[6, 7] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/6 个元组 mode=truth
+- `2026-07-30 19:33:32` ▶ **[INJ] START**　orders=[6, 7] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/6 个元组 mode=truth
+- `2026-07-30 19:33:32` ▶ **[INJ] START**　orders=[6, 7] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/6 个元组 mode=truth
+- `2026-07-30 19:33:33` ▶ **[INJ] START**　orders=[6, 7] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/6 个元组 mode=truth
+- `2026-07-30 19:34:56` · **[INJ] TRUTH**　分片0 真值端完成 84s → inject_truth_hgb_s0of2.csv
+- `2026-07-30 19:34:58` · **[INJ] TRUTH**　分片1 真值端完成 85s → inject_truth_hgb_s1of2.csv
+- `2026-07-30 19:36:53` · **[INJ] TRUTH**　分片0 真值端完成 200s → inject_truth_dnn512_s0of2.csv
+- `2026-07-30 19:36:55` · **[INJ] TRUTH**　分片1 真值端完成 202s → inject_truth_dnn512_s1of2.csv
+- `2026-07-30 19:40:22` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search
+- `2026-07-30 19:40:22` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search
+- `2026-07-30 19:40:22` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search
+- `2026-07-30 19:40:22` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search
+- `2026-07-30 19:40:41` · **[INJ] SEARCH**　分片0 搜索端完成 19s
+- `2026-07-30 19:40:42` · **[INJ] SEARCH**　分片2 搜索端完成 20s
+- `2026-07-30 19:40:43` · **[INJ] SEARCH**　分片3 搜索端完成 21s
+- `2026-07-30 19:42:18` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search
+- `2026-07-30 19:42:42` · **[INJ] SEARCH**　分片1 搜索端完成 24s
+- `2026-07-30 19:47:02` ▶ **[INJ] START**　orders=[5, 6] r2s=[0.35] trials=3 seeds=[0] 本分片 6/6 个元组 mode=truth
+- `2026-07-30 19:47:02` ▶ **[INJ] START**　orders=[5, 6] r2s=[0.35] trials=3 seeds=[0] 本分片 6/6 个元组 mode=truth
+- `2026-07-30 19:47:03` ▶ **[INJ] START**　orders=[5, 6] r2s=[0.35] trials=3 seeds=[0] 本分片 6/6 个元组 mode=truth
+- `2026-07-30 19:47:03` ▶ **[INJ] START**　orders=[5, 6] r2s=[0.35] trials=3 seeds=[0] 本分片 6/6 个元组 mode=truth
+- `2026-07-30 19:49:02` · **[INJ] TRUTH**　分片0 真值端完成 120s → inject_truth_scale_dnn128_n1200_s0of1.csv
+- `2026-07-30 19:50:51` · **[INJ] TRUTH**　分片0 真值端完成 228s → inject_truth_scale_dnn128_n2400_s0of1.csv
+- `2026-07-30 19:53:07` · **[INJ] TRUTH**　分片0 真值端完成 365s → inject_truth_scale_dnn128_n3600_s0of1.csv
+- `2026-07-30 19:55:51` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=both
+- `2026-07-30 19:55:51` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/9 个元组 mode=both
+- `2026-07-30 19:55:52` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=both
+- `2026-07-30 19:55:52` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=both
+- `2026-07-30 19:56:59` · **[INJ] TRUTH**　分片0 真值端完成 597s → inject_truth_scale_dnn128_n4589_s0of1.csv
+- `2026-07-30 19:59:32` · **[INJ] TRUTH**　分片2 真值端完成 221s → inject_truth_caiso_dnn128_s2of4.csv
+- `2026-07-30 19:59:47` · **[INJ] SEARCH**　分片2 搜索端完成 15s
+- `2026-07-30 20:00:29` · **[INJ] TRUTH**　分片1 真值端完成 277s → inject_truth_caiso_dnn128_s1of4.csv
+- `2026-07-30 20:00:38` · **[INJ] TRUTH**　分片3 真值端完成 286s → inject_truth_caiso_dnn128_s3of4.csv
+- `2026-07-30 20:00:55` · **[INJ] SEARCH**　分片3 搜索端完成 17s
+- `2026-07-30 20:02:25` · **[INJ] TRUTH**　分片0 真值端完成 393s → inject_truth_caiso_dnn128_s0of4.csv
+- `2026-07-30 20:02:49` · **[INJ] SEARCH**　分片0 搜索端完成 24s
+- `2026-07-30 22:28:22` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=search
+- `2026-07-30 22:28:32` ▶ **[INJ] START**　orders=[8] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth
+- `2026-07-30 22:28:35` ▶ **[INJ] START**　orders=[9] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth
+- `2026-07-30 22:28:37` ▶ **[INJ] START**　orders=[10] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth
+- `2026-07-30 22:28:39` · **[INJ] SEARCH**　分片1 搜索端完成 17s
+- `2026-07-30 22:31:04` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=search
+- `2026-07-30 22:31:16` ▶ **[INJ] START**　orders=[9] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth
+- `2026-07-30 22:31:17` ▶ **[INJ] START**　orders=[8] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth
+- `2026-07-30 22:31:19` ▶ **[INJ] START**　orders=[10] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth
+- `2026-07-30 22:31:23` · **[INJ] SEARCH**　分片1 搜索端完成 19s
+- `2026-07-30 22:42:01` · **[INJ] TRUTH**　分片0 真值端完成 642s → inject_truth_hi10_caiso_dnn128_s0of1.csv
+- `2026-07-30 22:42:22` · **[INJ] TRUTH**　分片0 真值端完成 665s → inject_truth_hi8_caiso_dnn128_s0of1.csv
+- `2026-07-30 22:42:35` · **[INJ] TRUTH**　分片0 真值端完成 679s → inject_truth_hi9_caiso_dnn128_s0of1.csv
+- `2026-07-30 22:58:58` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=3 seeds=[0, 1] 本分片 5/9 个元组 mode=search
+- `2026-07-30 22:59:05` · **[INJ] SEARCH**　分片0 搜索端完成 8s
+- `2026-07-30 23:12:00` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 24/24 个元组 mode=search
+- `2026-07-30 23:12:03` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 24/24 个元组 mode=search
+- `2026-07-30 23:12:23` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 24/24 个元组 mode=search
+- `2026-07-30 23:12:58` · **[INJ] SEARCH**　分片0 搜索端完成 58s
+- `2026-07-30 23:13:30` · **[INJ] SEARCH**　分片0 搜索端完成 66s
+- `2026-07-30 23:14:42` · **[INJ] SEARCH**　分片0 搜索端完成 159s
+- `2026-07-30 23:15:08` ▶ **[INJ] START**　orders=[5, 6, 7, 8] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 24/24 个元组 mode=search
+- `2026-07-30 23:18:27` · **[INJ] SEARCH**　分片0 搜索端完成 199s
+- `2026-07-30 23:54:09` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-30 23:54:10` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-30 23:54:11` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-30 23:56:02` · **[INJ] SEARCH**　分片0 搜索端完成 111s
+- `2026-07-30 23:56:05` · **[INJ] SEARCH**　分片0 搜索端完成 114s
+- `2026-07-30 23:56:05` · **[INJ] SEARCH**　分片0 搜索端完成 116s
+- `2026-07-30 23:56:14` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-30 23:56:14` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-30 23:58:04` · **[INJ] SEARCH**　分片0 搜索端完成 110s
+- `2026-07-30 23:58:11` · **[INJ] SEARCH**　分片0 搜索端完成 117s
+- `2026-07-31 00:04:24` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-31 00:04:25` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-31 00:04:26` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-31 00:06:14` · **[INJ] SEARCH**　分片0 搜索端完成 109s
+- `2026-07-31 00:06:22` · **[INJ] SEARCH**　分片0 搜索端完成 118s
+- `2026-07-31 00:06:22` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-31 00:06:23` · **[INJ] SEARCH**　分片0 搜索端完成 116s
+- `2026-07-31 00:06:30` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search
+- `2026-07-31 00:08:11` · **[INJ] SEARCH**　分片0 搜索端完成 109s
+- `2026-07-31 00:08:33` · **[INJ] SEARCH**　分片0 搜索端完成 123s
+- `2026-07-31 00:14:37` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:14:38` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:14:39` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:21:56` · **[INJ] SEARCH**　分片0 搜索端完成 437s
+- `2026-07-31 00:22:01` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:22:01` · **[INJ] SEARCH**　分片0 搜索端完成 442s
+- `2026-07-31 00:22:07` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:22:25` · **[INJ] SEARCH**　分片0 搜索端完成 468s
+- `2026-07-31 00:22:31` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:29:18` · **[INJ] SEARCH**　分片0 搜索端完成 437s
+- `2026-07-31 00:29:24` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:29:32` · **[INJ] SEARCH**　分片0 搜索端完成 445s
+- `2026-07-31 00:29:38` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:30:36` · **[INJ] SEARCH**　分片0 搜索端完成 484s
+- `2026-07-31 00:30:41` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:36:41` · **[INJ] SEARCH**　分片0 搜索端完成 436s
+- `2026-07-31 00:36:46` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:37:01` · **[INJ] SEARCH**　分片0 搜索端完成 444s
+- `2026-07-31 00:37:07` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:38:29` · **[INJ] SEARCH**　分片0 搜索端完成 468s
+- `2026-07-31 00:38:35` ▶ **[INJ] START**　orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search
+- `2026-07-31 00:44:05` · **[INJ] SEARCH**　分片0 搜索端完成 438s
+- `2026-07-31 00:44:30` · **[INJ] SEARCH**　分片0 搜索端完成 443s
+- `2026-07-31 00:46:42` · **[INJ] SEARCH**　分片0 搜索端完成 487s
+- `2026-07-31 00:52:21` ▶ **[SCAN] START**　build_subs o5: 分片 0/3 [0,362002) / 1086008
+- `2026-07-31 00:52:22` ▶ **[SCAN] START**　build_subs o5: 分片 1/3 [362002,724005) / 1086008
+- `2026-07-31 00:52:23` ▶ **[SCAN] START**　build_subs o5: 分片 2/3 [724005,1086008) / 1086008
+- `2026-07-31 01:05:34` ✔ **[SCAN] DONE**　build_subs 分片 1 完成 792s → subs_o5_oracle_l1_r93_seed0_last_part1of3.npy
+- `2026-07-31 01:05:48` ✔ **[SCAN] DONE**　build_subs 分片 2 完成 805s → subs_o5_oracle_l1_r93_seed0_last_part2of3.npy
+- `2026-07-31 01:06:25` ✔ **[SCAN] DONE**　build_subs 分片 0 完成 844s → subs_o5_oracle_l1_r93_seed0_last_part0of3.npy
+- `2026-07-31 01:06:39` ▶ **[SCAN] START**　sample o6: 150000 个候选（空间 7059052）
+- `2026-07-31 01:06:39` ▶ **[SCAN] START**　sample o6: 150000 个候选（空间 7059052）
+- `2026-07-31 01:12:25` ✔ **[SCAN] DONE**　o6 sample 分片1: 150000 集合 max=0.1475 >0.10=6 346s
+- `2026-07-31 01:12:31` ✔ **[SCAN] DONE**　o6 sample 分片0: 150000 集合 max=0.1195 >0.10=3 352s
+- `2026-07-31 01:12:33` ▶ **[CERT] START**　order-6 shard0/4: 5 个集合（strong 3 / control 2），已完成 0
+- `2026-07-31 01:12:34` ▶ **[CERT] START**　order-6 shard2/4: 5 个集合（strong 2 / control 3），已完成 0
+- `2026-07-31 01:12:34` ▶ **[CERT] START**　order-6 shard1/4: 5 个集合（strong 3 / control 2），已完成 0
+- `2026-07-31 01:12:34` ▶ **[CERT] START**　order-6 shard3/4: 5 个集合（strong 2 / control 3），已完成 0
+- `2026-07-31 01:31:42` ✔ **[CERT] DONE**　shard3 用时 1148s
+- `2026-07-31 01:31:58` ✔ **[CERT] DONE**　shard2 用时 1164s
+- `2026-07-31 01:32:01` ✔ **[CERT] DONE**　shard0 用时 1167s
+- `2026-07-31 01:32:36` ✔ **[CERT] DONE**　shard1 用时 1202s
+- `2026-07-31 10:19:45` · **[SCAN] SUBS**　子集缓存就绪 (1086008, 12)
+- `2026-07-31 10:19:45` ▶ **[SCAN] START**　full o6: 分片 1/3 [2353017,4706034) / 7059052
+- `2026-07-31 10:19:45` · **[SCAN] SUBS**　子集缓存就绪 (1086008, 12)
+- `2026-07-31 10:19:45` ▶ **[SCAN] START**　full o6: 分片 2/3 [4706034,7059052) / 7059052
+- `2026-07-31 10:19:45` · **[SCAN] SUBS**　子集缓存就绪 (1086008, 12)
+- `2026-07-31 10:19:45` ▶ **[SCAN] START**　full o6: 分片 0/3 [0,2353017) / 7059052
+- `2026-07-31 11:45:26` ✔ **[SCAN] DONE**　o6 full 分片1: 2353017 集合 max=0.1886 >0.10=99 5141s
+- `2026-07-31 11:46:53` ✔ **[SCAN] DONE**　o6 full 分片2: 2353018 集合 max=0.2299 >0.10=85 5228s
+- `2026-07-31 11:51:53` ✔ **[SCAN] DONE**　o6 full 分片0: 2353017 集合 max=0.1761 >0.10=128 5528s

@@ -1,0 +1,30 @@
+{
+  "dataset": "CAISO 2025 UTC-hourly aligned augmented",
+  "rows": 8760,
+  "columns_total": 307,
+  "numeric_fields": 305,
+  "timestamp_fields": 2,
+  "added_numeric_fields": 142,
+  "added_by_report": {
+    "PRC_AS": 26,
+    "AS_RESULTS_RESULT_TYPE_AS_MW": 26,
+    "ENE_SLRS": 20,
+    "ENE_EIM_TRANSFER_TIE_BAA_GRP_ID_CISO": 70
+  },
+  "added_missing_cells_by_report": {
+    "PRC_AS": 0,
+    "AS_RESULTS_RESULT_TYPE_AS_MW": 0,
+    "ENE_SLRS": 8664,
+    "ENE_EIM_TRANSFER_TIE_BAA_GRP_ID_CISO": 1750
+  },
+  "utc_start": "2025-01-01T00:00:00Z",
+  "utc_end": "2025-12-31T23:00:00Z",
+  "duplicate_utc_timestamps": 0,
+  "total_numeric_missing_cells": 10511,
+  "columns_with_missing": 78,
+  "imputation_performed": false,
+  "supplemental_source_responses": 108,
+  "all_source_manifest_rows": 262,
+  "chrome_vs_command_line_control_byte_identical": true,
+  "unverified_tls_used_for_caiso_downloads": true
+}

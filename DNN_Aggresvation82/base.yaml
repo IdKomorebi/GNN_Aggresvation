@@ -1,0 +1,49 @@
+experiment:
+  name: DNN_Aggresvation82
+  question: "三元组偏置随机失活能否改善三元父集合保真与极强三阶协同发现"
+  initial_seed: 0
+  confirmation_seed: 1
+  schemes:
+    - triple_only
+    - triple90_pair10
+    - triple70_pair20_uniform10
+    - triple50_pair40_uniform10
+    - triple40_pair30_uniform30
+    - local234_20_60_20
+    - local234_uniform10
+    - warm_local234
+    - warm_triple70
+    - triple70_group8
+    - triple70_group32
+    - local234_group8
+    - local234_group32
+  reference_schemes:
+    - uniform
+    - logunif
+    - small80
+    - workload_hard
+  kgrid: [0, 1, 5, 10, 25, 50]
+  train_gpus: [0, 3]
+  strong_threshold: 0.10
+  extreme_threshold: 0.20
+
+training:
+  scratch:
+    epochs: 400
+    patience: 60
+  warm:
+    epochs: 120
+    patience: 30
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 0.0005
+  n_validation_masks: 8
+
+evaluation:
+  n_general: 44
+  n_confidential: 12
+  n_low_subsets: 990
+  n_triples: 13244
+  truth_triples: 2197
+  final_retention: 0.30
+  selection_rule: "13个新版本先各跑seed0；用tune范围分别选择parent MAE最低与S1 Top30 F1最高方案；仅胜者补seed1"

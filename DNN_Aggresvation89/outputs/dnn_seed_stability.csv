@@ -1,0 +1,6 @@
+metric,value
+syn4_seed_mae,0.006323923667271932
+syn4_seed_spearman,0.9513043478260867
+strong_gt005_agreement,0.9166666666666666
+strong_gt010_agreement,1.0
+child_conf_agreement,0.9583333333333334

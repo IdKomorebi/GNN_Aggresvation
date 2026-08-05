@@ -1,0 +1,6 @@
+set_a,set_b,intersection,union,jaccard
+mlp_direct_k24,gnn_direct_k24,19,29,0.6551724137931034
+mlp_direct_k27,gnn_direct_k27,22,32,0.6875
+mlp_direct_k30,gnn_direct_k30,25,35,0.7142857142857143
+mlp_hybrid_k27,gnn_hybrid_k27,25,29,0.8620689655172413
+low_order_k24,mlp_direct_k24,18,30,0.6

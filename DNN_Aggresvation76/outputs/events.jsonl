@@ -1,0 +1,15 @@
+{"ts": "2026-07-23T03:06:55", "phase": "SETUP", "event": "DONE", "note": "目录骨架 + base.yaml 与 69 号一致 + runlog 自检通过", "gpu": "-", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 508797}
+{"ts": "2026-07-23T03:13:49", "phase": "F-1", "event": "START", "note": "相变扫描 9 job（3 方案 × 3 seed）× 990 子集 × 17 个 K", "gpu": "0,1", "elapsed_s": null, "n_done": 0, "n_total": 9, "pid": 517896}
+{"ts": "2026-07-23T03:16:40", "phase": "F-1", "event": "DONE", "note": "uniform seed1：990 子集 × 17 个 K", "gpu": "", "elapsed_s": 168.31219577789307, "n_done": null, "n_total": null, "pid": 517898}
+{"ts": "2026-07-23T03:16:59", "phase": "F-1", "event": "DONE", "note": "uniform seed0：990 子集 × 17 个 K", "gpu": "", "elapsed_s": 187.44335842132568, "n_done": null, "n_total": null, "pid": 517897}
+{"ts": "2026-07-23T03:19:44", "phase": "F-1", "event": "DONE", "note": "uniform seed2：990 子集 × 17 个 K", "gpu": "", "elapsed_s": 177.91286277770996, "n_done": null, "n_total": null, "pid": 522239}
+{"ts": "2026-07-23T03:20:00", "phase": "F-1", "event": "DONE", "note": "none seed0：990 子集 × 17 个 K", "gpu": "", "elapsed_s": 178.3956959247589, "n_done": null, "n_total": null, "pid": 522865}
+{"ts": "2026-07-23T03:22:45", "phase": "F-1", "event": "DONE", "note": "none seed1：990 子集 × 17 个 K", "gpu": "", "elapsed_s": 173.43366956710815, "n_done": null, "n_total": null, "pid": 526920}
+{"ts": "2026-07-23T03:22:59", "phase": "F-1", "event": "DONE", "note": "none seed2：990 子集 × 17 个 K", "gpu": "", "elapsed_s": 172.7388505935669, "n_done": null, "n_total": null, "pid": 527429}
+{"ts": "2026-07-23T03:25:52", "phase": "F-1", "event": "DONE", "note": "bern50 seed1：990 子集 × 17 个 K", "gpu": "", "elapsed_s": 170.28175830841064, "n_done": null, "n_total": null, "pid": 531879}
+{"ts": "2026-07-23T03:26:09", "phase": "F-1", "event": "DONE", "note": "bern50 seed0：990 子集 × 17 个 K", "gpu": "", "elapsed_s": 197.56600499153137, "n_done": null, "n_total": null, "pid": 531594}
+{"ts": "2026-07-23T03:28:47", "phase": "F-1", "event": "DONE", "note": "bern50 seed2：990 子集 × 17 个 K", "gpu": "", "elapsed_s": 170.40429401397705, "n_done": null, "n_total": null, "pid": 536249}
+{"ts": "2026-07-23T03:28:50", "phase": "F-1", "event": "DONE", "note": "相变扫描成功 9，失败 0", "gpu": "0,1", "elapsed_s": 900.854996919632, "n_done": 9, "n_total": 9, "pid": 517896}
+{"ts": "2026-07-23T03:29:32", "phase": "F-1", "event": "DECISION", "note": "uniform 的 K*=25 < none 的 K*=35 → '少步数发现'确属随机失活起点，主张二成立", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 541557}
+{"ts": "2026-07-23T03:30:02", "phase": "F-1", "event": "DECISION", "note": "uniform 的 K*=25 < none 的 K*=35 → '少步数发现'确属随机失活起点，主张二成立", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 542377}
+{"ts": "2026-07-23T03:31:40", "phase": "F-2", "event": "DECISION", "note": "推荐规则 eps=0.002, delta=0.02, patience=2：平均步数 22.8（省 54%），召回 93.0%（不低于基线），误报 0.00%", "gpu": "", "elapsed_s": null, "n_done": null, "n_total": null, "pid": 545535}

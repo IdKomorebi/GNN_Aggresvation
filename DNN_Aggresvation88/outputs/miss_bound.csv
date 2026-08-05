@@ -1,0 +1,3 @@
+order,tau,beam,total,touched,comp_size,n_sample,k_strong_in_sample,found,miss_hat,miss_hi95,recall_hat,recall_lo95,sample_seconds,true_total_strong,true_miss,true_recall,bound_holds
+4,0.1,1000,135751,30967,104784,104784,24,206,24.0,33.8,0.8957,0.8592,57.1,230,24,0.8957,True
+5,0.1,1000,1086008,35141,1050867,150000,5,72,35.0,73.7,0.6727,0.4943,69.0,111,39,0.6486,True

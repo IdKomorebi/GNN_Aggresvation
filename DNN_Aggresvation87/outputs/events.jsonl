@@ -1,0 +1,27 @@
+{"time": "2026-07-25T03:01:48", "stage": "CERT", "status": "ROW", "note": "order4 B=100 cost=0.0278 cov>0.10=0.3739 lo95=0.3139"}
+{"time": "2026-07-25T03:01:50", "stage": "CERT", "status": "ROW", "note": "order4 B=200 cost=0.0538 cov>0.10=0.6261 lo95=0.562"}
+{"time": "2026-07-25T03:01:55", "stage": "CERT", "status": "ROW", "note": "order4 B=500 cost=0.1260 cov>0.10=0.7783 lo95=0.7202"}
+{"time": "2026-07-25T03:02:02", "stage": "CERT", "status": "ROW", "note": "order4 B=1000 cost=0.2281 cov>0.10=0.8957 lo95=0.8494"}
+{"time": "2026-07-25T03:02:12", "stage": "CERT", "status": "ROW", "note": "order4 B=2000 cost=0.3965 cov>0.10=0.9696 lo95=0.9385"}
+{"time": "2026-07-25T03:02:17", "stage": "CERT", "status": "ROW", "note": "order5 B=100 cost=0.0035 cov>0.10=0.0991 lo95=0.0562"}
+{"time": "2026-07-25T03:02:20", "stage": "CERT", "status": "ROW", "note": "order5 B=200 cost=0.0069 cov>0.10=0.2883 lo95=0.2122"}
+{"time": "2026-07-25T03:02:27", "stage": "CERT", "status": "ROW", "note": "order5 B=500 cost=0.0167 cov>0.10=0.4414 lo95=0.3526"}
+{"time": "2026-07-25T03:02:39", "stage": "CERT", "status": "ROW", "note": "order5 B=1000 cost=0.0324 cov>0.10=0.6486 lo95=0.5562"}
+{"time": "2026-07-25T03:03:00", "stage": "CERT", "status": "ROW", "note": "order5 B=2000 cost=0.0614 cov>0.10=0.7477 lo95=0.6596"}
+{"time": "2026-07-25T03:03:59", "stage": "BEAM", "status": "DONE", "note": "beam到order8 B=1000 用时265s; o2:946; o3:13244; o4:30967; o5:35141; o6:35547; o7:34198; o8:32314"}
+{"time": "2026-07-25T03:04:00", "stage": "ENUM", "status": "DONE", "note": "order3 全枚举 13244 in 0s"}
+{"time": "2026-07-25T03:04:00", "stage": "DECAY", "status": "ROW", "note": "order3 全枚举 max_syn=0.4723 n>0.10=416 cov>0.10=1.0"}
+{"time": "2026-07-25T03:04:00", "stage": "DECAY", "status": "ROW", "note": "order4 全枚举 max_syn=0.1799 n>0.10=230 cov>0.10=0.8957"}
+{"time": "2026-07-25T03:04:02", "stage": "DECAY", "status": "ROW", "note": "order5 全枚举 max_syn=0.189 n>0.10=111 cov>0.10=0.6486"}
+{"time": "2026-07-25T03:04:55", "stage": "SAMPLE", "status": "PROG", "note": "order6 20000/50000 379/s"}
+{"time": "2026-07-25T03:05:44", "stage": "SAMPLE", "status": "PROG", "note": "order6 40000/50000 393/s"}
+{"time": "2026-07-25T03:06:06", "stage": "SAMPLE", "status": "DONE", "note": "order6 N=50000 124s max_syn=0.1117"}
+{"time": "2026-07-25T03:06:06", "stage": "DECAY", "status": "ROW", "note": "order6 抽样 max_syn=0.1117 n>0.10=2 cov>0.10=0.5"}
+{"time": "2026-07-25T03:07:23", "stage": "SAMPLE", "status": "PROG", "note": "order7 20000/50000 260/s"}
+{"time": "2026-07-25T03:08:37", "stage": "SAMPLE", "status": "PROG", "note": "order7 40000/50000 264/s"}
+{"time": "2026-07-25T03:09:14", "stage": "SAMPLE", "status": "DONE", "note": "order7 N=50000 188s max_syn=0.1497"}
+{"time": "2026-07-25T03:09:14", "stage": "DECAY", "status": "ROW", "note": "order7 抽样 max_syn=0.1497 n>0.10=1 cov>0.10=0.0"}
+{"time": "2026-07-25T03:10:58", "stage": "SAMPLE", "status": "PROG", "note": "order8 20000/50000 193/s"}
+{"time": "2026-07-25T03:12:42", "stage": "SAMPLE", "status": "PROG", "note": "order8 40000/50000 192/s"}
+{"time": "2026-07-25T03:13:33", "stage": "SAMPLE", "status": "DONE", "note": "order8 N=50000 259s max_syn=0.0662"}
+{"time": "2026-07-25T03:13:33", "stage": "DECAY", "status": "ROW", "note": "order8 抽样 max_syn=0.0662 n>0.10=0 cov>0.10=nan"}

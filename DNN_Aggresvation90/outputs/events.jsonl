@@ -1,0 +1,115 @@
+{"time": "2026-07-25T23:20:44", "stage": "INJ", "status": "DATA", "note": "train=(4589, 44) test=(1967, 44)"}
+{"time": "2026-07-25T23:20:50", "stage": "INJ", "status": "ROW", "note": "alpha=0.1 trial=0 t=1.3(pct68.75) syn=0.0000(pct3.5) maxsub_v=0.000"}
+{"time": "2026-07-25T23:20:56", "stage": "INJ", "status": "ROW", "note": "alpha=0.1 trial=1 t=5.0(pct100.0) syn=-0.0021(pct8.25) maxsub_v=0.004"}
+{"time": "2026-07-25T23:21:02", "stage": "INJ", "status": "ROW", "note": "alpha=0.1 trial=2 t=1.0(pct54.0) syn=-0.0056(pct7.75) maxsub_v=0.057"}
+{"time": "2026-07-25T23:21:08", "stage": "INJ", "status": "ROW", "note": "alpha=0.1 trial=3 t=4.7(pct100.0) syn=0.0000(pct36.25) maxsub_v=0.000"}
+{"time": "2026-07-25T23:21:14", "stage": "INJ", "status": "ROW", "note": "alpha=0.1 trial=4 t=0.1(pct9.75) syn=-0.0029(pct18.5) maxsub_v=0.029"}
+{"time": "2026-07-25T23:21:20", "stage": "INJ", "status": "ROW", "note": "alpha=0.1 trial=5 t=1.2(pct64.25) syn=-0.0023(pct0.25) maxsub_v=0.003"}
+{"time": "2026-07-25T23:21:26", "stage": "INJ", "status": "ROW", "note": "alpha=0.2 trial=0 t=10.8(pct100.0) syn=-0.0002(pct57.75) maxsub_v=0.002"}
+{"time": "2026-07-25T23:21:32", "stage": "INJ", "status": "ROW", "note": "alpha=0.2 trial=1 t=12.5(pct100.0) syn=0.0007(pct99.25) maxsub_v=0.003"}
+{"time": "2026-07-25T23:21:38", "stage": "INJ", "status": "ROW", "note": "alpha=0.2 trial=2 t=8.7(pct100.0) syn=-0.0018(pct18.75) maxsub_v=0.022"}
+{"time": "2026-07-25T23:21:44", "stage": "INJ", "status": "ROW", "note": "alpha=0.2 trial=3 t=2.7(pct92.75) syn=-0.0162(pct0.0) maxsub_v=0.026"}
+{"time": "2026-07-25T23:21:50", "stage": "INJ", "status": "ROW", "note": "alpha=0.2 trial=4 t=5.9(pct100.0) syn=-0.0272(pct5.75) maxsub_v=0.055"}
+{"time": "2026-07-25T23:21:56", "stage": "INJ", "status": "ROW", "note": "alpha=0.2 trial=5 t=9.3(pct100.0) syn=-0.0024(pct23.25) maxsub_v=0.023"}
+{"time": "2026-07-25T23:22:02", "stage": "INJ", "status": "ROW", "note": "alpha=0.3 trial=0 t=13.8(pct100.0) syn=-0.0104(pct2.75) maxsub_v=0.044"}
+{"time": "2026-07-25T23:22:08", "stage": "INJ", "status": "ROW", "note": "alpha=0.3 trial=1 t=6.5(pct99.75) syn=0.0031(pct99.5) maxsub_v=0.032"}
+{"time": "2026-07-25T23:22:14", "stage": "INJ", "status": "ROW", "note": "alpha=0.3 trial=2 t=13.7(pct100.0) syn=-0.0004(pct47.0) maxsub_v=0.035"}
+{"time": "2026-07-25T23:22:20", "stage": "INJ", "status": "ROW", "note": "alpha=0.3 trial=3 t=10.8(pct100.0) syn=-0.0042(pct6.0) maxsub_v=0.008"}
+{"time": "2026-07-25T23:22:26", "stage": "INJ", "status": "ROW", "note": "alpha=0.3 trial=4 t=16.8(pct100.0) syn=0.0031(pct100.0) maxsub_v=0.007"}
+{"time": "2026-07-25T23:22:32", "stage": "INJ", "status": "ROW", "note": "alpha=0.3 trial=5 t=10.1(pct100.0) syn=0.0020(pct99.75) maxsub_v=0.065"}
+{"time": "2026-07-25T23:22:38", "stage": "INJ", "status": "ROW", "note": "alpha=0.45 trial=0 t=5.0(pct89.0) syn=0.0007(pct76.75) maxsub_v=0.495"}
+{"time": "2026-07-25T23:22:44", "stage": "INJ", "status": "ROW", "note": "alpha=0.45 trial=1 t=13.7(pct100.0) syn=-0.0004(pct66.0) maxsub_v=0.102"}
+{"time": "2026-07-25T23:22:49", "stage": "INJ", "status": "ROW", "note": "alpha=0.45 trial=2 t=0.7(pct21.0) syn=-0.0043(pct4.75) maxsub_v=0.028"}
+{"time": "2026-07-25T23:22:55", "stage": "INJ", "status": "ROW", "note": "alpha=0.45 trial=3 t=22.1(pct100.0) syn=0.0002(pct79.75) maxsub_v=0.050"}
+{"time": "2026-07-25T23:23:01", "stage": "INJ", "status": "ROW", "note": "alpha=0.45 trial=4 t=17.2(pct100.0) syn=0.0019(pct96.25) maxsub_v=0.158"}
+{"time": "2026-07-25T23:23:07", "stage": "INJ", "status": "ROW", "note": "alpha=0.45 trial=5 t=12.1(pct100.0) syn=0.0064(pct99.5) maxsub_v=0.068"}
+{"time": "2026-07-25T23:23:55", "stage": "STAB", "status": "SPLIT", "note": "A=3278 B=3278 两个不相交半份"}
+{"time": "2026-07-25T23:24:06", "stage": "STAB", "status": "PROG", "note": "order3 500/3000"}
+{"time": "2026-07-25T23:24:16", "stage": "STAB", "status": "PROG", "note": "order3 1000/3000"}
+{"time": "2026-07-25T23:24:28", "stage": "STAB", "status": "PROG", "note": "order3 1500/3000"}
+{"time": "2026-07-25T23:24:39", "stage": "STAB", "status": "PROG", "note": "order3 2000/3000"}
+{"time": "2026-07-25T23:24:50", "stage": "STAB", "status": "PROG", "note": "order3 2500/3000"}
+{"time": "2026-07-25T23:25:00", "stage": "STAB", "status": "PROG", "note": "order3 3000/3000"}
+{"time": "2026-07-25T23:25:00", "stage": "STAB", "status": "ROW", "note": "order3 t_all=0.6436 syn_all=0.6278 t_top100=0.4501 syn_top100=0.4728"}
+{"time": "2026-07-25T23:25:16", "stage": "STAB", "status": "PROG", "note": "order4 500/3000"}
+{"time": "2026-07-25T23:25:33", "stage": "STAB", "status": "PROG", "note": "order4 1000/3000"}
+{"time": "2026-07-25T23:25:50", "stage": "STAB", "status": "PROG", "note": "order4 1500/3000"}
+{"time": "2026-07-25T23:26:06", "stage": "STAB", "status": "PROG", "note": "order4 2000/3000"}
+{"time": "2026-07-25T23:26:13", "stage": "ABL", "status": "ROW", "note": "alpha=0.2 tr=0 poly2 syn=-0.0003(pct33.33) full syn=-0.0052(pct6.33) t=2.43"}
+{"time": "2026-07-25T23:26:22", "stage": "ABL", "status": "ROW", "note": "alpha=0.2 tr=1 poly2 syn=0.0005(pct89.67) full syn=0.007(pct98.0) t=2.89"}
+{"time": "2026-07-25T23:26:23", "stage": "STAB", "status": "PROG", "note": "order4 2500/3000"}
+{"time": "2026-07-25T23:26:30", "stage": "ABL", "status": "ROW", "note": "alpha=0.2 tr=2 poly2 syn=0.0015(pct100.0) full syn=0.041(pct100.0) t=10.59"}
+{"time": "2026-07-25T23:26:37", "stage": "ABL", "status": "ROW", "note": "alpha=0.2 tr=3 poly2 syn=-0.0009(pct29.33) full syn=0.0307(pct100.0) t=10.86"}
+{"time": "2026-07-25T23:26:40", "stage": "STAB", "status": "PROG", "note": "order4 3000/3000"}
+{"time": "2026-07-25T23:26:40", "stage": "STAB", "status": "ROW", "note": "order4 t_all=0.4431 syn_all=0.5313 t_top100=-0.0835 syn_top100=0.4372"}
+{"time": "2026-07-25T23:26:46", "stage": "ABL", "status": "ROW", "note": "alpha=0.2 tr=4 poly2 syn=0.0(pct19.67) full syn=0.0104(pct100.0) t=6.64"}
+{"time": "2026-07-25T23:26:54", "stage": "ABL", "status": "ROW", "note": "alpha=0.3 tr=0 poly2 syn=0.0009(pct93.33) full syn=0.0179(pct99.67) t=7.19"}
+{"time": "2026-07-25T23:27:02", "stage": "ABL", "status": "ROW", "note": "alpha=0.3 tr=1 poly2 syn=-0.0004(pct63.33) full syn=0.0458(pct100.0) t=13.88"}
+{"time": "2026-07-25T23:27:10", "stage": "ABL", "status": "ROW", "note": "alpha=0.3 tr=2 poly2 syn=-0.0011(pct63.67) full syn=0.0138(pct99.33) t=3.64"}
+{"time": "2026-07-25T23:27:18", "stage": "ABL", "status": "ROW", "note": "alpha=0.3 tr=3 poly2 syn=0.0001(pct88.0) full syn=0.012(pct100.0) t=3.42"}
+{"time": "2026-07-25T23:27:25", "stage": "ABL", "status": "ROW", "note": "alpha=0.3 tr=4 poly2 syn=0.0(pct17.0) full syn=-0.0012(pct9.33) t=1.33"}
+{"time": "2026-07-25T23:27:33", "stage": "ABL", "status": "ROW", "note": "alpha=0.45 tr=0 poly2 syn=0.0002(pct99.33) full syn=0.0205(pct100.0) t=4.88"}
+{"time": "2026-07-25T23:27:41", "stage": "ABL", "status": "ROW", "note": "alpha=0.45 tr=1 poly2 syn=-0.114(pct0.33) full syn=-0.0371(pct16.33) t=0.57"}
+{"time": "2026-07-25T23:27:49", "stage": "ABL", "status": "ROW", "note": "alpha=0.45 tr=2 poly2 syn=0.0166(pct98.67) full syn=0.0465(pct98.0) t=3.38"}
+{"time": "2026-07-25T23:27:57", "stage": "ABL", "status": "ROW", "note": "alpha=0.45 tr=3 poly2 syn=-0.0059(pct4.33) full syn=0.1414(pct100.0) t=25.09"}
+{"time": "2026-07-25T23:28:06", "stage": "ABL", "status": "ROW", "note": "alpha=0.45 tr=4 poly2 syn=-0.003(pct13.0) full syn=0.1789(pct100.0) t=28.22"}
+{"time": "2026-07-25T23:38:58", "stage": "RESCAN", "status": "START", "note": "order3 full eval=audit shard0/1 n=13244"}
+{"time": "2026-07-25T23:38:59", "stage": "RESCAN", "status": "SUBS", "note": "946 个 2 阶子集完成 1s"}
+{"time": "2026-07-25T23:39:00", "stage": "RESCAN", "status": "SETS", "note": "13244 个 3 阶完成 2s"}
+{"time": "2026-07-25T23:39:00", "stage": "RESCAN", "status": "DONE", "note": "order3 full audit shard0 2s max_syn=0.5031 n>0.10=647"}
+{"time": "2026-07-25T23:39:32", "stage": "RESCAN", "status": "START", "note": "order3 poly2 eval=audit shard0/1 n=13244"}
+{"time": "2026-07-25T23:39:32", "stage": "RESCAN", "status": "SUBS", "note": "946 个 2 阶子集完成 0s"}
+{"time": "2026-07-25T23:39:32", "stage": "RESCAN", "status": "START", "note": "order5 poly2 eval=audit shard0/2 n=543004"}
+{"time": "2026-07-25T23:39:32", "stage": "RESCAN", "status": "START", "note": "order5 full eval=audit shard0/2 n=543004"}
+{"time": "2026-07-25T23:39:32", "stage": "RESCAN", "status": "START", "note": "order5 full eval=audit shard1/2 n=543004"}
+{"time": "2026-07-25T23:39:33", "stage": "RESCAN", "status": "SETS", "note": "13244 个 3 阶完成 1s"}
+{"time": "2026-07-25T23:39:33", "stage": "RESCAN", "status": "DONE", "note": "order3 poly2 audit shard0 1s max_syn=0.4915 n>0.10=496"}
+{"time": "2026-07-25T23:39:35", "stage": "RESCAN", "status": "START", "note": "order4 poly2 eval=audit shard0/1 n=135751"}
+{"time": "2026-07-25T23:39:36", "stage": "RESCAN", "status": "SUBS", "note": "13244 个 3 阶子集完成 1s"}
+{"time": "2026-07-25T23:39:44", "stage": "RESCAN", "status": "SUBS", "note": "135751 个 4 阶子集完成 12s"}
+{"time": "2026-07-25T23:39:45", "stage": "RESCAN", "status": "SETS", "note": "135751 个 4 阶完成 9s"}
+{"time": "2026-07-25T23:39:45", "stage": "RESCAN", "status": "SUBS", "note": "135751 个 4 阶子集完成 13s"}
+{"time": "2026-07-25T23:39:46", "stage": "RESCAN", "status": "SUBS", "note": "135751 个 4 阶子集完成 14s"}
+{"time": "2026-07-25T23:39:46", "stage": "RESCAN", "status": "DONE", "note": "order4 poly2 audit shard0 11s max_syn=0.2553 n>0.10=328"}
+{"time": "2026-07-25T23:39:48", "stage": "RESCAN", "status": "START", "note": "order3 full eval=audit shard0/1 n=13244"}
+{"time": "2026-07-25T23:39:48", "stage": "RESCAN", "status": "SUBS", "note": "946 个 2 阶子集完成 0s"}
+{"time": "2026-07-25T23:39:49", "stage": "RESCAN", "status": "SETS", "note": "13244 个 3 阶完成 1s"}
+{"time": "2026-07-25T23:39:49", "stage": "RESCAN", "status": "DONE", "note": "order3 full audit shard0 1s max_syn=0.5031 n>0.10=647"}
+{"time": "2026-07-25T23:39:52", "stage": "RESCAN", "status": "START", "note": "order4 full eval=audit shard0/1 n=135751"}
+{"time": "2026-07-25T23:39:53", "stage": "RESCAN", "status": "SUBS", "note": "13244 个 3 阶子集完成 1s"}
+{"time": "2026-07-25T23:40:03", "stage": "RESCAN", "status": "SETS", "note": "135751 个 4 阶完成 11s"}
+{"time": "2026-07-25T23:40:04", "stage": "RESCAN", "status": "DONE", "note": "order4 full audit shard0 12s max_syn=0.3721 n>0.10=1357"}
+{"time": "2026-07-25T23:40:32", "stage": "RESCAN", "status": "SETS", "note": "543004 个 5 阶完成 60s"}
+{"time": "2026-07-25T23:40:37", "stage": "RESCAN", "status": "DONE", "note": "order5 poly2 audit shard0 65s max_syn=0.2661 n>0.10=129"}
+{"time": "2026-07-25T23:40:40", "stage": "RESCAN", "status": "START", "note": "order5 poly2 eval=audit shard1/2 n=543004"}
+{"time": "2026-07-25T23:40:52", "stage": "RESCAN", "status": "SUBS", "note": "135751 个 4 阶子集完成 12s"}
+{"time": "2026-07-25T23:41:27", "stage": "RESCAN", "status": "SETS", "note": "543004 个 5 阶完成 115s"}
+{"time": "2026-07-25T23:41:31", "stage": "RESCAN", "status": "SETS", "note": "543004 个 5 阶完成 119s"}
+{"time": "2026-07-25T23:41:32", "stage": "RESCAN", "status": "DONE", "note": "order5 full audit shard1 120s max_syn=0.4420 n>0.10=3406"}
+{"time": "2026-07-25T23:41:36", "stage": "RESCAN", "status": "DONE", "note": "order5 full audit shard0 124s max_syn=0.5137 n>0.10=3308"}
+{"time": "2026-07-25T23:41:40", "stage": "RESCAN", "status": "SETS", "note": "543004 个 5 阶完成 60s"}
+{"time": "2026-07-25T23:41:45", "stage": "RESCAN", "status": "DONE", "note": "order5 poly2 audit shard1 65s max_syn=0.3650 n>0.10=143"}
+{"time": "2026-07-25T23:43:40", "stage": "RESCAN", "status": "START", "note": "order5 poly2 eval=audit shard0/1 n=1086008"}
+{"time": "2026-07-25T23:43:40", "stage": "RESCAN", "status": "START", "note": "order3 full eval=audit shard0/1 n=13244"}
+{"time": "2026-07-25T23:43:41", "stage": "RESCAN", "status": "START", "note": "order5 full eval=audit shard0/1 n=1086008"}
+{"time": "2026-07-25T23:43:41", "stage": "RESCAN", "status": "SUBS", "note": "946 个 2 阶子集完成 0s"}
+{"time": "2026-07-25T23:43:42", "stage": "RESCAN", "status": "SETS", "note": "13244 个 3 阶完成 1s"}
+{"time": "2026-07-25T23:43:42", "stage": "RESCAN", "status": "DONE", "note": "order3 full audit shard0 1s max_syn=0.0189 n>0.10=0"}
+{"time": "2026-07-25T23:43:44", "stage": "RESCAN", "status": "START", "note": "order3 poly2 eval=audit shard0/1 n=13244"}
+{"time": "2026-07-25T23:43:45", "stage": "RESCAN", "status": "SUBS", "note": "946 个 2 阶子集完成 0s"}
+{"time": "2026-07-25T23:43:45", "stage": "RESCAN", "status": "SETS", "note": "13244 个 3 阶完成 1s"}
+{"time": "2026-07-25T23:43:45", "stage": "RESCAN", "status": "DONE", "note": "order3 poly2 audit shard0 1s max_syn=0.0190 n>0.10=0"}
+{"time": "2026-07-25T23:43:48", "stage": "RESCAN", "status": "START", "note": "order4 full eval=audit shard0/1 n=135751"}
+{"time": "2026-07-25T23:43:49", "stage": "RESCAN", "status": "SUBS", "note": "13244 个 3 阶子集完成 1s"}
+{"time": "2026-07-25T23:43:52", "stage": "RESCAN", "status": "SUBS", "note": "135751 个 4 阶子集完成 12s"}
+{"time": "2026-07-25T23:43:55", "stage": "RESCAN", "status": "SUBS", "note": "135751 个 4 阶子集完成 14s"}
+{"time": "2026-07-25T23:44:01", "stage": "RESCAN", "status": "SETS", "note": "135751 个 4 阶完成 13s"}
+{"time": "2026-07-25T23:44:02", "stage": "RESCAN", "status": "DONE", "note": "order4 full audit shard0 15s max_syn=0.0210 n>0.10=0"}
+{"time": "2026-07-25T23:44:05", "stage": "RESCAN", "status": "START", "note": "order4 poly2 eval=audit shard0/1 n=135751"}
+{"time": "2026-07-25T23:44:06", "stage": "RESCAN", "status": "SUBS", "note": "13244 个 3 阶子集完成 1s"}
+{"time": "2026-07-25T23:44:17", "stage": "RESCAN", "status": "SETS", "note": "135751 个 4 阶完成 12s"}
+{"time": "2026-07-25T23:44:18", "stage": "RESCAN", "status": "DONE", "note": "order4 poly2 audit shard0 13s max_syn=0.0163 n>0.10=0"}
+{"time": "2026-07-25T23:45:26", "stage": "RESCAN", "status": "SETS", "note": "1086008 个 5 阶完成 105s"}
+{"time": "2026-07-25T23:45:35", "stage": "RESCAN", "status": "DONE", "note": "order5 poly2 audit shard0 115s max_syn=0.0159 n>0.10=0"}
+{"time": "2026-07-25T23:48:50", "stage": "RESCAN", "status": "SETS", "note": "1086008 个 5 阶完成 309s"}
+{"time": "2026-07-25T23:49:00", "stage": "RESCAN", "status": "DONE", "note": "order5 full audit shard0 319s max_syn=0.0289 n>0.10=0"}

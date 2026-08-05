@@ -1,0 +1,2 @@
+sample_note,search_proxy_vs_dnn_spearman,audit_proxy_vs_dnn_spearman,search_proxy_vs_dnn_mae,audit_proxy_vs_dnn_mae,search_proxy_conf_match_dnn,audit_proxy_conf_match_dnn
+24 search-selected quads; not a population estimate,0.014782608695652172,0.6165217391304347,0.03289371387412149,0.020286208484321822,0.7916666666666666,0.75

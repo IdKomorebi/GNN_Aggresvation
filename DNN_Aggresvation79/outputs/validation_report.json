@@ -1,0 +1,39 @@
+{
+  "status": "ready",
+  "checks": {
+    "raw_grid": {
+      "low_rows": 71280,
+      "triple_rows": 953568,
+      "unique_triples": 13244,
+      "kgrid": [
+        0,
+        1,
+        5,
+        10,
+        25,
+        50
+      ]
+    },
+    "k0_matches_77": {
+      "triple_entries": 158928,
+      "triple_max_abs_diff": 2.8610229492048722e-06,
+      "low_entries": 11880,
+      "low_max_abs_diff": 5.543231964199799e-06
+    },
+    "k25_matches_77_overlap": {
+      "entries": 47676,
+      "max_abs_diff": 0.0
+    },
+    "truth_design": {
+      "sample_triples": 2197,
+      "weighted_population": 13244.0,
+      "strong_sample": 327
+    },
+    "metric_ranges": "passed",
+    "recommended_hierarchy": {
+      "population_recall": 0.8864962043836215,
+      "test_recall": 0.8988967368310425,
+      "avg_updates_continuation": 19.0
+    }
+  }
+}

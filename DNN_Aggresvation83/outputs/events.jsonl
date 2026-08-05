@@ -1,0 +1,38 @@
+{"time": "2026-07-24T23:13:42", "stage": "TRAIN", "status": "START", "note": "cvar50/seed0；q=0.5, lambda=1.0"}
+{"time": "2026-07-24T23:13:43", "stage": "TRAIN", "status": "START", "note": "mix25_cvar25/seed0；q=0.25, lambda=0.25"}
+{"time": "2026-07-24T23:13:57", "stage": "TRAIN", "status": "DONE", "note": "cvar50/seed0 完成，epoch=229", "elapsed_s": 15.34401249885559}
+{"time": "2026-07-24T23:13:59", "stage": "TRAIN", "status": "DONE", "note": "mix25_cvar25/seed0 完成，epoch=229", "elapsed_s": 15.515466451644897}
+{"time": "2026-07-24T23:14:00", "stage": "TRAIN", "status": "START", "note": "cvar25/seed0；q=0.25, lambda=1.0"}
+{"time": "2026-07-24T23:14:01", "stage": "TRAIN", "status": "START", "note": "mix50_cvar25/seed0；q=0.25, lambda=0.5"}
+{"time": "2026-07-24T23:14:14", "stage": "TRAIN", "status": "DONE", "note": "cvar25/seed0 完成，epoch=203", "elapsed_s": 14.207257747650146}
+{"time": "2026-07-24T23:14:16", "stage": "TRAIN", "status": "DONE", "note": "mix50_cvar25/seed0 完成，epoch=229", "elapsed_s": 14.889464855194092}
+{"time": "2026-07-24T23:14:17", "stage": "TRAIN", "status": "START", "note": "cvar10/seed0；q=0.1, lambda=1.0"}
+{"time": "2026-07-24T23:14:19", "stage": "TRAIN", "status": "START", "note": "mix75_cvar25/seed0；q=0.25, lambda=0.75"}
+{"time": "2026-07-24T23:14:26", "stage": "TRAIN", "status": "DONE", "note": "cvar10/seed0 完成，epoch=122", "elapsed_s": 9.041619539260864}
+{"time": "2026-07-24T23:14:42", "stage": "TRAIN", "status": "DONE", "note": "mix75_cvar25/seed0 完成，epoch=348", "elapsed_s": 23.615462064743042}
+{"time": "2026-07-24T23:14:56", "stage": "K0", "status": "START", "note": "cvar50/seed0 全低阶空间前向"}
+{"time": "2026-07-24T23:14:58", "stage": "K0", "status": "DONE", "note": "cvar50/seed0 完成", "elapsed_s": 2.4805407524108887}
+{"time": "2026-07-24T23:15:01", "stage": "K0", "status": "START", "note": "cvar25/seed0 全低阶空间前向"}
+{"time": "2026-07-24T23:15:01", "stage": "K0", "status": "START", "note": "mix25_cvar25/seed0 全低阶空间前向"}
+{"time": "2026-07-24T23:15:04", "stage": "K0", "status": "DONE", "note": "cvar25/seed0 完成", "elapsed_s": 2.864861011505127}
+{"time": "2026-07-24T23:15:04", "stage": "K0", "status": "DONE", "note": "mix25_cvar25/seed0 完成", "elapsed_s": 3.0042386054992676}
+{"time": "2026-07-24T23:15:06", "stage": "K0", "status": "START", "note": "cvar10/seed0 全低阶空间前向"}
+{"time": "2026-07-24T23:15:06", "stage": "K0", "status": "START", "note": "mix50_cvar25/seed0 全低阶空间前向"}
+{"time": "2026-07-24T23:15:09", "stage": "K0", "status": "DONE", "note": "cvar10/seed0 完成", "elapsed_s": 3.1038949489593506}
+{"time": "2026-07-24T23:15:09", "stage": "K0", "status": "DONE", "note": "mix50_cvar25/seed0 完成", "elapsed_s": 2.9670026302337646}
+{"time": "2026-07-24T23:15:12", "stage": "K0", "status": "START", "note": "mix75_cvar25/seed0 全低阶空间前向"}
+{"time": "2026-07-24T23:15:14", "stage": "K0", "status": "DONE", "note": "mix75_cvar25/seed0 完成", "elapsed_s": 2.5390405654907227}
+{"time": "2026-07-24T23:17:19", "stage": "STRUCTURED", "status": "START", "note": "显式算术特征闭式低阶攻击者"}
+{"time": "2026-07-24T23:17:55", "stage": "STRUCTURED", "status": "DONE", "note": "闭式低阶攻击者完成", "elapsed_s": 35.33282542228699}
+{"time": "2026-07-24T23:19:36", "stage": "STRUCTURED", "status": "START", "note": "显式算术特征闭式低阶攻击者"}
+{"time": "2026-07-24T23:20:12", "stage": "STRUCTURED", "status": "DONE", "note": "闭式低阶攻击者完成", "elapsed_s": 36.15456986427307}
+{"time": "2026-07-24T23:20:56", "stage": "STRUCTURED", "status": "START", "note": "显式算术特征闭式低阶攻击者；scope=all, models=('poly2', 'arith')"}
+{"time": "2026-07-24T23:23:08", "stage": "STRUCTURED", "status": "DONE", "note": "闭式低阶攻击者完成", "elapsed_s": 131.45091843605042}
+{"time": "2026-07-24T23:23:46", "stage": "FEATURE-TRAIN", "status": "START", "note": "poly2/seed0"}
+{"time": "2026-07-24T23:23:50", "stage": "FEATURE-TRAIN", "status": "START", "note": "rawwide/seed0"}
+{"time": "2026-07-24T23:24:10", "stage": "FEATURE-TRAIN", "status": "DONE", "note": "poly2/seed0 完成", "elapsed_s": 23.88724398612976}
+{"time": "2026-07-24T23:24:17", "stage": "FEATURE-TRAIN", "status": "DONE", "note": "rawwide/seed0 完成", "elapsed_s": 27.51579785346985}
+{"time": "2026-07-24T23:24:38", "stage": "FEATURE-K0", "status": "START", "note": "poly2/seed0"}
+{"time": "2026-07-24T23:24:42", "stage": "FEATURE-K0", "status": "START", "note": "rawwide/seed0"}
+{"time": "2026-07-24T23:24:45", "stage": "FEATURE-K0", "status": "DONE", "note": "poly2/seed0 完成", "elapsed_s": 6.151519298553467}
+{"time": "2026-07-24T23:24:46", "stage": "FEATURE-K0", "status": "DONE", "note": "rawwide/seed0 完成", "elapsed_s": 3.7073895931243896}

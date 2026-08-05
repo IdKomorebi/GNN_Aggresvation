@@ -1,0 +1,39 @@
+{
+  "status": "share_with_caveats",
+  "calculation_checks": {
+    "n_extreme": 15,
+    "k10_parent_underestimated": 15,
+    "k10_pair_overestimated": 1,
+    "k10_parent_more_underfit_than_pair": 15,
+    "k10_s1_conf_matches_true": 4,
+    "k10_s2_conf_matches_true": 0,
+    "pure_s1_k10_top60": 8,
+    "s1_s2_k10_top60": 12,
+    "newly_rescued_by_s2": 4,
+    "d79_final": 7,
+    "d81_final": 11,
+    "d81_new_hits": 4,
+    "d81_lost_baseline_hits": 0
+  },
+  "k10_raw_means": {
+    "parent_true": 0.5709681749343872,
+    "parent_est": 0.2571965018908183,
+    "pair_true": 0.2789422790209452,
+    "pair_est": 0.23169225056966142,
+    "syn3_true": 0.29202589591344197,
+    "syn3_est_same_conf": 0.025504251321156798,
+    "s2_any": 0.8541174133618673
+  },
+  "max_error_identity_residual": 3.3306690738754696e-16,
+  "artifact": {
+    "charts": 2,
+    "tables": 1,
+    "html_bytes": 422854,
+    "portable_verification": "structural_only"
+  },
+  "required_caveats": [
+    "极强样本只有15个，其中14个来自历史top候选池。",
+    "S2-any在K10时与真实协同目标0/15对齐，属于跨目标代理信号。",
+    "当前环境无Chromium，HTML只完成结构验证，未完成浏览器交互验证。"
+  ]
+}

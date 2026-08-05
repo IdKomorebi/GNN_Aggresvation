@@ -1,0 +1,3 @@
+order,tau,n_strong,n_blind,blind_frac,beam_solves,beam_sets,beam_s,peel_solves,peel_restarts,peel_sets,peel_s,cov_beam,cov_peel,cov_union,cov_rand,rand_std,blind_cov_beam,blind_cov_peel
+4,0.1,230,24,0.1043,31011,30967,13.2,31013,48,6,28.5,0.8957,0.0261,0.8957,0.227,0.0342,0.0,0.0
+5,0.1,111,36,0.3243,62140,35141,28.4,62321,148,7,57.6,0.6486,0.0631,0.6577,0.027,0.0107,0.0,0.0278

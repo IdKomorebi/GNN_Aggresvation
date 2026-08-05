@@ -1,0 +1,32 @@
+{
+  "selected_for_direct_v": {
+    "method": "gradmask_1024",
+    "rank": 192,
+    "validation_mae": 0.05817539365882547
+  },
+  "selected_for_syn3": {
+    "method": "gradmask_1024",
+    "rank": 320,
+    "validation_per_conf_mae": 0.02454892036815484
+  },
+  "selected_lora_for_direct_v": {
+    "method": "lora_lr0.005_K25",
+    "rank": 16,
+    "validation_mae": 0.03944153160366238
+  },
+  "selected_lora_for_syn3": {
+    "method": "lora_lr0.005_K25",
+    "rank": 16,
+    "validation_per_conf_mae": 0.01786951944231987
+  },
+  "selected_lora_K1_for_direct_v": {
+    "method": "lora_lr0.005_K1",
+    "rank": 16,
+    "validation_mae": 0.06153915281224455
+  },
+  "selected_lora_K1_for_syn3": {
+    "method": "lora_lr0.01_K1",
+    "rank": 16,
+    "validation_per_conf_mae": 0.024001824359099068
+  }
+}

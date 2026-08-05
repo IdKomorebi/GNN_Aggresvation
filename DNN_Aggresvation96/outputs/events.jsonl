@@ -1,0 +1,179 @@
+{"time": "2026-07-29T01:10:33", "stage": "SCAN", "status": "START", "note": "sample o5: 1500 个候选（空间 1086008）"}
+{"time": "2026-07-29T01:10:56", "stage": "SCAN", "status": "DONE", "note": "o5 sample 分片0: 1500 集合 max=0.0849 >0.10=0 23s"}
+{"time": "2026-07-29T01:11:42", "stage": "SCAN", "status": "START", "note": "build_subs o5: 分片 1/2 [543004,1086008) / 1086008"}
+{"time": "2026-07-29T01:11:42", "stage": "SCAN", "status": "START", "note": "build_subs o5: 分片 0/2 [0,543004) / 1086008"}
+{"time": "2026-07-29T01:32:53", "stage": "SCAN", "status": "DONE", "note": "build_subs 分片 1 完成 1272s → subs_o5_oracle_l1_aug8_seed0_last_part1of2.npy"}
+{"time": "2026-07-29T01:33:44", "stage": "SCAN", "status": "DONE", "note": "build_subs 分片 0 完成 1322s → subs_o5_oracle_l1_aug8_seed0_last_part0of2.npy"}
+{"time": "2026-07-29T01:35:44", "stage": "SCAN", "status": "SUBS", "note": "子集缓存就绪 (1086008, 12)"}
+{"time": "2026-07-29T01:35:44", "stage": "SCAN", "status": "START", "note": "full o6: 分片 0/2 [0,3529526) / 7059052"}
+{"time": "2026-07-29T01:35:44", "stage": "SCAN", "status": "SUBS", "note": "子集缓存就绪 (1086008, 12)"}
+{"time": "2026-07-29T01:35:44", "stage": "SCAN", "status": "START", "note": "full o6: 分片 1/2 [3529526,7059052) / 7059052"}
+{"time": "2026-07-29T01:43:26", "stage": "SCAN", "status": "START", "note": "sample o6: 150000 个候选（空间 7059052）"}
+{"time": "2026-07-29T01:43:26", "stage": "SCAN", "status": "START", "note": "sample o6: 150000 个候选（空间 7059052）"}
+{"time": "2026-07-29T01:49:04", "stage": "SCAN", "status": "DONE", "note": "o6 sample 分片0: 150000 集合 max=0.1065 >0.10=3 338s"}
+{"time": "2026-07-29T01:49:07", "stage": "SCAN", "status": "START", "note": "sample o7: 30000 个候选（空间 38320568）"}
+{"time": "2026-07-29T01:49:19", "stage": "SCAN", "status": "DONE", "note": "o6 sample 分片1: 150000 集合 max=0.1195 >0.10=4 353s"}
+{"time": "2026-07-29T01:49:21", "stage": "SCAN", "status": "START", "note": "sample o7: 30000 个候选（空间 38320568）"}
+{"time": "2026-07-29T01:58:21", "stage": "SCAN", "status": "DONE", "note": "o7 sample 分片0: 30000 集合 max=0.0835 >0.10=0 554s"}
+{"time": "2026-07-29T01:58:24", "stage": "SCAN", "status": "START", "note": "sample o8: 30000 个候选（空间 177232627）"}
+{"time": "2026-07-29T02:08:54", "stage": "SCAN", "status": "DONE", "note": "o8 sample 分片0: 30000 集合 max=0.0716 >0.10=0 631s"}
+{"time": "2026-07-29T02:27:11", "stage": "SCAN", "status": "START", "note": "sample o7: 30000 个候选（空间 38320568）"}
+{"time": "2026-07-29T02:27:11", "stage": "SCAN", "status": "START", "note": "sample o8: 30000 个候选（空间 177232627）"}
+{"time": "2026-07-29T02:34:21", "stage": "CERT", "status": "START", "note": "order-6 shard0/3: 7 个集合（strong 4 / control 3），已完成 0"}
+{"time": "2026-07-29T02:34:21", "stage": "CERT", "status": "START", "note": "order-6 shard1/3: 7 个集合（strong 3 / control 4），已完成 0"}
+{"time": "2026-07-29T02:34:21", "stage": "CERT", "status": "START", "note": "order-6 shard2/3: 6 个集合（strong 3 / control 3），已完成 0"}
+{"time": "2026-07-29T02:36:31", "stage": "SCAN", "status": "DONE", "note": "o7 sample 分片1: 30000 集合 max=0.0729 >0.10=0 560s"}
+{"time": "2026-07-29T02:36:47", "stage": "CERT", "status": "START", "note": "order-7 shard0/4: 5 个集合（strong 3 / control 2），已完成 0"}
+{"time": "2026-07-29T02:46:34", "stage": "CERT", "status": "START", "note": "order-7 shard1/4: 5 个集合（strong 3 / control 2），已完成 2"}
+{"time": "2026-07-29T02:46:34", "stage": "CERT", "status": "START", "note": "order-7 shard3/4: 5 个集合（strong 2 / control 3），已完成 2"}
+{"time": "2026-07-29T02:46:34", "stage": "CERT", "status": "START", "note": "order-7 shard2/4: 5 个集合（strong 2 / control 3），已完成 2"}
+{"time": "2026-07-29T02:59:54", "stage": "CERT", "status": "DONE", "note": "shard0 用时 1386s"}
+{"time": "2026-07-29T03:02:45", "stage": "CERT", "status": "DONE", "note": "shard1 用时 1704s"}
+{"time": "2026-07-29T03:03:52", "stage": "CERT", "status": "DONE", "note": "shard2 用时 1771s"}
+{"time": "2026-07-29T03:07:24", "stage": "CERT", "status": "DONE", "note": "shard0 用时 1983s"}
+{"time": "2026-07-29T03:10:14", "stage": "CERT", "status": "DONE", "note": "shard3 用时 1420s"}
+{"time": "2026-07-29T03:14:34", "stage": "CERT", "status": "DONE", "note": "shard1 用时 1680s"}
+{"time": "2026-07-29T03:14:53", "stage": "CERT", "status": "DONE", "note": "shard2 用时 1700s"}
+{"time": "2026-07-30T18:48:46", "stage": "INJ", "status": "START", "note": "orders=[2] r2s=[0.05, 0.1, 0.2, 0.35] trials=2 seeds=[0] 本分片 2/2 个元组 mode=both"}
+{"time": "2026-07-30T18:49:53", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 68s → inject_truth_selfcheck_s0of1.csv"}
+{"time": "2026-07-30T18:49:55", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 1s"}
+{"time": "2026-07-30T18:56:00", "stage": "INJ", "status": "START", "note": "orders=[2] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth"}
+{"time": "2026-07-30T18:57:01", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 61s → inject_truth_selfcheck2_s0of1.csv"}
+{"time": "2026-07-30T18:57:36", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=both"}
+{"time": "2026-07-30T18:57:37", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=both"}
+{"time": "2026-07-30T18:57:37", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=both"}
+{"time": "2026-07-30T18:57:37", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=both"}
+{"time": "2026-07-30T19:05:37", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 480s → inject_truth_s0of4.csv"}
+{"time": "2026-07-30T19:06:59", "stage": "INJ", "status": "TRUTH", "note": "分片1 真值端完成 563s → inject_truth_s1of4.csv"}
+{"time": "2026-07-30T19:07:14", "stage": "INJ", "status": "TRUTH", "note": "分片3 真值端完成 577s → inject_truth_s3of4.csv"}
+{"time": "2026-07-30T19:07:20", "stage": "INJ", "status": "TRUTH", "note": "分片2 真值端完成 583s → inject_truth_s2of4.csv"}
+{"time": "2026-07-30T19:33:32", "stage": "INJ", "status": "START", "note": "orders=[6, 7] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/6 个元组 mode=truth"}
+{"time": "2026-07-30T19:33:32", "stage": "INJ", "status": "START", "note": "orders=[6, 7] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/6 个元组 mode=truth"}
+{"time": "2026-07-30T19:33:32", "stage": "INJ", "status": "START", "note": "orders=[6, 7] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/6 个元组 mode=truth"}
+{"time": "2026-07-30T19:33:33", "stage": "INJ", "status": "START", "note": "orders=[6, 7] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/6 个元组 mode=truth"}
+{"time": "2026-07-30T19:34:56", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 84s → inject_truth_hgb_s0of2.csv"}
+{"time": "2026-07-30T19:34:58", "stage": "INJ", "status": "TRUTH", "note": "分片1 真值端完成 85s → inject_truth_hgb_s1of2.csv"}
+{"time": "2026-07-30T19:36:53", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 200s → inject_truth_dnn512_s0of2.csv"}
+{"time": "2026-07-30T19:36:55", "stage": "INJ", "status": "TRUTH", "note": "分片1 真值端完成 202s → inject_truth_dnn512_s1of2.csv"}
+{"time": "2026-07-30T19:40:22", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search"}
+{"time": "2026-07-30T19:40:22", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search"}
+{"time": "2026-07-30T19:40:22", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search"}
+{"time": "2026-07-30T19:40:22", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search"}
+{"time": "2026-07-30T19:40:41", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 19s"}
+{"time": "2026-07-30T19:40:42", "stage": "INJ", "status": "SEARCH", "note": "分片2 搜索端完成 20s"}
+{"time": "2026-07-30T19:40:43", "stage": "INJ", "status": "SEARCH", "note": "分片3 搜索端完成 21s"}
+{"time": "2026-07-30T19:42:18", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.05, 0.1, 0.2, 0.35] trials=3 seeds=[0, 1] 本分片 3/12 个元组 mode=search"}
+{"time": "2026-07-30T19:42:42", "stage": "INJ", "status": "SEARCH", "note": "分片1 搜索端完成 24s"}
+{"time": "2026-07-30T19:47:02", "stage": "INJ", "status": "START", "note": "orders=[5, 6] r2s=[0.35] trials=3 seeds=[0] 本分片 6/6 个元组 mode=truth"}
+{"time": "2026-07-30T19:47:02", "stage": "INJ", "status": "START", "note": "orders=[5, 6] r2s=[0.35] trials=3 seeds=[0] 本分片 6/6 个元组 mode=truth"}
+{"time": "2026-07-30T19:47:03", "stage": "INJ", "status": "START", "note": "orders=[5, 6] r2s=[0.35] trials=3 seeds=[0] 本分片 6/6 个元组 mode=truth"}
+{"time": "2026-07-30T19:47:03", "stage": "INJ", "status": "START", "note": "orders=[5, 6] r2s=[0.35] trials=3 seeds=[0] 本分片 6/6 个元组 mode=truth"}
+{"time": "2026-07-30T19:49:02", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 120s → inject_truth_scale_dnn128_n1200_s0of1.csv"}
+{"time": "2026-07-30T19:50:51", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 228s → inject_truth_scale_dnn128_n2400_s0of1.csv"}
+{"time": "2026-07-30T19:53:07", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 365s → inject_truth_scale_dnn128_n3600_s0of1.csv"}
+{"time": "2026-07-30T19:55:51", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=both"}
+{"time": "2026-07-30T19:55:51", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 3/9 个元组 mode=both"}
+{"time": "2026-07-30T19:55:52", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=both"}
+{"time": "2026-07-30T19:55:52", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=both"}
+{"time": "2026-07-30T19:56:59", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 597s → inject_truth_scale_dnn128_n4589_s0of1.csv"}
+{"time": "2026-07-30T19:59:32", "stage": "INJ", "status": "TRUTH", "note": "分片2 真值端完成 221s → inject_truth_caiso_dnn128_s2of4.csv"}
+{"time": "2026-07-30T19:59:47", "stage": "INJ", "status": "SEARCH", "note": "分片2 搜索端完成 15s"}
+{"time": "2026-07-30T20:00:29", "stage": "INJ", "status": "TRUTH", "note": "分片1 真值端完成 277s → inject_truth_caiso_dnn128_s1of4.csv"}
+{"time": "2026-07-30T20:00:38", "stage": "INJ", "status": "TRUTH", "note": "分片3 真值端完成 286s → inject_truth_caiso_dnn128_s3of4.csv"}
+{"time": "2026-07-30T20:00:55", "stage": "INJ", "status": "SEARCH", "note": "分片3 搜索端完成 17s"}
+{"time": "2026-07-30T20:02:25", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 393s → inject_truth_caiso_dnn128_s0of4.csv"}
+{"time": "2026-07-30T20:02:49", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 24s"}
+{"time": "2026-07-30T22:28:22", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=search"}
+{"time": "2026-07-30T22:28:32", "stage": "INJ", "status": "START", "note": "orders=[8] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth"}
+{"time": "2026-07-30T22:28:35", "stage": "INJ", "status": "START", "note": "orders=[9] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth"}
+{"time": "2026-07-30T22:28:37", "stage": "INJ", "status": "START", "note": "orders=[10] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth"}
+{"time": "2026-07-30T22:28:39", "stage": "INJ", "status": "SEARCH", "note": "分片1 搜索端完成 17s"}
+{"time": "2026-07-30T22:31:04", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.1, 0.2, 0.35] trials=3 seeds=[0] 本分片 2/9 个元组 mode=search"}
+{"time": "2026-07-30T22:31:16", "stage": "INJ", "status": "START", "note": "orders=[9] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth"}
+{"time": "2026-07-30T22:31:17", "stage": "INJ", "status": "START", "note": "orders=[8] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth"}
+{"time": "2026-07-30T22:31:19", "stage": "INJ", "status": "START", "note": "orders=[10] r2s=[0.2, 0.35] trials=3 seeds=[0] 本分片 3/3 个元组 mode=truth"}
+{"time": "2026-07-30T22:31:23", "stage": "INJ", "status": "SEARCH", "note": "分片1 搜索端完成 19s"}
+{"time": "2026-07-30T22:42:01", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 642s → inject_truth_hi10_caiso_dnn128_s0of1.csv"}
+{"time": "2026-07-30T22:42:22", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 665s → inject_truth_hi8_caiso_dnn128_s0of1.csv"}
+{"time": "2026-07-30T22:42:35", "stage": "INJ", "status": "TRUTH", "note": "分片0 真值端完成 679s → inject_truth_hi9_caiso_dnn128_s0of1.csv"}
+{"time": "2026-07-30T22:58:58", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=3 seeds=[0, 1] 本分片 5/9 个元组 mode=search"}
+{"time": "2026-07-30T22:59:05", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 8s"}
+{"time": "2026-07-30T23:12:00", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 24/24 个元组 mode=search"}
+{"time": "2026-07-30T23:12:03", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 24/24 个元组 mode=search"}
+{"time": "2026-07-30T23:12:23", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 24/24 个元组 mode=search"}
+{"time": "2026-07-30T23:12:58", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 58s"}
+{"time": "2026-07-30T23:13:30", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 66s"}
+{"time": "2026-07-30T23:14:42", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 159s"}
+{"time": "2026-07-30T23:15:08", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7, 8] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 24/24 个元组 mode=search"}
+{"time": "2026-07-30T23:18:27", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 199s"}
+{"time": "2026-07-30T23:54:09", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-30T23:54:10", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-30T23:54:11", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-30T23:56:02", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 111s"}
+{"time": "2026-07-30T23:56:05", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 114s"}
+{"time": "2026-07-30T23:56:05", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 116s"}
+{"time": "2026-07-30T23:56:14", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-30T23:56:14", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-30T23:58:04", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 110s"}
+{"time": "2026-07-30T23:58:11", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 117s"}
+{"time": "2026-07-31T00:04:24", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-31T00:04:25", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-31T00:04:26", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-31T00:06:14", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 109s"}
+{"time": "2026-07-31T00:06:22", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 118s"}
+{"time": "2026-07-31T00:06:22", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-31T00:06:23", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 116s"}
+{"time": "2026-07-31T00:06:30", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=6 seeds=[0, 1] 本分片 18/18 个元组 mode=search"}
+{"time": "2026-07-31T00:08:11", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 109s"}
+{"time": "2026-07-31T00:08:33", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 123s"}
+{"time": "2026-07-31T00:14:37", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:14:38", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:14:39", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:21:56", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 437s"}
+{"time": "2026-07-31T00:22:01", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:22:01", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 442s"}
+{"time": "2026-07-31T00:22:07", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:22:25", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 468s"}
+{"time": "2026-07-31T00:22:31", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:29:18", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 437s"}
+{"time": "2026-07-31T00:29:24", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:29:32", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 445s"}
+{"time": "2026-07-31T00:29:38", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:30:36", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 484s"}
+{"time": "2026-07-31T00:30:41", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:36:41", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 436s"}
+{"time": "2026-07-31T00:36:46", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:37:01", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 444s"}
+{"time": "2026-07-31T00:37:07", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:38:29", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 468s"}
+{"time": "2026-07-31T00:38:35", "stage": "INJ", "status": "START", "note": "orders=[5, 6, 7] r2s=[0.2, 0.35] trials=24 seeds=[0, 1] 本分片 72/72 个元组 mode=search"}
+{"time": "2026-07-31T00:44:05", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 438s"}
+{"time": "2026-07-31T00:44:30", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 443s"}
+{"time": "2026-07-31T00:46:42", "stage": "INJ", "status": "SEARCH", "note": "分片0 搜索端完成 487s"}
+{"time": "2026-07-31T00:52:21", "stage": "SCAN", "status": "START", "note": "build_subs o5: 分片 0/3 [0,362002) / 1086008"}
+{"time": "2026-07-31T00:52:22", "stage": "SCAN", "status": "START", "note": "build_subs o5: 分片 1/3 [362002,724005) / 1086008"}
+{"time": "2026-07-31T00:52:23", "stage": "SCAN", "status": "START", "note": "build_subs o5: 分片 2/3 [724005,1086008) / 1086008"}
+{"time": "2026-07-31T01:05:34", "stage": "SCAN", "status": "DONE", "note": "build_subs 分片 1 完成 792s → subs_o5_oracle_l1_r93_seed0_last_part1of3.npy"}
+{"time": "2026-07-31T01:05:48", "stage": "SCAN", "status": "DONE", "note": "build_subs 分片 2 完成 805s → subs_o5_oracle_l1_r93_seed0_last_part2of3.npy"}
+{"time": "2026-07-31T01:06:25", "stage": "SCAN", "status": "DONE", "note": "build_subs 分片 0 完成 844s → subs_o5_oracle_l1_r93_seed0_last_part0of3.npy"}
+{"time": "2026-07-31T01:06:39", "stage": "SCAN", "status": "START", "note": "sample o6: 150000 个候选（空间 7059052）"}
+{"time": "2026-07-31T01:06:39", "stage": "SCAN", "status": "START", "note": "sample o6: 150000 个候选（空间 7059052）"}
+{"time": "2026-07-31T01:12:25", "stage": "SCAN", "status": "DONE", "note": "o6 sample 分片1: 150000 集合 max=0.1475 >0.10=6 346s"}
+{"time": "2026-07-31T01:12:31", "stage": "SCAN", "status": "DONE", "note": "o6 sample 分片0: 150000 集合 max=0.1195 >0.10=3 352s"}
+{"time": "2026-07-31T01:12:33", "stage": "CERT", "status": "START", "note": "order-6 shard0/4: 5 个集合（strong 3 / control 2），已完成 0"}
+{"time": "2026-07-31T01:12:34", "stage": "CERT", "status": "START", "note": "order-6 shard2/4: 5 个集合（strong 2 / control 3），已完成 0"}
+{"time": "2026-07-31T01:12:34", "stage": "CERT", "status": "START", "note": "order-6 shard1/4: 5 个集合（strong 3 / control 2），已完成 0"}
+{"time": "2026-07-31T01:12:34", "stage": "CERT", "status": "START", "note": "order-6 shard3/4: 5 个集合（strong 2 / control 3），已完成 0"}
+{"time": "2026-07-31T01:31:42", "stage": "CERT", "status": "DONE", "note": "shard3 用时 1148s"}
+{"time": "2026-07-31T01:31:58", "stage": "CERT", "status": "DONE", "note": "shard2 用时 1164s"}
+{"time": "2026-07-31T01:32:01", "stage": "CERT", "status": "DONE", "note": "shard0 用时 1167s"}
+{"time": "2026-07-31T01:32:36", "stage": "CERT", "status": "DONE", "note": "shard1 用时 1202s"}
+{"time": "2026-07-31T10:19:45", "stage": "SCAN", "status": "SUBS", "note": "子集缓存就绪 (1086008, 12)"}
+{"time": "2026-07-31T10:19:45", "stage": "SCAN", "status": "START", "note": "full o6: 分片 1/3 [2353017,4706034) / 7059052"}
+{"time": "2026-07-31T10:19:45", "stage": "SCAN", "status": "SUBS", "note": "子集缓存就绪 (1086008, 12)"}
+{"time": "2026-07-31T10:19:45", "stage": "SCAN", "status": "START", "note": "full o6: 分片 2/3 [4706034,7059052) / 7059052"}
+{"time": "2026-07-31T10:19:45", "stage": "SCAN", "status": "SUBS", "note": "子集缓存就绪 (1086008, 12)"}
+{"time": "2026-07-31T10:19:45", "stage": "SCAN", "status": "START", "note": "full o6: 分片 0/3 [0,2353017) / 7059052"}
+{"time": "2026-07-31T11:45:26", "stage": "SCAN", "status": "DONE", "note": "o6 full 分片1: 2353017 集合 max=0.1886 >0.10=99 5141s"}
+{"time": "2026-07-31T11:46:53", "stage": "SCAN", "status": "DONE", "note": "o6 full 分片2: 2353018 集合 max=0.2299 >0.10=85 5228s"}
+{"time": "2026-07-31T11:51:53", "stage": "SCAN", "status": "DONE", "note": "o6 full 分片0: 2353017 集合 max=0.1761 >0.10=128 5528s"}

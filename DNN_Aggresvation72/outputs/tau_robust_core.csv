@@ -1,0 +1,17 @@
+field,single_leak
+forecast_load_mw_latest_available,0.990109086036682
+system_energy_price_da,0.9828075170516968
+forecast_load_mw_day_ahead,0.9819605946540833
+gen_fuel_gas_mw,0.8743639588356018
+gen_fuel_nuclear_pct,0.8647603392601013
+gen_fuel_coal_mw,0.7657418251037598
+da_as_mcp_synchronized_reserve,0.6897073984146118
+gen_fuel_oil_mw,0.6771513819694519
+gen_fuel_nuclear_mw,0.4983429312705993
+gen_fuel_oil_pct,0.6432538032531738
+da_as_nsr_mw_primary_reserve,0.6346538066864014
+gen_fuel_other_renewables_pct,0.4974638223648071
+da_as_mcp_primary_reserve,0.6037368774414062
+gen_fuel_hydro_mw,0.3031798601150512
+gen_fuel_wind_mw,0.067517340183258
+gen_fuel_multiple_fuels_mw,0.2416051626205444

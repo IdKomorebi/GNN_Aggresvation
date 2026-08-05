@@ -1,0 +1,119 @@
+# DNN_Aggresvation85 运行流水
+
+> 自动记录；实验结论见 `CHANGELOG.md`。
+
+- `2026-07-25 23:20:44` · **[INJ] DATA**　train=(4589, 44) test=(1967, 44)
+- `2026-07-25 23:20:50` · **[INJ] ROW**　alpha=0.1 trial=0 t=1.3(pct68.75) syn=0.0000(pct3.5) maxsub_v=0.000
+- `2026-07-25 23:20:56` · **[INJ] ROW**　alpha=0.1 trial=1 t=5.0(pct100.0) syn=-0.0021(pct8.25) maxsub_v=0.004
+- `2026-07-25 23:21:02` · **[INJ] ROW**　alpha=0.1 trial=2 t=1.0(pct54.0) syn=-0.0056(pct7.75) maxsub_v=0.057
+- `2026-07-25 23:21:08` · **[INJ] ROW**　alpha=0.1 trial=3 t=4.7(pct100.0) syn=0.0000(pct36.25) maxsub_v=0.000
+- `2026-07-25 23:21:14` · **[INJ] ROW**　alpha=0.1 trial=4 t=0.1(pct9.75) syn=-0.0029(pct18.5) maxsub_v=0.029
+- `2026-07-25 23:21:20` · **[INJ] ROW**　alpha=0.1 trial=5 t=1.2(pct64.25) syn=-0.0023(pct0.25) maxsub_v=0.003
+- `2026-07-25 23:21:26` · **[INJ] ROW**　alpha=0.2 trial=0 t=10.8(pct100.0) syn=-0.0002(pct57.75) maxsub_v=0.002
+- `2026-07-25 23:21:32` · **[INJ] ROW**　alpha=0.2 trial=1 t=12.5(pct100.0) syn=0.0007(pct99.25) maxsub_v=0.003
+- `2026-07-25 23:21:38` · **[INJ] ROW**　alpha=0.2 trial=2 t=8.7(pct100.0) syn=-0.0018(pct18.75) maxsub_v=0.022
+- `2026-07-25 23:21:44` · **[INJ] ROW**　alpha=0.2 trial=3 t=2.7(pct92.75) syn=-0.0162(pct0.0) maxsub_v=0.026
+- `2026-07-25 23:21:50` · **[INJ] ROW**　alpha=0.2 trial=4 t=5.9(pct100.0) syn=-0.0272(pct5.75) maxsub_v=0.055
+- `2026-07-25 23:21:56` · **[INJ] ROW**　alpha=0.2 trial=5 t=9.3(pct100.0) syn=-0.0024(pct23.25) maxsub_v=0.023
+- `2026-07-25 23:22:02` · **[INJ] ROW**　alpha=0.3 trial=0 t=13.8(pct100.0) syn=-0.0104(pct2.75) maxsub_v=0.044
+- `2026-07-25 23:22:08` · **[INJ] ROW**　alpha=0.3 trial=1 t=6.5(pct99.75) syn=0.0031(pct99.5) maxsub_v=0.032
+- `2026-07-25 23:22:14` · **[INJ] ROW**　alpha=0.3 trial=2 t=13.7(pct100.0) syn=-0.0004(pct47.0) maxsub_v=0.035
+- `2026-07-25 23:22:20` · **[INJ] ROW**　alpha=0.3 trial=3 t=10.8(pct100.0) syn=-0.0042(pct6.0) maxsub_v=0.008
+- `2026-07-25 23:22:26` · **[INJ] ROW**　alpha=0.3 trial=4 t=16.8(pct100.0) syn=0.0031(pct100.0) maxsub_v=0.007
+- `2026-07-25 23:22:32` · **[INJ] ROW**　alpha=0.3 trial=5 t=10.1(pct100.0) syn=0.0020(pct99.75) maxsub_v=0.065
+- `2026-07-25 23:22:38` · **[INJ] ROW**　alpha=0.45 trial=0 t=5.0(pct89.0) syn=0.0007(pct76.75) maxsub_v=0.495
+- `2026-07-25 23:22:44` · **[INJ] ROW**　alpha=0.45 trial=1 t=13.7(pct100.0) syn=-0.0004(pct66.0) maxsub_v=0.102
+- `2026-07-25 23:22:49` · **[INJ] ROW**　alpha=0.45 trial=2 t=0.7(pct21.0) syn=-0.0043(pct4.75) maxsub_v=0.028
+- `2026-07-25 23:22:55` · **[INJ] ROW**　alpha=0.45 trial=3 t=22.1(pct100.0) syn=0.0002(pct79.75) maxsub_v=0.050
+- `2026-07-25 23:23:01` · **[INJ] ROW**　alpha=0.45 trial=4 t=17.2(pct100.0) syn=0.0019(pct96.25) maxsub_v=0.158
+- `2026-07-25 23:23:07` · **[INJ] ROW**　alpha=0.45 trial=5 t=12.1(pct100.0) syn=0.0064(pct99.5) maxsub_v=0.068
+- `2026-07-25 23:23:55` · **[STAB] SPLIT**　A=3278 B=3278 两个不相交半份
+- `2026-07-25 23:24:06` · **[STAB] PROG**　order3 500/3000
+- `2026-07-25 23:24:16` · **[STAB] PROG**　order3 1000/3000
+- `2026-07-25 23:24:28` · **[STAB] PROG**　order3 1500/3000
+- `2026-07-25 23:24:39` · **[STAB] PROG**　order3 2000/3000
+- `2026-07-25 23:24:50` · **[STAB] PROG**　order3 2500/3000
+- `2026-07-25 23:25:00` · **[STAB] PROG**　order3 3000/3000
+- `2026-07-25 23:25:00` · **[STAB] ROW**　order3 t_all=0.6436 syn_all=0.6278 t_top100=0.4501 syn_top100=0.4728
+- `2026-07-25 23:25:16` · **[STAB] PROG**　order4 500/3000
+- `2026-07-25 23:25:33` · **[STAB] PROG**　order4 1000/3000
+- `2026-07-25 23:25:50` · **[STAB] PROG**　order4 1500/3000
+- `2026-07-25 23:26:06` · **[STAB] PROG**　order4 2000/3000
+- `2026-07-25 23:26:13` · **[ABL] ROW**　alpha=0.2 tr=0 poly2 syn=-0.0003(pct33.33) full syn=-0.0052(pct6.33) t=2.43
+- `2026-07-25 23:26:22` · **[ABL] ROW**　alpha=0.2 tr=1 poly2 syn=0.0005(pct89.67) full syn=0.007(pct98.0) t=2.89
+- `2026-07-25 23:26:23` · **[STAB] PROG**　order4 2500/3000
+- `2026-07-25 23:26:30` · **[ABL] ROW**　alpha=0.2 tr=2 poly2 syn=0.0015(pct100.0) full syn=0.041(pct100.0) t=10.59
+- `2026-07-25 23:26:37` · **[ABL] ROW**　alpha=0.2 tr=3 poly2 syn=-0.0009(pct29.33) full syn=0.0307(pct100.0) t=10.86
+- `2026-07-25 23:26:40` · **[STAB] PROG**　order4 3000/3000
+- `2026-07-25 23:26:40` · **[STAB] ROW**　order4 t_all=0.4431 syn_all=0.5313 t_top100=-0.0835 syn_top100=0.4372
+- `2026-07-25 23:26:46` · **[ABL] ROW**　alpha=0.2 tr=4 poly2 syn=0.0(pct19.67) full syn=0.0104(pct100.0) t=6.64
+- `2026-07-25 23:26:54` · **[ABL] ROW**　alpha=0.3 tr=0 poly2 syn=0.0009(pct93.33) full syn=0.0179(pct99.67) t=7.19
+- `2026-07-25 23:27:02` · **[ABL] ROW**　alpha=0.3 tr=1 poly2 syn=-0.0004(pct63.33) full syn=0.0458(pct100.0) t=13.88
+- `2026-07-25 23:27:10` · **[ABL] ROW**　alpha=0.3 tr=2 poly2 syn=-0.0011(pct63.67) full syn=0.0138(pct99.33) t=3.64
+- `2026-07-25 23:27:18` · **[ABL] ROW**　alpha=0.3 tr=3 poly2 syn=0.0001(pct88.0) full syn=0.012(pct100.0) t=3.42
+- `2026-07-25 23:27:25` · **[ABL] ROW**　alpha=0.3 tr=4 poly2 syn=0.0(pct17.0) full syn=-0.0012(pct9.33) t=1.33
+- `2026-07-25 23:27:33` · **[ABL] ROW**　alpha=0.45 tr=0 poly2 syn=0.0002(pct99.33) full syn=0.0205(pct100.0) t=4.88
+- `2026-07-25 23:27:41` · **[ABL] ROW**　alpha=0.45 tr=1 poly2 syn=-0.114(pct0.33) full syn=-0.0371(pct16.33) t=0.57
+- `2026-07-25 23:27:49` · **[ABL] ROW**　alpha=0.45 tr=2 poly2 syn=0.0166(pct98.67) full syn=0.0465(pct98.0) t=3.38
+- `2026-07-25 23:27:57` · **[ABL] ROW**　alpha=0.45 tr=3 poly2 syn=-0.0059(pct4.33) full syn=0.1414(pct100.0) t=25.09
+- `2026-07-25 23:28:06` · **[ABL] ROW**　alpha=0.45 tr=4 poly2 syn=-0.003(pct13.0) full syn=0.1789(pct100.0) t=28.22
+- `2026-07-25 23:38:58` ▶ **[RESCAN] START**　order3 full eval=audit shard0/1 n=13244
+- `2026-07-25 23:38:59` · **[RESCAN] SUBS**　946 个 2 阶子集完成 1s
+- `2026-07-25 23:39:00` · **[RESCAN] SETS**　13244 个 3 阶完成 2s
+- `2026-07-25 23:39:00` ✔ **[RESCAN] DONE**　order3 full audit shard0 2s max_syn=0.5031 n>0.10=647
+- `2026-07-25 23:39:32` ▶ **[RESCAN] START**　order3 poly2 eval=audit shard0/1 n=13244
+- `2026-07-25 23:39:32` · **[RESCAN] SUBS**　946 个 2 阶子集完成 0s
+- `2026-07-25 23:39:32` ▶ **[RESCAN] START**　order5 poly2 eval=audit shard0/2 n=543004
+- `2026-07-25 23:39:32` ▶ **[RESCAN] START**　order5 full eval=audit shard0/2 n=543004
+- `2026-07-25 23:39:32` ▶ **[RESCAN] START**　order5 full eval=audit shard1/2 n=543004
+- `2026-07-25 23:39:33` · **[RESCAN] SETS**　13244 个 3 阶完成 1s
+- `2026-07-25 23:39:33` ✔ **[RESCAN] DONE**　order3 poly2 audit shard0 1s max_syn=0.4915 n>0.10=496
+- `2026-07-25 23:39:35` ▶ **[RESCAN] START**　order4 poly2 eval=audit shard0/1 n=135751
+- `2026-07-25 23:39:36` · **[RESCAN] SUBS**　13244 个 3 阶子集完成 1s
+- `2026-07-25 23:39:44` · **[RESCAN] SUBS**　135751 个 4 阶子集完成 12s
+- `2026-07-25 23:39:45` · **[RESCAN] SETS**　135751 个 4 阶完成 9s
+- `2026-07-25 23:39:45` · **[RESCAN] SUBS**　135751 个 4 阶子集完成 13s
+- `2026-07-25 23:39:46` · **[RESCAN] SUBS**　135751 个 4 阶子集完成 14s
+- `2026-07-25 23:39:46` ✔ **[RESCAN] DONE**　order4 poly2 audit shard0 11s max_syn=0.2553 n>0.10=328
+- `2026-07-25 23:39:48` ▶ **[RESCAN] START**　order3 full eval=audit shard0/1 n=13244
+- `2026-07-25 23:39:48` · **[RESCAN] SUBS**　946 个 2 阶子集完成 0s
+- `2026-07-25 23:39:49` · **[RESCAN] SETS**　13244 个 3 阶完成 1s
+- `2026-07-25 23:39:49` ✔ **[RESCAN] DONE**　order3 full audit shard0 1s max_syn=0.5031 n>0.10=647
+- `2026-07-25 23:39:52` ▶ **[RESCAN] START**　order4 full eval=audit shard0/1 n=135751
+- `2026-07-25 23:39:53` · **[RESCAN] SUBS**　13244 个 3 阶子集完成 1s
+- `2026-07-25 23:40:03` · **[RESCAN] SETS**　135751 个 4 阶完成 11s
+- `2026-07-25 23:40:04` ✔ **[RESCAN] DONE**　order4 full audit shard0 12s max_syn=0.3721 n>0.10=1357
+- `2026-07-25 23:40:32` · **[RESCAN] SETS**　543004 个 5 阶完成 60s
+- `2026-07-25 23:40:37` ✔ **[RESCAN] DONE**　order5 poly2 audit shard0 65s max_syn=0.2661 n>0.10=129
+- `2026-07-25 23:40:40` ▶ **[RESCAN] START**　order5 poly2 eval=audit shard1/2 n=543004
+- `2026-07-25 23:40:52` · **[RESCAN] SUBS**　135751 个 4 阶子集完成 12s
+- `2026-07-25 23:41:27` · **[RESCAN] SETS**　543004 个 5 阶完成 115s
+- `2026-07-25 23:41:31` · **[RESCAN] SETS**　543004 个 5 阶完成 119s
+- `2026-07-25 23:41:32` ✔ **[RESCAN] DONE**　order5 full audit shard1 120s max_syn=0.4420 n>0.10=3406
+- `2026-07-25 23:41:36` ✔ **[RESCAN] DONE**　order5 full audit shard0 124s max_syn=0.5137 n>0.10=3308
+- `2026-07-25 23:41:40` · **[RESCAN] SETS**　543004 个 5 阶完成 60s
+- `2026-07-25 23:41:45` ✔ **[RESCAN] DONE**　order5 poly2 audit shard1 65s max_syn=0.3650 n>0.10=143
+- `2026-07-25 23:43:40` ▶ **[RESCAN] START**　order5 poly2 eval=audit shard0/1 n=1086008
+- `2026-07-25 23:43:40` ▶ **[RESCAN] START**　order3 full eval=audit shard0/1 n=13244
+- `2026-07-25 23:43:41` ▶ **[RESCAN] START**　order5 full eval=audit shard0/1 n=1086008
+- `2026-07-25 23:43:41` · **[RESCAN] SUBS**　946 个 2 阶子集完成 0s
+- `2026-07-25 23:43:42` · **[RESCAN] SETS**　13244 个 3 阶完成 1s
+- `2026-07-25 23:43:42` ✔ **[RESCAN] DONE**　order3 full audit shard0 1s max_syn=0.0189 n>0.10=0
+- `2026-07-25 23:43:44` ▶ **[RESCAN] START**　order3 poly2 eval=audit shard0/1 n=13244
+- `2026-07-25 23:43:45` · **[RESCAN] SUBS**　946 个 2 阶子集完成 0s
+- `2026-07-25 23:43:45` · **[RESCAN] SETS**　13244 个 3 阶完成 1s
+- `2026-07-25 23:43:45` ✔ **[RESCAN] DONE**　order3 poly2 audit shard0 1s max_syn=0.0190 n>0.10=0
+- `2026-07-25 23:43:48` ▶ **[RESCAN] START**　order4 full eval=audit shard0/1 n=135751
+- `2026-07-25 23:43:49` · **[RESCAN] SUBS**　13244 个 3 阶子集完成 1s
+- `2026-07-25 23:43:52` · **[RESCAN] SUBS**　135751 个 4 阶子集完成 12s
+- `2026-07-25 23:43:55` · **[RESCAN] SUBS**　135751 个 4 阶子集完成 14s
+- `2026-07-25 23:44:01` · **[RESCAN] SETS**　135751 个 4 阶完成 13s
+- `2026-07-25 23:44:02` ✔ **[RESCAN] DONE**　order4 full audit shard0 15s max_syn=0.0210 n>0.10=0
+- `2026-07-25 23:44:05` ▶ **[RESCAN] START**　order4 poly2 eval=audit shard0/1 n=135751
+- `2026-07-25 23:44:06` · **[RESCAN] SUBS**　13244 个 3 阶子集完成 1s
+- `2026-07-25 23:44:17` · **[RESCAN] SETS**　135751 个 4 阶完成 12s
+- `2026-07-25 23:44:18` ✔ **[RESCAN] DONE**　order4 poly2 audit shard0 13s max_syn=0.0163 n>0.10=0
+- `2026-07-25 23:45:26` · **[RESCAN] SETS**　1086008 个 5 阶完成 105s
+- `2026-07-25 23:45:35` ✔ **[RESCAN] DONE**　order5 poly2 audit shard0 115s max_syn=0.0159 n>0.10=0
+- `2026-07-25 23:48:50` · **[RESCAN] SETS**　1086008 个 5 阶完成 309s
+- `2026-07-25 23:49:00` ✔ **[RESCAN] DONE**　order5 full audit shard0 319s max_syn=0.0289 n>0.10=0

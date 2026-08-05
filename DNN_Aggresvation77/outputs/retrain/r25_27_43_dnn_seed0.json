@@ -1,0 +1,27 @@
+{
+  "subset_id": "r25_27_43",
+  "group": "triple_rand_ext",
+  "size": 3,
+  "fields": [
+    "total_pjm_self_sched_reg",
+    "total_pjm_rmccp_cr",
+    "gross_inadv_interchange_mw"
+  ],
+  "struct": "dnn",
+  "seed": 0,
+  "mean_r2": 0.22050295770168304,
+  "per_conf_r2": {
+    "net_actual_interchange_mw": 0.17932766675949097,
+    "gross_actual_interchange_mw": 0.6295121908187866,
+    "total_gen": 0.27531516551971436,
+    "metered_load_mw": 0.2653811573982239,
+    "total_losses": 0.26499640941619873,
+    "congestion_price_da": 0.10251188278198242,
+    "congestion_price_rt": 0.15380287170410156,
+    "marginal_loss_price_da": 0.21869516372680664,
+    "total_lmp_da": 0.34024888277053833,
+    "da_as_total_mw_primary_reserve": 0.06029027700424194,
+    "da_as_total_mw_synchronized_reserve": 0.04137319326400757,
+    "da_as_total_mw_thirty_minutes_reserve": 0.11458057165145874
+  }
+}

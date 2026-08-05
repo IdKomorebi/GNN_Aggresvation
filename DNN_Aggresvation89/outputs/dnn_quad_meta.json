@@ -1,0 +1,362 @@
+{
+  "s06_11_16_17": {
+    "indices": [
+      6,
+      11,
+      16,
+      17
+    ],
+    "selection_group": "aligned",
+    "proxy_child_search_syn": 0.1558760851621627,
+    "proxy_child_audit_syn": 0.1658225655555725,
+    "proxy_any_rank_search": 254,
+    "proxy_aligned_rank_search": 65,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s09_18_20_38": {
+    "indices": [
+      9,
+      18,
+      20,
+      38
+    ],
+    "selection_group": "aligned",
+    "proxy_child_search_syn": 0.1279180943965912,
+    "proxy_child_audit_syn": 0.0830387622117996,
+    "proxy_any_rank_search": 14,
+    "proxy_aligned_rank_search": 11,
+    "proxy_child_search_conf": 0,
+    "proxy_child_audit_conf": 0
+  },
+  "s07_10_14_17": {
+    "indices": [
+      7,
+      10,
+      14,
+      17
+    ],
+    "selection_group": "aligned",
+    "proxy_child_search_syn": 0.1167833358049392,
+    "proxy_child_audit_syn": 0.1034596711397171,
+    "proxy_any_rank_search": 16,
+    "proxy_aligned_rank_search": 4,
+    "proxy_child_search_conf": 11,
+    "proxy_child_audit_conf": 11
+  },
+  "s11_13_31_40": {
+    "indices": [
+      11,
+      13,
+      31,
+      40
+    ],
+    "selection_group": "aligned",
+    "proxy_child_search_syn": 0.1075330004096031,
+    "proxy_child_audit_syn": 0.1068225726485252,
+    "proxy_any_rank_search": 320,
+    "proxy_aligned_rank_search": 77,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s07_14_15_17": {
+    "indices": [
+      7,
+      14,
+      15,
+      17
+    ],
+    "selection_group": "aligned",
+    "proxy_child_search_syn": 0.1056457236409187,
+    "proxy_child_audit_syn": 0.0747749060392379,
+    "proxy_any_rank_search": 16,
+    "proxy_aligned_rank_search": 4,
+    "proxy_child_search_conf": 11,
+    "proxy_child_audit_conf": 0
+  },
+  "s09_14_18_32": {
+    "indices": [
+      9,
+      14,
+      18,
+      32
+    ],
+    "selection_group": "aligned",
+    "proxy_child_search_syn": 0.1043261215090751,
+    "proxy_child_audit_syn": 0.1046555414795875,
+    "proxy_any_rank_search": 8,
+    "proxy_aligned_rank_search": 1,
+    "proxy_child_search_conf": 11,
+    "proxy_child_audit_conf": 11
+  },
+  "s09_14_18_19": {
+    "indices": [
+      9,
+      14,
+      18,
+      19
+    ],
+    "selection_group": "aligned",
+    "proxy_child_search_syn": 0.1029512882232666,
+    "proxy_child_audit_syn": 0.0849850252270698,
+    "proxy_any_rank_search": 8,
+    "proxy_aligned_rank_search": 1,
+    "proxy_child_search_conf": 11,
+    "proxy_child_audit_conf": 11
+  },
+  "s01_03_07_13": {
+    "indices": [
+      1,
+      3,
+      7,
+      13
+    ],
+    "selection_group": "aligned",
+    "proxy_child_search_syn": 0.1003978103399276,
+    "proxy_child_audit_syn": 0.0683218911290168,
+    "proxy_any_rank_search": 107,
+    "proxy_aligned_rank_search": 27,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s07_09_17_18": {
+    "indices": [
+      7,
+      9,
+      17,
+      18
+    ],
+    "selection_group": "cross_conf",
+    "proxy_child_search_syn": 0.1441264897584915,
+    "proxy_child_audit_syn": 0.1507430076599121,
+    "proxy_any_rank_search": 86,
+    "proxy_aligned_rank_search": 2219,
+    "proxy_child_search_conf": 3,
+    "proxy_child_audit_conf": 3
+  },
+  "s01_07_09_14": {
+    "indices": [
+      1,
+      7,
+      9,
+      14
+    ],
+    "selection_group": "cross_conf",
+    "proxy_child_search_syn": 0.1349265128374099,
+    "proxy_child_audit_syn": 0.1076022610068321,
+    "proxy_any_rank_search": 388,
+    "proxy_aligned_rank_search": 388,
+    "proxy_child_search_conf": 11,
+    "proxy_child_audit_conf": 11
+  },
+  "s07_11_17_43": {
+    "indices": [
+      7,
+      11,
+      17,
+      43
+    ],
+    "selection_group": "cross_conf",
+    "proxy_child_search_syn": 0.1182344183325767,
+    "proxy_child_audit_syn": 0.0960497185587883,
+    "proxy_any_rank_search": 140,
+    "proxy_aligned_rank_search": 200,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s01_04_07_14": {
+    "indices": [
+      1,
+      4,
+      7,
+      14
+    ],
+    "selection_group": "cross_conf",
+    "proxy_child_search_syn": 0.1090925484895706,
+    "proxy_child_audit_syn": 0.1614058762788772,
+    "proxy_any_rank_search": 388,
+    "proxy_aligned_rank_search": 111,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s01_02_07_12": {
+    "indices": [
+      1,
+      2,
+      7,
+      12
+    ],
+    "selection_group": "cross_conf",
+    "proxy_child_search_syn": 0.1062272787094116,
+    "proxy_child_audit_syn": 0.1122872158885002,
+    "proxy_any_rank_search": 41,
+    "proxy_aligned_rank_search": 49,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s07_12_13_42": {
+    "indices": [
+      7,
+      12,
+      13,
+      42
+    ],
+    "selection_group": "cross_conf",
+    "proxy_child_search_syn": 0.102674052119255,
+    "proxy_child_audit_syn": 0.1038419529795646,
+    "proxy_any_rank_search": 682,
+    "proxy_aligned_rank_search": 155,
+    "proxy_child_search_conf": 2,
+    "proxy_child_audit_conf": 2
+  },
+  "s04_07_17_38": {
+    "indices": [
+      4,
+      7,
+      17,
+      38
+    ],
+    "selection_group": "cross_conf",
+    "proxy_child_search_syn": 0.1013624742627143,
+    "proxy_child_audit_syn": 0.1044728755950927,
+    "proxy_any_rank_search": 29,
+    "proxy_aligned_rank_search": 9,
+    "proxy_child_search_conf": 2,
+    "proxy_child_audit_conf": 2
+  },
+  "s00_01_11_14": {
+    "indices": [
+      0,
+      1,
+      11,
+      14
+    ],
+    "selection_group": "cross_conf",
+    "proxy_child_search_syn": 0.1001286432147026,
+    "proxy_child_audit_syn": 0.0690745413303375,
+    "proxy_any_rank_search": 21,
+    "proxy_aligned_rank_search": 120,
+    "proxy_child_search_conf": 0,
+    "proxy_child_audit_conf": 0
+  },
+  "s07_20_30_38": {
+    "indices": [
+      7,
+      20,
+      30,
+      38
+    ],
+    "selection_group": "blind",
+    "proxy_child_search_syn": 0.1545516401529312,
+    "proxy_child_audit_syn": 0.0479141473770141,
+    "proxy_any_rank_search": 1418,
+    "proxy_aligned_rank_search": 140,
+    "proxy_child_search_conf": 5,
+    "proxy_child_audit_conf": 4
+  },
+  "s07_19_30_38": {
+    "indices": [
+      7,
+      19,
+      30,
+      38
+    ],
+    "selection_group": "blind",
+    "proxy_child_search_syn": 0.1354874074459076,
+    "proxy_child_audit_syn": 0.0441366620361804,
+    "proxy_any_rank_search": 1135,
+    "proxy_aligned_rank_search": 87,
+    "proxy_child_search_conf": 5,
+    "proxy_child_audit_conf": 4
+  },
+  "s04_24_30_38": {
+    "indices": [
+      4,
+      24,
+      30,
+      38
+    ],
+    "selection_group": "blind",
+    "proxy_child_search_syn": 0.1040833741426467,
+    "proxy_child_audit_syn": 0.0301225706934928,
+    "proxy_any_rank_search": 1019,
+    "proxy_aligned_rank_search": 10,
+    "proxy_child_search_conf": 5,
+    "proxy_child_audit_conf": 2
+  },
+  "s07_11_15_31": {
+    "indices": [
+      7,
+      11,
+      15,
+      31
+    ],
+    "selection_group": "blind",
+    "proxy_child_search_syn": 0.1024428904056549,
+    "proxy_child_audit_syn": 0.0961382240056991,
+    "proxy_any_rank_search": 1178,
+    "proxy_aligned_rank_search": 262,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s05_07_11_31": {
+    "indices": [
+      5,
+      7,
+      11,
+      31
+    ],
+    "selection_group": "blind",
+    "proxy_child_search_syn": 0.1006056517362594,
+    "proxy_child_audit_syn": 0.0995836481451988,
+    "proxy_any_rank_search": 1824,
+    "proxy_aligned_rank_search": 404,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s05_07_11_32": {
+    "indices": [
+      5,
+      7,
+      11,
+      32
+    ],
+    "selection_group": "blind",
+    "proxy_child_search_syn": 0.1006019189953804,
+    "proxy_child_audit_syn": 0.099580243229866,
+    "proxy_any_rank_search": 1827,
+    "proxy_aligned_rank_search": 405,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s11_15_17_31": {
+    "indices": [
+      11,
+      15,
+      17,
+      31
+    ],
+    "selection_group": "blind",
+    "proxy_child_search_syn": 0.1003311872482299,
+    "proxy_child_audit_syn": 0.1024537086486816,
+    "proxy_any_rank_search": 1178,
+    "proxy_aligned_rank_search": 262,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  },
+  "s11_15_17_32": {
+    "indices": [
+      11,
+      15,
+      17,
+      32
+    ],
+    "selection_group": "blind",
+    "proxy_child_search_syn": 0.1003298610448837,
+    "proxy_child_audit_syn": 0.1024471446871757,
+    "proxy_any_rank_search": 1179,
+    "proxy_aligned_rank_search": 263,
+    "proxy_child_search_conf": 4,
+    "proxy_child_audit_conf": 4
+  }
+}

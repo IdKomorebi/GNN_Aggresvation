@@ -1,0 +1,12 @@
+experiment:
+  name: DNN_Aggresvation83
+  purpose: >
+    检验 mask-conf 任务级 CVaR / 混合尾部风险目标，能否改善普通平均 MSE
+    oracle 对强三阶协同父集合的结构性低估。
+  controlled_factors:
+    - 与 D82 local234_group32 使用相同 MLP、数据切分、掩码分布和训练预算
+    - 只改变任务损失聚合方式
+  selection:
+    preliminary_seed: 0
+    confirm_seed: 1
+    tune_only_for_selection: true

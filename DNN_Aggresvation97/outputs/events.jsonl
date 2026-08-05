@@ -1,0 +1,88 @@
+{"time": "2026-07-30T23:50:07", "stage": "L1HI", "status": "START", "note": "seed0 aug=8 kind=tanh r=3-7 val=both tag=_smoke"}
+{"time": "2026-07-30T23:50:10", "stage": "L1HI", "status": "DONE", "note": "[_smoke seed0] ep=6 val_conf=0.93753 val_syn=1.73019 lam=1.010 [3s] -> oracle_l1_smoke_seed0.pt"}
+{"time": "2026-07-30T23:50:31", "stage": "L1HI", "status": "START", "note": "seed0 aug=8 kind=tanh r=3-7 val=both tag=_tanhboth"}
+{"time": "2026-07-30T23:50:32", "stage": "L1HI", "status": "START", "note": "seed0 aug=8 kind=raw r=3-7 val=both tag=_rawhi"}
+{"time": "2026-07-30T23:50:33", "stage": "L1HI", "status": "START", "note": "seed0 aug=0 kind=tanh r=3-7 val=conf tag=_noaug"}
+{"time": "2026-07-30T23:51:54", "stage": "L1HI", "status": "DONE", "note": "[_rawhi seed0] ep=366 val_conf=0.34917 val_syn=0.69164 lam=1.056 [82s] -> oracle_l1_rawhi_seed0.pt"}
+{"time": "2026-07-30T23:51:57", "stage": "L1HI", "status": "DONE", "note": "[_noaug seed0] ep=583 val_conf=0.30346 val_syn=0.78023 lam=1.014 [84s] -> oracle_l1_noaug_seed0.pt"}
+{"time": "2026-07-30T23:51:58", "stage": "L1HI", "status": "START", "note": "seed0 aug=8 kind=raw r=2-4 val=conf tag=_r93"}
+{"time": "2026-07-30T23:52:03", "stage": "L1HI", "status": "DONE", "note": "[_tanhboth seed0] ep=408 val_conf=0.33742 val_syn=0.69699 lam=1.031 [92s] -> oracle_l1_tanhboth_seed0.pt"}
+{"time": "2026-07-30T23:52:07", "stage": "L1HI", "status": "START", "note": "seed0 aug=8 kind=tanh r=3-7 val=conf tag=_tanh"}
+{"time": "2026-07-30T23:53:32", "stage": "L1HI", "status": "DONE", "note": "[_tanh seed0] ep=379 val_conf=0.33346 val_syn=0.70631 lam=1.030 [85s] -> oracle_l1_tanh_seed0.pt"}
+{"time": "2026-07-30T23:53:37", "stage": "L1HI", "status": "DONE", "note": "[_r93 seed0] ep=450 val_conf=0.33786 val_syn=0.74190 lam=1.030 [100s] -> oracle_l1_r93_seed0.pt"}
+{"time": "2026-07-30T23:56:05", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-30T23:56:05", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-30T23:56:07", "stage": "E2", "status": "DONE", "note": "last rho=0.7934 tail=0.8382 hit20=1.000 2s"}
+{"time": "2026-07-30T23:56:08", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-30T23:56:08", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-30T23:56:08", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-30T23:56:08", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-30T23:56:10", "stage": "E2", "status": "DONE", "note": "last rho=0.8002 tail=0.8434 hit20=1.000 2s"}
+{"time": "2026-07-30T23:56:11", "stage": "E2", "status": "DONE", "note": "last rho=0.7892 tail=0.8346 hit20=1.000 2s"}
+{"time": "2026-07-30T23:58:07", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-30T23:58:07", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-30T23:58:09", "stage": "E2", "status": "DONE", "note": "last rho=0.7662 tail=0.8245 hit20=1.000 2s"}
+{"time": "2026-07-30T23:58:14", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-30T23:58:14", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-30T23:58:16", "stage": "E2", "status": "DONE", "note": "last rho=0.7916 tail=0.8379 hit20=1.000 2s"}
+{"time": "2026-07-31T00:00:42", "stage": "L1HI", "status": "START", "note": "seed0 aug=8 kind=raw r=2-4 val=conf pair=mismatch tag=_r93x"}
+{"time": "2026-07-31T00:00:43", "stage": "L1HI", "status": "START", "note": "seed1 aug=8 kind=tanh r=3-7 val=both pair=shared tag=_tanhboth_s1"}
+{"time": "2026-07-31T00:00:44", "stage": "L1HI", "status": "START", "note": "seed2 aug=8 kind=tanh r=3-7 val=both pair=shared tag=_tanhboth_s2"}
+{"time": "2026-07-31T00:01:14", "stage": "L1HI", "status": "DONE", "note": "[_r93x seed0] ep=129 val_conf=0.36888 val_syn=0.80451 lam=1.023 [32s] -> oracle_l1_r93x_seed0.pt"}
+{"time": "2026-07-31T00:01:40", "stage": "L1HI", "status": "DONE", "note": "[_tanhboth_s1 seed1] ep=255 val_conf=0.35118 val_syn=0.70960 lam=1.112 [57s] -> oracle_l1_tanhboth_s1_seed1.pt"}
+{"time": "2026-07-31T00:01:44", "stage": "L1HI", "status": "START", "note": "seed1 aug=0 kind=tanh r=3-7 val=conf pair=shared tag=_noaug_s1"}
+{"time": "2026-07-31T00:02:25", "stage": "L1HI", "status": "DONE", "note": "[_tanhboth_s2 seed2] ep=455 val_conf=0.34936 val_syn=0.66983 lam=1.065 [101s] -> oracle_l1_tanhboth_s2_seed2.pt"}
+{"time": "2026-07-31T00:02:29", "stage": "L1HI", "status": "START", "note": "seed2 aug=0 kind=tanh r=3-7 val=conf pair=shared tag=_noaug_s2"}
+{"time": "2026-07-31T00:03:07", "stage": "L1HI", "status": "DONE", "note": "[_noaug_s1 seed1] ep=595 val_conf=0.30114 val_syn=0.77918 lam=1.255 [84s] -> oracle_l1_noaug_s1_seed1.pt"}
+{"time": "2026-07-31T00:03:34", "stage": "L1HI", "status": "DONE", "note": "[_noaug_s2 seed2] ep=453 val_conf=0.31326 val_syn=0.76387 lam=1.331 [65s] -> oracle_l1_noaug_s2_seed2.pt"}
+{"time": "2026-07-31T00:06:17", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-31T00:06:17", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-31T00:06:19", "stage": "E2", "status": "DONE", "note": "last rho=0.7714 tail=0.8222 hit20=0.950 2s"}
+{"time": "2026-07-31T00:06:25", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-31T00:06:25", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-31T00:06:25", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-31T00:06:25", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-31T00:06:27", "stage": "E2", "status": "DONE", "note": "last rho=0.7723 tail=0.8475 hit20=1.000 2s"}
+{"time": "2026-07-31T00:06:28", "stage": "E2", "status": "DONE", "note": "last rho=0.8035 tail=0.8148 hit20=1.000 3s"}
+{"time": "2026-07-31T00:08:14", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-31T00:08:14", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-31T00:08:16", "stage": "E2", "status": "DONE", "note": "last rho=0.8101 tail=0.7869 hit20=0.950 2s"}
+{"time": "2026-07-31T00:08:36", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-31T00:08:36", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-31T00:08:38", "stage": "E2", "status": "DONE", "note": "last rho=0.7843 tail=0.8356 hit20=1.000 2s"}
+{"time": "2026-07-31T00:09:44", "stage": "L1HI", "status": "START", "note": "seed1 aug=8 kind=raw r=2-4 val=conf pair=mismatch tag=_r93x_s1"}
+{"time": "2026-07-31T00:09:45", "stage": "L1HI", "status": "START", "note": "seed2 aug=8 kind=raw r=2-4 val=conf pair=mismatch tag=_r93x_s2"}
+{"time": "2026-07-31T00:09:46", "stage": "L1HI", "status": "START", "note": "seed0 aug=8 kind=raw r=2-4 val=conf pair=shared tag=_r93"}
+{"time": "2026-07-31T00:10:17", "stage": "L1HI", "status": "DONE", "note": "[_r93x_s2 seed2] ep=136 val_conf=0.38587 val_syn=0.67576 lam=1.013 [31s] -> oracle_l1_r93x_s2_seed2.pt"}
+{"time": "2026-07-31T00:10:20", "stage": "L1HI", "status": "START", "note": "seed2 aug=8 kind=raw r=2-4 val=conf pair=shared tag=_r93_s2"}
+{"time": "2026-07-31T00:11:26", "stage": "L1HI", "status": "DONE", "note": "[_r93 seed0] ep=450 val_conf=0.33786 val_syn=0.74190 lam=1.030 [100s] -> oracle_l1_r93_seed0.pt"}
+{"time": "2026-07-31T00:11:39", "stage": "L1HI", "status": "DONE", "note": "[_r93_s2 seed2] ep=357 val_conf=0.35316 val_syn=0.58619 lam=1.071 [79s] -> oracle_l1_r93_s2_seed2.pt"}
+{"time": "2026-07-31T00:12:13", "stage": "L1HI", "status": "DONE", "note": "[_r93x_s1 seed1] ep=651 val_conf=0.33260 val_syn=0.74021 lam=1.175 [149s] -> oracle_l1_r93x_s1_seed1.pt"}
+{"time": "2026-07-31T00:12:16", "stage": "L1HI", "status": "START", "note": "seed1 aug=8 kind=raw r=2-4 val=conf pair=shared tag=_r93_s1"}
+{"time": "2026-07-31T00:13:54", "stage": "L1HI", "status": "DONE", "note": "[_r93_s1 seed1] ep=432 val_conf=0.34838 val_syn=0.59261 lam=1.227 [97s] -> oracle_l1_r93_s1_seed1.pt"}
+{"time": "2026-07-31T02:03:09", "stage": "PAIR", "status": "START", "note": "order-5 shard0/21 1 个集合 seeds=[0, 1] 已完成 0"}
+{"time": "2026-07-31T02:06:40", "stage": "PAIR", "status": "DONE", "note": "shard0 211s"}
+{"time": "2026-07-31T02:08:40", "stage": "PAIR", "status": "START", "note": "order-5 shard0/3 7 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T02:08:40", "stage": "PAIR", "status": "START", "note": "order-5 shard1/3 7 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T02:08:40", "stage": "PAIR", "status": "START", "note": "order-5 shard2/3 7 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T02:44:54", "stage": "PAIR", "status": "DONE", "note": "shard1 2174s"}
+{"time": "2026-07-31T02:45:26", "stage": "PAIR", "status": "DONE", "note": "shard0 2205s"}
+{"time": "2026-07-31T02:46:24", "stage": "PAIR", "status": "DONE", "note": "shard2 2263s"}
+{"time": "2026-07-31T02:46:27", "stage": "PAIR", "status": "START", "note": "order-6 shard1/3 7 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T02:46:27", "stage": "PAIR", "status": "START", "note": "order-6 shard0/3 7 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T02:46:27", "stage": "PAIR", "status": "START", "note": "order-6 shard2/3 6 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T03:22:54", "stage": "PAIR", "status": "DONE", "note": "shard2 2187s"}
+{"time": "2026-07-31T03:29:14", "stage": "PAIR", "status": "DONE", "note": "shard0 2566s"}
+{"time": "2026-07-31T03:41:51", "stage": "PAIR", "status": "DONE", "note": "shard1 3323s"}
+{"time": "2026-07-31T11:51:55", "stage": "PAIR", "status": "START", "note": "order-6 shard1/3 6 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T11:51:55", "stage": "PAIR", "status": "START", "note": "order-6 shard0/3 6 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T11:51:55", "stage": "PAIR", "status": "START", "note": "order-6 shard2/3 6 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T12:28:21", "stage": "PAIR", "status": "DONE", "note": "shard2 2185s"}
+{"time": "2026-07-31T12:28:21", "stage": "PAIR", "status": "DONE", "note": "shard1 2186s"}
+{"time": "2026-07-31T12:28:43", "stage": "PAIR", "status": "DONE", "note": "shard0 2208s"}
+{"time": "2026-07-31T23:22:59", "stage": "PAIR", "status": "START", "note": "order-6 shard2/3 4 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T23:22:59", "stage": "PAIR", "status": "START", "note": "order-6 shard0/3 4 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T23:22:59", "stage": "PAIR", "status": "START", "note": "order-6 shard1/3 4 个集合 seeds=[0, 1, 2] 已完成 0"}
+{"time": "2026-07-31T23:46:26", "stage": "PAIR", "status": "DONE", "note": "shard2 1407s"}
+{"time": "2026-07-31T23:47:34", "stage": "PAIR", "status": "DONE", "note": "shard0 1475s"}
+{"time": "2026-07-31T23:55:17", "stage": "PAIR", "status": "DONE", "note": "shard1 1938s"}

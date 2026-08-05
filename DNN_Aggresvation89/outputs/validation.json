@@ -1,0 +1,21 @@
+{
+  "expected_unique_subsets": 207,
+  "expected_confidential_targets": 12,
+  "seeds": {
+    "0": {
+      "files": 207,
+      "missing": [],
+      "extra": [],
+      "invalid": [],
+      "ok": true
+    },
+    "1": {
+      "files": 207,
+      "missing": [],
+      "extra": [],
+      "invalid": [],
+      "ok": true
+    }
+  },
+  "ok": true
+}

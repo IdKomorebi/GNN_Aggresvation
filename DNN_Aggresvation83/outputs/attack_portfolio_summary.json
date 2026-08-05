@@ -1,0 +1,11 @@
+{
+  "test_sample_triples":878.0,
+  "dnn_strong_sample_count":130.0,
+  "portfolio_strong_sample_count":130.0,
+  "strong_overlap_count":130.0,
+  "dnn_only_count":0.0,
+  "portfolio_only_count":0.0,
+  "syn3_spearman":0.9991455719,
+  "mean_parent_gain":0.0050236574,
+  "mean_pair_gain":0.0018492266
+}

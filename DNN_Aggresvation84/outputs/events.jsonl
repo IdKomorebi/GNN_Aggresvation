@@ -1,0 +1,14 @@
+{"ts": "2026-07-24T23:23:02", "phase": "TRAIN", "event": "START", "note": "mono_incr_lam1_smoke/seed0", "elapsed_s": null, "pid": 1220275, "scheme": "mono_incr_lam1_smoke", "seed": 0}
+{"ts": "2026-07-24T23:23:06", "phase": "TRAIN", "event": "DONE", "note": "mono_incr_lam1_smoke/seed0", "elapsed_s": 4.07538628578186, "pid": 1220275, "scheme": "mono_incr_lam1_smoke", "seed": 0, "epochs": 3, "val_loss": 0.575137, "r2_full": 0.5439}
+{"ts": "2026-07-24T23:23:47", "phase": "TRAIN", "event": "START", "note": "none_lam0/seed0", "elapsed_s": null, "pid": 1221982, "scheme": "none_lam0", "seed": 0}
+{"ts": "2026-07-24T23:23:47", "phase": "TRAIN", "event": "START", "note": "incr_lam2/seed0", "elapsed_s": null, "pid": 1221983, "scheme": "incr_lam2", "seed": 0}
+{"ts": "2026-07-24T23:24:13", "phase": "TRAIN", "event": "DONE", "note": "none_lam0/seed0", "elapsed_s": 26.111074686050415, "pid": 1221982, "scheme": "none_lam0", "seed": 0, "epochs": 318, "val_loss": 0.364301, "r2_full": 0.831}
+{"ts": "2026-07-24T23:24:16", "phase": "TRAIN", "event": "START", "note": "mono_lam2/seed0", "elapsed_s": null, "pid": 1223058, "scheme": "mono_lam2", "seed": 0}
+{"ts": "2026-07-24T23:26:08", "phase": "TRAIN", "event": "DONE", "note": "incr_lam2/seed0", "elapsed_s": 141.08206009864807, "pid": 1221983, "scheme": "incr_lam2", "seed": 0, "epochs": 294, "val_loss": 0.368293, "r2_full": 0.8272}
+{"ts": "2026-07-24T23:26:11", "phase": "TRAIN", "event": "START", "note": "incr_lam10/seed0", "elapsed_s": null, "pid": 1226334, "scheme": "incr_lam10", "seed": 0}
+{"ts": "2026-07-24T23:27:18", "phase": "TRAIN", "event": "DONE", "note": "mono_lam2/seed0", "elapsed_s": 182.78216195106506, "pid": 1223058, "scheme": "mono_lam2", "seed": 0, "epochs": 400, "val_loss": 0.357467, "r2_full": 0.8315}
+{"ts": "2026-07-24T23:27:21", "phase": "TRAIN", "event": "START", "note": "mono_lam10/seed0", "elapsed_s": null, "pid": 1228866, "scheme": "mono_lam10", "seed": 0}
+{"ts": "2026-07-24T23:29:17", "phase": "TRAIN", "event": "DONE", "note": "incr_lam10/seed0", "elapsed_s": 185.96836304664612, "pid": 1226334, "scheme": "incr_lam10", "seed": 0, "epochs": 400, "val_loss": 0.363586, "r2_full": 0.8379}
+{"ts": "2026-07-24T23:30:38", "phase": "TRAIN", "event": "DONE", "note": "mono_lam10/seed0", "elapsed_s": 197.06087446212769, "pid": 1228866, "scheme": "mono_lam10", "seed": 0, "epochs": 400, "val_loss": 0.364565, "r2_full": 0.8341}
+{"ts": "2026-07-24T23:30:41", "phase": "TRAIN", "event": "START", "note": "mono_incr_lam5/seed0", "elapsed_s": null, "pid": 1233619, "scheme": "mono_incr_lam5", "seed": 0}
+{"ts": "2026-07-24T23:34:54", "phase": "TRAIN", "event": "DONE", "note": "mono_incr_lam5/seed0", "elapsed_s": 253.4447524547577, "pid": 1233619, "scheme": "mono_incr_lam5", "seed": 0, "epochs": 400, "val_loss": 0.361666, "r2_full": 0.8407}

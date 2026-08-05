@@ -1,0 +1,155 @@
+# DNN_Aggresvation93 运行流水
+
+> 自动记录；实验结论见 `CHANGELOG.md`。
+
+- `2026-07-26 02:04:03` ▶ **[CERT] START**　order-5 shard0/60: 1 个集合（strong 1 / control 0），已完成 0
+- `2026-07-26 02:07:00` ✔ **[CERT] DONE**　shard0 用时 177s
+- `2026-07-26 02:07:55` ▶ **[FDR] START**　order-3: 13244 个集合 + 946 个子集，kind=cat3，search=983 audit=984
+- `2026-07-26 02:08:02` ▶ **[CERT] START**　order-5 shard0/2: 30 个集合（strong 20 / control 10），已完成 0
+- `2026-07-26 02:12:02` · **[FDR] SEARCH**　search 侧完成 248s
+- `2026-07-26 02:16:10` · **[FDR] AUDIT**　audit 侧完成 496s
+- `2026-07-26 02:16:12` ✔ **[FDR] DONE**　order-3 cat3: 7621/13244 通过 FDR，用时 497s
+- `2026-07-26 02:17:07` ▶ **[L1] START**　seed0 aug=0 B_MASK=4 sup/qry=512/256 step/ep=8
+- `2026-07-26 02:17:56` ✔ **[L1] DONE**　[L1 seed0 aug0] ep=400/400 val=0.31112 lam=1.014 [49s] -> oracle_l1_seed0.pt
+- `2026-07-26 02:18:28` ▶ **[E2] START**　44 单 + 946 对，audit=984 行
+- `2026-07-26 02:18:28` · **[E2] TRUTH**　11352 条 (i,j,conf) 重训真值，conf 映射 12 个
+- `2026-07-26 02:18:29` ✔ **[E2] DONE**　oracle rho=-0.0216 tail=0.1298 hit20=0.250 1s
+- `2026-07-26 02:18:31` ✔ **[E2] DONE**　last rho=0.7995 tail=0.8169 hit20=1.000 2s
+- `2026-07-26 02:18:49` ✔ **[E2] DONE**　cat3 rho=0.6357 tail=0.7708 hit20=0.400 18s
+- `2026-07-26 02:19:22` ▶ **[E3] START**　200 无偏三元组 × 2400 条真值，447 个二阶子集，audit=984 行
+- `2026-07-26 02:19:24` ✔ **[E3] DONE**　last rho=0.6267 tail=0.6620 2s
+- `2026-07-26 02:19:31` ▶ **[CERT] START**　order-5 shard1/2: 30 个集合（strong 20 / control 10），已完成 0
+- `2026-07-26 02:19:36` ✔ **[E3] DONE**　cat3 rho=0.5624 tail=0.5948 12s
+- `2026-07-26 02:20:08` ▶ **[L1] START**　seed0 aug=0 ep=2500 B_MASK=4 sup/qry=512/256 step/ep=8
+- `2026-07-26 02:20:11` ▶ **[L1] START**　seed0 aug=8 ep=2500 B_MASK=4 sup/qry=512/256 step/ep=8
+- `2026-07-26 02:21:17` ✔ **[L1] DONE**　[L1 seed0 aug8] ep=239/2500 val=0.35663 lam=1.122 [66s] -> oracle_l1_aug8_seed0.pt
+- `2026-07-26 02:21:24` ✔ **[L1] DONE**　[L1 seed0 aug0] ep=583/2500 val=0.30346 lam=1.014 [76s] -> oracle_l1_long_seed0.pt
+- `2026-07-26 02:21:47` ▶ **[FDR] START**　order-3: 13244 个集合 + 946 个子集，kind=cat3，search=983 audit=984
+- `2026-07-26 02:23:10` ▶ **[CERT] START**　order-5 shard1/4: 15 个集合（strong 10 / control 5），已完成 4
+- `2026-07-26 02:23:10` ▶ **[CERT] START**　order-5 shard3/4: 15 个集合（strong 10 / control 5），已完成 4
+- `2026-07-26 02:23:11` ▶ **[CERT] START**　order-5 shard2/4: 15 个集合（strong 10 / control 5），已完成 4
+- `2026-07-26 02:23:11` ▶ **[CERT] START**　order-5 shard0/4: 15 个集合（strong 10 / control 5），已完成 4
+- `2026-07-26 02:23:32` ▶ **[E2] START**　44 单 + 946 对，audit=984 行
+- `2026-07-26 02:23:32` · **[E2] TRUTH**　11352 条 (i,j,conf) 重训真值，conf 映射 12 个
+- `2026-07-26 02:23:36` ✔ **[E2] DONE**　last rho=0.7934 tail=0.8382 hit20=1.000 3s
+- `2026-07-26 02:23:39` ▶ **[E2] START**　44 单 + 946 对，audit=984 行
+- `2026-07-26 02:23:39` · **[E2] TRUTH**　11352 条 (i,j,conf) 重训真值，conf 映射 12 个
+- `2026-07-26 02:23:42` ✔ **[E2] DONE**　last rho=0.8083 tail=0.8581 hit20=1.000 3s
+- `2026-07-26 02:24:39` ▶ **[E2] START**　44 单 + 946 对，audit=984 行
+- `2026-07-26 02:24:39` · **[E2] TRUTH**　11352 条 (i,j,conf) 重训真值，conf 映射 12 个
+- `2026-07-26 02:24:42` ▶ **[E2] START**　44 单 + 946 对，audit=984 行
+- `2026-07-26 02:24:42` · **[E2] TRUTH**　11352 条 (i,j,conf) 重训真值，conf 映射 12 个
+- `2026-07-26 02:24:42` ✔ **[E2] DONE**　last rho=0.7934 tail=0.8382 hit20=1.000 3s
+- `2026-07-26 02:24:45` ✔ **[E2] DONE**　last rho=0.8083 tail=0.8581 hit20=1.000 3s
+- `2026-07-26 02:25:05` ✔ **[E2] DONE**　cat3 rho=0.6412 tail=0.7634 hit20=0.800 23s
+- `2026-07-26 02:25:07` ✔ **[E2] DONE**　cat3 rho=0.6482 tail=0.8126 hit20=0.900 22s
+- `2026-07-26 02:25:33` ▶ **[E3] START**　200 无偏三元组 × 2400 条真值，447 个二阶子集，audit=984 行
+- `2026-07-26 02:25:36` ✔ **[E3] DONE**　last rho=0.6222 tail=0.6172 2s
+- `2026-07-26 02:25:50` ✔ **[E3] DONE**　cat3 rho=0.5541 tail=0.5387 14s
+- `2026-07-26 02:25:54` · **[E1] DATA**　train=(4589, 44) audit=(984, 44) raw_mean=0.0000 raw_std=0.9999
+- `2026-07-26 02:25:55` · **[E1] SETS**　注入 24 + 随机 400 四元组，三阶子集 1583 个；Y 拼成 24 列一次算
+- `2026-07-26 02:26:02` ✔ **[E1] DONE**　last 用时 7s
+- `2026-07-26 02:26:48` · **[FDR] SEARCH**　search 侧完成 301s
+- `2026-07-26 02:26:49` ✔ **[E1] DONE**　cat3 用时 48s
+- `2026-07-26 02:26:50` ✔ **[E1] DONE**　t_test 用时 1s
+- `2026-07-26 02:31:44` · **[FDR] AUDIT**　audit 侧完成 597s
+- `2026-07-26 02:33:40` ▶ **[FDR] START**　order-3: 13244 个集合 + 946 个子集，kind=cat3，search=983 audit=984
+- `2026-07-26 02:38:53` · **[FDR] SEARCH**　search 侧完成 314s
+- `2026-07-26 02:42:29` ▶ **[L0CERT] START**　28 个已认证五元组 + 125 个四阶子集
+- `2026-07-26 02:42:30` ✔ **[L0CERT] DONE**　oracle mean_est=0.0079
+- `2026-07-26 02:42:30` ✔ **[L0CERT] DONE**　poly2 mean_est=0.0111
+- `2026-07-26 02:42:30` ✔ **[L0CERT] DONE**　full mean_est=0.3979
+- `2026-07-26 02:42:31` ✔ **[L0CERT] DONE**　last mean_est=0.0228
+- `2026-07-26 02:42:34` ✔ **[L0CERT] DONE**　cat3 mean_est=0.0261
+- `2026-07-26 02:44:07` · **[FDR] AUDIT**　audit 侧完成 628s
+- `2026-07-26 02:44:08` ✔ **[FDR] DONE**　order-3 cat3: τ=0.0:7621 | τ=0.05:1266 | τ=0.1:66 | τ=0.15:12，用时 629s
+- `2026-07-26 02:47:37` · **[CERT] PROGRESS**　shard0 10/15 1465s
+- `2026-07-26 02:49:02` · **[CERT] PROGRESS**　shard2 10/15 1551s
+- `2026-07-26 02:53:44` · **[CERT] PROGRESS**　shard1 10/15 1833s
+- `2026-07-26 02:53:57` · **[CERT] PROGRESS**　shard3 10/15 1846s
+- `2026-07-26 03:02:43` ✔ **[CERT] DONE**　shard0 用时 2372s
+- `2026-07-26 03:06:58` ✔ **[CERT] DONE**　shard2 用时 2627s
+- `2026-07-26 03:09:33` ✔ **[CERT] DONE**　shard1 用时 2782s
+- `2026-07-26 03:09:43` ✔ **[CERT] DONE**　shard3 用时 2793s
+- `2026-07-26 03:11:10` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard0/1: 135751 个 4 阶子集，缓存待建
+- `2026-07-26 03:16:04` · **[SCAN5] SUBS**　135751 个子集算完并存盘 294s
+- `2026-07-26 03:16:21` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard0/4: 135751 个 4 阶子集，缓存命中
+- `2026-07-26 03:16:21` · **[SCAN5] SUBS**　读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy
+- `2026-07-26 03:16:21` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard3/4: 135751 个 4 阶子集，缓存命中
+- `2026-07-26 03:16:21` · **[SCAN5] SUBS**　读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy
+- `2026-07-26 03:16:21` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard2/4: 135751 个 4 阶子集，缓存命中
+- `2026-07-26 03:16:21` · **[SCAN5] SUBS**　读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy
+- `2026-07-26 03:16:21` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard1/4: 135751 个 4 阶子集，缓存命中
+- `2026-07-26 03:16:21` · **[SCAN5] SUBS**　读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy
+- `2026-07-26 03:26:04` · **[SCAN5] SETS**　271502 个 5 阶完成 583s
+- `2026-07-26 03:26:06` ✔ **[SCAN5] DONE**　shard1 585s max_syn=0.1315 n>0.2=0
+- `2026-07-26 03:26:07` · **[SCAN5] SETS**　271502 个 5 阶完成 586s
+- `2026-07-26 03:26:09` ✔ **[SCAN5] DONE**　shard0 588s max_syn=0.1569 n>0.2=0
+- `2026-07-26 03:27:39` · **[SCAN5] SETS**　271502 个 5 阶完成 678s
+- `2026-07-26 03:27:41` ✔ **[SCAN5] DONE**　shard2 680s max_syn=0.1322 n>0.2=0
+- `2026-07-26 03:56:46` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard3/4: 135751 个 4 阶子集，缓存命中
+- `2026-07-26 03:56:46` · **[SCAN5] SUBS**　读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy
+- `2026-07-26 03:57:21` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard3/4: 135751 个 4 阶子集，缓存命中
+- `2026-07-26 03:57:21` · **[SCAN5] SUBS**　读缓存 subs_o4_oracle_l1_aug8_seed0_last.npy
+- `2026-07-26 04:14:49` · **[SCAN5] SETS**　271502 个 5 阶完成 1048s
+- `2026-07-26 04:14:51` ✔ **[SCAN5] DONE**　shard3 1050s max_syn=0.1425 n>0.2=0
+- `2026-07-26 04:31:37` ▶ **[CERT] START**　order-5 shard0/3: 7 个集合（strong 7 / control 0），已完成 60
+- `2026-07-26 04:31:37` ▶ **[CERT] START**　order-5 shard2/3: 7 个集合（strong 7 / control 0），已完成 60
+- `2026-07-26 04:31:38` ▶ **[CERT] START**　order-5 shard1/3: 7 个集合（strong 7 / control 0），已完成 60
+- `2026-07-26 04:53:45` ✔ **[CERT] DONE**　shard2 用时 1328s
+- `2026-07-26 04:54:13` ✔ **[CERT] DONE**　shard0 用时 1356s
+- `2026-07-26 04:57:18` ✔ **[CERT] DONE**　shard1 用时 1541s
+- `2026-07-26 17:32:04` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard0/1: 13244 个 3 阶子集，缓存待建
+- `2026-07-26 17:32:32` · **[SCAN5] SUBS**　13244 个子集算完并存盘 29s
+- `2026-07-26 17:32:45` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard0/2: 13244 个 3 阶子集，缓存命中
+- `2026-07-26 17:32:45` · **[SCAN5] SUBS**　读缓存 subs_o3_oracle_l1_aug8_seed0_last.npy
+- `2026-07-26 17:32:45` ▶ **[SCAN5] START**　oracle_l1_aug8_seed0/last shard1/2: 13244 个 3 阶子集，缓存命中
+- `2026-07-26 17:32:45` · **[SCAN5] SUBS**　读缓存 subs_o3_oracle_l1_aug8_seed0_last.npy
+- `2026-07-26 17:37:24` · **[SCAN5] SETS**　67875 个 4 阶完成 279s
+- `2026-07-26 17:37:25` ✔ **[SCAN5] DONE**　shard1 280s max_syn=0.1802 n>0.2=0
+- `2026-07-26 17:37:27` · **[SCAN5] SETS**　67876 个 4 阶完成 282s
+- `2026-07-26 17:37:28` ✔ **[SCAN5] DONE**　shard0 283s max_syn=0.1582 n>0.2=0
+- `2026-07-26 17:38:11` ▶ **[CERT] START**　order-4 shard2/4: 7 个集合（strong 5 / control 2），已完成 0
+- `2026-07-26 17:38:12` ▶ **[CERT] START**　order-4 shard0/4: 8 个集合（strong 5 / control 3），已完成 0
+- `2026-07-26 17:38:12` ▶ **[CERT] START**　order-4 shard3/4: 7 个集合（strong 5 / control 2），已完成 0
+- `2026-07-26 17:38:12` ▶ **[CERT] START**　order-4 shard1/4: 8 个集合（strong 5 / control 3），已完成 0
+- `2026-07-26 17:56:27` ✔ **[CERT] DONE**　shard3 用时 1095s
+- `2026-07-26 17:56:44` ✔ **[CERT] DONE**　shard2 用时 1113s
+- `2026-07-26 17:59:23` ✔ **[CERT] DONE**　shard0 用时 1272s
+- `2026-07-26 18:00:25` ✔ **[CERT] DONE**　shard1 用时 1332s
+- `2026-07-26 18:24:00` ▶ **[CERT] START**　order-4 shard1/2: 10 个集合（strong 10 / control 0），已完成 0
+- `2026-07-26 18:24:00` ▶ **[CERT] START**　order-4 shard0/2: 10 个集合（strong 10 / control 0），已完成 0
+- `2026-07-26 18:24:17` ▶ **[L1] START**　seed2 aug=8 ep=2500 B_MASK=4 sup/qry=512/256 step/ep=8
+- `2026-07-26 18:24:17` ▶ **[L1] START**　seed1 aug=8 ep=2500 B_MASK=4 sup/qry=512/256 step/ep=8
+- `2026-07-26 18:25:02` ✔ **[L1] DONE**　[L1 seed2 aug8] ep=162/2500 val=0.37475 lam=1.050 [45s] -> oracle_l1_aug8_seed2.pt
+- `2026-07-26 18:26:20` ▶ **[E2] START**　44 单 + 946 对，audit=984 行
+- `2026-07-26 18:26:20` · **[E2] TRUTH**　11352 条 (i,j,conf) 重训真值，conf 映射 12 个
+- `2026-07-26 18:26:24` ✔ **[E2] DONE**　last rho=0.7922 tail=0.8506 hit20=1.000 4s
+- `2026-07-26 18:28:10` ✔ **[L1] DONE**　[L1 seed1 aug8] ep=832/2500 val=0.32254 lam=1.102 [234s] -> oracle_l1_aug8_seed1.pt
+- `2026-07-26 18:28:15` ▶ **[SCAN5] START**　oracle_l1_aug8_seed2/last shard0/1: 13244 个 3 阶子集，缓存待建
+- `2026-07-26 18:28:52` · **[SCAN5] SUBS**　13244 个子集算完并存盘 38s
+- `2026-07-26 18:28:54` ▶ **[E2] START**　44 单 + 946 对，audit=984 行
+- `2026-07-26 18:28:54` · **[E2] TRUTH**　11352 条 (i,j,conf) 重训真值，conf 映射 12 个
+- `2026-07-26 18:28:55` ▶ **[SCAN5] START**　oracle_l1_aug8_seed2/last shard0/1: 13244 个 3 阶子集，缓存命中
+- `2026-07-26 18:28:55` · **[SCAN5] SUBS**　读缓存 subs_o3_oracle_l1_aug8_seed2_last.npy
+- `2026-07-26 18:28:58` ✔ **[E2] DONE**　last rho=0.7747 tail=0.7691 hit20=1.000 4s
+- `2026-07-26 18:29:00` ▶ **[SCAN5] START**　oracle_l1_aug8_seed1/last shard0/1: 13244 个 3 阶子集，缓存待建
+- `2026-07-26 18:29:36` · **[SCAN5] SUBS**　13244 个子集算完并存盘 36s
+- `2026-07-26 18:29:39` ▶ **[SCAN5] START**　oracle_l1_aug8_seed1/last shard0/1: 13244 个 3 阶子集，缓存命中
+- `2026-07-26 18:29:39` · **[SCAN5] SUBS**　读缓存 subs_o3_oracle_l1_aug8_seed1_last.npy
+- `2026-07-26 18:33:17` ▶ **[CERT] START**　order-5 shard2/4: 9 个集合（strong 6 / control 3），已完成 60
+- `2026-07-26 18:33:17` ▶ **[CERT] START**　order-5 shard1/4: 9 个集合（strong 6 / control 3），已完成 60
+- `2026-07-26 18:33:17` ▶ **[CERT] START**　order-5 shard0/4: 9 个集合（strong 6 / control 3），已完成 60
+- `2026-07-26 18:33:18` ▶ **[CERT] START**　order-5 shard3/4: 9 个集合（strong 6 / control 3），已完成 60
+- `2026-07-26 18:35:29` · **[SCAN5] SETS**　135751 个 4 阶完成 394s
+- `2026-07-26 18:35:30` ✔ **[SCAN5] DONE**　shard0 395s max_syn=0.3529 n>0.2=5
+- `2026-07-26 18:36:17` · **[SCAN5] SETS**　135751 个 4 阶完成 398s
+- `2026-07-26 18:36:20` ✔ **[SCAN5] DONE**　shard0 401s max_syn=0.2304 n>0.2=3
+- `2026-07-26 18:52:14` · **[CERT] PROGRESS**　shard0 10/10 1694s
+- `2026-07-26 18:52:14` ✔ **[CERT] DONE**　shard0 用时 1694s
+- `2026-07-26 18:53:10` · **[CERT] PROGRESS**　shard1 10/10 1750s
+- `2026-07-26 18:53:10` ✔ **[CERT] DONE**　shard1 用时 1750s
+- `2026-07-26 19:06:34` ✔ **[CERT] DONE**　shard3 用时 1996s
+- `2026-07-26 19:09:03` ✔ **[CERT] DONE**　shard0 用时 2145s
+- `2026-07-26 19:10:49` ✔ **[CERT] DONE**　shard1 用时 2251s
+- `2026-07-26 19:11:16` ✔ **[CERT] DONE**　shard2 用时 2278s

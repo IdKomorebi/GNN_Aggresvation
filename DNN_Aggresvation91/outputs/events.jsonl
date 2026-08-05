@@ -1,0 +1,60 @@
+{"time": "2026-07-26T01:11:10", "stage": "E1", "status": "DATA", "note": "train=(4589, 44) audit=(984, 44) raw_mean=0.0000 raw_std=0.9999"}
+{"time": "2026-07-26T01:11:11", "stage": "E1", "status": "SETS", "note": "注入 24 + 随机 400 四元组，三阶子集 1583 个；Y 拼成 24 列一次算"}
+{"time": "2026-07-26T01:11:11", "stage": "E1", "status": "DONE", "note": "poly2 用时 1s"}
+{"time": "2026-07-26T01:11:16", "stage": "E1", "status": "DONE", "note": "last 用时 5s"}
+{"time": "2026-07-26T01:11:17", "stage": "E1", "status": "DONE", "note": "t_test 用时 1s"}
+{"time": "2026-07-26T01:12:01", "stage": "E1", "status": "DATA", "note": "train=(4589, 44) audit=(984, 44) raw_mean=0.0000 raw_std=0.9999"}
+{"time": "2026-07-26T01:12:01", "stage": "E1", "status": "SETS", "note": "注入 24 + 随机 400 四元组，三阶子集 1583 个；Y 拼成 24 列一次算"}
+{"time": "2026-07-26T01:12:02", "stage": "E1", "status": "DONE", "note": "full 用时 0s"}
+{"time": "2026-07-26T01:12:02", "stage": "E1", "status": "DONE", "note": "t_test 用时 1s"}
+{"time": "2026-07-26T01:12:03", "stage": "E1", "status": "DATA", "note": "train=(4589, 44) audit=(984, 44) raw_mean=0.0000 raw_std=0.9999"}
+{"time": "2026-07-26T01:12:03", "stage": "E1", "status": "SETS", "note": "注入 24 + 随机 400 四元组，三阶子集 1583 个；Y 拼成 24 列一次算"}
+{"time": "2026-07-26T01:12:41", "stage": "E1", "status": "DONE", "note": "cat3 用时 37s"}
+{"time": "2026-07-26T01:12:42", "stage": "E1", "status": "DONE", "note": "t_test 用时 1s"}
+{"time": "2026-07-26T01:14:06", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T01:14:06", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T01:14:07", "stage": "E2", "status": "DONE", "note": "oracle rho=0.6057 tail=0.1298 hit20=1.000 1s"}
+{"time": "2026-07-26T01:14:07", "stage": "E2", "status": "DONE", "note": "poly2 rho=0.6795 tail=0.7596 hit20=1.000 0s"}
+{"time": "2026-07-26T01:14:08", "stage": "E1", "status": "DATA", "note": "train=(4589, 44) audit=(984, 44) raw_mean=0.0000 raw_std=0.9999"}
+{"time": "2026-07-26T01:14:08", "stage": "E1", "status": "SETS", "note": "注入 24 + 随机 400 四元组，三阶子集 1583 个；Y 拼成 24 列一次算"}
+{"time": "2026-07-26T01:14:10", "stage": "E2", "status": "DONE", "note": "last rho=0.7323 tail=0.7806 hit20=1.000 2s"}
+{"time": "2026-07-26T01:14:15", "stage": "E1", "status": "DONE", "note": "last+p2 用时 7s"}
+{"time": "2026-07-26T01:14:27", "stage": "E2", "status": "DONE", "note": "cat3 rho=0.6635 tail=0.7580 hit20=0.550 18s"}
+{"time": "2026-07-26T01:14:30", "stage": "E2", "status": "DONE", "note": "last+p2 rho=0.7098 tail=0.7840 hit20=0.950 3s"}
+{"time": "2026-07-26T01:14:50", "stage": "E2", "status": "DONE", "note": "cat3+p2 rho=0.6593 tail=0.7579 hit20=0.650 20s"}
+{"time": "2026-07-26T01:14:58", "stage": "E1", "status": "DONE", "note": "cat3+p2 用时 42s"}
+{"time": "2026-07-26T01:14:59", "stage": "E1", "status": "DONE", "note": "t_test 用时 1s"}
+{"time": "2026-07-26T01:16:38", "stage": "E4", "status": "START", "note": "120 个 pair（强/中/弱各 ~40），kind=last，K∈(5, 25, 50)，audit=984 行"}
+{"time": "2026-07-26T01:16:47", "stage": "E4", "status": "SINGLES", "note": "44 个单字段完成 9s"}
+{"time": "2026-07-26T01:17:07", "stage": "E4", "status": "DONE", "note": "总用时 29s"}
+{"time": "2026-07-26T01:19:16", "stage": "E3", "status": "START", "note": "200 无偏三元组 × 2400 条真值，447 个二阶子集，audit=984 行"}
+{"time": "2026-07-26T01:19:16", "stage": "E3", "status": "DONE", "note": "oracle rho=0.4163 tail=0.4755 0s"}
+{"time": "2026-07-26T01:19:16", "stage": "E3", "status": "DONE", "note": "poly2 rho=0.5855 tail=0.3796 0s"}
+{"time": "2026-07-26T01:19:16", "stage": "E3", "status": "DONE", "note": "full rho=0.5921 tail=0.3543 0s"}
+{"time": "2026-07-26T01:19:18", "stage": "E3", "status": "DONE", "note": "last rho=0.5857 tail=0.5907 1s"}
+{"time": "2026-07-26T01:19:19", "stage": "E3", "status": "DONE", "note": "last+p2 rho=0.5696 tail=0.5626 2s"}
+{"time": "2026-07-26T01:19:31", "stage": "E3", "status": "DONE", "note": "cat3 rho=0.6107 tail=0.6163 11s"}
+{"time": "2026-07-26T01:20:50", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T01:20:50", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T01:20:51", "stage": "E2", "status": "DONE", "note": "oracle rho=0.6057 tail=0.1298 hit20=1.000 1s"}
+{"time": "2026-07-26T01:20:52", "stage": "E2", "status": "DONE", "note": "oracle_affine rho=0.6762 tail=0.1990 hit20=1.000 1s"}
+{"time": "2026-07-26T01:20:52", "stage": "E2", "status": "DONE", "note": "poly2 rho=0.6795 tail=0.7596 hit20=1.000 0s"}
+{"time": "2026-07-26T01:20:52", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T01:20:52", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T01:20:53", "stage": "E2", "status": "DONE", "note": "oracle rho=0.6695 tail=0.1122 hit20=1.000 1s"}
+{"time": "2026-07-26T01:20:54", "stage": "E2", "status": "DONE", "note": "oracle_affine rho=0.6955 tail=0.1151 hit20=1.000 1s"}
+{"time": "2026-07-26T01:20:54", "stage": "E2", "status": "DONE", "note": "poly2 rho=0.6795 tail=0.7596 hit20=1.000 0s"}
+{"time": "2026-07-26T01:20:54", "stage": "E2", "status": "START", "note": "44 单 + 946 对，audit=984 行"}
+{"time": "2026-07-26T01:20:54", "stage": "E2", "status": "TRUTH", "note": "11352 条 (i,j,conf) 重训真值，conf 映射 12 个"}
+{"time": "2026-07-26T01:20:54", "stage": "E2", "status": "DONE", "note": "last rho=0.7323 tail=0.7806 hit20=1.000 2s"}
+{"time": "2026-07-26T01:20:54", "stage": "E2", "status": "DONE", "note": "oracle rho=0.6348 tail=0.1182 hit20=1.000 1s"}
+{"time": "2026-07-26T01:20:55", "stage": "E2", "status": "DONE", "note": "oracle_affine rho=0.6901 tail=0.1445 hit20=1.000 1s"}
+{"time": "2026-07-26T01:20:55", "stage": "E2", "status": "DONE", "note": "poly2 rho=0.6795 tail=0.7596 hit20=1.000 0s"}
+{"time": "2026-07-26T01:20:56", "stage": "E2", "status": "DONE", "note": "last rho=0.7190 tail=0.7608 hit20=1.000 2s"}
+{"time": "2026-07-26T01:20:58", "stage": "E2", "status": "DONE", "note": "last rho=0.7301 tail=0.8063 hit20=1.000 2s"}
+{"time": "2026-07-26T01:21:12", "stage": "E2", "status": "DONE", "note": "cat3 rho=0.6635 tail=0.7580 hit20=0.550 18s"}
+{"time": "2026-07-26T01:21:13", "stage": "E2", "status": "DONE", "note": "cat3 rho=0.6711 tail=0.7927 hit20=0.400 17s"}
+{"time": "2026-07-26T01:21:14", "stage": "E2", "status": "DONE", "note": "cat3 rho=0.6582 tail=0.7859 hit20=1.000 16s"}
+{"time": "2026-07-26T01:21:15", "stage": "E2", "status": "DONE", "note": "last+p2 rho=0.7098 tail=0.7840 hit20=0.950 3s"}
+{"time": "2026-07-26T01:21:35", "stage": "E2", "status": "DONE", "note": "cat3+p2 rho=0.6593 tail=0.7579 hit20=0.650 20s"}
+{"time": "2026-07-26T01:22:37", "stage": "E5", "status": "DONE", "note": "order3 oracle=0.321ms | L0[last]=2.475ms | ft25=55.491ms"}

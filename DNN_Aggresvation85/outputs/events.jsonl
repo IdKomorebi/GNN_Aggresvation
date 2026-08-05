@@ -1,0 +1,10 @@
+{"time": "2026-07-24T23:42:49", "stage": "CACHE", "status": "START", "note": "poly2充分统计量构建与全空间扫描"}
+{"time": "2026-07-24T23:42:51", "stage": "RESIDUAL", "status": "START", "note": "uniform K0 + structured residual ridge"}
+{"time": "2026-07-24T23:43:01", "stage": "CACHE", "status": "DONE", "note": "扫描14190集合，5.04s，maxΔ=1.16e-10"}
+{"time": "2026-07-24T23:43:28", "stage": "RESIDUAL", "status": "DONE", "note": "3143集合×3模型完成", "n_sets": 3143, "n_models": 3, "forward_seconds": 0.9686814546585083, "solve_seconds": 33.10768752731383, "total_seconds": 37.58792510442436}
+{"time": "2026-07-24T23:46:00", "stage": "CACHE", "status": "START", "note": "poly2充分统计量构建与全空间扫描"}
+{"time": "2026-07-24T23:46:10", "stage": "CACHE", "status": "DONE", "note": "扫描14190集合，4.96s，maxΔ=1.16e-10"}
+{"time": "2026-07-24T23:46:36", "stage": "RESIDUAL", "status": "START", "note": "uniform K0 + structured residual ridge；scope=all, models=('arith',)"}
+{"time": "2026-07-24T23:48:10", "stage": "RESIDUAL", "status": "DONE", "note": "14190集合×1残差模型完成", "n_sets": 14190, "n_models": 1, "forward_seconds": 3.7347824722528458, "solve_seconds": 80.19773090817034, "total_seconds": 94.159886514768}
+{"time": "2026-07-24T23:48:58", "stage": "RESIDUAL", "status": "START", "note": "uniform K0 + structured residual ridge；scope=all, models=('poly2',)"}
+{"time": "2026-07-24T23:49:59", "stage": "RESIDUAL", "status": "DONE", "note": "14190集合×1残差模型完成", "n_sets": 14190, "n_models": 1, "forward_seconds": 3.794653333723545, "solve_seconds": 46.54458988085389, "total_seconds": 60.84518518857658}

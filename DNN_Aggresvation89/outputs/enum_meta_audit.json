@@ -1,0 +1,38 @@
+{
+  "mode": "audit",
+  "n_general": 44,
+  "conf_names": [
+    "net_actual_interchange_mw",
+    "gross_actual_interchange_mw",
+    "total_gen",
+    "metered_load_mw",
+    "total_losses",
+    "congestion_price_da",
+    "congestion_price_rt",
+    "marginal_loss_price_da",
+    "total_lmp_da",
+    "da_as_total_mw_primary_reserve",
+    "da_as_total_mw_synchronized_reserve",
+    "da_as_total_mw_thirty_minutes_reserve"
+  ],
+  "orders": {
+    "3": {
+      "count": 13244,
+      "seconds": 5.446998156607151,
+      "solves": 14190,
+      "reused": false
+    },
+    "4": {
+      "count": 135751,
+      "seconds": 62.4673243612051,
+      "solves": 163185,
+      "reused": false
+    },
+    "5": {
+      "count": 1086008,
+      "seconds": 567.0639159157872,
+      "solves": 1384944,
+      "reused": false
+    }
+  }
+}
