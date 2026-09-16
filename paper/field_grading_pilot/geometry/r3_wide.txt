@@ -1,0 +1,17 @@
+[example total_gen] gen_fuel_wind_mw: 真值 v_i=0.064 M_i=0.765 伙伴=gen_fuel_wind_pct | 几何 v_i=0.060 M_i=0.750 伙伴=gen_fuel_wind_pct
+[example total_gen] gen_fuel_wind_pct: 真值 v_i=0.162 M_i=0.864 伙伴=gen_fuel_wind_mw | 几何 v_i=0.176 M_i=0.865 伙伴=gen_fuel_wind_mw
+PAIR_FRAC=1.0  fields=44 targets=12
+eval      model              MAE    bias   Spear  danger conserv
+top3      add+maxpair      0.047  -0.035   0.898   0.013   0.021
+top3      add_log          0.151  -0.149   0.807   0.076   0.002
+top3      geom_d8          0.031  -0.022   0.914   0.016   0.008
+wide      add+maxpair      0.070   0.027   0.925   0.015   0.103
+wide      add_log          0.094  -0.028   0.918   0.065   0.069
+wide      geom_d8          0.030  -0.001   0.926   0.019   0.027
+
+k=1 最坏背景分级 vs 真值（12 目标平均）: Kendall τ | 4档一致率 | 差≥2档比例 | 伙伴命中率
+  add_log          0.687   0.314   0.142   0.013
+  add+maxpair      0.804   0.706   0.017   0.299
+  geom_d8          0.907   0.867   0.000   0.468
+  naive_v{i}       0.655   0.519   0.066     nan
+考虑协同后比单字段升档的字段数(真值,每目标): [('congestion_price_da', np.int64(12)), ('congestion_price_rt', np.int64(14)), ('da_as_total_mw_primary_reserve', np.int64(23)), ('da_as_total_mw_synchronized_reserve', np.int64(17)), ('da_as_total_mw_thirty_minutes_reserve', np.int64(21)), ('gross_actual_interchange_mw', np.int64(16)), ('marginal_loss_price_da', np.int64(23)), ('metered_load_mw', np.int64(24)), ('net_actual_interchange_mw', np.int64(32)), ('total_gen', np.int64(29)), ('total_lmp_da', np.int64(18)), ('total_losses', np.int64(25))]

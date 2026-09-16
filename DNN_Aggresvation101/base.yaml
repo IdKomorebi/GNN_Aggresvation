@@ -1,0 +1,18 @@
+experiment:
+  name: dnn101_independent_certification
+  purpose: >
+    discovery / audit 数据完全不相交的独立认证，量化 M 的 max 操作带来的 winner's curse，
+    检验见证背景、阈值跨越、强交互、排序与跨数据上界是否在独立数据上复现。
+splits:
+  halves: 全部完整行按 rep 随机对半（seed 9900+rep），每半内 shuffle 70/30（seed 42+rep），标准化只用该半 train 统计，train 内 15% val
+  reps: [0, 1, 2]
+  directions: [discovery=H0→audit=H1, discovery=H1→audit=H0]
+discovery:
+  estimator: 该半数据上训练的 uniform 三种子（75 号协议）L0ensx
+  truth: 该半数据专用重训（仅作同数据认证的对照，量化 winner's curse）
+  used_for: [训练通用模型, 见证搜索]
+audit:
+  truth: 另一半数据专用重训（不参与训练、选参、K 选择、见证搜索）
+sets: 规模 ≤3 全部 11,521（K=0/1/2）
+datasets: [pjm, caiso]
+code: ../DNN_Aggresvation100/scripts/{train_uniform,run_est,run_truth_split}.py（--outroot 指向本号）；scripts/run101.sh；scripts/analyze101.py

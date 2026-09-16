@@ -1,0 +1,46 @@
+{"time": "2026-09-15T13:57:23", "stage": "TRUTH", "status": "START", "note": "rand seed0 shard2/3 n=1363"}
+{"time": "2026-09-15T13:57:23", "stage": "TRUTH", "status": "START", "note": "rand seed0 shard0/3 n=1364"}
+{"time": "2026-09-15T13:57:23", "stage": "TRUTH", "status": "START", "note": "rand seed0 shard1/3 n=1363"}
+{"time": "2026-09-15T13:58:47", "stage": "TRUTH", "status": "DONE", "note": "rand seed0 shard2/3 n=1363 84s -> rand_seed0_s2of3.npz"}
+{"time": "2026-09-15T13:58:48", "stage": "TRUTH", "status": "DONE", "note": "rand seed0 shard1/3 n=1363 85s -> rand_seed0_s1of3.npz"}
+{"time": "2026-09-15T13:58:50", "stage": "TRUTH", "status": "DONE", "note": "rand seed0 shard0/3 n=1364 87s -> rand_seed0_s0of3.npz"}
+{"time": "2026-09-15T13:58:51", "stage": "TRUTH", "status": "START", "note": "rand seed1 shard2/3 n=1363"}
+{"time": "2026-09-15T13:58:51", "stage": "TRUTH", "status": "START", "note": "rand seed1 shard1/3 n=1363"}
+{"time": "2026-09-15T13:58:53", "stage": "TRUTH", "status": "START", "note": "rand seed1 shard0/3 n=1364"}
+{"time": "2026-09-15T14:00:14", "stage": "TRUTH", "status": "DONE", "note": "rand seed1 shard2/3 n=1363 83s -> rand_seed1_s2of3.npz"}
+{"time": "2026-09-15T14:00:17", "stage": "TRUTH", "status": "START", "note": "gameB seed0 shard2/3 n=1365"}
+{"time": "2026-09-15T14:00:17", "stage": "TRUTH", "status": "DONE", "note": "rand seed1 shard1/3 n=1363 86s -> rand_seed1_s1of3.npz"}
+{"time": "2026-09-15T14:00:19", "stage": "TRUTH", "status": "DONE", "note": "rand seed1 shard0/3 n=1364 86s -> rand_seed1_s0of3.npz"}
+{"time": "2026-09-15T14:00:21", "stage": "TRUTH", "status": "START", "note": "gameB seed0 shard1/3 n=1365"}
+{"time": "2026-09-15T14:00:22", "stage": "TRUTH", "status": "START", "note": "gameB seed0 shard0/3 n=1366"}
+{"time": "2026-09-15T14:01:44", "stage": "TRUTH", "status": "DONE", "note": "gameB seed0 shard2/3 n=1365 87s -> gameB_seed0_s2of3.npz"}
+{"time": "2026-09-15T14:01:47", "stage": "TRUTH", "status": "DONE", "note": "gameB seed0 shard1/3 n=1365 86s -> gameB_seed0_s1of3.npz"}
+{"time": "2026-09-15T14:01:47", "stage": "TRUTH", "status": "START", "note": "gameB seed1 shard2/3 n=1365"}
+{"time": "2026-09-15T14:01:48", "stage": "TRUTH", "status": "DONE", "note": "gameB seed0 shard0/3 n=1366 86s -> gameB_seed0_s0of3.npz"}
+{"time": "2026-09-15T14:01:50", "stage": "TRUTH", "status": "START", "note": "gameB seed1 shard1/3 n=1365"}
+{"time": "2026-09-15T14:01:51", "stage": "TRUTH", "status": "START", "note": "gameB seed1 shard0/3 n=1366"}
+{"time": "2026-09-15T14:03:13", "stage": "TRUTH", "status": "DONE", "note": "gameB seed1 shard2/3 n=1365 86s -> gameB_seed1_s2of3.npz"}
+{"time": "2026-09-15T14:03:16", "stage": "TRUTH", "status": "DONE", "note": "gameB seed1 shard1/3 n=1365 86s -> gameB_seed1_s1of3.npz"}
+{"time": "2026-09-15T14:03:16", "stage": "TRUTH", "status": "START", "note": "gameA seed0 shard2/3 n=5461"}
+{"time": "2026-09-15T14:03:17", "stage": "TRUTH", "status": "DONE", "note": "gameB seed1 shard0/3 n=1366 86s -> gameB_seed1_s0of3.npz"}
+{"time": "2026-09-15T14:03:19", "stage": "TRUTH", "status": "START", "note": "gameA seed0 shard1/3 n=5461"}
+{"time": "2026-09-15T14:03:20", "stage": "TRUTH", "status": "START", "note": "gameA seed0 shard0/3 n=5462"}
+{"time": "2026-09-15T14:09:02", "stage": "TRUTH", "status": "DONE", "note": "gameA seed0 shard0/3 n=5462 342s -> gameA_seed0_s0of3.npz"}
+{"time": "2026-09-15T14:09:04", "stage": "TRUTH", "status": "START", "note": "gameA seed1 shard0/3 n=5462"}
+{"time": "2026-09-15T14:10:42", "stage": "TRUTH", "status": "DONE", "note": "gameA seed0 shard2/3 n=5461 446s -> gameA_seed0_s2of3.npz"}
+{"time": "2026-09-15T14:10:46", "stage": "TRUTH", "status": "START", "note": "gameA seed1 shard2/3 n=5461"}
+{"time": "2026-09-15T14:11:30", "stage": "MONO", "status": "DONE", "note": "lam=0.0 seed0 ep=318 val=0.3643 41s -> oracle_mono0_seed0.pt"}
+{"time": "2026-09-15T14:11:37", "stage": "TRUTH", "status": "DONE", "note": "gameA seed0 shard1/3 n=5461 498s -> gameA_seed0_s1of3.npz"}
+{"time": "2026-09-15T14:11:40", "stage": "TRUTH", "status": "START", "note": "gameA seed1 shard1/3 n=5461"}
+{"time": "2026-09-15T14:12:27", "stage": "MONO", "status": "DONE", "note": "lam=1.0 seed0 ep=400 val=0.3632 99s -> oracle_mono1_seed0.pt"}
+{"time": "2026-09-15T14:12:28", "stage": "MONO", "status": "DONE", "note": "lam=10.0 seed0 ep=400 val=0.4145 100s -> oracle_mono10_seed0.pt"}
+{"time": "2026-09-15T14:14:15", "stage": "TRUTH", "status": "DONE", "note": "gameA seed1 shard0/3 n=5462 310s -> gameA_seed1_s0of3.npz"}
+{"time": "2026-09-15T14:16:08", "stage": "TRUTH", "status": "DONE", "note": "gameA seed1 shard2/3 n=5461 322s -> gameA_seed1_s2of3.npz"}
+{"time": "2026-09-15T14:20:12", "stage": "TRUTH", "status": "DONE", "note": "gameA seed1 shard1/3 n=5461 512s -> gameA_seed1_s1of3.npz"}
+{"time": "2026-09-15T14:36:22", "stage": "SAGE", "status": "DONE", "note": "gameB seed0 ep=400 fullR2=0.6551 26s"}
+{"time": "2026-09-15T14:36:45", "stage": "SAGE", "status": "DONE", "note": "gameB seed1 ep=400 fullR2=0.6548 22s"}
+{"time": "2026-09-15T14:37:12", "stage": "SAGE", "status": "DONE", "note": "gameB seed2 ep=400 fullR2=0.6601 28s"}
+{"time": "2026-09-15T14:37:43", "stage": "SAGE", "status": "DONE", "note": "gameA seed0 ep=336 fullR2=0.7829 27s"}
+{"time": "2026-09-15T14:38:14", "stage": "SAGE", "status": "DONE", "note": "gameA seed1 ep=400 fullR2=0.7896 32s"}
+{"time": "2026-09-15T14:38:46", "stage": "SAGE", "status": "DONE", "note": "gameA seed2 ep=400 fullR2=0.7874 32s"}
+{"time": "2026-09-15T14:44:18", "stage": "BENCH", "status": "DONE", "note": "{\"batched_B256_s_per_set\": 0.082, \"batched_B1024_s_per_set\": 0.056, \"batched_B2048_s_per_set\": 0.0568, \"sequential_s_per_set\": 23.6262, \"wide_n\": 50, \"wide_size_range\": [1, 43], \"wide_leak69_minus_hist69\": -0.0056, \"wide_leak69_MAE_hist69\": 0.0072, \"wide_clean_minus_hist69\": -0.0077, \"wide_clean_MAE_hist69\": 0.0088}"}

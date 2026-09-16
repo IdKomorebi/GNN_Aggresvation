@@ -1,0 +1,5 @@
+﻿dataset,path,rows,columns,sha256
+pjm_2025,/data1/duhaocun/projects/diantan/data_rule/pjm_2025/data.csv,8760,69,6eba5370d07f6480f87d8f6ed2f55e205ad2219940bd272dd2de4cfc9301eff2
+pjm_2025,/data1/duhaocun/projects/GNN_Aggresvation/data/Processed/pjm_rto_hourly_2025_cleaned.csv,8760,61,861affda60a665d81009ceb18e581c685f5a6014803ba6748b42f4a2bed702b3
+caiso_2025,/data1/duhaocun/projects/diantan/data_rule/caiso_2025/data.csv,8760,56,9addab5be13ede8bd3ae29311cac53a1c2d03e4c9e201f0e4fce7c0b93e2b089
+caiso_2025,/data1/duhaocun/projects/GNN_Aggresvation/data/Processed/caiso_2025_hourly_cleaned.csv,8760,56,9addab5be13ede8bd3ae29311cac53a1c2d03e4c9e201f0e4fce7c0b93e2b089

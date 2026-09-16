@@ -1,0 +1,380 @@
+{
+  "note": "CPU-only descriptive audit of existing D69 records; no new attack training.\n\nThe k=1 envelope is constructed and checked on the same singles/pairs.\nIts pair coverage is an algebraic check, NOT out-of-sample validation.\n",
+  "fields": 44,
+  "targets": 12,
+  "distinct_positive_residual_pairs": 329,
+  "per_target": {
+    "congestion_price_da": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 91,
+      "largest_pair_drop": 0.016045212745666504,
+      "positive_nnls_pair_residuals": 3,
+      "raw_increment_upgraded_4bins": 12,
+      "normalized_high_ge_05": 0,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.09495070510335522,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 0
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.14202727815562297,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 0
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.3122938109596698,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 28
+      }
+    },
+    "congestion_price_rt": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 83,
+      "largest_pair_drop": 0.07246285676956177,
+      "positive_nnls_pair_residuals": 4,
+      "raw_increment_upgraded_4bins": 14,
+      "normalized_high_ge_05": 1,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.08255010053829503,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 1
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.13314104645139271,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 4
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.2976484515943636,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 33
+      }
+    },
+    "da_as_total_mw_primary_reserve": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 28,
+      "largest_pair_drop": 0.01021885871887207,
+      "positive_nnls_pair_residuals": 15,
+      "raw_increment_upgraded_4bins": 23,
+      "normalized_high_ge_05": 4,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.16752200447130638,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 163
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.21410333224721304,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 47
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.18123856864316243,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 15
+      }
+    },
+    "da_as_total_mw_synchronized_reserve": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 31,
+      "largest_pair_drop": 0.005084514617919922,
+      "positive_nnls_pair_residuals": 8,
+      "raw_increment_upgraded_4bins": 17,
+      "normalized_high_ge_05": 4,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.1296449130813132,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 163
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.16377411650249013,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 47
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.18892810382264746,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 13
+      }
+    },
+    "da_as_total_mw_thirty_minutes_reserve": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 9,
+      "largest_pair_drop": 0.002340555191040039,
+      "positive_nnls_pair_residuals": 46,
+      "raw_increment_upgraded_4bins": 21,
+      "normalized_high_ge_05": 2,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.19703533830880904,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 35
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.2083024016758546,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 98
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.18468487907949183,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 8
+      }
+    },
+    "gross_actual_interchange_mw": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 48,
+      "largest_pair_drop": 0.01910257339477539,
+      "positive_nnls_pair_residuals": 2,
+      "raw_increment_upgraded_4bins": 16,
+      "normalized_high_ge_05": 1,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.08613049070575417,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 16
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.13213875527878427,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 13
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.2270949724213369,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 13
+      }
+    },
+    "marginal_loss_price_da": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 88,
+      "largest_pair_drop": 0.06383228302001953,
+      "positive_nnls_pair_residuals": 114,
+      "raw_increment_upgraded_4bins": 23,
+      "normalized_high_ge_05": 6,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.19517637869247373,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 108
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.22265437392111173,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 121
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.2289622068467214,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 9
+      }
+    },
+    "metered_load_mw": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 66,
+      "largest_pair_drop": 0.002057492733001709,
+      "positive_nnls_pair_residuals": 162,
+      "raw_increment_upgraded_4bins": 24,
+      "normalized_high_ge_05": 23,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.3155456640556464,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 465
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.1366123022978741,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 34
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.04983838547702982,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 1
+      }
+    },
+    "net_actual_interchange_mw": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 37,
+      "largest_pair_drop": 0.026947736740112305,
+      "positive_nnls_pair_residuals": 19,
+      "raw_increment_upgraded_4bins": 32,
+      "normalized_high_ge_05": 0,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.18131888945227528,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 0
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.18460280746007934,
+        "underestimates": 3,
+        "false_release": 2,
+        "false_reject": 7
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.2163832857052762,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 14
+      }
+    },
+    "total_gen": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 33,
+      "largest_pair_drop": 0.0017374753952026367,
+      "positive_nnls_pair_residuals": 129,
+      "raw_increment_upgraded_4bins": 29,
+      "normalized_high_ge_05": 22,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.3383402366041765,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 456
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.1353460497329671,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 36
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.04620915131918866,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 1
+      }
+    },
+    "total_lmp_da": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 78,
+      "largest_pair_drop": 0.03318941593170166,
+      "positive_nnls_pair_residuals": 227,
+      "raw_increment_upgraded_4bins": 18,
+      "normalized_high_ge_05": 14,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.19587922431317037,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 256
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.18371922878868108,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 115
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.10266794902032571,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 5
+      }
+    },
+    "total_losses": {
+      "pair_count": 946,
+      "nonmonotone_pair_count": 23,
+      "largest_pair_drop": 0.011120855808258057,
+      "positive_nnls_pair_residuals": 33,
+      "raw_increment_upgraded_4bins": 25,
+      "normalized_high_ge_05": 8,
+      "pair_construction_check": {
+        "n": 946,
+        "mae": 0.21832820914789297,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 114
+      },
+      "top3_outside_k1_guarantee": {
+        "n": 197,
+        "mae": 0.23298949858743168,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 130
+      },
+      "wide_outside_k1_guarantee": {
+        "n": 44,
+        "mae": 0.18780493475328103,
+        "underestimates": 0,
+        "false_release": 0,
+        "false_reject": 11
+      }
+    }
+  },
+  "wind": [
+    {
+      "target": "total_gen",
+      "field": "gen_fuel_wind_mw",
+      "singleton_r2": 0.06381911039352417,
+      "nnls_weight": 0.08172976851000834,
+      "max_raw_increment_k1": 0.7653958797454834,
+      "max_log_increment_k1": 1.2250600397026068,
+      "conditional_residual_reduction_k1": 0.9137167749610586,
+      "raw_witness": "gen_fuel_wind_pct",
+      "log_witness": "gen_fuel_wind_pct"
+    },
+    {
+      "target": "total_gen",
+      "field": "gen_fuel_wind_pct",
+      "singleton_r2": 0.16232699155807495,
+      "nnls_weight": 0.12061074421400013,
+      "max_raw_increment_k1": 0.8639037609100342,
+      "max_log_increment_k1": 1.280650487864133,
+      "conditional_residual_reduction_k1": 0.9227957657554584,
+      "raw_witness": "gen_fuel_wind_mw",
+      "log_witness": "gen_fuel_wind_mw"
+    }
+  ]
+}

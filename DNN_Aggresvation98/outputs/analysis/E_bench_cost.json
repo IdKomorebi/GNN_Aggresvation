@@ -1,0 +1,15 @@
+{
+  "batched_B256_s_per_set": 0.08201611693948507,
+  "batched_B1024_s_per_set": 0.055968196829780936,
+  "batched_B2048_s_per_set": 0.05683722335379571,
+  "sequential_s_per_set": 23.626150051752727,
+  "wide_n": 50,
+  "wide_size_range": [
+    1,
+    43
+  ],
+  "wide_leak69_minus_hist69": -0.005561358630657187,
+  "wide_leak69_MAE_hist69": 0.007212145825227097,
+  "wide_clean_minus_hist69": -0.00769794136285781,
+  "wide_clean_MAE_hist69": 0.008847380379835757
+}

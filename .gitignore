@@ -9,6 +9,13 @@ __pycache__/
 venv/
 env/
 *.log
+*.pid
+
+# Local environment configuration and secrets
+.env
+.env.*
+!.env.example
+!.env.template
 
 # Generated model weights and NumPy archives
 *.pt

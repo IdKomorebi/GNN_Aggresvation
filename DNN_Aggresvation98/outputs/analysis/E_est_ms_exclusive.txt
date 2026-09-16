@@ -1,0 +1,8 @@
+lin done lin 0.62 ms/set
+direct done direct 0.65 ms/set
+L0 done L0 2.96 ms/set
+L0x done L0x 5.53 ms/set
+L1x done L1x 5.41 ms/set
+L1ens done L1ens 28.92 ms/set
+L0ensx done L0ensx 30.48 ms/set
+rffx done rffx 29.10 ms/set

@@ -1,0 +1,24 @@
+[example total_gen] gen_fuel_wind_mw: 真值 v_i=0.064 M_i=0.765 伙伴=gen_fuel_wind_pct | 几何 v_i=0.072 M_i=0.097 伙伴=gen_fuel_other_renewables_mw
+[example total_gen] gen_fuel_wind_pct: 真值 v_i=0.162 M_i=0.864 伙伴=gen_fuel_wind_mw | 几何 v_i=0.178 M_i=0.182 伙伴=total_pjm_self_sched_reg
+PAIR_FRAC=0.0  fields=44 targets=12
+eval      model              MAE    bias   Spear  danger conserv
+pair_held add+maxpair      0.039   0.002   0.925   0.005   0.004
+pair_held add_log          0.039   0.002   0.925   0.005   0.004
+pair_held geom_d16         0.018   0.002   0.976   0.002   0.002
+pair_held geom_d8          0.018   0.002   0.976   0.002   0.002
+top3      add+maxpair      0.059  -0.036   0.808   0.044   0.021
+top3      add_log          0.059  -0.036   0.808   0.044   0.021
+top3      geom_d16         0.057  -0.048   0.823   0.043   0.005
+top3      geom_d8          0.057  -0.048   0.823   0.043   0.005
+wide      add+maxpair      0.083   0.070   0.920   0.004   0.125
+wide      add_log          0.083   0.070   0.920   0.004   0.125
+wide      geom_d16         0.043  -0.004   0.929   0.025   0.053
+wide      geom_d8          0.043  -0.004   0.929   0.025   0.053
+
+k=1 最坏背景分级 vs 真值（12 目标平均）: Kendall τ | 4档一致率 | 差≥2档比例 | 伙伴命中率
+  add_log          0.680   0.553   0.036   0.009
+  add+maxpair      0.680   0.553   0.036   0.009
+  geom_d8          0.718   0.684   0.042   0.138
+  geom_d16         0.718   0.680   0.042   0.129
+  naive_v{i}       0.655   0.519   0.066     nan
+考虑协同后比单字段升档的字段数(真值,每目标): [('congestion_price_da', np.int64(12)), ('congestion_price_rt', np.int64(14)), ('da_as_total_mw_primary_reserve', np.int64(23)), ('da_as_total_mw_synchronized_reserve', np.int64(17)), ('da_as_total_mw_thirty_minutes_reserve', np.int64(21)), ('gross_actual_interchange_mw', np.int64(16)), ('marginal_loss_price_da', np.int64(23)), ('metered_load_mw', np.int64(24)), ('net_actual_interchange_mw', np.int64(32)), ('total_gen', np.int64(29)), ('total_lmp_da', np.int64(18)), ('total_losses', np.int64(25))]

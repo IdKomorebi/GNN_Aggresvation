@@ -1,0 +1,50 @@
+# DNN_Aggresvation98 运行流水
+
+> 自动记录；实验结论见 `CHANGELOG.md`。
+
+- `2026-09-15 13:57:23` ▶ **[TRUTH] START**　rand seed0 shard2/3 n=1363
+- `2026-09-15 13:57:23` ▶ **[TRUTH] START**　rand seed0 shard0/3 n=1364
+- `2026-09-15 13:57:23` ▶ **[TRUTH] START**　rand seed0 shard1/3 n=1363
+- `2026-09-15 13:58:47` ✔ **[TRUTH] DONE**　rand seed0 shard2/3 n=1363 84s -> rand_seed0_s2of3.npz
+- `2026-09-15 13:58:48` ✔ **[TRUTH] DONE**　rand seed0 shard1/3 n=1363 85s -> rand_seed0_s1of3.npz
+- `2026-09-15 13:58:50` ✔ **[TRUTH] DONE**　rand seed0 shard0/3 n=1364 87s -> rand_seed0_s0of3.npz
+- `2026-09-15 13:58:51` ▶ **[TRUTH] START**　rand seed1 shard2/3 n=1363
+- `2026-09-15 13:58:51` ▶ **[TRUTH] START**　rand seed1 shard1/3 n=1363
+- `2026-09-15 13:58:53` ▶ **[TRUTH] START**　rand seed1 shard0/3 n=1364
+- `2026-09-15 14:00:14` ✔ **[TRUTH] DONE**　rand seed1 shard2/3 n=1363 83s -> rand_seed1_s2of3.npz
+- `2026-09-15 14:00:17` ▶ **[TRUTH] START**　gameB seed0 shard2/3 n=1365
+- `2026-09-15 14:00:17` ✔ **[TRUTH] DONE**　rand seed1 shard1/3 n=1363 86s -> rand_seed1_s1of3.npz
+- `2026-09-15 14:00:19` ✔ **[TRUTH] DONE**　rand seed1 shard0/3 n=1364 86s -> rand_seed1_s0of3.npz
+- `2026-09-15 14:00:21` ▶ **[TRUTH] START**　gameB seed0 shard1/3 n=1365
+- `2026-09-15 14:00:22` ▶ **[TRUTH] START**　gameB seed0 shard0/3 n=1366
+- `2026-09-15 14:01:44` ✔ **[TRUTH] DONE**　gameB seed0 shard2/3 n=1365 87s -> gameB_seed0_s2of3.npz
+- `2026-09-15 14:01:47` ✔ **[TRUTH] DONE**　gameB seed0 shard1/3 n=1365 86s -> gameB_seed0_s1of3.npz
+- `2026-09-15 14:01:47` ▶ **[TRUTH] START**　gameB seed1 shard2/3 n=1365
+- `2026-09-15 14:01:48` ✔ **[TRUTH] DONE**　gameB seed0 shard0/3 n=1366 86s -> gameB_seed0_s0of3.npz
+- `2026-09-15 14:01:50` ▶ **[TRUTH] START**　gameB seed1 shard1/3 n=1365
+- `2026-09-15 14:01:51` ▶ **[TRUTH] START**　gameB seed1 shard0/3 n=1366
+- `2026-09-15 14:03:13` ✔ **[TRUTH] DONE**　gameB seed1 shard2/3 n=1365 86s -> gameB_seed1_s2of3.npz
+- `2026-09-15 14:03:16` ✔ **[TRUTH] DONE**　gameB seed1 shard1/3 n=1365 86s -> gameB_seed1_s1of3.npz
+- `2026-09-15 14:03:16` ▶ **[TRUTH] START**　gameA seed0 shard2/3 n=5461
+- `2026-09-15 14:03:17` ✔ **[TRUTH] DONE**　gameB seed1 shard0/3 n=1366 86s -> gameB_seed1_s0of3.npz
+- `2026-09-15 14:03:19` ▶ **[TRUTH] START**　gameA seed0 shard1/3 n=5461
+- `2026-09-15 14:03:20` ▶ **[TRUTH] START**　gameA seed0 shard0/3 n=5462
+- `2026-09-15 14:09:02` ✔ **[TRUTH] DONE**　gameA seed0 shard0/3 n=5462 342s -> gameA_seed0_s0of3.npz
+- `2026-09-15 14:09:04` ▶ **[TRUTH] START**　gameA seed1 shard0/3 n=5462
+- `2026-09-15 14:10:42` ✔ **[TRUTH] DONE**　gameA seed0 shard2/3 n=5461 446s -> gameA_seed0_s2of3.npz
+- `2026-09-15 14:10:46` ▶ **[TRUTH] START**　gameA seed1 shard2/3 n=5461
+- `2026-09-15 14:11:30` ✔ **[MONO] DONE**　lam=0.0 seed0 ep=318 val=0.3643 41s -> oracle_mono0_seed0.pt
+- `2026-09-15 14:11:37` ✔ **[TRUTH] DONE**　gameA seed0 shard1/3 n=5461 498s -> gameA_seed0_s1of3.npz
+- `2026-09-15 14:11:40` ▶ **[TRUTH] START**　gameA seed1 shard1/3 n=5461
+- `2026-09-15 14:12:27` ✔ **[MONO] DONE**　lam=1.0 seed0 ep=400 val=0.3632 99s -> oracle_mono1_seed0.pt
+- `2026-09-15 14:12:28` ✔ **[MONO] DONE**　lam=10.0 seed0 ep=400 val=0.4145 100s -> oracle_mono10_seed0.pt
+- `2026-09-15 14:14:15` ✔ **[TRUTH] DONE**　gameA seed1 shard0/3 n=5462 310s -> gameA_seed1_s0of3.npz
+- `2026-09-15 14:16:08` ✔ **[TRUTH] DONE**　gameA seed1 shard2/3 n=5461 322s -> gameA_seed1_s2of3.npz
+- `2026-09-15 14:20:12` ✔ **[TRUTH] DONE**　gameA seed1 shard1/3 n=5461 512s -> gameA_seed1_s1of3.npz
+- `2026-09-15 14:36:22` ✔ **[SAGE] DONE**　gameB seed0 ep=400 fullR2=0.6551 26s
+- `2026-09-15 14:36:45` ✔ **[SAGE] DONE**　gameB seed1 ep=400 fullR2=0.6548 22s
+- `2026-09-15 14:37:12` ✔ **[SAGE] DONE**　gameB seed2 ep=400 fullR2=0.6601 28s
+- `2026-09-15 14:37:43` ✔ **[SAGE] DONE**　gameA seed0 ep=336 fullR2=0.7829 27s
+- `2026-09-15 14:38:14` ✔ **[SAGE] DONE**　gameA seed1 ep=400 fullR2=0.7896 32s
+- `2026-09-15 14:38:46` ✔ **[SAGE] DONE**　gameA seed2 ep=400 fullR2=0.7874 32s
+- `2026-09-15 14:44:18` ✔ **[BENCH] DONE**　{"batched_B256_s_per_set": 0.082, "batched_B1024_s_per_set": 0.056, "batched_B2048_s_per_set": 0.0568, "sequential_s_per_set": 23.6262, "wide_n": 50, "wide_size_range": [1, 43], "wide_leak69_minus_hist69": -0.0056, "wide_leak69_MAE_hist69": 0.0072, "wide_clean_minus_hist69": -0.0077, "wide_clean_MAE_hist69": 0.0088}

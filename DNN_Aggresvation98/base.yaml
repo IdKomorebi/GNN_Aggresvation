@@ -1,0 +1,25 @@
+experiment:
+  name: dnn98_value_model_fidelity_and_shapley_plan_check
+  purpose: >
+    复核通用集合价值模型的保真度与改进空间；实验检验 GPT 研究方案
+    (reports/inference_capability_shapley_research_plan.md) 各环节是否成立。
+dataset:
+  csv_path: ../data/Processed/pjm_rto_hourly_2025_cleaned.csv   # 与 69/75/91/93/97 同一份
+  split: shuffle seed=42, train 70% / test 30%（沿用，历史 oracle 训练集与本号测试集不相交）
+  val: train 内部 15%，VAL_SEED=20260915（真值早停只看 val）
+  fields: 44 general / 12 confidential（69 号 base.yaml 口径；常量列已由 prepare_data 删除）
+  alias_groups:   # 标准化后逐行相等
+    - [da_as_ss_mw_primary_reserve, da_as_ss_mw_synchronized_reserve, da_as_ss_mw_thirty_minutes_reserve]
+    - [da_as_as_req_mw_primary_reserve, da_as_as_req_mw_synchronized_reserve]   # 仿射：sync = 0.667·primary + 63.3
+truth:
+  attacker: DNN Linear(|S|,128)-ReLU-Drop.15-Linear(128,128)-ReLU-Drop.15-Linear(128,12)
+  optimizer: Adam lr 1e-3 wd 5e-4 batch 128, epochs ≤300, patience 60 (mean val)
+  protocol: clean = 逐(集合,目标)按 val 选 epoch；leak69 = 按平均测试 MSE 选 epoch（复刻历史）
+  engine: 并行专用重训（src/batch_truth.py），掩码输入置 0 与只用 S 列重训函数等价
+  seeds: [0, 1]
+mask_sets:
+  gameA: 14 玩家全部 2^14 联盟（src/common.py:GAME_A）
+  gameB: 12 随机不同字段全部 2^12 联盟（seed 98）
+  rand: 44 维单字段 44 + 字段对 946 + 规模均匀随机 1500 + 边际配对 400×2 + 交互四元组 200×4
+value_models: [lin, lin2, poly2, direct, L0, L0x, L1, L1x, L1ens, rffx, mono0, mono1, mono10]
+gpu: 最多 GPU0/1/2，留 GPU3

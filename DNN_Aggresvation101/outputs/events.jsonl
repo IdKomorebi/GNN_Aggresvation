@@ -1,0 +1,144 @@
+{"time": "2026-09-16T02:14:38", "stage": "ORACLE", "status": "DONE", "note": "pjm rep0h0 seed0 ep=306 val=0.3505 14s", "train_sec": 14.03250527381897}
+{"time": "2026-09-16T02:14:41", "stage": "ORACLE", "status": "DONE", "note": "pjm rep0h0 seed2 ep=385 val=0.3428 17s", "train_sec": 17.00553274154663}
+{"time": "2026-09-16T02:14:42", "stage": "ORACLE", "status": "DONE", "note": "pjm rep0h0 seed1 ep=400 val=0.3582 19s", "train_sec": 18.98393726348877}
+{"time": "2026-09-16T02:15:47", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep0h0 L0ensx sh2/3 n=3840 15.93 ms/集合", "ms_per_set": 15.928589552640915}
+{"time": "2026-09-16T02:15:52", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep0h0 L0ensx sh0/3 n=3841 17.29 ms/集合", "ms_per_set": 17.292823930545204}
+{"time": "2026-09-16T02:15:52", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep0h0 L0ensx sh1/3 n=3840 17.40 ms/集合", "ms_per_set": 17.400298764308296}
+{"time": "2026-09-16T02:15:55", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep0h0 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:15:55", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep0h0 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:15:55", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep0h0 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:17:43", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep0h0 seed0 shard1/3 n=3840 109s", "sec": 108.83998322486877}
+{"time": "2026-09-16T02:17:44", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep0h0 seed0 shard2/3 n=3840 109s", "sec": 108.96377635002136}
+{"time": "2026-09-16T02:17:45", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep0h0 seed0 shard0/3 n=3841 109s", "sec": 109.48939180374146}
+{"time": "2026-09-16T02:18:08", "stage": "ORACLE", "status": "DONE", "note": "pjm rep0h1 seed1 ep=400 val=0.3407 18s", "train_sec": 18.3978054523468}
+{"time": "2026-09-16T02:18:08", "stage": "ORACLE", "status": "DONE", "note": "pjm rep0h1 seed2 ep=400 val=0.3246 19s", "train_sec": 18.504624843597412}
+{"time": "2026-09-16T02:18:09", "stage": "ORACLE", "status": "DONE", "note": "pjm rep0h1 seed0 ep=400 val=0.3515 20s", "train_sec": 19.751972675323486}
+{"time": "2026-09-16T02:19:13", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep0h1 L0ensx sh2/3 n=3840 15.95 ms/集合", "ms_per_set": 15.945889862875145}
+{"time": "2026-09-16T02:19:18", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep0h1 L0ensx sh1/3 n=3840 17.26 ms/集合", "ms_per_set": 17.256798533101875}
+{"time": "2026-09-16T02:19:19", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep0h1 L0ensx sh0/3 n=3841 17.45 ms/集合", "ms_per_set": 17.446133470324234}
+{"time": "2026-09-16T02:19:21", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep0h1 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:19:21", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep0h1 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:19:22", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep0h1 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:21:11", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep0h1 seed0 shard2/3 n=3840 109s", "sec": 109.09440422058105}
+{"time": "2026-09-16T02:21:11", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep0h1 seed0 shard1/3 n=3840 109s", "sec": 109.26456809043884}
+{"time": "2026-09-16T02:21:11", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep0h1 seed0 shard0/3 n=3841 110s", "sec": 109.70231795310974}
+{"time": "2026-09-16T02:21:27", "stage": "ORACLE", "status": "DONE", "note": "pjm rep1h0 seed0 ep=247 val=0.3757 11s", "train_sec": 11.377957344055176}
+{"time": "2026-09-16T02:21:33", "stage": "ORACLE", "status": "DONE", "note": "pjm rep1h0 seed2 ep=346 val=0.3670 17s", "train_sec": 16.6971116065979}
+{"time": "2026-09-16T02:21:34", "stage": "ORACLE", "status": "DONE", "note": "pjm rep1h0 seed1 ep=400 val=0.3341 18s", "train_sec": 18.270197868347168}
+{"time": "2026-09-16T02:22:39", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep1h0 L0ensx sh2/3 n=3840 16.06 ms/集合", "ms_per_set": 16.05540749927362}
+{"time": "2026-09-16T02:22:44", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep1h0 L0ensx sh1/3 n=3840 17.33 ms/集合", "ms_per_set": 17.333033432563145}
+{"time": "2026-09-16T02:22:44", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep1h0 L0ensx sh0/3 n=3841 17.38 ms/集合", "ms_per_set": 17.380443658409128}
+{"time": "2026-09-16T02:22:46", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep1h0 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:22:47", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep1h0 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:22:47", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep1h0 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:24:35", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep1h0 seed0 shard2/3 n=3840 109s", "sec": 108.79173398017883}
+{"time": "2026-09-16T02:24:36", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep1h0 seed0 shard0/3 n=3841 109s", "sec": 109.32845640182495}
+{"time": "2026-09-16T02:24:36", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep1h0 seed0 shard1/3 n=3840 109s", "sec": 109.37310266494751}
+{"time": "2026-09-16T02:24:52", "stage": "ORACLE", "status": "DONE", "note": "pjm rep1h1 seed2 ep=231 val=0.4131 12s", "train_sec": 11.577201128005981}
+{"time": "2026-09-16T02:24:59", "stage": "ORACLE", "status": "DONE", "note": "pjm rep1h1 seed0 ep=400 val=0.3275 19s", "train_sec": 19.206769704818726}
+{"time": "2026-09-16T02:25:01", "stage": "ORACLE", "status": "DONE", "note": "pjm rep1h1 seed1 ep=400 val=0.3442 20s", "train_sec": 20.08488917350769}
+{"time": "2026-09-16T02:26:06", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep1h1 L0ensx sh2/3 n=3840 16.14 ms/集合", "ms_per_set": 16.13728478550911}
+{"time": "2026-09-16T02:26:11", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep1h1 L0ensx sh1/3 n=3840 17.44 ms/集合", "ms_per_set": 17.435051190356415}
+{"time": "2026-09-16T02:26:11", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep1h1 L0ensx sh0/3 n=3841 17.52 ms/集合", "ms_per_set": 17.516653974116455}
+{"time": "2026-09-16T02:26:14", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep1h1 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:26:14", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep1h1 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:26:14", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep1h1 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:28:02", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep1h1 seed0 shard2/3 n=3840 109s", "sec": 108.653648853302}
+{"time": "2026-09-16T02:28:03", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep1h1 seed0 shard0/3 n=3841 110s", "sec": 109.5548906326294}
+{"time": "2026-09-16T02:28:03", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep1h1 seed0 shard1/3 n=3840 109s", "sec": 109.26853013038635}
+{"time": "2026-09-16T02:28:20", "stage": "ORACLE", "status": "DONE", "note": "pjm rep2h0 seed0 ep=293 val=0.3786 13s", "train_sec": 12.724489688873291}
+{"time": "2026-09-16T02:28:24", "stage": "ORACLE", "status": "DONE", "note": "pjm rep2h0 seed2 ep=379 val=0.3111 16s", "train_sec": 16.079648971557617}
+{"time": "2026-09-16T02:28:25", "stage": "ORACLE", "status": "DONE", "note": "pjm rep2h0 seed1 ep=400 val=0.3272 18s", "train_sec": 17.593507766723633}
+{"time": "2026-09-16T02:29:30", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep2h0 L0ensx sh2/3 n=3840 16.02 ms/集合", "ms_per_set": 16.018444796403248}
+{"time": "2026-09-16T02:29:35", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep2h0 L0ensx sh0/3 n=3841 17.32 ms/集合", "ms_per_set": 17.31877468489508}
+{"time": "2026-09-16T02:29:35", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep2h0 L0ensx sh1/3 n=3840 17.41 ms/集合", "ms_per_set": 17.412228509783745}
+{"time": "2026-09-16T02:29:37", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep2h0 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:29:37", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep2h0 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:29:37", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep2h0 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:31:25", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep2h0 seed0 shard2/3 n=3840 109s", "sec": 108.64524984359741}
+{"time": "2026-09-16T02:31:26", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep2h0 seed0 shard1/3 n=3840 109s", "sec": 108.96390223503113}
+{"time": "2026-09-16T02:31:27", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep2h0 seed0 shard0/3 n=3841 110s", "sec": 109.57847476005554}
+{"time": "2026-09-16T02:31:48", "stage": "ORACLE", "status": "DONE", "note": "pjm rep2h1 seed2 ep=400 val=0.2747 18s", "train_sec": 17.727326154708862}
+{"time": "2026-09-16T02:31:49", "stage": "ORACLE", "status": "DONE", "note": "pjm rep2h1 seed0 ep=400 val=0.3494 18s", "train_sec": 17.610839366912842}
+{"time": "2026-09-16T02:31:49", "stage": "ORACLE", "status": "DONE", "note": "pjm rep2h1 seed1 ep=356 val=0.3492 18s", "train_sec": 17.629632472991943}
+{"time": "2026-09-16T02:32:53", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep2h1 L0ensx sh2/3 n=3840 16.01 ms/集合", "ms_per_set": 16.006757815678913}
+{"time": "2026-09-16T02:32:58", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep2h1 L0ensx sh1/3 n=3840 17.33 ms/集合", "ms_per_set": 17.325540756185852}
+{"time": "2026-09-16T02:32:59", "stage": "EST", "status": "DONE", "note": "pjm_k3_rep2h1 L0ensx sh0/3 n=3841 17.46 ms/集合", "ms_per_set": 17.461295427055727}
+{"time": "2026-09-16T02:33:01", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep2h1 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:33:01", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep2h1 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:33:01", "stage": "TRUTH", "status": "START", "note": "pjm_k3_rep2h1 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:34:50", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep2h1 seed0 shard0/3 n=3841 109s", "sec": 109.211918592453}
+{"time": "2026-09-16T02:34:50", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep2h1 seed0 shard2/3 n=3840 109s", "sec": 109.17973780632019}
+{"time": "2026-09-16T02:34:51", "stage": "TRUTH", "status": "DONE", "note": "pjm_k3_rep2h1 seed0 shard1/3 n=3840 109s", "sec": 109.44120383262634}
+{"time": "2026-09-16T02:35:11", "stage": "ORACLE", "status": "DONE", "note": "caiso rep0h0 seed2 ep=255 val=0.3869 15s", "train_sec": 15.085492610931396}
+{"time": "2026-09-16T02:35:18", "stage": "ORACLE", "status": "DONE", "note": "caiso rep0h0 seed0 ep=400 val=0.3609 22s", "train_sec": 22.363252639770508}
+{"time": "2026-09-16T02:35:19", "stage": "ORACLE", "status": "DONE", "note": "caiso rep0h0 seed1 ep=400 val=0.3676 23s", "train_sec": 23.26896071434021}
+{"time": "2026-09-16T02:36:37", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep0h0 L0ensx sh2/3 n=3840 19.61 ms/集合", "ms_per_set": 19.607281250258286}
+{"time": "2026-09-16T02:36:42", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep0h0 L0ensx sh1/3 n=3840 21.10 ms/集合", "ms_per_set": 21.10179519901673}
+{"time": "2026-09-16T02:36:44", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep0h0 L0ensx sh0/3 n=3841 21.32 ms/集合", "ms_per_set": 21.317204718973386}
+{"time": "2026-09-16T02:36:46", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep0h0 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:36:46", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep0h0 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:36:46", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep0h0 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:39:09", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep0h0 seed0 shard1/3 n=3840 143s", "sec": 143.49476838111877}
+{"time": "2026-09-16T02:39:10", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep0h0 seed0 shard2/3 n=3840 143s", "sec": 143.38554739952087}
+{"time": "2026-09-16T02:39:10", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep0h0 seed0 shard0/3 n=3841 144s", "sec": 144.1579942703247}
+{"time": "2026-09-16T02:39:36", "stage": "ORACLE", "status": "DONE", "note": "caiso rep0h1 seed2 ep=352 val=0.3752 21s", "train_sec": 21.042396068572998}
+{"time": "2026-09-16T02:39:38", "stage": "ORACLE", "status": "DONE", "note": "caiso rep0h1 seed1 ep=400 val=0.3578 23s", "train_sec": 22.870888710021973}
+{"time": "2026-09-16T02:39:39", "stage": "ORACLE", "status": "DONE", "note": "caiso rep0h1 seed0 ep=400 val=0.3589 24s", "train_sec": 24.418673515319824}
+{"time": "2026-09-16T02:40:57", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep0h1 L0ensx sh2/3 n=3840 19.38 ms/集合", "ms_per_set": 19.381515433390938}
+{"time": "2026-09-16T02:41:04", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep0h1 L0ensx sh1/3 n=3840 21.23 ms/集合", "ms_per_set": 21.233691771825153}
+{"time": "2026-09-16T02:41:05", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep0h1 L0ensx sh0/3 n=3841 21.38 ms/集合", "ms_per_set": 21.37754386180827}
+{"time": "2026-09-16T02:41:07", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep0h1 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:41:07", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep0h1 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:41:07", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep0h1 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:43:31", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep0h1 seed0 shard1/3 n=3840 144s", "sec": 143.7233579158783}
+{"time": "2026-09-16T02:43:31", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep0h1 seed0 shard2/3 n=3840 143s", "sec": 143.4929964542389}
+{"time": "2026-09-16T02:43:31", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep0h1 seed0 shard0/3 n=3841 144s", "sec": 143.95807242393494}
+{"time": "2026-09-16T02:43:52", "stage": "ORACLE", "status": "DONE", "note": "caiso rep1h0 seed2 ep=271 val=0.3548 17s", "train_sec": 17.118073225021362}
+{"time": "2026-09-16T02:44:01", "stage": "ORACLE", "status": "DONE", "note": "caiso rep1h0 seed0 ep=400 val=0.3733 26s", "train_sec": 25.730395793914795}
+{"time": "2026-09-16T02:44:01", "stage": "ORACLE", "status": "DONE", "note": "caiso rep1h0 seed1 ep=400 val=0.3338 26s", "train_sec": 25.683238983154297}
+{"time": "2026-09-16T02:45:19", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep1h0 L0ensx sh2/3 n=3840 19.45 ms/集合", "ms_per_set": 19.452030025422573}
+{"time": "2026-09-16T02:45:25", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep1h0 L0ensx sh0/3 n=3841 21.05 ms/集合", "ms_per_set": 21.049026895457025}
+{"time": "2026-09-16T02:45:26", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep1h0 L0ensx sh1/3 n=3840 21.39 ms/集合", "ms_per_set": 21.385477483272552}
+{"time": "2026-09-16T02:45:28", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep1h0 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:45:28", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep1h0 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:45:28", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep1h0 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:47:51", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep1h0 seed0 shard2/3 n=3840 143s", "sec": 143.11466932296753}
+{"time": "2026-09-16T02:47:52", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep1h0 seed0 shard1/3 n=3840 144s", "sec": 143.54450130462646}
+{"time": "2026-09-16T02:47:53", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep1h0 seed0 shard0/3 n=3841 144s", "sec": 144.2516384124756}
+{"time": "2026-09-16T02:48:18", "stage": "ORACLE", "status": "DONE", "note": "caiso rep1h1 seed2 ep=343 val=0.3647 20s", "train_sec": 20.337913274765015}
+{"time": "2026-09-16T02:48:20", "stage": "ORACLE", "status": "DONE", "note": "caiso rep1h1 seed0 ep=400 val=0.3265 23s", "train_sec": 23.077083826065063}
+{"time": "2026-09-16T02:48:22", "stage": "ORACLE", "status": "DONE", "note": "caiso rep1h1 seed1 ep=400 val=0.3327 24s", "train_sec": 24.42582392692566}
+{"time": "2026-09-16T02:49:40", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep1h1 L0ensx sh2/3 n=3840 19.44 ms/集合", "ms_per_set": 19.444267513851322}
+{"time": "2026-09-16T02:49:47", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep1h1 L0ensx sh0/3 n=3841 21.35 ms/集合", "ms_per_set": 21.351907191814092}
+{"time": "2026-09-16T02:49:47", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep1h1 L0ensx sh1/3 n=3840 21.38 ms/集合", "ms_per_set": 21.37993505845467}
+{"time": "2026-09-16T02:49:49", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep1h1 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:49:50", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep1h1 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:49:50", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep1h1 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:52:13", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep1h1 seed0 shard2/3 n=3840 143s", "sec": 143.4171760082245}
+{"time": "2026-09-16T02:52:14", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep1h1 seed0 shard1/3 n=3840 144s", "sec": 144.12869715690613}
+{"time": "2026-09-16T02:52:14", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep1h1 seed0 shard0/3 n=3841 144s", "sec": 144.4335482120514}
+{"time": "2026-09-16T02:52:39", "stage": "ORACLE", "status": "DONE", "note": "caiso rep2h0 seed0 ep=342 val=0.3399 20s", "train_sec": 20.138639450073242}
+{"time": "2026-09-16T02:52:41", "stage": "ORACLE", "status": "DONE", "note": "caiso rep2h0 seed2 ep=400 val=0.3770 22s", "train_sec": 22.242635011672974}
+{"time": "2026-09-16T02:52:43", "stage": "ORACLE", "status": "DONE", "note": "caiso rep2h0 seed1 ep=400 val=0.3407 24s", "train_sec": 24.323474168777466}
+{"time": "2026-09-16T02:54:00", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep2h0 L0ensx sh2/3 n=3840 19.33 ms/集合", "ms_per_set": 19.332832222183548}
+{"time": "2026-09-16T02:54:07", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep2h0 L0ensx sh0/3 n=3841 21.19 ms/集合", "ms_per_set": 21.192582750407336}
+{"time": "2026-09-16T02:54:13", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep2h0 L0ensx sh1/3 n=3840 22.67 ms/集合", "ms_per_set": 22.666026651859283}
+{"time": "2026-09-16T02:54:15", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep2h0 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:54:15", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep2h0 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T02:54:16", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep2h0 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:56:38", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep2h0 seed0 shard2/3 n=3840 143s", "sec": 143.07487893104553}
+{"time": "2026-09-16T02:56:39", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep2h0 seed0 shard0/3 n=3841 144s", "sec": 144.2645161151886}
+{"time": "2026-09-16T02:56:40", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep2h0 seed0 shard1/3 n=3840 144s", "sec": 143.8577916622162}
+{"time": "2026-09-16T02:57:04", "stage": "ORACLE", "status": "DONE", "note": "caiso rep2h1 seed2 ep=345 val=0.3561 20s", "train_sec": 19.650855541229248}
+{"time": "2026-09-16T02:57:06", "stage": "ORACLE", "status": "DONE", "note": "caiso rep2h1 seed1 ep=400 val=0.3967 22s", "train_sec": 22.110875368118286}
+{"time": "2026-09-16T02:57:07", "stage": "ORACLE", "status": "DONE", "note": "caiso rep2h1 seed0 ep=400 val=0.3187 23s", "train_sec": 22.723831176757812}
+{"time": "2026-09-16T02:58:25", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep2h1 L0ensx sh2/3 n=3840 19.48 ms/集合", "ms_per_set": 19.475899760921795}
+{"time": "2026-09-16T02:58:31", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep2h1 L0ensx sh0/3 n=3841 21.01 ms/集合", "ms_per_set": 21.007695752982826}
+{"time": "2026-09-16T02:58:31", "stage": "EST", "status": "DONE", "note": "caiso_k3_rep2h1 L0ensx sh1/3 n=3840 21.28 ms/集合", "ms_per_set": 21.281680464744568}
+{"time": "2026-09-16T02:58:33", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep2h1 seed0 shard2/3 n=3840"}
+{"time": "2026-09-16T02:58:34", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep2h1 seed0 shard1/3 n=3840"}
+{"time": "2026-09-16T02:58:34", "stage": "TRUTH", "status": "START", "note": "caiso_k3_rep2h1 seed0 shard0/3 n=3841"}
+{"time": "2026-09-16T03:00:57", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep2h1 seed0 shard2/3 n=3840 143s", "sec": 143.4325556755066}
+{"time": "2026-09-16T03:00:57", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep2h1 seed0 shard1/3 n=3840 144s", "sec": 143.50296115875244}
+{"time": "2026-09-16T03:00:57", "stage": "TRUTH", "status": "DONE", "note": "caiso_k3_rep2h1 seed0 shard0/3 n=3841 144s", "sec": 143.8999490737915}

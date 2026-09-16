@@ -1,0 +1,16 @@
+experiment:
+  name: dnn99_mk_definition_and_security_semantics
+  purpose: >
+    为背景受限最大边际 M^(K) 给出严格定义，证明其安全语义（余量 / 关键性⇔最小不安全集合 / 预算包络），
+    理顺它与单字段能力、二阶交互、不可约协同、Shapley 的数学关系，并在精确真值博弈上逐条数值核验。
+theory_doc: ../paper/20260915_MK严格定义与安全语义.md
+data:
+  truth: ../DNN_Aggresvation98/outputs/truth/{gameA,gameB}_seed{0,1}_s*of3.npz   # 两种子 clean 口径平均
+  estimators: ../DNN_Aggresvation98/outputs/est/{gameA,gameB}_{L1x,L0ensx,L0,direct}_s*of3.npz
+  games: {gameA: 14 玩家 2^14 联盟, gameB: 12 玩家 2^12 联盟}
+value_function:
+  v: 并行专用重训 DNN 测试 R²（clip 到 [0,1]）
+  v_bar: 单调包络 max_{T⊆S} v(T)
+thresholds_tau: [0.5, 0.7, 0.9]
+background_orders_K: 0..p-1（重点 1/2/3）
+compute: 纯 CPU，无 GPU

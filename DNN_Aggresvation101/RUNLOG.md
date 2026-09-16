@@ -1,0 +1,148 @@
+# DNN_Aggresvation101 运行流水
+
+> 自动记录；实验结论见 `CHANGELOG.md`。
+
+- `2026-09-16 02:14:38` ✔ **[ORACLE] DONE**　pjm rep0h0 seed0 ep=306 val=0.3505 14s
+- `2026-09-16 02:14:41` ✔ **[ORACLE] DONE**　pjm rep0h0 seed2 ep=385 val=0.3428 17s
+- `2026-09-16 02:14:42` ✔ **[ORACLE] DONE**　pjm rep0h0 seed1 ep=400 val=0.3582 19s
+- `2026-09-16 02:15:47` ✔ **[EST] DONE**　pjm_k3_rep0h0 L0ensx sh2/3 n=3840 15.93 ms/集合
+- `2026-09-16 02:15:52` ✔ **[EST] DONE**　pjm_k3_rep0h0 L0ensx sh0/3 n=3841 17.29 ms/集合
+- `2026-09-16 02:15:52` ✔ **[EST] DONE**　pjm_k3_rep0h0 L0ensx sh1/3 n=3840 17.40 ms/集合
+- `2026-09-16 02:15:55` ▶ **[TRUTH] START**　pjm_k3_rep0h0 seed0 shard1/3 n=3840
+- `2026-09-16 02:15:55` ▶ **[TRUTH] START**　pjm_k3_rep0h0 seed0 shard0/3 n=3841
+- `2026-09-16 02:15:55` ▶ **[TRUTH] START**　pjm_k3_rep0h0 seed0 shard2/3 n=3840
+- `2026-09-16 02:17:43` ✔ **[TRUTH] DONE**　pjm_k3_rep0h0 seed0 shard1/3 n=3840 109s
+- `2026-09-16 02:17:44` ✔ **[TRUTH] DONE**　pjm_k3_rep0h0 seed0 shard2/3 n=3840 109s
+- `2026-09-16 02:17:45` ✔ **[TRUTH] DONE**　pjm_k3_rep0h0 seed0 shard0/3 n=3841 109s
+- `2026-09-16 02:18:08` ✔ **[ORACLE] DONE**　pjm rep0h1 seed1 ep=400 val=0.3407 18s
+- `2026-09-16 02:18:08` ✔ **[ORACLE] DONE**　pjm rep0h1 seed2 ep=400 val=0.3246 19s
+- `2026-09-16 02:18:09` ✔ **[ORACLE] DONE**　pjm rep0h1 seed0 ep=400 val=0.3515 20s
+- `2026-09-16 02:19:13` ✔ **[EST] DONE**　pjm_k3_rep0h1 L0ensx sh2/3 n=3840 15.95 ms/集合
+- `2026-09-16 02:19:18` ✔ **[EST] DONE**　pjm_k3_rep0h1 L0ensx sh1/3 n=3840 17.26 ms/集合
+- `2026-09-16 02:19:19` ✔ **[EST] DONE**　pjm_k3_rep0h1 L0ensx sh0/3 n=3841 17.45 ms/集合
+- `2026-09-16 02:19:21` ▶ **[TRUTH] START**　pjm_k3_rep0h1 seed0 shard1/3 n=3840
+- `2026-09-16 02:19:21` ▶ **[TRUTH] START**　pjm_k3_rep0h1 seed0 shard0/3 n=3841
+- `2026-09-16 02:19:22` ▶ **[TRUTH] START**　pjm_k3_rep0h1 seed0 shard2/3 n=3840
+- `2026-09-16 02:21:11` ✔ **[TRUTH] DONE**　pjm_k3_rep0h1 seed0 shard2/3 n=3840 109s
+- `2026-09-16 02:21:11` ✔ **[TRUTH] DONE**　pjm_k3_rep0h1 seed0 shard1/3 n=3840 109s
+- `2026-09-16 02:21:11` ✔ **[TRUTH] DONE**　pjm_k3_rep0h1 seed0 shard0/3 n=3841 110s
+- `2026-09-16 02:21:27` ✔ **[ORACLE] DONE**　pjm rep1h0 seed0 ep=247 val=0.3757 11s
+- `2026-09-16 02:21:33` ✔ **[ORACLE] DONE**　pjm rep1h0 seed2 ep=346 val=0.3670 17s
+- `2026-09-16 02:21:34` ✔ **[ORACLE] DONE**　pjm rep1h0 seed1 ep=400 val=0.3341 18s
+- `2026-09-16 02:22:39` ✔ **[EST] DONE**　pjm_k3_rep1h0 L0ensx sh2/3 n=3840 16.06 ms/集合
+- `2026-09-16 02:22:44` ✔ **[EST] DONE**　pjm_k3_rep1h0 L0ensx sh1/3 n=3840 17.33 ms/集合
+- `2026-09-16 02:22:44` ✔ **[EST] DONE**　pjm_k3_rep1h0 L0ensx sh0/3 n=3841 17.38 ms/集合
+- `2026-09-16 02:22:46` ▶ **[TRUTH] START**　pjm_k3_rep1h0 seed0 shard0/3 n=3841
+- `2026-09-16 02:22:47` ▶ **[TRUTH] START**　pjm_k3_rep1h0 seed0 shard2/3 n=3840
+- `2026-09-16 02:22:47` ▶ **[TRUTH] START**　pjm_k3_rep1h0 seed0 shard1/3 n=3840
+- `2026-09-16 02:24:35` ✔ **[TRUTH] DONE**　pjm_k3_rep1h0 seed0 shard2/3 n=3840 109s
+- `2026-09-16 02:24:36` ✔ **[TRUTH] DONE**　pjm_k3_rep1h0 seed0 shard0/3 n=3841 109s
+- `2026-09-16 02:24:36` ✔ **[TRUTH] DONE**　pjm_k3_rep1h0 seed0 shard1/3 n=3840 109s
+- `2026-09-16 02:24:52` ✔ **[ORACLE] DONE**　pjm rep1h1 seed2 ep=231 val=0.4131 12s
+- `2026-09-16 02:24:59` ✔ **[ORACLE] DONE**　pjm rep1h1 seed0 ep=400 val=0.3275 19s
+- `2026-09-16 02:25:01` ✔ **[ORACLE] DONE**　pjm rep1h1 seed1 ep=400 val=0.3442 20s
+- `2026-09-16 02:26:06` ✔ **[EST] DONE**　pjm_k3_rep1h1 L0ensx sh2/3 n=3840 16.14 ms/集合
+- `2026-09-16 02:26:11` ✔ **[EST] DONE**　pjm_k3_rep1h1 L0ensx sh1/3 n=3840 17.44 ms/集合
+- `2026-09-16 02:26:11` ✔ **[EST] DONE**　pjm_k3_rep1h1 L0ensx sh0/3 n=3841 17.52 ms/集合
+- `2026-09-16 02:26:14` ▶ **[TRUTH] START**　pjm_k3_rep1h1 seed0 shard0/3 n=3841
+- `2026-09-16 02:26:14` ▶ **[TRUTH] START**　pjm_k3_rep1h1 seed0 shard2/3 n=3840
+- `2026-09-16 02:26:14` ▶ **[TRUTH] START**　pjm_k3_rep1h1 seed0 shard1/3 n=3840
+- `2026-09-16 02:28:02` ✔ **[TRUTH] DONE**　pjm_k3_rep1h1 seed0 shard2/3 n=3840 109s
+- `2026-09-16 02:28:03` ✔ **[TRUTH] DONE**　pjm_k3_rep1h1 seed0 shard0/3 n=3841 110s
+- `2026-09-16 02:28:03` ✔ **[TRUTH] DONE**　pjm_k3_rep1h1 seed0 shard1/3 n=3840 109s
+- `2026-09-16 02:28:20` ✔ **[ORACLE] DONE**　pjm rep2h0 seed0 ep=293 val=0.3786 13s
+- `2026-09-16 02:28:24` ✔ **[ORACLE] DONE**　pjm rep2h0 seed2 ep=379 val=0.3111 16s
+- `2026-09-16 02:28:25` ✔ **[ORACLE] DONE**　pjm rep2h0 seed1 ep=400 val=0.3272 18s
+- `2026-09-16 02:29:30` ✔ **[EST] DONE**　pjm_k3_rep2h0 L0ensx sh2/3 n=3840 16.02 ms/集合
+- `2026-09-16 02:29:35` ✔ **[EST] DONE**　pjm_k3_rep2h0 L0ensx sh0/3 n=3841 17.32 ms/集合
+- `2026-09-16 02:29:35` ✔ **[EST] DONE**　pjm_k3_rep2h0 L0ensx sh1/3 n=3840 17.41 ms/集合
+- `2026-09-16 02:29:37` ▶ **[TRUTH] START**　pjm_k3_rep2h0 seed0 shard1/3 n=3840
+- `2026-09-16 02:29:37` ▶ **[TRUTH] START**　pjm_k3_rep2h0 seed0 shard2/3 n=3840
+- `2026-09-16 02:29:37` ▶ **[TRUTH] START**　pjm_k3_rep2h0 seed0 shard0/3 n=3841
+- `2026-09-16 02:31:25` ✔ **[TRUTH] DONE**　pjm_k3_rep2h0 seed0 shard2/3 n=3840 109s
+- `2026-09-16 02:31:26` ✔ **[TRUTH] DONE**　pjm_k3_rep2h0 seed0 shard1/3 n=3840 109s
+- `2026-09-16 02:31:27` ✔ **[TRUTH] DONE**　pjm_k3_rep2h0 seed0 shard0/3 n=3841 110s
+- `2026-09-16 02:31:48` ✔ **[ORACLE] DONE**　pjm rep2h1 seed2 ep=400 val=0.2747 18s
+- `2026-09-16 02:31:49` ✔ **[ORACLE] DONE**　pjm rep2h1 seed0 ep=400 val=0.3494 18s
+- `2026-09-16 02:31:49` ✔ **[ORACLE] DONE**　pjm rep2h1 seed1 ep=356 val=0.3492 18s
+- `2026-09-16 02:32:53` ✔ **[EST] DONE**　pjm_k3_rep2h1 L0ensx sh2/3 n=3840 16.01 ms/集合
+- `2026-09-16 02:32:58` ✔ **[EST] DONE**　pjm_k3_rep2h1 L0ensx sh1/3 n=3840 17.33 ms/集合
+- `2026-09-16 02:32:59` ✔ **[EST] DONE**　pjm_k3_rep2h1 L0ensx sh0/3 n=3841 17.46 ms/集合
+- `2026-09-16 02:33:01` ▶ **[TRUTH] START**　pjm_k3_rep2h1 seed0 shard0/3 n=3841
+- `2026-09-16 02:33:01` ▶ **[TRUTH] START**　pjm_k3_rep2h1 seed0 shard1/3 n=3840
+- `2026-09-16 02:33:01` ▶ **[TRUTH] START**　pjm_k3_rep2h1 seed0 shard2/3 n=3840
+- `2026-09-16 02:34:50` ✔ **[TRUTH] DONE**　pjm_k3_rep2h1 seed0 shard0/3 n=3841 109s
+- `2026-09-16 02:34:50` ✔ **[TRUTH] DONE**　pjm_k3_rep2h1 seed0 shard2/3 n=3840 109s
+- `2026-09-16 02:34:51` ✔ **[TRUTH] DONE**　pjm_k3_rep2h1 seed0 shard1/3 n=3840 109s
+- `2026-09-16 02:35:11` ✔ **[ORACLE] DONE**　caiso rep0h0 seed2 ep=255 val=0.3869 15s
+- `2026-09-16 02:35:18` ✔ **[ORACLE] DONE**　caiso rep0h0 seed0 ep=400 val=0.3609 22s
+- `2026-09-16 02:35:19` ✔ **[ORACLE] DONE**　caiso rep0h0 seed1 ep=400 val=0.3676 23s
+- `2026-09-16 02:36:37` ✔ **[EST] DONE**　caiso_k3_rep0h0 L0ensx sh2/3 n=3840 19.61 ms/集合
+- `2026-09-16 02:36:42` ✔ **[EST] DONE**　caiso_k3_rep0h0 L0ensx sh1/3 n=3840 21.10 ms/集合
+- `2026-09-16 02:36:44` ✔ **[EST] DONE**　caiso_k3_rep0h0 L0ensx sh0/3 n=3841 21.32 ms/集合
+- `2026-09-16 02:36:46` ▶ **[TRUTH] START**　caiso_k3_rep0h0 seed0 shard0/3 n=3841
+- `2026-09-16 02:36:46` ▶ **[TRUTH] START**　caiso_k3_rep0h0 seed0 shard1/3 n=3840
+- `2026-09-16 02:36:46` ▶ **[TRUTH] START**　caiso_k3_rep0h0 seed0 shard2/3 n=3840
+- `2026-09-16 02:39:09` ✔ **[TRUTH] DONE**　caiso_k3_rep0h0 seed0 shard1/3 n=3840 143s
+- `2026-09-16 02:39:10` ✔ **[TRUTH] DONE**　caiso_k3_rep0h0 seed0 shard2/3 n=3840 143s
+- `2026-09-16 02:39:10` ✔ **[TRUTH] DONE**　caiso_k3_rep0h0 seed0 shard0/3 n=3841 144s
+- `2026-09-16 02:39:36` ✔ **[ORACLE] DONE**　caiso rep0h1 seed2 ep=352 val=0.3752 21s
+- `2026-09-16 02:39:38` ✔ **[ORACLE] DONE**　caiso rep0h1 seed1 ep=400 val=0.3578 23s
+- `2026-09-16 02:39:39` ✔ **[ORACLE] DONE**　caiso rep0h1 seed0 ep=400 val=0.3589 24s
+- `2026-09-16 02:40:57` ✔ **[EST] DONE**　caiso_k3_rep0h1 L0ensx sh2/3 n=3840 19.38 ms/集合
+- `2026-09-16 02:41:04` ✔ **[EST] DONE**　caiso_k3_rep0h1 L0ensx sh1/3 n=3840 21.23 ms/集合
+- `2026-09-16 02:41:05` ✔ **[EST] DONE**　caiso_k3_rep0h1 L0ensx sh0/3 n=3841 21.38 ms/集合
+- `2026-09-16 02:41:07` ▶ **[TRUTH] START**　caiso_k3_rep0h1 seed0 shard0/3 n=3841
+- `2026-09-16 02:41:07` ▶ **[TRUTH] START**　caiso_k3_rep0h1 seed0 shard1/3 n=3840
+- `2026-09-16 02:41:07` ▶ **[TRUTH] START**　caiso_k3_rep0h1 seed0 shard2/3 n=3840
+- `2026-09-16 02:43:31` ✔ **[TRUTH] DONE**　caiso_k3_rep0h1 seed0 shard1/3 n=3840 144s
+- `2026-09-16 02:43:31` ✔ **[TRUTH] DONE**　caiso_k3_rep0h1 seed0 shard2/3 n=3840 143s
+- `2026-09-16 02:43:31` ✔ **[TRUTH] DONE**　caiso_k3_rep0h1 seed0 shard0/3 n=3841 144s
+- `2026-09-16 02:43:52` ✔ **[ORACLE] DONE**　caiso rep1h0 seed2 ep=271 val=0.3548 17s
+- `2026-09-16 02:44:01` ✔ **[ORACLE] DONE**　caiso rep1h0 seed0 ep=400 val=0.3733 26s
+- `2026-09-16 02:44:01` ✔ **[ORACLE] DONE**　caiso rep1h0 seed1 ep=400 val=0.3338 26s
+- `2026-09-16 02:45:19` ✔ **[EST] DONE**　caiso_k3_rep1h0 L0ensx sh2/3 n=3840 19.45 ms/集合
+- `2026-09-16 02:45:25` ✔ **[EST] DONE**　caiso_k3_rep1h0 L0ensx sh0/3 n=3841 21.05 ms/集合
+- `2026-09-16 02:45:26` ✔ **[EST] DONE**　caiso_k3_rep1h0 L0ensx sh1/3 n=3840 21.39 ms/集合
+- `2026-09-16 02:45:28` ▶ **[TRUTH] START**　caiso_k3_rep1h0 seed0 shard2/3 n=3840
+- `2026-09-16 02:45:28` ▶ **[TRUTH] START**　caiso_k3_rep1h0 seed0 shard0/3 n=3841
+- `2026-09-16 02:45:28` ▶ **[TRUTH] START**　caiso_k3_rep1h0 seed0 shard1/3 n=3840
+- `2026-09-16 02:47:51` ✔ **[TRUTH] DONE**　caiso_k3_rep1h0 seed0 shard2/3 n=3840 143s
+- `2026-09-16 02:47:52` ✔ **[TRUTH] DONE**　caiso_k3_rep1h0 seed0 shard1/3 n=3840 144s
+- `2026-09-16 02:47:53` ✔ **[TRUTH] DONE**　caiso_k3_rep1h0 seed0 shard0/3 n=3841 144s
+- `2026-09-16 02:48:18` ✔ **[ORACLE] DONE**　caiso rep1h1 seed2 ep=343 val=0.3647 20s
+- `2026-09-16 02:48:20` ✔ **[ORACLE] DONE**　caiso rep1h1 seed0 ep=400 val=0.3265 23s
+- `2026-09-16 02:48:22` ✔ **[ORACLE] DONE**　caiso rep1h1 seed1 ep=400 val=0.3327 24s
+- `2026-09-16 02:49:40` ✔ **[EST] DONE**　caiso_k3_rep1h1 L0ensx sh2/3 n=3840 19.44 ms/集合
+- `2026-09-16 02:49:47` ✔ **[EST] DONE**　caiso_k3_rep1h1 L0ensx sh0/3 n=3841 21.35 ms/集合
+- `2026-09-16 02:49:47` ✔ **[EST] DONE**　caiso_k3_rep1h1 L0ensx sh1/3 n=3840 21.38 ms/集合
+- `2026-09-16 02:49:49` ▶ **[TRUTH] START**　caiso_k3_rep1h1 seed0 shard2/3 n=3840
+- `2026-09-16 02:49:50` ▶ **[TRUTH] START**　caiso_k3_rep1h1 seed0 shard0/3 n=3841
+- `2026-09-16 02:49:50` ▶ **[TRUTH] START**　caiso_k3_rep1h1 seed0 shard1/3 n=3840
+- `2026-09-16 02:52:13` ✔ **[TRUTH] DONE**　caiso_k3_rep1h1 seed0 shard2/3 n=3840 143s
+- `2026-09-16 02:52:14` ✔ **[TRUTH] DONE**　caiso_k3_rep1h1 seed0 shard1/3 n=3840 144s
+- `2026-09-16 02:52:14` ✔ **[TRUTH] DONE**　caiso_k3_rep1h1 seed0 shard0/3 n=3841 144s
+- `2026-09-16 02:52:39` ✔ **[ORACLE] DONE**　caiso rep2h0 seed0 ep=342 val=0.3399 20s
+- `2026-09-16 02:52:41` ✔ **[ORACLE] DONE**　caiso rep2h0 seed2 ep=400 val=0.3770 22s
+- `2026-09-16 02:52:43` ✔ **[ORACLE] DONE**　caiso rep2h0 seed1 ep=400 val=0.3407 24s
+- `2026-09-16 02:54:00` ✔ **[EST] DONE**　caiso_k3_rep2h0 L0ensx sh2/3 n=3840 19.33 ms/集合
+- `2026-09-16 02:54:07` ✔ **[EST] DONE**　caiso_k3_rep2h0 L0ensx sh0/3 n=3841 21.19 ms/集合
+- `2026-09-16 02:54:13` ✔ **[EST] DONE**　caiso_k3_rep2h0 L0ensx sh1/3 n=3840 22.67 ms/集合
+- `2026-09-16 02:54:15` ▶ **[TRUTH] START**　caiso_k3_rep2h0 seed0 shard2/3 n=3840
+- `2026-09-16 02:54:15` ▶ **[TRUTH] START**　caiso_k3_rep2h0 seed0 shard0/3 n=3841
+- `2026-09-16 02:54:16` ▶ **[TRUTH] START**　caiso_k3_rep2h0 seed0 shard1/3 n=3840
+- `2026-09-16 02:56:38` ✔ **[TRUTH] DONE**　caiso_k3_rep2h0 seed0 shard2/3 n=3840 143s
+- `2026-09-16 02:56:39` ✔ **[TRUTH] DONE**　caiso_k3_rep2h0 seed0 shard0/3 n=3841 144s
+- `2026-09-16 02:56:40` ✔ **[TRUTH] DONE**　caiso_k3_rep2h0 seed0 shard1/3 n=3840 144s
+- `2026-09-16 02:57:04` ✔ **[ORACLE] DONE**　caiso rep2h1 seed2 ep=345 val=0.3561 20s
+- `2026-09-16 02:57:06` ✔ **[ORACLE] DONE**　caiso rep2h1 seed1 ep=400 val=0.3967 22s
+- `2026-09-16 02:57:07` ✔ **[ORACLE] DONE**　caiso rep2h1 seed0 ep=400 val=0.3187 23s
+- `2026-09-16 02:58:25` ✔ **[EST] DONE**　caiso_k3_rep2h1 L0ensx sh2/3 n=3840 19.48 ms/集合
+- `2026-09-16 02:58:31` ✔ **[EST] DONE**　caiso_k3_rep2h1 L0ensx sh0/3 n=3841 21.01 ms/集合
+- `2026-09-16 02:58:31` ✔ **[EST] DONE**　caiso_k3_rep2h1 L0ensx sh1/3 n=3840 21.28 ms/集合
+- `2026-09-16 02:58:33` ▶ **[TRUTH] START**　caiso_k3_rep2h1 seed0 shard2/3 n=3840
+- `2026-09-16 02:58:34` ▶ **[TRUTH] START**　caiso_k3_rep2h1 seed0 shard1/3 n=3840
+- `2026-09-16 02:58:34` ▶ **[TRUTH] START**　caiso_k3_rep2h1 seed0 shard0/3 n=3841
+- `2026-09-16 03:00:57` ✔ **[TRUTH] DONE**　caiso_k3_rep2h1 seed0 shard2/3 n=3840 143s
+- `2026-09-16 03:00:57` ✔ **[TRUTH] DONE**　caiso_k3_rep2h1 seed0 shard1/3 n=3840 144s
+- `2026-09-16 03:00:57` ✔ **[TRUTH] DONE**　caiso_k3_rep2h1 seed0 shard0/3 n=3841 144s
