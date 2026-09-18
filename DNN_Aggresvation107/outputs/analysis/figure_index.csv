@@ -1,0 +1,18 @@
+﻿编号,内容,现有产物,状态
+Fig. 1,Overall Framework：S→V̂→M^(K)→分级+witness,待画（示意图）,新画，不依赖实验
+Fig. 2,Target-specific Universal Model 两阶段,待画（示意图）,新画，不依赖实验
+Fig. 3,V Fidelity：预测 V vs 专用重训 V,DNN_Aggresvation100/figures/fig1_*.png + 103 报告 B/C 表,可直接改用 103 正式真值重绘
+Fig. 4,M Fidelity：估计 M vs 精确 M,DNN_Aggresvation104/figures/fig1_M_fidelity.png,现成
+Fig. 4b,"M 的 [L,U] 区间与覆盖率",DNN_Aggresvation108/figures/fig1_interval_bounds.png + fig2_critical_interval.png,现成，建议并入 Fig. 4
+Fig. 5,K Escalation M^0→M^1→M^2（正文只到 K=2）,DNN_Aggresvation104/figures/fig3_escalation_official.png,现成
+Fig. 5 附录,K=3 口径对照（攻击器口径差 > 阶数增量）,DNN_Aggresvation108/figures/fig3_escalation_metatrain.png,现成，仅附录
+Fig. 6,Witness Cases（PJM + CAISO）,DNN_Aggresvation106/figures/fig2_grading_table.png + 104 top-3 witness 列,需挑选案例重绘
+Fig. 7,Release Audit Case,DNN_Aggresvation106/figures/fig1_release_audit.png,现成，正文核心图
+Fig. 8,Efficiency / Scalability,DNN_Aggresvation100/figures/fig7_*.png,现成；需按'通用模型非必需'的诚实口径改标题
+Table I,Dataset and Threat-model Settings,paper/FINAL_PROTOCOL.md §1–§4,整理成表
+Table II,Universal-model Baselines and Ablations,DNN_Aggresvation103/outputs/analysis/103_B.csv,现成
+Table III,M Estimation Accuracy（区间口径）,DNN_Aggresvation104/M_table_summary.csv + DNN_Aggresvation108/108_A1_bounds.csv、108_A1_coverage.csv,现成
+Table IV,Security Metric Comparison,DNN_Aggresvation105/outputs/analysis/105_critical_detection.csv,现成
+Table V,Field-level Risk and Witness Examples,DNN_Aggresvation106/outputs/analysis/grading_table.csv,现成，节选 10–15 行
+Table VI,Attacker-capability Sensitivity,DNN_Aggresvation109/outputs/analysis/109_B_M.csv、109_D_release.csv,现成
+Fig. 9,n_aux sensitivity 与 winner's curse,DNN_Aggresvation109/figures/fig3_naux_release.png、fig4_winners_curse.png,现成

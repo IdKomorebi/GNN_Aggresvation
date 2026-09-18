@@ -1,0 +1,23 @@
+experiment:
+  name: dnn109_attacker_capability_sensitivity
+  purpose: P1（主线计划 §16）攻击者辅助标签量 n_aux sensitivity；对应 107 号 GAPS B 档「成本最低的提档项」。
+protocol: ../paper/FINAL_PROTOCOL.md
+threat_model_变动: |
+  攻击者只掌握 n_aux 条带敏感标签的历史辅助数据，必须用这 n_aux 条同时完成训练与模型选择
+  （fit/val 都在子集内部划）；审计方的测试集不变，仅用于最终报告。
+fracs: [0.10, 0.25, 0.50, 1.00]      # 嵌套子集：10% ⊂ 25% ⊂ 50% ⊂ 100%
+n_aux:
+  pjm:   [459, 1147, 2294, 4589]
+  caiso: [610, 1526, 3052, 6105]
+attacker: 多目标 DNN（单一攻击器口径，使比例之间可比；与 103 号三攻击器正式真值不可直接并列）
+sets: k3（|S| ≤ 3，全枚举，含 41 个候选字段）
+gpu: 0/1/2 三卡分片，第 4 张留给他人
+directions:
+  A: 攻击者能力——V 与 M^(K) 随 n_aux 如何变化，排序/档位是否稳定
+  B: 审计方低估攻击者的后果——按 n_aux 档评估并放行、真实攻击者为 full 时的危险放行率
+outputs:
+  - outputs/analysis/109_A_V.csv
+  - outputs/analysis/109_B_M.csv
+  - outputs/analysis/109_C_critical.csv
+  - outputs/analysis/109_D_release.csv
+  - outputs/analysis/report109.md

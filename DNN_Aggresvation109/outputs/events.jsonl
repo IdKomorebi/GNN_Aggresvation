@@ -1,0 +1,48 @@
+{"time": "2026-09-18T22:14:07", "stage": "TRUTH", "status": "START", "note": "pjm_f010 n_aux=459 shard2/3 n=3840"}
+{"time": "2026-09-18T22:14:08", "stage": "TRUTH", "status": "START", "note": "pjm_f010 n_aux=459 shard0/3 n=3841"}
+{"time": "2026-09-18T22:14:08", "stage": "TRUTH", "status": "START", "note": "pjm_f010 n_aux=459 shard1/3 n=3840"}
+{"time": "2026-09-18T22:14:48", "stage": "TRUTH", "status": "DONE", "note": "pjm_f010 n_aux=459 shard2/3 41s", "sec": 40.9393515586853}
+{"time": "2026-09-18T22:14:49", "stage": "TRUTH", "status": "DONE", "note": "pjm_f010 n_aux=459 shard1/3 41s", "sec": 41.355124950408936}
+{"time": "2026-09-18T22:14:49", "stage": "TRUTH", "status": "DONE", "note": "pjm_f010 n_aux=459 shard0/3 41s", "sec": 41.414100885391235}
+{"time": "2026-09-18T22:14:52", "stage": "TRUTH", "status": "START", "note": "pjm_f025 n_aux=1147 shard2/3 n=3840"}
+{"time": "2026-09-18T22:14:52", "stage": "TRUTH", "status": "START", "note": "pjm_f025 n_aux=1147 shard1/3 n=3840"}
+{"time": "2026-09-18T22:14:52", "stage": "TRUTH", "status": "START", "note": "pjm_f025 n_aux=1147 shard0/3 n=3841"}
+{"time": "2026-09-18T22:16:01", "stage": "TRUTH", "status": "DONE", "note": "pjm_f025 n_aux=1147 shard2/3 68s", "sec": 68.46582698822021}
+{"time": "2026-09-18T22:16:01", "stage": "TRUTH", "status": "DONE", "note": "pjm_f025 n_aux=1147 shard1/3 69s", "sec": 68.7179229259491}
+{"time": "2026-09-18T22:16:01", "stage": "TRUTH", "status": "DONE", "note": "pjm_f025 n_aux=1147 shard0/3 69s", "sec": 68.84747743606567}
+{"time": "2026-09-18T22:16:04", "stage": "TRUTH", "status": "START", "note": "pjm_f050 n_aux=2294 shard2/3 n=3840"}
+{"time": "2026-09-18T22:16:04", "stage": "TRUTH", "status": "START", "note": "pjm_f050 n_aux=2294 shard0/3 n=3841"}
+{"time": "2026-09-18T22:16:04", "stage": "TRUTH", "status": "START", "note": "pjm_f050 n_aux=2294 shard1/3 n=3840"}
+{"time": "2026-09-18T22:18:02", "stage": "TRUTH", "status": "DONE", "note": "pjm_f050 n_aux=2294 shard2/3 118s", "sec": 117.58097982406616}
+{"time": "2026-09-18T22:18:02", "stage": "TRUTH", "status": "DONE", "note": "pjm_f050 n_aux=2294 shard1/3 118s", "sec": 117.86628484725952}
+{"time": "2026-09-18T22:18:02", "stage": "TRUTH", "status": "DONE", "note": "pjm_f050 n_aux=2294 shard0/3 118s", "sec": 117.91281342506409}
+{"time": "2026-09-18T22:18:05", "stage": "TRUTH", "status": "START", "note": "pjm_f100 n_aux=4589 shard2/3 n=3840"}
+{"time": "2026-09-18T22:18:06", "stage": "TRUTH", "status": "START", "note": "pjm_f100 n_aux=4589 shard0/3 n=3841"}
+{"time": "2026-09-18T22:18:06", "stage": "TRUTH", "status": "START", "note": "pjm_f100 n_aux=4589 shard1/3 n=3840"}
+{"time": "2026-09-18T22:21:38", "stage": "TRUTH", "status": "DONE", "note": "pjm_f100 n_aux=4589 shard2/3 213s", "sec": 212.91123509407043}
+{"time": "2026-09-18T22:21:39", "stage": "TRUTH", "status": "DONE", "note": "pjm_f100 n_aux=4589 shard1/3 213s", "sec": 213.47560667991638}
+{"time": "2026-09-18T22:21:40", "stage": "TRUTH", "status": "DONE", "note": "pjm_f100 n_aux=4589 shard0/3 214s", "sec": 214.25306177139282}
+{"time": "2026-09-18T22:21:43", "stage": "TRUTH", "status": "START", "note": "caiso_f010 n_aux=610 shard2/3 n=3840"}
+{"time": "2026-09-18T22:21:43", "stage": "TRUTH", "status": "START", "note": "caiso_f010 n_aux=610 shard1/3 n=3840"}
+{"time": "2026-09-18T22:21:43", "stage": "TRUTH", "status": "START", "note": "caiso_f010 n_aux=610 shard0/3 n=3841"}
+{"time": "2026-09-18T22:22:36", "stage": "TRUTH", "status": "DONE", "note": "caiso_f010 n_aux=610 shard0/3 53s", "sec": 53.33958387374878}
+{"time": "2026-09-18T22:22:37", "stage": "TRUTH", "status": "DONE", "note": "caiso_f010 n_aux=610 shard2/3 54s", "sec": 53.58676242828369}
+{"time": "2026-09-18T22:22:37", "stage": "TRUTH", "status": "DONE", "note": "caiso_f010 n_aux=610 shard1/3 54s", "sec": 53.5584602355957}
+{"time": "2026-09-18T22:22:40", "stage": "TRUTH", "status": "START", "note": "caiso_f025 n_aux=1526 shard0/3 n=3841"}
+{"time": "2026-09-18T22:22:40", "stage": "TRUTH", "status": "START", "note": "caiso_f025 n_aux=1526 shard2/3 n=3840"}
+{"time": "2026-09-18T22:22:40", "stage": "TRUTH", "status": "START", "note": "caiso_f025 n_aux=1526 shard1/3 n=3840"}
+{"time": "2026-09-18T22:24:12", "stage": "TRUTH", "status": "DONE", "note": "caiso_f025 n_aux=1526 shard1/3 92s", "sec": 91.64714002609253}
+{"time": "2026-09-18T22:24:12", "stage": "TRUTH", "status": "DONE", "note": "caiso_f025 n_aux=1526 shard2/3 92s", "sec": 91.70810866355896}
+{"time": "2026-09-18T22:24:12", "stage": "TRUTH", "status": "DONE", "note": "caiso_f025 n_aux=1526 shard0/3 92s", "sec": 92.40277051925659}
+{"time": "2026-09-18T22:24:16", "stage": "TRUTH", "status": "START", "note": "caiso_f050 n_aux=3052 shard2/3 n=3840"}
+{"time": "2026-09-18T22:24:16", "stage": "TRUTH", "status": "START", "note": "caiso_f050 n_aux=3052 shard0/3 n=3841"}
+{"time": "2026-09-18T22:24:16", "stage": "TRUTH", "status": "START", "note": "caiso_f050 n_aux=3052 shard1/3 n=3840"}
+{"time": "2026-09-18T22:26:51", "stage": "TRUTH", "status": "DONE", "note": "caiso_f050 n_aux=3052 shard2/3 155s", "sec": 155.33938360214233}
+{"time": "2026-09-18T22:26:52", "stage": "TRUTH", "status": "DONE", "note": "caiso_f050 n_aux=3052 shard1/3 156s", "sec": 155.90090489387512}
+{"time": "2026-09-18T22:26:52", "stage": "TRUTH", "status": "DONE", "note": "caiso_f050 n_aux=3052 shard0/3 156s", "sec": 156.42309522628784}
+{"time": "2026-09-18T22:26:55", "stage": "TRUTH", "status": "START", "note": "caiso_f100 n_aux=6105 shard1/3 n=3840"}
+{"time": "2026-09-18T22:26:55", "stage": "TRUTH", "status": "START", "note": "caiso_f100 n_aux=6105 shard2/3 n=3840"}
+{"time": "2026-09-18T22:26:55", "stage": "TRUTH", "status": "START", "note": "caiso_f100 n_aux=6105 shard0/3 n=3841"}
+{"time": "2026-09-18T22:31:37", "stage": "TRUTH", "status": "DONE", "note": "caiso_f100 n_aux=6105 shard2/3 282s", "sec": 281.93513894081116}
+{"time": "2026-09-18T22:31:38", "stage": "TRUTH", "status": "DONE", "note": "caiso_f100 n_aux=6105 shard1/3 283s", "sec": 282.6252362728119}
+{"time": "2026-09-18T22:31:39", "stage": "TRUTH", "status": "DONE", "note": "caiso_f100 n_aux=6105 shard0/3 283s", "sec": 283.40446853637695}

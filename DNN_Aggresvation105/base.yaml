@@ -1,0 +1,10 @@
+experiment:
+  name: dnn105_domain_baselines_and_critical_detection
+  purpose: RQ-B1：传统字段指标与模型归因指标会漏掉多少组合推断风险。
+protocol: ../paper/FINAL_PROTOCOL.md
+labels: 正式真值 τ-critical（103 号真值；存在 |T|≤K 使 V̄(T)≤τ<V̄(T∪i)），K=2，τ∈{0.5,0.7,0.9}
+baselines: [Pearson |r|, Spearman |ρ|, NMI(sklearn mutual_info_regression), 单字段 M^(0)（精确）,
+            全量模型 SAGE（多目标 DNN + 边际填补 4 次 + 200 次置换采样）, 全量模型置换重要性]
+ours: [估计 M^(1), 估计 M^(2)]; reference: 精确 M^(2)
+metrics: [PR-AUC, 同预算 recall, false-safe]
+subsets: [全部条目, 只看“组合才危险”的条目（K=2 critical 且 K=0 不 critical，对照组=任何背景都不危险）]

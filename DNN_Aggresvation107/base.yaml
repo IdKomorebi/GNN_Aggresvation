@@ -1,0 +1,16 @@
+experiment:
+  name: dnn107_summary_and_paper_plan
+  purpose: P0 收束：汇总 100–106 号实验成色、遗留问题与论文写作方案（章节 / 图表清单 / 可主张与不可主张的结论）。
+protocol: ../paper/FINAL_PROTOCOL.md
+mainline: ../paper/20260918_论文主线与完整实验计划.md
+theory:   ../paper/20260915_MK严格定义与安全语义.md
+scope:
+  covers: [100, 101, 102, 103, 104, 105, 106]
+  note: 本号不跑新训练，只做跨编号汇总、完整性核查与论文规划；无 GPU 占用。
+outputs:
+  - outputs/analysis/SUMMARY.md        # 逐号实验成色与关键数字
+  - outputs/analysis/GAPS.md           # 遗留问题与风险（含验收标准对照）
+  - outputs/analysis/PAPER_PLAN.md     # 论文章节、图表清单、可主张/不可主张
+  - outputs/analysis/acceptance.csv    # 三区验收 10 条 + 二区 7 条的达成状态
+  - outputs/analysis/figure_index.csv  # 论文 Fig/Table → 现有图文件的映射
+  - outputs/analysis/folder_check.csv  # 各编号目录文档与图完整性核查

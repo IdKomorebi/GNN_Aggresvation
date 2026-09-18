@@ -1,0 +1,247 @@
+{"time": "2026-09-18T17:27:14", "stage": "SINGLE", "status": "DONE", "note": "pjm single t0 seed0 ep=396 val=0.34831 39s", "train_sec": 39.197354555130005}
+{"time": "2026-09-18T17:27:58", "stage": "SINGLE", "status": "DONE", "note": "pjm single t2 seed0 ep=233 val=0.09572 21s", "train_sec": 21.210326194763184}
+{"time": "2026-09-18T17:28:07", "stage": "SINGLE", "status": "DONE", "note": "pjm single t1 seed0 ep=341 val=0.43120 30s", "train_sec": 30.284234285354614}
+{"time": "2026-09-18T17:28:13", "stage": "SINGLE", "status": "DONE", "note": "pjm single t0 seed0 ep=396 val=0.34831 36s", "train_sec": 36.28326606750488}
+{"time": "2026-09-18T17:28:18", "stage": "SINGLE", "status": "DONE", "note": "pjm single t5 seed0 ep=180 val=0.78715 16s", "train_sec": 16.055242776870728}
+{"time": "2026-09-18T17:28:38", "stage": "SINGLE", "status": "DONE", "note": "pjm single t8 seed0 ep=170 val=0.18410 15s", "train_sec": 15.306578874588013}
+{"time": "2026-09-18T17:28:42", "stage": "SINGLE", "status": "DONE", "note": "pjm single t4 seed0 ep=355 val=0.24851 31s", "train_sec": 30.8133327960968}
+{"time": "2026-09-18T17:28:45", "stage": "SINGLE", "status": "DONE", "note": "pjm single t3 seed0 ep=316 val=0.09633 29s", "train_sec": 28.708488941192627}
+{"time": "2026-09-18T17:29:01", "stage": "SINGLE", "status": "DONE", "note": "pjm single t7 seed0 ep=171 val=0.40745 15s", "train_sec": 15.108091831207275}
+{"time": "2026-09-18T17:29:14", "stage": "SINGLE", "status": "DONE", "note": "pjm single t6 seed0 ep=267 val=0.53283 24s", "train_sec": 23.793240547180176}
+{"time": "2026-09-18T17:29:15", "stage": "SINGLE", "status": "DONE", "note": "pjm single t11 seed0 ep=400 val=0.29866 34s", "train_sec": 33.746456146240234}
+{"time": "2026-09-18T17:29:34", "stage": "SINGLE", "status": "DONE", "note": "pjm single t10 seed0 ep=343 val=0.30544 30s", "train_sec": 30.024353981018066}
+{"time": "2026-09-18T17:29:39", "stage": "SINGLE", "status": "DONE", "note": "pjm single t9 seed0 ep=245 val=0.30291 22s", "train_sec": 21.540042877197266}
+{"time": "2026-09-18T17:30:09", "stage": "SINGLE", "status": "DONE", "note": "caiso single t1 seed0 ep=235 val=0.12831 31s", "train_sec": 30.600015878677368}
+{"time": "2026-09-18T17:30:09", "stage": "SINGLE", "status": "DONE", "note": "caiso single t2 seed0 ep=400 val=0.37200 50s", "train_sec": 49.89547157287598}
+{"time": "2026-09-18T17:30:21", "stage": "SINGLE", "status": "DONE", "note": "caiso single t0 seed0 ep=279 val=0.11680 38s", "train_sec": 37.73318362236023}
+{"time": "2026-09-18T17:30:45", "stage": "SINGLE", "status": "DONE", "note": "caiso single t4 seed0 ep=237 val=0.09344 31s", "train_sec": 30.552664518356323}
+{"time": "2026-09-18T17:30:51", "stage": "SINGLE", "status": "DONE", "note": "caiso single t5 seed0 ep=294 val=0.33927 37s", "train_sec": 36.53109955787659}
+{"time": "2026-09-18T17:31:15", "stage": "SINGLE", "status": "DONE", "note": "caiso single t3 seed0 ep=400 val=0.27974 49s", "train_sec": 49.05309796333313}
+{"time": "2026-09-18T17:31:18", "stage": "SINGLE", "status": "DONE", "note": "caiso single t7 seed0 ep=256 val=0.32060 28s", "train_sec": 28.43224000930786}
+{"time": "2026-09-18T17:31:42", "stage": "SINGLE", "status": "DONE", "note": "caiso single t8 seed0 ep=400 val=0.34289 47s", "train_sec": 47.26874351501465}
+{"time": "2026-09-18T17:31:44", "stage": "SINGLE", "status": "DONE", "note": "caiso single t10 seed0 ep=179 val=0.74330 23s", "train_sec": 22.623453378677368}
+{"time": "2026-09-18T17:32:03", "stage": "SINGLE", "status": "DONE", "note": "caiso single t6 seed0 ep=362 val=0.37966 45s", "train_sec": 44.63138175010681}
+{"time": "2026-09-18T17:32:34", "stage": "SINGLE", "status": "DONE", "note": "caiso single t11 seed0 ep=386 val=0.54926 48s", "train_sec": 48.04072594642639}
+{"time": "2026-09-18T17:32:45", "stage": "SINGLE", "status": "DONE", "note": "caiso single t9 seed0 ep=303 val=0.13509 37s", "train_sec": 37.43702983856201}
+{"time": "2026-09-18T17:33:18", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t0 sh2/3 n=3840 3.70 ms/集合", "ms_per_set": 3.704538196325302}
+{"time": "2026-09-18T17:33:19", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t0 sh1/3 n=3840 3.84 ms/集合", "ms_per_set": 3.835429437458515}
+{"time": "2026-09-18T17:33:19", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t0 sh0/3 n=3841 3.93 ms/集合", "ms_per_set": 3.9324461870657776}
+{"time": "2026-09-18T17:33:35", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t1 sh2/3 n=3840 3.70 ms/集合", "ms_per_set": 3.6972380553682647}
+{"time": "2026-09-18T17:33:36", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t1 sh1/3 n=3840 3.94 ms/集合", "ms_per_set": 3.9400241027275724}
+{"time": "2026-09-18T17:33:37", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t1 sh0/3 n=3841 3.95 ms/集合", "ms_per_set": 3.952684330462292}
+{"time": "2026-09-18T17:33:52", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t2 sh2/3 n=3840 3.75 ms/集合", "ms_per_set": 3.7470460558931036}
+{"time": "2026-09-18T17:33:55", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t2 sh1/3 n=3840 4.00 ms/集合", "ms_per_set": 4.003128533562024}
+{"time": "2026-09-18T17:33:55", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t2 sh0/3 n=3841 3.94 ms/集合", "ms_per_set": 3.936151078950921}
+{"time": "2026-09-18T17:34:09", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t3 sh2/3 n=3840 3.72 ms/集合", "ms_per_set": 3.7222585951288543}
+{"time": "2026-09-18T17:34:13", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t3 sh1/3 n=3840 4.03 ms/集合", "ms_per_set": 4.030863816539446}
+{"time": "2026-09-18T17:34:14", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t3 sh0/3 n=3841 4.03 ms/集合", "ms_per_set": 4.026822266681714}
+{"time": "2026-09-18T17:34:26", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t4 sh2/3 n=3840 3.73 ms/集合", "ms_per_set": 3.729626660545667}
+{"time": "2026-09-18T17:34:30", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t4 sh1/3 n=3840 3.95 ms/集合", "ms_per_set": 3.950423374772072}
+{"time": "2026-09-18T17:34:32", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t4 sh0/3 n=3841 4.05 ms/集合", "ms_per_set": 4.0462190240225855}
+{"time": "2026-09-18T17:34:43", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t5 sh2/3 n=3840 3.73 ms/集合", "ms_per_set": 3.725089691579342}
+{"time": "2026-09-18T17:34:48", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t5 sh1/3 n=3840 3.94 ms/集合", "ms_per_set": 3.9364707966645556}
+{"time": "2026-09-18T17:34:50", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t5 sh0/3 n=3841 3.95 ms/集合", "ms_per_set": 3.9516638666662938}
+{"time": "2026-09-18T17:35:01", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t6 sh2/3 n=3840 3.87 ms/集合", "ms_per_set": 3.8711453477541604}
+{"time": "2026-09-18T17:35:06", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t6 sh1/3 n=3840 3.96 ms/集合", "ms_per_set": 3.956463001668453}
+{"time": "2026-09-18T17:35:08", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t6 sh0/3 n=3841 4.00 ms/集合", "ms_per_set": 4.002347460515609}
+{"time": "2026-09-18T17:35:18", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t7 sh2/3 n=3840 3.72 ms/集合", "ms_per_set": 3.71930164595445}
+{"time": "2026-09-18T17:35:24", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t7 sh1/3 n=3840 3.96 ms/集合", "ms_per_set": 3.9583674942453704}
+{"time": "2026-09-18T17:35:25", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t7 sh0/3 n=3841 3.93 ms/集合", "ms_per_set": 3.9334803687753355}
+{"time": "2026-09-18T17:35:34", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t8 sh2/3 n=3840 3.76 ms/集合", "ms_per_set": 3.7644165257612867}
+{"time": "2026-09-18T17:35:41", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t8 sh1/3 n=3840 3.93 ms/集合", "ms_per_set": 3.9316248148679733}
+{"time": "2026-09-18T17:35:43", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t8 sh0/3 n=3841 3.93 ms/集合", "ms_per_set": 3.9279748300375092}
+{"time": "2026-09-18T17:35:51", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t9 sh2/3 n=3840 3.72 ms/集合", "ms_per_set": 3.7156349048018456}
+{"time": "2026-09-18T17:35:59", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t9 sh1/3 n=3840 3.77 ms/集合", "ms_per_set": 3.7744065125783286}
+{"time": "2026-09-18T17:36:00", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t9 sh0/3 n=3841 3.96 ms/集合", "ms_per_set": 3.961492906911582}
+{"time": "2026-09-18T17:36:08", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t10 sh2/3 n=3840 3.72 ms/集合", "ms_per_set": 3.719726577401161}
+{"time": "2026-09-18T17:36:16", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t10 sh1/3 n=3840 3.79 ms/集合", "ms_per_set": 3.7934585784872374}
+{"time": "2026-09-18T17:36:18", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t10 sh0/3 n=3841 4.02 ms/集合", "ms_per_set": 4.02449642857733}
+{"time": "2026-09-18T17:36:25", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t11 sh2/3 n=3840 3.74 ms/集合", "ms_per_set": 3.737344965338707}
+{"time": "2026-09-18T17:36:33", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t11 sh1/3 n=3840 3.95 ms/集合", "ms_per_set": 3.9493106926480928}
+{"time": "2026-09-18T17:36:36", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single t11 sh0/3 n=3841 3.96 ms/集合", "ms_per_set": 3.958671237614837}
+{"time": "2026-09-18T17:36:48", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t0 sh2/3 n=3840 5.14 ms/集合", "ms_per_set": 5.140903095404307}
+{"time": "2026-09-18T17:36:56", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t0 sh1/3 n=3840 5.11 ms/集合", "ms_per_set": 5.1124146829048795}
+{"time": "2026-09-18T17:36:59", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t0 sh0/3 n=3841 5.23 ms/集合", "ms_per_set": 5.22943183612898}
+{"time": "2026-09-18T17:37:08", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t1 sh2/3 n=3840 4.78 ms/集合", "ms_per_set": 4.779182995359103}
+{"time": "2026-09-18T17:37:18", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t1 sh1/3 n=3840 5.12 ms/集合", "ms_per_set": 5.116479471325874}
+{"time": "2026-09-18T17:37:20", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t1 sh0/3 n=3841 4.90 ms/集合", "ms_per_set": 4.898369793344432}
+{"time": "2026-09-18T17:37:30", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t2 sh2/3 n=3840 4.85 ms/集合", "ms_per_set": 4.851123380164305}
+{"time": "2026-09-18T17:37:41", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t2 sh1/3 n=3840 5.18 ms/集合", "ms_per_set": 5.181088112294674}
+{"time": "2026-09-18T17:37:43", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t2 sh0/3 n=3841 5.18 ms/集合", "ms_per_set": 5.181707463144045}
+{"time": "2026-09-18T17:37:51", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t3 sh2/3 n=3840 5.00 ms/集合", "ms_per_set": 5.002729905148347}
+{"time": "2026-09-18T17:38:02", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t3 sh1/3 n=3840 4.87 ms/集合", "ms_per_set": 4.868863895535469}
+{"time": "2026-09-18T17:38:05", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t3 sh0/3 n=3841 5.10 ms/集合", "ms_per_set": 5.099780234903198}
+{"time": "2026-09-18T17:38:12", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t4 sh2/3 n=3840 4.77 ms/集合", "ms_per_set": 4.7653762002786}
+{"time": "2026-09-18T17:38:24", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t4 sh1/3 n=3840 5.08 ms/集合", "ms_per_set": 5.078865773975849}
+{"time": "2026-09-18T17:38:27", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t4 sh0/3 n=3841 5.07 ms/集合", "ms_per_set": 5.071448025930613}
+{"time": "2026-09-18T17:38:34", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t5 sh2/3 n=3840 4.79 ms/集合", "ms_per_set": 4.7910115992029505}
+{"time": "2026-09-18T17:38:46", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t5 sh1/3 n=3840 4.89 ms/集合", "ms_per_set": 4.885080891350905}
+{"time": "2026-09-18T17:38:49", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t5 sh0/3 n=3841 5.07 ms/集合", "ms_per_set": 5.073358664379801}
+{"time": "2026-09-18T17:38:55", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t6 sh2/3 n=3840 4.77 ms/集合", "ms_per_set": 4.771341197192669}
+{"time": "2026-09-18T17:39:07", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t6 sh1/3 n=3840 4.84 ms/集合", "ms_per_set": 4.8449137558539705}
+{"time": "2026-09-18T17:39:11", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t6 sh0/3 n=3841 5.10 ms/集合", "ms_per_set": 5.097411567113946}
+{"time": "2026-09-18T17:39:16", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t7 sh2/3 n=3840 4.78 ms/集合", "ms_per_set": 4.777669534087181}
+{"time": "2026-09-18T17:39:29", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t7 sh1/3 n=3840 5.09 ms/集合", "ms_per_set": 5.087438225746155}
+{"time": "2026-09-18T17:39:33", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t7 sh0/3 n=3841 5.07 ms/集合", "ms_per_set": 5.068000236298697}
+{"time": "2026-09-18T17:39:36", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t8 sh2/3 n=3840 4.80 ms/集合", "ms_per_set": 4.795472385982673}
+{"time": "2026-09-18T17:39:51", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t8 sh1/3 n=3840 5.10 ms/集合", "ms_per_set": 5.099308490753174}
+{"time": "2026-09-18T17:39:56", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t8 sh0/3 n=3841 5.27 ms/集合", "ms_per_set": 5.272116272501013}
+{"time": "2026-09-18T17:39:57", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t9 sh2/3 n=3840 4.77 ms/集合", "ms_per_set": 4.770277378459771}
+{"time": "2026-09-18T17:40:13", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t9 sh1/3 n=3840 5.08 ms/集合", "ms_per_set": 5.079224146902561}
+{"time": "2026-09-18T17:40:18", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t10 sh2/3 n=3840 4.76 ms/集合", "ms_per_set": 4.764866953094801}
+{"time": "2026-09-18T17:40:18", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t9 sh0/3 n=3841 5.20 ms/集合", "ms_per_set": 5.1964877391041515}
+{"time": "2026-09-18T17:40:35", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t10 sh1/3 n=3840 5.06 ms/集合", "ms_per_set": 5.061899808545907}
+{"time": "2026-09-18T17:40:39", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t11 sh2/3 n=3840 4.77 ms/集合", "ms_per_set": 4.7715362782279644}
+{"time": "2026-09-18T17:40:41", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t10 sh0/3 n=3841 5.09 ms/集合", "ms_per_set": 5.088174011023892}
+{"time": "2026-09-18T17:40:57", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t11 sh1/3 n=3840 5.06 ms/集合", "ms_per_set": 5.061114144821962}
+{"time": "2026-09-18T17:41:03", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single t11 sh0/3 n=3841 5.27 ms/集合", "ms_per_set": 5.2720589800385005}
+{"time": "2026-09-18T17:41:29", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t0 sh2/3 n=500 23s", "sec": 23.44887638092041}
+{"time": "2026-09-18T17:41:29", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t0 sh1/3 n=500 24s", "sec": 23.724089860916138}
+{"time": "2026-09-18T17:41:30", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t0 sh0/3 n=500 24s", "sec": 24.107271194458008}
+{"time": "2026-09-18T17:41:54", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t1 sh2/3 n=500 23s", "sec": 22.694589614868164}
+{"time": "2026-09-18T17:41:54", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t1 sh0/3 n=500 22s", "sec": 21.760765314102173}
+{"time": "2026-09-18T17:41:55", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t1 sh1/3 n=500 23s", "sec": 22.67520546913147}
+{"time": "2026-09-18T17:42:19", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t2 sh2/3 n=500 22s", "sec": 22.186023712158203}
+{"time": "2026-09-18T17:42:21", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t2 sh0/3 n=500 23s", "sec": 23.496293306350708}
+{"time": "2026-09-18T17:42:21", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t2 sh1/3 n=500 24s", "sec": 23.64400291442871}
+{"time": "2026-09-18T17:42:44", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t3 sh2/3 n=500 22s", "sec": 21.955771684646606}
+{"time": "2026-09-18T17:42:46", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t3 sh0/3 n=500 22s", "sec": 22.29879403114319}
+{"time": "2026-09-18T17:42:46", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t3 sh1/3 n=500 22s", "sec": 22.43798828125}
+{"time": "2026-09-18T17:43:09", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t4 sh2/3 n=500 23s", "sec": 22.525096893310547}
+{"time": "2026-09-18T17:43:11", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t4 sh1/3 n=500 22s", "sec": 21.760719299316406}
+{"time": "2026-09-18T17:43:11", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t4 sh0/3 n=500 23s", "sec": 22.554853439331055}
+{"time": "2026-09-18T17:43:34", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t5 sh2/3 n=500 22s", "sec": 22.494324445724487}
+{"time": "2026-09-18T17:43:36", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t5 sh1/3 n=500 22s", "sec": 21.977015733718872}
+{"time": "2026-09-18T17:43:38", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t5 sh0/3 n=500 24s", "sec": 23.510584115982056}
+{"time": "2026-09-18T17:43:59", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t6 sh2/3 n=500 22s", "sec": 22.127809286117554}
+{"time": "2026-09-18T17:44:02", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t6 sh1/3 n=500 23s", "sec": 22.76415705680847}
+{"time": "2026-09-18T17:44:03", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t6 sh0/3 n=500 23s", "sec": 22.669365167617798}
+{"time": "2026-09-18T17:44:26", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t7 sh2/3 n=500 25s", "sec": 24.604730129241943}
+{"time": "2026-09-18T17:44:30", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t7 sh1/3 n=500 26s", "sec": 25.556005239486694}
+{"time": "2026-09-18T17:44:32", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t7 sh0/3 n=500 26s", "sec": 25.798497915267944}
+{"time": "2026-09-18T17:44:52", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t8 sh2/3 n=500 23s", "sec": 22.902097702026367}
+{"time": "2026-09-18T17:44:56", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t8 sh1/3 n=500 24s", "sec": 23.70150375366211}
+{"time": "2026-09-18T17:44:58", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t8 sh0/3 n=500 23s", "sec": 23.033568382263184}
+{"time": "2026-09-18T17:45:20", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t9 sh2/3 n=500 25s", "sec": 24.82746386528015}
+{"time": "2026-09-18T17:45:24", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t9 sh1/3 n=500 26s", "sec": 25.504844427108765}
+{"time": "2026-09-18T17:45:25", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t9 sh0/3 n=500 25s", "sec": 25.242363691329956}
+{"time": "2026-09-18T17:45:48", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t10 sh2/3 n=500 25s", "sec": 25.492796897888184}
+{"time": "2026-09-18T17:45:52", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t10 sh1/3 n=500 25s", "sec": 24.792206048965454}
+{"time": "2026-09-18T17:45:53", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t10 sh0/3 n=500 25s", "sec": 24.581483364105225}
+{"time": "2026-09-18T17:46:18", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t11 sh2/3 n=500 26s", "sec": 26.245825052261353}
+{"time": "2026-09-18T17:46:23", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t11 sh1/3 n=500 27s", "sec": 27.45101833343506}
+{"time": "2026-09-18T17:46:23", "stage": "TRUTH1", "status": "DONE", "note": "pjm_k3_samp single t11 sh0/3 n=500 27s", "sec": 27.262260913848877}
+{"time": "2026-09-18T17:46:50", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t0 sh2/3 n=500 29s", "sec": 29.27234649658203}
+{"time": "2026-09-18T17:46:56", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t0 sh1/3 n=500 30s", "sec": 30.340269088745117}
+{"time": "2026-09-18T17:46:56", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t0 sh0/3 n=500 30s", "sec": 30.06312847137451}
+{"time": "2026-09-18T17:47:24", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t1 sh2/3 n=500 31s", "sec": 31.04495072364807}
+{"time": "2026-09-18T17:47:29", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t1 sh0/3 n=500 31s", "sec": 30.935264825820923}
+{"time": "2026-09-18T17:47:30", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t1 sh1/3 n=500 31s", "sec": 31.31037473678589}
+{"time": "2026-09-18T17:48:01", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t2 sh2/3 n=500 34s", "sec": 33.704185485839844}
+{"time": "2026-09-18T17:48:05", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t2 sh0/3 n=500 33s", "sec": 32.847997188568115}
+{"time": "2026-09-18T17:48:08", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t2 sh1/3 n=500 34s", "sec": 34.49022054672241}
+{"time": "2026-09-18T17:48:34", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t3 sh2/3 n=500 31s", "sec": 30.687361478805542}
+{"time": "2026-09-18T17:48:39", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t3 sh0/3 n=500 30s", "sec": 30.192524194717407}
+{"time": "2026-09-18T17:48:41", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t3 sh1/3 n=500 31s", "sec": 30.777396202087402}
+{"time": "2026-09-18T17:49:09", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t4 sh2/3 n=500 32s", "sec": 32.34969162940979}
+{"time": "2026-09-18T17:49:11", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t4 sh0/3 n=500 30s", "sec": 30.274282455444336}
+{"time": "2026-09-18T17:49:16", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t4 sh1/3 n=500 32s", "sec": 32.256202936172485}
+{"time": "2026-09-18T17:49:44", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t5 sh2/3 n=500 32s", "sec": 32.18301749229431}
+{"time": "2026-09-18T17:49:46", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t5 sh0/3 n=500 32s", "sec": 32.00287413597107}
+{"time": "2026-09-18T17:49:51", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t5 sh1/3 n=500 32s", "sec": 31.98591184616089}
+{"time": "2026-09-18T17:50:15", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t6 sh2/3 n=500 29s", "sec": 28.64285397529602}
+{"time": "2026-09-18T17:50:20", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t6 sh0/3 n=500 31s", "sec": 30.89505624771118}
+{"time": "2026-09-18T17:50:24", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t6 sh1/3 n=500 30s", "sec": 29.883800983428955}
+{"time": "2026-09-18T17:50:48", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t7 sh2/3 n=500 30s", "sec": 30.22355604171753}
+{"time": "2026-09-18T17:50:53", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t7 sh0/3 n=500 30s", "sec": 30.23225998878479}
+{"time": "2026-09-18T17:50:55", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t7 sh1/3 n=500 29s", "sec": 28.79715847969055}
+{"time": "2026-09-18T17:51:19", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t8 sh2/3 n=500 29s", "sec": 28.689977169036865}
+{"time": "2026-09-18T17:51:24", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t8 sh0/3 n=500 29s", "sec": 29.187928676605225}
+{"time": "2026-09-18T17:51:26", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t8 sh1/3 n=500 29s", "sec": 29.112489938735962}
+{"time": "2026-09-18T17:51:55", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t9 sh2/3 n=500 33s", "sec": 33.04554891586304}
+{"time": "2026-09-18T17:52:02", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t9 sh0/3 n=500 35s", "sec": 34.959906339645386}
+{"time": "2026-09-18T17:52:04", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t9 sh1/3 n=500 34s", "sec": 34.44005012512207}
+{"time": "2026-09-18T17:52:32", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t10 sh2/3 n=500 34s", "sec": 34.074894428253174}
+{"time": "2026-09-18T17:52:38", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t10 sh0/3 n=500 33s", "sec": 32.667141914367676}
+{"time": "2026-09-18T17:52:39", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t10 sh1/3 n=500 32s", "sec": 32.24973177909851}
+{"time": "2026-09-18T17:53:05", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t11 sh2/3 n=500 30s", "sec": 29.975799322128296}
+{"time": "2026-09-18T17:53:09", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t11 sh0/3 n=500 29s", "sec": 28.536548137664795}
+{"time": "2026-09-18T17:53:11", "stage": "TRUTH1", "status": "DONE", "note": "caiso_k3_samp single t11 sh1/3 n=500 30s", "sec": 29.77230930328369}
+{"time": "2026-09-18T17:53:42", "stage": "ESTM", "status": "DONE", "note": "pjm_k3 multix sh2/3 n=3840 4.24 ms/集合", "ms_per_set": 4.235220452149709}
+{"time": "2026-09-18T17:53:43", "stage": "ESTM", "status": "DONE", "note": "pjm_k3 multix sh1/3 n=3840 4.48 ms/集合", "ms_per_set": 4.479041198889414}
+{"time": "2026-09-18T17:53:44", "stage": "ESTM", "status": "DONE", "note": "pjm_k3 multix sh0/3 n=3841 4.56 ms/集合", "ms_per_set": 4.562410455419197}
+{"time": "2026-09-18T17:53:47", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t0 sh2/3 n=3840 0.63 ms/集合", "ms_per_set": 0.6289823601643244}
+{"time": "2026-09-18T17:53:48", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t0 sh1/3 n=3840 0.65 ms/集合", "ms_per_set": 0.6455648069580396}
+{"time": "2026-09-18T17:53:49", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t0 sh0/3 n=3841 0.66 ms/集合", "ms_per_set": 0.6591122897147388}
+{"time": "2026-09-18T17:53:52", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t1 sh2/3 n=3840 0.61 ms/集合", "ms_per_set": 0.6069400658210119}
+{"time": "2026-09-18T17:53:53", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t1 sh0/3 n=3841 0.62 ms/集合", "ms_per_set": 0.6168395769655068}
+{"time": "2026-09-18T17:53:54", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t1 sh1/3 n=3840 0.67 ms/集合", "ms_per_set": 0.6717711687088013}
+{"time": "2026-09-18T17:53:57", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t2 sh2/3 n=3840 0.68 ms/集合", "ms_per_set": 0.6774799277385076}
+{"time": "2026-09-18T17:53:59", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t2 sh1/3 n=3840 0.68 ms/集合", "ms_per_set": 0.6750322257479032}
+{"time": "2026-09-18T17:53:59", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t2 sh0/3 n=3841 0.68 ms/集合", "ms_per_set": 0.6830899611763331}
+{"time": "2026-09-18T17:54:02", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t3 sh2/3 n=3840 0.67 ms/集合", "ms_per_set": 0.66532368461291}
+{"time": "2026-09-18T17:54:04", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t3 sh1/3 n=3840 0.65 ms/集合", "ms_per_set": 0.6513637180129687}
+{"time": "2026-09-18T17:54:04", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t3 sh0/3 n=3841 0.67 ms/集合", "ms_per_set": 0.6715247668936922}
+{"time": "2026-09-18T17:54:06", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t4 sh2/3 n=3840 0.65 ms/集合", "ms_per_set": 0.6486500302950541}
+{"time": "2026-09-18T17:54:09", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t4 sh1/3 n=3840 0.70 ms/集合", "ms_per_set": 0.695649099846681}
+{"time": "2026-09-18T17:54:09", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t4 sh0/3 n=3841 0.70 ms/集合", "ms_per_set": 0.6968526286527658}
+{"time": "2026-09-18T17:54:11", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t5 sh2/3 n=3840 0.69 ms/集合", "ms_per_set": 0.6894991422692934}
+{"time": "2026-09-18T17:54:15", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t5 sh1/3 n=3840 0.69 ms/集合", "ms_per_set": 0.6890180210272471}
+{"time": "2026-09-18T17:54:15", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t5 sh0/3 n=3841 0.68 ms/集合", "ms_per_set": 0.6802373179480671}
+{"time": "2026-09-18T17:54:16", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t6 sh2/3 n=3840 0.61 ms/集合", "ms_per_set": 0.6113027532895406}
+{"time": "2026-09-18T17:54:20", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t6 sh1/3 n=3840 0.69 ms/集合", "ms_per_set": 0.687058704594771}
+{"time": "2026-09-18T17:54:20", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t6 sh0/3 n=3841 0.65 ms/集合", "ms_per_set": 0.650342011693802}
+{"time": "2026-09-18T17:54:21", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t7 sh2/3 n=3840 0.64 ms/集合", "ms_per_set": 0.6418167303005854}
+{"time": "2026-09-18T17:54:24", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t7 sh1/3 n=3840 0.65 ms/集合", "ms_per_set": 0.6509460508823395}
+{"time": "2026-09-18T17:54:26", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t7 sh0/3 n=3841 0.65 ms/集合", "ms_per_set": 0.6520774208670698}
+{"time": "2026-09-18T17:54:26", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t8 sh2/3 n=3840 0.64 ms/集合", "ms_per_set": 0.6445073212186495}
+{"time": "2026-09-18T17:54:29", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t8 sh1/3 n=3840 0.65 ms/集合", "ms_per_set": 0.6482540319363276}
+{"time": "2026-09-18T17:54:31", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t8 sh0/3 n=3841 0.65 ms/集合", "ms_per_set": 0.6461758006522197}
+{"time": "2026-09-18T17:54:31", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t9 sh2/3 n=3840 0.64 ms/集合", "ms_per_set": 0.6387875104943912}
+{"time": "2026-09-18T17:54:35", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t9 sh1/3 n=3840 0.62 ms/集合", "ms_per_set": 0.6173688918352127}
+{"time": "2026-09-18T17:54:36", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t9 sh0/3 n=3841 0.65 ms/集合", "ms_per_set": 0.6542976124154438}
+{"time": "2026-09-18T17:54:37", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t10 sh2/3 n=3840 0.64 ms/集合", "ms_per_set": 0.6375016023715336}
+{"time": "2026-09-18T17:54:40", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t10 sh1/3 n=3840 0.64 ms/集合", "ms_per_set": 0.6364574035008749}
+{"time": "2026-09-18T17:54:41", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t10 sh0/3 n=3841 0.70 ms/集合", "ms_per_set": 0.7006638498859957}
+{"time": "2026-09-18T17:54:42", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t11 sh2/3 n=3840 0.66 ms/集合", "ms_per_set": 0.658529189725717}
+{"time": "2026-09-18T17:54:45", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t11 sh1/3 n=3840 0.68 ms/集合", "ms_per_set": 0.6784879292050998}
+{"time": "2026-09-18T17:54:47", "stage": "EST1", "status": "DONE", "note": "pjm_k3 single_nophi t11 sh0/3 n=3841 0.66 ms/集合", "ms_per_set": 0.6556718245796535}
+{"time": "2026-09-18T17:55:05", "stage": "ESTM", "status": "DONE", "note": "caiso_k3 multix sh2/3 n=3840 5.41 ms/集合", "ms_per_set": 5.410526506602764}
+{"time": "2026-09-18T17:55:10", "stage": "ESTM", "status": "DONE", "note": "caiso_k3 multix sh1/3 n=3840 5.78 ms/集合", "ms_per_set": 5.776763583223025}
+{"time": "2026-09-18T17:55:11", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t0 sh2/3 n=3840 0.79 ms/集合", "ms_per_set": 0.7930042843023937}
+{"time": "2026-09-18T17:55:11", "stage": "ESTM", "status": "DONE", "note": "caiso_k3 multix sh0/3 n=3841 5.74 ms/集合", "ms_per_set": 5.741764995711013}
+{"time": "2026-09-18T17:55:16", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t0 sh1/3 n=3840 0.87 ms/集合", "ms_per_set": 0.8685233071446419}
+{"time": "2026-09-18T17:55:16", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t1 sh2/3 n=3840 0.79 ms/集合", "ms_per_set": 0.7915195698539416}
+{"time": "2026-09-18T17:55:17", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t0 sh0/3 n=3841 0.84 ms/集合", "ms_per_set": 0.8371269848780593}
+{"time": "2026-09-18T17:55:22", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t1 sh1/3 n=3840 0.85 ms/集合", "ms_per_set": 0.8450605596105258}
+{"time": "2026-09-18T17:55:22", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t2 sh2/3 n=3840 0.79 ms/集合", "ms_per_set": 0.7934677104155222}
+{"time": "2026-09-18T17:55:22", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t1 sh0/3 n=3841 0.79 ms/集合", "ms_per_set": 0.7881535989671472}
+{"time": "2026-09-18T17:55:27", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t2 sh1/3 n=3840 0.78 ms/集合", "ms_per_set": 0.7782898222406706}
+{"time": "2026-09-18T17:55:28", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t3 sh2/3 n=3840 0.78 ms/集合", "ms_per_set": 0.7798499117294947}
+{"time": "2026-09-18T17:55:28", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t2 sh0/3 n=3841 0.81 ms/集合", "ms_per_set": 0.81422508337075}
+{"time": "2026-09-18T17:55:33", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t3 sh1/3 n=3840 0.81 ms/集合", "ms_per_set": 0.8053531249364217}
+{"time": "2026-09-18T17:55:33", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t4 sh2/3 n=3840 0.78 ms/集合", "ms_per_set": 0.7796300575137138}
+{"time": "2026-09-18T17:55:33", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t3 sh0/3 n=3841 0.81 ms/集合", "ms_per_set": 0.8062518099204105}
+{"time": "2026-09-18T17:55:38", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t4 sh1/3 n=3840 0.78 ms/集合", "ms_per_set": 0.7777365545431774}
+{"time": "2026-09-18T17:55:38", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t5 sh2/3 n=3840 0.76 ms/集合", "ms_per_set": 0.7598279044032097}
+{"time": "2026-09-18T17:55:39", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t4 sh0/3 n=3841 0.83 ms/集合", "ms_per_set": 0.8297695278097211}
+{"time": "2026-09-18T17:55:44", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t6 sh2/3 n=3840 0.78 ms/集合", "ms_per_set": 0.7770827040076256}
+{"time": "2026-09-18T17:55:44", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t5 sh1/3 n=3840 0.83 ms/集合", "ms_per_set": 0.8313441028197607}
+{"time": "2026-09-18T17:55:44", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t5 sh0/3 n=3841 0.81 ms/集合", "ms_per_set": 0.8072529693222146}
+{"time": "2026-09-18T17:55:49", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t7 sh2/3 n=3840 0.78 ms/集合", "ms_per_set": 0.7776678850253423}
+{"time": "2026-09-18T17:55:50", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t6 sh1/3 n=3840 0.83 ms/集合", "ms_per_set": 0.8334803705414136}
+{"time": "2026-09-18T17:55:50", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t6 sh0/3 n=3841 0.79 ms/集合", "ms_per_set": 0.7893441400624787}
+{"time": "2026-09-18T17:55:55", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t8 sh2/3 n=3840 0.79 ms/集合", "ms_per_set": 0.7929840435584385}
+{"time": "2026-09-18T17:55:56", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t7 sh1/3 n=3840 0.84 ms/集合", "ms_per_set": 0.8445020765066147}
+{"time": "2026-09-18T17:55:56", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t7 sh0/3 n=3841 0.81 ms/集合", "ms_per_set": 0.8056237653530194}
+{"time": "2026-09-18T17:56:00", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t9 sh2/3 n=3840 0.81 ms/集合", "ms_per_set": 0.8148561542232831}
+{"time": "2026-09-18T17:56:01", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t8 sh1/3 n=3840 0.82 ms/集合", "ms_per_set": 0.8156274134914081}
+{"time": "2026-09-18T17:56:01", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t8 sh0/3 n=3841 0.83 ms/集合", "ms_per_set": 0.831327411042809}
+{"time": "2026-09-18T17:56:05", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t10 sh2/3 n=3840 0.81 ms/集合", "ms_per_set": 0.8080469444394112}
+{"time": "2026-09-18T17:56:07", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t9 sh1/3 n=3840 0.87 ms/集合", "ms_per_set": 0.8654171600937843}
+{"time": "2026-09-18T17:56:07", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t9 sh0/3 n=3841 0.82 ms/集合", "ms_per_set": 0.8218908520981347}
+{"time": "2026-09-18T17:56:12", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t11 sh2/3 n=3840 0.84 ms/集合", "ms_per_set": 0.8440410097440083}
+{"time": "2026-09-18T17:56:12", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t10 sh1/3 n=3840 0.81 ms/集合", "ms_per_set": 0.8074846739570299}
+{"time": "2026-09-18T17:56:13", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t10 sh0/3 n=3841 0.83 ms/集合", "ms_per_set": 0.8326180122135145}
+{"time": "2026-09-18T17:56:18", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t11 sh1/3 n=3840 0.84 ms/集合", "ms_per_set": 0.8448989440997442}
+{"time": "2026-09-18T17:56:19", "stage": "EST1", "status": "DONE", "note": "caiso_k3 single_nophi t11 sh0/3 n=3841 0.83 ms/集合", "ms_per_set": 0.8337666547040833}

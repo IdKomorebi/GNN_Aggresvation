@@ -214,3 +214,84 @@
 - `2026-09-16 03:08:27` ✔ **[TRUTH] DONE**　caiso_gameC seed0 shard1/3 n=5461 416s
 - `2026-09-16 03:08:27` ✔ **[TRUTH] DONE**　caiso_gameC seed0 shard0/3 n=5462 417s
 - `2026-09-16 03:17:49` ✔ **[ORACLE] DONE**　pjm main seed0 ep=318 val=0.3643 27s | 与历史权重最大差 0.00e+00
+- `2026-09-18 19:41:02` ✔ **[EST] DONE**　pjm_k3 direct sh2/3 n=3840 0.26 ms/集合
+- `2026-09-18 19:41:03` ✔ **[EST] DONE**　pjm_k3 direct sh0/3 n=3841 0.36 ms/集合
+- `2026-09-18 19:41:03` ✔ **[EST] DONE**　pjm_k3 direct sh1/3 n=3840 0.37 ms/集合
+- `2026-09-18 19:41:14` ✔ **[EST] DONE**　pjm_k3 L0 sh2/3 n=3840 2.28 ms/集合
+- `2026-09-18 19:41:15` ✔ **[EST] DONE**　pjm_k3 L0 sh0/3 n=3841 2.41 ms/集合
+- `2026-09-18 19:41:15` ✔ **[EST] DONE**　pjm_k3 L0 sh1/3 n=3840 2.44 ms/集合
+- `2026-09-18 19:42:58` ✔ **[EST] DONE**　pjm_k3 L0ensx sh2/3 n=3840 26.50 ms/集合
+- `2026-09-18 19:43:07` ✔ **[EST] DONE**　pjm_k3 L0ensx sh1/3 n=3840 28.58 ms/集合
+- `2026-09-18 19:43:09` ✔ **[EST] DONE**　pjm_k3 L0ensx sh0/3 n=3841 28.97 ms/集合
+- `2026-09-18 19:43:10` ✔ **[EST] DONE**　caiso_k3 direct sh2/3 n=3840 0.36 ms/集合
+- `2026-09-18 19:43:20` ✔ **[EST] DONE**　caiso_k3 direct sh1/3 n=3840 0.36 ms/集合
+- `2026-09-18 19:43:21` ✔ **[EST] DONE**　caiso_k3 direct sh0/3 n=3841 0.26 ms/集合
+- `2026-09-18 19:43:24` ✔ **[EST] DONE**　caiso_k3 L0 sh2/3 n=3840 3.02 ms/集合
+- `2026-09-18 19:43:35` ✔ **[EST] DONE**　caiso_k3 L0 sh1/3 n=3840 3.15 ms/集合
+- `2026-09-18 19:43:35` ✔ **[EST] DONE**　caiso_k3 L0 sh0/3 n=3841 3.17 ms/集合
+- `2026-09-18 19:45:34` ✔ **[EST] DONE**　caiso_k3 L0ensx sh2/3 n=3840 33.24 ms/集合
+- `2026-09-18 19:45:55` ✔ **[EST] DONE**　pjm_k3 L1x sh2/3 n=3840 4.13 ms/集合
+- `2026-09-18 19:45:56` ✔ **[EST] DONE**　caiso_k3 L0ensx sh1/3 n=3840 36.18 ms/集合
+- `2026-09-18 19:45:57` ✔ **[EST] DONE**　caiso_k3 L0ensx sh0/3 n=3841 36.22 ms/集合
+- `2026-09-18 19:46:18` ✔ **[EST] DONE**　pjm_k3 L1x sh1/3 n=3840 4.42 ms/集合
+- `2026-09-18 19:46:18` ✔ **[EST] DONE**　pjm_k3 L1x sh0/3 n=3841 4.39 ms/集合
+- `2026-09-18 20:04:36` ✔ **[MTABLE] DONE**　pjm K=0 完成
+- `2026-09-18 20:04:36` ✔ **[MTABLE] DONE**　pjm K=1 完成
+- `2026-09-18 20:04:38` ✔ **[MTABLE] DONE**　pjm K=2 完成
+- `2026-09-18 20:04:38` ✔ **[MTABLE] DONE**　caiso K=0 完成
+- `2026-09-18 20:04:38` ✔ **[MTABLE] DONE**　caiso K=1 完成
+- `2026-09-18 20:04:40` ✔ **[MTABLE] DONE**　caiso K=2 完成
+- `2026-09-18 20:21:23` ✔ **[BLKTRAIN] DONE**　pjm block0 seed2 ep=222 val=0.37371 12s
+- `2026-09-18 20:21:26` ✔ **[BLKTRAIN] DONE**　pjm block0 seed0 ep=269 val=0.32951 14s
+- `2026-09-18 20:21:32` ✔ **[BLKTRAIN] DONE**　pjm block0 seed1 ep=400 val=0.32035 21s
+- `2026-09-18 20:22:37` ✔ **[BLKEST] DONE**　pjm block0 sh2 n=3840 16.08 ms/集合
+- `2026-09-18 20:22:42` ✔ **[BLKEST] DONE**　pjm block0 sh0 n=3841 17.22 ms/集合
+- `2026-09-18 20:22:42` ✔ **[BLKEST] DONE**　pjm block0 sh1 n=3840 17.27 ms/集合
+- `2026-09-18 20:24:32` ✔ **[BLKTRUTH] DONE**　pjm block0 sh2 n=3840 108s
+- `2026-09-18 20:24:33` ✔ **[BLKTRUTH] DONE**　pjm block0 sh0 n=3841 109s
+- `2026-09-18 20:24:33` ✔ **[BLKTRUTH] DONE**　pjm block0 sh1 n=3840 109s
+- `2026-09-18 20:24:55` ✔ **[BLKTRAIN] DONE**　pjm block1 seed1 ep=400 val=0.29290 17s
+- `2026-09-18 20:24:55` ✔ **[BLKTRAIN] DONE**　pjm block1 seed0 ep=400 val=0.30320 18s
+- `2026-09-18 20:24:56` ✔ **[BLKTRAIN] DONE**　pjm block1 seed2 ep=400 val=0.28269 19s
+- `2026-09-18 20:26:01` ✔ **[BLKEST] DONE**　pjm block1 sh2 n=3840 16.01 ms/集合
+- `2026-09-18 20:26:06` ✔ **[BLKEST] DONE**　pjm block1 sh1 n=3840 17.38 ms/集合
+- `2026-09-18 20:26:06` ✔ **[BLKEST] DONE**　pjm block1 sh0 n=3841 17.38 ms/集合
+- `2026-09-18 20:27:56` ✔ **[BLKTRUTH] DONE**　pjm block1 sh2 n=3840 108s
+- `2026-09-18 20:27:57` ✔ **[BLKTRUTH] DONE**　pjm block1 sh1 n=3840 109s
+- `2026-09-18 20:27:57` ✔ **[BLKTRUTH] DONE**　pjm block1 sh0 n=3841 109s
+- `2026-09-18 20:28:23` ✔ **[BLKTRAIN] DONE**　caiso block0 seed2 ep=400 val=0.31810 22s
+- `2026-09-18 20:28:23` ✔ **[BLKTRAIN] DONE**　caiso block0 seed0 ep=387 val=0.33218 22s
+- `2026-09-18 20:28:25` ✔ **[BLKTRAIN] DONE**　caiso block0 seed1 ep=400 val=0.32497 23s
+- `2026-09-18 20:29:42` ✔ **[BLKEST] DONE**　caiso block0 sh2 n=3840 19.28 ms/集合
+- `2026-09-18 20:29:49` ✔ **[BLKEST] DONE**　caiso block0 sh1 n=3840 20.95 ms/集合
+- `2026-09-18 20:29:50` ✔ **[BLKEST] DONE**　caiso block0 sh0 n=3841 21.23 ms/集合
+- `2026-09-18 20:32:15` ✔ **[BLKTRUTH] DONE**　caiso block0 sh2 n=3840 143s
+- `2026-09-18 20:32:16` ✔ **[BLKTRUTH] DONE**　caiso block0 sh1 n=3840 143s
+- `2026-09-18 20:32:16` ✔ **[BLKTRUTH] DONE**　caiso block0 sh0 n=3841 144s
+- `2026-09-18 20:32:42` ✔ **[BLKTRAIN] DONE**　caiso block1 seed1 ep=400 val=0.34562 22s
+- `2026-09-18 20:32:42` ✔ **[BLKTRAIN] DONE**　caiso block1 seed2 ep=400 val=0.31403 22s
+- `2026-09-18 20:32:43` ✔ **[BLKTRAIN] DONE**　caiso block1 seed0 ep=400 val=0.33764 23s
+- `2026-09-18 20:34:02` ✔ **[BLKEST] DONE**　caiso block1 sh2 n=3840 19.51 ms/集合
+- `2026-09-18 20:34:07` ✔ **[BLKEST] DONE**　caiso block1 sh1 n=3840 21.04 ms/集合
+- `2026-09-18 20:34:13` ✔ **[BLKEST] DONE**　caiso block1 sh0 n=3841 22.67 ms/集合
+- `2026-09-18 20:36:39` ✔ **[BLKTRUTH] DONE**　caiso block1 sh2 n=3840 143s
+- `2026-09-18 20:36:40` ✔ **[BLKTRUTH] DONE**　caiso block1 sh1 n=3840 144s
+- `2026-09-18 20:36:40` ✔ **[BLKTRUTH] DONE**　caiso block1 sh0 n=3841 144s
+- `2026-09-18 20:43:16` ✔ **[BLKTRAIN] DONE**　pjm block0 seed1 ep=298 val=0.33249 14s
+- `2026-09-18 20:43:20` ✔ **[BLKTRAIN] DONE**　pjm block0 seed2 ep=400 val=0.32125 18s
+- `2026-09-18 20:43:21` ✔ **[BLKTRAIN] DONE**　pjm block0 seed0 ep=400 val=0.32410 19s
+- `2026-09-18 20:45:30` ✔ **[BLKTRAIN] DONE**　pjm block1 seed0 ep=334 val=0.33576 16s
+- `2026-09-18 20:45:32` ✔ **[BLKTRAIN] DONE**　pjm block1 seed1 ep=400 val=0.31583 18s
+- `2026-09-18 20:45:32` ✔ **[BLKTRAIN] DONE**　pjm block1 seed2 ep=400 val=0.30358 19s
+- `2026-09-18 21:18:16` ✔ **[INTERVAL] DONE**　pjm K=0 区间口径完成
+- `2026-09-18 21:18:17` ✔ **[INTERVAL] DONE**　pjm K=1 区间口径完成
+- `2026-09-18 21:18:18` ✔ **[INTERVAL] DONE**　pjm K=2 区间口径完成
+- `2026-09-18 21:18:19` ✔ **[INTERVAL] DONE**　caiso K=0 区间口径完成
+- `2026-09-18 21:18:19` ✔ **[INTERVAL] DONE**　caiso K=1 区间口径完成
+- `2026-09-18 21:18:21` ✔ **[INTERVAL] DONE**　caiso K=2 区间口径完成
+- `2026-09-18 21:21:15` ✔ **[ESCAL] DONE**　K 递进口径对照完成
+- `2026-09-18 21:22:21` ✔ **[META] DONE**　元训练定位对照完成
+- `2026-09-18 22:32:01` ✔ **[ANALYZE] DONE**　pjm n_aux 分析完成
+- `2026-09-18 22:32:01` ✔ **[ANALYZE] DONE**　caiso n_aux 分析完成
+- `2026-09-18 22:33:43` ✔ **[CURSE] DONE**　winner's curse 分解完成
+- `2026-09-18 22:38:57` ✔ **[CURSE] DONE**　winner's curse 分解完成

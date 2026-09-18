@@ -1,0 +1,13 @@
+experiment:
+  name: dnn103_official_truth_and_baselines
+  purpose: P0-3 + RQ-A1/A2/A3/A5：建立正式攻击器族真值，并在其上比较通用模型的基线与消融。
+protocol: ../paper/FINAL_PROTOCOL.md（含 2026-09-18 两条修订）
+truth:
+  attackers: 单目标 DNN（本号全量新算，k3 全部 11,521 集合 × 12 目标 × 2 数据集）∪ 多目标 DNN（100 号 k4 取 k3）∪ 梯度提升树（100 号 k3）
+  selection: 逐 (集合,目标) 在 val 上选攻击器与轮次，test 只报告；再做单调闭包（val 选子集）
+estimators:
+  baselines: [raw ridge, raw+x² ridge, 随机傅里叶特征 ridge(768 维), 共享输出头 direct]
+  ours: [φ ridge, φ+x,x²（单种子）, φ+x,x²（三种子集成）, 元训练 φ+x,x²（仅 PJM）]
+  ablations: [掩码分布：无掩码 / Bernoulli / uniform, single-target（102 号）]
+sets: k3（11,521）
+gpu: 0/1/2

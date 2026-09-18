@@ -11,6 +11,12 @@ env/
 *.log
 *.pid
 
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.out
+
 # Local environment configuration and secrets
 .env
 .env.*

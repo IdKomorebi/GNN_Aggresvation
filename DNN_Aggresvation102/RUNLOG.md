@@ -1,0 +1,251 @@
+# DNN_Aggresvation102 运行流水
+
+> 自动记录；实验结论见 `CHANGELOG.md`。
+
+- `2026-09-18 17:27:14` ✔ **[SINGLE] DONE**　pjm single t0 seed0 ep=396 val=0.34831 39s
+- `2026-09-18 17:27:58` ✔ **[SINGLE] DONE**　pjm single t2 seed0 ep=233 val=0.09572 21s
+- `2026-09-18 17:28:07` ✔ **[SINGLE] DONE**　pjm single t1 seed0 ep=341 val=0.43120 30s
+- `2026-09-18 17:28:13` ✔ **[SINGLE] DONE**　pjm single t0 seed0 ep=396 val=0.34831 36s
+- `2026-09-18 17:28:18` ✔ **[SINGLE] DONE**　pjm single t5 seed0 ep=180 val=0.78715 16s
+- `2026-09-18 17:28:38` ✔ **[SINGLE] DONE**　pjm single t8 seed0 ep=170 val=0.18410 15s
+- `2026-09-18 17:28:42` ✔ **[SINGLE] DONE**　pjm single t4 seed0 ep=355 val=0.24851 31s
+- `2026-09-18 17:28:45` ✔ **[SINGLE] DONE**　pjm single t3 seed0 ep=316 val=0.09633 29s
+- `2026-09-18 17:29:01` ✔ **[SINGLE] DONE**　pjm single t7 seed0 ep=171 val=0.40745 15s
+- `2026-09-18 17:29:14` ✔ **[SINGLE] DONE**　pjm single t6 seed0 ep=267 val=0.53283 24s
+- `2026-09-18 17:29:15` ✔ **[SINGLE] DONE**　pjm single t11 seed0 ep=400 val=0.29866 34s
+- `2026-09-18 17:29:34` ✔ **[SINGLE] DONE**　pjm single t10 seed0 ep=343 val=0.30544 30s
+- `2026-09-18 17:29:39` ✔ **[SINGLE] DONE**　pjm single t9 seed0 ep=245 val=0.30291 22s
+- `2026-09-18 17:30:09` ✔ **[SINGLE] DONE**　caiso single t1 seed0 ep=235 val=0.12831 31s
+- `2026-09-18 17:30:09` ✔ **[SINGLE] DONE**　caiso single t2 seed0 ep=400 val=0.37200 50s
+- `2026-09-18 17:30:21` ✔ **[SINGLE] DONE**　caiso single t0 seed0 ep=279 val=0.11680 38s
+- `2026-09-18 17:30:45` ✔ **[SINGLE] DONE**　caiso single t4 seed0 ep=237 val=0.09344 31s
+- `2026-09-18 17:30:51` ✔ **[SINGLE] DONE**　caiso single t5 seed0 ep=294 val=0.33927 37s
+- `2026-09-18 17:31:15` ✔ **[SINGLE] DONE**　caiso single t3 seed0 ep=400 val=0.27974 49s
+- `2026-09-18 17:31:18` ✔ **[SINGLE] DONE**　caiso single t7 seed0 ep=256 val=0.32060 28s
+- `2026-09-18 17:31:42` ✔ **[SINGLE] DONE**　caiso single t8 seed0 ep=400 val=0.34289 47s
+- `2026-09-18 17:31:44` ✔ **[SINGLE] DONE**　caiso single t10 seed0 ep=179 val=0.74330 23s
+- `2026-09-18 17:32:03` ✔ **[SINGLE] DONE**　caiso single t6 seed0 ep=362 val=0.37966 45s
+- `2026-09-18 17:32:34` ✔ **[SINGLE] DONE**　caiso single t11 seed0 ep=386 val=0.54926 48s
+- `2026-09-18 17:32:45` ✔ **[SINGLE] DONE**　caiso single t9 seed0 ep=303 val=0.13509 37s
+- `2026-09-18 17:33:18` ✔ **[EST1] DONE**　pjm_k3 single t0 sh2/3 n=3840 3.70 ms/集合
+- `2026-09-18 17:33:19` ✔ **[EST1] DONE**　pjm_k3 single t0 sh1/3 n=3840 3.84 ms/集合
+- `2026-09-18 17:33:19` ✔ **[EST1] DONE**　pjm_k3 single t0 sh0/3 n=3841 3.93 ms/集合
+- `2026-09-18 17:33:35` ✔ **[EST1] DONE**　pjm_k3 single t1 sh2/3 n=3840 3.70 ms/集合
+- `2026-09-18 17:33:36` ✔ **[EST1] DONE**　pjm_k3 single t1 sh1/3 n=3840 3.94 ms/集合
+- `2026-09-18 17:33:37` ✔ **[EST1] DONE**　pjm_k3 single t1 sh0/3 n=3841 3.95 ms/集合
+- `2026-09-18 17:33:52` ✔ **[EST1] DONE**　pjm_k3 single t2 sh2/3 n=3840 3.75 ms/集合
+- `2026-09-18 17:33:55` ✔ **[EST1] DONE**　pjm_k3 single t2 sh1/3 n=3840 4.00 ms/集合
+- `2026-09-18 17:33:55` ✔ **[EST1] DONE**　pjm_k3 single t2 sh0/3 n=3841 3.94 ms/集合
+- `2026-09-18 17:34:09` ✔ **[EST1] DONE**　pjm_k3 single t3 sh2/3 n=3840 3.72 ms/集合
+- `2026-09-18 17:34:13` ✔ **[EST1] DONE**　pjm_k3 single t3 sh1/3 n=3840 4.03 ms/集合
+- `2026-09-18 17:34:14` ✔ **[EST1] DONE**　pjm_k3 single t3 sh0/3 n=3841 4.03 ms/集合
+- `2026-09-18 17:34:26` ✔ **[EST1] DONE**　pjm_k3 single t4 sh2/3 n=3840 3.73 ms/集合
+- `2026-09-18 17:34:30` ✔ **[EST1] DONE**　pjm_k3 single t4 sh1/3 n=3840 3.95 ms/集合
+- `2026-09-18 17:34:32` ✔ **[EST1] DONE**　pjm_k3 single t4 sh0/3 n=3841 4.05 ms/集合
+- `2026-09-18 17:34:43` ✔ **[EST1] DONE**　pjm_k3 single t5 sh2/3 n=3840 3.73 ms/集合
+- `2026-09-18 17:34:48` ✔ **[EST1] DONE**　pjm_k3 single t5 sh1/3 n=3840 3.94 ms/集合
+- `2026-09-18 17:34:50` ✔ **[EST1] DONE**　pjm_k3 single t5 sh0/3 n=3841 3.95 ms/集合
+- `2026-09-18 17:35:01` ✔ **[EST1] DONE**　pjm_k3 single t6 sh2/3 n=3840 3.87 ms/集合
+- `2026-09-18 17:35:06` ✔ **[EST1] DONE**　pjm_k3 single t6 sh1/3 n=3840 3.96 ms/集合
+- `2026-09-18 17:35:08` ✔ **[EST1] DONE**　pjm_k3 single t6 sh0/3 n=3841 4.00 ms/集合
+- `2026-09-18 17:35:18` ✔ **[EST1] DONE**　pjm_k3 single t7 sh2/3 n=3840 3.72 ms/集合
+- `2026-09-18 17:35:24` ✔ **[EST1] DONE**　pjm_k3 single t7 sh1/3 n=3840 3.96 ms/集合
+- `2026-09-18 17:35:25` ✔ **[EST1] DONE**　pjm_k3 single t7 sh0/3 n=3841 3.93 ms/集合
+- `2026-09-18 17:35:34` ✔ **[EST1] DONE**　pjm_k3 single t8 sh2/3 n=3840 3.76 ms/集合
+- `2026-09-18 17:35:41` ✔ **[EST1] DONE**　pjm_k3 single t8 sh1/3 n=3840 3.93 ms/集合
+- `2026-09-18 17:35:43` ✔ **[EST1] DONE**　pjm_k3 single t8 sh0/3 n=3841 3.93 ms/集合
+- `2026-09-18 17:35:51` ✔ **[EST1] DONE**　pjm_k3 single t9 sh2/3 n=3840 3.72 ms/集合
+- `2026-09-18 17:35:59` ✔ **[EST1] DONE**　pjm_k3 single t9 sh1/3 n=3840 3.77 ms/集合
+- `2026-09-18 17:36:00` ✔ **[EST1] DONE**　pjm_k3 single t9 sh0/3 n=3841 3.96 ms/集合
+- `2026-09-18 17:36:08` ✔ **[EST1] DONE**　pjm_k3 single t10 sh2/3 n=3840 3.72 ms/集合
+- `2026-09-18 17:36:16` ✔ **[EST1] DONE**　pjm_k3 single t10 sh1/3 n=3840 3.79 ms/集合
+- `2026-09-18 17:36:18` ✔ **[EST1] DONE**　pjm_k3 single t10 sh0/3 n=3841 4.02 ms/集合
+- `2026-09-18 17:36:25` ✔ **[EST1] DONE**　pjm_k3 single t11 sh2/3 n=3840 3.74 ms/集合
+- `2026-09-18 17:36:33` ✔ **[EST1] DONE**　pjm_k3 single t11 sh1/3 n=3840 3.95 ms/集合
+- `2026-09-18 17:36:36` ✔ **[EST1] DONE**　pjm_k3 single t11 sh0/3 n=3841 3.96 ms/集合
+- `2026-09-18 17:36:48` ✔ **[EST1] DONE**　caiso_k3 single t0 sh2/3 n=3840 5.14 ms/集合
+- `2026-09-18 17:36:56` ✔ **[EST1] DONE**　caiso_k3 single t0 sh1/3 n=3840 5.11 ms/集合
+- `2026-09-18 17:36:59` ✔ **[EST1] DONE**　caiso_k3 single t0 sh0/3 n=3841 5.23 ms/集合
+- `2026-09-18 17:37:08` ✔ **[EST1] DONE**　caiso_k3 single t1 sh2/3 n=3840 4.78 ms/集合
+- `2026-09-18 17:37:18` ✔ **[EST1] DONE**　caiso_k3 single t1 sh1/3 n=3840 5.12 ms/集合
+- `2026-09-18 17:37:20` ✔ **[EST1] DONE**　caiso_k3 single t1 sh0/3 n=3841 4.90 ms/集合
+- `2026-09-18 17:37:30` ✔ **[EST1] DONE**　caiso_k3 single t2 sh2/3 n=3840 4.85 ms/集合
+- `2026-09-18 17:37:41` ✔ **[EST1] DONE**　caiso_k3 single t2 sh1/3 n=3840 5.18 ms/集合
+- `2026-09-18 17:37:43` ✔ **[EST1] DONE**　caiso_k3 single t2 sh0/3 n=3841 5.18 ms/集合
+- `2026-09-18 17:37:51` ✔ **[EST1] DONE**　caiso_k3 single t3 sh2/3 n=3840 5.00 ms/集合
+- `2026-09-18 17:38:02` ✔ **[EST1] DONE**　caiso_k3 single t3 sh1/3 n=3840 4.87 ms/集合
+- `2026-09-18 17:38:05` ✔ **[EST1] DONE**　caiso_k3 single t3 sh0/3 n=3841 5.10 ms/集合
+- `2026-09-18 17:38:12` ✔ **[EST1] DONE**　caiso_k3 single t4 sh2/3 n=3840 4.77 ms/集合
+- `2026-09-18 17:38:24` ✔ **[EST1] DONE**　caiso_k3 single t4 sh1/3 n=3840 5.08 ms/集合
+- `2026-09-18 17:38:27` ✔ **[EST1] DONE**　caiso_k3 single t4 sh0/3 n=3841 5.07 ms/集合
+- `2026-09-18 17:38:34` ✔ **[EST1] DONE**　caiso_k3 single t5 sh2/3 n=3840 4.79 ms/集合
+- `2026-09-18 17:38:46` ✔ **[EST1] DONE**　caiso_k3 single t5 sh1/3 n=3840 4.89 ms/集合
+- `2026-09-18 17:38:49` ✔ **[EST1] DONE**　caiso_k3 single t5 sh0/3 n=3841 5.07 ms/集合
+- `2026-09-18 17:38:55` ✔ **[EST1] DONE**　caiso_k3 single t6 sh2/3 n=3840 4.77 ms/集合
+- `2026-09-18 17:39:07` ✔ **[EST1] DONE**　caiso_k3 single t6 sh1/3 n=3840 4.84 ms/集合
+- `2026-09-18 17:39:11` ✔ **[EST1] DONE**　caiso_k3 single t6 sh0/3 n=3841 5.10 ms/集合
+- `2026-09-18 17:39:16` ✔ **[EST1] DONE**　caiso_k3 single t7 sh2/3 n=3840 4.78 ms/集合
+- `2026-09-18 17:39:29` ✔ **[EST1] DONE**　caiso_k3 single t7 sh1/3 n=3840 5.09 ms/集合
+- `2026-09-18 17:39:33` ✔ **[EST1] DONE**　caiso_k3 single t7 sh0/3 n=3841 5.07 ms/集合
+- `2026-09-18 17:39:36` ✔ **[EST1] DONE**　caiso_k3 single t8 sh2/3 n=3840 4.80 ms/集合
+- `2026-09-18 17:39:51` ✔ **[EST1] DONE**　caiso_k3 single t8 sh1/3 n=3840 5.10 ms/集合
+- `2026-09-18 17:39:56` ✔ **[EST1] DONE**　caiso_k3 single t8 sh0/3 n=3841 5.27 ms/集合
+- `2026-09-18 17:39:57` ✔ **[EST1] DONE**　caiso_k3 single t9 sh2/3 n=3840 4.77 ms/集合
+- `2026-09-18 17:40:13` ✔ **[EST1] DONE**　caiso_k3 single t9 sh1/3 n=3840 5.08 ms/集合
+- `2026-09-18 17:40:18` ✔ **[EST1] DONE**　caiso_k3 single t10 sh2/3 n=3840 4.76 ms/集合
+- `2026-09-18 17:40:18` ✔ **[EST1] DONE**　caiso_k3 single t9 sh0/3 n=3841 5.20 ms/集合
+- `2026-09-18 17:40:35` ✔ **[EST1] DONE**　caiso_k3 single t10 sh1/3 n=3840 5.06 ms/集合
+- `2026-09-18 17:40:39` ✔ **[EST1] DONE**　caiso_k3 single t11 sh2/3 n=3840 4.77 ms/集合
+- `2026-09-18 17:40:41` ✔ **[EST1] DONE**　caiso_k3 single t10 sh0/3 n=3841 5.09 ms/集合
+- `2026-09-18 17:40:57` ✔ **[EST1] DONE**　caiso_k3 single t11 sh1/3 n=3840 5.06 ms/集合
+- `2026-09-18 17:41:03` ✔ **[EST1] DONE**　caiso_k3 single t11 sh0/3 n=3841 5.27 ms/集合
+- `2026-09-18 17:41:29` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t0 sh2/3 n=500 23s
+- `2026-09-18 17:41:29` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t0 sh1/3 n=500 24s
+- `2026-09-18 17:41:30` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t0 sh0/3 n=500 24s
+- `2026-09-18 17:41:54` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t1 sh2/3 n=500 23s
+- `2026-09-18 17:41:54` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t1 sh0/3 n=500 22s
+- `2026-09-18 17:41:55` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t1 sh1/3 n=500 23s
+- `2026-09-18 17:42:19` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t2 sh2/3 n=500 22s
+- `2026-09-18 17:42:21` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t2 sh0/3 n=500 23s
+- `2026-09-18 17:42:21` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t2 sh1/3 n=500 24s
+- `2026-09-18 17:42:44` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t3 sh2/3 n=500 22s
+- `2026-09-18 17:42:46` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t3 sh0/3 n=500 22s
+- `2026-09-18 17:42:46` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t3 sh1/3 n=500 22s
+- `2026-09-18 17:43:09` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t4 sh2/3 n=500 23s
+- `2026-09-18 17:43:11` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t4 sh1/3 n=500 22s
+- `2026-09-18 17:43:11` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t4 sh0/3 n=500 23s
+- `2026-09-18 17:43:34` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t5 sh2/3 n=500 22s
+- `2026-09-18 17:43:36` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t5 sh1/3 n=500 22s
+- `2026-09-18 17:43:38` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t5 sh0/3 n=500 24s
+- `2026-09-18 17:43:59` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t6 sh2/3 n=500 22s
+- `2026-09-18 17:44:02` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t6 sh1/3 n=500 23s
+- `2026-09-18 17:44:03` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t6 sh0/3 n=500 23s
+- `2026-09-18 17:44:26` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t7 sh2/3 n=500 25s
+- `2026-09-18 17:44:30` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t7 sh1/3 n=500 26s
+- `2026-09-18 17:44:32` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t7 sh0/3 n=500 26s
+- `2026-09-18 17:44:52` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t8 sh2/3 n=500 23s
+- `2026-09-18 17:44:56` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t8 sh1/3 n=500 24s
+- `2026-09-18 17:44:58` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t8 sh0/3 n=500 23s
+- `2026-09-18 17:45:20` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t9 sh2/3 n=500 25s
+- `2026-09-18 17:45:24` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t9 sh1/3 n=500 26s
+- `2026-09-18 17:45:25` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t9 sh0/3 n=500 25s
+- `2026-09-18 17:45:48` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t10 sh2/3 n=500 25s
+- `2026-09-18 17:45:52` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t10 sh1/3 n=500 25s
+- `2026-09-18 17:45:53` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t10 sh0/3 n=500 25s
+- `2026-09-18 17:46:18` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t11 sh2/3 n=500 26s
+- `2026-09-18 17:46:23` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t11 sh1/3 n=500 27s
+- `2026-09-18 17:46:23` ✔ **[TRUTH1] DONE**　pjm_k3_samp single t11 sh0/3 n=500 27s
+- `2026-09-18 17:46:50` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t0 sh2/3 n=500 29s
+- `2026-09-18 17:46:56` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t0 sh1/3 n=500 30s
+- `2026-09-18 17:46:56` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t0 sh0/3 n=500 30s
+- `2026-09-18 17:47:24` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t1 sh2/3 n=500 31s
+- `2026-09-18 17:47:29` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t1 sh0/3 n=500 31s
+- `2026-09-18 17:47:30` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t1 sh1/3 n=500 31s
+- `2026-09-18 17:48:01` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t2 sh2/3 n=500 34s
+- `2026-09-18 17:48:05` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t2 sh0/3 n=500 33s
+- `2026-09-18 17:48:08` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t2 sh1/3 n=500 34s
+- `2026-09-18 17:48:34` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t3 sh2/3 n=500 31s
+- `2026-09-18 17:48:39` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t3 sh0/3 n=500 30s
+- `2026-09-18 17:48:41` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t3 sh1/3 n=500 31s
+- `2026-09-18 17:49:09` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t4 sh2/3 n=500 32s
+- `2026-09-18 17:49:11` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t4 sh0/3 n=500 30s
+- `2026-09-18 17:49:16` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t4 sh1/3 n=500 32s
+- `2026-09-18 17:49:44` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t5 sh2/3 n=500 32s
+- `2026-09-18 17:49:46` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t5 sh0/3 n=500 32s
+- `2026-09-18 17:49:51` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t5 sh1/3 n=500 32s
+- `2026-09-18 17:50:15` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t6 sh2/3 n=500 29s
+- `2026-09-18 17:50:20` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t6 sh0/3 n=500 31s
+- `2026-09-18 17:50:24` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t6 sh1/3 n=500 30s
+- `2026-09-18 17:50:48` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t7 sh2/3 n=500 30s
+- `2026-09-18 17:50:53` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t7 sh0/3 n=500 30s
+- `2026-09-18 17:50:55` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t7 sh1/3 n=500 29s
+- `2026-09-18 17:51:19` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t8 sh2/3 n=500 29s
+- `2026-09-18 17:51:24` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t8 sh0/3 n=500 29s
+- `2026-09-18 17:51:26` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t8 sh1/3 n=500 29s
+- `2026-09-18 17:51:55` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t9 sh2/3 n=500 33s
+- `2026-09-18 17:52:02` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t9 sh0/3 n=500 35s
+- `2026-09-18 17:52:04` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t9 sh1/3 n=500 34s
+- `2026-09-18 17:52:32` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t10 sh2/3 n=500 34s
+- `2026-09-18 17:52:38` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t10 sh0/3 n=500 33s
+- `2026-09-18 17:52:39` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t10 sh1/3 n=500 32s
+- `2026-09-18 17:53:05` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t11 sh2/3 n=500 30s
+- `2026-09-18 17:53:09` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t11 sh0/3 n=500 29s
+- `2026-09-18 17:53:11` ✔ **[TRUTH1] DONE**　caiso_k3_samp single t11 sh1/3 n=500 30s
+- `2026-09-18 17:53:42` ✔ **[ESTM] DONE**　pjm_k3 multix sh2/3 n=3840 4.24 ms/集合
+- `2026-09-18 17:53:43` ✔ **[ESTM] DONE**　pjm_k3 multix sh1/3 n=3840 4.48 ms/集合
+- `2026-09-18 17:53:44` ✔ **[ESTM] DONE**　pjm_k3 multix sh0/3 n=3841 4.56 ms/集合
+- `2026-09-18 17:53:47` ✔ **[EST1] DONE**　pjm_k3 single_nophi t0 sh2/3 n=3840 0.63 ms/集合
+- `2026-09-18 17:53:48` ✔ **[EST1] DONE**　pjm_k3 single_nophi t0 sh1/3 n=3840 0.65 ms/集合
+- `2026-09-18 17:53:49` ✔ **[EST1] DONE**　pjm_k3 single_nophi t0 sh0/3 n=3841 0.66 ms/集合
+- `2026-09-18 17:53:52` ✔ **[EST1] DONE**　pjm_k3 single_nophi t1 sh2/3 n=3840 0.61 ms/集合
+- `2026-09-18 17:53:53` ✔ **[EST1] DONE**　pjm_k3 single_nophi t1 sh0/3 n=3841 0.62 ms/集合
+- `2026-09-18 17:53:54` ✔ **[EST1] DONE**　pjm_k3 single_nophi t1 sh1/3 n=3840 0.67 ms/集合
+- `2026-09-18 17:53:57` ✔ **[EST1] DONE**　pjm_k3 single_nophi t2 sh2/3 n=3840 0.68 ms/集合
+- `2026-09-18 17:53:59` ✔ **[EST1] DONE**　pjm_k3 single_nophi t2 sh1/3 n=3840 0.68 ms/集合
+- `2026-09-18 17:53:59` ✔ **[EST1] DONE**　pjm_k3 single_nophi t2 sh0/3 n=3841 0.68 ms/集合
+- `2026-09-18 17:54:02` ✔ **[EST1] DONE**　pjm_k3 single_nophi t3 sh2/3 n=3840 0.67 ms/集合
+- `2026-09-18 17:54:04` ✔ **[EST1] DONE**　pjm_k3 single_nophi t3 sh1/3 n=3840 0.65 ms/集合
+- `2026-09-18 17:54:04` ✔ **[EST1] DONE**　pjm_k3 single_nophi t3 sh0/3 n=3841 0.67 ms/集合
+- `2026-09-18 17:54:06` ✔ **[EST1] DONE**　pjm_k3 single_nophi t4 sh2/3 n=3840 0.65 ms/集合
+- `2026-09-18 17:54:09` ✔ **[EST1] DONE**　pjm_k3 single_nophi t4 sh1/3 n=3840 0.70 ms/集合
+- `2026-09-18 17:54:09` ✔ **[EST1] DONE**　pjm_k3 single_nophi t4 sh0/3 n=3841 0.70 ms/集合
+- `2026-09-18 17:54:11` ✔ **[EST1] DONE**　pjm_k3 single_nophi t5 sh2/3 n=3840 0.69 ms/集合
+- `2026-09-18 17:54:15` ✔ **[EST1] DONE**　pjm_k3 single_nophi t5 sh1/3 n=3840 0.69 ms/集合
+- `2026-09-18 17:54:15` ✔ **[EST1] DONE**　pjm_k3 single_nophi t5 sh0/3 n=3841 0.68 ms/集合
+- `2026-09-18 17:54:16` ✔ **[EST1] DONE**　pjm_k3 single_nophi t6 sh2/3 n=3840 0.61 ms/集合
+- `2026-09-18 17:54:20` ✔ **[EST1] DONE**　pjm_k3 single_nophi t6 sh1/3 n=3840 0.69 ms/集合
+- `2026-09-18 17:54:20` ✔ **[EST1] DONE**　pjm_k3 single_nophi t6 sh0/3 n=3841 0.65 ms/集合
+- `2026-09-18 17:54:21` ✔ **[EST1] DONE**　pjm_k3 single_nophi t7 sh2/3 n=3840 0.64 ms/集合
+- `2026-09-18 17:54:24` ✔ **[EST1] DONE**　pjm_k3 single_nophi t7 sh1/3 n=3840 0.65 ms/集合
+- `2026-09-18 17:54:26` ✔ **[EST1] DONE**　pjm_k3 single_nophi t7 sh0/3 n=3841 0.65 ms/集合
+- `2026-09-18 17:54:26` ✔ **[EST1] DONE**　pjm_k3 single_nophi t8 sh2/3 n=3840 0.64 ms/集合
+- `2026-09-18 17:54:29` ✔ **[EST1] DONE**　pjm_k3 single_nophi t8 sh1/3 n=3840 0.65 ms/集合
+- `2026-09-18 17:54:31` ✔ **[EST1] DONE**　pjm_k3 single_nophi t8 sh0/3 n=3841 0.65 ms/集合
+- `2026-09-18 17:54:31` ✔ **[EST1] DONE**　pjm_k3 single_nophi t9 sh2/3 n=3840 0.64 ms/集合
+- `2026-09-18 17:54:35` ✔ **[EST1] DONE**　pjm_k3 single_nophi t9 sh1/3 n=3840 0.62 ms/集合
+- `2026-09-18 17:54:36` ✔ **[EST1] DONE**　pjm_k3 single_nophi t9 sh0/3 n=3841 0.65 ms/集合
+- `2026-09-18 17:54:37` ✔ **[EST1] DONE**　pjm_k3 single_nophi t10 sh2/3 n=3840 0.64 ms/集合
+- `2026-09-18 17:54:40` ✔ **[EST1] DONE**　pjm_k3 single_nophi t10 sh1/3 n=3840 0.64 ms/集合
+- `2026-09-18 17:54:41` ✔ **[EST1] DONE**　pjm_k3 single_nophi t10 sh0/3 n=3841 0.70 ms/集合
+- `2026-09-18 17:54:42` ✔ **[EST1] DONE**　pjm_k3 single_nophi t11 sh2/3 n=3840 0.66 ms/集合
+- `2026-09-18 17:54:45` ✔ **[EST1] DONE**　pjm_k3 single_nophi t11 sh1/3 n=3840 0.68 ms/集合
+- `2026-09-18 17:54:47` ✔ **[EST1] DONE**　pjm_k3 single_nophi t11 sh0/3 n=3841 0.66 ms/集合
+- `2026-09-18 17:55:05` ✔ **[ESTM] DONE**　caiso_k3 multix sh2/3 n=3840 5.41 ms/集合
+- `2026-09-18 17:55:10` ✔ **[ESTM] DONE**　caiso_k3 multix sh1/3 n=3840 5.78 ms/集合
+- `2026-09-18 17:55:11` ✔ **[EST1] DONE**　caiso_k3 single_nophi t0 sh2/3 n=3840 0.79 ms/集合
+- `2026-09-18 17:55:11` ✔ **[ESTM] DONE**　caiso_k3 multix sh0/3 n=3841 5.74 ms/集合
+- `2026-09-18 17:55:16` ✔ **[EST1] DONE**　caiso_k3 single_nophi t0 sh1/3 n=3840 0.87 ms/集合
+- `2026-09-18 17:55:16` ✔ **[EST1] DONE**　caiso_k3 single_nophi t1 sh2/3 n=3840 0.79 ms/集合
+- `2026-09-18 17:55:17` ✔ **[EST1] DONE**　caiso_k3 single_nophi t0 sh0/3 n=3841 0.84 ms/集合
+- `2026-09-18 17:55:22` ✔ **[EST1] DONE**　caiso_k3 single_nophi t1 sh1/3 n=3840 0.85 ms/集合
+- `2026-09-18 17:55:22` ✔ **[EST1] DONE**　caiso_k3 single_nophi t2 sh2/3 n=3840 0.79 ms/集合
+- `2026-09-18 17:55:22` ✔ **[EST1] DONE**　caiso_k3 single_nophi t1 sh0/3 n=3841 0.79 ms/集合
+- `2026-09-18 17:55:27` ✔ **[EST1] DONE**　caiso_k3 single_nophi t2 sh1/3 n=3840 0.78 ms/集合
+- `2026-09-18 17:55:28` ✔ **[EST1] DONE**　caiso_k3 single_nophi t3 sh2/3 n=3840 0.78 ms/集合
+- `2026-09-18 17:55:28` ✔ **[EST1] DONE**　caiso_k3 single_nophi t2 sh0/3 n=3841 0.81 ms/集合
+- `2026-09-18 17:55:33` ✔ **[EST1] DONE**　caiso_k3 single_nophi t3 sh1/3 n=3840 0.81 ms/集合
+- `2026-09-18 17:55:33` ✔ **[EST1] DONE**　caiso_k3 single_nophi t4 sh2/3 n=3840 0.78 ms/集合
+- `2026-09-18 17:55:33` ✔ **[EST1] DONE**　caiso_k3 single_nophi t3 sh0/3 n=3841 0.81 ms/集合
+- `2026-09-18 17:55:38` ✔ **[EST1] DONE**　caiso_k3 single_nophi t4 sh1/3 n=3840 0.78 ms/集合
+- `2026-09-18 17:55:38` ✔ **[EST1] DONE**　caiso_k3 single_nophi t5 sh2/3 n=3840 0.76 ms/集合
+- `2026-09-18 17:55:39` ✔ **[EST1] DONE**　caiso_k3 single_nophi t4 sh0/3 n=3841 0.83 ms/集合
+- `2026-09-18 17:55:44` ✔ **[EST1] DONE**　caiso_k3 single_nophi t6 sh2/3 n=3840 0.78 ms/集合
+- `2026-09-18 17:55:44` ✔ **[EST1] DONE**　caiso_k3 single_nophi t5 sh1/3 n=3840 0.83 ms/集合
+- `2026-09-18 17:55:44` ✔ **[EST1] DONE**　caiso_k3 single_nophi t5 sh0/3 n=3841 0.81 ms/集合
+- `2026-09-18 17:55:49` ✔ **[EST1] DONE**　caiso_k3 single_nophi t7 sh2/3 n=3840 0.78 ms/集合
+- `2026-09-18 17:55:50` ✔ **[EST1] DONE**　caiso_k3 single_nophi t6 sh1/3 n=3840 0.83 ms/集合
+- `2026-09-18 17:55:50` ✔ **[EST1] DONE**　caiso_k3 single_nophi t6 sh0/3 n=3841 0.79 ms/集合
+- `2026-09-18 17:55:55` ✔ **[EST1] DONE**　caiso_k3 single_nophi t8 sh2/3 n=3840 0.79 ms/集合
+- `2026-09-18 17:55:56` ✔ **[EST1] DONE**　caiso_k3 single_nophi t7 sh1/3 n=3840 0.84 ms/集合
+- `2026-09-18 17:55:56` ✔ **[EST1] DONE**　caiso_k3 single_nophi t7 sh0/3 n=3841 0.81 ms/集合
+- `2026-09-18 17:56:00` ✔ **[EST1] DONE**　caiso_k3 single_nophi t9 sh2/3 n=3840 0.81 ms/集合
+- `2026-09-18 17:56:01` ✔ **[EST1] DONE**　caiso_k3 single_nophi t8 sh1/3 n=3840 0.82 ms/集合
+- `2026-09-18 17:56:01` ✔ **[EST1] DONE**　caiso_k3 single_nophi t8 sh0/3 n=3841 0.83 ms/集合
+- `2026-09-18 17:56:05` ✔ **[EST1] DONE**　caiso_k3 single_nophi t10 sh2/3 n=3840 0.81 ms/集合
+- `2026-09-18 17:56:07` ✔ **[EST1] DONE**　caiso_k3 single_nophi t9 sh1/3 n=3840 0.87 ms/集合
+- `2026-09-18 17:56:07` ✔ **[EST1] DONE**　caiso_k3 single_nophi t9 sh0/3 n=3841 0.82 ms/集合
+- `2026-09-18 17:56:12` ✔ **[EST1] DONE**　caiso_k3 single_nophi t11 sh2/3 n=3840 0.84 ms/集合
+- `2026-09-18 17:56:12` ✔ **[EST1] DONE**　caiso_k3 single_nophi t10 sh1/3 n=3840 0.81 ms/集合
+- `2026-09-18 17:56:13` ✔ **[EST1] DONE**　caiso_k3 single_nophi t10 sh0/3 n=3841 0.83 ms/集合
+- `2026-09-18 17:56:18` ✔ **[EST1] DONE**　caiso_k3 single_nophi t11 sh1/3 n=3840 0.84 ms/集合
+- `2026-09-18 17:56:19` ✔ **[EST1] DONE**　caiso_k3 single_nophi t11 sh0/3 n=3841 0.83 ms/集合

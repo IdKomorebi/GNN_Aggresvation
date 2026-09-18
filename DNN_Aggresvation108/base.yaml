@@ -1,0 +1,21 @@
+experiment:
+  name: dnn108_interval_and_scope_fixes
+  purpose: 按 107 号 GAPS.md 的 A 档三条收尾——A1 区间口径、A2 元训练定位、A3 K=3 口径处置。
+protocol: ../paper/FINAL_PROTOCOL.md
+truth: 103 号正式真值（单目标 DNN ∪ 多目标 DNN ∪ 梯度提升树，val 选择 + 单调闭包），k3
+estimator: φ+x,x²（三种子集成，主口径）；PJM 另有元训练 L1x 作对照
+compute:
+  gpu: 无（全部为已有真值表 / 估计表上的重算）
+  note: A1 的「top-3 见证重训认证」无需重训——top-1/2/3 的背景 T 满足 |T|≤K≤2，其 V(T) 与 V(T∪{i}) 已在 k3 正式真值表内。
+items:
+  A1: 认证下界 top-1 vs top-3；上界 U 用留一字段分层分位校准（α=0.05/0.01）；区间下的保守 τ-critical 判定
+  A2: 元训练 φ 定位——论证降级附录而非补跑 CAISO
+  A3: K 递进口径对照——正文只画 K≤2，K=3 进附录并标注口径差异
+outputs:
+  - outputs/analysis/108_A1_bounds.csv
+  - outputs/analysis/108_A1_coverage.csv
+  - outputs/analysis/108_A1_critical_interval.csv
+  - outputs/analysis/108_A2_metatrain.csv
+  - outputs/analysis/108_A3_escalation.csv
+  - outputs/analysis/108_A3_saturation.csv
+  - outputs/analysis/report108.md

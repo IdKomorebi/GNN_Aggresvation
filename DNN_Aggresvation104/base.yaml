@@ -1,0 +1,12 @@
+experiment:
+  name: dnn104_official_M_table
+  purpose: P0-4：在正式攻击器族真值上生成 M 全表（估计/精确/top-3 witness/档位/critical 状态）。
+protocol: ../paper/FINAL_PROTOCOL.md
+truth: 103 号正式真值（单目标 DNN ∪ 多目标 DNN ∪ 梯度提升树，val 选择 + 单调闭包），k3
+estimators: [φ+x,x²（三种子集成，主）, φ+x,x²（单种子）, 元训练 φ+x,x²（仅 PJM）]
+K: [0, 1, 2]     # K=3 需规模 4 真值（当前仅多目标 DNN+树口径），留待后续单独标注
+tau: [0.5, 0.7, 0.9]
+tiers: [0.05, 0.2, 0.5]
+outputs:
+  - outputs/analysis/M_table_official.csv   # 2,952 行主表（论文 Table III / V 的数据源）
+  - outputs/analysis/M_table_summary.csv

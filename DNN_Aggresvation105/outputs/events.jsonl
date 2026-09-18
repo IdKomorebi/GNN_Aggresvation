@@ -1,0 +1,4 @@
+{"time": "2026-09-18T20:11:03", "stage": "BASE", "status": "DONE", "note": "pjm 全量模型 ep=386 平均R²=0.8634"}
+{"time": "2026-09-18T20:11:08", "stage": "BASE", "status": "DONE", "note": "pjm SAGE+置换重要性完成 5s"}
+{"time": "2026-09-18T20:11:15", "stage": "BASE", "status": "DONE", "note": "caiso 全量模型 ep=400 平均R²=0.8139"}
+{"time": "2026-09-18T20:11:20", "stage": "BASE", "status": "DONE", "note": "caiso SAGE+置换重要性完成 4s"}

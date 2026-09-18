@@ -210,3 +210,84 @@
 {"time": "2026-09-16T03:08:27", "stage": "TRUTH", "status": "DONE", "note": "caiso_gameC seed0 shard1/3 n=5461 416s", "sec": 416.4096121788025}
 {"time": "2026-09-16T03:08:27", "stage": "TRUTH", "status": "DONE", "note": "caiso_gameC seed0 shard0/3 n=5462 417s", "sec": 417.2091450691223}
 {"time": "2026-09-16T03:17:49", "stage": "ORACLE", "status": "DONE", "note": "pjm main seed0 ep=318 val=0.3643 27s | 与历史权重最大差 0.00e+00", "train_sec": 26.8343288898468}
+{"time": "2026-09-18T19:41:02", "stage": "EST", "status": "DONE", "note": "pjm_k3 direct sh2/3 n=3840 0.26 ms/集合", "ms_per_set": 0.26413022230068844}
+{"time": "2026-09-18T19:41:03", "stage": "EST", "status": "DONE", "note": "pjm_k3 direct sh0/3 n=3841 0.36 ms/集合", "ms_per_set": 0.3616347408518137}
+{"time": "2026-09-18T19:41:03", "stage": "EST", "status": "DONE", "note": "pjm_k3 direct sh1/3 n=3840 0.37 ms/集合", "ms_per_set": 0.3696524227658908}
+{"time": "2026-09-18T19:41:14", "stage": "EST", "status": "DONE", "note": "pjm_k3 L0 sh2/3 n=3840 2.28 ms/集合", "ms_per_set": 2.28171826650699}
+{"time": "2026-09-18T19:41:15", "stage": "EST", "status": "DONE", "note": "pjm_k3 L0 sh0/3 n=3841 2.41 ms/集合", "ms_per_set": 2.4087699059861554}
+{"time": "2026-09-18T19:41:15", "stage": "EST", "status": "DONE", "note": "pjm_k3 L0 sh1/3 n=3840 2.44 ms/集合", "ms_per_set": 2.442577543358008}
+{"time": "2026-09-18T19:42:58", "stage": "EST", "status": "DONE", "note": "pjm_k3 L0ensx sh2/3 n=3840 26.50 ms/集合", "ms_per_set": 26.49626142034928}
+{"time": "2026-09-18T19:43:07", "stage": "EST", "status": "DONE", "note": "pjm_k3 L0ensx sh1/3 n=3840 28.58 ms/集合", "ms_per_set": 28.580087733765446}
+{"time": "2026-09-18T19:43:09", "stage": "EST", "status": "DONE", "note": "pjm_k3 L0ensx sh0/3 n=3841 28.97 ms/集合", "ms_per_set": 28.96841967115176}
+{"time": "2026-09-18T19:43:10", "stage": "EST", "status": "DONE", "note": "caiso_k3 direct sh2/3 n=3840 0.36 ms/集合", "ms_per_set": 0.3576843688885371}
+{"time": "2026-09-18T19:43:20", "stage": "EST", "status": "DONE", "note": "caiso_k3 direct sh1/3 n=3840 0.36 ms/集合", "ms_per_set": 0.3551942606767019}
+{"time": "2026-09-18T19:43:21", "stage": "EST", "status": "DONE", "note": "caiso_k3 direct sh0/3 n=3841 0.26 ms/集合", "ms_per_set": 0.2648378529606993}
+{"time": "2026-09-18T19:43:24", "stage": "EST", "status": "DONE", "note": "caiso_k3 L0 sh2/3 n=3840 3.02 ms/集合", "ms_per_set": 3.0247313901782036}
+{"time": "2026-09-18T19:43:35", "stage": "EST", "status": "DONE", "note": "caiso_k3 L0 sh1/3 n=3840 3.15 ms/集合", "ms_per_set": 3.1465061008930206}
+{"time": "2026-09-18T19:43:35", "stage": "EST", "status": "DONE", "note": "caiso_k3 L0 sh0/3 n=3841 3.17 ms/集合", "ms_per_set": 3.1719033962052117}
+{"time": "2026-09-18T19:45:34", "stage": "EST", "status": "DONE", "note": "caiso_k3 L0ensx sh2/3 n=3840 33.24 ms/集合", "ms_per_set": 33.23688264936209}
+{"time": "2026-09-18T19:45:55", "stage": "EST", "status": "DONE", "note": "pjm_k3 L1x sh2/3 n=3840 4.13 ms/集合", "ms_per_set": 4.133113784094652}
+{"time": "2026-09-18T19:45:56", "stage": "EST", "status": "DONE", "note": "caiso_k3 L0ensx sh1/3 n=3840 36.18 ms/集合", "ms_per_set": 36.17554511874914}
+{"time": "2026-09-18T19:45:57", "stage": "EST", "status": "DONE", "note": "caiso_k3 L0ensx sh0/3 n=3841 36.22 ms/集合", "ms_per_set": 36.22142885600921}
+{"time": "2026-09-18T19:46:18", "stage": "EST", "status": "DONE", "note": "pjm_k3 L1x sh1/3 n=3840 4.42 ms/集合", "ms_per_set": 4.418747002879779}
+{"time": "2026-09-18T19:46:18", "stage": "EST", "status": "DONE", "note": "pjm_k3 L1x sh0/3 n=3841 4.39 ms/集合", "ms_per_set": 4.390868567079655}
+{"time": "2026-09-18T20:04:36", "stage": "MTABLE", "status": "DONE", "note": "pjm K=0 完成"}
+{"time": "2026-09-18T20:04:36", "stage": "MTABLE", "status": "DONE", "note": "pjm K=1 完成"}
+{"time": "2026-09-18T20:04:38", "stage": "MTABLE", "status": "DONE", "note": "pjm K=2 完成"}
+{"time": "2026-09-18T20:04:38", "stage": "MTABLE", "status": "DONE", "note": "caiso K=0 完成"}
+{"time": "2026-09-18T20:04:38", "stage": "MTABLE", "status": "DONE", "note": "caiso K=1 完成"}
+{"time": "2026-09-18T20:04:40", "stage": "MTABLE", "status": "DONE", "note": "caiso K=2 完成"}
+{"time": "2026-09-18T20:21:23", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block0 seed2 ep=222 val=0.37371 12s"}
+{"time": "2026-09-18T20:21:26", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block0 seed0 ep=269 val=0.32951 14s"}
+{"time": "2026-09-18T20:21:32", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block0 seed1 ep=400 val=0.32035 21s"}
+{"time": "2026-09-18T20:22:37", "stage": "BLKEST", "status": "DONE", "note": "pjm block0 sh2 n=3840 16.08 ms/集合"}
+{"time": "2026-09-18T20:22:42", "stage": "BLKEST", "status": "DONE", "note": "pjm block0 sh0 n=3841 17.22 ms/集合"}
+{"time": "2026-09-18T20:22:42", "stage": "BLKEST", "status": "DONE", "note": "pjm block0 sh1 n=3840 17.27 ms/集合"}
+{"time": "2026-09-18T20:24:32", "stage": "BLKTRUTH", "status": "DONE", "note": "pjm block0 sh2 n=3840 108s"}
+{"time": "2026-09-18T20:24:33", "stage": "BLKTRUTH", "status": "DONE", "note": "pjm block0 sh0 n=3841 109s"}
+{"time": "2026-09-18T20:24:33", "stage": "BLKTRUTH", "status": "DONE", "note": "pjm block0 sh1 n=3840 109s"}
+{"time": "2026-09-18T20:24:55", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block1 seed1 ep=400 val=0.29290 17s"}
+{"time": "2026-09-18T20:24:55", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block1 seed0 ep=400 val=0.30320 18s"}
+{"time": "2026-09-18T20:24:56", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block1 seed2 ep=400 val=0.28269 19s"}
+{"time": "2026-09-18T20:26:01", "stage": "BLKEST", "status": "DONE", "note": "pjm block1 sh2 n=3840 16.01 ms/集合"}
+{"time": "2026-09-18T20:26:06", "stage": "BLKEST", "status": "DONE", "note": "pjm block1 sh1 n=3840 17.38 ms/集合"}
+{"time": "2026-09-18T20:26:06", "stage": "BLKEST", "status": "DONE", "note": "pjm block1 sh0 n=3841 17.38 ms/集合"}
+{"time": "2026-09-18T20:27:56", "stage": "BLKTRUTH", "status": "DONE", "note": "pjm block1 sh2 n=3840 108s"}
+{"time": "2026-09-18T20:27:57", "stage": "BLKTRUTH", "status": "DONE", "note": "pjm block1 sh1 n=3840 109s"}
+{"time": "2026-09-18T20:27:57", "stage": "BLKTRUTH", "status": "DONE", "note": "pjm block1 sh0 n=3841 109s"}
+{"time": "2026-09-18T20:28:23", "stage": "BLKTRAIN", "status": "DONE", "note": "caiso block0 seed2 ep=400 val=0.31810 22s"}
+{"time": "2026-09-18T20:28:23", "stage": "BLKTRAIN", "status": "DONE", "note": "caiso block0 seed0 ep=387 val=0.33218 22s"}
+{"time": "2026-09-18T20:28:25", "stage": "BLKTRAIN", "status": "DONE", "note": "caiso block0 seed1 ep=400 val=0.32497 23s"}
+{"time": "2026-09-18T20:29:42", "stage": "BLKEST", "status": "DONE", "note": "caiso block0 sh2 n=3840 19.28 ms/集合"}
+{"time": "2026-09-18T20:29:49", "stage": "BLKEST", "status": "DONE", "note": "caiso block0 sh1 n=3840 20.95 ms/集合"}
+{"time": "2026-09-18T20:29:50", "stage": "BLKEST", "status": "DONE", "note": "caiso block0 sh0 n=3841 21.23 ms/集合"}
+{"time": "2026-09-18T20:32:15", "stage": "BLKTRUTH", "status": "DONE", "note": "caiso block0 sh2 n=3840 143s"}
+{"time": "2026-09-18T20:32:16", "stage": "BLKTRUTH", "status": "DONE", "note": "caiso block0 sh1 n=3840 143s"}
+{"time": "2026-09-18T20:32:16", "stage": "BLKTRUTH", "status": "DONE", "note": "caiso block0 sh0 n=3841 144s"}
+{"time": "2026-09-18T20:32:42", "stage": "BLKTRAIN", "status": "DONE", "note": "caiso block1 seed1 ep=400 val=0.34562 22s"}
+{"time": "2026-09-18T20:32:42", "stage": "BLKTRAIN", "status": "DONE", "note": "caiso block1 seed2 ep=400 val=0.31403 22s"}
+{"time": "2026-09-18T20:32:43", "stage": "BLKTRAIN", "status": "DONE", "note": "caiso block1 seed0 ep=400 val=0.33764 23s"}
+{"time": "2026-09-18T20:34:02", "stage": "BLKEST", "status": "DONE", "note": "caiso block1 sh2 n=3840 19.51 ms/集合"}
+{"time": "2026-09-18T20:34:07", "stage": "BLKEST", "status": "DONE", "note": "caiso block1 sh1 n=3840 21.04 ms/集合"}
+{"time": "2026-09-18T20:34:13", "stage": "BLKEST", "status": "DONE", "note": "caiso block1 sh0 n=3841 22.67 ms/集合"}
+{"time": "2026-09-18T20:36:39", "stage": "BLKTRUTH", "status": "DONE", "note": "caiso block1 sh2 n=3840 143s"}
+{"time": "2026-09-18T20:36:40", "stage": "BLKTRUTH", "status": "DONE", "note": "caiso block1 sh1 n=3840 144s"}
+{"time": "2026-09-18T20:36:40", "stage": "BLKTRUTH", "status": "DONE", "note": "caiso block1 sh0 n=3841 144s"}
+{"time": "2026-09-18T20:43:16", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block0 seed1 ep=298 val=0.33249 14s"}
+{"time": "2026-09-18T20:43:20", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block0 seed2 ep=400 val=0.32125 18s"}
+{"time": "2026-09-18T20:43:21", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block0 seed0 ep=400 val=0.32410 19s"}
+{"time": "2026-09-18T20:45:30", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block1 seed0 ep=334 val=0.33576 16s"}
+{"time": "2026-09-18T20:45:32", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block1 seed1 ep=400 val=0.31583 18s"}
+{"time": "2026-09-18T20:45:32", "stage": "BLKTRAIN", "status": "DONE", "note": "pjm block1 seed2 ep=400 val=0.30358 19s"}
+{"time": "2026-09-18T21:18:16", "stage": "INTERVAL", "status": "DONE", "note": "pjm K=0 区间口径完成"}
+{"time": "2026-09-18T21:18:17", "stage": "INTERVAL", "status": "DONE", "note": "pjm K=1 区间口径完成"}
+{"time": "2026-09-18T21:18:18", "stage": "INTERVAL", "status": "DONE", "note": "pjm K=2 区间口径完成"}
+{"time": "2026-09-18T21:18:19", "stage": "INTERVAL", "status": "DONE", "note": "caiso K=0 区间口径完成"}
+{"time": "2026-09-18T21:18:19", "stage": "INTERVAL", "status": "DONE", "note": "caiso K=1 区间口径完成"}
+{"time": "2026-09-18T21:18:21", "stage": "INTERVAL", "status": "DONE", "note": "caiso K=2 区间口径完成"}
+{"time": "2026-09-18T21:21:15", "stage": "ESCAL", "status": "DONE", "note": "K 递进口径对照完成"}
+{"time": "2026-09-18T21:22:21", "stage": "META", "status": "DONE", "note": "元训练定位对照完成"}
+{"time": "2026-09-18T22:32:01", "stage": "ANALYZE", "status": "DONE", "note": "pjm n_aux 分析完成"}
+{"time": "2026-09-18T22:32:01", "stage": "ANALYZE", "status": "DONE", "note": "caiso n_aux 分析完成"}
+{"time": "2026-09-18T22:33:43", "stage": "CURSE", "status": "DONE", "note": "winner's curse 分解完成"}
+{"time": "2026-09-18T22:38:57", "stage": "CURSE", "status": "DONE", "note": "winner's curse 分解完成"}

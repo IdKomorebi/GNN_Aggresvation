@@ -1,0 +1,15 @@
+experiment:
+  name: dnn106_grading_and_release_audit
+  purpose: P0-7 / RQ-B5：字段风险分级表 + 发布审查案例（inference-aware grading support）。
+protocol: ../paper/FINAL_PROTOCOL.md
+inputs: [104 号 M 全表（正式真值口径）, 103 号正式真值 V̄ 与 L0ensx 估计, 105 号字段 baseline]
+case_targets: {pjm: total_gen, caiso: actual_load__mw__ca_iso_tac}
+release_audit:
+  candidates: 随机 2,000 个规模 3 的待发布集合（seed 106），τ=0.7
+  rules:
+    - 相关性放行：每个字段 |Pearson| ≤ 0.5
+    - 单字段放行：每个字段 M^(0) ≤ τ
+    - 预算放行：Σ_{i∈A} M^(2) ≤ τ（|A|≤K+1 时为严格上界）
+    - 预算放行_估计：用估计 M^(2)
+    - 逐阶预算放行：U^(2)（第 t 个字段只用 M^(t−1)，取最优顺序）
+    - 直接估计放行：通用模型估计 V̂(A) ≤ τ
