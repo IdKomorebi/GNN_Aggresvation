@@ -1,0 +1,78 @@
+%===============================================================================
+\section{Introduction}\label{sec:intro}
+%===============================================================================
+
+Electricity markets publish a large and growing amount of operational data. Disclosure rules
+list, field by field, what must be released and when: forecasts and requirements before
+clearing, prices and their components right after clearing, and actual operating quantities on
+the following day~\cite{nea2024disclosure}. Other quantities---the output of an individual
+generating unit, the hourly flow on a specific line, or the actual load before it is
+disclosed---are protected, either permanently or until a later release date. Data
+classification standards ask operators to grade each field and, explicitly, to consider how
+aggregation and processing change a field's level~\cite{gbt43697}. How to do the latter is
+left open.
+
+The difficulty is that inference risk is a property of field \emph{combinations}. A price
+series reveals little about a unit's output, and so does a renewable forecast; together they
+may reveal the residual demand that the unit is dispatched to meet. This is the classical
+inference and aggregation problem of database security~\cite{lunt1989aggregation,farkas2002inference},
+and it is not hypothetical for power data: public prices alone can expose grid
+topology~\cite{kekatos2014topology}. Grading fields one at a time is blind to it by
+construction. Recent work on data sensitivity assessment has recognized that a field's risk
+depends on its inference relations to sensitive data and propagates risk along an inference
+graph~\cite{hu2026ignn}. What is still missing is a field-level risk that is \emph{defined} by
+what an adversary can actually infer from a set of fields---so that it can be checked by an
+attack experiment rather than calibrated to expert scores---and that captures inference
+requiring several fields jointly.
+
+This paper builds such a quantity and makes it computable at the scale of an audit. The
+auditor needs answers to three questions, and each has its own object:
+\begin{enumerate}
+\item \emph{If a set $S$ is published, how well can target $y$ be inferred?} We use the
+out-of-sample $\Rtwo$ of the strongest attacker in a fixed family retrained on $S$, made monotone
+by a closure that the adversary could itself implement. This set-level inferability $\Vy(S)$ is
+the ground truth throughout.
+\item \emph{How risky is field $i$, and with which other fields?} We define the budgeted
+marginal risk $\Mik$, the largest increase of $\Vy$ that releasing $i$ causes over any background
+of at most $K$ other fields, relative to what is already public. It is a budget-constrained
+marginal contribution index~\cite{catav2021mci}, i.e.\ a worst case rather than an average over
+contexts, in line with how quantitative information flow measures
+leakage~\cite{smith2009qif,alvim2012gleakage}. It comes with a witness background, an escalation
+over single-field risk, and an exact link to minimal unsafe field combinations.
+\item \emph{How can this be done for every field, every target and every change in what is
+public?} We pre-train one network under random visibility masks---an adversary that does not
+know in advance which fields it will obtain---and answer each query by a closed-form readout
+specific to the field set. The estimate is only used to scan; decisions are certified by
+retraining dedicated attackers on a handful of candidate backgrounds.
+\end{enumerate}
+
+\paragraph{Contributions}
+\begin{itemize}
+\item \emph{A checkable field-level risk.} We derive $\Mik$ from set-level inferability under a
+worst-case, bounded-background, public-baseline semantics, prove that it is the minimal
+threshold-free safety margin and that $\tau$-criticality is equivalent to membership in a
+minimal unsafe set of size at most $K+1$, and translate it into grading and disposal outputs
+(Sections~\ref{sec:problem}--\ref{sec:mk}).
+\item \emph{An amortized attacker with scan--certify.} Masked pre-training plus a per-set
+closed-form readout estimates $\Vy$ for every small set in milliseconds; a common-mode error
+analysis explains why the field-level risk is estimated more accurately than the set values,
+and certification by retraining gives lower bounds that do not depend on the estimate
+(Section~\ref{sec:model}).
+\item \emph{Evidence on four power data sets with rule-based field roles}---a synthetic grid
+with realistic time series (RTS-GMLC), the Australian National Electricity Market with actual
+unit outputs, and PJM and CAISO system data---with exhaustive retraining of a three-attacker
+family on all sets of up to four fields as ground truth. We compare against correlation-based,
+single-field, attribution-based and inference-graph scores, ablate every component of the
+estimator, and test robustness to attacker seeds, data splits, thresholds and the choice of $K$
+(Sections~\ref{sec:setup}--\ref{sec:res-robust}).
+\end{itemize}
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig1_framework.pdf}
+\caption{Audit framework. Disclosure rules fix field roles. Set-level inferability $V_y(S)$ is
+defined by dedicated retraining and scanned by an amortized attacker; the scan proposes, for
+every field, backgrounds that are certified by retraining. The field-level table drives
+grading, disposal and re-grading when the public baseline grows.}
+\label{fig:framework}
+\end{figure}

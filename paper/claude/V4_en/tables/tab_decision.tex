@@ -1,0 +1,23 @@
+\begin{table}[!tbp]
+\centering\small
+\caption{Decisions over the ten targets. Top: recall and precision of $\tau$-critical fields. Bottom: fields withheld (optimum
+in parentheses) and share of true minimal unsafe sets left unbroken. Selection uses estimates only; retrained values are used
+for certification and evaluation. $\delta$: conservative margin of the scan.}\label{tab:decision}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{$\tau=0.5$} & \multicolumn{2}{c}{$\tau=0.7$}\\
+Flagging rule & recall & precision & recall & precision\\
+\midrule
+Single-field rule $V(\{i\})>\tau$ & 0.13 & 1.00 & 0.17 & 1.00 \\
+Scan on $\hat V$, $\delta=0.05$ & 0.93 & 0.99 & 0.83 & 0.80 \\
+Scan + certify, $\delta=0$ & 0.88 & 1.00 & 0.75 & 1.00 \\
+Scan + certify, $\delta=0.05$ & 0.77 & 1.00 & 0.80 & 1.00 \\
+\midrule
+Withholding strategy & withheld & left & withheld & left\\
+\midrule
+Single-field grading & 3.3 (9.4) & 98.2\% & 2.5 (5.1) & 95.5\% \\
+Hitting set of MUS on $\hat V$, $\delta=0.05$ & 9.4 (9.4) & 5.8\% & 5.3 (5.1) & 1.8\% \\
+Adaptive $\hat M^{(2)}$ greedy, $\delta=0.05$ & 10.6 (9.4) & 2.3\% & 6.1 (5.1) & 1.3\% \\
+\bottomrule
+\end{tabular}
+\end{table}

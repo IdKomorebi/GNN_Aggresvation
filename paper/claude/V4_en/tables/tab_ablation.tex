@@ -1,0 +1,27 @@
+\begin{table}[!tbp]
+\centering\scriptsize
+\caption{Estimator comparison and ablation, averaged over the ten targets and all sets of size $\le 3$. Ablations use one
+seed and should be compared with ``ours, one seed''. Cert.@$k$: certified $L^{(2)}$ over exact $M^{(2)}$ when $k$ backgrounds per
+field are retrained.}\label{tab:ablation}
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccc}
+\toprule
+Estimator & MAE $V$ & MAE $\Delta$ & MAE $M^{(2)}$ & bias $M^{(2)}$ & Spearman & cert.@1 & cert.@3\\
+\midrule
+Linear readout on $x\odot m$ (no backbone) & 0.212 & 0.068 & 0.144 & -0.139 & 0.737 & 0.803 & 0.878 \\
+Readout on $[x, x^2]$ (no backbone) & 0.132 & 0.049 & 0.096 & -0.089 & 0.854 & 0.859 & 0.912 \\
+In-set quadratic dictionary (no backbone) & 0.120 & 0.045 & 0.077 & -0.066 & 0.870 & 0.872 & 0.932 \\
+Shared output head (3 seeds) & 0.067 & 0.030 & 0.057 & -0.054 & 0.930 & 0.883 & 0.939 \\
+\midrule
+Untrained random backbone + readout & 0.027 & 0.017 & 0.022 & -0.015 & 0.959 & 0.906 & 0.971 \\
+Pre-training without masks & 0.032 & 0.020 & 0.036 & -0.004 & 0.928 & 0.898 & 0.963 \\
+Bernoulli(0.5) masks & 0.030 & 0.019 & 0.024 & -0.018 & 0.958 & 0.932 & 0.969 \\
+Readout on $\phi$ only & 0.030 & 0.019 & 0.025 & -0.016 & 0.950 & 0.927 & 0.964 \\
+No numerical safeguards & 0.031 & 0.020 & 0.036 & +0.009 & 0.904 & 0.825 & 0.946 \\
+\midrule
+\textbf{Ours}, one seed & 0.030 & 0.019 & 0.023 & -0.019 & 0.953 & 0.936 & 0.967 \\
+\textbf{Ours}, three seeds (main) & 0.026 & 0.017 & 0.021 & -0.018 & 0.957 & 0.934 & 0.970 \\
+\bottomrule
+\end{tabular}}
+\end{table}

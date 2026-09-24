@@ -1,0 +1,95 @@
+%===============================================================================
+\section{Results III: The Amortized Attacker}\label{sec:res-est}
+%===============================================================================
+
+\paragraph{Fidelity}
+Fig.~\ref{fig:estimator} compares the amortized estimates with retrained ground truth for all
+sets of size $\le 3$. The estimate of $V$ is biased downward, visibly so for PJM, where the
+training set is smallest; averaged over the ten targets the error is 0.026 with a signed bias of
+$-0.024$, i.e.\ almost entirely common-mode. As predicted by~\eqref{eq:prop}, the field-level
+risk is estimated more accurately than the set values it is built from: the mean absolute error of
+$\hat M^{(2)}$ is 0.021 and its Spearman correlation with the exact $M^{(2)}$ across fields is
+0.957 (Table~\ref{tab:ablation}). Certification recovers most of the exact risk from very few
+retrained backgrounds: retraining the single best-scanned background per field yields a lower
+bound equal to 93.4\% of the exact $M^{(2)}$ on average, three backgrounds yield 97.0\%, and on
+RTS-GMLC and CAISO the top-3 ratio exceeds 99\% (Fig.~\ref{fig:estimator}c). For a field set of
+35 candidates this replaces the $1+34+\binom{34}{2}=596$ backgrounds per field of an exhaustive
+evaluation by three.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig7_estimator.pdf}
+\caption{Amortized estimates against retrained ground truth. (a) $\hat V_y(S)$ for sets of size
+$\le 3$ (random subsample). (b) $\hat M^{(2)}$ for every field and target. (c) Certified lower
+bound over exact $M^{(2)}$ when the top-$k$ scanned backgrounds per field are retrained.}
+\label{fig:estimator}
+\end{figure}
+
+\input{tables/tab_ablation}
+
+\paragraph{What matters in the estimator}
+Table~\ref{tab:ablation} and Fig.~\ref{fig:ablation}(a--c) separate the components. The largest
+single effect is solving the readout per field set: with the same backbones, reading the
+prediction off a shared output head gives an $M^{(2)}$ error of 0.057, against 0.021 for the
+per-set readout, and a lower certified ratio. The second is a learned nonlinear representation:
+without a backbone, a linear readout (0.144) or an in-set quadratic dictionary (0.077) is far
+less accurate. Masking during pre-training is necessary---a backbone trained on fully visible
+inputs is worse than the per-set readout on any other backbone (0.036, Spearman 0.928)---but the
+masking distribution is not critical (Bernoulli versus uniform visible count: 0.024 versus
+0.023). The numerical safeguards remove the overestimation of $M^{(2)}$ on real data (bias
+$+0.009$ without them, certified top-1 ratio 0.825 instead of 0.936). Averaging three seeds
+reduces the $V$ error from 0.030 to 0.026.
+
+One result qualifies the role of pre-training and we state it explicitly. A randomly initialized,
+untrained backbone with the same per-set readout estimates $V$ and $M^{(2)}$ about as well as the
+pre-trained one (0.027 and 0.022). The per-set readout on random ReLU features of the masked input
+is itself a random-feature regression~\cite{rahimi2007random}, which is already a good model of a
+set's inferability. What pre-training adds is the ordering of the largest marginals, which is what
+certification relies on: the certified top-1 ratio is 0.936 for the pre-trained and 0.906 for the
+random backbone, and 0.940 versus 0.694 on PJM load, the hardest target. We therefore attribute the
+accuracy of the estimator primarily to the per-set readout and the conditional feature map, and the
+reliability of the scan to masked pre-training.
+
+Warm-start fine-tuning of the whole network for each set, the natural fast alternative to
+retraining~\cite{sun2025warmstart}, is less accurate than the closed-form readout on nine of ten
+targets (on 150 random sets per data set; e.g.\ 0.028--0.044 versus 0.013--0.021 on RTS-GMLC)
+while being slower.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig8_ablation.pdf}
+\caption{(a--c) Estimator comparison and ablation over ten targets (bars: mean; dots: data sets);
+light grey: no per-set readout or no backbone; dark grey: one-seed ablations; blue: ours.
+(d--f) Backbone scope on the four PJM/CAISO targets: inactive hidden units and effective
+dimension, error of $V$, of marginals and of $M^{(2)}$, and certified ratios.}
+\label{fig:ablation}
+\end{figure}
+
+\paragraph{One pre-training for all target definitions}
+In practice the auditor's target list and candidate pool change---a field is reclassified, a new
+target is added. With masked reconstruction over all 53 columns of a market, one backbone serves
+every such definition through the readout alone. Table~\ref{tab:backbone} compares it with
+backbones supervised on each group's own targets. The all-column backbone is more accurate for
+$V$ (0.040 versus 0.049) and slightly more accurate for $M^{(2)}$ (0.026 versus 0.029), and its
+certified top-1 ratio rises from 0.906 to 0.944.
+
+The mechanism is visible in the representation. A backbone that serves one or two targets leaves a
+quarter of its hidden units inactive (24\%) and has an effective dimension of 1.45; one that must
+reconstruct every column keeps 92\% of units active and has an effective dimension of 2.44. It has
+to encode the latent operating state---load level, renewable output, congestion---that drives all
+grid quantities, which is exactly the argument for multi-task representation
+learning~\cite{caruana1997multitask,baxter2000inductive,maurer2016benefit}. Why $V$ improves more
+than $M$ follows from~\eqref{eq:prop}: 89--98\% of the $V$ error is common-mode, and a better
+representation mostly shrinks this common part, which cancels in the marginals anyway.
+
+The last row of Table~\ref{tab:backbone} tests a target never seen in pre-training: the target
+column is deleted from the data before pre-training. Set values and marginals are estimated as well
+as with the all-column backbone, but $\hat M^{(2)}$ is inflated (bias $+0.028$), because the
+maximum over many marginals picks up the few that are overestimated; the certified top-1 ratio drops
+to 0.75. Retraining three backgrounds per field restores it to 0.966. Re-use for unseen targets
+therefore requires certification---which is the pipeline we use anyway.
+
+\input{tables/tab_backbone}
+
+\paragraph{Cost}
+\input{cost_text}

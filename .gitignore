@@ -26,3 +26,6 @@ env/
 # Generated model weights and NumPy archives
 *.pt
 *.npz
+
+# Downloaded third-party datasets and nested source repositories
+data/external/

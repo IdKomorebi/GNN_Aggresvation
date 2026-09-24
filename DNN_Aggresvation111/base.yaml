@@ -1,0 +1,17 @@
+experiment:
+  name: dnn111_rts_gmlc_main_case
+  purpose: 真实风格合成电网主算例——字段角色逐条对照披露规则，三攻击器精确真值 + 通用推断模型 + 字段风险表
+source: Barrows 等，The IEEE Reliability Test System: A Proposed 2019 Update（GitHub GridMod/RTS-GMLC），本地 data/external/RTS-GMLC
+market_model:
+  solver: 线性规划 DC-OPF（scipy HiGHS），每小时一次，全年 8,784 小时，40 进程约 2 秒
+  network: 73 母线、120 条交流支路（Cont Rating 限流）；直流线路、储能、同步调相机忽略
+  thermal: 73 台，出力比例点分段，首段平均热耗率、其后增量热耗率 × 燃料价格 + VOM；不做机组组合，最小出力放宽为 0
+  renewables: 风/光伏/屋顶光伏/水电/径流/光热，实时 5 分钟取小时均值为可用出力，零成本可弃
+  load: 三区实时负荷按母线基准负荷比例分配；切负荷 1000 $/MWh（全年未发生）
+  outcome: 阻塞小时 26.7%（C6 19%、C29 6.3%、CA-1 4.1%），无切负荷
+fields: 见 outputs/fields.json（候选 23 个，目标 3 个，每个字段附规则条款）
+sets: 规模 ≤4 全枚举，10,902 个集合（K=0..3 均为正式三攻击器口径）
+attackers: 单目标 DNN ∪ 多目标 DNN ∪ 梯度提升树（val 选择 + 单调闭包）
+estimator: 3 种子随机掩码预训练 + [x⊙m, (x⊙m)², φ] 子集闭式岭读出；另报单种子
+compute: DNN 真值 GPU2、通用模型 GPU1（GPU0 他人占用，GPU3 留空）；树模型 CPU 40 进程单线程
+shared_code: src/pipe.py、scripts/run_stage.py、scripts/analyze_exp.py 同时供 112 号使用

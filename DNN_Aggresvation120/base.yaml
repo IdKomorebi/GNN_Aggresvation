@@ -1,0 +1,9 @@
+experiment:
+  name: dnn120_large_field_space
+  purpose: 大字段空间（p=87）上组合风险是否更普遍、扫描—认证是否仍然可用、成本如何（只汇报，不进论文）
+scope: 用户要求——做但只汇报，不写进论文
+data: RTS-GMLC 逐时出清（111 号）；候选 = 全部节点电价 + 阻塞 ≥1% 的线路阻塞标志 + 10 个预测/需求字段
+target: 线路 C35 逐时潮流
+truth: 规模 ≤3 全枚举（109,823 个集合），单目标 DNN + 梯度提升树，val 选择 + 单调闭包
+estimator: 本组主干 1 种子 + 新主口径读出（单种子）
+compute: GPU0/1/2 分片 + CPU 40 进程；GPU3 留空

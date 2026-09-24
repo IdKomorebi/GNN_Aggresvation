@@ -1,0 +1,9 @@
+experiment:
+  name: dnn121_regrading_under_public_baseline
+  purpose: 公开基底 B 变化后的再定级（只汇报，不进论文）；检验风险表是否需要随公开状态重算、通用模型能否跟踪
+scope: 用户要求——做但只汇报，不写进论文
+datasets: [PJM 实际负荷 (116 号), RTS-GMLC 线路 C35 (111 号)]
+baseline: B = {b}，b 取遍单独不越阈的候选字段
+truth: 规模 ≤4 的三攻击器真值（已有）
+estimator: 新主口径 E；规模 4 集合本号补算
+metrics: [关键字段新增/解除数, M^(2) 平均变化, M2|b ≤ M3|∅ 检查, 估计关键召回/精确（直接与 δ=0.05）]

@@ -1,0 +1,14 @@
+experiment:
+  name: dnn112_nem_real_market
+  purpose: 真实电力市场、真实机组级敏感字段——AEMO 澳大利亚国家电力市场 2024 全年
+source: AEMO NEMWEB MMSDM 月度归档，本地 data/external/NEM_2024/raw（2024-08 起文件名改为 PUBLIC_ARCHIVE#...，下载脚本已处理）
+tables: [DISPATCHREGIONSUM, DISPATCHPRICE, DISPATCHINTERCONNECTORRES, DISPATCH_UNIT_SCADA]
+processing: 仅 INTERVENTION=0；5 分钟 → 小时均值；全年 8,784 小时无缺失
+fields:
+  candidates: 30 个——五区出清价（6.52）、实际需求（6.61）、可用发电容量（6.62 系统备用）、半调度风光无约束出力预测 UIGF（6.42）、6 条区域间联络线潮流（6.65）
+  targets: 3 台机组实际出力（第十七条(三) 特定信息）——BW01 Bayswater 燃煤、TUMUT3 抽蓄/水电、PPCCGT Pelican Point 燃气联合循环
+  note: 这些量在 NEM 均作为历史数据公开；在我国规则下机组实际出力属特定信息——"类别敏感、以历史数据形式公开"
+sets: 规模 ≤3 全枚举，4,525 个集合
+attackers: 单目标 DNN ∪ 多目标 DNN ∪ 梯度提升树
+estimator: 同 111 号（共享 ../DNN_Aggresvation111/src/pipe.py）
+compute: GPU1；树模型 CPU 40 进程单线程

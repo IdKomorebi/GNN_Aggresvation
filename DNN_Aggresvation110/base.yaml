@@ -1,0 +1,20 @@
+experiment:
+  name: dnn110_case30_regulation_grounded_pilot
+  status: 可行性试验（pilot），尚未纳入 FINAL_PROTOCOL
+  purpose: 在标准算例上构造"字段角色有法规依据"的推断案例，检验是否存在背景依赖、组合依赖的推断增益
+grid: IEEE 30 节点（pandapower 3.5.4，DC-OPF 市场出清）
+scenarios:
+  n: 4000（可行 3996）
+  load: 日内正弦 + 季节项 + 噪声，系数截断 [0.70, 1.18]；各母线乘性噪声 N(1, 0.08)
+  renewables: 风电 bus26（40MW）、光伏 bus21（25MW）
+  bids: 各机组一次报价系数 × U(0.85, 1.15)
+  congestion: L24-26 限额 88%，阻塞率 56.7%
+field_roles:
+  source: 《电力市场信息披露基本规则》（国能发监管〔2024〕9号）
+  public (第三十二条 公开信息): [系统实际负荷, 系统负荷预测, 风电总出力预测, 光伏总出力预测, 节点电价×5, 断面阻塞_L24-26, 系统备用]
+  sensitive (第十七条(三) 特定信息 “机组实际出力”): [bus26 机组出力, bus21 机组出力]
+truth:
+  attacker: HistGradientBoostingRegressor（两组超参，val 选择）
+  sets: 11 个公开字段的全部 2,047 个子集（精确枚举，不抽样）
+  split: 随机 70/30，train 内 15% 作 val；单调闭包（val 选子集、test 报告）
+compute: CPU 40 进程，OMP_NUM_THREADS=1，24 秒

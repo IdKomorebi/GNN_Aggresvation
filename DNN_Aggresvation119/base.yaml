@@ -1,0 +1,10 @@
+experiment:
+  name: dnn119_robustness_and_k3
+  purpose: 结论的稳健性（真值攻击器随机种子、随机 70/30 划分、阈值 τ）与 K 的选择依据（NEM 补做规模 4 的集合，得到正式口径 M^(3)）
+groups:
+  rts_seed1/2: RTS-GMLC 同一划分，攻击器种子 1/2（DNN 初始化与小批顺序、树的早停划分）
+  rts_split43/44: RTS-GMLC 换随机 70/30 划分（与时间无关的随机打乱），三攻击器全部重训
+  pjm_load_seed1/2: PJM 实际负荷（116 补全候选后）攻击器种子 1/2
+  nem_k4: NEM 规模为 4 的 27,405 个集合，三攻击器；与 112 号规模 ≤3 的真值合并后重做攻击器选择与闭包
+analysis: [结论性数字对照, M2 排序 Spearman, τ-关键集合 Jaccard, NEM 的 M2/M3, 五组 τ∈[0.3,0.9] 扫描]
+compute: GPU0/GPU2（DNN）+ CPU 40 进程（树）；GPU3 留空

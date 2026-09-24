@@ -1,0 +1,60 @@
+%% Field-level inference risk from set-level inferability (V4_en)
+%% Template: elsarticle (preprint, single column). Compile: tectonic main.tex  (or pdflatex + bibtex + pdflatex x2)
+\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{figures/}}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\Vy}{V_{y}}
+\newcommand{\Mik}{M^{(K)}_{i \to y}}
+\newcommand{\Rtwo}{R^{2}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\journal{Elsevier}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{From Set-Level Inferability to Field-Level Risk:\\ Budgeted Marginal Inference and an Amortized
+Attacker for Grading Power Market Data}
+
+\author{Haocun Du}
+\address{(affiliation to be completed)}
+
+\input{sec_abstract}
+
+\begin{keyword}
+data classification and grading \sep inference attack \sep electricity market disclosure \sep
+feature importance \sep marginal contribution \sep amortized inference
+\end{keyword}
+
+\end{frontmatter}
+
+\input{sec_intro}
+\input{sec_front}
+\input{sec_setup}
+\input{sec_res1}
+\input{sec_res2}
+\input{sec_res3}
+\input{sec_discussion}
+
+\appendix
+\input{sec_appendix}
+\clearpage
+
+\bibliographystyle{elsarticle-num}
+\bibliography{ref}
+
+\end{document}

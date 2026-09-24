@@ -1,0 +1,11 @@
+experiment:
+  name: dnn118_estimator_comparison_ablation
+  purpose: 通用推断模型（摊销攻击者）的对比实验与消融：各组件是否必要、与热启动微调和串行重训相比的精度与成本
+datasets: [RTS-GMLC, NEM, PJM 实际负荷, PJM 发电/联络线, CAISO 实际负荷]
+sets: 规模 ≤3 的全部集合（K≤2 所需）；热启动微调只在每数据集 150 个随机集合上做
+comparisons: [lin 线性读出, poly x+x², polyS 集合内二阶多项式, head3 共享输出头, ft 热启动微调]
+ablations_single_seed: [phionly1 只用 φ, rand1 随机初始化主干, masknone1 预训练不掩码, maskbern1 伯努利掩码, nofix1 不做数值修正]
+reference: [D1 本文单种子, C3 三种子特征拼接(仅 111/112), E 本文新主口径]
+cost: timeE（E 单集合耗时）与 seq（逐个串行重训一个集合：单目标 DNN + 两种配置的树）在同一张空闲 GPU 上测
+metrics: [V 误差/偏差, 边际误差, M2 误差/偏差/Spearman, 认证前1/前3, τ=0.5 关键召回/精确, 耗时]
+data_boundary: 预训练、读出、微调只用训练行；测试行只用于报告 R²；真值只用于评价

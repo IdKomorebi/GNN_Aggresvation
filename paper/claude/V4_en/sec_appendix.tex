@@ -1,0 +1,75 @@
+%===============================================================================
+\section{Further properties of $\Mik$}\label{app:proofs}
+%===============================================================================
+
+\begin{proposition}[Ladder and candidate-set monotonicity]\label{prop:ladder}
+\emph{(a)} $M^{(0)}_{i\to y}\le M^{(1)}_{i\to y}\le\cdots\le M^{(|H|-1)}_{i\to y}$;
+\emph{(b)} enlarging the candidate set from $H$ to $H'\supseteq H$ cannot decrease $\Mik$;
+\emph{(c)} if $f'$ duplicates $f$, i.e.\ $\Vy(B\cup T\cup\{f'\})=\Vy(B\cup T\cup\{f\})=\Vy(B\cup T\cup\{f,f'\})$
+for all $T$, deleting $f'$ leaves $\Mik$ unchanged for every $i\ne f,f'$.
+\end{proposition}
+\begin{proof}
+(a) and (b) are maxima over nested feasible sets. (c) If a witness $T$ of $i$ contains $f'$,
+replace $f'$ by $f$ (if $f\notin T$) or drop it (if $f\in T$); the value is unchanged and the budget
+is respected, so the maximum does not decrease after deleting $f'$, and by (b) it does not increase.
+\end{proof}
+
+\begin{theorem}[Truncated super-efficiency]\label{thm:super}
+For $A\subseteq H$ with $|A|\le K+1$, $\Vy(B\cup A)-\Vy(B)\le\sum_{i\in A}\Mik$. More tightly, with
+$U^{(K)}(\emptyset)=0$ and $U^{(K)}(A)=\min_{j\in A}[U^{(K)}(A\setminus\{j\})+M^{(\min(|A|-1,K))}_{j\to y}]$,
+$\Vy(B\cup A)-\Vy(B)\le U^{(K)}(A)\le\sum_{i\in A}\Mik$.
+\end{theorem}
+\begin{proof}
+Order $A=\{i_1,\dots,i_m\}$ and telescope $v_B(A)=\sum_t[v_B(A_t)-v_B(A_{t-1})]$; the $t$-th term is a
+marginal of $i_t$ over a background of size $t-1\le K$, hence at most $M^{(K)}_{i_t\to y}$. The staged
+bound follows by induction on $|A|$ and Proposition~\ref{prop:ladder}(a).
+\end{proof}
+For $K\ge|H|-1$ this is the super-efficiency of MCI~\cite{catav2021mci}; with a finite budget it is
+stronger because $\Mik\le\mathrm{MCI}$. It yields a release rule ``accept $A$ if $U^{(K)}(A)\le\tau$''
+that never accepts an unsafe set of size $\le K+1$. We do not use this rule in the main text because
+it is conservative for larger release sets; the minimum-hitting-set disposal of
+Section~\ref{sec:res-def} addresses the same need directly.
+
+\begin{proposition}[Irreducible synergy is bounded by field risk]\label{prop:syn}
+With $\mathrm{syn}^B(S)=\Vy(B\cup S)-\max_{T\subsetneq S}\Vy(B\cup T)$ and $|S|\ge 2$,
+$\mathrm{syn}^B(S)\le\min_{j\in S}M^{(|S|-1)}_{j\to y}$.
+\end{proposition}
+\begin{proof}
+$\max_{T\subsetneq S}\Vy(B\cup T)\ge\Vy(B\cup S\setminus\{j\})$ for every $j$, hence
+$\mathrm{syn}^B(S)\le\Delta_j(B\cup S\setminus\{j\})\le M^{(|S|-1)}_{j\to y}$.
+\end{proof}
+
+\begin{remark}[Escalation is weaker than synergy]
+$\Mik=M^{(0)}_{i\to y}$ iff $\Delta_i(B\cup T)\le\Delta_i(B)$ for all $|T|\le K$. Submodularity implies no
+escalation but not conversely: with $\Vy(\{1\})=0.8$, $\Vy(\{2\})=0.6$, $\Vy(\{3\})=0.8$, all pairs $0.8$
+and $\Vy(\{1,2,3\})=1$, every field has $M^{(2)}=M^{(0)}$, yet $\Delta_1(\{3\})=0<\Delta_1(\{2,3\})=0.2$.
+\end{remark}
+
+%===============================================================================
+\section{Implementation details}\label{app:impl}
+%===============================================================================
+
+\paragraph{Attackers} Single- and multi-target perceptrons: two hidden layers of 128 ReLU units,
+dropout 0.15, Adam (learning rate $10^{-3}$, weight decay $5\times10^{-4}$), batch 128, at most 300
+epochs, patience 60, epoch chosen per (set, target) on validation. Many attackers are trained in
+parallel on one GPU as independent networks whose inputs are masked to their own field set; masked
+columns receive no gradient, so each network is functionally a network trained on its set alone.
+Gradient boosting: histogram gradient boosting with (learning rate, leaves) $\in\{(0.05,15),(0.1,31)\}$,
+300 iterations with internal early stopping; the configuration is chosen on validation. The family
+member is chosen per (set, target) on validation. Across data sets gradient boosting is selected for
+35--76\% of (set, target) pairs (RTS-GMLC 76\%, NEM 35\%, PJM 67--69\%, CAISO 52\%), so the family maximum matters.
+
+\paragraph{Estimator} Backbone: three hidden layers of 256 ReLU units with dropout 0.1, input
+$[x\odot m, m]$, Adam ($10^{-3}$, weight decay $5\times10^{-4}$), batch 256, at most 400 epochs,
+patience 60 on eight fixed validation masks. Ridge penalties $\lambda\in\{10^{-3},\dots,10^{2}\}$.
+
+\paragraph{Inference-graph baseline} Following the structure of~\cite{hu2026ignn} without its
+expert-assigned intrinsic scores: nodes are the candidate fields and the target; the weight of edge
+$i\to j$ is the validation $\Rtwo$ of predicting field $j$ from field $i$ alone by gradient boosting; the
+score of $i$ is $\sum_{h=1}^{3}0.5^{\,h-1}(W^{h})_{i,y}$. The first term equals single-field
+predictability; longer paths add inference chains through other fields.
+
+\paragraph{SAGE} Marginal imputation with 32 background rows, 512 evaluation rows from the
+validation split and 24 random permutations, on a gradient-boosting model fitted to all candidates.
+
+\input{tables/tab_fields}

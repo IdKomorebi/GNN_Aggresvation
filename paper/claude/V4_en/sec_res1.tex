@@ -1,0 +1,132 @@
+%===============================================================================
+\section{Results I: Combination Risk that Single-Field Grading Misses}\label{sec:res-risk}
+%===============================================================================
+
+\input{tables/tab_risk}
+
+Table~\ref{tab:risk} and Fig.~\ref{fig:risk} report, for each of the ten targets, how many
+candidate fields are unsafe on their own and how many become critical only in combination.
+Three patterns stand out.
+
+\emph{Most critical fields are invisible to single-field grading.} Of the 264 field--target
+pairs, 256 are critical at $\tau=0.5$ with at most two background fields, and 223 of these are
+safe on their own; at $\tau=0.7$ the figures are 138 and 113. For four targets (NEM BW01 and
+TUMUT3, PJM load and PJM net interchange) no candidate exceeds $\tau=0.5$ alone, yet 22 to 30
+candidates take part in a dangerous combination; at $\tau=0.7$ the same holds for RTS line C35,
+where 21 of 23 fields are critical and none is unsafe alone. Withholding every field that is unsafe alone
+breaks almost none of the minimal unsafe sets (column ``left''): 1,766 of 1,799 at $\tau=0.5$
+and 534 of 559 at $\tau=0.7$ remain.
+
+\emph{Where single fields do leak, combinations still dominate.} Some targets are exposed by a
+single close proxy: RTS unit outputs are almost determined by a nodal price ($V_1=0.99$), and
+PJM total generation by the system load forecast ($0.97$). For these, $M^{(0)}$ already flags
+the proxy, and the remaining risk is again combinatorial (e.g.\ 22 of 24 PJM fields are
+combination-critical). Removing such near-proxies from the candidate pool
+(Section~\ref{sec:data}) lowers the best single field to $0.42$ for both PJM total generation
+and CAISO load but leaves every remaining field combination-critical at $\tau=0.5$ (22/22 and
+26/26), so the conclusion does not depend on where the proxy boundary is drawn.
+
+\emph{The witnesses are physically meaningful.} Fig.~\ref{fig:profile} shows the field profile
+of RTS line C35 and the gain matrix of NEM unit PPCCGT. The largest escalations come from
+combinations that reconstruct a residual quantity: the SP15 day-ahead energy price rises from
+$M^{(0)}=0.14$ to $M^{(2)}=0.51$ for CAISO load with the NP15 wind and SP15 solar forecasts as
+witnesses (price and renewables determine net load); the South Australian wind forecast rises
+from $0.19$ to $0.60$ for PPCCGT together with the regional available capacity and solar
+forecast (the residual demand the gas unit is dispatched for); the price at RTS bus 303 rises
+from $0.36$ to $0.65$ for the C35 flow together with a zonal load forecast and the congestion
+indicator of the neighbouring line C6. The gain matrix also shows that the same field is
+harmless next to some partners and decisive next to others, which is what a grade that ignores
+the background cannot represent.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig4_combination_risk.pdf}
+\caption{Share of candidate fields that are unsafe alone (orange), safe alone but critical with
+at most two background fields (blue), or never critical (grey), at (a) $\tau=0.5$ and (b)
+$\tau=0.7$; numbers give combination-critical fields over all candidates. (c) Best single field
+versus best set of at most three fields.}
+\label{fig:risk}
+\end{figure}
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig5_profile.pdf}
+\caption{(a) Field profile for the hourly flow on RTS line C35 (14 fields with the largest
+$M^{(2)}$): Pearson $r^2$, single-field risk and worst-background risk, with the witness
+background for the three riskiest fields. (b) Gain matrix for NEM unit PPCCGT: entry $(i,j)$ is
+$V(\{i,j\})-V(\{j\})$, the diagonal is $V(\{i\})$; values below 0.10 are not printed.}
+\label{fig:profile}
+\end{figure}
+
+%===============================================================================
+\section{Results II: Comparison of Field-Level Risk Definitions}\label{sec:res-def}
+%===============================================================================
+
+\paragraph{Mechanism}
+Fig.~\ref{fig:mechanism} uses synthetic data with a known structure,
+$Y=a\,AB+bP+\sigma\varepsilon$, where $A$ and $B$ act only jointly, $C_1$ and $C_2$ are two
+noisy copies of $P$, $D$ is a weak copy of $P$ and $N$ is noise; all 63 sets are retrained.
+Correlation, single-field retraining and pairwise inference-graph propagation give $A$ and $B$
+a score of zero although $\{A,B\}$ reaches $0.54$. LOCO gives $C_1$ and $C_2$ almost zero because
+each substitutes for the other, and LOCO, permutation importance and SAGE all give $D$ zero
+because the full model relies on $C_1,C_2$ instead---yet $\{A,B,D\}$ crosses $\tau=0.7$ while
+$\{A,B\}$ does not, so $D$ is critical. SAGE splits credit within both pairs. $M^{(2)}$ assigns
+$A$, $B$, $C_1$, $C_2$ their full worst-case contribution and gives $D$ a non-zero risk with the
+witness $\{A,B\}$. This is the behaviour predicted by Table~\ref{tab:req}: averages dilute,
+single contexts miss substitutes, and pairwise edges miss joint inference.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig2_mechanism.pdf}
+\caption{Synthetic mechanism example. (a) Retrained inferability of selected sets. (b) Scores of
+eight methods (colour normalized per column); the last column is $M^{(2)}$.}
+\label{fig:mechanism}
+\end{figure}
+
+\paragraph{Decisions}
+The deliverable of grading is a decision, so we first compare flagging rules
+(Table~\ref{tab:decision}, Fig.~\ref{fig:definition}a). The single-field rule recovers 13\% of
+the critical fields at $\tau=0.5$ and 17\% at $\tau=0.7$. The scan on amortized estimates
+recovers 93\% and 83\%; with certification, which only accepts a field after dedicated
+attackers retrained on one of its three best-scanned backgrounds confirm the threshold
+crossing, precision is exactly one by construction and recall is 88\% ($\tau=0.5$, $\delta=0$)
+and 80\% ($\tau=0.7$, $\delta=0.05$). The margin $\delta$ compensates for the common-mode
+underestimation of the estimator (Section~\ref{sec:res-est}), which matters near high
+thresholds.
+
+For disposal, the relevant question is how many fields must be withheld to break every
+dangerous combination. Withholding what single-field grading flags leaves 98\% ($\tau=0.5$) and
+96\% ($\tau=0.7$) of the minimal unsafe sets intact. Two strategies that select fields from
+amortized estimates only---a minimum hitting set of the estimated minimal unsafe sets, and a
+greedy rule that withholds the field with the largest $\hat M^{(2)}$ and recomputes $\hat
+M^{(2)}$ on the remaining fields---leave 1.3--5.8\% intact while withholding at most 1.2 fields
+more than the optimum computed from the ground truth (Fig.~\ref{fig:definition}c). The greedy
+rule exploits the relative nature of $\Mik$: once a field is withheld, the risk of the others
+changes, and $\Mik$ is recomputed with respect to what remains.
+
+\input{tables/tab_decision}
+
+\paragraph{Ranking}
+Table~\ref{tab:ranking} compares the scores as rankings. At $\tau=0.7$, $\hat M^{(2)}$ has the
+highest R-precision (0.903, against 0.866 for mutual information, 0.830 for the inference graph,
+0.803 for single-field retraining, 0.769 for SAGE and 0.727 for LOCO), and withholding fields in
+the order of exact or certified $M^{(2)}$ exceeds the optimum by only 0.4 fields. At $\tau=0.5$
+almost every field is critical and every score reaches an R-precision of about 0.98; here
+single-field retraining ranks as well as $M^{(2)}$. We report this plainly: as a \emph{ranking},
+single-field risk is a strong baseline when most fields are dangerous; the advantage of $\Mik$
+lies in decisions, disposal and high thresholds. Attribution scores computed on one fitted
+model (LOCO, permutation importance, SAGE) are the weakest throughout, because they measure what
+that model uses rather than what an adversary can infer.
+
+\input{tables/tab_ranking}
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig6_definition.pdf}
+\caption{Definition comparison over ten targets. (a) Recall of critical fields by the single-field
+rule, the scan and scan + certify ($\delta=0.05$). (b) R-precision of twelve scores (light:
+$\tau=0.5$, dark: $\tau=0.7$). (c) Fields withheld relative to the optimum versus share of minimal
+unsafe sets left, for single-field grading and two estimate-driven strategies. (d, e) Minimal
+unsafe sets left when fields are withheld in score order, for two targets.}
+\label{fig:definition}
+\end{figure}

@@ -1,0 +1,18 @@
+experiment:
+  name: dnn116_realistic_pool_completion_and_backbone
+  purpose: >
+    (1) PJM/CAISO 现实口径补全候选池：100 号协议里的"机密列"中及时披露的电价分量、日前计划、辅助服务出清总量本该是候选，114 号漏了；补入后全部重训真值。
+    (2) 在新的候选池上复核"全字段主干 V 更准、M 持平"，并加做"留目标主干"检验对未见过目标的可用性。
+supersedes: 114 号主结果（114 号保留作补全前的对照）
+groups:
+  pjm_load:   {targets: [PJM 实际负荷], candidates: 22 (114 号 15 + 新增 7), sets_upto4: 9108}
+  pjm_gen_ic: {targets: [PJM 发电总出力, PJM 联络线净交换], candidates: 24 (17 + 7), sets_upto4: 12950}
+  caiso_load: {targets: [CAISO 实际负荷], candidates: 35 (24 + 11), sets_upto4: 59535}
+truth: 三攻击器（单目标 DNN / 多目标 DNN / 梯度提升树）val 选择取最大 + 单调闭包；规模 ≤4 全枚举（K=3 为正式口径）
+estimator: 新主口径 E（115 号：数值修正 + 5 折选 λ + 三种子预测平均），只估计规模 ≤3（K≤2 所需）
+backbones:
+  group: 本组候选 → 本组目标，随机掩码预训练，3 种子
+  full: 数据集全部 53 列掩码重建预训练，3 种子（一次预训练，任意目标定义复用）
+  lto: 同 full，但整列删除本组目标（检验对预训练未见目标的可用性）
+data_boundary: 预训练与读出只用训练行；测试行只用于报告 R²；真值只用于评估
+compute: GPU0/1/2 + CPU 40 进程（单线程）；GPU3 留空

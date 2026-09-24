@@ -1,0 +1,54 @@
+%===============================================================================
+\section{Results IV: Robustness and the Choice of $K$}\label{sec:res-robust}
+%===============================================================================
+
+\paragraph{Attacker seeds and data splits}
+Ground truth is itself an estimate: attackers are trained with random initializations and
+early-stopping splits, and $\Vy$ is measured on one random test split. We repeated the complete
+three-attacker retraining with two further seeds (RTS-GMLC, three targets; PJM load) and on two
+further random 70/30 splits (RTS-GMLC). Across these reruns the mean absolute change in $\Vy$ is
+0.001--0.008, the Spearman correlation of $M^{(2)}$ across fields with the main run is 0.983--0.999,
+the set of $\tau$-critical fields is identical at $\tau=0.5$ (Jaccard 1.0 in every case) and agrees
+with Jaccard 0.93--1.00 at $\tau=0.7$, and the number of combination-critical fields and the minimum
+withholding set change by at most one or two fields (Fig.~\ref{fig:robust}c). The conclusions of
+Sections~\ref{sec:res-risk}--\ref{sec:res-def} are therefore not artefacts of a particular seed or
+split.
+
+\paragraph{Threshold}
+Fig.~\ref{fig:robust}(d) sweeps $\tau$ from 0.3 to 0.9 over all ten targets. At every threshold the
+share of fields that are safe alone but critical with at most two background fields exceeds the share
+of fields that are unsafe alone (e.g.\ 43\% versus 10\% at $\tau=0.7$), and withholding the fields
+flagged by single-field grading leaves between 38\% (at $\tau=0.9$) and 96\% (at $\tau=0.5$) of the
+minimal unsafe sets intact. The gap between the two grading philosophies is thus not tied to the
+choice of $\tau$.
+
+\paragraph{Choice of $K$}
+Exhaustive retraining of all sets of four fields on every data set (for NEM an additional 27,405 sets)
+gives the exact $M^{(3)}$. Measured by the \emph{marginal} risk, $K=2$ is close to saturation:
+$M^{(2)}/M^{(3)}$, the ratio of mean field risk, lies between 0.958 and 1.000 for nine targets and is
+0.813 for NEM TUMUT3, a hydro unit whose dispatch depends on inter-regional exchange
+(Fig.~\ref{fig:robust}a). The first background field brings most of the escalation ($M^{(1)}/M^{(2)}$
+between 0.73 and 0.97).
+
+Threshold crossings, however, do not saturate as quickly, which is the caveat stated in
+Section~\ref{sec:mk}. At $\tau=0.7$ several targets have fields that become critical only with a third
+background field: PJM net interchange (3 critical fields at $K=2$, 21 at $K=3$), NEM PPCCGT (10 and
+24) and PJM load (14 and 22) (Fig.~\ref{fig:robust}b). At $\tau=0.5$ all fields are already critical at
+$K=2$ except for TUMUT3 (22 versus 30). Minimal unsafe sets of size four therefore exist that a
+hitting set computed at $K=2$ does not break. Breaking all minimal unsafe sets up to size four
+requires on average 11.3 withheld fields instead of 9.4 at $\tau=0.5$, and 6.3 instead of 5.1 at
+$\tau=0.7$. Our recommendation follows: $K=2$ suffices to \emph{grade} fields by their marginal risk,
+while \emph{disposal} decisions should be computed at $K=3$, at the price of one to two additional
+withheld fields. Evaluating all sets of size four is exactly the workload for which the amortized
+scan is needed: for CAISO it comprises 52,360 sets per target, against 7,175 for $K=2$.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig9_robustness.pdf}
+\caption{Robustness. (a) Saturation of mean field risk in the background budget. (b) Share of
+$\tau$-critical fields at $\tau=0.7$ with $K=2$ (filled) and $K=3$ (open). (c) Agreement of reruns with
+different attacker seeds or data splits with the main run. (d) Threshold sweep over ten targets:
+fields that are safe alone but critical (solid), fields unsafe alone (dashed), and minimal unsafe sets
+left after single-field grading (dotted).}
+\label{fig:robust}
+\end{figure}

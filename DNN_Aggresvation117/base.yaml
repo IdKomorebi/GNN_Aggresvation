@@ -1,0 +1,12 @@
+experiment:
+  name: dnn117_definition_comparison
+  purpose: 定义对比——现有字段级打分方法（相关、单字段、模型归因、推断图传播）能否发现组合推断风险，按其做决策与扣留的效果如何；并用已知结构的合成数据说明各方法的失效机理
+datasets: [RTS-GMLC (111), NEM (112), PJM 实际负荷 / PJM 发电与联络线 / CAISO 实际负荷 (116 补全候选后)]，共 10 个目标
+truth: 各号三攻击器专用重训 + 单调闭包（规模 ≤3 的集合用于评价）；真值只用于评价，不进入任何打分或选择
+scores: [pearson, spearman, mi, dcor, M0(单字段重训), loco, perm, sage, graph(仿 IGNN 成对推断图传播), M2_est(通用模型 E), M2_cert(扫描—认证), M2(精确)]
+evaluations:
+  ranking: 关键字段检测 AP、R-precision（按真实关键数给阈值，对基线最宽松）
+  decision: 单字段规则 / 扫描标记 / 扫描—认证标记 的召回与精确（τ=0.5、0.7；保守余量 δ=0、0.05）
+  disposal: 按分数静态扣留的所需字段数；不用真值选择的两种策略（估计 MUS 最小命中集、自适应 M̂2 贪心）的扣留数与残余真危险组合
+toy: 合成数据 Y=a·A·B+b·P+噪声，含协同对、冗余对、间接字段、噪声字段；63 个集合全部重训
+compute: CPU 40 进程（每进程单线程；dcor 的 numba 线程池已强制为 1）

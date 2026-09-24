@@ -1,0 +1,13 @@
+experiment:
+  name: dnn113_pjm_caiso_target_redefinition
+  purpose: 按《电力市场信息披露基本规则》的披露时点重新定义 PJM/CAISO 的敏感目标（大幅减少），两种候选口径对照
+rule: 国能发监管〔2024〕9号，附表 6.52（出清电价及分量：出清后及时披露）vs 6.57–6.66（实际运行信息：运行日次日披露）
+targets:
+  PJM:   [metered_load_mw（6.61 实际负荷）, total_gen（6.57 发电总出力）, net_actual_interchange_mw（6.65 联络线输电情况）]
+  CAISO: [actual_load__mw__ca_iso_tac（6.61 实际负荷）]
+variants:
+  A: 全部 41 个候选；仅推断 total_gen 时剔除 19 个分燃料实际发电（其和即总出力，属恒等式）→ 22 个
+  B: 剔除同样次日才披露的字段 → PJM 17 个、CAISO 25 个（清单见 outputs/analysis/113_candidate_roles.csv）
+truth: 103 号正式三攻击器真值（单目标 DNN ∪ 多目标 DNN ∪ 梯度提升树，val 选择 + 单调闭包），不重训
+estimator: 103 号 φ+x,x²（三种子）闭式读出估计
+compute: 纯分析，CPU，约 2 分钟

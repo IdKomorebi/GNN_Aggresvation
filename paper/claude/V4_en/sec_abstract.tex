@@ -1,0 +1,22 @@
+\begin{abstract}
+Electricity-market data are graded and released field by field, yet inference risk arises from
+combinations: fields that reveal nothing alone can jointly expose unit outputs, line flows or load
+before release. We define field-level risk from set-level inferability, the out-of-sample accuracy
+that attackers retrained on a set of fields reach for a sensitive target. The budgeted marginal risk
+$M^{(K)}$ of a field is its largest inferability gain over any background of at most $K$ other
+fields, relative to data already public. It is a budget-constrained marginal contribution index,
+equals the minimal threshold-free safety margin, and flags exactly the members of minimal unsafe
+combinations of at most $K+1$ fields; its witness background tells the data owner what not to
+co-release. To evaluate all small sets repeatedly, an amortized attacker---one network pre-trained
+under random visibility masks, queried through a closed-form readout per field set---scans the
+sets, and retraining a few backgrounds per field certifies the result. On four power data sets with
+rule-based field roles, including actual unit outputs from the Australian market, and
+$1.2\times10^5$ exhaustively retrained field sets as ground truth, single-field grading recovers
+13--17\% of the critical fields
+and leaves over 95\% of dangerous combinations intact. Scan--certify recovers up to 88\% of the
+critical fields without false positives, and withholding fields chosen from estimates alone breaks
+94--99\% of dangerous combinations with near-minimal withholding. Correlation, attribution and
+inference-graph scores are less effective at high thresholds; the per-set readout is the key
+component of the estimator; and $K=2$ captures most of the marginal risk measured at $K=3$, while
+disposal is best computed at $K=3$.
+\end{abstract}

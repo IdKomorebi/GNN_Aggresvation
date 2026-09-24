@@ -1,0 +1,16 @@
+experiment:
+  name: dnn114_pjm_caiso_realistic_retrain
+  purpose: PJM/CAISO 现实口径正式版——按披露时点收窄候选池 + 剔除目标副本，三攻击器全部重训（取代 113 号的旧口径分析）
+rule: 国能发监管〔2024〕9号；目标 = 附表 6.57/6.61/6.65 次日才披露的实际运行信息；候选 = 此前已披露的信息
+removed:
+  next_day: PJM 分燃料实际发电及占比、无意交换、事后结算补偿；CAISO 其他平衡区实际负荷、实际新能源出力、EIM 实际交换
+  target_copies: PJM 两个系统负荷预测（对实际负荷）；CAISO 总负荷预测（对 CAISO 实际负荷）——与 FINAL_PROTOCOL §2 删除目标副本同一原则
+groups:
+  pjm_load:   {targets: [metered_load_mw], candidates: 15, sets: 1940}
+  pjm_gen_ic: {targets: [total_gen, net_actual_interchange_mw], candidates: 17, sets: 3213}
+  caiso_load: {targets: [actual_load__mw__ca_iso_tac], candidates: 24, sets: 12950}
+split: 沿用冻结协议（100 号 common100.load），与 103 号可比
+sets: 规模 ≤4 全枚举（K=0..3 均为正式三攻击器口径）
+attackers: 单目标 DNN ∪ 多目标 DNN ∪ 梯度提升树（单目标组中多目标 DNN 与单目标 DNN 等价，不重复训练）
+compute: GPU0/1/2 三卡（GPU3 留空）+ CPU 40 进程单线程
+code: 共享 ../DNN_Aggresvation111/src/pipe.py、scripts/run_stage.py、scripts/analyze_exp.py；本号 scripts/build_groups.py、chain.sh、summarize114.py、sensitivity_proxies.py
