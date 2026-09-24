@@ -1,0 +1,19 @@
+\begin{table*}[!tp]
+\centering\small
+\caption{Requirements for a field-level inference-risk quantity. \checkmark: satisfied;
+$\circ$: partially; --: not satisfied.}\label{tab:req}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+Method & R1 checkable & R2 joint & R3 worst case & R4 no dilution & R5 bounded $K$ & R6 baseline $B$\\
+\midrule
+Correlation / mutual information & -- & -- & -- & \checkmark & -- & -- \\
+Single-field retraining $M^{(0)}$ & \checkmark & -- & -- & \checkmark & -- & $\circ$ \\
+Inference-graph propagation~\cite{hu2026ignn} & -- & $\circ$ & -- & $\circ$ & -- & -- \\
+Shapley / SAGE~\cite{covert2020sage} & \checkmark & \checkmark & -- & -- & -- & -- \\
+LOCO / permutation & \checkmark & \checkmark & -- & -- & -- & -- \\
+MCI~\cite{catav2021mci} & \checkmark & \checkmark & \checkmark & \checkmark & -- & -- \\
+$\Mik$ (this paper) & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\bottomrule
+\end{tabular}}
+\end{table*}

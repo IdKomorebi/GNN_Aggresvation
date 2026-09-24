@@ -1,0 +1,24 @@
+\section{Introduction}\label{sec:intro}
+Power-system operators release forecasts, prices, reserve requirements, and operating statistics to support transparent and efficient operation. These records describe a shared physical system, so their information content is interdependent. A price series and a renewable forecast may each reveal little about a generating unit; together, they can help reconstruct the residual demand that determines its dispatch. A release decision made separately for each field can therefore overlook the information exposed by their combination.
+
+This problem is particularly relevant to data classification and grading. Disclosure rules specify which operational fields are released and when~\cite{nea2024disclosure}, while classification standards call for aggregation and processing effects to be considered~\cite{gbt43697}. The audit nevertheless needs a usable output at the field level: which field poses a risk, how much risk it adds, and which other fields make that risk material. The inference and aggregation problem has long been recognized in database security~\cite{lunt1989aggregation,farkas2002inference}; in power systems, even public prices can reveal grid topology~\cite{kekatos2014topology}. Translating this set-dependent leakage into an actionable field-level assessment remains the central challenge.
+
+Existing scores address parts of the problem. Correlation and single-field prediction measure what one field reveals alone. Feature-attribution methods distribute predictive value or evaluate a field in a particular fitted model. Inference-graph methods propagate sensitivity through relations between fields~\cite{hu2026ignn}. For a release audit, however, the relevant question is whether a field can substantially improve an adversary's inference in \emph{any admissible background}. A field may have low individual predictability, little average attribution, and yet be decisive in one combination.
+
+We take the predictive accuracy of attackers trained on a field set as the starting point. A field's \emph{budgeted marginal inference risk} is its largest increase in this accuracy over backgrounds containing at most $K$ other fields, relative to the public baseline. The score adapts the marginal contribution index~\cite{catav2021mci} to a bounded-background release audit. Its maximizing background supplies an explanation: the risk score is accompanied by the fields with which the contribution arises. Threshold-crossing combinations then connect the assessment to field flagging and withholding.
+
+The computational difficulty is evaluating many such backgrounds. Even 35 candidate fields produce 7,175 nonempty sets of size at most three. We therefore share a nonlinear representation across sets and fit a closed-form readout separately for each query. This amortized attacker scans the field combinations; dedicated retraining of a few selected backgrounds verifies the largest contributions. Fig.~\ref{fig:framework} summarizes the resulting audit.
+
+The contributions are threefold:
+\begin{itemize}
+\item A field-level risk measure that retains the combination structure of set-level inferability. We establish its safety-margin interpretation and its connection to minimal unsafe sets under monotonicity, and use witness backgrounds to explain field risk.
+\item An amortized estimator based on masked pre-training and subset-specific readouts, together with a scan--certify procedure that recovers retrained lower bounds from a small number of backgrounds.
+\item An evaluation over four power-system data sets, ten targets, and 124,425 field sets. The experiments measure missed combination risk, compare grading and withholding strategies, isolate the estimator's effective components, and assess robustness and background-budget coverage.
+\end{itemize}
+
+\begin{figure*}[!tp]
+\centering
+\includegraphics[width=\textwidth]{fig1_framework.pdf}
+\caption{From operational data to a field-level audit. The grid and traces illustrate the shared physical origin of the released fields. A field is evaluated in combination with a background $T$ relative to the public baseline $B$; the largest gain defines its risk and supplies a witness. An amortized scan selects backgrounds for retrained assessment, while unsafe combinations support withholding decisions. The grid and combinations are schematic.}
+\label{fig:framework}
+\end{figure*}

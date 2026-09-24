@@ -1,0 +1,16 @@
+\begin{table*}[!tp]
+\centering\footnotesize
+\caption{Backbone scope on the four PJM/CAISO targets (same readout). Inactive: hidden units with zero variance on the training
+rows; eff.\ dim: participation ratio of the feature covariance; common-mode: $|\overline{e}|/\overline{|e|}$ of the $V$ error $e$.}\label{tab:backbone}
+\setlength{\tabcolsep}{2.8pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccccc}
+\toprule
+Backbone & inactive & eff.\ dim & MAE $V$ & common-mode & MAE $\Delta$ & MAE $M^{(2)}$ & bias $M^{(2)}$ & cert.@1 & cert.@3\\
+\midrule
+Per-group (targets supervised) & 24.2\% & 1.45 & 0.049 & 98\% & 0.028 & 0.029 & -0.025 & 0.906 & 0.963 \\
+All-column (masked reconstruction) & 7.7\% & 2.44 & 0.040 & 94\% & 0.024 & 0.026 & -0.021 & 0.944 & 0.976 \\
+All-column, target held out & 7.5\% & 2.50 & 0.039 & 94\% & 0.024 & 0.056 & +0.028 & 0.750 & 0.966 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

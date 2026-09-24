@@ -1,0 +1,39 @@
+% Editorial and visual revision of paper/claude/V4_en; see README.md.
+\RequirePackage[T1]{fontenc}
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx,booktabs,multirow,array,url}
+\usepackage{placeins}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\Vy}{V_y}
+\newcommand{\Mik}{M^{(K)}_{i\to y}}
+\newcommand{\Rtwo}{R^2}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\hyphenation{infer-ability back-ground data-sets}
+\begin{document}
+\title{Budgeted Marginal Inference for Field-Level Risk Grading of Power-System Data}
+\author{Haocun Du}
+% Add the verified affiliation and contact information before submission.
+\maketitle
+\input{sec_abstract}
+\begin{IEEEkeywords}
+Power-system data, inference risk, data sensitivity, field combinations, marginal contribution, amortized inference.
+\end{IEEEkeywords}
+\input{sec_intro}
+\input{sec_front}
+\input{sec_setup}
+\input{sec_res1}
+\input{sec_res2}
+\input{sec_res3}
+\FloatBarrier
+\input{sec_discussion}
+\appendices
+\input{sec_appendix}
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+\end{document}
