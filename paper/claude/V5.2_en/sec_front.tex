@@ -1,0 +1,355 @@
+%===============================================================================
+\section{Related Work}\label{sec:related}
+%===============================================================================
+
+\paragraph{Inference and aggregation in data release}
+That individually innocuous data items can jointly reveal protected information is an old
+observation in database security, where it is known as the inference and aggregation
+problem~\cite{lunt1989aggregation,farkas2002inference}; the privacy literature supplies the
+best-known illustration, three demographic attributes that jointly single out most
+individuals~\cite{sweeney2000simple}. In power systems, public market data have been shown to
+expose non-public physical information, for example grid topology from locational marginal
+prices~\cite{kekatos2014topology}. Privacy mechanisms for metering data~\cite{mcdaniel2009smartgrid,giaconi2018smartmeter}
+and formal models such as differential privacy~\cite{dwork2014dp} or
+$k$-anonymity~\cite{sweeney2002kanonymity} bound what can be learned about an individual
+record after a release mechanism is applied. They answer a different question from the one
+faced by a market operator, who must decide which aggregate operational \emph{fields} may be
+published at all.
+
+\paragraph{Data sensitivity assessment under inference leakage}
+Data classification and grading is performed field by field in practice, and the Chinese
+national standard explicitly asks that aggregation and processing effects be
+considered~\cite{gbt43697}, without prescribing how. The closest work to ours is IGNN~\cite{hu2026ignn},
+which introduced data inference leakage into sensitivity assessment for cyber-physical power
+grids: fields are nodes of an inference graph whose edges encode physical or statistical
+inference relations, and sensitivity is propagated along these edges by a graph attention
+network from an intrinsic (expert-assigned) score. This established that the risk of a field
+depends on its inference relations to sensitive data. Two questions remain open in this line
+of work. First, the risk score is calibrated against expert labels, while its ultimate
+validation is an attack experiment in which a model is trained on a group of fields; the
+attack outcome itself is not the definition. Second, an edge connects two fields, whereas
+inference frequently requires several fields jointly, with none of them informative alone.
+We take the attack outcome on a field \emph{set} as the definition of risk and derive the
+field-level quantity from it.
+
+\paragraph{Feature importance}
+Turning set-level values into per-feature scores is the subject of feature attribution.
+Shapley-based measures~\cite{shapley1953value,lundberg2017shap,covert2020sage,williamson2020spvim}
+average a feature's marginal contribution over all contexts, which is the right answer for
+fair allocation but dilutes the credit of redundant features~\cite{kumar2020shapley,catav2021mci}.
+Leave-one-covariate-out (LOCO)~\cite{lei2018loco} and permutation importance~\cite{breiman2001rf,fisher2019mcr,hooker2021unrestricted}
+evaluate a single context, the full feature set, so a feature with a near-substitute receives
+almost no importance. The Marginal Contribution Index (MCI)~\cite{catav2021mci} takes the
+\emph{maximum} marginal contribution over contexts, is characterized axiomatically, and is
+immune to dilution. Security reasoning favours the worst case for the same reason
+quantitative information flow replaced Shannon entropy by min-entropy and gain
+functions~\cite{smith2009qif,alvim2012gleakage}: an average over contexts is not a guarantee.
+Our field-level risk is a budget-constrained MCI evaluated relative to already-public data.
+
+\paragraph{Fast estimation of many refitted models}
+Computing the performance of a model refitted on many feature subsets is expensive, which has
+motivated lazy~\cite{gao2022lazyvi} and warm-started~\cite{sun2025warmstart} estimators of
+variable importance, surrogate models trained under random masks for removal-based
+explanations~\cite{covert2021explaining,jethani2022fastshap,covert2023vitshapley}, conditional generative models trained under
+random masks~\cite{ivanov2019vaeac,li2020acflow,yoon2020vime,he2022mae}, and tabular foundation models that predict from any
+set of columns in context~\cite{hollmann2025tabpfn}.
+Closed-form ridge heads on frozen features are the standard fast-adaptation device in
+meta-learning~\cite{bertinetto2019r2d2,lee2019metaoptnet}, and the benefit of sharing a
+representation across tasks is well understood~\cite{caruana1997multitask,baxter2000inductive,maurer2016benefit}.
+We combine these ingredients into an estimator of set-level inferability and, more
+importantly, use it inside a scan--certify loop so that decisions rest on retrained
+attackers rather than on the estimate.
+
+%===============================================================================
+\section{Problem Formulation}\label{sec:problem}
+%===============================================================================
+
+\subsection{Parties, field roles and threat model}
+The \textbf{auditor} is the data owner. It holds the complete history of all operational
+fields, including those it regards as sensitive, and grades fields offline before release.
+The \textbf{adversary} obtains published fields and is assumed to hold historical auxiliary
+labels of the sensitive target, from which it trains a supervised inference model; risk is
+therefore measured as out-of-sample \emph{supervised} inferability. The adversary may combine
+the field under review with other fields it already holds.
+
+Field roles are fixed by disclosure rules, not by data analysis. Let $G$ be the candidate
+fields that the rules allow to be published, $B\subseteq G$ a \emph{public baseline} that is
+already released ($B=\emptyset$ unless stated otherwise), $H=G\setminus B$ the fields under
+review, and $Y_y$ a sensitive target. Section~\ref{sec:data} instantiates these roles for
+four data sets from the categories and release timings of the Chinese electricity-market
+disclosure rules~\cite{nea2024disclosure}. An ex-ante estimate of the \emph{same physical
+quantity} as a target (e.g.\ a load forecast when the target is metered load) is removed from
+$G$, because it is a copy of the target rather than an inference channel.
+
+\subsection{Set-level inferability}
+\begin{definition}[Population inferability]
+\[
+\Vy^{*}(S) = 1 - \inf_{f}\,\mathbb{E}\big[(Y_y - f(X_S))^{2}\big] \big/ \mathrm{Var}(Y_y),
+\]
+the infimum taken over measurable $f$. It satisfies $\Vy^{*}(\emptyset)=0$, $0 \le \Vy^{*} \le 1$
+and is monotone in $S$.
+\end{definition}
+
+\begin{definition}[Empirical inferability]\label{def:vret}
+The data are split into training and test rows, with a validation part inside training. For
+an attacker family $\mathcal{H}$, every $h\in\mathcal{H}$ is trained on $X_S$ only; the
+attacker and its training epoch are selected on validation, and the test $\Rtwo$ is reported:
+$\Vy^{\mathrm{ret}}(S) = \Rtwo_{\mathrm{test}}(\hat h_S)$ with
+$\hat h_S = \argmax_{h \in \mathcal{H},\,\mathrm{epoch}} \Rtwo_{\mathrm{val}}(h;S)$.
+\end{definition}
+
+Finite samples, optimization and selection noise make $\Vy^{\mathrm{ret}}$ slightly
+non-monotone. An adversary holding $S$ can train on any subset of $S$ and keep the best, so
+the operational object is the \emph{monotone closure}
+\begin{equation}\label{eq:closure}
+\Vy(S) = \Vy^{\mathrm{ret}}\big(\hat T_S\big), \qquad
+\hat T_S = \argmax_{T \subseteq S} \Rtwo_{\mathrm{val}}(T),
+\end{equation}
+where the subset is chosen on validation and the value is read on test. We write $\Vy$ for
+the closure throughout. It is the \emph{ground truth} of this paper: every conclusion about
+risk is stated in terms of $\Vy$ computed by dedicated retraining.
+
+\subsection{Audit questions}
+The auditor asks three questions: \emph{(Q1)} if a set $S$ is published, how accurately can
+$Y_y$ be inferred? \emph{(Q2)} how risky is a single field $i$, why, and together with which
+other fields? \emph{(Q3)} how can Q1--Q2 be answered for all fields and targets, repeatedly as
+the public baseline or target definitions change, without training a dedicated attacker for
+every set? Section~\ref{sec:mk} answers Q2 in terms of $\Vy$, and Section~\ref{sec:model}
+answers Q3.
+
+%===============================================================================
+\section{Field-Level Inference Risk}\label{sec:mk}
+%===============================================================================
+
+\subsection{Contextual gain}
+The quantity from which everything else follows is the gain that releasing field $i$ brings over a
+given background $T$ of fields the adversary already holds,
+\begin{equation}\label{eq:delta}
+\Delta_i(A)=\Vy(A \cup \{i\}) - \Vy(A),\qquad A=B\cup T .
+\end{equation}
+$\Delta_i(B)$ is the single-field risk. The same field can be nearly useless over one background
+and decisive over another: a price series says little about a unit's output alone, but together
+with the unit's forecast availability it reveals the residual quantity the unit covers. A
+field-level risk quantity must therefore summarize a whole \emph{distribution} of contextual gains
+$\{\Delta_i(B\cup T)\}_T$, and the question is which summary serves security.
+
+\subsection{Budgeted marginal risk and background amplification}
+\begin{definition}[Budgeted marginal risk, background amplification]\label{def:mk}
+For target $y$, public baseline $B$, fields under review $H=G\setminus B$ and budget $K$,
+\begin{equation}\label{eq:mk}
+\Mik \;=\; \max_{T \subseteq H \setminus \{i\},\, |T| \le K}\ \Delta_i(B\cup T),
+\qquad
+\Gamma^{(K)}_{i\to y} \;=\; \Mik - M^{(0)}_{i\to y} \;\ge 0 .
+\end{equation}
+Any maximizer $T^{*}$ is a \emph{witness background}.
+\end{definition}
+$\Mik$ is the largest increase of inferability that releasing $i$ can cause when the adversary
+holds at most $K$ other fields; $\Gamma^{(K)}_{i\to y}$ is the part of it that exists only because of
+the background, i.e.\ the amplification of single-field risk by combination. For each (field,
+target) pair the audit reports the profile $\big(M^{(0)}_{i\to y},\ \Gamma^{(K)}_{i\to y},\ \Mik\big)$
+together with the top-$r$ backgrounds ranked by $\Delta_i$; in our data the top backgrounds are
+often nearly tied and share a core partner field, so the partner is more informative than a
+single argmax. At $K=1$ the amplification has a closed form.
+
+\begin{proposition}[Amplification at $K=1$]\label{prop:k1}
+With $I^B_{ij}=\Vy(B\cup\{i,j\})-\Vy(B\cup\{i\})-\Vy(B\cup\{j\})+\Vy(B)$,
+$\Gamma^{(1)}_{i\to y}=\max\big(0,\max_{j} I^{B}_{ij}\big)$.
+\end{proposition}
+\begin{proof}
+Over the background $\{j\}$, $\Delta_i(B\cup\{j\})=M^{(0)}_{i\to y}+I^B_{ij}$; over $\emptyset$ it is
+$M^{(0)}_{i\to y}$. Take the maximum.
+\end{proof}
+A field is amplified by one background field exactly when it is strictly super-additive with it,
+and the amplification equals the strongest positive interaction.
+
+\subsection{Why the maximum}
+Turning a set function into a per-field score is the problem of feature attribution, and the
+natural first choice is an average of $\Delta_i$ over backgrounds, as in Shapley values or
+SAGE~\cite{covert2020sage}. The average answers ``how much does $i$ contribute typically'', which is
+the right question for explanation and fair allocation. A security audit asks instead whether
+\emph{some} admissible background makes $i$ dangerous; a field whose gain is small over most
+backgrounds but large over one is dangerous, and averaging hides it---in our data the average
+contextual gain is typically about a third of the maximum (Section~\ref{sec:res-amp}). This is the
+same reason quantitative information flow measures leakage by worst-case
+vulnerability rather than by average entropy~\cite{smith2009qif,alvim2012gleakage}. The maximum
+marginal contribution is the Marginal Contribution Index (MCI)~\cite{catav2021mci}; $\Mik$ adds the
+two conditions a disclosure audit needs, a public baseline $B$ and a bounded background $K$.
+Table~\ref{tab:req} summarizes the requirements and which field scores meet them.
+
+\begin{table}[!tbp]
+\centering\small
+\caption{Requirements for a field-level inference-risk quantity. \checkmark: satisfied;
+$\circ$: partially; --: not satisfied.}\label{tab:req}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+Method & checkable by attack & joint inference & worst case & no dilution & bounded $K$ & public baseline $B$\\
+\midrule
+Correlation / mutual information & -- & -- & -- & \checkmark & -- & -- \\
+Single-field retraining $M^{(0)}$ & \checkmark & -- & -- & \checkmark & -- & $\circ$ \\
+Inference-graph propagation~\cite{hu2026ignn} & -- & $\circ$ & -- & $\circ$ & -- & -- \\
+Shapley / SAGE~\cite{covert2020sage} & \checkmark & \checkmark & -- & -- & -- & -- \\
+LOCO / permutation & \checkmark & \checkmark & -- & -- & -- & -- \\
+MCI~\cite{catav2021mci} & \checkmark & \checkmark & \checkmark & \checkmark & -- & -- \\
+$\Mik$ (this paper) & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{proposition}[Relation to MCI]\label{prop:mci}
+Let $v_B(T) := \Vy(B \cup T) - \Vy(B)$ for $T \subseteq H$. Then $v_B$ is monotone,
+non-negative and $v_B(\emptyset)=0$; $\Mik = \max_{|T|\le K}[v_B(T\cup\{i\}) - v_B(T)]$ is the
+budget-constrained MCI of $v_B$; for $K \ge |H|-1$ and $B=\emptyset$ it is the MCI of $\Vy$.
+\end{proposition}
+The axiomatic properties of MCI for monotone evaluation functions~\cite{catav2021mci}---dummy,
+symmetry, the self-contribution lower bound $\Mik\ge M^{(0)}_{i\to y}$ and invariance to
+duplicated features---therefore transfer and are cited rather than claimed; $\Mik$ is
+non-decreasing in $K$ and reaches the MCI at $K=|H|-1$.
+
+\subsection{Security meaning}
+\begin{theorem}[Threshold-free safety margin]\label{thm:margin}
+Fix $i$, $y$, $B$, $K$. A number $m\ge 0$ satisfies ``for every threshold $\tau$ and every
+background $|T|\le K$: $\Vy(B\cup T)\le\tau-m \Rightarrow \Vy(B\cup T\cup\{i\})\le\tau$''
+if and only if $m\ge\Mik$. For a fixed $\tau$, the smallest $m$ with this property can be
+strictly smaller than $\Mik$.
+\end{theorem}
+\begin{proof}
+If $m\ge\Mik$ then $\Vy(B\cup T\cup\{i\})=\Vy(B\cup T)+\Delta_i(B\cup T)\le(\tau-m)+m$.
+Conversely, for any $T$ choose $\tau=\Vy(B\cup T)+m$; the property gives $\Delta_i(B\cup T)\le
+m$. Strictness: with $B=\emptyset$, $K=1$, $\Vy(\{i\})=0.1$, $\Vy(\{j\})=0.5$,
+$\Vy(\{i,j\})=0.9$ one has $M^{(1)}_{i\to y}=0.4$, yet at $\tau=0.95$ the necessary margin is $0$.
+\end{proof}
+Thus $\Mik$ is the answer to ``by how much can publishing $i$ raise the adversary's accuracy,
+whatever it already holds within budget''---a property of the field that does not depend on
+the threshold later chosen for grading.
+
+\begin{definition}[Criticality and minimal unsafe sets]
+Under baseline $B$, $E\subseteq H$ is a $\tau$-\emph{minimal unsafe set} (MUS) if
+$\Vy(B\cup E)>\tau$ and $\Vy(B\cup E')\le\tau$ for every $E'\subsetneq E$. Field $i$ is
+$K$-\emph{background} $\tau$-\emph{critical} if some $T$ with $|T|\le K$, $i\notin T$, has
+$\Vy(B\cup T)\le\tau<\Vy(B\cup T\cup\{i\})$.
+\end{definition}
+
+\begin{theorem}[Criticality $\iff$ small MUS]\label{thm:mus}
+If $\Vy$ is monotone and $\Vy(B)\le\tau$, field $i$ is $K$-background $\tau$-critical if and
+only if it belongs to a MUS of size at most $K+1$.
+\end{theorem}
+\begin{proof}
+($\Leftarrow$) For a MUS $E\ni i$ with $|E|\le K+1$ take $T=E\setminus\{i\}$.
+($\Rightarrow$) If $\Vy(B\cup T)\le\tau<\Vy(B\cup T\cup\{i\})$, take an inclusion-minimal unsafe
+$E\subseteq T\cup\{i\}$; it is a MUS of size $\le K+1$. If $i\notin E$ then $E\subseteq T$ and
+monotonicity gives $\Vy(B\cup T)\ge\Vy(B\cup E)>\tau$, a contradiction.
+\end{proof}
+Theorem~\ref{thm:mus} makes the field-level flag a faithful projection of the set-level
+danger structure: flagging the $\tau$-critical fields misses no field that takes part in a
+dangerous combination of at most $K+1$ fields, and the witness $T^*$ names the combination.
+The same list of minimal unsafe sets also supports downstream disposal
+(Section~\ref{sec:application}).
+Monotonicity is essential: without the closure, a field can cross the threshold over a
+background that already contains an unsafe subset, and no MUS then contains it.
+
+
+\subsection{Choice of $K$}
+Different $K$ describe adversaries with different background knowledge, and $\Mik$ grows with $K$.
+We report $K=2$ as the main setting and measure $K=3$ on every data set. The threat model is an
+adversary holding a handful of other published series rather than the whole catalogue;
+high-order interactions are rare in engineered systems~\cite{li2006regularities}, and models with
+pairwise interactions are close to unrestricted ones on tabular data~\cite{lou2013ga2m}. There is,
+however, no general saturation theorem---a parity function of $K+2$ fields defeats any fixed
+$K$---and saturation of the maximal gain does not imply that no larger set crosses a threshold.
+Section~\ref{sec:res-robust} measures both.
+
+%===============================================================================
+\section{An Amortized Attacker for Set-Level Inferability}\label{sec:model}
+%===============================================================================
+
+\subsection{Why an estimator is needed}
+Evaluating $\Mik$ for all fields at $K=2$ requires $\Vy$ on every set of size at most three;
+with 35 candidates this is 7,175 sets per target, each requiring a family of attackers to be
+trained. The table has to be recomputed whenever the public baseline grows, a target is
+redefined, or a what-if release is examined. We therefore build one model that answers
+$\Vy(S)$ for any $S$ quickly (Fig.~\ref{fig:model}), and we make sure that no conclusion depends on its accuracy
+alone (Section~\ref{sec:scan}).
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig3_model.pdf}
+\caption{The amortized attacker. (a) One backbone is pre-trained under random visibility masks on the
+auditor's data, to predict the targets and reconstruct the hidden columns, and frozen. (b) A query $(S,y)$ solves a ridge
+readout in closed form on the features of $S$---from the pre-trained backbone and an untrained network of the same
+architecture---per seed, and averages the predictions. (c) The scan proposes backgrounds per field; retraining only these
+certifies a lower bound on $\Mik$.}
+\label{fig:model}
+\end{figure}
+
+\subsection{Masked pre-training}
+The adversary does not know in advance which fields it will obtain. We model this by
+pre-training one network under random visibility masks. A mask $m\in\{0,1\}^{p}$ is drawn by
+first sampling the number of visible fields uniformly and then a uniform subset of that size;
+the network $f_\theta(x\odot m,\ m)$ receives the masked values and the mask itself, so that a
+hidden field is distinguishable from a zero value. The objective combines predicting the sensitive targets from the visible fields with reconstructing every hidden column
+from the visible ones~\cite{yoon2020vime,he2022mae},
+\begin{equation}\label{eq:pretrain}
+\mathcal L(\theta)=\mathbb{E}_{m}\Big[\big\|f^{\,y}_\theta(x\odot m,m)-y\big\|^2
++\gamma\,\frac{\big\|(1-m)\odot\big(f^{\,x}_\theta(x\odot m,m)-x\big)\big\|^2}{\|1-m\|_1}\Big],
+\end{equation}
+with $\gamma=1$. The reconstruction term is essential. With $\gamma=0$ (target-only pre-training) the network collapses its
+hidden layer onto the few directions that predict the targets on average over masks, and on the small sets of an audit it
+then adds nothing over an untrained network (Section~\ref{sec:res-est}); reconstruction forces the representation to encode
+the operating state that drives all fields. Reconstructing all columns the auditor holds also decouples the backbone from
+any particular target definition. The last hidden layer (256 units) is kept as a frozen feature map
+$\phi_\theta(x\odot m, m)$; early stopping uses the target loss on validation rows only. Alongside each pre-trained backbone
+we keep an untrained network of the same architecture, $\phi_{\vartheta}$ with random initial weights $\vartheta$. The two
+play different roles in the readout: the pre-trained features supply target-aligned directions and the operating state, the
+random features the high-dimensional bulk of a kernel regression~\cite{rahimi2007random} (Section~\ref{sec:res-est}).
+
+\subsection{Subset-specific closed-form readout}
+For a query $(S,y)$ with mask $m_S$ and seed $r$, the feature block is
+\begin{equation}
+Z_{r}(S) = \big[\, x\odot m_S,\ (x \odot m_S)^{2},\ \phi_{\theta_r}(x\odot m_S,\ m_S),\ \phi_{\vartheta_r}(x\odot m_S,\ m_S) \,\big],
+\end{equation}
+standardized with training statistics. A ridge readout
+\begin{equation}\label{eq:ridge}
+\beta_{r}(S) = \big(Z_r^{\top} Z_r + \lambda I\big)^{-1} Z_r^{\top} y
+\end{equation}
+is solved in closed form on the training rows, with $\lambda$ chosen by five-fold
+cross-validation inside the training rows. Each of $R=3$ seeds (a pre-trained and an untrained network) has its own
+readout---three separate closed-form solves per query, not one solve on the features of all seeds---and their
+predictions are averaged, $\hat y = R^{-1}\sum_r Z_r^{\mathrm{test}}\beta_r(S)$, and
+$\hat V_y(S)=\Rtwo_{\mathrm{test}}(\hat y)$, followed by the monotone closure. Numerical
+safeguards matter on real data: a floor of $10^{-3}$ on feature standard deviations, and
+clipping test features to their training range. Without them, units that are almost constant
+on the training rows (inactive ReLUs) are amplified on test rows, a few predictions explode and
+$\hat V$ collapses to zero for those sets; since $\Mik$ is a maximum over differences, such
+collapses turn directly into inflated risk (Section~\ref{sec:res-est}). A reconstruction backbone
+needs a third safeguard, clipping predictions to the range of the target on the training rows: an adversary never
+predicts a value it has not seen. No test label enters
+pre-training, the readout, the choice of $\lambda$ or the closure.
+
+\subsection{Why the readout is solved per subset}
+A cheaper alternative lets the network output the prediction directly, $\hat y=f_\theta(x\odot
+m_S, m_S)$, and reads $\hat V$ off it. Then one set of output weights serves every
+conditioning pattern, i.e.\ the attacker is forced to combine every subset of fields in the
+same way---the very effect that combination risk is about. Solving the readout per subset
+keeps the expensive representation shared and the combination rule specific.
+
+\subsection{Error propagation}
+Write the estimate as $\hat V(S)=V(S)+b+\varepsilon(S)$, where $b$ is a bias common to the sets
+of interest and $\varepsilon(S)$ the set-specific part. Since a marginal is a difference of two
+nested sets, $\hat\Delta_i(T)-\Delta_i(T)=\varepsilon(T\cup\{i\})-\varepsilon(T)$ and
+\begin{equation}\label{eq:prop}
+\big|\hat M^{(K)}_{i\to y} - \Mik\big| \;\le\; \max_{|T|\le K}\big|\varepsilon(T\cup\{i\})-\varepsilon(T)\big|,
+\end{equation}
+independently of $b$. A readout on a frozen representation typically underestimates the fully
+trained attacker by a similar amount on nested sets, which is exactly a common-mode $b$; this is
+why an estimator can be biased in $V$ yet accurate in $M$. The quantity to control is the
+\emph{marginal} error, which we report throughout.
+
+\subsection{Scan and certify}\label{sec:scan}
+The estimator is used to \emph{scan}: it produces $\hat M^{(K)}$ for every field together with a
+ranked list of candidate backgrounds. Decisions are then \emph{certified}: for each field,
+dedicated attackers are retrained on the top-$k$ backgrounds only, and
+$L^{(K)}_{i\to y}=\max_{T\in\text{top-}k}\Delta_i(B\cup T)\le\Mik$ is a lower bound computed
+entirely from retrained attackers. The ratio $\sum_i L/\sum_i M$ measures how much of the true
+risk the scan recovers at a certification cost of $k$ retrained backgrounds per field instead
+of all $\binom{|H|-1}{\le K}$.

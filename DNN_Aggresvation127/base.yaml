@@ -1,0 +1,20 @@
+# 127 号：与外部"免重训"估计方法的对比（在运行前写定）
+question: 本文估计器（125 号 C3）与文献中估计"任意特征子集的预测能力"而不逐个重训的方法相比如何（精度与耗时）
+truth: 各号三攻击器重训值 + 单调闭包（规模 ≤3 全部集合；与 125 号同口径）
+ours: 125 号 final_est（重建⊕随机 ×3 + 三道防护）
+baselines:
+  retrain: 逐个串行重训（真值本身；耗时取 118 号 seq）
+  dropout:        # 全模型不重训，被移除的特征以训练均值（标准化后为 0）代替 —— Williamson et al.; Sun & Raskutti 2024 "Dropout"
+    full_model: 多输出 MLP（2×128 ReLU，dropout 0.15，Adam 1e-3，wd 5e-4，批 128，≤300 轮，早停 60，全部候选字段可见），3 种子预测平均
+  lazyvi:         # Gao, Stevens, Willett, Raskutti, ICML 2022：在全模型参数处线性化 + 岭惩罚；以核形式闭式求解
+    base: 上述全模型种子 0；被移除特征置 0；残差 y − f(x̃;θ0) 对 NTK 核 J Jᵀ 做核岭回归，λ 由留一交叉验证（特征分解闭式）在 {1e-3..1e3}×tr(K)/n 中选
+  warmstart:      # Sun & Raskutti 2024/2025：从全模型热启动 + 早停（此处用验证集早停代替 Rademacher 停止准则）
+    base: 全模型种子 0；被移除特征置 0；每集合最多 100 步（批 256），每 10 步验证，取验证最优
+  surrogate:      # Covert, Lundberg, Lee, JMLR 2021；Frye et al. ICLR 2021；FastSHAP（Jethani et al. ICLR 2022）
+    model: 随机掩码训练的代理模型直接输出（= 只预测目标的掩码主干，不做逐集合读出），3 种子平均（118 号 head3）
+  tabpfn:         # Hollmann et al., Nature 2025（TabPFN v2，tabpfn==2.2.1，默认 8 个集成成员）
+    usage: 每个（集合，目标）以训练行的 S 列为上下文、直接预测测试行；不训练
+  cheap_retrain:  # 逐集合重训最简单的攻击者（闭式）：线性回归、[x,x²] 回归（118 号 lin/poly）
+metrics: [V误差(≤3), M2误差, Γ2误差, M2排序 Spearman, 认证前1/前3, 背景召回前3, 关键召回(τ=0.5/0.7, δ=0), 每集合耗时]
+timing: 与 126 号同口径（同一空闲 GPU、每组同一批 200 个集合、预热后计时）
+compute: GPU0/1/2（留一张）

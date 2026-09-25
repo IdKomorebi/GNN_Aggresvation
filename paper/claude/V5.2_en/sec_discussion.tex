@@ -1,0 +1,80 @@
+%===============================================================================
+\section{Discussion}\label{sec:discussion}
+%===============================================================================
+
+\paragraph{What changes for grading practice}
+The inference risk of a power-data field is not a property of the field. It depends on the background
+the adversary holds, and in our data this dependence is the rule rather than the exception: the
+typical field gains a third of its worst-case risk over an average background, a single background
+field supplies three quarters of the amplification, and the most amplified fields---prices, renewable
+forecasts, available capacity---are exactly those a market must publish. Single-field grading is
+therefore not a conservative approximation of a background-aware audit; it errs in the unsafe
+direction. The profile proposed here keeps the familiar form of a grade per field but reports what the
+grade depends on: the single-field risk $M^{(0)}$, the amplification $\Gamma^{(K)}$, and the family of
+backgrounds that attain it. In the controlled mechanism these backgrounds are the physically correct
+ones---the unit output for every price, and the own-bus price before the remote one, except when the
+line between them is congested. Because $\Mik$ is defined relative to the public baseline, the profile
+is recomputed whenever something is released; the amortized attacker makes this cheap and
+certification keeps it honest.
+
+\paragraph{Relation to inference-graph approaches}
+Propagating risk over pairwise inference relations~\cite{hu2026ignn} captures chains of
+single-field inferences and physical relations known to experts, and it does not require an
+attacker to be trained. It cannot represent joint inference by construction (Section~\ref{sec:res-mech}),
+and its scores are not checkable by an attack experiment. Set-level inferability provides the
+missing ground truth; an inference graph could be used to propose candidate backgrounds for the
+scan, a combination we have not evaluated.
+
+\paragraph{What the estimator is and is not}
+The amortized attacker is not required for correctness: every decision reported here is certified
+by retraining. Its role is to make the scan cheap enough to be repeated, and its accuracy matters
+only through the ranking of backgrounds that certification follows. Most of its accuracy comes from solving a readout
+per field set; on sets of a few fields, a random feature map already supplies most of what the readout needs, which is
+why target-only masked pre-training---whose representation collapses onto the targets---adds little. Pre-training
+earns its place when it has to reconstruct all columns: the representation then encodes the operating state, and combined
+with the random bulk of an untrained network it improves every accuracy metric; its advantage grows with the size of the
+queried sets. A maximum over many
+estimated marginals is sensitive to rare readout failures rather than to average accuracy, so safeguards against
+exploding predictions matter more for $\Mik$ than for $\Vy$. Among other ways of avoiding retraining, only a tabular foundation model used in context
+matched its accuracy (slightly better on set values, worse on amplification), at one to two orders of magnitude more time per set; such a model is a natural candidate for the
+attacker family itself.
+
+\paragraph{Limitations}
+\emph{(i)} Risk is defined relative to a fixed attacker family; a stronger attacker can only raise
+$\Vy$ and hence the measured combination risk, but the numerical values are family-dependent. The in-context foundation
+model of Section~\ref{sec:res-est} occasionally exceeded the retrained family, so the reported risks are lower bounds for
+adversaries with access to such models.
+\emph{(ii)} The adversary is assumed to hold labelled history of the target; with little auxiliary
+data, $\Mik$ as a maximum statistic is inflated by selection noise, which again argues for certified
+lower bounds rather than point values. \emph{(iii)} We use random train/test splits; drift over time
+may change the values of $\Mik$, although not the audit procedure. \emph{(iv)} $K=2$ nearly saturates the marginal risk on nine of ten targets but not threshold
+crossings, so threshold-based statements carry their budget; parity-like targets would defeat any fixed $K$. \emph{(v)} Field roles for NEM, PJM and CAISO follow the Chinese disclosure rules rather
+than local market rules; they are used to define a realistic audit, not to assess those markets.
+\emph{(vi)} The mechanism case has one unit and one private parameter; it validates that the
+definitions recover a known structure, not that every amplification in real data has a simple physical
+reading. \emph{(vii)} The inference-graph baseline reimplements the propagation idea without the expert inputs
+and attention training of~\cite{hu2026ignn}.
+
+%===============================================================================
+\section{Conclusion}\label{sec:conclusion}
+%===============================================================================
+
+We defined field-level inference risk from set-level inferability, the out-of-sample accuracy of
+retrained attackers on a set of fields. The budgeted marginal risk $\Mik$ is the worst-case gain
+that releasing a field brings over any background of at most $K$ fields, relative to what is
+already public, and its excess over single-field risk is the background amplification $\Gamma^{(K)}$;
+$\Mik$ is a threshold-free safety margin, and its critical fields are exactly the
+members of small minimal unsafe sets. An amortized attacker---masked pre-training with a
+closed-form readout per field set---scans all small sets in milliseconds, and retraining a few
+scanned backgrounds per field certifies the result. On four power data sets with rule-based field
+roles and exhaustive retraining as ground truth, and on a controlled market case with a known
+mechanism, background amplification proved common, physically interpretable and invisible to
+single-field and attribution scores: single-field grading recovered 13--17\% of the critical fields,
+whereas the scan--certify pipeline recovered 76--91\% of them with no false positives. The profile of
+single-field risk, amplification and dangerous backgrounds is the per-field quantity a
+classification standard asks for when it asks how aggregation changes a field's grade.
+
+\section*{Data and code availability}
+RTS-GMLC~\cite{barrows2020rts} and the AEMO NEMWEB archive~\cite{aemo2024nemweb} are public; the PJM and CAISO series
+were obtained from the operators' public data portals. Field-role tables, the code for dispatch simulation, ground-truth
+retraining, the amortized attacker and all analyses will be made available upon publication.
