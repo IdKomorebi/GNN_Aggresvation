@@ -1,0 +1,26 @@
+\begin{table}[!t]
+\centering\small
+\caption{Ranking quality over the ten targets. R-precision: share of true critical fields among the top-$c$ fields, $c$ being
+the true number of critical fields (a threshold that favours the baselines). Excess: fields withheld in score order until no
+MUS remains, minus the optimum.}\label{tab:ranking}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{R-precision} & \multicolumn{2}{c}{excess withheld}\\
+Score & $\tau=0.5$ & $\tau=0.7$ & $\tau=0.5$ & $\tau=0.7$\\
+\midrule
+Pearson $r^2$ & 0.977 & 0.815 & 5.4 & 3.0 \\
+Spearman $\rho^2$ & 0.977 & 0.767 & 3.5 & 2.8 \\
+Mutual information & 0.977 & 0.866 & 2.0 & 2.1 \\
+Distance correlation & \textbf{0.982} & 0.833 & 3.0 & 2.0 \\
+Single-field $V(\{i\})$ & \textbf{0.982} & 0.803 & 1.6 & 1.9 \\
+LOCO & 0.977 & 0.727 & 11.0 & 8.0 \\
+Permutation importance & 0.968 & 0.795 & 8.9 & 4.7 \\
+SAGE & 0.968 & 0.769 & 8.6 & 6.3 \\
+Inference-graph propagation & \textbf{0.982} & 0.830 & 5.6 & 2.7 \\
+$\hat M^{(2)}$ (amortized, no retraining) & \textbf{0.982} & \textbf{0.894} & 2.3 & 0.9 \\
+$M^{(2)}$ scan--certify ($k=3$) & \textbf{0.982} & \textbf{0.894} & \textbf{1.5} & \textbf{0.3} \\
+$M^{(2)}$ exact & 0.977 & \textbf{0.894} & \textbf{1.5} & 0.4 \\
+\bottomrule
+\end{tabular}}
+\end{table}

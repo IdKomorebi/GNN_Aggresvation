@@ -1,0 +1,70 @@
+%===============================================================================
+\section{Introduction}\label{sec:intro}
+%===============================================================================
+
+\IEEEPARstart{E}{lectricity} markets publish a large and growing amount of operational data. Disclosure rules list, field by
+field, what must be released and when: forecasts and requirements before clearing, prices and their components right after
+clearing, and actual operating quantities on the following day~\cite{nea2024disclosure}. Other quantities---the output or
+the offers of an individual generating unit, the hourly flow on a specific line, or the actual load before it is
+disclosed---are protected, either permanently or until a later release date. Data classification standards ask operators
+to grade each field and to consider how aggregation and processing change its grade~\cite{gbt43697}, but they do not say how.
+
+The difficulty is that the inference risk of a field is not a property of the field alone. Power data come from one physical
+and economic system, and the information a field adds depends on what else is known. A unit's hourly output says little about
+its private offer, and neither does the price at its bus; together, whenever the unit is marginal, they reveal the offer
+(Section~\ref{sec:res-mech}). This is the inference and aggregation problem of database
+security~\cite{lunt1989aggregation,farkas2002inference}, and it is not hypothetical for power data: public prices alone can
+expose grid topology~\cite{kekatos2014topology}. Recent work on data sensitivity assessment has recognized that the risk of a
+field depends on its inference relations to sensitive data and propagates risk along an inference graph~\cite{hu2026ignn}.
+What is still missing is a field-level risk that is \emph{defined} by what an adversary can infer from a set of fields---so
+that it can be checked by an attack experiment rather than calibrated to expert scores---and that captures inference
+requiring several fields jointly.
+
+We start from the gain $\Delta_i(T)$ that releasing field $i$ brings over a background $T$ of fields the adversary already
+holds, measured by the out-of-sample accuracy of retrained attackers. A field therefore has a whole distribution of
+contextual gains, and grading it means summarizing that distribution. Attribution methods such as Shapley values and SAGE
+average the gains over backgrounds, which answers how much a field contributes typically; a security audit asks whether
+\emph{some} admissible background makes the field dangerous. We therefore take the maximum---the marginal contribution
+index~\cite{catav2021mci}, in line with worst-case leakage measures in quantitative information
+flow~\cite{smith2009qif,alvim2012gleakage}---and add the two conditions a disclosure audit needs: the data already public and a
+bound on the adversary's background. The resulting budgeted marginal risk $\Mik$, its single-field part $M^{(0)}$, the
+\emph{background amplification} $\Gamma^{(K)}=\Mik-M^{(0)}$ and the backgrounds that attain it form the field-level output of
+the audit.
+
+Computing this profile requires the inferability of every small field set---7,175 sets per target for 35 candidate fields at
+$K=2$---and it must be recomputed whenever the public baseline or the target definitions change. Retraining an attacker family
+for each set takes hours to days per table, and general-purpose predictors that avoid training still process the training
+data anew for every set. We instead amortize over the sets of one data set: a network pre-trained once under random
+visibility masks supplies a representation shared by all sets, and each query only solves a closed-form readout on the
+features of its fields. The estimate is used to scan; a handful of backgrounds per field is retrained to certify the result,
+so that the flags do not rest on the estimate. Pre-training on the sensitive targets alone turns out to collapse the
+representation and to add little over random features; our estimator therefore combines column reconstruction with the
+features of an untrained network.
+
+The contributions of this paper are as follows.
+\begin{itemize}
+\item \emph{Background-aware field risk.} From set-level inferability we define the budgeted marginal risk $\Mik$ and the
+background amplification $\Gamma^{(K)}$, relate them to the marginal contribution index, give a closed form of the
+amplification at $K=1$, and prove that $\Mik$ is the minimal threshold-free safety margin and that its critical fields are
+exactly the members of small minimal unsafe sets (Section~\ref{sec:mk}).
+\item \emph{An amortized attacker with scan--certify.} Masked pre-training with column reconstruction and a per-set
+closed-form readout estimate $\Vy$ for every small set in tens of milliseconds; an error analysis explains why field risk is
+estimated more accurately than set values, and certification by retraining yields lower bounds independent of the estimate.
+The estimator is more accurate than linearized, fine-tuned and surrogate alternatives and certifies as much of the risk as a
+tabular foundation model at a small fraction of its cost (Sections~\ref{sec:model} and~\ref{sec:res-est}).
+\item \emph{Mechanism and real-data evidence.} A controlled market case with a known inference mechanism, and four data sets
+with rule-based field roles (RTS-GMLC, the Australian NEM with actual unit outputs, PJM and CAISO) with $1.2\times10^5$
+exhaustively retrained field sets as ground truth, show that background amplification is common, physically interpretable and
+invisible to single-field and attribution scores (Sections~\ref{sec:res-mech}--\ref{sec:res-robust}); withholding is
+discussed as an application (Section~\ref{sec:application}).
+\end{itemize}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig1_framework.pdf}
+\caption{Audit framework. Disclosure rules fix field roles. Set-level inferability $V_y(S)$ is defined by dedicated
+retraining and scanned by an amortized attacker; the scan proposes, for every field, backgrounds that are certified by
+retraining. The field-level profile---single-field risk, background amplification and top backgrounds---supports grading,
+withholding and re-grading.}
+\label{fig:framework}
+\end{figure*}

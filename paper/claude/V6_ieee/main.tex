@@ -1,0 +1,55 @@
+%% Background-aware inference risk of power market data fields (V6, IEEE two-column).
+%% Template: IEEEtran journal (layout as in paper/codex/V1_en; content from paper/claude/V5.2_en, revised).
+%% Compile: tectonic --reruns 2 main.tex   (or pdflatex + bibtex + pdflatex x2)
+\RequirePackage[T1]{fontenc}
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx,booktabs,multirow,array,url}
+\usepackage{placeins}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\Vy}{V_{y}}
+\newcommand{\Mik}{M^{(K)}_{i \to y}}
+\newcommand{\Rtwo}{R^{2}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\hyphenation{infer-ability back-ground back-grounds data-sets}
+
+\begin{document}
+
+\title{Background-Aware Grading of Inference Risk in Power Market Data: Budgeted Marginal Risk and an Amortized Attacker}
+
+\author{Haocun~Du% <-this % stops a space
+\thanks{Affiliation and contact information to be completed.}}
+
+\markboth{Manuscript draft}{Du: Background-Aware Grading of Inference Risk in Power Market Data}
+
+\maketitle
+
+\input{sec_abstract}
+
+\begin{IEEEkeywords}
+Data classification and grading, inference attack, electricity market disclosure, feature importance, marginal
+contribution, amortized inference.
+\end{IEEEkeywords}
+
+\input{sec_intro}
+\input{sec_front}
+\input{sec_setup}
+\input{sec_results}
+\input{sec_application}
+\FloatBarrier
+\input{sec_discussion}
+
+\appendices
+\input{sec_appendix}
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+
+\end{document}

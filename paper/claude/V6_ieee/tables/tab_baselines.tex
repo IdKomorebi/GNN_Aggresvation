@@ -1,0 +1,25 @@
+\begin{table*}[!t]
+\centering\scriptsize
+\caption{Comparison with other ways of evaluating many field sets without retraining the attacker family, over the ten targets.
+Columns 2 and 4--8 use all sets of size $\le3$; column 3 uses the same 200 random sets per data set for every method (LazyVI was
+run only on these, see text). Crit.\ recall: scan--certify recall of $\tau$-critical fields at $\tau=0.5$ / $0.7$ without a margin
+(precision 1.00 throughout). Time per field set for all targets of a data set on one idle GPU, range over data sets; last column:
+models trained once per data set.}\label{tab:baselines}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccccl}
+\toprule
+Method & MAE $V$ & MAE $V$ (200) & MAE $M^{(2)}$ & MAE $\Gamma^{(2)}$ & Spearman & cert.@1 & crit.\ recall & time / set & trained once\\
+\midrule
+Sequential retraining of the attacker family (ground truth) & 0 & 0 & 0 & 0 & 1 & 1 & 1.00 / 1.00 & 14--56\,s & -- \\
+Per-set linear regression (retrained) & 0.212 & 0.218 & 0.144 & 0.050 & 0.737 & 0.803 & 0.24 / 0.16 & 0.7--1.0\,ms & -- \\
+Per-set quadratic regression (retrained) & 0.132 & 0.136 & 0.096 & 0.049 & 0.854 & 0.859 & 0.31 / 0.27 & 0.9--1.6\,ms & -- \\
+Full model, removed fields set to their mean~\cite{williamson2020spvim,sun2025warmstart} & 0.442 & 0.460 & 0.243 & 0.111 & 0.534 & 0.295 & 0.03 / 0.00 & 0.1\,ms & 3 full models \\
+LazyVI: linearized full model~\cite{gao2022lazyvi} & -- & 0.037 & -- & -- & -- & -- & -- & 1.5--9.1\,s & 1 full model \\
+Warm start + early stopping~\cite{sun2025warmstart} & 0.066 & 0.070 & 0.047 & 0.028 & 0.932 & 0.910 & 0.67 / 0.47 & 176--181\,ms & 1 full model \\
+Masked surrogate, direct output~\cite{covert2021explaining,jethani2022fastshap} & 0.067 & 0.070 & 0.057 & 0.034 & 0.930 & 0.883 & 0.55 / 0.47 & 0.2\,ms & 3 masked backbones \\
+TabPFN v2, in-context~\cite{hollmann2025tabpfn} & 0.016 & 0.016 & 0.013 & 0.019 & 0.979 & 0.959 & 0.88 / 1.00 & 810\,ms--7.0\,s & none (pre-trained) \\
+\textbf{Ours} & 0.018 & 0.024 & 0.015 & 0.014 & 0.968 & 0.961 & 0.91 / 0.79 & 48--64\,ms & 3 reconstr.\ backbones \\
+\bottomrule
+\end{tabular}}
+\end{table*}

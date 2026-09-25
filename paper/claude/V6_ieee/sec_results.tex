@@ -1,0 +1,397 @@
+%===============================================================================
+\section{Results}\label{sec:results}
+%===============================================================================
+\subsection{Controlled Power-System Mechanism}\label{sec:res-mech}
+
+Before turning to real markets we test the definitions on a case whose inference mechanism is known
+in advance. We take the RTS-GMLC market of Section~\ref{sec:data} and give one generating unit,
+313\_CC\_1 (a 355\,MW combined-cycle unit that is partly loaded in about 90\% of hours and often sets
+the price), a private hourly offer markup: all its offer segments are multiplied by $(1+\kappa_t)$,
+with $\kappa_t$ drawn independently each hour. Offers are private information under the disclosure
+rules, and $\kappa_t$ is the sensitive target. We clear all 8,784 hours again and assemble eleven
+fields: the unit's output $P_g$, the LMP at its bus, the LMP at a nearby bus of the same area, the
+LMP at a bus behind the most frequently congested line (C6), an LMP in another area, system and area
+load, available wind and solar, the congestion indicator of C6, and the output of a competing unit.
+With eleven fields every one of the 2,047 subsets is retrained, so $\Mik$ is exact for every $K$ up to
+the full MCI.
+
+\paragraph{Prediction}
+When the unit is marginal, its bus price equals $(1+\kappa_t)\,c_s$, where $c_s$ is the cost of the
+segment in which it operates, and $P_g$ identifies that segment. Hence $\{P_g,\lambda_g\}$ reveals
+$\kappa_t$ while neither field does so alone; a nearby price should substitute for $\lambda_g$ when the
+network is uncongested, a price behind a congested line should not, and loads, renewables and the
+congestion flag can only indicate whether the unit is marginal. We use small markups,
+$\kappa_t\sim U(-5\%,5\%)$, which leave the merit order almost unchanged; larger markups
+($\pm30\%$) change the dispatch itself and are reported as a contrast.
+
+\paragraph{Outcome}
+Table~\ref{tab:mech} and Fig.~\ref{fig:mech} confirm each prediction. Every price field has zero
+single-field risk and a budgeted risk of $0.10$--$0.15$: its risk is \emph{entirely} background
+amplification, and the witness is always the unit's output. The gain of $P_g$ itself is $0.065$ alone
+and ranks its backgrounds exactly as the mechanism implies---own-bus price ($0.215$), nearby price
+($0.191$), other-area price ($0.172$), remote price ($0.163$), competitor output ($0.151$), and
+loads, renewables and congestion ($\approx0.07$). The risk also depends on the operating regime: in
+hours when C6 is congested the remote price loses its value as a background (gradient-boosting attacker; the joint inferability
+with $P_g$ falls from $0.185$ to $0.012$), whereas the own-bus price becomes more informative ($0.198$ to
+$0.289$). Because the mechanism is pairwise, $M^{(1)}=M^{(2)}=\dots=\mathrm{MCI}$ for every price field.
+With $\pm30\%$ markups the output alone already reveals much of the markup ($M^{(0)}=0.52$), and the
+prices remain amplified from zero to about $0.14$: the smaller the markup, the more completely it
+hides from single-field screening, but not from the combination.
+
+The scores of Section~\ref{sec:setup} behave as Table~\ref{tab:req} predicts (Fig.~\ref{fig:mech}c).
+Correlation, single-field retraining and pairwise inference-graph propagation assign about zero to
+every price. SAGE assigns $0.003$ to the own-bus price, because its credit is shared among four
+mutually substitutable prices; LOCO likewise sees almost nothing once another price is present, and
+permutation importance recognizes only the one price the fitted model happens to use. $M^{(2)}$ flags
+all four prices and the competitor output and names the unit output as their background.
+
+\begin{table}[!t]
+\centering\footnotesize
+\caption{Controlled mechanism (markup $\pm5\%$): exact field risk over all 2,047 subsets.}\label{tab:mech}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccl}
+\toprule
+Field & $M^{(0)}$ & $M^{(2)}$ & MCI & witness at $K=2$ \\
+\midrule
+Unit output $P_g$ & 0.065 & 0.215 & 0.215 & own-bus LMP \\
+Own-bus LMP & 0.000 & 0.150 & 0.150 & $P_g$ \\
+Nearby LMP (306) & 0.000 & 0.141 & 0.141 & $P_g$ + C6 \\
+Other-area LMP (223) & 0.000 & 0.115 & 0.115 & $P_g$ + C6 \\
+Remote LMP (303, behind C6) & 0.000 & 0.099 & 0.099 & $P_g$ \\
+Competitor output (316) & 0.000 & 0.086 & 0.086 & $P_g$ \\
+Loads, renewables, C6 & 0.000 & 0.02--0.05 & $\le0.095$ & -- \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig_mechanism_narrow.pdf}
+\caption{Controlled mechanism: private offer markup of unit 313\_CC\_1 ($\pm5\%$). (a) Gain of the unit
+output $P_g$ over each single background. (b) Amplification of $P_g$ by the own-bus and the remote
+price in uncongested hours and in hours when line C6 is congested. (c) Scores of eight methods for
+the eleven fields (colour normalized per column; last column $M^{(2)}$).}
+\label{fig:mech}
+\end{figure*}
+
+\subsection{Background Amplification in Real Data}\label{sec:res-amp}
+
+\paragraph{Single-field grading misses most of the risk}
+\input{tables/tab_risk}
+
+We first ask how much of the risk in the four data sets is invisible to single-field grading.
+Table~\ref{tab:risk} and Fig.~\ref{fig:risk} report, for each of the ten targets, how many
+candidate fields are unsafe on their own and how many become critical only in combination.
+
+Of the 264 field--target
+pairs, 256 are critical at $\tau=0.5$ with at most two background fields, and 223 of these are
+safe on their own; at $\tau=0.7$ the figures are 138 and 113. For four targets (NEM BW01 and
+TUMUT3, PJM load and PJM net interchange) no candidate exceeds $\tau=0.5$ alone, yet 22 to 30
+candidates take part in a dangerous combination; at $\tau=0.7$ the same holds for RTS line C35,
+where 21 of 23 fields are critical and none is unsafe alone. Withholding every field that is unsafe alone
+breaks almost none of the minimal unsafe sets (column ``left''): 1,766 of 1,799 at $\tau=0.5$
+and 534 of 559 at $\tau=0.7$ remain.
+
+\emph{Where single fields do leak, combinations still dominate.} Some targets are exposed by a
+single close proxy: RTS unit outputs are almost determined by a nodal price ($V_1=0.99$), and
+PJM total generation by the system load forecast ($0.97$). For these, $M^{(0)}$ already flags
+the proxy, and the remaining risk is again combinatorial (e.g.\ 22 of 24 PJM fields are
+combination-critical). Removing such near-proxies from the candidate pool
+(Section~\ref{sec:data}) lowers the best single field to $0.42$ for both PJM total generation
+and CAISO load but leaves every remaining field combination-critical at $\tau=0.5$ (22/22 and
+26/26), so the conclusion does not depend on where the proxy boundary is drawn.
+
+\emph{The witnesses are physically meaningful.} Fig.~\ref{fig:profile} shows the field profile
+of RTS line C35 and the gain matrix of NEM unit PPCCGT. The largest increases come from
+combinations that reconstruct a residual quantity; for instance, the price at RTS bus 303 rises
+from $0.36$ to $0.65$ for the C35 flow together with a zonal load forecast and the congestion
+indicator of the neighbouring line C6 (further examples follow below). The gain matrix also shows that the same field is
+harmless next to some partners and decisive next to others, which a grade that ignores the background
+cannot represent.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig4_combination_risk.pdf}
+\caption{Share of candidate fields that are unsafe alone (orange), safe alone but critical with
+at most two background fields (blue), or never critical (grey), at (a) $\tau=0.5$ and (b)
+$\tau=0.7$; numbers give combination-critical fields over all candidates. (c) Best single field
+versus best set of at most three fields.}
+\label{fig:risk}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig5_profile.pdf}
+\caption{(a) Field profile for the hourly flow on RTS line C35 (14 fields with the largest
+$M^{(2)}$): Pearson $r^2$, single-field risk and worst-background risk, with the witness
+background for the three riskiest fields. (b) Gain matrix for NEM unit PPCCGT: entry $(i,j)$ is
+$V(\{i,j\})-V(\{j\})$, the diagonal is $V(\{i\})$; values below 0.10 are not printed.}
+\label{fig:profile}
+\end{figure*}
+
+
+\paragraph{Contextual gains are widely spread}
+Fig.~\ref{fig:amp}(b) plots, for the most amplified field of six targets, the gain $\Delta_i(T)$ over
+every background of at most two fields. The spread is large, and the maximum typically lies far
+from the bulk: the South Australian wind forecast has gain $0.19$ alone, $0.20$ on average over
+backgrounds, and $0.60$ over its worst background (regional available capacity and solar forecast,
+which together with wind give the residual demand the gas unit PPCCGT covers). Over all 264
+field--target pairs, the median ratio of the average contextual gain to the maximum is $0.32$: an
+average-based score would report about a third of the worst-case risk.
+
+\paragraph{Amplification is common}
+Averaged over the 264 pairs, $\Gamma^{(1)}=0.082$, $\Gamma^{(2)}=0.110$ and $\Gamma^{(3)}=0.119$; one
+background field supplies 75\% of the total amplification at $K=2$, and $K=2$ supplies 93\% of that
+at $K=3$. In 91 pairs the single-field risk is below $0.3$ while the amplification exceeds $0.1$
+(Fig.~\ref{fig:amp}a)---fields that look unremarkable alone and become informative in combination.
+The largest amplifications are the SA wind forecast for PPCCGT ($0.19\to0.60$), the SP15
+day-ahead energy price for CAISO load ($0.14\to0.51$, with the NP15 wind and SP15 solar forecasts:
+price and renewables determine net load), and the SA available capacity for PPCCGT ($0.02\to0.36$).
+On every pair, $\Gamma^{(1)}$ equals the strongest positive pairwise interaction
+(Proposition~\ref{prop:k1}) to numerical precision.
+
+\paragraph{Dangerous backgrounds come in families}
+The top backgrounds of a field are often nearly tied and share a core partner. For the SA wind
+forecast the five best backgrounds reach gains between $0.545$ and $0.603$, and all contain the SA
+available capacity. We therefore report the top-$r$ backgrounds rather than a single witness; the
+shared partner is the actionable information (``do not co-release with'').
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig_amplification.pdf}
+\caption{Background amplification over ten targets. (a) Single-field risk versus amplification
+$\Gamma^{(2)}$ for every field--target pair. (b) Contextual gains of the most amplified field of six
+targets over all backgrounds of at most two fields, with the single-field value, the average over
+backgrounds and the maximum.}
+\label{fig:amp}
+\end{figure*}
+
+\subsection{Comparison of Field-Level Risk Scores}\label{sec:res-def}
+
+The mechanism case (Section~\ref{sec:res-mech}) already shows how each family of scores fails on a
+known structure; a purely synthetic example with the same three failure modes---synergy, redundancy
+and indirect contribution---is given in Appendix~\ref{app:toy}. Here we compare the scores as rankings of the
+fields of the ten real targets, against critical fields defined by retrained ground truth.
+
+\paragraph{Ranking}
+Table~\ref{tab:ranking} compares the scores as rankings. At $\tau=0.7$, $\hat M^{(2)}$, its certified
+version and the exact $M^{(2)}$ share the highest R-precision (0.894, against 0.866 for mutual information, 0.830 for the
+inference graph, 0.803 for single-field retraining, 0.769 for SAGE and 0.727 for LOCO), and withholding fields in
+the order of certified $M^{(2)}$ exceeds the optimum by only 0.3 fields (exact $M^{(2)}$: 0.4). At $\tau=0.5$
+almost every field is critical and every score reaches an R-precision of about 0.98; here
+single-field retraining ranks as well as $M^{(2)}$. As a \emph{ranking}, single-field risk is thus a strong
+baseline when most fields are dangerous; the advantage of $\Mik$ lies in the decisions it supports and at high
+thresholds. Attribution scores computed on one fitted
+model (LOCO, permutation importance, SAGE) are the weakest throughout, because they measure what
+that model uses rather than what an adversary can infer.
+
+\input{tables/tab_ranking}
+
+\subsection{The Amortized Attacker}\label{sec:res-est}
+
+\paragraph{Fidelity}
+Fig.~\ref{fig:estimator} compares the amortized estimates with retrained ground truth for all
+sets of size $\le 3$. The estimate of $V$ is biased downward, visibly so for PJM, where the
+training set is smallest (bias $-0.03$ to $-0.04$); averaged over the ten targets the error is 0.018 with a signed bias of
+$-0.013$, i.e.\ largely common-mode. As predicted by~\eqref{eq:prop}, the field-level
+risk is estimated more accurately than the set values it is built from: the mean absolute error of
+$\hat M^{(2)}$ is 0.015 and its Spearman correlation with the exact $M^{(2)}$ across fields is
+0.968 (Table~\ref{tab:design}). Certification recovers most of the exact risk from very few
+retrained backgrounds: retraining the single best-scanned background per field yields a lower
+bound equal to 96.1\% of the exact $M^{(2)}$ on average, three backgrounds yield 97.8\%, and on
+RTS-GMLC and CAISO the top-3 ratio exceeds 99\% (Fig.~\ref{fig:estimator}c). For a field set of
+35 candidates this replaces the $1+34+\binom{34}{2}=596$ backgrounds per field of an exhaustive
+evaluation by three.
+
+\paragraph{Amplification and dangerous backgrounds}
+The profile of Section~\ref{sec:res-amp} is estimated with similar accuracy: the mean absolute error of
+$\hat\Gamma^{(2)}$ is 0.014. Identifying the single worst background is harder---the best-scanned background is the worst
+one for 55\% of the fields (23--87\% across targets), and the worst one is among the three best-scanned for 74\% and among
+the five best-scanned for 79\%---but this matters little, because dangerous backgrounds come in families of nearly tied
+members: retraining the three best-scanned backgrounds per field recovers 94.8\% of the total amplification.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig7_estimator.pdf}
+\caption{Amortized estimates against retrained ground truth. (a) $\hat V_y(S)$ for sets of size
+$\le 3$ (random subsample). (b) $\hat M^{(2)}$ for every field and target. (c) Certified lower
+bound over exact $M^{(2)}$ when the top-$k$ scanned backgrounds per field are retrained.}
+\label{fig:estimator}
+\end{figure*}
+
+\input{tables/tab_design}
+
+\paragraph{Design choices}
+Table~\ref{tab:design} justifies the configuration of the estimator; every row uses the same per-set readout.
+\emph{Feature map.} Without a backbone, a readout on the raw values and squares of the fields in $S$ is far less accurate
+($M^{(2)}$ error 0.096); any nonlinear feature map helps, and the maps order as untrained network (0.021), target-only
+pre-training (0.021), reconstruction pre-training (0.017), and reconstruction concatenated with an untrained network (0.015).
+\emph{Seeds.} Averaging the predictions of three seeds, each with its own readout, lowers the error of $V$ from 0.020 to
+0.018 and removes the variation between seeds (with one seed, critical-field recall at $\tau=0.5$ varies between 91\% and
+98\%). Concatenating the features of three seeds into one readout is not an alternative: for target-only backbones it is
+slower (41 against 21\,ms per set, because the cost of a readout grows with the feature dimension) and certifies worse
+(top-1 ratio 0.916 against 0.953 on the six RTS-GMLC and NEM targets where it was evaluated). \emph{Safeguards.} Without
+the prediction clip, a reconstruction backbone overestimates $M^{(2)}$ (error 0.027, certified top-1 ratio 0.881); without
+any safeguard a target-only backbone fares similarly (0.036, 0.825). \emph{Masks.} A backbone pre-trained on fully visible
+inputs is poor (0.036); how visible fields are sampled matters little (Bernoulli versus uniform visible count: 0.024 versus
+0.023); and the raw features $[x_S, x_S^2]$ help slightly (0.025 without them). Why the pre-training objective matters so
+little on its own, and why the combination with an untrained network works best, is the subject of the next two paragraphs.
+
+\paragraph{Why target-only masked pre-training adds little}
+One result of the design comparison is unexpected: an untrained, randomly initialized backbone with the same per-set
+readout estimates $V$ and $M^{(2)}$ about as well as the backbones pre-trained on the targets
+(Table~\ref{tab:design}). Three findings explain it (Fig.~\ref{fig:masking}).
+\emph{(i) Collapse.} A backbone trained only to predict one to three targets compresses its hidden layer onto the few
+directions that predict them on average over masks: the effective dimension of the representation (participation
+ratio) is 1.60, against 3.30 for an untrained network. Restricting pre-training masks to one to four visible
+fields, the size of audit queries, does not change this (1.65), so the cause is the narrow objective, not the mask
+distribution. \emph{(ii) What the readout uses.} Truncating the features of each set to their $r$ leading principal
+components shows that pre-training does find target-aligned directions---at $r=2$ its error is half that of untrained
+features---but that the readout draws most of its accuracy from the remaining directions, where random ReLU features
+serve as well (Fig.~\ref{fig:masking}a). A ridge readout on 256 random features is a random-feature approximation of a
+kernel regression~\cite{rahimi2007random}, which is already adequate for a function of at most three fields learned
+from several thousand rows. \emph{(iii) Set size.} The gap opens for larger sets: for sets of 16 fields the error of
+untrained features is 0.074, against 0.027 for target-only and 0.023 for reconstruction pre-training
+(Fig.~\ref{fig:masking}b; gradient-boosting ground truth). Audit queries are small, which is where pre-training matters
+least.
+
+\paragraph{From the diagnosis to the estimator}
+Adding the reconstruction term of~\eqref{eq:pretrain} restores the effective dimension (2.75) and lowers the error of
+$V$ by 24\% (three seeds, sets of size $\le3$ and of size four) and that of the marginals by 18\%. At first, $M^{(2)}$ did
+not improve (0.027 against 0.021). Because $\Mik$ is a maximum over marginals, its error is governed by the upper tail of
+the marginal errors, not by their mean (Fig.~\ref{fig:masking}c), and the tail had a single cause: reconstructing the
+heavy-tailed price and reserve columns produces units that are almost constant on the training rows except for spikes.
+For the single-field sets of PJM reserve totals a few test predictions explode and $\hat V=0$ where the truth is about
+0.3, and every field evaluated over that background is overestimated. Clipping predictions to the range of the target
+on the training rows removes this failure without using any test information. Finding (ii) suggests the last step:
+concatenating the reconstruction features with those of an untrained network, so that the readout receives both the
+target-aligned directions and the random bulk. Table~\ref{tab:design} lists the candidates; we fixed the rule for choosing
+among them---the configuration that is not worse than the others on the largest number of ten accuracy and decision
+metrics, and not worse than target-only pre-training on any---before evaluating the last candidate. The concatenation with
+three seeds satisfies it on nine of ten metrics and is our estimator: relative to target-only pre-training, the error of
+$V$ falls by 32\% on sets of size $\le3$ and of size four, that of $M^{(2)}$ by 29\% and that of $\Gamma^{(2)}$ by 19\%;
+the certified top-1 ratio rises from 0.934 to 0.961, the worst background is among the three best-scanned ones for 74\%
+instead of 67\% of the fields, and scan--certify without a margin recovers 91\% instead of 88\% of the critical fields at
+$\tau=0.5$ (79\% instead of 75\% at $\tau=0.7$). The one metric on which it is not the best is this recall at $\tau=0.5$,
+where the one-seed concatenation reaches 93\% on average (91--98\% across seeds). Decisions move less than estimates:
+with the conservative margin $\delta=0.05$ all configurations recover 75--80\% of the critical fields, and even the
+untrained backbone recovers 92\% at $\tau=0.5$ without a margin. With clipping in place, target-only pre-training no longer
+beats the untrained backbone on any metric: its earlier advantage in certification came from being less prone to readout
+explosions, not from better information.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig_masking.pdf}
+\caption{Why target-only masked pre-training adds little, and the repair (ten targets). (a) Error of $\hat V$ when the
+backbone features of each set are truncated to their $r$ leading principal components (200 sets of size $\le3$ per data
+set, four data sets). (b) Error of $\hat V$ against set size; shaded: gradient-boosting ground truth. (c) Errors of
+reconstruction pre-training relative to target-only pre-training (three seeds each), without and with clipping predictions
+to the training range, and with concatenated untrained features (one seed, mean over three; three seeds: ours): set values,
+marginals, the largest overestimate of a marginal per field, and $M^{(2)}$.}
+\label{fig:masking}
+\end{figure*}
+
+\paragraph{Comparison with other estimators}
+Table~\ref{tab:baselines} and Fig.~\ref{fig:baselines} compare the estimator with other ways of obtaining the
+inferability of many field sets without retraining the attacker family for each; all are run with their default settings.
+\emph{Re-using a model trained on all fields.} Replacing the removed fields by their mean~\cite{williamson2020spvim}
+collapses (error of $V$ 0.44): a network trained on all fields cannot predict from three of them. Linearizing it around its
+parameters and fitting a ridge correction per set (LazyVI~\cite{gao2022lazyvi}) is accurate (0.037 on 200 sets per data set)
+but costs 1.5--9.1\,s per set in the double precision it needs, so that a complete $K=2$ table would take one to eleven hours
+per data set; we therefore ran it on these 200 sets only. Warm-starting from the full model and training with early
+stopping~\cite{sun2025warmstart} costs 0.18\,s per set and reaches an $M^{(2)}$ error of 0.047. \emph{Reading the prediction
+off a network trained under random masks}, the surrogate used to compute Shapley values and other removal-based
+explanations~\cite{covert2021explaining,jethani2022fastshap}, is the fastest option (0.2\,ms) but its $M^{(2)}$ error, 0.057, is
+almost four times ours: the per-set readout is what makes a masked backbone accurate. \emph{Retraining simple attackers per
+set} (linear or quadratic regression) is fast but underfits (0.096--0.144).
+
+The one competitive method is a tabular foundation model, TabPFN v2~\cite{hollmann2025tabpfn}, used as an in-context
+attacker: it was pre-trained once on synthetic data sets and predicts the target of a new data set without training, from the
+training rows it receives as context. Before certification it is slightly more accurate than ours for $V$ (0.016 against
+0.018) and $M^{(2)}$ (0.013 against 0.015) and less accurate for the amplification $\Gamma^{(2)}$ (0.019 against 0.014); its
+advantage is concentrated on PJM, the data set with the fewest training rows, where our estimate is biased downward by
+0.03--0.04, whereas on NEM it is clearly worse (error of $V$ 0.024 against 0.010, of $\Gamma^{(2)}$ 0.032 against 0.015). After
+certification the two are indistinguishable: retraining the best-scanned background per field recovers 95.9\% of the exact
+$M^{(2)}$ with TabPFN and 96.1\% with ours, and three backgrounds recover 97.9\% and 97.8\%. Scan--certify with TabPFN recovers
+more critical fields at $\tau=0.7$ (100\% against 79\%, the difference again coming from PJM) and fewer at $\tau=0.5$ (88\%
+against 91\%).
+
+The two differ in what they amortize. TabPFN amortizes learning across data sets, so every field set is a new prediction
+task: its training rows restricted to $S$ form a new context that passes through an eight-member ensemble of a twelve-layer
+transformer with 11 million parameters, once for each target, and nothing computed for one set is reused for the next. Our estimator amortizes across the field sets of one
+data set: the representation is learned once, and a query costs forward passes of small networks and three linear solves,
+one per seed, each shared by all targets. An audit consists precisely of many such queries---thousands of sets per target and table, repeated at
+every re-grading---and here the difference is decisive: TabPFN takes 0.8--7.0\,s per set, 13 to 110 times as long as ours; a
+$K=2$ table for NEM takes 2.7\,h instead of 5\,min, and the 52,360 sets of size four for CAISO take 12\,h instead of 54\,min.
+Since flags are confirmed by retraining, the scan has to rank backgrounds rather than predict exact values, and our estimator
+provides this ranking at a small fraction of the cost. The small positive bias of TabPFN also shows that it is at times a
+stronger attacker than the retrained family (Section~\ref{sec:discussion}); such a model is better placed as an additional
+member of the attacker family, where it is evaluated only on certified backgrounds, than as the scanner.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig_baselines.pdf}
+\caption{Comparison with other estimators over ten targets. (a) Error of $M^{(2)}$ and (b) certified top-1 ratio against the
+time per field set (all targets of a data set; bars: range over data sets); retraining defines the ground truth. (c) Error of
+$V$ on the same 200 sets per data set for every method, including LazyVI, which was too slow to run on all sets.}
+\label{fig:baselines}
+\end{figure*}
+
+\input{tables/tab_baselines}
+
+\paragraph{Cost}
+\input{cost_text} A backbone pre-trained by reconstructing all columns of a market can also serve every later choice of
+targets and candidates through the readout alone; Appendix~\ref{app:scope} evaluates this re-use.
+
+\subsection{Robustness and the Choice of $K$}\label{sec:res-robust}
+
+\paragraph{Attacker seeds and data splits}
+Ground truth is itself an estimate: attackers are trained with random initializations and
+early-stopping splits, and $\Vy$ is measured on one random test split. We repeated the complete
+three-attacker retraining with two further seeds (RTS-GMLC, three targets; PJM load) and on two
+further random 70/30 splits (RTS-GMLC). Across these reruns the mean absolute change in $\Vy$ is
+0.001--0.008, the Spearman correlation of $M^{(2)}$ across fields with the main run is 0.983--0.999,
+the set of $\tau$-critical fields is identical at $\tau=0.5$ (Jaccard 1.0 in every case) and agrees
+with Jaccard 0.93--1.00 at $\tau=0.7$, and the number of combination-critical fields changes by at
+most one or two fields (Fig.~\ref{fig:robust}c). The conclusions of
+Sections~\ref{sec:res-amp}--\ref{sec:res-def} are therefore not artefacts of a particular seed or
+split.
+
+\paragraph{Threshold}
+Fig.~\ref{fig:robust}(d) sweeps $\tau$ from 0.3 to 0.9 over all ten targets. At every threshold the
+share of fields that are safe alone but critical with at most two background fields exceeds the share
+of fields that are unsafe alone (e.g.\ 43\% versus 10\% at $\tau=0.7$). The gap between the two grading
+philosophies is thus not tied to the choice of $\tau$, although its size is
+(Section~\ref{sec:application}).
+
+\paragraph{Choice of $K$}
+Exhaustive retraining of all sets of four fields on every data set (for NEM an additional 27,405 sets)
+gives the exact $M^{(3)}$. Measured by the \emph{marginal} risk, $K=2$ is close to saturation:
+$M^{(2)}/M^{(3)}$, the ratio of mean field risk, lies between 0.958 and 1.000 for nine targets and is
+0.813 for NEM TUMUT3, a hydro unit whose dispatch depends on inter-regional exchange
+(Fig.~\ref{fig:robust}a). The first background field brings most of the amplification ($M^{(1)}/M^{(2)}$
+between 0.73 and 0.97).
+
+Threshold crossings, however, do not saturate as quickly, which is the caveat stated in
+Section~\ref{sec:mk}: a small increase of $\Mik$ can move a field across $\tau$. At $\tau=0.7$ several
+targets have fields that become critical only with a third background field: PJM net interchange (3
+critical fields at $K=2$, 21 at $K=3$), NEM PPCCGT (10 and 24) and PJM load (14 and 22)
+(Fig.~\ref{fig:robust}b). At $\tau=0.5$ all fields are already critical at $K=2$ except for TUMUT3 (22
+versus 30). We read the two findings together: $K=2$ is sufficient to describe and rank the risk of a
+field---the amplification profile of Section~\ref{sec:res-amp} is essentially complete at $K=2$---while
+any statement tied to a threshold is a statement about a specific budget and should be reported with
+it; an auditor who assumes a stronger adversary evaluates $K=3$. Evaluating all sets of size four is
+the workload for which the amortized scan is needed: for CAISO it comprises 52,360 sets per
+target, against 7,175 for $K=2$.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig9_robustness.pdf}
+\caption{Robustness. (a) Saturation of mean field risk in the background budget. (b) Share of
+$\tau$-critical fields at $\tau=0.7$ with $K=2$ (filled) and $K=3$ (open). (c) Agreement of reruns with
+different attacker seeds or data splits with the main run. (d) Threshold sweep over ten targets:
+fields that are safe alone but critical (solid), fields unsafe alone (dashed), and minimal unsafe sets
+left after single-field grading (dotted).}
+\label{fig:robust}
+\end{figure*}
+
