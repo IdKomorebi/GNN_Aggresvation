@@ -1,0 +1,80 @@
+%===============================================================================
+\section{Introduction}\label{sec:intro}
+%===============================================================================
+
+Electricity markets publish a large and growing amount of operational data. Disclosure rules
+list, field by field, what must be released and when: forecasts and requirements before
+clearing, prices and their components right after clearing, and actual operating quantities on
+the following day~\cite{nea2024disclosure}. Other quantities---the output or the offers of an
+individual generating unit, the hourly flow on a specific line, or the actual load before it is
+disclosed---are protected, either permanently or until a later release date. Data
+classification standards ask operators to grade each field and, explicitly, to consider how
+aggregation and processing change a field's level~\cite{gbt43697}. How to do the latter is
+left open.
+
+The difficulty is that the inference risk of a field is not a property of the field alone. Power
+data come from one physical and economic system, and the information a field adds depends on what
+else is known. A unit's hourly output says little about its private offer, and neither does the
+price at its bus; together, whenever the unit is marginal, they reveal the offer
+(Section~\ref{sec:res-mech}). The same price adds nothing over one background and a great deal over
+another. This is the inference and aggregation problem of database
+security~\cite{lunt1989aggregation,farkas2002inference}, and it is not hypothetical for power data:
+public prices alone can expose grid topology~\cite{kekatos2014topology}. Recent work on data
+sensitivity assessment has recognized that a field's risk depends on its inference relations to
+sensitive data and propagates risk along an inference graph~\cite{hu2026ignn}. What is still missing
+is a field-level risk that is \emph{defined} by what an adversary can infer from a set of
+fields---so that it can be checked by an attack experiment rather than calibrated to expert
+scores---and that captures inference requiring several fields jointly.
+
+We start from the gain $\Delta_i(T)$ that releasing field $i$ brings over a background $T$ of fields
+the adversary already holds, measured as the out-of-sample accuracy of retrained attackers. A field
+then has a whole distribution of contextual gains, and grading it means summarizing that
+distribution. Attribution methods such as Shapley values and SAGE average the gains over backgrounds;
+this is the right answer to ``how much does the field contribute typically'', but a security audit
+asks whether \emph{some} admissible background makes the field dangerous. We therefore take the
+maximum---the Marginal Contribution Index~\cite{catav2021mci}, in line with worst-case measures of
+leakage in quantitative information flow~\cite{smith2009qif,alvim2012gleakage}---and add the two
+conditions a disclosure audit needs: the data already public and a bound on the adversary's
+background. The resulting budgeted marginal risk $\Mik$, together with its single-field part
+$M^{(0)}$, the \emph{background amplification} $\Gamma^{(K)}=\Mik-M^{(0)}$ and the top backgrounds
+that attain it, is the field-level output of the audit.
+
+Computing it requires the inferability of every small field set, and it has to be recomputed
+whenever targets or public data change. We amortize this with one network pre-trained under random
+visibility masks---an adversary that does not know in advance which fields it will obtain---and a
+closed-form readout solved per field set; the estimate is only used to scan, and a handful of
+backgrounds per field is retrained to certify the result. We found that pre-training on the
+sensitive targets alone contributes almost nothing beyond random features, because the representation
+collapses onto a few target directions; our estimator therefore combines masked reconstruction of all columns with the
+features of an untrained network and a safeguard against exploding predictions.
+
+\paragraph{Contributions}
+\begin{itemize}
+\item \emph{Background-aware field risk.} From set-level inferability we define the budgeted
+marginal risk $\Mik$ and the background amplification $\Gamma^{(K)}$, relate them to the MCI, give a
+closed form of the amplification at $K=1$, and show that $\Mik$ is the minimal threshold-free safety
+margin and that its critical fields are exactly the members of small minimal unsafe sets
+(Section~\ref{sec:mk}).
+\item \emph{An amortized attacker with scan--certify.} Masked pre-training plus a per-set closed-form readout
+estimates $\Vy$ for every small set in milliseconds; an error analysis explains why field risk is estimated more
+accurately than the set values, certification by retraining gives lower bounds that do not depend on the estimate, and a
+diagnosis of the pre-training shows why a target-only objective collapses and motivates the design of the estimator
+(Sections~\ref{sec:model} and~\ref{sec:res-est}).
+\item \emph{Mechanism and real-data evidence.} A controlled power-system case with a known inference
+mechanism, and four data sets with rule-based field roles (RTS-GMLC, the Australian NEM with actual
+unit outputs, PJM, CAISO) with $1.2\times10^5$ exhaustively retrained field sets as ground truth. We show
+that background amplification is common and physically interpretable, compare the definition with
+correlation-, attribution- and inference-graph-based scores, ablate the estimator, and test
+robustness and the choice of $K$ (Sections~\ref{sec:res-mech}--\ref{sec:res-robust}); disposal is
+discussed as an application (Section~\ref{sec:application}).
+\end{itemize}
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{fig1_framework.pdf}
+\caption{Audit framework. Disclosure rules fix field roles. Set-level inferability $V_y(S)$ is
+defined by dedicated retraining and scanned by an amortized attacker; the scan proposes, for
+every field, backgrounds that are certified by retraining. The field-level profile---single-field
+risk, background amplification and top backgrounds---supports grading and downstream disposal.}
+\label{fig:framework}
+\end{figure}

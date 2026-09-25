@@ -1,0 +1,24 @@
+%===============================================================================
+\section{Results III: Comparison of Field-Level Risk Scores}\label{sec:res-def}
+%===============================================================================
+
+The mechanism case (Section~\ref{sec:res-mech}) already shows how each family of scores fails on a
+known structure; a purely synthetic example with the same three failure modes---synergy, redundancy
+and indirect contribution---is given in \ref{app:toy}. Here we compare the scores as rankings of the
+fields of the ten real targets, against critical fields defined by retrained ground truth.
+
+\paragraph{Ranking}
+Table~\ref{tab:ranking} compares the scores as rankings. At $\tau=0.7$, $\hat M^{(2)}$, its certified
+version and the exact $M^{(2)}$ share the highest R-precision (0.894, against 0.866 for mutual information, 0.830 for the
+inference graph, 0.803 for single-field retraining, 0.769 for SAGE and 0.727 for LOCO), and withholding fields in
+the order of certified $M^{(2)}$ exceeds the optimum by only 0.3 fields (exact $M^{(2)}$: 0.4). At $\tau=0.5$
+almost every field is critical and every score reaches an R-precision of about 0.98; here
+single-field retraining ranks as well as $M^{(2)}$. We report this plainly: as a \emph{ranking},
+single-field risk is a strong baseline when most fields are dangerous; the advantage of $\Mik$
+lies in decisions, disposal and high thresholds. Attribution scores computed on one fitted
+model (LOCO, permutation importance, SAGE) are the weakest throughout, because they measure what
+that model uses rather than what an adversary can infer.
+
+\input{tables/tab_ranking}
+
+

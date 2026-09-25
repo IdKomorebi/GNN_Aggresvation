@@ -1,0 +1,25 @@
+\begin{abstract}
+Electricity-market data are graded and released field by field, yet the inference risk of a field
+depends on what else an adversary knows: fields that reveal nothing alone can, together with other
+released data, expose unit outputs, private offers, line flows or load before release. We define
+field-level risk from set-level inferability, the out-of-sample accuracy that attackers retrained on
+a set of fields reach for a sensitive target. The contextual gain of a field over a background has a
+whole distribution; attribution methods average it, whereas a security audit needs its worst case.
+The budgeted marginal risk $M^{(K)}$ is the largest gain over any background of at most $K$ fields,
+relative to data already public, and its excess over single-field risk is the background
+amplification $\Gamma^{(K)}$. $M^{(K)}$ is a budget-constrained marginal contribution index, the
+minimal threshold-free safety margin, and flags exactly the members of minimal unsafe combinations of
+at most $K+1$ fields; its top backgrounds tell the data owner what not to co-release. To evaluate all
+small sets repeatedly, an amortized attacker---one network pre-trained under random visibility masks,
+queried through a closed-form readout per field set---scans the sets, and retraining a few backgrounds
+per field certifies the result. In a controlled market case where one unit's private offer markup is
+the target, every price field has zero risk alone and all of its risk comes from the unit's output as
+background, ranked and regime-dependent as the dispatch physics implies; correlation, single-field and
+attribution scores miss it. On four power data sets with rule-based field roles and
+$1.2\times10^5$ exhaustively retrained field sets as ground truth, amplification is common---a typical
+field's average contextual gain is a third of its worst case---and single-field grading recovers only
+13--17\% of the critical fields, whereas scan--certify recovers up to 91\% without false positives.
+We also find that masked pre-training on the targets alone collapses the representation and, on the
+small sets of an audit, adds little over random features; masked reconstruction of all columns, features concatenated with
+those of an untrained network and a safeguard against exploding predictions reduce the error of field risk by 29\% relative to target-only pre-training.
+\end{abstract}
