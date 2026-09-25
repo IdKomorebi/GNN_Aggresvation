@@ -1,0 +1,8 @@
+experiment:
+  name: dnn123_controlled_power_mechanism
+  purpose: 有已知电力机理的受控算例——机组私有报价加成推断；检验 M^(K)、Γ、危险背景与运行状态依赖是否与机理预期一致
+data: RTS-GMLC（111 号网络与报价模型），机组 313_CC_1 报价 ×(1+κ_t)
+variants: {narrow: κ~U(±0.05)（主算例）, wide: κ~U(±0.3)（对照）}
+fields: 11 个（出力、本节点/邻近/远端/他区电价、负荷、风光、阻塞、竞争机组出力）
+truth: 全部 2,047 个子集，单目标 DNN（CPU）+ 梯度提升树，val 选择 + 单调闭包
+compute: CPU（GPU 被他人占满）

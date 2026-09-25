@@ -1,0 +1,41 @@
+# 122 号：随机掩码预训练为什么几乎不起作用？——诊断与改进（隔离环境）
+question: 118 号发现随机初始化主干 + 逐集合读出 ≈ 掩码预训练主干；能否改进预训练，否则解释原因
+datasets:            # 与 117/118 号 registry 相同的五组、十个目标
+  - RTS-GMLC         # 111 号，3 目标
+  - NEM              # 112 号，3 目标（规模 4 真值来自 119 号 nem_k4）
+  - PJM-load         # 116 号
+  - PJM-gen/ic       # 116 号，2 目标
+  - CAISO-load       # 116 号
+backbone:
+  arch: MLPOracle     # 69 号，输入 [x⊙m, m]，3×256 ReLU
+  optimizer: Adam(lr=1e-3, weight_decay=5e-4)
+  batch: 256
+  epochs_max: 400
+  patience: 60        # 早停只看验证行上的目标损失（8 组固定掩码）
+  variants:
+    random: 不训练（随机初始化，种子 0）
+    uniform: k~U{1..p} 可见数 + 均匀选字段；输出本组目标（现行做法；直接复用各号 oracle_seed{0,1,2}.pt）
+    small: 70% 样本 k~U{1..4}，30% 按 uniform
+    recon: uniform 掩码；输出 = 本组目标 + 全部候选列；损失 = 目标 MSE + 被遮住候选列的重建 MSE
+    small_recon: small 掩码 + recon 输出
+    uniform+random: 两组特征拼接
+    recon+random: 两组特征拼接
+    uniformE: uniform 三种子预测平均（= 论文主口径 E）
+    reconE: recon 三种子预测平均
+    X_cy: 读出加第三道防护——预测截断到训练目标 [min,max]（只用训练标签）
+    recon+random@s: 种子 s 的重建主干与种子 s 的随机主干拼接（s=0,1,2，种子稳健性）
+readout:              # 与 115/118 号相同
+  features: "[x⊙m, (x⊙m)^2, φ]"
+  ridge: 闭式，5 折选 λ
+  sd_floor: 1.0e-3
+  clip_test_features: true
+  clip_prediction: 仅 *_cy 变体（122 号新增）
+evaluation:
+  sets_le3: 全部（闭包后与三攻击器重训真值比较）
+  sets_4: 每组抽 ≤1,500 个（规模 4 重训真值；不闭包）
+  large_sets: 规模 6/10/16 各 60 个，梯度提升树真值
+  metrics: [V误差, M2误差, Γ2误差, M2排序(Spearman), 认证前1/前3比, 失效单元比例, 有效维度(参与比)]
+compute:
+  gpu: 训练用 GPU1/GPU2（他人进程占满显存，读出放不下）；下午 GPU 空出后 *_cy 读出用 GPU0/1/2
+  cpu: 读出用 CPU 进程池（30 进程 × 单线程，OMP_NUM_THREADS=1）
+split: 70/30 随机划分（与各号相同；无时间划分）

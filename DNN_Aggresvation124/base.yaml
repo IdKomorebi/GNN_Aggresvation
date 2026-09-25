@@ -1,0 +1,5 @@
+experiment:
+  name: dnn124_field_risk_profile
+  purpose: 背景依赖的边际增益分布、背景放大量 Γ^(K)=M^(K)−M^(0)、Top-r 危险背景、固有—背景风险图；估计器对 Γ 与危险背景的保真度
+data: 111/112/116 号真值（规模 ≤3；NEM 规模 4 取自 119 号）、各号新主口径 E 估计
+compute: CPU 单进程

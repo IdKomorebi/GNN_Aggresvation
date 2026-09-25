@@ -1,0 +1,56 @@
+字段,名次,背景,Δ
+P_g (unit 313 output),1,LMP_g (bus 313),0.21464619040489197
+P_g (unit 313 output),2,LMP_g (bus 313) + Congestion C6,0.21464619040489197
+P_g (unit 313 output),3,"LMP_g (bus 313) + LMP_far (bus 303, behind C6)",0.21464619040489197
+P_g (unit 313 output),4,LMP_g (bus 313) + P_comp (unit 316 output),0.21464619040489197
+P_g (unit 313 output),5,LMP_g (bus 313) + PV available,0.21464619040489197
+LMP_g (bus 313),1,P_g (unit 313 output),0.15014055371284485
+LMP_g (bus 313),2,P_g (unit 313 output) + PV available,0.15014055371284485
+LMP_g (bus 313),3,P_g (unit 313 output) + Wind available,0.14633437991142273
+LMP_g (bus 313),4,P_g (unit 313 output) + Congestion C6,0.14498594403266907
+LMP_g (bus 313),5,P_g (unit 313 output) + Area-3 load,0.13892683386802673
+LMP_near (bus 306),1,P_g (unit 313 output) + Congestion C6,0.1412980705499649
+LMP_near (bus 306),2,P_g (unit 313 output) + Wind available,0.13140666484832764
+LMP_near (bus 306),3,P_g (unit 313 output),0.12681959569454193
+LMP_near (bus 306),4,P_g (unit 313 output) + PV available,0.12681959569454193
+LMP_near (bus 306),5,P_g (unit 313 output) + Area-3 load,0.11560587584972382
+"LMP_far (bus 303, behind C6)",1,P_g (unit 313 output),0.09873294830322266
+"LMP_far (bus 303, behind C6)",2,P_g (unit 313 output) + PV available,0.09873294830322266
+"LMP_far (bus 303, behind C6)",3,P_g (unit 313 output) + Congestion C6,0.09732168912887573
+"LMP_far (bus 303, behind C6)",4,P_g (unit 313 output) + Wind available,0.09492677450180054
+"LMP_far (bus 303, behind C6)",5,P_g (unit 313 output) + Area-3 load,0.08751922845840454
+LMP_area2 (bus 223),1,P_g (unit 313 output) + Congestion C6,0.11515319347381592
+LMP_area2 (bus 223),2,P_g (unit 313 output),0.10750871896743774
+LMP_area2 (bus 223),3,P_g (unit 313 output) + PV available,0.10750871896743774
+LMP_area2 (bus 223),4,P_g (unit 313 output) + Wind available,0.10086339712142944
+LMP_area2 (bus 223),5,P_g (unit 313 output) + Area-3 load,0.09068572521209717
+System load,1,P_g (unit 313 output) + PV available,0.05334043502807617
+System load,2,P_g (unit 313 output) + Wind available,0.03608590364456177
+System load,3,P_g (unit 313 output) + Congestion C6,0.034020185470581055
+System load,4,P_g (unit 313 output),0.02024209499359131
+System load,5,P_g (unit 313 output) + Area-3 load,0.016008377075195312
+Area-3 load,1,P_g (unit 313 output) + PV available,0.028609097003936768
+Area-3 load,2,P_g (unit 313 output) + Wind available,0.017462849617004395
+Area-3 load,3,P_g (unit 313 output) + Congestion C6,0.013593554496765137
+Area-3 load,4,P_g (unit 313 output),0.011213719844818115
+Area-3 load,5,P_g (unit 313 output) + System load,0.006980001926422119
+Wind available,1,P_g (unit 313 output) + System load,0.019649982452392578
+Wind available,2,P_g (unit 313 output) + Area-3 load,0.010055303573608398
+Wind available,3,P_g (unit 313 output) + LMP_near (bus 306),0.008393242955207825
+Wind available,4,LMP_g (bus 313),0.004107304383069277
+Wind available,5,LMP_g (bus 313) + PV available,0.004107304383069277
+PV available,1,P_g (unit 313 output) + System load,0.03309834003448486
+PV available,2,P_g (unit 313 output) + Area-3 load,0.017395377159118652
+PV available,3,LMP_g (bus 313) + System load,0.004442272707819939
+PV available,4,LMP_g (bus 313) + Area-3 load,0.003306321334093809
+PV available,5,LMP_near (bus 306) + Wind available,0.0
+Congestion C6,1,P_g (unit 313 output) + LMP_near (bus 306),0.019633084535598755
+Congestion C6,2,P_g (unit 313 output) + System load,0.018932700157165527
+Congestion C6,3,P_g (unit 313 output) + LMP_area2 (bus 223),0.012799084186553955
+Congestion C6,4,P_g (unit 313 output) + Area-3 load,0.007534444332122803
+Congestion C6,5,P_g (unit 313 output),0.005154609680175781
+P_comp (unit 316 output),1,P_g (unit 313 output),0.08619976043701172
+P_comp (unit 316 output),2,P_g (unit 313 output) + PV available,0.08619976043701172
+P_comp (unit 316 output),3,P_g (unit 313 output) + Congestion C6,0.0850449800491333
+P_comp (unit 316 output),4,P_g (unit 313 output) + Wind available,0.08280980587005615
+P_comp (unit 316 output),5,P_g (unit 313 output) + Area-3 load,0.07519739866256714

@@ -1,0 +1,22 @@
+\begin{table}[!tbp]
+\centering\small
+\caption{Masked pre-training objectives over the ten targets (mean). Eff.\ dim.: participation ratio of the hidden
+representation. Clip: predictions clipped to the training range of the target. Top-3 context: share of fields whose
+worst background is among the three best-scanned ones. Crit.\ recall: scan--certify recall of $\tau$-critical fields at
+$\tau=0.5$, $\delta=0$ (precision is 1.00 throughout). $\times3$: predictions of three pre-training seeds averaged; the
+last row is the mean over three seeds of both backbones.}\label{tab:masking}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+Backbone & eff.\ dim. & $V$, $|S|\le3$ & $V$, $|S|=4$ & $M^{(2)}$ & $\Gamma^{(2)}$ & cert.\ top-1 & top-3 context & crit.\ recall\\
+\midrule
+Untrained backbone & 3.30 & 0.0262 & 0.0473 & 0.0270 & 0.0240 & 0.884 & 0.65 & 0.92 \\
+Untrained backbone, clip & 3.30 & 0.0253 & 0.0451 & 0.0210 & 0.0168 & 0.958 & 0.70 & 0.92 \\
+Target-only, $\times3$ (E, main results) & 1.60 & 0.0264 & 0.0379 & 0.0211 & 0.0169 & 0.934 & 0.67 & 0.88 \\
+Target-only, $\times3$, clip & 1.60 & 0.0259 & 0.0375 & 0.0214 & 0.0174 & 0.958 & 0.70 & 0.90 \\
+Reconstruction, $\times3$ & 2.75 & 0.0200 & 0.0287 & 0.0268 & 0.0257 & 0.881 & 0.69 & 0.91 \\
+Reconstruction, $\times3$, clip & 2.75 & 0.0196 & 0.0285 & 0.0171 & 0.0150 & 0.961 & 0.71 & 0.91 \\
+Reconstruction $\oplus$ untrained, clip & -- & 0.0196 & 0.0295 & 0.0163 & 0.0144 & 0.960 & 0.71 & 0.93 \\
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,24 @@
+{
+ "dataset": "RTS-GMLC 受控机制算例：机组报价加成推断",
+ "cand": [
+  "P_g (unit 313 output)",
+  "LMP_g (bus 313)",
+  "LMP_near (bus 306)",
+  "LMP_far (bus 303, behind C6)",
+  "LMP_area2 (bus 223)",
+  "System load",
+  "Area-3 load",
+  "Wind available",
+  "PV available",
+  "Congestion C6",
+  "P_comp (unit 316 output)"
+ ],
+ "targ": [
+  "Y_markup"
+ ],
+ "kmax": 11,
+ "taus": [
+  0.5,
+  0.7
+ ]
+}

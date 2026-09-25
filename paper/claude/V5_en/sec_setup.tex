@@ -1,0 +1,94 @@
+%===============================================================================
+\section{Experimental Setup}\label{sec:setup}
+%===============================================================================
+
+\subsection{Data sets and rule-based field roles}\label{sec:data}
+Table~\ref{tab:data} summarizes the four data sets. In all of them, candidate fields are
+information that the disclosure rules~\cite{nea2024disclosure} release \emph{before} the
+target, and targets are either specific information (unit output, Art.~17(3)), quantities not on
+the disclosure list at hourly resolution (hourly line flow; only daily averages of important
+lines are listed), or actual operating quantities released on the following day (actual load,
+total generation, tie-line exchange; Appendix items 6.57--6.66). Using the release timing to
+assign roles does not involve any temporal split of the data; all splits are random.
+
+\emph{RTS-GMLC.} The IEEE Reliability Test System 2019 update~\cite{barrows2020rts} provides a
+73-bus network with one year of realistic hourly load, wind, solar and hydro series. We clear
+an hourly DC optimal power flow with piecewise-linear offers built from the published heat-rate
+curves (8,784 hours, 26.7\% congested). Candidates are the 23 fields a market would publish
+early (zonal load forecasts, renewable and hydro forecasts, reserve requirements, system energy
+price and nine nodal prices, three congestion indicators); targets are the outputs of a coal and
+a combined-cycle unit and the hourly flow on internal line C35.
+
+\emph{NEM.} One year (2024) of the Australian National Electricity Market~\cite{aemo2024nemweb},
+averaged to hours. Candidates are regional demand, available capacity, semi-scheduled wind and
+solar forecasts, regional prices and interconnector flows (30 fields); targets are the actual
+outputs of a coal unit (BW01), a hydro unit (TUMUT3) and a gas combined-cycle unit (PPCCGT).
+Unit output is public in the NEM but is specific information under the Chinese rules; this data
+set therefore contains a genuinely sensitive field observed in the real world.
+
+\emph{PJM and CAISO.} System-level hourly data for one year. Targets are the actual quantities
+released on the next day: PJM metered load, total generation and net actual interchange, and
+CAISO actual load. Candidates are forecasts, day-ahead and real-time prices and their
+components, ancillary-service requirements and cleared volumes, and schedules (22--35 fields).
+Fields released on the same day as the target (fuel-mix generation, actual renewable output,
+other balancing areas' actual load) are excluded, as are the load forecasts of the target area,
+which are ex-ante copies of the target (Section~\ref{sec:problem}). Near-copies that are distinct
+quantities (e.g.\ sub-area forecasts for CAISO load) are kept; removing them is analysed as a
+sensitivity case.
+
+\emph{Controlled mechanism.} A fifth data set is built on the RTS-GMLC market with a private hourly
+offer markup of one unit as the target and eleven fields chosen to span the known mechanism
+(Section~\ref{sec:res-mech}); all 2,047 of its field sets are retrained.
+
+\begin{table}[!tbp]
+\centering\small
+\caption{Data sets. $n$: train/test rows; $p$: candidate fields; sets: field sets with exact
+three-attacker ground truth.}\label{tab:data}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llcccl}
+\toprule
+Data set & Targets (rule basis) & $n$ & $p$ & sets & max size \\
+\midrule
+RTS-GMLC & unit 223, unit 221 (specific info.); line C35 (not listed) & 6149/2635 & 23 & 10,902 & 4\\
+NEM 2024 & units BW01, TUMUT3, PPCCGT (specific info.) & 6149/2635 & 30 & 31,930 & 4\\
+PJM (load) & metered load (next-day) & 4589/1967 & 22 & 9,108 & 4\\
+PJM (gen./interch.) & total generation, net interchange (next-day) & 4589/1967 & 24 & 12,950 & 4\\
+CAISO & actual load (next-day) & 6105/2617 & 35 & 59,535 & 4\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\subsection{Ground truth}
+All variables are standardized with training statistics; 70/30 random train/test splits are
+used, with 15\% of the training rows as validation. The attacker family has three members: a
+single-target multilayer perceptron (two hidden layers of 128 units, dropout 0.15, Adam,
+early stopping on validation), a multi-target perceptron trained on all targets of a data set,
+and histogram gradient boosting with two configurations. For every set of up to four fields,
+every member is trained on that set alone; the member and epoch are chosen on validation and the
+test $\Rtwo$ is reported, followed by the monotone closure~\eqref{eq:closure}. This amounts to
+124,425 field sets and several hundred thousand trained models. Neither the
+estimator nor any baseline has access to these values; they are used only for evaluation.
+
+\subsection{Baselines}
+Field scores compared with $M^{(2)}$ are: Pearson $r^2$, squared Spearman correlation, mutual
+information~\cite{kraskov2004mi}, distance correlation~\cite{szekely2007dcor}, single-field
+retraining $M^{(0)}$ (current practice), LOCO~\cite{lei2018loco}, permutation
+importance~\cite{breiman2001rf}, SAGE with marginal imputation~\cite{covert2020sage}, and an
+inference-graph score that follows the propagation idea of~\cite{hu2026ignn} without its expert
+inputs: edge weights are the single-field predictability of one field from another (gradient
+boosting, validation $\Rtwo$), the target node carries risk one, and risk is propagated over three
+hops with decay 0.5. All baseline scores are computed on training rows only.
+
+Estimators compared with ours are: linear and quadratic readouts without a backbone, an in-set
+quadratic dictionary (values, squares and pairwise products of the fields in $S$), the shared
+output head of the same backbone, an untrained (randomly initialized) backbone with the same
+readout, and warm-start fine-tuning of the whole network for each set~\cite{sun2025warmstart}. Pre-training
+objectives are compared on the same sets with three further backbones per data set: masks restricted to small visible
+sets, masked reconstruction of all candidate columns, and both.
+
+\subsection{Metrics}
+For set values: mean absolute error of $\hat V$. For field risk: mean absolute error and bias of
+$\hat M^{(2)}$, Spearman correlation across fields, and the certified ratio
+$\sum_i L^{(2)}_{i\to y}/\sum_i M^{(2)}_{i\to y}$ when $k$ backgrounds per field are retrained.
+For decisions at thresholds $\tau\in\{0.5,0.7\}$: recall and precision of critical fields; the
+number of fields withheld and the number of minimal unsafe sets of size $\le 3$ left unbroken.
