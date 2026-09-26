@@ -1,0 +1,77 @@
+\section{Amortized Scanning with Retraining-Based Verification}\label{sec:model}
+%===============================================================================
+
+The auditor must evaluate many subsets under the same target, historical data and public baseline. This produces a collection of closely related prediction tasks. The estimator shares their nonlinear representation and adapts the readout to each set. Its output serves two purposes: estimating the field profile and proposing backgrounds for verification (Fig.~\ref{fig:model}).
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig3_model.pdf}
+\caption{The amortized attacker. (a) One backbone is pre-trained under random visibility masks on the
+auditor's data, to predict the targets and reconstruct the hidden columns, and frozen. (b) A query $(S,y)$ solves a ridge
+readout in closed form on the features of $S$---from the pre-trained backbone and an untrained network of the same
+architecture---per seed, and averages the predictions. (c) The scan proposes backgrounds per field; retraining only these
+certifies a lower bound on $\Mik$.}
+\label{fig:model}
+\end{figure}
+
+\subsection{Masked pre-training}
+The adversary does not know in advance which fields it will obtain. We model this by
+pre-training one network under random visibility masks. A mask $m\in\{0,1\}^{p}$ is drawn by
+first sampling the number of visible fields uniformly and then a uniform subset of that size;
+the network $f_\theta(x\odot m,\ m)$ receives the masked values and the mask itself, so that a
+hidden field is distinguishable from a zero value. The objective combines predicting the sensitive targets from the visible fields with reconstructing every hidden column
+from the visible ones~\cite{yoon2020vime,he2022mae},
+\begin{multline}\label{eq:pretrain}
+\mathcal L(\theta)=\mathbb{E}_{m}\Big[\big\|f^{\,y}_\theta(x\odot m,m)-y\big\|^2\\
++\gamma\,\frac{\big\|(1-m)\odot\big(f^{\,x}_\theta(x\odot m,m)-x\big)\big\|^2}{\|1-m\|_1}\Big],
+\end{multline}
+with $\gamma=1$. Reconstruction broadens the representation beyond the few directions needed to predict the selected targets. It encourages features that describe the operating state shared by the observed columns. Section~\ref{sec:res-est} evaluates this contribution; \ref{app:scope} examines reuse across target definitions. The last hidden layer (256 units) is kept as a frozen feature map
+$\phi_\theta(x\odot m, m)$; early stopping uses the target loss on validation rows only. Alongside each pre-trained backbone
+we keep an untrained network of the same architecture, $\phi_{\vartheta}$ with random initial weights $\vartheta$. The two
+play different roles in the readout: the pre-trained features supply target-aligned directions and the operating state, the
+random features the high-dimensional bulk of a kernel regression~\cite{rahimi2007random} (Section~\ref{sec:res-est}).
+
+\subsection{Subset-specific closed-form readout}
+For a query $(S,y)$ with mask $m_S$ and seed $r$, the feature block is
+\begin{multline}
+Z_{r}(S) = \big[\, x\odot m_S,\ (x \odot m_S)^{2},\\ \phi_{\theta_r}(x\odot m_S,\ m_S),\ \phi_{\vartheta_r}(x\odot m_S,\ m_S) \,\big],
+\end{multline}
+standardized with training statistics. A ridge readout
+\begin{equation}\label{eq:ridge}
+\beta_{r}(S) = \big(Z_r^{\top} Z_r + \lambda I\big)^{-1} Z_r^{\top} y
+\end{equation}
+is solved in closed form on the training rows, with $\lambda$ chosen by five-fold
+cross-validation inside the training rows. Each of $R=3$ seeds (a pre-trained and an untrained network) has its own
+readout---three separate closed-form solves per query, not one solve on the features of all seeds---and their
+predictions are averaged, $\hat y = R^{-1}\sum_r Z_r^{\mathrm{test}}\beta_r(S)$, and
+$\hat V_y(S)=\Rtwo_{\mathrm{test}}(\hat y)$, followed by the monotone closure. Three safeguards stabilize the readout: a floor of $10^{-3}$ on feature standard deviations, clipping test features to their training range, and clipping predictions to the target's training range. All bounds are obtained from training rows. These operations limit large extrapolation errors that could otherwise dominate a maximum of estimated marginal gains.
+
+We use the three-seed reconstruction-plus-random configuration throughout the main evaluation. Its 48--64\,ms cost per field set is suitable for the audit workloads studied here, while its lower profile error supports both grading and background selection. The reconstruction-only configuration offers a lower-cost option for larger workloads (Section~\ref{sec:res-est}).
+
+\subsection{Why the readout is solved per subset}
+A cheaper alternative lets the network output the prediction directly, $\hat y=f_\theta(x\odot
+m_S, m_S)$, and reads $\hat V$ off it. Then one set of output weights serves every
+conditioning pattern, i.e.\ the attacker is forced to combine every subset of fields in the
+same way---the very effect that combination risk is about. Solving the readout per subset
+keeps the expensive representation shared and the combination rule specific.
+
+\subsection{Error propagation}
+Write the estimate as $\hat V(S)=V(S)+b+\varepsilon(S)$, where $b$ is a bias common to the sets
+of interest and $\varepsilon(S)$ the set-specific part. Since a marginal is a difference of two
+nested sets, $\hat\Delta_i(T)-\Delta_i(T)=\varepsilon(T\cup\{i\})-\varepsilon(T)$ and
+\begin{equation}\label{eq:prop}
+\big|\hat M^{(K)}_{i\to y} - \Mik\big| \;\le\; \max_{|T|\le K}\big|\varepsilon(T\cup\{i\})-\varepsilon(T)\big|,
+\end{equation}
+independently of $b$. A readout on a frozen representation typically underestimates the fully
+trained attacker by a similar amount on nested sets, which is exactly a common-mode $b$; this is
+why an estimator can be biased in $V$ yet accurate in $M$. The quantity to control is the
+\emph{marginal} error, which we report throughout.
+
+\subsection{Scan and certify}\label{sec:scan}
+The estimator is used to \emph{scan}: it produces $\hat M^{(K)}$ for every field together with a
+ranked list of candidate backgrounds. Decisions are then \emph{certified}: for each field,
+dedicated attackers are retrained on the top-$k$ backgrounds only, and
+$L^{(K)}_{i\to y}=\max_{T\in\text{top-}k}\Delta_i(B\cup T)\le\Mik$ is a lower bound computed
+entirely from retrained attackers. The ratio $\sum_i L/\sum_i M$ measures how much of the true
+risk the scan recovers at a certification cost of $k$ retrained backgrounds per field instead
+of all $\binom{|H|-1}{\le K}$.

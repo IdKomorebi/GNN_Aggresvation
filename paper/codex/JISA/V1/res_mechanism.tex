@@ -1,0 +1,75 @@
+\subsection{Interpreting the Profile in a Controlled Case}\label{sec:res-mech}
+
+To interpret the measured amplification, we examine a controlled case whose inference mechanism is known in advance. We take the RTS-GMLC market of Section~\ref{sec:data} and give one generating unit,
+313\_CC\_1 (a 355\,MW combined-cycle unit that is partly loaded in about 90\% of hours and often sets
+the price), a private hourly offer markup: all its offer segments are multiplied by $(1+\kappa_t)$,
+with $\kappa_t$ drawn independently each hour. Offers are private information under the disclosure
+rules, and $\kappa_t$ is the sensitive target. We clear all 8,784 hours again and assemble eleven
+fields: the unit's output $P_g$, the LMP at its bus, the LMP at a nearby bus of the same area, the
+LMP at a bus behind the most frequently congested line (C6), an LMP in another area, system and area
+load, available wind and solar, the congestion indicator of C6, and the output of a competing unit.
+With eleven fields every one of the 2,047 subsets is retrained, so $\Mik$ is exact for every $K$ up to
+the full MCI.
+
+\paragraph{Prediction}
+When the unit is marginal, its bus price equals $(1+\kappa_t)\,c_s$, where $c_s$ is the cost of the
+segment in which it operates, and $P_g$ identifies that segment. Hence $\{P_g,\lambda_g\}$ reveals
+$\kappa_t$ while neither field does so alone; a nearby price should substitute for $\lambda_g$ when the
+network is uncongested, a price behind a congested line should not, and loads, renewables and the
+congestion flag can only indicate whether the unit is marginal. We use small markups,
+$\kappa_t\sim U(-5\%,5\%)$, which leave the merit order almost unchanged; larger markups
+($\pm30\%$) change the dispatch itself and are reported as a contrast.
+
+\begin{figure}[!tb]
+\centering\includegraphics[width=\textwidth]{fig_dispatch_mechanism.pdf}
+\caption{Physical origin of background amplification in the controlled case. Output $P_g$ locates the active offer segment; the local price then constrains the private markup. A remote price is a weaker substitute when congestion separates price areas. The network is a schematic of the information relation, not the RTS-GMLC bus topology; the offer curve is illustrative.}\label{fig:dispatch}
+\end{figure}
+
+\paragraph{Outcome}
+Table~\ref{tab:mech} and Fig.~\ref{fig:mech} confirm each prediction. Every price field has zero
+single-field risk and a budgeted risk of $0.10$--$0.15$: its risk is \emph{entirely} background
+amplification, and each witness contains the unit's output. The gain of $P_g$ itself is $0.065$ alone
+and ranks its backgrounds exactly as the mechanism implies---own-bus price ($0.215$), nearby price
+($0.191$), other-area price ($0.172$), remote price ($0.163$), competitor output ($0.151$), and
+loads, renewables and congestion ($\approx0.07$). The risk also depends on the operating regime: in
+hours when C6 is congested the remote price loses its value as a background (gradient-boosting attacker; the joint inferability
+with $P_g$ falls from $0.185$ to $0.012$), whereas the own-bus price becomes more informative ($0.198$ to
+$0.289$). For the price fields, the budgeted risk is already close to its full-context value with small backgrounds.
+With $\pm30\%$ markups the output alone already reveals much of the markup ($M^{(0)}=0.52$), and the
+prices remain amplified from zero to about $0.14$: the smaller the markup, the more completely it
+hides from single-field screening, but not from the combination.
+
+The scores of Section~\ref{sec:setup} behave as Table~\ref{tab:req} predicts (Fig.~\ref{fig:mech-scores}).
+Correlation, single-field retraining and pairwise inference-graph propagation assign about zero to
+every price. SAGE assigns $0.003$ to the own-bus price, because its credit is shared among four
+mutually substitutable prices; LOCO likewise sees almost nothing once another price is present, and
+permutation importance recognizes only the one price the fitted model happens to use. $M^{(2)}$ flags
+all four prices and the competitor output and names the unit output as their background.
+
+\begin{table}[!t]
+\centering\footnotesize
+\caption{Controlled mechanism (markup $\pm5\%$): exact field risk over all 2,047 subsets.}\label{tab:mech}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccl}
+\toprule
+Field & $M^{(0)}$ & $M^{(2)}$ & MCI & witness at $K=2$ \\
+\midrule
+Unit output $P_g$ & 0.065 & 0.215 & 0.215 & own-bus LMP \\
+Own-bus LMP & 0.000 & 0.150 & 0.150 & $P_g$ \\
+Nearby LMP (306) & 0.000 & 0.141 & 0.141 & $P_g$ + C6 \\
+Other-area LMP (223) & 0.000 & 0.115 & 0.115 & $P_g$ + C6 \\
+Remote LMP (303, behind C6) & 0.000 & 0.099 & 0.099 & $P_g$ \\
+Competitor output (316) & 0.000 & 0.086 & 0.086 & $P_g$ \\
+Loads, renewables, C6 & 0.000 & 0.02--0.05 & $\le0.095$ & -- \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig_mechanism_narrow.pdf}
+\caption{Controlled mechanism: private offer markup of unit 313\_CC\_1 ($\pm5\%$). (a) Gain of the unit
+output $P_g$ over each single background. (b) Amplification of $P_g$ by the own-bus and the remote
+price in uncongested hours and in hours when line C6 is congested. }
+\label{fig:mech}
+\end{figure}

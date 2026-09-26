@@ -1,0 +1,68 @@
+%===============================================================================
+\section{Related Work}\label{sec:related}
+%===============================================================================
+
+\paragraph{Inference and aggregation in data release}
+That individually innocuous data items can jointly reveal protected information is an old
+observation in database security, where it is known as the inference and aggregation
+problem~\cite{lunt1989aggregation,farkas2002inference}; the privacy literature supplies the
+best-known illustration, three demographic attributes that jointly single out most
+individuals~\cite{sweeney2000simple}. In power systems, public market data have been shown to
+expose non-public physical information, for example grid topology from locational marginal
+prices~\cite{kekatos2014topology}. Recent work studies reconstruction through attribute correlations in multi-attribute releases~\cite{jiang2025correlation}. This is closely related to the motivation for measuring conditional contributions, while our audit derives a field profile from the inferability of admissible sets. Privacy mechanisms for metering data~\cite{mcdaniel2009smartgrid,giaconi2018smartmeter}
+and formal models such as differential privacy~\cite{dwork2014dp} or
+$k$-anonymity~\cite{sweeney2002kanonymity} bound what can be learned about an individual
+record after a release mechanism is applied. They answer a different question from the one
+faced by a market operator, who must decide which aggregate operational \emph{fields} may be
+published at all.
+
+\paragraph{Data sensitivity assessment under inference leakage}
+Data classification and grading is performed field by field in practice, and the Chinese
+national standard explicitly asks that aggregation and processing effects be
+considered~\cite{gbt43697}, without prescribing how. The closest work to ours is IGNN~\cite{hu2026ignn},
+which introduced data inference leakage into sensitivity assessment for cyber-physical power
+grids: fields are nodes of an inference graph whose edges encode physical or statistical
+inference relations, and sensitivity is propagated along these edges by a graph attention
+network from an intrinsic (expert-assigned) score. This established that the risk of a field
+depends on its inference relations to sensitive data. Two questions remain open in this line
+of work. First, the risk score is calibrated against expert labels, while its ultimate
+validation is an attack experiment in which a model is trained on a group of fields; the
+attack outcome itself is not the definition. Second, an edge connects two fields, whereas
+inference frequently requires several fields jointly, with none of them informative alone.
+We take the attack outcome on a field \emph{set} as the definition of risk and derive the
+field-level quantity from it.
+
+\paragraph{Feature importance}
+Turning set-level values into per-feature scores is the subject of feature attribution.
+Shapley-based measures~\cite{shapley1953value,lundberg2017shap,covert2020sage,williamson2020spvim}
+average a feature's marginal contribution over all contexts, which is the right answer for
+fair allocation but dilutes the credit of redundant features~\cite{kumar2020shapley,catav2021mci}.
+Leave-one-covariate-out (LOCO)~\cite{lei2018loco} and permutation importance~\cite{breiman2001rf,fisher2019mcr,hooker2021unrestricted}
+evaluate a single context, the full feature set, so a feature with a near-substitute receives
+almost no importance. The Marginal Contribution Index (MCI)~\cite{catav2021mci} takes the
+\emph{maximum} marginal contribution over contexts, is characterized axiomatically, and is
+immune to dilution. Security reasoning favours the worst case for the same reason
+quantitative information flow replaced Shannon entropy by min-entropy and gain
+functions~\cite{smith2009qif,alvim2012gleakage}: an average over contexts is not a guarantee.
+Our field-level risk is a budget-constrained MCI evaluated relative to already-public data.
+
+\paragraph{Fast estimation of many refitted models}
+Computing the performance of a model refitted on many feature subsets is expensive, which has
+motivated lazy~\cite{gao2022lazyvi} and warm-started~\cite{sun2025warmstart} estimators of
+variable importance, surrogate models trained under random masks for removal-based
+explanations~\cite{covert2021explaining,jethani2022fastshap,covert2023vitshapley}, conditional generative models trained under
+random masks~\cite{ivanov2019vaeac,li2020acflow,yoon2020vime,he2022mae}, and tabular foundation models that predict from any
+set of columns in context~\cite{hollmann2025tabpfn}. The last amortize learning across data sets: each query passes the
+training rows of the requested columns through a large pre-trained transformer. Our estimator amortizes across the field
+sets of one data set instead, so that the per-set work reduces to a linear solve on shared features.
+Closed-form ridge heads on frozen features are the standard fast-adaptation device in
+meta-learning~\cite{bertinetto2019r2d2,lee2019metaoptnet}, and the benefit of sharing a
+representation across tasks is well understood~\cite{caruana1997multitask,baxter2000inductive,maurer2016benefit}.
+We combine these ingredients into an estimator of set-level inferability and, more
+importantly, use it inside a scan--certify loop so that decisions rest on retrained
+attackers rather than on the estimate.
+
+%===============================================================================
+
+\paragraph{Efficiency evaluated against the security task}
+Practical security methods must account for the cost of producing useful evidence. For example, LPASS uses linear probes to estimate the performance of compressed models for vulnerability detection and evaluates both security-task performance and computational savings~\cite{ibanez2025lpass}. Our application has a different workload: thousands of related field subsets within one data set. The shared estimator is evaluated against retrained inferability and downstream background recovery, rather than against prediction accuracy alone.

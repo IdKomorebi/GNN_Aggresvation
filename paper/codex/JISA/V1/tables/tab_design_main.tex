@@ -1,0 +1,16 @@
+\begin{table}[!tb]
+\centering\small
+\caption{Principal estimator configurations. Errors and certified ratios are averaged over ten targets; time is the mean per-set cost for all targets of a data set. Three seeds are averaged except for the random feature row. All rows use the numerical safeguards.}\label{tab:design-main}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Feature map & MAE $V$ & MAE $M^{(2)}$ & cert.@1 & cert.@3 & ms/set\\
+\midrule
+Raw values and squares & .132 & .096 & .859 & .912 & 1.2\\
+Random features (one seed) & .025 & .021 & .958 & .976 & 7.1\\
+Target-only & .026 & .021 & .958 & .976 & 21\\
+Reconstruction & .020 & .017 & .961 & .978 & 21\\
+\textbf{Reconstruction + random} & .018 & .015 & .961 & .978 & 58\\
+\bottomrule
+\end{tabular}
+\end{table}

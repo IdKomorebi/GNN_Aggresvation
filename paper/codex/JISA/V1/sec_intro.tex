@@ -1,0 +1,24 @@
+\section{Introduction}\label{sec:intro}
+Data-release security depends on what a recipient can infer after combining a release with information already available. This creates a difficulty for field-level assessment: a field that predicts a sensitive target poorly in isolation may become informative in the presence of another field. An audit based only on individual correlations or prediction accuracies can therefore miss a useful inference channel.
+
+The inference and aggregation problem has long been recognized in database security~\cite{lunt1989aggregation,farkas2002inference}. Recent work on reconstruction from multi-attribute releases further illustrates the importance of relations between attributes~\cite{jiang2025correlation}. These observations motivate a specific auditing question: how much can releasing a particular field improve supervised inference of a protected target over any admissible background? The question concerns the information gained from a combination, rather than only the predictive importance assigned to a field by one fitted model.
+
+Power-system data provide a demanding application. Prices, forecasts, schedules and operating quantities arise from shared physical and economic constraints. Different fields are also released at different times, creating explicit public, candidate and protected roles~\cite{nea2024disclosure}. For example, a unit's output can identify an active offer segment; the local price may then reveal a private markup that neither field predicts well alone. Published nodal prices have also been used to recover non-public network information~\cite{kekatos2014topology}. These relations make the domain useful for examining inference leakage with real operational structure.
+
+Existing approaches supply parts of an answer. Inference graphs propagate sensitivity through relations between fields~\cite{hu2026ignn}. Feature-attribution methods convert the value of field sets into individual scores, but averages over backgrounds can dilute a rare large gain, and scores evaluated in one context can suppress substitutable fields~\cite{covert2020sage,lei2018loco,catav2021mci}. The marginal contribution index addresses the maximum-gain question~\cite{catav2021mci}. For release auditing, we extend its setting with an explicit public baseline and background budget, and retain the amplification and witness combinations as part of the output.
+
+The resulting audit is computationally demanding. With 35 fields and two-field backgrounds, estimating every field's risk requires the inferability of 7,175 sets per target. Refitting an attacker family for each set takes hours. We therefore share a nonlinear representation across subsets while fitting their readouts separately. The representation combines reconstruction-trained features with an untrained feature branch, and three independent predictions are averaged. A scan over estimated values proposes a small number of backgrounds for dedicated retraining. This links efficient search to verified evidence while also producing a quantitative risk profile for every field (Fig.~\ref{fig:framework}).
+
+Our contributions are as follows.
+\begin{itemize}
+\item \emph{A field-level leakage profile.} We define budgeted marginal risk from set-level inferability, separate background amplification from single-field risk, and establish the safety-margin and minimal-unsafe-set connections needed to interpret the profile.
+\item \emph{An efficient and verifiable audit.} We combine shared features with subset-specific adaptation and a retraining stage. Evaluation distinguishes profile error, recovered marginal risk, critical-field recall and scan cost, including comparisons with linearized, warm-started, surrogate and foundation-model alternatives.
+\item \emph{An extensive application study.} Across four power-system data sets, 264 field--target pairs and 124,425 exhaustively retrained sets, we measure how often background information changes field risk. A controlled mechanism, budget sensitivity analysis and withholding application connect the numerical results to interpretable release decisions.
+\end{itemize}
+
+The next sections specify the threat model and measurement, describe the audit, and evaluate its security and computational behavior. Related work is then revisited in light of the resulting field-level evidence.
+
+\begin{figure}[!tb]
+\centering\includegraphics[width=\textwidth]{fig1_framework.pdf}
+\caption{Audit setting and evidence flow. The data owner evaluates a candidate field against an adversary with published fields and labelled auxiliary history. Alternative admissible backgrounds produce different inferability gains. The scanner estimates the field profile and proposes backgrounds whose gains are verified by retraining. The miniature profile is illustrative.}\label{fig:framework}
+\end{figure}

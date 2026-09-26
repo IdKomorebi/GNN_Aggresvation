@@ -1,0 +1,23 @@
+\section{Discussion}\label{sec:discussion}
+\subsection{What the field profile adds}
+A useful grade should explain the circumstances under which a field becomes informative. The proposed profile provides this explanation through the single-field gain, background amplification and a short list of high-gain backgrounds. The controlled case shows why these backgrounds matter physically: output identifies an offer segment, a local price constrains its markup, and congestion changes the value of a remote substitute. The real-data results show that this dependence extends beyond that example. Prices, renewable forecasts and available capacity can all acquire substantially more predictive value in combination.
+
+Reporting several backgrounds is useful because the largest gains often come from families of combinations sharing a partner field. A reviewer can then examine co-release conditions and release timing using concrete evidence. As the public baseline changes, the same candidate field is evaluated relative to the new information already available. The profile supports that review while preserving a familiar field-level output.
+
+\subsection{Why estimate the profile and verify the evidence}
+The estimator serves both quantitative profiling and economical background search. Reconstruction plus random features gives the lowest overall profile error among the evaluated configurations, at a millisecond cost appropriate for the present workloads. Reconstruction alone is a practical option when lower scan cost is more important than this modest accuracy gain. Both use the same risk definition and verification procedure.
+
+Certification concentrates dedicated retraining on backgrounds selected by the scan. It recovers much of the total marginal risk even when several backgrounds are nearly tied. This aggregate recovery does not determine recall at a particular threshold: TabPFN and the proposed estimator recover almost the same total marginal risk, while TabPFN finds more critical fields at $\tau=0.7$. The comparison identifies a useful operating trade-off between repeated audit cost, profile fidelity and threshold-specific coverage.
+
+\subsection{Scope and further use}
+The numerical risk values reflect the selected attacker family, labelled historical data and random train/test splits. They describe supervised inferability under the evaluated data distribution; changing the attacker family or operating period calls for a new audit. The background budget is equally explicit: $K=2$ captures most measured marginal risk for nine of ten targets, but increasing it still changes critical-field counts. The disclosure categories provide a common field-role scenario for the data sets, rather than an assessment of local market compliance.
+
+An inference graph can complement the audit by supplying physically motivated candidate backgrounds, while stronger predictors can extend the family used for verification. The all-column experiment in Appendix~\ref{app:scope} also indicates how a shared representation can support revised target lists. These directions retain the same central output: a field grade accompanied by the combinations that justify it.
+
+\section{Conclusion}\label{sec:conclusion}
+The inference risk of a power-system field depends on the information with which it can be combined. We quantify that dependence by the largest marginal inferability gain within a background budget and separate it into single-field risk and background amplification. Witness backgrounds connect the numerical grade to concrete combinations, and the criticality result connects those combinations to release review.
+
+A controlled dispatch case and exhaustive reference tables across four data sets show that amplification is common and often substantial. Single-field screening recovers only 13--17\% of critical fields in the evaluated settings. The amortized scan with retraining-based verification recovers 76--91\% without false positives, while processing field sets in tens of milliseconds. The resulting audit makes background dependence visible, interpretable and computationally manageable.
+
+\section*{Data and code availability}
+RTS-GMLC~\cite{barrows2020rts} and the AEMO NEMWEB archive~\cite{aemo2024nemweb} are public; PJM and CAISO series were obtained from the operators' public portals. Field-role tables, dispatch simulation, reference retraining, estimator and analysis code will be made available upon publication.

@@ -1,0 +1,23 @@
+\begin{table}[H]
+\centering\small
+\caption{Minimal unsafe sets of size at most three and withholding requirements. MUS: number of minimal unsafe sets; residual: MUS remaining after withholding all fields unsafe alone; hit: minimum number of fields whose withholding breaks every MUS.}\label{tab:risk-sets}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+ & \multicolumn{3}{c}{$\tau=0.5$} & \multicolumn{3}{c}{$\tau=0.7$}\\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Target & MUS & residual & hit & MUS & residual & hit\\
+\midrule
+RTS unit 223 & 60 & 50 & 15 & 16 & 6 & 11 \\
+RTS unit 221 & 52 & 42 & 15 & 34 & 24 & 13 \\
+RTS line C35 & 123 & 119 & 13 & 82 & 82 & 7 \\
+NEM BW01 & 266 & 266 & 4 & 0 & 0 & 0 \\
+NEM TUMUT3 & 23 & 23 & 1 & 0 & 0 & 0 \\
+NEM PPCCGT & 215 & 213 & 6 & 8 & 8 & 1 \\
+PJM load & 237 & 237 & 9 & 44 & 44 & 3 \\
+PJM total gen. & 179 & 177 & 11 & 39 & 37 & 5 \\
+PJM net interch. & 102 & 102 & 3 & 1 & 1 & 1 \\
+CAISO load & 542 & 537 & 17 & 335 & 332 & 10 \\
+\bottomrule
+\end{tabular}
+\end{table}

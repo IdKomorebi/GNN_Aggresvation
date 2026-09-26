@@ -1,0 +1,4 @@
+- Power-system releases can reveal protected quantities through field combinations.
+- Field profiles expose background amplification and supporting release conditions.
+- A dispatch case links inference gains to unit output, prices and congestion.
+- Verified profiles support withholding decisions and repeated disclosure review.

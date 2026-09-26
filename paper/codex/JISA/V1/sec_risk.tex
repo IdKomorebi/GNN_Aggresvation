@@ -1,0 +1,140 @@
+\section{Threat Model and Field-Level Risk}\label{sec:problem}\label{sec:mk}
+%===============================================================================
+
+\subsection{Parties, field roles and threat model}
+The \textbf{auditor} is the data owner and evaluates confidentiality before release. It holds the complete history of all operational
+fields, including those it regards as sensitive, and grades fields offline before release.
+The \textbf{adversary} obtains published fields and is assumed to hold historical auxiliary
+labels of the sensitive target, from which it trains a supervised inference model; risk is
+therefore measured as out-of-sample \emph{supervised} inferability. The adversary may combine
+the field under review with other fields it already holds.
+
+Field roles are fixed by disclosure rules, not by data analysis. Let $G$ be the candidate
+fields that the rules allow to be published, $B\subseteq G$ a \emph{public baseline} that is
+already released ($B=\emptyset$ unless stated otherwise), $H=G\setminus B$ the fields under
+review, and $Y_y$ a sensitive target. Section~\ref{sec:data} instantiates these roles for
+four data sets from the categories and release timings of the Chinese electricity-market
+disclosure rules~\cite{nea2024disclosure}. An ex-ante estimate of the \emph{same physical
+quantity} as a target (e.g.\ a load forecast when the target is metered load) is removed from
+$G$, because it is a copy of the target rather than an inference channel.
+
+\subsection{Set-level inferability}
+\begin{definition}[Population inferability]
+\[
+\Vy^{*}(S) = 1 - \inf_{f}\,\mathbb{E}\big[(Y_y - f(X_S))^{2}\big] \big/ \mathrm{Var}(Y_y),
+\]
+the infimum taken over measurable $f$. It satisfies $\Vy^{*}(\emptyset)=0$, $0 \le \Vy^{*} \le 1$
+and is monotone in $S$.
+\end{definition}
+
+\begin{definition}[Empirical inferability]\label{def:vret}
+The data are split into training and test rows, with a validation part inside training. For
+an attacker family $\mathcal{H}$, every $h\in\mathcal{H}$ is trained on $X_S$ only; the
+attacker and its training epoch are selected on validation, and the test $\Rtwo$ is reported:
+$\Vy^{\mathrm{ret}}(S) = \Rtwo_{\mathrm{test}}(\hat h_S)$ with
+$\hat h_S = \argmax_{h \in \mathcal{H},\,\mathrm{epoch}} \Rtwo_{\mathrm{val}}(h;S)$.
+\end{definition}
+
+An adversary holding a set can also use any of its subsets. We therefore evaluate the subset-closed inferability
+\begin{equation}\label{eq:closure}
+\Vy(S)=\max_{T\subseteq S}\big[\Vy^{\mathrm{ret}}(T)\big]_+,\qquad \Vy(\emptyset)=0.
+\end{equation}
+This retraining-based reference defines the empirical risk tables used throughout the paper.
+
+\subsection{Contextual gain}
+The quantity from which everything else follows is the gain that releasing field $i$ brings over a
+given background $T$ of fields the adversary already holds,
+\begin{equation}\label{eq:delta}
+\Delta_i(A)=\Vy(A \cup \{i\}) - \Vy(A),\qquad A=B\cup T .
+\end{equation}
+$\Delta_i(B)$ is the single-field risk. The same field can be nearly useless over one background
+and decisive over another: a price series says little about a unit's output alone, but together
+with the unit's forecast availability it reveals the residual quantity the unit covers. A
+field-level risk quantity must therefore summarize a whole \emph{distribution} of contextual gains
+$\{\Delta_i(B\cup T)\}_T$, and the question is which summary serves security.
+
+\subsection{Budgeted marginal risk and background amplification}
+\begin{definition}[Budgeted marginal risk, background amplification]\label{def:mk}
+For target $y$, public baseline $B$, fields under review $H=G\setminus B$ and budget $K$,
+\begin{align}
+\Mik &= \max_{T \subseteq H \setminus \{i\},\, |T| \le K}\ \Delta_i(B\cup T), \label{eq:mk}\\
+\Gamma^{(K)}_{i\to y} &= \Mik - M^{(0)}_{i\to y} \;\ge 0 . \label{eq:gamma}
+\end{align}
+Any maximizer $T^{*}$ is a \emph{witness background}.
+\end{definition}
+$\Mik$ is the largest increase of inferability that releasing $i$ can cause when the adversary
+holds at most $K$ other fields; $\Gamma^{(K)}_{i\to y}$ is the part of it that exists only because of
+the background, i.e.\ the amplification of single-field risk by combination. For each (field,
+target) pair the audit reports the profile $\big(M^{(0)}_{i\to y},\ \Gamma^{(K)}_{i\to y},\ \Mik\big)$
+together with the top-$r$ backgrounds ranked by $\Delta_i$; in our data the top backgrounds are
+often nearly tied and share a core partner field, so the partner is more informative than a
+single argmax. At $K=1$ the amplification has a closed form.
+
+\begin{proposition}[Amplification at $K=1$]\label{prop:k1}
+With $I^B_{ij}=\Vy(B\cup\{i,j\})-\Vy(B\cup\{i\})-\Vy(B\cup\{j\})+\Vy(B)$,
+$\Gamma^{(1)}_{i\to y}=\max\big(0,\max_{j} I^{B}_{ij}\big)$.
+\end{proposition}
+\begin{proof}
+Over the background $\{j\}$, $\Delta_i(B\cup\{j\})=M^{(0)}_{i\to y}+I^B_{ij}$; over $\emptyset$ it is
+$M^{(0)}_{i\to y}$. Take the maximum.
+\end{proof}
+A field is amplified by one background field exactly when it is strictly super-additive with it,
+and the amplification equals the strongest positive interaction.
+
+\subsection{Relation to feature importance}
+An average of contextual gains, as in Shapley values or SAGE~\cite{covert2020sage}, describes typical contribution. The maximum asks whether an admissible background produces a large gain, which is the relevant question when reviewing a release. In our data the median ratio of the average gain to this maximum is 0.32 (Section~\ref{sec:res-amp}). The MCI~\cite{catav2021mci} formalizes this maximum contribution; the public baseline and background budget specialize it to the audit setting. \ref{app:requirements} compares the requirements met by alternative field scores.
+
+\begin{proposition}[Relation to MCI]\label{prop:mci}
+Let $v_B(T) := \Vy(B \cup T) - \Vy(B)$ for $T \subseteq H$. Then $v_B$ is monotone,
+non-negative and $v_B(\emptyset)=0$; $\Mik = \max_{|T|\le K}[v_B(T\cup\{i\}) - v_B(T)]$ is the
+budget-constrained MCI of $v_B$; for $K \ge |H|-1$ and $B=\emptyset$ it is the MCI of $\Vy$.
+\end{proposition}
+The axiomatic properties of MCI for monotone evaluation functions~\cite{catav2021mci}---dummy,
+symmetry, the self-contribution lower bound $\Mik\ge M^{(0)}_{i\to y}$ and invariance to
+duplicated features---therefore transfer and are cited rather than claimed; $\Mik$ is
+non-decreasing in $K$ and reaches the MCI at $K=|H|-1$.
+
+\subsection{Security meaning}
+\begin{theorem}[Threshold-free safety margin]\label{thm:margin}
+Fix $i$, $y$, $B$, $K$. A number $m\ge 0$ satisfies ``for every threshold $\tau$ and every
+background $|T|\le K$: $\Vy(B\cup T)\le\tau-m \Rightarrow \Vy(B\cup T\cup\{i\})\le\tau$''
+if and only if $m\ge\Mik$. For a fixed $\tau$, the smallest $m$ with this property can be
+strictly smaller than $\Mik$.
+\end{theorem}
+\begin{proof}
+If $m\ge\Mik$ then $\Vy(B\cup T\cup\{i\})=\Vy(B\cup T)+\Delta_i(B\cup T)\le(\tau-m)+m$.
+Conversely, for any $T$ choose $\tau=\Vy(B\cup T)+m$; the property gives $\Delta_i(B\cup T)\le
+m$. Strictness: with $B=\emptyset$, $K=1$, $\Vy(\{i\})=0.1$, $\Vy(\{j\})=0.5$,
+$\Vy(\{i,j\})=0.9$ one has $M^{(1)}_{i\to y}=0.4$, yet at $\tau=0.95$ the necessary margin is $0$.
+\end{proof}
+Thus $\Mik$ is the answer to ``by how much can publishing $i$ raise the adversary's accuracy,
+whatever it already holds within budget''---a property of the field that does not depend on
+the threshold later chosen for grading.
+
+\begin{definition}[Criticality and minimal unsafe sets]
+Under baseline $B$, $E\subseteq H$ is a $\tau$-\emph{minimal unsafe set} (MUS) if
+$\Vy(B\cup E)>\tau$ and $\Vy(B\cup E')\le\tau$ for every $E'\subsetneq E$. Field $i$ is
+$K$-\emph{background} $\tau$-\emph{critical} if some $T$ with $|T|\le K$, $i\notin T$, has
+$\Vy(B\cup T)\le\tau<\Vy(B\cup T\cup\{i\})$.
+\end{definition}
+
+\begin{theorem}[Criticality $\iff$ small MUS]\label{thm:mus}
+If $\Vy$ is monotone and $\Vy(B)\le\tau$, field $i$ is $K$-background $\tau$-critical if and
+only if it belongs to a MUS of size at most $K+1$.
+\end{theorem}
+\begin{proof}
+($\Leftarrow$) For a MUS $E\ni i$ with $|E|\le K+1$ take $T=E\setminus\{i\}$.
+($\Rightarrow$) If $\Vy(B\cup T)\le\tau<\Vy(B\cup T\cup\{i\})$, take an inclusion-minimal unsafe
+$E\subseteq T\cup\{i\}$; it is a MUS of size $\le K+1$. If $i\notin E$ then $E\subseteq T$ and
+monotonicity gives $\Vy(B\cup T)\ge\Vy(B\cup E)>\tau$, a contradiction.
+\end{proof}
+Theorem~\ref{thm:mus} makes the field-level flag a faithful projection of the set-level
+danger structure: flagging the $\tau$-critical fields misses no field that takes part in a
+dangerous combination of at most $K+1$ fields, and a threshold-crossing background identifies the combination.
+The same list of minimal unsafe sets also supports withholding decisions
+(Section~\ref{sec:application}).
+
+
+
+\subsection{Background budget}
+The budget $K$ specifies how many additional fields the adversary may combine with the field under review, beyond the public baseline. We use $K=2$ for the main audit and evaluate $K=3$ on every data set. Small budgets capture interpretable combinations and control the enumeration cost. Section~\ref{sec:res-robust} reports both changes in marginal risk and changes in threshold crossings as the budget increases.

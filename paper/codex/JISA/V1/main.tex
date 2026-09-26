@@ -1,0 +1,57 @@
+% Independent journal adaptation of paper/codex/V2_en, based on Claude V6, 2026-09-26.
+\RequirePackage[T1]{fontenc}
+\documentclass[preprint,11pt,a4paper]{elsarticle}
+\usepackage[margin=22mm,bottom=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs,multirow,array,url}
+\biboptions{numbers,sort&compress}
+\usepackage{placeins,float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\setlength{\emergencystretch}{2em}
+\setcounter{topnumber}{3}\setcounter{bottomnumber}{2}\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{.92}\renewcommand{\bottomfraction}{.85}
+\renewcommand{\textfraction}{.06}\renewcommand{\floatpagefraction}{.75}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\Vy}{V_y}\newcommand{\Mik}{M^{(K)}_{i\to y}}\newcommand{\Rtwo}{R^2}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\journal{Journal of Information Security and Applications}
+\makeatletter
+\def\ps@pprintTitle{\let\@oddhead\@empty\let\@evenhead\@empty\def\@oddfoot{\footnotesize Manuscript draft for JISA\hfill\thepage}\let\@evenfoot\@oddfoot}
+\makeatother
+\begin{document}
+\begin{frontmatter}
+\title{Auditing background-dependent inference leakage with field-level risk profiles}
+\author{Haocun Du}
+\input{sec_abstract}
+\begin{keyword}
+Inference leakage \sep Background knowledge \sep Security auditing \sep Marginal contribution \sep Amortized estimation \sep Power-system data
+\end{keyword}
+\end{frontmatter}
+
+\input{sec_intro}
+\input{sec_risk}
+\input{sec_method}
+\input{sec_setup}
+\section{Evaluation Results}\label{sec:results}
+\input{res_amplification}
+\input{res_scores}
+\input{res_estimator}
+\input{res_mechanism}
+\input{res_robustness}
+\input{sec_application}
+\input{sec_related}
+\FloatBarrier
+\input{sec_discussion}
+
+\FloatBarrier
+\appendix
+\input{sec_appendix}
+\FloatBarrier
+\bibliographystyle{elsarticle-num}
+\bibliography{ref}
+\end{document}

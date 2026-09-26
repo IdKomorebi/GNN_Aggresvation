@@ -1,0 +1,4 @@
+- Budgeted marginal risk measures inference gains over admissible backgrounds.
+- Field profiles retain amplification and the combinations that explain leakage.
+- Shared features and subset-specific readouts enable millisecond risk scans.
+- Verifying three backgrounds recovers 97.8% of total marginal risk in the study.

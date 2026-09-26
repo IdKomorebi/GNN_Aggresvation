@@ -1,0 +1,37 @@
+\begin{table}[H]
+\centering\footnotesize
+\caption{Design choices of the estimator, averaged over the ten targets and all sets of size $\le 3$. The untrained network is
+paired with the per-set readout. Cert.@$k$: certified $L^{(2)}$ over exact $M^{(2)}$ when $k$ backgrounds per field are retrained.
+ms: time per field set on one idle GPU (same 200 sets per data set, batch 8, mean over data sets); -- : same cost as the corresponding
+reference row. $^{\dagger}$Evaluated on the six RTS-GMLC and NEM targets only; on the same targets three averaged target-only seeds give
+0.011, 0.016, 0.973, 0.953 and 0.974.}\label{tab:design}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+Configuration & MAE $V$ & MAE $M^{(2)}$ & Spearman & cert.@1 & cert.@3 & ms\\
+\midrule
+\multicolumn{7}{l}{\emph{Feature map (three seeds averaged, all safeguards)}}\\
+\quad None: readout on $[x_S, x_S^2]$ & 0.132 & 0.096 & 0.854 & 0.859 & 0.912 & 1.2 \\
+\quad Untrained network (one seed) & 0.025 & 0.021 & 0.963 & 0.958 & 0.976 & 7.1 \\
+\quad Target-only pre-training & 0.026 & 0.021 & 0.960 & 0.958 & 0.976 & 21 \\
+\quad Reconstruction pre-training & 0.020 & 0.017 & 0.963 & 0.961 & 0.978 & 21 \\
+\quad \textbf{Reconstruction} $\oplus$ \textbf{untrained (ours)} & 0.018 & 0.015 & 0.968 & 0.961 & 0.978 & 58 \\
+\addlinespace
+\multicolumn{7}{l}{\emph{Use of seeds}}\\
+\quad Ours, one seed (mean over three single-seed estimators) & 0.020 & 0.016 & 0.965 & 0.960 & 0.977 & 19 \\
+\quad Target-only, one seed & 0.030 & 0.023 & 0.953 & 0.936 & 0.967 & 7.1 \\
+\quad Target-only, three seeds, predictions averaged & 0.026 & 0.021 & 0.957 & 0.934 & 0.970 & 21 \\
+\quad Target-only, three seeds, features concatenated in one readout$^{\dagger}$ & 0.011 & 0.013 & 0.958 & 0.916 & 0.962 & 41 \\
+\addlinespace
+\multicolumn{7}{l}{\emph{Numerical safeguards}}\\
+\quad Reconstruction, three seeds, without prediction clip & 0.020 & 0.027 & 0.921 & 0.881 & 0.974 & 21 \\
+\quad Target-only, one seed, without any safeguard & 0.031 & 0.036 & 0.904 & 0.825 & 0.946 & -- \\
+\addlinespace
+\multicolumn{7}{l}{\emph{Pre-training masks and raw features (target-only, one seed)}}\\
+\quad No masks (always fully visible) & 0.032 & 0.036 & 0.928 & 0.898 & 0.963 & -- \\
+\quad Bernoulli(0.5) masks & 0.030 & 0.024 & 0.958 & 0.932 & 0.969 & -- \\
+\quad Readout on $\phi$ only, without $[x_S, x_S^2]$ & 0.030 & 0.025 & 0.950 & 0.927 & 0.964 & -- \\
+\bottomrule
+\end{tabular}}
+\end{table}

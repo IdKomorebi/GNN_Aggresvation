@@ -1,0 +1,19 @@
+\begin{table}[!tb]
+\centering\small
+\caption{Accuracy and scan cost of alternative estimators, averaged over ten targets. MAEs use all sets of at most three fields. Cert.@1 is the recovered marginal-risk ratio after verifying one background per field. Recall is scan--certify critical-field recall at $\tau=0.7$; precision is 1.00 for all methods. Times cover all targets of one data set. LazyVI was evaluated on 200 sets only (Fig.~\ref{fig:baselines}). Additional metrics are in Appendix~\ref{app:baseline-metrics}.}\label{tab:baselines}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrl}
+\toprule
+Estimator & MAE $V$ & MAE $M^{(2)}$ & cert.@1 & Recall & Time/set\\
+\midrule
+Retraining (reference) & 0 & 0 & 1 & 1.00 & 14--56\,s\\
+Linear & .212 & .144 & .803 & .16 & 0.7--1.0\,ms\\
+Quadratic & .132 & .096 & .859 & .27 & 0.9--1.6\,ms\\
+Mean substitution & .442 & .243 & .295 & .00 & 0.1\,ms\\
+Warm start & .066 & .047 & .910 & .47 & 176--181\,ms\\
+Masked surrogate & .067 & .057 & .883 & .47 & 0.2\,ms\\
+TabPFN v2 & .016 & .013 & .959 & 1.00 & 0.81--7.0\,s\\
+\textbf{Proposed} & .018 & .015 & .961 & .79 & 48--64\,ms\\
+\bottomrule
+\end{tabular}
+\end{table}

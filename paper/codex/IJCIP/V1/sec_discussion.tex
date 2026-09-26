@@ -1,0 +1,23 @@
+\section{Implications for Infrastructure Information Protection}\label{sec:discussion}
+\subsection{Treat co-release conditions as part of a field's grade}
+The results show why a disclosure catalogue benefits from recording relations between fields. The same price, forecast or capacity series can have a small contribution in one context and a large contribution in another. A single sensitivity label does not expose that difference. The profile proposed here retains the field as the unit of review and attaches the single-field risk, amplification and supporting backgrounds to it.
+
+The controlled case makes those backgrounds interpretable in terms of the infrastructure. Unit output identifies a segment of the offer curve, and the local price constrains the private markup on that segment. Congestion weakens the corresponding relation for a remote price. In observed data, several strong backgrounds similarly combine quantities associated with residual demand or network loading. These results provide a basis for examining particular release combinations without requiring every field to be assigned an intrinsic high-risk label.
+
+\subsection{Use the profile within the disclosure process}
+A practical review starts with the protected quantity and its release horizon. The auditor identifies the fields already public, the candidate additions and the background budget. It then scans their contextual gains, verifies selected backgrounds, and records the combinations associated with high gains or threshold crossings. When a planned publication adds a member of such a combination, the reviewer can assess whether timing, aggregation or withholding should be reconsidered under the applicable disclosure policy.
+
+This use is supported by the withholding results: choosing fields from the estimated combination structure leaves far fewer small unsafe combinations intact than screening fields individually. The outcome also depends on the budget. Larger combinations appear when $K$ increases, even when mean marginal risk changes modestly. A review record should therefore carry its target, public baseline and background budget alongside the field profile, so subsequent updates use the same interpretation.
+
+\subsection{Feasibility and scope}
+Repeated audits become practical when the cost of searching many combinations is separated from the cost of verifying selected evidence. The fixed reconstruction-plus-random estimator provides accurate profiles at tens of milliseconds per set. Reconstruction alone offers a lower-cost configuration for substantially larger workloads, with the same rounded certified-risk ratios in the present experiments. This choice can be made according to audit scale while retaining the definitions and verification procedure.
+
+The evidence covers a dispatch-based benchmark and observed records from three power-system data sources. Its numerical values depend on the selected targets, historical data and attacker family. The common disclosure categories establish the evaluated field roles; they are not a compliance finding about the source markets. The controlled private-markup case establishes a specific physical explanation, while the broader data establish the prevalence of context-dependent gains. These are complementary reasons to include combination evidence in information-release review.
+
+\section{Conclusion}\label{sec:conclusion}
+Power-system information releases can expose sensitive quantities through combinations of fields that are weakly revealing in isolation. This paper develops a field-level audit that measures the largest admissible contextual gain, identifies background amplification and records supporting combinations. A controlled dispatch case explains how such amplification arises from output, prices and congestion; exhaustive evaluation across four data sets establishes its practical prevalence.
+
+The proposed scan and verification procedure recovers 76--91\% of critical fields without false positives in the evaluated settings, compared with 13--17\% for single-field screening. Its computational cost supports repeated assessment as information is released or reclassified. The resulting profiles give infrastructure operators an evidence-based way to review co-release conditions and protect information while maintaining useful disclosure.
+
+\section*{Data and code availability}
+RTS-GMLC~\cite{barrows2020rts} and the AEMO NEMWEB archive~\cite{aemo2024nemweb} are public; PJM and CAISO data were obtained from the operators' public portals. Field-role tables, dispatch simulation, reference retraining, estimator and analysis code will be made available upon publication.

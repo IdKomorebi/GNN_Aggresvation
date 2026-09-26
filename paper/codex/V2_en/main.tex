@@ -1,0 +1,47 @@
+% Journal-neutral editorial revision of paper/claude/V6_ieee, 2026-09-26.
+\RequirePackage[T1]{fontenc}
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm,bottom=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs,multirow,array,url}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{placeins,float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\setlength{\emergencystretch}{2em}
+\setcounter{topnumber}{3}\setcounter{bottomnumber}{2}\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{.92}\renewcommand{\bottomfraction}{.85}
+\renewcommand{\textfraction}{.06}\renewcommand{\floatpagefraction}{.75}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\Vy}{V_y}\newcommand{\Mik}{M^{(K)}_{i\to y}}\newcommand{\Rtwo}{R^2}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\title{Background-Aware Inference Risk in Power-System Data:\\Field Profiles and Efficient Auditing}
+\author{Haocun Du}
+\date{}
+\begin{document}
+\maketitle
+\input{sec_abstract}
+\noindent\textbf{Keywords:} Inference risk; data release; background information; power systems; marginal contribution; amortized estimation.
+\input{sec_intro}
+\input{sec_related}
+\input{sec_risk}
+\input{sec_method}
+\input{sec_setup}
+\section{Results}\label{sec:results}
+\input{res_mechanism}
+\input{res_amplification}
+\input{res_scores}
+\input{res_estimator}
+\input{res_robustness}
+\input{sec_application}
+\FloatBarrier
+\input{sec_discussion}
+\appendix
+\input{sec_appendix}
+\FloatBarrier
+\bibliographystyle{elsarticle-num}
+\bibliography{ref}
+\end{document}

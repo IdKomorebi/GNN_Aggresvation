@@ -1,0 +1,16 @@
+\begin{table}[H]\centering\small
+\caption{Additional baseline metrics. MAE $V_{200}$ uses the same 200 sampled sets for every method. Other columns use the complete small-set audit. Dashes indicate metrics not evaluated.}\label{tab:baselines-extra}
+\begin{tabular}{lrrrrr}
+\toprule
+Estimator & MAE $V_{200}$ & MAE $\Gamma^{(2)}$ & Spearman & Recall .5 & Recall .7\\
+\midrule
+Linear & .218 & .050 & .737 & .24 & .16\\
+Quadratic & .136 & .049 & .854 & .31 & .27\\
+Mean substitution & .460 & .111 & .534 & .03 & .00\\
+LazyVI & .037 & -- & -- & -- & --\\
+Warm start & .070 & .028 & .932 & .67 & .47\\
+Masked surrogate & .070 & .034 & .930 & .55 & .47\\
+TabPFN v2 & .016 & .019 & .979 & .88 & 1.00\\
+Proposed & .024 & .014 & .968 & .91 & .79\\
+\bottomrule\end{tabular}
+\end{table}

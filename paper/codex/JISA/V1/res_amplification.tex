@@ -1,0 +1,91 @@
+\subsection{Background Amplification in Real Data}\label{sec:res-amp}
+
+\paragraph{Contextual gains are widely spread}
+Fig.~\ref{fig:amp}(b) plots, for the most amplified field of six targets, the gain $\Delta_i(T)$ over
+every background of at most two fields. The spread is large, and the maximum typically lies far
+from the bulk: the South Australian wind forecast has gain $0.19$ alone, $0.20$ on average over
+backgrounds, and $0.60$ over its worst background (regional available capacity and solar forecast,
+which together with wind give the residual demand the gas unit PPCCGT covers). Over all 264
+field--target pairs, the median ratio of the average contextual gain to the maximum is $0.32$: an
+average-based score would report about a third of the worst-case risk.
+
+\paragraph{Amplification is common}
+Averaged over the 264 pairs, $\Gamma^{(1)}=0.082$, $\Gamma^{(2)}=0.110$ and $\Gamma^{(3)}=0.119$; one
+background field supplies 75\% of the total amplification at $K=2$, and $K=2$ supplies 93\% of that
+at $K=3$. In 91 pairs the single-field risk is below $0.3$ while the amplification exceeds $0.1$
+(Fig.~\ref{fig:amp}a)---fields that look unremarkable alone and become informative in combination.
+The largest amplifications are the SA wind forecast for PPCCGT ($0.19\to0.60$), the SP15
+day-ahead energy price for CAISO load ($0.14\to0.51$, with the NP15 wind and SP15 solar forecasts:
+price and renewables determine net load), and the SA available capacity for PPCCGT ($0.02\to0.36$).
+On every pair, $\Gamma^{(1)}$ equals the strongest positive pairwise interaction
+(Proposition~\ref{prop:k1}) to numerical precision.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig_amplification.pdf}
+\caption{Background amplification over ten targets. (a) Single-field risk versus amplification
+$\Gamma^{(2)}$ for every field--target pair. (b) Contextual gains of the most amplified field of six
+targets over all backgrounds of at most two fields, with the single-field value, the average over
+backgrounds and the maximum.}
+\label{fig:amp}
+\end{figure}
+
+\paragraph{Dangerous backgrounds come in families}
+The top backgrounds of a field are often nearly tied and share a core partner. For the SA wind
+forecast the five best backgrounds reach gains between $0.545$ and $0.603$, and all contain the SA
+available capacity. We therefore report the top-$r$ backgrounds rather than a single witness; the
+shared partner is the actionable information (``do not co-release with'').
+
+\emph{The witnesses are physically meaningful.} Fig.~\ref{fig:profile} shows the field profile
+of RTS line C35 and the gain matrix of NEM unit PPCCGT. The largest increases come from
+combinations that reconstruct a residual quantity; for instance, the price at RTS bus 303 rises
+from $0.36$ to $0.65$ for the C35 flow together with a zonal load forecast and the congestion
+indicator of the neighbouring line C6 (further examples follow below). The gain matrix also shows that the same field is
+harmless next to some partners and decisive next to others, which a grade that ignores the background
+cannot represent.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig4_combination_risk.pdf}
+\caption{Share of candidate fields that are unsafe alone (orange), safe alone but critical with
+at most two background fields (blue), or never critical (grey), at (a) $\tau=0.5$ and (b)
+$\tau=0.7$; numbers give combination-critical fields over all candidates. (c) Best single field
+versus best set of at most three fields.}
+\label{fig:risk}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig5_profile.pdf}
+\caption{(a) Field profile for the hourly flow on RTS line C35 (14 fields with the largest
+$M^{(2)}$): Pearson $r^2$, single-field risk and worst-background risk, with the witness
+background for the three riskiest fields. (b) Gain matrix for NEM unit PPCCGT: entry $(i,j)$ is
+$V(\{i,j\})-V(\{j\})$, the diagonal is $V(\{i\})$; values below 0.10 are not printed.}
+\label{fig:profile}
+\end{figure}
+
+
+\paragraph{Single-field grading misses most of the risk}
+\input{tables/tab_risk}
+
+We first ask how much of the risk in the four data sets is invisible to single-field grading.
+Table~\ref{tab:risk} and Fig.~\ref{fig:risk} report, for each of the ten targets, how many
+candidate fields are unsafe on their own and how many become critical only in combination.
+
+Of the 264 field--target
+pairs, 256 are critical at $\tau=0.5$ with at most two background fields, and 223 of these are
+safe on their own; at $\tau=0.7$ the figures are 138 and 113. For four targets (NEM BW01 and
+TUMUT3, PJM load and PJM net interchange) no candidate exceeds $\tau=0.5$ alone, yet 22 to 30
+candidates take part in a dangerous combination; at $\tau=0.7$ the same holds for RTS line C35,
+where 21 of 23 fields are critical and none is unsafe alone. Withholding every field that is unsafe alone
+breaks almost none of the minimal unsafe sets (Table~\ref{tab:risk-sets}): 1,766 of 1,799 at $\tau=0.5$
+and 534 of 559 at $\tau=0.7$ remain.
+
+\emph{Where single fields do leak, combinations still dominate.} Some targets are exposed by a
+single close proxy: RTS unit outputs are almost determined by a nodal price ($V_1=0.99$), and
+PJM total generation by the system load forecast ($0.97$). For these, $M^{(0)}$ already flags
+the proxy, and the remaining risk is again combinatorial (e.g.\ 22 of 24 PJM fields are
+combination-critical). Removing such near-proxies from the candidate pool
+(Section~\ref{sec:data}) lowers the best single field to $0.42$ for both PJM total generation
+and CAISO load but leaves every remaining field combination-critical at $\tau=0.5$ (22/22 and
+26/26), so the conclusion does not depend on where the proxy boundary is drawn.

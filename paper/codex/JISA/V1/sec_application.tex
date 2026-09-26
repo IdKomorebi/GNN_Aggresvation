@@ -1,0 +1,34 @@
+%===============================================================================
+\section{Application to Data-Release Decisions}\label{sec:application}
+%===============================================================================
+
+The field-level risk is a measurement; what an operator does with it depends on a threshold $\tau$
+and on policy. We illustrate one downstream use and state its limits.
+
+\paragraph{Critical fields}
+Given $\tau$, Theorem~\ref{thm:mus} turns the risk table into a flag: field $i$ is critical if some
+background of at most $K$ fields is safe on its own and becomes unsafe when $i$ is added. Over the ten
+targets the single-field rule $\Vy(\{i\})>\tau$ recovers only 13\% ($\tau=0.5$) and 17\% ($\tau=0.7$) of
+the critical fields. Scanning with the amortized attacker and certifying at most three candidate
+backgrounds per field by retraining recovers 76--91\% of them with no false positives
+(Table~\ref{tab:decision}).
+
+\paragraph{Withholding}
+The minimal unsafe sets identify which fields to withhold. Withholding every field that is unsafe
+alone leaves 98\% ($\tau=0.5$) and 96\% ($\tau=0.7$) of the minimal unsafe sets of size $\le3$ intact.
+Two strategies that choose fields from estimates alone, without certification---a minimum hitting set of the estimated
+minimal unsafe sets, and a greedy rule that withholds the field with the largest $\hat M^{(2)}$ and
+recomputes $\hat M^{(2)}$ over the remaining fields---leave 0.3--1.6\% intact while withholding at most
+1.9 fields more than the ground-truth optimum.
+
+\paragraph{Limits}
+These numbers depend on the threshold, which is a policy choice: at $\tau=0.5$ almost every field is
+critical in our data, at $\tau=0.9$ very few are, and the share of dangerous combinations that
+single-field grading leaves intact varies from 96\% to 38\% across $\tau\in[0.5,0.9]$. They also depend
+on $K$: minimal unsafe sets of size four exist that a withholding set computed at $K=2$ does not break,
+and breaking them requires on average 11.3 instead of 9.4 withheld fields at $\tau=0.5$ and 6.3 instead
+of 5.1 at $\tau=0.7$ (Section~\ref{sec:res-robust}). A release decision on a concrete set $A$ can also be checked directly by
+evaluating $\Vy(A)$. Withholding is therefore an application of the risk profile rather than its purpose: it shows that
+the per-field quantity carries enough structure---witnesses and minimal unsafe sets---to act on.
+
+\input{tables/tab_decision}

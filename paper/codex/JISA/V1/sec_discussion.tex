@@ -1,0 +1,25 @@
+\section{Discussion}\label{sec:discussion}
+\subsection{Security meaning of the profile}
+The proposed measurement makes background information part of the field-level result. A large single-field score identifies direct exposure. Large amplification identifies exposure that depends on an additional combination, and the witness backgrounds specify that combination. These distinctions remain visible even when two fields have similar overall risk. They are useful for a security analyst who needs to explain why a release warrants review.
+
+The maximum contextual gain also serves a different purpose from average attribution. In the evaluated data, the median average-to-maximum gain ratio is 0.32, and many high-gain backgrounds form small families around a shared partner. The profile retains these backgrounds instead of dispersing their contribution across an average. The safety-margin result formalizes the worst-case gain, while criticality identifies threshold crossings under the selected budget.
+
+\subsection{What should be measured in an efficient audit}
+Profile accuracy and verification coverage capture different aspects of performance. Set-value and marginal-risk errors determine how faithfully the scanner describes a field. Background ranking determines which evidence can be recovered with a small retraining budget. Critical-field recall additionally depends on the threshold, so comparable recovered marginal risk need not produce the same set of flags.
+
+The foundation-model comparison illustrates this distinction. TabPFN v2 and the proposed estimator recover almost the same total marginal risk after retraining, but TabPFN has higher critical-field recall at $\tau=0.7$. The proposed estimator is more accurate for amplification and is substantially cheaper to apply across many subsets. Reporting these results separately makes the operating trade-off clear without reducing audit quality to one metric.
+
+The fixed reconstruction-plus-random configuration also reflects both purposes. Its millisecond scan cost is practical for the present data scale, and its modest improvement in profile accuracy is useful when reporting risk across all fields. The reconstruction-only alternative reduces mean cost from 58 to 21\,ms with the same rounded certified ratios, making it an appropriate option for larger query or row counts. This is a choice of estimator configuration within one audit framework.
+
+\subsection{Applicability and extensions}
+The audit assumes labelled historical information for supervised inference and evaluates a specified attacker family. Changes in data distribution, public baseline or attacker capability require the reference and estimated profiles to be updated. Random train/test splits and the selected operational targets define the empirical scope of the present study. The background budget is part of the result: increasing it reveals additional threshold crossings even where mean marginal risk is close to saturation.
+
+A useful extension is to enrich background proposals with physical relations or inference graphs. Another is to add stronger predictors to the verification family. The all-column experiment suggests that feature reuse can also reduce the cost of revising target definitions. These directions preserve the separation between a field's estimated profile and the combinations verified by dedicated retraining.
+
+\section{Conclusion}\label{sec:conclusion}
+We presented an audit for background-dependent inference leakage that derives field-level risk from the inferability of data sets. Budgeted marginal risk records the largest admissible gain, background amplification identifies the part missed by single-field assessment, and witness backgrounds explain the contributing combinations. Shared reconstruction and random features with subset-specific readouts make these profiles efficient to estimate; retraining selected backgrounds verifies the evidence.
+
+Across four power-system data sets, the estimator achieves a marginal-risk error of 0.015 and recovers 97.8\% of total marginal risk after verifying three backgrounds per field. Critical-field recall is 76--91\% without false positives in the evaluated settings, compared with 13--17\% for single-field screening. The combined definition, efficient measurement and verification procedure provide a practical basis for auditing inference risk before data release.
+
+\section*{Data and code availability}
+RTS-GMLC~\cite{barrows2020rts} and the AEMO NEMWEB archive~\cite{aemo2024nemweb} are public; PJM and CAISO data were obtained from the operators' public portals. Field-role tables, dispatch simulation, reference retraining, estimator and analysis code will be made available upon publication.

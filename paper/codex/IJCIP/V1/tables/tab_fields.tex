@@ -1,0 +1,15 @@
+\begin{table}[H]
+\centering\footnotesize\raggedright
+\caption{Field roles and rule basis (Chinese electricity-market disclosure rules~\cite{nea2024disclosure}; appendix item numbers in parentheses).}\label{tab:fields}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lp{7.0cm}p{5.0cm}}
+\toprule
+Data set & Candidate fields (released before the target) & Targets \\
+\midrule
+RTS-GMLC & zonal load forecasts (3; 6.41); wind, PV, rooftop PV and hydro forecasts (4; 6.42); regulation up/down and spinning reserve requirements (3; 6.46); system energy price and nodal prices at 9 buses (10; 6.52); congestion indicators of lines C6, C29, CA-1 (3; 6.54) & outputs of units 223\_STEAM\_3 and 221\_CC\_1 (specific information, Art.~17(3)); hourly flow on line C35 (only daily averages of important lines are listed, 6.66)\\
+NEM 2024 & regional demand (5), available capacity (5), semi-scheduled wind and solar forecasts (9), regional prices (5), interconnector flows (6) & actual outputs of units BW01, TUMUT3, PPCCGT (specific information)\\
+PJM & regulation market prices and volumes (5); day-ahead reserve prices, requirements, self-schedules and cleared volumes (9); day-ahead system energy price, LMP, congestion and loss components (4); real-time LMP, congestion and loss components (3); scheduled interchange (1); for total generation and net interchange also the system load forecasts (2) & metered load (6.61), total generation (6.57), net actual interchange (6.65), all released next day\\
+CAISO & day-ahead load forecasts of three sub-areas (3); day-ahead wind and solar forecasts (6); day-ahead and 15-min real-time prices and components (11); day-ahead schedules of sub-area load, total generation, imports and exports (6); ancillary-service requirements incl.\ regulation mileage (5) and procured volumes (4) & actual CAISO load (6.61), released next day\\
+\bottomrule
+\end{tabular}
+\end{table}

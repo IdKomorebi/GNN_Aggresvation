@@ -1,0 +1,23 @@
+\begin{table}[!t]
+\centering\small
+\caption{Fields exposed by single-field and combination screening. $V_1$: best single field; $V_{\le3}$: best set of at most three fields; alone: fields with $V(\{i\})>\tau$; comb.: fields safe alone but $\tau$-critical with at most two background fields. Minimal unsafe sets and withholding counts are reported in Table~\ref{tab:risk-sets}.}\label{tab:risk}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{lrrr rrrr}
+\toprule
+ & & & & \multicolumn{2}{c}{$\tau=0.5$} & \multicolumn{2}{c}{$\tau=0.7$}\\
+\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+Target & $p$ & $V_1$ & $V_{\le3}$ & alone & comb. & alone & comb.\\
+\midrule
+RTS unit 223 & 23 & 1.00 & 1.00 & 10 & 13 & 10 & 6 \\
+RTS unit 221 & 23 & 0.99 & 0.99 & 10 & 13 & 10 & 9 \\
+RTS line C35 & 23 & 0.52 & 0.86 & 4 & 19 & 0 & 21 \\
+NEM BW01 & 30 & 0.49 & 0.65 & 0 & 30 & 0 & 0 \\
+NEM TUMUT3 & 30 & 0.38 & 0.53 & 0 & 22 & 0 & 0 \\
+NEM PPCCGT & 30 & 0.55 & 0.80 & 2 & 28 & 0 & 10 \\
+PJM load & 22 & 0.48 & 0.80 & 0 & 22 & 0 & 14 \\
+PJM total gen. & 24 & 0.97 & 0.99 & 2 & 22 & 2 & 18 \\
+PJM net interch. & 24 & 0.41 & 0.71 & 0 & 24 & 0 & 3 \\
+CAISO load & 35 & 0.82 & 0.93 & 5 & 30 & 3 & 32 \\
+\bottomrule
+\end{tabular}
+\end{table}
