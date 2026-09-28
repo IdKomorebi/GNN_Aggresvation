@@ -1,0 +1,106 @@
+{
+  "decks": [
+    {
+      "file": "01_方向调整与初步验证.html",
+      "slides": 13,
+      "navigation": "passed",
+      "notes": "passed",
+      "overview": "passed",
+      "hash": "passed",
+      "print_visibility": "passed"
+    },
+    {
+      "file": "02_正式协议与完整评估.html",
+      "slides": 15,
+      "navigation": "passed",
+      "notes": "passed",
+      "overview": "passed",
+      "hash": "passed",
+      "print_visibility": "passed"
+    },
+    {
+      "file": "03_场景扩展与数值修复.html",
+      "slides": 14,
+      "navigation": "passed",
+      "notes": "passed",
+      "overview": "passed",
+      "hash": "passed",
+      "print_visibility": "passed"
+    },
+    {
+      "file": "04_消融与预学习改进.html",
+      "slides": 13,
+      "navigation": "passed",
+      "notes": "passed",
+      "overview": "passed",
+      "hash": "passed",
+      "print_visibility": "passed"
+    },
+    {
+      "file": "05_机理画像与稳健性验证.html",
+      "slides": 15,
+      "navigation": "passed",
+      "notes": "passed",
+      "overview": "passed",
+      "hash": "passed",
+      "print_visibility": "passed"
+    },
+    {
+      "file": "06_外部对比与投稿准备.html",
+      "slides": 15,
+      "navigation": "passed",
+      "notes": "passed",
+      "overview": "passed",
+      "hash": "passed",
+      "print_visibility": "passed"
+    }
+  ],
+  "total_slides": 85,
+  "overflow_issues": [],
+  "javascript_errors": [],
+  "network_requests": [],
+  "standalone_and_pdf_checks": [
+    {
+      "file": "01_方向调整与初步验证.html",
+      "pdf_pages": 13,
+      "pdf_bytes": 933961,
+      "isolated_html": "passed",
+      "fullscreen": "passed"
+    },
+    {
+      "file": "02_正式协议与完整评估.html",
+      "pdf_pages": 15,
+      "pdf_bytes": 957199,
+      "isolated_html": "passed",
+      "fullscreen": "passed"
+    },
+    {
+      "file": "03_场景扩展与数值修复.html",
+      "pdf_pages": 14,
+      "pdf_bytes": 945675,
+      "isolated_html": "passed",
+      "fullscreen": "passed"
+    },
+    {
+      "file": "04_消融与预学习改进.html",
+      "pdf_pages": 13,
+      "pdf_bytes": 896333,
+      "isolated_html": "passed",
+      "fullscreen": "passed"
+    },
+    {
+      "file": "05_机理画像与稳健性验证.html",
+      "pdf_pages": 15,
+      "pdf_bytes": 921426,
+      "isolated_html": "passed",
+      "fullscreen": "passed"
+    },
+    {
+      "file": "06_外部对比与投稿准备.html",
+      "pdf_pages": 15,
+      "pdf_bytes": 970307,
+      "isolated_html": "passed",
+      "fullscreen": "passed"
+    }
+  ]
+}

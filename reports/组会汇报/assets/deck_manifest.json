@@ -1,0 +1,95 @@
+[
+  {
+    "number": 1,
+    "title": "方向调整与初步验证",
+    "file": "01_方向调整与初步验证.html",
+    "slides": 13,
+    "figures": [
+      "01_semantics",
+      "01_copies",
+      "01_estimator",
+      "01_budget",
+      "01_independent",
+      "01_cost"
+    ]
+  },
+  {
+    "number": 2,
+    "title": "正式协议与完整评估",
+    "file": "02_正式协议与完整评估.html",
+    "slides": 15,
+    "figures": [
+      "02_single_multi",
+      "02_attackers",
+      "02_readout",
+      "02_critical",
+      "02_baselines",
+      "02_release",
+      "02_reject",
+      "02_top3",
+      "02_naux",
+      "02_naux_max"
+    ]
+  },
+  {
+    "number": 3,
+    "title": "场景扩展与数值修复",
+    "file": "03_场景扩展与数值修复.html",
+    "slides": 14,
+    "figures": [
+      "03_pilot",
+      "03_rts",
+      "03_nem",
+      "03_roles",
+      "03_complete",
+      "03_fix",
+      "03_fix_cert",
+      "03_decisions"
+    ]
+  },
+  {
+    "number": 4,
+    "title": "消融与预学习改进",
+    "file": "04_消融与预学习改进.html",
+    "slides": 13,
+    "figures": [
+      "04_ablation",
+      "04_attempts",
+      "04_dimension",
+      "04_rank",
+      "04_large",
+      "04_tail",
+      "04_candidates",
+      "04_downstream"
+    ]
+  },
+  {
+    "number": 5,
+    "title": "机理画像与稳健性验证",
+    "file": "05_机理画像与稳健性验证.html",
+    "slides": 15,
+    "figures": [
+      "05_mechanism",
+      "05_regime",
+      "05_profile",
+      "05_average",
+      "05_amplification",
+      "05_robust",
+      "05_ksaturation",
+      "05_kcritical"
+    ]
+  },
+  {
+    "number": 6,
+    "title": "外部对比与投稿准备",
+    "file": "06_外部对比与投稿准备.html",
+    "slides": 15,
+    "figures": [
+      "06_time_all",
+      "06_external",
+      "06_tabpfn",
+      "06_recall",
+      "06_tabtime"
+    ]
+  }
+]
