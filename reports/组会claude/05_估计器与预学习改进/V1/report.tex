@@ -1,0 +1,245 @@
+\documentclass[zihao=-4,a4paper]{ctexart}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,float,array,enumitem,xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\linespread{1.35}
+\setlist{itemsep=2pt,topsep=4pt}
+\ctexset{section={format=\Large\bfseries\color{blue!55!black}},subsection={format=\large\bfseries}}
+\newtcolorbox{keybox}[1][本次要点]{colback=blue!3,colframe=blue!45!black,fonttitle=\bfseries,title=#1,boxrule=0.6pt,arc=1mm}
+\newtcolorbox{notebox}{colback=gray!6,colframe=gray!60,boxrule=0.4pt,arc=1mm}
+\newcommand{\fig}[3][0.95]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\caption{#3}\end{figure}}
+\newcommand{\M}{M^{(K)}}
+
+\title{\textbf{第 5 次组会汇报}\\[4pt]\Large 估计器：预学习几乎没用，为什么，怎么改}
+\author{对应工作：115、116、118、122、125 号实验}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{keybox}
+\begin{enumerate}[leftmargin=*]
+  \item 先修了一个数值缺陷：读出层特征标准化的下限只有 $10^{-8}$，在真实数据上个别集合预测爆掉，$M$ 被高估。修正后 NEM 的 $M^{(2)}$ 偏差从 $+0.110$ 降到 $-0.016$。
+  \item 消融实验发现：\textbf{随机初始化、完全不训练的主干}加上同样的读出，与掩码预训练过的主干\textbf{几乎一样好}。起决定作用的是“逐子集闭式读出”。
+  \item 诊断出三层原因：只预测目标会让\textbf{表征塌缩}；在审计用到的小集合上，\textbf{随机特征本来就够用}；$M$ 取最大值，对少数\textbf{读出爆掉极敏感}。
+  \item 改进：预训练时\textbf{加上重建被遮住的列}，与随机主干拼接，并把预测截断到训练目标的取值范围。最终估计器 C3 的 $M^{(2)}$ 误差降 29\%，$V$ 误差降 32\%，没有一项指标变差；下游结果全部重算。
+\end{enumerate}
+\end{keybox}
+
+\section{估计器是什么，为什么需要它}
+
+第 1、3 次提到：41 个字段、$K=2$ 用并行重训十几分钟就能精确算完；但 $K=3$ 时 CAISO 每个目标要算 52,360 个集合，换基底、换目标定义时还要反复重算，所以需要一个“一次训练、任意集合秒级查询”的估计器。
+
+\fig{figures/图1.png}{论文中的估计器结构（最终版，已包含本次的改进）：(a) 掩码预训练一次；(b) 每个查询集合在冻结特征上做闭式岭回归读出；(c) 扫描—认证\protect\newline{\footnotesize 原图：\texttt{paper/claude/V6\_ieee/figures/fig3\_model.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{主干}：3 层 $\times$ 256 的 MLP，输入 $[x\odot m,\ m]$，训练时随机遮住一部分字段（掩码），冻结最后一个隐层作为特征 $\phi$。
+  \item \textbf{逐子集闭式读出}：对查询集合 $S$，在训练行上用 $[x_S,\ x_S^2,\ \phi(x_S)]$ 解一次岭回归，得到 $\hat V(S)$。
+  \item 本次开始时的口径：预训练\textbf{只预测目标}；三个种子的特征拼接后读出一次。
+\end{itemize}
+
+\section{第一个问题：真实数据上 $M$ 被高估（115 号）}
+
+第 3 次汇报的 NEM 上，集合估计误差只有 0.011—0.018，$M^{(2)}$ 却被高估了 0.13—0.17。
+
+\textbf{定位}：高估不是因为 $\hat V(T\cup i)$ 估高了，而是作为背景的 $\hat V(T)$ 被严重低估，甚至“崩成 0”。读出层做特征标准化时，标准差下限只有 $10^{-8}$。训练集上近似常数的特征（死神经元）在测试集上稍有变化，就被放大成天文数字，预测爆掉。$M$ 对背景取最大，恰好挑中这些差分。
+
+\begin{table}[H]\centering
+\caption{115 号：NEM 崩溃集合上逐步修正}
+\begin{tabular}{lcc}
+\toprule
+& 仍然崩溃的集合 & 平均误差 \\
+\midrule
+原口径（标准差下限 $10^{-8}$） & 162 & 0.187 \\
+标准差下限 $10^{-3}$ & 42 & 0.105 \\
++ 测试特征截断到训练集取值范围 & 3 & 0.035 \\
++ 5 折交叉验证选 $\lambda$ & \textbf{1} & \textbf{0.026} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+同时把“三种子特征拼接”改为“\textbf{三种子各自读出、预测取平均}”（口径 E）：拼接会把维度推到 800 以上，放大数值问题。
+
+\begin{table}[H]\centering
+\caption{115 号：11 个目标平均}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+读出方式 & $M^{(2)}$ 偏差 & $M^{(2)}$ 误差 & 排序 Spearman & 认证前 1 \\
+\midrule
+A 原口径（三种子拼接） & $+0.029$ & 0.051 & 0.891 & 0.798 \\
+E 数值修正 + 三种子预测平均 & $-0.018$ & \textbf{0.020} & \textbf{0.970} & \textbf{0.940} \\
+\midrule
+NEM 单独：A $\to$ E & $+0.110\to-0.016$ & & $0.742\to0.962$ & $0.500\to0.920$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\fig{figures/图2.png}{115 号：$V$ 误差小不代表 $M$ 误差小（左）；各读出方式的认证效率（右）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation115/figures/fig2\_variant\_summary.png}}}
+
+\begin{notebox}
+教训：\textbf{估计器要按“边际（差分）保真度”来选，而不是集合值误差}。$V$ 的误差 88\%—96\% 是各集合共有的系统性低估，在差分 $V(T\cup i)-V(T)$ 中会抵消；决定 $M$ 的是集合特有的误差，尤其是它的上尾。
+\end{notebox}
+
+\section{第二个线索：主干里有大量死神经元（115、116 号）}
+
+各组主干原本只在本组的 15—24 个字段、1—2 个目标上预训练。改用\textbf{全列主干}（一次预训练、掩码重建全部 53 列）后：
+
+\fig{figures/图3.png}{116 号：三种主干的表征健康度、误差和扫描—认证效果（读出方式相同）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation116/figures/fig2\_backbones.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item 死神经元从 24.2\% 降到 7.7\%，有效维度从 1.45 升到 2.44，$V$ 误差 $0.049\to0.040$。
+  \item $M$ 只略有改善（$0.029\to0.026$）：更好的主干主要减小了共同偏差，而共同偏差在差分中本来就会抵消。
+\end{itemize}
+
+这提示：\textbf{只服务少数目标的预训练，表征并不健康}。
+
+\section{消融：预学习几乎没用（118 号）}
+
+在第 3 次的 10 个目标上，逐项替换估计器的组成部分：
+
+\fig{figures/图4.png}{118 号：估计器对比与消融（10 个目标平均；黑点为各数据集平均；蓝色为本文）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation118/figures/fig1\_variants.png}}}
+
+\begin{table}[H]\centering
+\caption{118 号：关键消融（10 个目标平均，单种子）}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+估计方式 & $V$ 误差 & $M^{(2)}$ 误差 & 排序 Spearman & 认证前 1 \\
+\midrule
+线性读出（无主干） & 0.212 & 0.144 & 0.737 & 0.803 \\
+共享输出头（主干直接输出，三种子） & 0.067 & 0.057 & 0.930 & 0.883 \\
+\textbf{随机初始化主干 + 读出} & \textbf{0.027} & \textbf{0.022} & 0.959 & 0.906 \\
+预训练不掩码 & 0.032 & 0.036 & 0.928 & 0.898 \\
+伯努利掩码 & 0.030 & 0.024 & 0.958 & 0.932 \\
+不做数值修正 & 0.031 & 0.036 & 0.904 & 0.825 \\
+本文·单种子（掩码预训练） & 0.030 & 0.023 & 0.953 & \textbf{0.936} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{起决定作用的是逐子集闭式读出}：同一批主干，只把“直接输出”换成“按子集闭式读出”，$M^{(2)}$ 误差从 0.057 降到 0.021。共享输出头相当于假设攻击者拿到什么字段都用同一种组合方式，恰好抹掉了组合效应。
+  \item \textbf{随机初始化、完全不训练的主干已经是很强的基线}：$V$、$M$ 误差与预训练主干相当甚至略好，只在认证前 1 上稍差（0.906 对 0.936）。
+  \item 掩码有必要（不掩码的预训练比随机主干还差），但掩码分布不关键（103 号：均匀、伯努利、不掩码的 $M^{(1)}$ 误差差别很小）。
+  \item 对每个集合热启动微调整个网络（$\le100$ 步），10 个目标中 9 个比闭式读出更差，还慢 3 倍以上。
+\end{itemize}
+
+\begin{notebox}
+这个结果有点反直觉：预训练花了功夫，却没比随机网络好多少。122 号专门回答两个问题：\textbf{为什么？能不能改好？}
+\end{notebox}
+
+\section{为什么预学习几乎没用（122 号）}
+
+\subsection{原因一：只预测目标，表征塌缩}
+
+\fig{figures/图5.png}{122 号：表征的有效维度（左）与集合值误差（中、右）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation122/figures/fig1\_collapse\_and\_V.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item 只服务 1—3 个目标时，网络把隐层压到“平均意义下预测这几个目标”的一两个方向上：有效维度只有 \textbf{1.60}，随机初始化是 3.30。
+  \item 改成小集合掩码（small）没有用，说明塌缩与掩码分布无关，是\textbf{训练目标太窄}。
+  \item \textbf{加入“重建被遮住的候选列”}后，有效维度恢复到 2.75，单种子 $V$ 误差下降约 25\%。
+\end{itemize}
+
+\subsection{原因二：小集合上，随机特征本来就够用}
+
+\fig{figures/图6.png}{122 号：秩截断。只保留主干特征的前 $r$ 个主成分再读出\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation122/figures/fig2\_rank\_truncation.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item $r=2$ 时，预训练主干的误差约为随机特征的一半：预训练\textbf{确实学到了与目标对齐的主方向}。
+  \item 但用满 256 维后，只预测目标的主干约等于随机特征：闭式岭读出在 256 维随机 ReLU 特征上相当于一个核回归，对 $\le3$ 个字段、约 6,000 行的问题\textbf{本来就够用}。
+\end{itemize}
+
+\fig{figures/图7.png}{122 号：$V$ 误差随集合规模的变化\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation122/figures/fig3\_set\_size.png}}}
+
+“随机特征 $\approx$ 预训练”\textbf{只在审计用到的小集合上成立}：规模 16 时，随机特征的误差是重建主干的 3.3 倍。
+
+\subsection{原因三：$M$ 取最大值，对读出爆掉极敏感}
+
+\fig{figures/图8.png}{122 号：$V$、边际 $\Delta$、边际误差上尾与 $M^{(2)}$ 的误差\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation122/figures/fig4\_V\_vs\_M\_tail.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item 重建主干把 $V$ 和 $\Delta$ 的\textbf{平均}误差都压低了，但 $M$ 是对背景取最大，\textbf{由边际误差的上尾决定}。
+  \item 未截断时，重建主干只在 PJM 发电 / 联络线组上出问题：它学到了“尖峰探测”单元（来自厚尾的价格、备用列），少数测试行预测爆掉，背景的 $\hat V=0$，以它为背景的价格字段 $M$ 全部被高估（例：真值 0.07，估计 0.23）。
+  \item \textbf{修复}：把预测截断到训练目标的取值范围（不看测试标签），对应“攻击者不会预测出从未见过的目标值”。
+\end{itemize}
+
+\fig{figures/图9.png}{122 号：PJM 发电 / 联络线组的读出爆掉与预测截断修复\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation122/figures/fig5\_collapse\_fix.png}}}
+
+\begin{notebox}
+反直觉的副产品：加上截断之后，\textbf{只预测目标的主干在任何指标上都不再优于随机初始化}。它以前在 $M$、认证上的一点“优势”，来自塌缩表征碰巧不容易引发读出爆掉，而不是学到了更多信息。
+\end{notebox}
+
+\section{改进与定型（122、125 号）}
+
+\subsection{改进思路}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{重建主干}：预训练损失 = 目标 MSE + 被遮候选列的重建 MSE，提供与目标对齐的主方向和“运行状态”信息；
+  \item \textbf{随机主干}：同结构、不训练，提供核回归的高维“主体”；
+  \item 两者特征拼接后读出；加三道数值防护（标准差下限、特征截断、预测截断）；三个种子各自读出，预测取平均。
+\end{itemize}
+
+选择规则在运行新候选之前写入配置文件，避免事后挑选。
+
+\fig{figures/图10.png}{125 号：候选估计器相对旧口径 E 的比较（柱顶为绝对值）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation125/figures/fig1\_candidates.png}}}
+
+\begin{table}[H]\centering
+\caption{125 号：候选估计器（10 个目标平均；旧 E = 只预测目标的主干 $\times3$ 种子）}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccc}
+\toprule
+指标 & 旧 E & C1 重建$\times3$ & C2 重建$\oplus$随机$\times1$ & \textbf{C3 重建$\oplus$随机$\times3$} \\
+\midrule
+$V$ 误差（规模 $\le3$） & 0.0264 & 0.0196 & 0.0196 & \textbf{0.0179} \\
+$V$ 误差（规模 4） & 0.0379 & 0.0285 & 0.0295 & \textbf{0.0258} \\
+$M^{(2)}$ 误差 & 0.0211 & 0.0171 & 0.0163 & \textbf{0.0149} \\
+$M^{(2)}$ 排序 Spearman & 0.957 & 0.963 & 0.965 & \textbf{0.968} \\
+认证前 1 / 前 3 & 0.934 / 0.970 & 0.961 / 0.978 & 0.960 / 0.977 & \textbf{0.961 / 0.978} \\
+背景召回前 3 & 0.67 & 0.71 & 0.71 & \textbf{0.74} \\
+每字段最大高估（上尾） & 0.074 & 0.055 & 0.049 & \textbf{0.048} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{定型为 C3}：10 项主要指标中 9 项不劣于其余候选，且没有任何一项劣于旧 E；$M^{(2)}$ 误差 $-29\%$，$V$ 误差 $-32\%$。代价是耗时约为旧 E 的 2.5 倍（第 6 次会讲等价加速）。
+
+\subsection{下游结果全部重算}
+
+先用旧估计器跑一遍下游脚本，确认与 117、124 号原结果\textbf{逐数一致}，再换成 C3。
+
+\fig{figures/图11.png}{125 号：下游结果用新估计器重算\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation125/figures/fig2\_downstream.png}}}
+
+\begin{table}[H]\centering
+\caption{125 号：下游结果（旧 E $\to$ C3）}
+\begin{tabular}{lcc}
+\toprule
+下游结果 & 旧 E & \textbf{C3} \\
+\midrule
+扫描—认证关键召回 $\tau=0.5$ / $0.7$（精确率均为 1.00） & 0.880 / 0.746 & \textbf{0.910 / 0.786} \\
+估计最小命中集扣留后残留危险组合 $\tau=0.5$ / $0.7$ & 5.8\% / 1.8\% & \textbf{1.5\% / 1.6\%} \\
+自适应 $\hat M$ 贪心扣留后残留 $\tau=0.5$ / $0.7$ & 2.3\% / 1.3\% & \textbf{0.3\% / 1.3\%} \\
+背景放大量 $\Gamma^{(2)}$ 误差 & 0.017 & \textbf{0.014} \\
+危险背景召回前 1 / 前 3 & 0.47 / 0.67 & \textbf{0.55 / 0.74} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+如实记录：加保守余量 $\delta=0.05$ 时，C3 的召回比旧 E 低约 0.01。原因是旧 E 的共同低估更大，$\delta$ 恰好补偿了它；新估计器偏差小，$\delta=0$ 就够用。
+
+\section{小结与下一次}
+
+\begin{keybox}[小结]
+\begin{itemize}[leftmargin=*]
+  \item 估计器中起决定作用的是\textbf{逐子集闭式读出}；只预测目标的掩码预训练会塌缩，在小集合上不比随机网络好。
+  \item 改为\textbf{“目标 + 重建”预训练，与随机特征拼接，加预测截断}后，预训练才真正起作用：$M^{(2)}$ 误差降 29\%，关键字段召回 $0.746\to0.786$（$\tau=0.7$）。
+  \item 论文中的表述相应调整：贡献是“逐子集读出 + 带重建的掩码条件特征”，不是“预训练本身让 $V$ 更准”。
+  \item 选估计器看\textbf{边际保真度}和\textbf{误差上尾}，不看集合值误差。
+\end{itemize}
+\end{keybox}
+
+\textbf{下一次}：统一计时（等价的快速读出），以及与 TabPFN、LazyVI 等外部“免重训”方法的对比。
+
+\end{document}

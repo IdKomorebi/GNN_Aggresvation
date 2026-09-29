@@ -1,0 +1,15 @@
+digraph G {
+  graph [rankdir=LR, fontname="Noto Sans CJK SC", bgcolor="#fcfcfb", nodesep=0.25, ranksep=0.5, pad=0.3, compound=true, newrank=true,
+label="", fontsize=12];
+  node [shape=box, style="rounded,filled", fontname="Noto Sans CJK SC", fontsize=10.5, penwidth=1.2, margin="0.12,0.06"];
+  edge [color="#52514e", arrowsize=0.7, fontname="Noto Sans CJK SC", fontsize=10, fontcolor="#52514e"];
+
+  roles [shape=plain, label=<
+   <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#8a8984" BGCOLOR="#ffffff">
+    <TR><TD BGCOLOR="#efeeea"><B>接收方角色</B></TD><TD BGCOLOR="#efeeea"><B>公开基底 B（默认已知）</B></TD><TD BGCOLOR="#efeeea"><B>背景池 H（可再拿 ≤K 个）</B></TD></TR>
+    <TR><TD>社会公众 / 无条件开放</TD><TD>公众信息</TD><TD>外部公开数据</TD></TR>
+    <TR><TD>市场成员</TD><TD>公众 + 公开信息</TD><TD>外部数据 + 自身特定信息</TD></TR>
+    <TR><TD>有条件开放接收方</TD><TD>公众 + 已获目录项（可信数据空间留痕）</TD><TD>同批/历次可申请目录项</TD></TR>
+    <TR><TD>特定成员（发电企业等）</TD><TD>公众 + 公开 + 自身特定信息</TD><TD>其他渠道可得字段</TD></TR>
+   </TABLE>>];
+}

@@ -1,0 +1,402 @@
+\documentclass[zihao=-4,a4paper]{ctexart}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,float,array,enumitem,xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\linespread{1.35}
+\setlist{itemsep=2pt,topsep=4pt}
+\ctexset{section={format=\Large\bfseries\color{blue!55!black}},subsection={format=\large\bfseries}}
+\newtcolorbox{keybox}[1][本次要点]{colback=blue!3,colframe=blue!45!black,fonttitle=\bfseries,title=#1,boxrule=0.6pt,arc=1mm}
+\newtcolorbox{notebox}{colback=gray!6,colframe=gray!60,boxrule=0.4pt,arc=1mm}
+\newtcolorbox{stepbox}[1]{colback=white,colframe=blue!35!black,fonttitle=\bfseries,title=#1,boxrule=0.5pt,arc=1mm,left=4pt,right=4pt,top=2pt,bottom=2pt}
+\newcommand{\fig}[3][0.95]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\caption{#3}\end{figure}}
+\newcommand{\M}{M^{(K)}}
+
+\title{\textbf{第 1 次组会汇报}\\[4pt]\Large 从集合推断能力到字段推断风险}
+\author{对应工作：9 月中旬方向讨论、98—101 号实验}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{keybox}
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{出发点}：通用推断模型能快速给出任意字段集合的推断能力，但它只是工具，需要一个进一步的产物才能讲成一个完整的故事。
+  \item \textbf{为什么做字段级推断风险}：
+    \begin{itemize}
+      \item 数据分级按字段进行，但只用单字段推断能力衡量字段风险不合理，会漏掉组合推断；
+      \item IGNN 这类黑盒模型给出的敏感度没有可检验的含义，解释性差；
+      \item 更合理的做法是：先考虑所有字段集合的推断风险，再用恰当的定义把集合风险归结到字段上。通用模型正好是遍历集合风险的工具。
+    \end{itemize}
+  \item \textbf{怎么从集合风险得到字段风险}：
+    \begin{itemize}
+      \item Shapley 值是最常用的分配方法，但它“平均分摊”，冗余字段会被稀释，协同通道会被平均掉，不适合衡量安全风险；
+      \item Catav 等提出的 MCI 取“最坏背景下的最大边际”，方向正确，但背景不受限，也没有公开基底和安全语义；
+      \item 我们在 MCI 基础上提出\textbf{背景受限的最大边际推断能力 $\M$}。
+    \end{itemize}
+  \item \textbf{初步验证}：理论命题在真值上零违例；41 个字段上 $K=2$ 已接近饱和；独立数据上排序和阈值结论基本保住。
+\end{enumerate}
+\end{keybox}
+
+\section{出发点：通用推断模型之后还缺什么}
+
+\subsection{集合推断能力 $V(S)$}
+
+本课题关心的是\textbf{数据推断泄露}：攻击者拿到一些看似不敏感的公开字段，训练模型去推断敏感目标（例如机组出力、实际负荷）。度量方式是：
+
+\begin{notebox}
+\textbf{集合推断能力} $V_y(S)$：攻击者掌握字段集合 $S$ 的历史数据后，专门针对 $S$ 训练推断模型（DNN、梯度提升树等，在验证集上挑最强的一个），对目标 $y$ 在测试集上达到的 $R^2$。
+\end{notebox}
+
+它的好处是\textbf{可检验}：任何一个数都可以真的做一次攻击实验来复核。
+
+\subsection{通用推断模型}
+
+问题在于集合数量是指数级的：41 个字段就有 $2^{41}$ 个集合，而每个集合专门重训一次要 14—56 秒。此前的一系列实验因此训练了一个\textbf{通用推断模型}：
+
+\begin{itemize}[leftmargin=*]
+  \item 训练时随机遮住一部分字段（掩码），让一个网络学会“只看到任意一部分字段时怎么推断”；
+  \item 训练一次之后，对任意集合 $S$ 都能在毫秒级给出 $\hat V(S)$，不必再逐个重训。
+\end{itemize}
+
+\subsection{但它只是工具}
+
+9 月中旬讨论方向时的核心问题是：\textbf{有了这个估计器，然后呢？}只说“估得快”不构成一个故事，最后必须交付一个能用于决策的产物。那么这个产物应该是什么？
+
+\section{为什么是字段级的推断风险}
+
+\subsection{实际需求：数据分级是按字段做的}
+
+《数据安全技术 数据分类分级规则》（GB/T 43697—2024）\cite{gbt43697}和电力市场信息披露规则\cite{nea2024}都是\textbf{逐字段}给出类别、等级和披露要求的。规则也提到要考虑“汇聚、加工后等级的变化”，但没有说怎么做。所以一个\textbf{考虑推断的字段级风险}有直接的使用场景。
+
+\subsection{现有做法一：只看单字段推断能力，不合理}
+
+最直接的字段风险是单字段推断能力 $V(\{i\})$：只公开这一个字段，攻击者能推出多少。它的问题是\textbf{忽略了攻击者手里的其他信息}。
+
+\fig{figures/图1.png}{100 号：典型字段在允许 $K$ 个背景字段时的推断能力（$K=0$ 即单字段）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation100/figures/fig2\_profile\_cases.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item PJM 风电出力单独只能推出总发电 0.06；攻击者另有风电占比时，推断能力达到 0.76（总发电 = 出力 $\div$ 占比）。
+  \item CAISO 实时 NP15 电价单独推 SP15 阻塞价只有 0.04，配上 SP15 电价后 0.38（阻塞分量 $\approx$ 节点价差）。
+  \item 只按单字段定级，这些字段都会被判为“低风险”。
+\end{itemize}
+
+\subsection{现有做法二：IGNN——考虑了推断，但是黑盒}
+
+IGNN（Hu 等，IEEE Trans. Smart Grid 2026）\cite{hu2026ignn}是电力领域最接近的工作，目标同样是“考虑数据推断泄露的字段敏感度评估”。
+
+\textbf{做法}：每个字段的最终敏感度由“固有敏感度”和“从邻居传播来的敏感度”聚合得到：
+\[
+  s_i \;=\; \Phi\Big(s_i^{\text{int}},\ \sum_{v_j\in\mathcal N(v_i)} w_{ji}\,s_j\Big).
+\]
+分三个阶段：
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{固有敏感度}：机密字段直接标为 1；一般字段由层次分析法（AHP）按专家打分的判断矩阵给出初值；
+  \item \textbf{推断关系图}：字段为节点。模型驱动的边来自潮流方程等物理关系（有向，权重 1）；数据驱动的边来自相关系数（无向，权重为相关系数）；
+  \item \textbf{图聚合}：以初始敏感度为节点特征，用带推断权重的图注意力网络（GAT）聚合，训练时只监督机密节点（敏感度 = 1）。
+\end{enumerate}
+评价方式：按输出的敏感度把一般字段分成低、中、高三组，分别用来推断机密字段，比较推断准确率（高风险组最高 0.9145）。
+
+\textbf{存在的问题}（此前整理过）：
+\begin{itemize}[leftmargin=*]
+  \item \textbf{敏感度没有真值定义}：输出的 0—1 分数到底是什么，论文没有定义，也无法用攻击实验直接复核；
+  \item \textbf{监督目标退化}：只监督本来就是 1 的机密节点，一般字段的分数只是网络结构、初值和传播共同诱导出的自由变量；消融实验显示主要起作用的是 AHP 专家初值；
+  \item \textbf{无法表达联合推断}：推断关系被简化为字段两两之间的边，“两个字段合起来才能推出来”的情形表达不了；相关系数是对称的，而推断能力不对称；
+  \item 它的评价标准其实是在衡量\textbf{推断能力}，而不是它声称的“融合风险”。
+\end{itemize}
+
+\subsection{我们的思路}
+
+\begin{stepbox}{思路：字段风险从集合风险里“算出来”}
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{集合风险有明确含义}：$V(S)$ 就是攻击者拿到 $S$ 后能推出多少，每个数都能用攻击实验复核；
+  \item \textbf{考虑所有集合}：组合推断、冗余、间接推断都包含在“所有集合的风险”里，不需要人为画边；
+  \item \textbf{用恰当的定义把集合风险归结到字段}：得到的字段风险继承集合风险的含义，可以解释（“在什么背景下危险”）、可以检验；
+  \item \textbf{通用模型是遍历集合风险的工具}：要考虑大量集合，逐个重训太慢，这正是通用模型的用处。
+\end{enumerate}
+\end{stepbox}
+
+这样一来，通用模型在故事里有了明确的位置，而“字段风险”成为论文主线。剩下的关键问题是第 3 步：\textbf{用什么定义把集合风险归结到字段？}
+
+\section{从集合风险到字段风险：候选定义}
+
+\subsection{我们希望字段风险满足什么}
+
+\begin{table}[H]\centering
+\caption{字段风险应满足的要求}
+\small
+\begin{tabular}{lp{0.7\linewidth}}
+\toprule
+要求 & 含义 \\
+\midrule
+可用攻击检验 & 数值能通过重训攻击者复核，而不是专家打分或网络输出 \\
+考虑联合推断 & 能反映“单独无用、组合危险” \\
+最坏情形 & 安全场景关心的是“最危险时有多危险”，而不是平均 \\
+冗余不稀释 & 多发几个副本，不能让每个字段的风险变低 \\
+有限背景 & 攻击者掌握的其他信息是有限的，可以作为参数设定 \\
+公开基底 & 已经必须公开的字段，风险应在它们之上计算 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+下面用一个 3 字段小例子贯穿比较。目标为 PJM 计量负荷，数值取自 98 号真值（取整，作示意）：
+
+\begin{table}[H]\centering
+\caption{示意小例子：$L$ = 负荷预测，$W_1$ = 风电出力，$W_2$ = 风电占比}
+\begin{tabular}{lccccc}
+\toprule
+集合 $S$ & $\{L\}$ & $\{W_1\}$ & $\{W_2\}$ & $\{W_1,W_2\}$ & 含 $L$ 的集合 \\
+\midrule
+$V(S)$ & 0.99 & 0.06 & 0.15 & \textbf{0.83} & 0.99 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+另有 $V(\varnothing)=0$。负荷预测一个字段就几乎完全暴露负荷；两个风电字段单独都很弱，合起来能推出 0.83，是一条“备用推断通道”。
+
+\subsection{候选一：Shapley 值}
+
+\paragraph{来源与定义。}Shapley 值来自合作博弈论（Shapley 1953）\cite{shapley1953}：$n$ 个玩家合作得到总收益，如何“公平”地分给每个人。给定集合函数 $v$（这里是 $V$），字段 $i$ 的 Shapley 值为
+\[
+  \phi_i \;=\; \sum_{S\subseteq F\setminus\{i\}} \frac{|S|!\,(n-|S|-1)!}{n!}\;\big[v(S\cup\{i\})-v(S)\big].
+\]
+等价的直观解释：把 $n$ 个字段随机排一个顺序依次加入，$\phi_i$ 是字段 $i$ 加入时带来的边际增益的\textbf{平均值}（对所有 $n!$ 种顺序平均）。
+
+\paragraph{公理。}Shapley 值是唯一同时满足以下四条的分配方式：
+\begin{itemize}[leftmargin=*]
+  \item \textbf{效率}：$\sum_i \phi_i = v(F)-v(\varnothing)$，全部收益恰好分完；
+  \item \textbf{对称}：贡献完全相同的两个字段分到相同的值；
+  \item \textbf{虚拟}：对任何集合都没有贡献的字段分到 0；
+  \item \textbf{可加}：两个博弈相加，Shapley 值也相加。
+\end{itemize}
+
+\paragraph{在机器学习中的使用。}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{SHAP}（Lundberg \& Lee, NeurIPS 2017）\cite{lundberg2017}：解释一个训练好的模型对\textbf{单个样本}的预测；
+  \item \textbf{SAGE}（Covert 等, NeurIPS 2020）\cite{covert2020}：全局特征重要性。$v(S)$ 取“用训练好的全量模型、把 $S$ 以外的字段按条件分布积分掉之后的损失下降”，衡量的是\textbf{模型依赖哪些字段}；
+  \item \textbf{SPVIM}（Williamson \& Feng, ICML 2020）\cite{williamson2020}：$v(S)$ 取对每个子集\textbf{重新拟合}后的总体预测能力，与我们的 $V(S)$ 同一口径。
+\end{itemize}
+
+\paragraph{为什么考虑它。}当时的一个方案是：通用模型给出 $V(S)$，再用 Shapley 值分解成字段贡献，用 Shapley 交互分析字段之间的协同。98 号验证了\textbf{在通用模型上 Shapley 值可以算得很准}（精确枚举时与真值的 Kendall $\tau$ 约 0.89）。所以问题不在算不算得准，而在\textbf{语义是否合适}。
+
+\paragraph{小例子上的结果。}按上面的定义逐个顺序计算：
+
+\begin{table}[H]\centering
+\caption{小例子上各字段量的数值（最后一列：给 $L$ 加 1 个完全相同的副本后重新计算）}
+\small
+\begin{tabular}{lccccc}
+\toprule
+字段 & 单字段 & Shapley $\phi_i$ & LOCO & $M^{(1)}$ & 加副本后 Shapley \\
+\midrule
+$L$ 负荷预测 & 0.99 & 0.678 & 0.16 & 0.99 & \textbf{0.408}（每份） \\
+$W_1$ 风电出力 & 0.06 & \textbf{0.133} & 0 & \textbf{0.68} & 0.072 \\
+$W_2$ 风电占比 & 0.15 & \textbf{0.178} & 0 & \textbf{0.77} & 0.102 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+（LOCO 即“留一字段”：$v(F)-v(F\setminus\{i\})$，Lei 等 2018\cite{lei2018}；置换重要性（Breiman 2001\cite{breiman2001}）思想相同。$M^{(1)}$ 的定义见 3.4 节，这里先当作“在最坏的 1 个背景字段下，公开字段 $i$ 带来的增益”。）
+
+\paragraph{问题一：协同通道被平均掉。}风电字段只有在“先有另一个风电字段、且还没有负荷预测”的顺序里才有大增益（0.68、0.77）；在大多数顺序里负荷预测已经在前面，增益为 0。平均下来 Shapley 只有 0.13、0.18。但对防护来说，恰恰要关心\textbf{负荷预测不发布时，还剩什么通道}。
+
+\paragraph{问题二：冗余被稀释。}效率公理要求总收益必须分完，所以功能相同的字段会平分：给负荷预测加一个副本，每份 Shapley 从 0.678 降到 0.408；加两个副本降到 0.292。\textbf{发布方只要多发几个副本，就能把每个字段的风险分数“做低”}。LOCO 更极端：只要还有副本在，删掉一个几乎没有损失，风险为 0。
+
+\paragraph{真实数据上同样如此。}
+
+\fig{figures/图2.png}{98 号：真实数据（PJM 14 字段精确博弈，目标计量负荷）上 Shapley 值（蓝）、单字段（灰）与背景最大边际（橙）的对比\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation98/figures/fig3\_shapley\_vs\_risk\_semantics.png}}}
+
+\fig{figures/图3.png}{99 号：给负荷预测加入精确副本，Shapley 被持续稀释，$M^{(1)}$ 与单字段能力不变\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation99/figures/fig3\_copy\_dilution.png}}}
+
+负荷预测加 4 个副本后，Shapley 从 0.223 降到 0.114，原字段加全部副本的 Shapley 之和也只有 0.57；而 $M^{(1)}$ 始终是 0.991。CAISO 上复现了同样的现象：
+
+\fig{figures/图4.png}{100 号：CAISO 14 字段精确博弈。强字段的 Shapley 只有单字段能力的 12\%—23\%，全集删除边际约为 0；全量模型 SAGE 集中到模型碰巧选中的一两个替代字段\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation100/figures/fig8\_caiso\_redundancy\_control.png}}}
+
+\begin{notebox}
+\textbf{结论}：Shapley 回答的是“全部风险怎样\textbf{公平分摊}”，而数据安全要问的是“在某个背景下公开这个字段，风险\textbf{最多}增加多少”。前者要求分完、取平均；后者要求不分摊、取最坏。所以 Shapley 可以作为“份额解释”的辅助，但不适合作为风险分级的依据。
+\end{notebox}
+
+\subsection{候选二：MCI（Catav 等，ICML 2021）}
+
+\paragraph{动机。}Catav 等\cite{catav2021}指出的正是上面的问题：Shapley 在相关、重复特征下系统性低估。他们的例子是 $Y=f_1\wedge(f_2\vee f_3)$：把 $f_1$ 复制 3 份，$f_1$ 的 Shapley 从 0.65 降到 0.15。他们的目标是解释\textbf{数据}（哪些特征与结果有关），而不是解释某个模型。
+
+\paragraph{定义。}给定单调不减、$\nu(\varnothing)=0$ 的评价函数 $\nu$，特征 $f$ 的\textbf{边际贡献特征重要性}（Marginal Contribution Feature Importance）为
+\[
+  I_\nu(f) \;=\; \max_{S\subseteq F}\;\big[\nu(S\cup\{f\})-\nu(S)\big],
+\]
+即在\textbf{所有可能的背景}中，加入 $f$ 带来的\textbf{最大}增益。取到最大值的 $S$ 称为 context，用来解释“$f$ 在什么情况下最重要”。$\nu$ 采用 Covert 等 2020 的“通用预测能力”：对每个子集重新拟合模型后的损失下降（实验中用逐子集重训模型的测试或交叉验证性能）。这与我们的 $V(S)$ 是\textbf{同一口径}。
+
+\paragraph{公理与唯一性。}MCI 由三条公理刻画：
+\begin{itemize}[leftmargin=*]
+  \item \textbf{边际贡献}：$I(f)\ge \nu(F)-\nu(F\setminus\{f\})$，重要性不低于“全集中删掉它的损失”；
+  \item \textbf{消去}：从数据中删去一些特征，其余特征的重要性不会增加；
+  \item \textbf{最小性}：在满足前两条的函数中取最小的。
+\end{itemize}
+定理：$\nu$ 单调时，MCI 是唯一满足这三条公理的函数。
+
+\paragraph{主要性质。}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{单字段下界}：$I(f)\ge\nu(\{f\})$；
+  \item \textbf{复制不变}：加入或删去副本，不改变其他特征的 MCI，副本自身也不被稀释；
+  \item \textbf{超效率}：对任意集合 $S$，$\nu(S)\le\sum_{f\in S}I(f)$，字段分数之和是集合价值的上界（Shapley 只保证全集上相等）；
+  \item 以及虚拟、对称、次可加。
+\end{itemize}
+
+\paragraph{计算。}精确计算需要遍历所有背景，是指数级的；任何采样方法都只能得到\textbf{下界}。实验中用 $2^{14}$—$2^{15}$ 个随机排列的前驱集合来估计。
+
+\paragraph{小例子上的结果。}$I(L)=0.99$，$I(W_1)=0.68$，$I(W_2)=0.77$，加副本不变。方向正确。
+
+\paragraph{直接用于数据安全的不足。}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{背景不受限}：最坏背景可以是“除它以外的全部字段”，相当于假设攻击者什么都知道。这既不现实，也无法计算（$2^{n-1}$ 个背景），更难以用重训去认证；
+  \item \textbf{没有公开基底}：实际中有些字段已经按规则必须公开，风险应该在它们之上计算；
+  \item \textbf{没有安全语义}：MCI 是解释工具，没有和阈值、放行、关键字段这些决策概念联系起来；
+  \item \textbf{单调性假设}：经验攻击能力（有限样本、有限次训练）并不严格单调，需要处理。
+\end{itemize}
+
+\subsection{我们的定义：背景受限的最大边际推断能力 $\M$}
+
+\paragraph{定义。}目标 $y$，公开基底 $B$（已经必须公开的字段），候选字段集合 $H$，背景预算 $K$：
+\[
+  M^{(K)}_{i} \;=\; \max_{T\subseteq H\setminus\{i\},\;|T|\le K}\;\Big[\,\bar V(B\cup T\cup\{i\})-\bar V(B\cup T)\,\Big].
+\]
+\begin{itemize}[leftmargin=*]
+  \item \textbf{含义}：攻击者除公开基底外最多另外掌握 $K$ 个字段时，公开字段 $i$ 最多能让推断能力增加多少。
+  \item \textbf{见证背景}：取到最大值的 $T^{*}$，说明“在什么情况下这个字段最危险”，即 MCI 的 context。
+  \item \textbf{单调闭包} $\bar V(S)=\max_{T\subseteq S}V(T)$：攻击者拿到 $S$ 后，可以只用其中一部分字段。真值上约 7\%—9\% 的集合非单调，不做闭包，下面的安全定理就不成立。
+  \item \textbf{特殊情形}：$K=0$ 即单字段能力；$K\ge|H|-1$ 且 $B=\varnothing$ 时就是 MCI。
+\end{itemize}
+
+\fig{figures/图5.png}{99 号：$V(S)$、条件边际与几种字段量（单字段、$\M$、协同、Shapley）之间的数学关系与安全语义\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation99/figures/fig1\_relation\_map.png}}}
+
+\paragraph{与 MCI 的关系。}令 $v_B(T)=V(B\cup T)-V(B)$，它满足 MCI 对评价函数的全部假设，而 $\M$ 就是 $v_B$ 上\textbf{背景规模不超过 $K$} 的 MCI。因此 MCI 的性质（单字段下界、复制不变、见证背景等）直接继承，\textbf{引用而不作为本文创新}。
+
+\begin{table}[H]\centering
+\caption{继承、新增与需要证明的内容}
+\small
+\begin{tabular}{p{0.28\linewidth}p{0.3\linewidth}p{0.32\linewidth}}
+\toprule
+继承自 MCI & 本文新增 & 本文证明的新结论 \\
+\midrule
+最大边际与见证背景 & 背景预算 $K$（攻击者知识上限） & 截断的预算不等式 \\
+单调、$V(\varnothing)=0$ & 公开基底 $B$ & 通用安全余量 \\
+单字段下界、复制不变 & 阈值、余量、关键性等安全语义 & $\tau$-关键 $\Leftrightarrow$ 属于小的最小不安全集合 \\
+Shapley 在副本下被稀释 & 经验攻击能力的单调闭包 & 估计误差传播与上下界 $L\le M\le U$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{三条安全语义}（前提是 $\bar V$ 单调）：
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{余量}：只要攻击者的背景不超过 $K$ 个字段，公开 $i$ 最多让推断能力增加 $M^{(K)}_i$。所以背景的推断能力只要比阈值低 $M^{(K)}_i$ 以上，公开 $i$ 就一定不越线；
+  \item \textbf{关键性}：存在大小不超过 $K$ 的背景使 $i$ 越过阈值 $\tau$，当且仅当 $i$ 属于某个大小不超过 $K+1$ 的最小不安全集合；
+  \item \textbf{预算}：任何不超过 $K+1$ 个字段的集合 $A$，都有 $V(B\cup A)-V(B)\le\sum_{i\in A}M^{(K)}_i$。这是 MCI 超效率的截断版，可以直接用字段分数给集合定上界，用于发布审查。
+\end{enumerate}
+
+\subsection{各定义的对比}
+
+\begin{table}[H]\centering
+\caption{各类字段风险度量满足的要求（$\checkmark$ 满足，$\circ$ 部分满足，— 不满足）}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+方法 & 可用攻击检验 & 联合推断 & 最坏情形 & 冗余不稀释 & 有限背景 & 公开基底 \\
+\midrule
+相关系数 / 互信息 & — & — & — & $\checkmark$ & — & — \\
+单字段重训 $M^{(0)}$ & $\checkmark$ & — & — & $\checkmark$ & — & $\circ$ \\
+推断图传播（IGNN） & — & $\circ$ & — & $\circ$ & — & — \\
+Shapley / SAGE & $\checkmark$ & $\checkmark$ & — & — & — & — \\
+LOCO / 置换重要性 & $\checkmark$ & $\checkmark$ & — & — & — & — \\
+MCI & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & — & — \\
+$\M$（本文） & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{初步验证（99—101 号）}
+
+\subsection{理论命题在真值上成立（99 号）}
+
+在 98 号的两个精确博弈（12、14 个字段，全部 $2^{p}$ 个集合都有重训真值）上逐条检验：
+
+\begin{table}[H]\centering
+\caption{命题核验（gameA / gameB）}
+\begin{tabular}{lc}
+\toprule
+命题 & 结果 \\
+\midrule
+$M^{(1)}=a_i+\max(0,\max_j I_{ij})$ & 偏差 0 / 0 \\
+预算不等式 $V(A)\le\sum_{i\in A}M^{(K)}_i$ & 违例 0 / 0 \\
+关键性 $\Leftrightarrow$ 小的最小不安全集合 & 原始 $V$ 上 0.2\% 不一致；闭包 $\bar V$ 上 0 \\
+$M^{(K)}$ 对 $K$ 单调 & 违例 0 / 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+此外，在随机 3、4 人博弈上暴力搜索反例，修正了初稿中三处过强的表述（例如“增强为 0 当且仅当次模”不成立）。
+
+\subsection{$K$ 取多大（100 号）}
+
+去掉别名后 PJM、CAISO 各 41 个字段、12 个目标，用并行专用重训精确计算规模不超过 4 的全部 112,791 个集合。MCI 用通用模型搜索大背景，再用重训认证给出下界。
+
+\fig{figures/图6.png}{100 号：推断升级曲线（左）与饱和比 $M^{(K)}/\text{MCI 已认证下界}$（右）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation100/figures/fig1\_escalation\_saturation.png}}}
+
+\begin{table}[H]\centering
+\caption{饱和比（均值 / 中位数）}
+\begin{tabular}{lcccc}
+\toprule
+& $K=0$ & $K=1$ & $K=2$ & $K=3$ \\
+\midrule
+PJM & 0.39 / 0.35 & 0.71 / 0.75 & \textbf{0.88 / 0.93} & 0.999 / 1.00 \\
+CAISO & 0.51 / 0.52 & 0.81 / 0.85 & \textbf{0.93 / 0.97} & 0.999 / 1.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}[leftmargin=*]
+  \item 单字段能力（$K=0$）平均只有完整风险的 35\%—50\%，\textbf{大部分风险来自背景}，这也印证了第 2 节的判断。
+  \item $K=2$ 已接近饱和，$K=3$ 基本饱和；更大的背景（平均 5 个字段）只让 0.2\% 的条目再增加超过 0.02。所以背景不必无限，主口径取 $K=2$。
+\end{itemize}
+
+\subsection{换到独立数据还成立吗（101 号）}
+
+同一份数据上既找最坏背景又报告数值，会因为取最大值而偏高。101 号把数据对半分，一半用于发现、另一半用于认证（3 次随机对半 $\times$ 2 个方向）。
+
+\fig{figures/图7.png}{101 号：发现 / 认证完全分离后的结果\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation101/figures/fig1\_independent\_certification.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item 取最大值的偏高确实存在：PJM $K=2$ 约 $0.051\pm0.016$，CAISO 约 $0.023\pm0.013$。所以报告的 $M$ 数值要用独立认证值，或者标注偏差量级。
+  \item 结论层面基本保住：$\tau=0.7$ 时，关键字段在独立数据上召回 87\%（PJM）/ 93\%（CAISO）；强交互复现 71\% / 95\%。
+\end{itemize}
+
+\subsection{一个伏笔}
+
+41 个字段、$K=2$ 的全部 11,521 个集合，GPU 并行重训约 11 分钟就能精确算完。所以在这个规模上，通用模型还不是必需的；它的价值要到更大的 $K$、更多字段、反复换基底或换目标时才体现出来（第 3、5 次汇报）。
+
+\section{小结与下一次}
+
+\begin{keybox}[小结]
+\begin{itemize}[leftmargin=*]
+  \item 通用模型需要一个进一步的产物。我们选择\textbf{字段级推断风险}：单字段口径会漏掉组合推断，IGNN 这类黑盒分数没有可检验的含义；从“所有集合的推断能力”出发归结到字段，既可解释、可检验，又用上了通用模型。
+  \item 归结方式上，Shapley 的“平均分摊”会稀释冗余、平均掉协同通道；MCI 的“最坏背景最大边际”方向正确，但背景不受限、缺少安全语义。
+  \item 因此提出 $\M$：有限背景、相对公开基底、单调闭包，并有余量、关键性、预算三条安全语义；初步验证显示 $K=2$ 接近饱和，独立数据上结论基本成立。
+\end{itemize}
+\end{keybox}
+
+\textbf{下一次}：用正式口径（多攻击器、单调闭包）算出完整风险表，回答“$\M$ 比现有字段打分方法多看到了什么，对发布决策有什么用”。
+
+\begin{thebibliography}{99}
+\small
+\bibitem{gbt43697} 国家市场监督管理总局，国家标准化管理委员会. GB/T 43697—2024 数据安全技术 数据分类分级规则, 2024.
+\bibitem{nea2024} 国家能源局. 电力市场信息披露基本规则（国能发监管〔2024〕9 号）, 2024.
+\bibitem{hu2026ignn} B. Hu, R. Nie, Y. Zhou, et al. IGNN: An inference graph neural network for data sensitivity assessment considering data inference leakage in cyber-physical power grid. IEEE Transactions on Smart Grid, 2026 (early access, doi:10.1109/TSG.2026.3667966).
+\bibitem{shapley1953} L. S. Shapley. A value for n-person games. Contributions to the Theory of Games, 2(28): 307--317, 1953.
+\bibitem{lundberg2017} S. M. Lundberg, S.-I. Lee. A unified approach to interpreting model predictions. NeurIPS, 2017.
+\bibitem{covert2020} I. Covert, S. M. Lundberg, S.-I. Lee. Understanding global feature contributions with additive importance measures (SAGE). NeurIPS, 2020.
+\bibitem{williamson2020} B. D. Williamson, J. Feng. Efficient nonparametric statistical inference on population feature importance using Shapley values (SPVIM). ICML, 2020.
+\bibitem{lei2018} J. Lei, M. G'Sell, A. Rinaldo, R. J. Tibshirani, L. Wasserman. Distribution-free predictive inference for regression (LOCO). JASA, 113(523): 1094--1111, 2018.
+\bibitem{breiman2001} L. Breiman. Random forests. Machine Learning, 45: 5--32, 2001.
+\bibitem{catav2021} A. Catav, B. Fu, Y. Zoabi, et al. Marginal contribution feature importance -- an axiomatic approach for explaining data. ICML, PMLR 139: 1324--1335, 2021.
+\end{thebibliography}
+
+\end{document}

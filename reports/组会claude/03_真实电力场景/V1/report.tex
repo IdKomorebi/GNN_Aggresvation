@@ -1,0 +1,222 @@
+\documentclass[zihao=-4,a4paper]{ctexart}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,float,array,enumitem,xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\linespread{1.35}
+\setlist{itemsep=2pt,topsep=4pt}
+\ctexset{section={format=\Large\bfseries\color{blue!55!black}},subsection={format=\large\bfseries}}
+\newtcolorbox{keybox}[1][本次要点]{colback=blue!3,colframe=blue!45!black,fonttitle=\bfseries,title=#1,boxrule=0.6pt,arc=1mm}
+\newtcolorbox{notebox}{colback=gray!6,colframe=gray!60,boxrule=0.4pt,arc=1mm}
+\newcommand{\fig}[3][0.95]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\caption{#3}\end{figure}}
+\newcommand{\M}{M^{(K)}}
+
+\title{\textbf{第 3 次组会汇报}\\[4pt]\Large 真实电力场景：组合风险有多大}
+\author{对应工作：110—114、116、119 号实验}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{keybox}
+\begin{enumerate}[leftmargin=*]
+  \item 前两次的目标是 PJM、CAISO 的系统级字段，容易被质疑“这些目标本来就公开”。本次\textbf{按《电力市场信息披露基本规则》重新定义字段角色}，在四类场景上重做：IEEE 30 节点试验、RTS-GMLC、澳洲 NEM 真实机组、按披露时点重定义的 PJM / CAISO。
+  \item 结论一致：\textbf{单字段定级几乎判“全部安全”，而组合口径到处是缺口}。例如 RTS 线路 C35 没有一个字段单独越过 0.7，却有 82 个危险小组合；NEM 三台机组的危险组合在单字段定级后几乎全部仍然暴露。
+  \item $K=2$ 在正式三攻击器口径下基本饱和（$M^{(2)}/M^{(3)}\ge0.94$，NEM TUMUT3 例外，为 0.81）；但“是否越线”在 $K=3$ 仍会增加，所以\textbf{定级用 $K=2$，处置按 $K=3$}。
+  \item 结论不依赖攻击器种子、随机划分和阈值 $\tau$ 的选取。
+\end{enumerate}
+\end{keybox}
+
+\section{为什么要换场景}
+
+前两次汇报用的是 PJM、CAISO 的系统级数据，目标（如计量负荷、电价）多数在市场里本来就会公开。为了让“敏感目标”和“候选公开字段”都有依据，本次所有场景的字段角色都对照\textbf{《电力市场信息披露基本规则》（国能发监管〔2024〕9 号）}：
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{候选字段}：规则要求及时披露的公开信息，如负荷预测、新能源出力预测、出清电价及分量、阻塞情况、备用需求；
+  \item \textbf{敏感目标}：第十七条（三）的特定信息，如单台机组实际出力；或规则只要求披露日平均值的量，如线路逐时潮流；或次日才披露的实际运行量。
+\end{itemize}
+
+\begin{table}[H]\centering
+\caption{五组数据（真值均为三攻击器专用重训 + 单调闭包）}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lp{0.42\linewidth}ccc}
+\toprule
+数据 & 敏感目标 & 候选字段 & 集合数 & 最大规模 \\
+\midrule
+RTS-GMLC（合成电网） & 机组 223、221 出力；线路 C35 潮流 & 23 & 10,902 & 4 \\
+NEM 2024（真实市场） & 机组 BW01、TUMUT3、PPCCGT 出力 & 30 & 31,930 & 4 \\
+PJM（负荷组） & 实际计量负荷（次日披露） & 22 & 9,108 & 4 \\
+PJM（发电 / 联络线组） & 发电总出力、联络线净交换 & 24 & 12,950 & 4 \\
+CAISO & 实际负荷（次日披露） & 35 & 59,535 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{先做可行性试验：IEEE 30 节点（110 号）}
+
+在 IEEE 30 节点算例上生成市场出清数据，目标为两台机组的出力，只用一种攻击器（梯度提升树），先看组合风险是否存在。
+
+\begin{table}[H]\centering
+\caption{110 号：目标 A（bus26 机组出力）}
+\small
+\begin{tabular}{lccl}
+\toprule
+拟公开字段 & 单独 $M^{(0)}$ & 最坏背景下 $M^{(2)}$ & 最佳背景伙伴 \\
+\midrule
+断面阻塞 L24-26 & \textbf{0.015} & \textbf{0.252} & 风电预测 \\
+风电总出力预测 & 0.475 & 0.699 & 断面阻塞 \\
+节点电价 bus24 & 0.049 & 0.211 & 电价 bus14 \\
+系统实际负荷 & 0.121 & 0.320 & 风电预测 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}[leftmargin=*]
+  \item 阻塞标志单独几乎没有信息，配上风电预测后升到 0.252；相关系数和单字段能力两种口径都会判它“安全”。
+  \item 在这个小算例上可以精确算出完整 MCI：$M^{(2)}/\text{MCI}$ 为 0.978 和 1.000。
+\end{itemize}
+
+组合风险确实存在，于是扩展到正式场景。
+
+\section{RTS-GMLC：线路潮流是典型的“组合才危险”（111 号）}
+
+RTS-GMLC 是 IEEE 可靠性测试系统的 2019 更新版：73 母线、全年 8,784 小时逐时出清，阻塞小时占 26.7\%。
+
+\begin{table}[H]\centering
+\caption{111 号：三个目标，$\tau=0.7$}
+\small
+\begin{tabular}{lccc}
+\toprule
+& 机组 223（燃煤） & 机组 221（燃气） & \textbf{线路 C35} \\
+\midrule
+最强单字段推断能力 & 0.995 & 0.987 & \textbf{0.516} \\
+单字段即越阈的字段 & 10 & 10 & \textbf{0} \\
+单看安全、至多 2 个背景即越阈 & 6 & 9 & \textbf{21 / 23} \\
+规模 $\le3$ 的危险组合 & 16 & 34 & \textbf{82} \\
+单字段定级后仍暴露的危险组合 & 6 & 24 & \textbf{82} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\fig{figures/图1.png}{111 号：三个目标的字段风险画像（绿：线性相关 $r^2$；橙圈：单字段 $M^{(0)}$；蓝点：$M^{(2)}$）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation111/figures/fig1\_field\_profile.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{线路 C35}：没有任何单个字段越过 0.7，按单字段定级应“全部可以公开”；但 23 个字段中有 21 个在至多 2 个背景下成为关键字段，82 个危险小组合\textbf{一个都拦不住}。
+  \item \textbf{两台机组}：所在节点的电价单独就能推出 0.90—0.995，单字段口径已经能识别。这类目标如实写明“组合风险是次要的”。
+\end{itemize}
+
+\fig{figures/图2.png}{111 号：$K$ 递进（左）与攻击器构成（右）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation111/figures/fig3\_escalation\_attackers.png}}}
+
+RTS-GMLC 的集合规模到 4，所以 $K=3$ 也能在正式口径下精确计算：三个目标的 $M^{(2)}/M^{(3)}=0.995$—$0.999$。树模型在 76\% 的集合上最强（出清结果是分段常数函数），只用神经网络会系统性低估。
+
+\section{NEM：真实机组，风险几乎全部来自组合（112 号）}
+
+AEMO 2024 全年数据取小时均值。机组实际出力在 NEM 以历史数据公开，但按我国规则属于特定信息，所以这是\textbf{真实存在的敏感字段}。
+
+\begin{table}[H]\centering
+\caption{112 号：三台机组，$\tau=0.5$}
+\small
+\begin{tabular}{lccc}
+\toprule
+& BW01（燃煤） & TUMUT3（抽蓄） & PPCCGT（燃气） \\
+\midrule
+最强单字段推断能力 & 0.493 & 0.380 & 0.548 \\
+单字段即越阈的字段 & \textbf{0} & \textbf{0} & 2 \\
+单看安全、至多 2 个背景即越阈 & \textbf{30 / 30} & 22 / 30 & 28 / 30 \\
+规模 $\le3$ 的危险组合 & 266 & 23 & 215 \\
+单字段定级后仍暴露 & \textbf{266} & \textbf{23} & \textbf{213} \\
+打破全部危险组合最少需扣留 & 4 & 1 & 6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\fig{figures/图3.png}{112 号：三台机组的字段风险画像\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation112/figures/fig1\_field\_profile.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item 与 RTS 不同，真实市场里单个公开字段的推断能力都不高，\textbf{单字段定级会判全部安全，而实际上几乎每个字段都参与危险组合}。
+  \item 线性相关严重失效：真实电价尖峰很多，昆士兰出清价与 BW01 出力的 $r^2$ 接近 0，但单字段推断能力有 0.49。
+  \item TUMUT3 的 23 个危险组合只要扣留 1 个字段就能全部打破，说明存在枢纽字段（第 4 次汇报展开）。
+\end{itemize}
+
+\section{PJM / CAISO：按披露时点重新定义（113、114、116 号）}
+
+规则规定：出清电价及分量\textbf{出清后及时披露}，实际负荷、发电总出力、联络线交换等实际运行量\textbf{运行日次日才披露}。据此把敏感目标定义为“运行日内尚未披露的实际运行量”，并经过三轮修正：
+
+\begin{table}[H]\centering
+\caption{三轮口径修正}
+\small
+\begin{tabular}{lp{0.62\linewidth}}
+\toprule
+实验 & 做了什么 \\
+\midrule
+113 号 & 候选池剔除同样次日才披露的实际运行字段（否则“电量平衡”会让组合风险成倍放大） \\
+114 号 & 再剔除目标副本（如 PJM 实际负荷的两个负荷预测），全部重训；PJM 实际负荷的最强单字段从 0.991 降到 0.451 \\
+116 号 & 把原先当作“机密列”、从未进入候选的\textbf{及时披露字段}补回候选池（电价分量、日前计划、辅助服务出清总量），全部重训 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\fig{figures/图4.png}{116 号：补全候选前后的对比\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation116/figures/fig1\_vs\_114.png}}}
+
+\begin{table}[H]\centering
+\caption{116 号最终结果，$\tau=0.5$}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+& PJM 实际负荷 & PJM 发电总出力 & PJM 联络线净交换 & CAISO 实际负荷 \\
+\midrule
+候选数 & 22 & 24 & 24 & 35 \\
+最强单字段 & 0.476 & 0.974 & 0.413 & 0.825 \\
+单看安全、组合危险 & \textbf{22 / 22} & 22 / 24 & \textbf{24 / 24} & 30 / 35 \\
+危险小组合 & 237 & 179 & 102 & \textbf{542} \\
+单字段定级后仍暴露 & 237 & 177 & 102 & 537 \\
+$M^{(2)}/M^{(3)}$ & 0.971 & 0.996 & 0.972 & 0.989 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}[leftmargin=*]
+  \item 补全候选后组合风险\textbf{更大}，结论方向不变。
+  \item 敏感性分析：再剔除与目标意思相近的代理字段（如 PJM 发电总出力的两个负荷预测），最强单字段从 0.974 降到 0.415，但“单看安全、组合危险”仍是 22 / 22。\textbf{剔除代理只影响单字段暴露，不影响组合风险}，核心结论不依赖候选边界怎么划。
+\end{itemize}
+
+\section{稳健性与 $K$ 的选择（119 号）}
+
+\subsection{换种子、换划分}
+
+\fig{figures/图5.png}{119 号：换攻击器种子和随机划分后，与主结果的一致性（每个点是一个目标）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation119/figures/fig1\_seed\_split.png}}}
+
+$M^{(2)}$ 排序的 Spearman 为 0.983—0.999；$\tau=0.5$ 下关键字段集合完全一致（Jaccard = 1），$\tau=0.7$ 下为 0.93—1.00。
+
+\subsection{换阈值}
+
+\fig{figures/图6.png}{119 号：$\tau$ 从 0.3 到 0.9 的扫描。左：实线为“组合危险”字段比例，虚线为“单字段即危险”；右：单字段定级后仍暴露的危险组合比例\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation119/figures/fig3\_tau\_sweep.png}}}
+
+10 个目标平均：$\tau=0.7$ 时“单看安全、组合危险”占 43\%，“单字段即危险”只占 10\%。在所有 $\tau$ 下前者都多于后者。
+
+\subsection{$K$ 取多少}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{边际风险}：$M^{(2)}/M^{(3)}$ 在 9 个目标上为 0.958—1.000，只有 NEM TUMUT3 为 0.813（第三个背景仍有增益，见证背景中有区域间联络线）。
+  \item \textbf{是否越线}：$\tau=0.7$ 时从 $K=2$ 放宽到 $K=3$，关键字段明显增加，例如 PJM 联络线净交换从 3 个增加到 21 个。
+\end{itemize}
+
+\begin{notebox}
+论文口径：\textbf{$K=2$ 用于定级}（边际风险已饱和）；\textbf{处置按 $K=3$ 计算}（必须打破所有危险组合）。按规模不超过 4 求最小扣留集，平均只多扣 1—2 个字段。$K=3$ 时 CAISO 每个目标要算 52,360 个集合，这正是最需要通用模型的场景。
+\end{notebox}
+
+\section{小结与下一次}
+
+\begin{keybox}[小结]
+\begin{itemize}[leftmargin=*]
+  \item 四类场景、10 个目标、字段角色均有规则依据：\textbf{单字段定级普遍“看起来安全”，但大部分字段都参与危险组合}。
+  \item 有强代理字段的目标（机组节点电价、负荷预测），单字段口径能识别；其余目标的风险几乎全部来自组合。两者分工：$M^{(0)}$ 抓强代理，$\M$ 抓组合。
+  \item $K=2$ 定级、$K=3$ 处置；结论对种子、划分、阈值稳健。
+\end{itemize}
+\end{keybox}
+
+\textbf{两个留给第 5 次的问题}：（1）NEM 上通用模型的集合估计误差很小，却把 $M^{(2)}$ 高估了 0.13—0.17；（2）只服务少数目标的主干有 24\% 的死神经元。\\
+\textbf{下一次}：先解释这些组合风险的\textbf{物理来源}。见证背景为什么是这些字段？能不能用已知机理验证？
+
+\end{document}

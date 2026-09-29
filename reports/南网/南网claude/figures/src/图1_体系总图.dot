@@ -1,0 +1,49 @@
+digraph G {
+  graph [rankdir=TB, fontname="Noto Sans CJK SC", fontsize=13, bgcolor="#fcfcfb", nodesep=0.35, ranksep=0.45, pad=0.3, newrank=true,
+         label="图1  推断风险感知的数据分类分级体系：南网规则照用，推断证据新增，二者在“推断继承定级”处汇合\n蓝＝南网既有规则/流程   橙＝师兄论文方法（改造后）   绿＝近期研究（M^(K)、通用模型、扫描—认证）   灰＝产出物",
+         labelloc=b, labeljust=l];
+  node [shape=box, style="rounded,filled", fontname="Noto Sans CJK SC", fontsize=11, penwidth=1.4, margin="0.14,0.07"];
+  edge [color="#52514e", arrowsize=0.7, fontname="Noto Sans CJK SC", fontsize=9, fontcolor="#52514e"];
+
+  // colors
+  // blue  fill #dbe8f9 line #2a78d6 ; orange fill #fbe1d6 line #eb6834 ; aqua fill #d3f0e4 line #1baf7a ; gray fill #efeeea line #8a8984
+
+  subgraph cluster_rule {
+    label="规则层：南网既有规则（原样使用，作为约束与输入）"; fontsize=12; color="#2a78d6"; style="rounded,dashed"; fontcolor="#1c5cab";
+    R0 [label="规则库构建\n（大模型+检索增强抽取南网文件：\n分级规则表、影响程度定义、衍生/变更场景、\n披露三层级与时点、开放边界12条）\n论文4.1.1 改造", fillcolor="#fbe1d6", color="#eb6834"];
+    R1 [label="①数据资产梳理\n②数据分类\n（业务架构蓝图22专业域，线分类到字段）", fillcolor="#dbe8f9", color="#2a78d6"];
+    R2 [label="③本体定级 g₀(i)\n8要素→影响对象→影响程度\n→表4.4矩阵→1~5级，就高不就低", fillcolor="#dbe8f9", color="#2a78d6"];
+    R3 [label="场景标注\n披露层级：公众/公开/特定/内部\n披露时点：预测(D-1)/出清(D)/运行(D+1)\n开放对象与开放策略", fillcolor="#dbe8f9", color="#2a78d6"];
+    R0 -> R1; R0 -> R3; R1 -> R2; R1 -> R3;
+  }
+
+  subgraph cluster_evi {
+    label="证据层：推断风险证据（新增，回答“发布它以后，和别人已有的数据合起来能推出什么”）"; fontsize=12; color="#1baf7a"; style="rounded,dashed"; fontcolor="#0f7a53";
+    S0 [label="威胁模型实例化\n敏感目标集 Y（特定信息、3级及以上数据）\n公开基底 B_t（按角色与时点）\n背景预算 K（定级K=2，处置K=3）", fillcolor="#d3f0e4", color="#1baf7a"];
+    E1 [label="第1级 关联初筛\nPearson/Spearman/MIC融合、风险关联图、\n副本/近似代理识别\n论文3.1（保留）", fillcolor="#fbe1d6", color="#eb6834"];
+    E2 [label="第2级 集合扫描\n通用模型估计 V(B∪T∪{i})，|T|≤K\n→ M̂ᵢ^(K)、放大量 Γ、候选见证背景\n近期研究", fillcolor="#d3f0e4", color="#1baf7a"];
+    E3 [label="第3级 重训认证\n对前3个见证背景重训攻击者族\n→ 认证下界；未认证项按区间口径保守判定\n论文3.2 DNN验证 → 推广到字段集合", fillcolor="#d3f0e4", color="#1baf7a"];
+    EV [label="推断证据表\n(字段i, 目标y, 角色, B, 见证T*, V前/后, M, 攻击模型, 数据量)", fillcolor="#efeeea", color="#8a8984", shape=note];
+    S0 -> E1 -> E2 -> E3 -> EV;
+    E1 -> E2 [style=invis];
+  }
+
+  subgraph cluster_dec {
+    label="决策层：把证据接回南网流程"; fontsize=12; color="#52514e"; style="rounded,dashed"; fontcolor="#0b0b0b";
+    D1 [label="推断继承定级\n若 i 在 ≤K 背景下对 y 是 τ_y-关键，\n则 g_inf(i) ≥ g(y)；最终 g(i)=max(g₀, g_inf)\n（4/5级只给“建议申报”）", fillcolor="#d3f0e4", color="#1baf7a"];
+    D2 [label="④审批 ⑤固化到数据目录\n新增列：本体级别、继承级别、见证背景、\n适用角色/时点、复评条件", fillcolor="#dbe8f9", color="#2a78d6"];
+    D3 [label="风险评级（风险评估手册）\n危害程度←继承级别；可能性←所需背景的角色\n→ 南网风险矩阵 高/中/低\n支撑评估项382/330/351/239", fillcolor="#dbe8f9", color="#2a78d6"];
+    D4 [label="处置配置（不改等级，改开放方式）\n开放策略/对象、粒度、延迟、脱敏加噪、扣留\n扣留：M 贪心 / 最小击中集；多目标权衡可用 RL\n论文3.3、4.2 改造 + 近期研究", fillcolor="#fbe1d6", color="#eb6834"];
+    D5 [label="⑦动态复评（事件触发）\n附录E场景 + 新增：公开基底变化、新批次开放、\n披露时点到达、历史数据量增长、细则修订\n通用模型增量重算，只对变化项再认证\n（↺ 回到“威胁模型实例化”）", fillcolor="#dbe8f9", color="#2a78d6"];
+    D1 -> D2; D1 -> D3; D2 -> D4; D3 -> D4; D4 -> D5;
+  }
+
+  R2 -> D1 [label="g₀(i)"];
+  R3 -> S0 [label="角色/时点/目标"];
+  R2 -> S0 [label="目标级别 g(y)"];
+  EV -> D1;
+  EV -> D3;
+  FP [label="共现背景库\n（FP-Growth 挖掘同一接收方/同一数据集中\n常同时出现的字段组合）\n论文4.1.2 改造：频繁≠危险，用作现实背景优先级", fillcolor="#fbe1d6", color="#eb6834"];
+  FP -> E2 [style=dashed, label="优先扫描"];
+  R3 -> FP [style=dashed];
+}

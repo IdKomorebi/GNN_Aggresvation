@@ -1,0 +1,22 @@
+[
+  {
+    "id": "R01",
+    "source": "paper/claude/V6_ieee/main.tex",
+    "sha256": "1081c85dd91b5588e66d6a989a4ab1e4d11bd7361f4bf62674e0084029a5fda5"
+  },
+  {
+    "id": "R02",
+    "source": "paper/claude/V6_ieee/README.md",
+    "sha256": "1e5b6521582432cfcc51b1aa69c8073d2b148f2da32dc4940bc2050d87238420"
+  },
+  {
+    "id": "R03",
+    "source": "reports/20260925_V4论文主线重构与完善计划.md",
+    "sha256": "d93d7b9a4fccffdbd2a662905c48009c2d2398614e04d2982c4f3aec9f967acf"
+  },
+  {
+    "id": "R04",
+    "source": "paper/FINAL_PROTOCOL.md",
+    "sha256": "754d69901b5c4e421cdc44fef51f8227c8e6d3a434f74b53263580394bc97a60"
+  }
+]

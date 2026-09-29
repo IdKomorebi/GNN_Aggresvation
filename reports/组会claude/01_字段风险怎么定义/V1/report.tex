@@ -1,0 +1,246 @@
+\documentclass[zihao=-4,a4paper]{ctexart}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,float,array,enumitem,xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\linespread{1.35}
+\setlist{itemsep=2pt,topsep=4pt}
+\ctexset{section={format=\Large\bfseries\color{blue!55!black}},subsection={format=\large\bfseries}}
+\newtcolorbox{keybox}[1][本次要点]{colback=blue!3,colframe=blue!45!black,fonttitle=\bfseries,title=#1,boxrule=0.6pt,arc=1mm}
+\newtcolorbox{notebox}{colback=gray!6,colframe=gray!60,boxrule=0.4pt,arc=1mm}
+\newcommand{\fig}[3][0.95]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\caption{#3}\end{figure}}
+\newcommand{\M}{M^{(K)}}
+
+\title{\textbf{第 1 次组会汇报}\\[4pt]\Large 字段的推断风险应该怎么定义}
+\author{对应工作：0913/0914 方向讨论与分级预实验、98—101 号实验}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{keybox}
+\begin{enumerate}[leftmargin=*]
+  \item 通用模型已经能快速估计任意字段集合的推断能力 $V(S)$，但“估得快”本身不是交付物。往下延伸时，我们先做了字段级分级，发现真正缺的是\textbf{“一个字段的风险”到底是什么}。
+  \item 用 Shapley 值做字段风险\textbf{不合适}：冗余字段会被互相稀释，协同通道会被平均掉。
+  \item 在 MCI（Catav 等，ICML 2021）的基础上，提出\textbf{背景受限的最大边际推断能力 $\M$}：攻击者最多再掌握 $K$ 个字段时，公开这个字段最多能增加多少推断能力。
+  \item 初步验证：定理和命题在真值上零违例；41 个字段上 $K=2$ 已接近饱和；换到独立数据上，排序和阈值结论基本保住。
+\end{enumerate}
+\end{keybox}
+
+\section{起点：通用模型能估 $V(S)$，然后呢？}
+
+此前的主线是一个随机掩码训练的\textbf{通用推断模型}：一次训练，就能对任意字段集合 $S$ 给出攻击者重训后的推断能力 $V(S)$（测试 $R^2$）。9 月中旬讨论方向时遇到的问题是：
+
+\begin{itemize}[leftmargin=*]
+  \item 只说“估得快”没有意义，最后必须交付一个\textbf{能用于决策的对象}；
+  \item 数据分类分级的实际流程是\textbf{逐字段定级}，集合级结论（哪些组合危险）落不进现有流程。
+\end{itemize}
+
+所以第一步想法是往下延伸：用通用模型给出的大量 $V(S)$，\textbf{反推一张字段级分级表}。
+
+\section{第一次尝试：字段分数 + 协同例外清单}
+
+在对数残差标度 $g(v)=-\tfrac12\ln(1-v)$ 上，把集合风险拆成“字段分数之和 + 少量协同例外”：
+\[
+  g\big(V(S)\big)\;\approx\;\sum_{i\in S} w_i \;+\; \max_{(i,j)\subseteq S}\delta^{+}_{ij}.
+\]
+选对数标度的原因：$g(0)=0$ 自动成立、不会越过 1；在高斯情形下 $g$ 就是互信息（单位为奈特），可加等价于“各字段提供相互独立的信息”。
+
+用 69 号的重训真值（12 个目标）做了预实验：
+
+\begin{table}[H]\centering
+\caption{字段级分级预实验（69 号真值）}
+\small
+\begin{tabular}{lll}
+\toprule
+问题 & 结论 & 关键数字 \\
+\midrule
+对数标度有用吗 & 明显好于原始 $R^2$ & 大集合 MAE $0.152\to0.084$ \\
+协同稀疏吗 & 是 & 946 对中 87.9\% 近似可加，6.7\% 协同 \\
+只用字段分数够吗 & 不够，漏掉协同 & 协同三元组危险误判 4.5\% \\
+加例外清单 & 有用（聚合要取最大） & 危险误判 $4.5\%\to0.7\%$ \\
+大集合 & 冗余累积，分数系统性高估 & 21—43 阶偏差 $+0.115$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+这条路能走，但暴露出一个更根本的问题：
+
+\begin{table}[H]\centering
+\caption{一个两行就能验算的反例（PJM，目标为计量负荷）}
+\begin{tabular}{lcc}
+\toprule
+集合 & $V$ & $g(V)$ \\
+\midrule
+\{风电出力\} & 0.064 & 0.033 \\
+\{风电占比\} & 0.162 & 0.088 \\
+可加模型预测 & & 0.122 \\
+\{风电出力，风电占比\} 真实值 & 0.928 & \textbf{1.316} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+两者相差约 10 倍，而且\textbf{无法通过调权重弥合}。也就是说，字段分数 $w_i$ 不是数据里客观存在的量，只是把集合风险“投影”到字段上的一种选择。投影的方式换了，分数就变了。于是问题变成：
+
+\begin{notebox}
+\textbf{一个字段的“真实风险”应该用什么量来表示？} 分级表只是它的离散化。这个量定义清楚，就成为论文主线。
+\end{notebox}
+
+\section{候选一：Shapley 值（98、99 号）}
+
+Shapley 值是最常用的字段“贡献”度量，而且在通用模型上可以算得较准（98 号：精确枚举的 Kendall $\tau$ 约 0.89）。但问题出在\textbf{语义}上：Shapley 回答的是“全部风险怎样公平分摊”，而数据安全要问的是“在某个背景下公开这个字段，风险最多增加多少”。
+
+\fig{figures/图1.png}{98 号：Shapley 值（蓝）与单字段能力（灰）、背景最大边际（橙）的对比\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation98/figures/fig3\_shapley\_vs\_risk\_semantics.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{冗余被稀释}：两个负荷预测各自能推出 0.98，Shapley 每个只分到 0.22；删掉其中一个，另一个还在，全集删除边际约为 0。
+  \item \textbf{协同被平均掉}：风电出力和风电占比合起来能推出 0.83，但在大多数联盟里已经有负荷预测，风电字段的边际接近 0，所以 Shapley 只给 0.04—0.05。
+\end{itemize}
+
+99 号做了一个更直接的副本实验：给负荷预测再加 4 个完全相同的副本。
+
+\fig{figures/图2.png}{99 号：副本越多，Shapley 越低；$M^{(1)}$ 与单字段能力不变\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation99/figures/fig3\_copy\_dilution.png}}}
+
+负荷预测的 Shapley 从 0.223 降到 0.114，而 $M^{(1)}$ 始终是 0.991。\textbf{发布方只要多发几个副本，就能把风险分数“做低”}，所以 Shapley 不能作为风险分级的依据。
+
+\section{提出 $\M$：背景受限的最大边际推断能力}
+
+\subsection{定义}
+
+目标为 $y$，公开基底为 $B$（已经必须公开的字段），候选字段集合为 $H$，背景预算为 $K$：
+\[
+  M^{(K)}_{i} \;=\; \max_{T\subseteq H\setminus\{i\},\;|T|\le K}\;\Big[\,\bar V(B\cup T\cup\{i\})-\bar V(B\cup T)\,\Big].
+\]
+\begin{itemize}[leftmargin=*]
+  \item 含义：攻击者最多另外掌握 $K$ 个字段时，公开字段 $i$ 最多能让推断能力增加多少。取到最大值的 $T^{*}$ 称为\textbf{见证背景}，说明“在什么情况下这个字段最危险”。
+  \item $\bar V$ 是经验攻击能力的\textbf{单调闭包}：攻击者拿到 $S$，可以只用其中一部分字段。真值上约 7—9\% 的集合非单调，不做闭包，安全定理就不成立。
+  \item $K=0$ 就是单字段能力；$K\ge |H|-1$ 且 $B=\varnothing$ 时就是 MCI。
+\end{itemize}
+
+\fig{figures/图3.png}{99 号：$V(S)$、条件边际与几种字段量之间的关系，以及 $\M$ 的三条安全语义\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation99/figures/fig1\_relation\_map.png}}}
+
+\subsection{与 MCI 的关系}
+
+\begin{notebox}
+MCI 是 Catav 等 2021 年提出的，$\M$ 是它在“有限背景 + 公开基底”下的截断版本。副本不变、单字段下界、见证（context）等性质直接继承自 MCI，\textbf{引用，不作为本文创新}。
+\end{notebox}
+
+\begin{table}[H]\centering
+\caption{继承、新增与需要证明的内容}
+\small
+\begin{tabular}{p{0.3\linewidth}p{0.3\linewidth}p{0.3\linewidth}}
+\toprule
+继承自 MCI & 本文新增 & 本文证明的新结论 \\
+\midrule
+最大边际与见证背景 & 背景预算 $K$（攻击者知识上限） & 截断的预算不等式（逐阶预算） \\
+单调、$V(\varnothing)=0$ 的假设 & 公开基底 $B$ & 通用安全余量 \\
+单字段下界、副本不变 & 阈值、余量、关键性等安全语义 & $\tau$-关键 $\Leftrightarrow$ 属于小的最小不安全集合 \\
+Shapley 在副本下被稀释 & 经验攻击能力的单调闭包 & 估计误差传播与上下界 $L\le M\le U$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+三条安全语义（前提是 $\bar V$ 单调）：
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{余量}：$M^{(K)}_i$ 是“不论阈值多少，公开 $i$ 都不会越线”所需的最小余量；
+  \item \textbf{关键性}：存在大小不超过 $K$ 的背景使 $i$ 越过阈值 $\tau$，当且仅当 $i$ 属于某个大小不超过 $K+1$ 的最小不安全集合；
+  \item \textbf{预算}：$|A|\le K+1$ 时 $V(B\cup A)-V(B)\le\sum_{i\in A}M^{(K)}_i$，可以直接用字段分数给集合定上界。
+\end{enumerate}
+
+\subsection{与已有字段量的区别}
+
+\begin{table}[H]\centering
+\caption{各类字段风险度量满足的要求（$\checkmark$ 满足，$\circ$ 部分满足，— 不满足）}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+方法 & 可用攻击检验 & 联合推断 & 最坏情形 & 冗余不稀释 & 有限背景 & 公开基底 \\
+\midrule
+相关系数 / 互信息 & — & — & — & $\checkmark$ & — & — \\
+单字段重训 $M^{(0)}$ & $\checkmark$ & — & — & $\checkmark$ & — & $\circ$ \\
+推断图传播（IGNN） & — & $\circ$ & — & $\circ$ & — & — \\
+Shapley / SAGE & $\checkmark$ & $\checkmark$ & — & — & — & — \\
+LOCO / 置换重要性 & $\checkmark$ & $\checkmark$ & — & — & — & — \\
+MCI & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & — & — \\
+$\M$（本文） & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+一句话区分：Shapley、SAGE 取\textbf{平均}并\textbf{分摊}；LOCO 只看\textbf{全集删除}；MCI 取\textbf{最坏情形}，但背景不受限；$\M$ 取有限背景下的最坏情形。
+
+\section{初步验证（99—101 号）}
+
+\subsection{小博弈上的命题核验（99 号）}
+
+在 98 号的两个精确博弈（12、14 个字段，全部 $2^{p}$ 个集合都有重训真值）上逐条检验：
+
+\begin{table}[H]\centering
+\caption{命题核验（gameA / gameB）}
+\begin{tabular}{lc}
+\toprule
+命题 & 结果 \\
+\midrule
+$M^{(1)}=a_i+\max(0,\max_j I_{ij})$ & 偏差 0 / 0 \\
+预算不等式 $V(A)\le\sum_{i\in A}M^{(K)}_i$ & 违例 0 / 0 \\
+关键性 $\Leftrightarrow$ 小的最小不安全集合 & 原始 $V$ 上 0.2\% 不一致；闭包 $\bar V$ 上 0 \\
+$M^{(K)}$ 对 $K$ 单调 & 违例 0 / 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+此外，在随机 3、4 人博弈上暴力搜索反例，修正了初稿中三处过强的表述（例如“增强为 0 当且仅当次模”不成立）。
+
+\subsection{完整字段集上 $K$ 取多大（100 号）}
+
+去掉别名后 PJM、CAISO 各 41 个字段、12 个目标，用并行专用重训精确计算规模不超过 4 的全部 112,791 个集合。
+
+\fig{figures/图4.png}{100 号：推断升级曲线（左）与饱和比 $M^{(K)}/\text{MCI 已认证下界}$（右）\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation100/figures/fig1\_escalation\_saturation.png}}}
+
+\begin{table}[H]\centering
+\caption{饱和比（均值 / 中位数）}
+\begin{tabular}{lcccc}
+\toprule
+& $K=0$ & $K=1$ & $K=2$ & $K=3$ \\
+\midrule
+PJM & 0.39 / 0.35 & 0.71 / 0.75 & \textbf{0.88 / 0.93} & 0.999 / 1.00 \\
+CAISO & 0.51 / 0.52 & 0.81 / 0.85 & \textbf{0.93 / 0.97} & 0.999 / 1.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}[leftmargin=*]
+  \item 单字段能力（$K=0$）平均只有完整风险的 35\%—50\%，\textbf{绝大部分风险来自背景}。
+  \item $K=2$ 已接近饱和，$K=3$ 基本饱和；更大的背景（平均 5 个字段）只让 0.2\% 的条目再增加超过 0.02。所以主口径取 $K=2$。
+  \item 典型案例：PJM 风电出力单独 0.06，配上风电占比后 0.76（总发电 = 出力 / 占比）。
+\end{itemize}
+
+\subsection{换到独立数据还成立吗（101 号）}
+
+同一份数据上既找最坏背景又报告数值，会因为取最大值而偏高。101 号把数据对半分，一半用于发现、另一半用于认证（3 次随机对半 $\times$ 2 个方向）。
+
+\fig{figures/图5.png}{101 号：发现 / 认证完全分离后的结果\protect\newline{\footnotesize 原图：\texttt{DNN\_Aggresvation101/figures/fig1\_independent\_certification.png}}}
+
+\begin{itemize}[leftmargin=*]
+  \item 取最大值的偏高确实存在：PJM $K=2$ 约 $0.051\pm0.016$，CAISO 约 $0.023\pm0.013$。所以报告的 $M$ 数值要用独立认证值，或者标注偏差量级。
+  \item 结论层面基本保住：$\tau=0.7$ 时，关键字段在独立数据上召回 87\%（PJM）/ 93\%（CAISO），强交互复现 71\% / 95\%。
+\end{itemize}
+
+\subsection{一个伏笔：精确计算其实不慢}
+
+41 个字段、$K=2$ 的全部 11,521 个集合，用 GPU 并行重训约 \textbf{11 分钟}就能精确算完。所以在这个规模上，通用模型\textbf{不是必需的}。它的价值要到更大的 $K$、更多字段、反复换基底或换目标的场景才体现出来，并且必须配上区间和重训认证一起用。估计器的问题留到第 5、6 次汇报。
+
+\section{小结与下一次}
+
+\begin{keybox}[小结]
+\begin{itemize}[leftmargin=*]
+  \item 论文主线从“估得快”改为“\textbf{字段的推断风险怎么定义、怎么用}”。
+  \item Shapley 语义不合适；$\M$ 取有限背景下的最坏情形，副本不稀释，有见证背景，并有三条可用于发布判定的安全语义。
+  \item $K=2$ 接近饱和；独立数据上的排序和阈值结论基本成立，但数值要考虑取最大值带来的偏高。
+\end{itemize}
+\end{keybox}
+
+\textbf{下一次}：用正式口径（多攻击器、单调闭包）算出完整风险表，回答“$\M$ 比现有的字段打分方法多看到了什么，对发布决策有什么用”。
+
+\end{document}

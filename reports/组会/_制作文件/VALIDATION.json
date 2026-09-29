@@ -1,0 +1,142 @@
+{
+  "reports": [
+    {
+      "file": "01_方向调整与初步验证/V1/01_方向调整与初步验证_V1.pptx",
+      "slides": 11,
+      "white_backgrounds": true,
+      "speaker_notes_present": true,
+      "image_bytes_match_sources": true,
+      "v2_reserved_empty": true,
+      "sha256": "2fd932356b36048ab34682d565df64cdd76788fa9ed8aeaed0dcd44c56870aba"
+    },
+    {
+      "file": "02_正式协议与完整评估/V1/02_正式协议与完整评估_V1.pptx",
+      "slides": 14,
+      "white_backgrounds": true,
+      "speaker_notes_present": true,
+      "image_bytes_match_sources": true,
+      "v2_reserved_empty": true,
+      "sha256": "9face1615d378df48de772e840127e8f19f4e71770ccdac6e853483e60f37a24"
+    },
+    {
+      "file": "03_场景扩展与数值修复/V1/03_场景扩展与数值修复_V1.pptx",
+      "slides": 12,
+      "white_backgrounds": true,
+      "speaker_notes_present": true,
+      "image_bytes_match_sources": true,
+      "v2_reserved_empty": true,
+      "sha256": "5f8a446bdf3a63eab25a12698e0e8ac8efcec85dd61f3982d437620c843f217c"
+    },
+    {
+      "file": "04_消融与预学习改进/V1/04_消融与预学习改进_V1.pptx",
+      "slides": 12,
+      "white_backgrounds": true,
+      "speaker_notes_present": true,
+      "image_bytes_match_sources": true,
+      "v2_reserved_empty": true,
+      "sha256": "3a522a91700d7c32f7b1d17a859fc3b7fe884ebb37676377e8c2dff74aa6163c"
+    },
+    {
+      "file": "05_机理画像与稳健性验证/V1/05_机理画像与稳健性验证_V1.pptx",
+      "slides": 13,
+      "white_backgrounds": true,
+      "speaker_notes_present": true,
+      "image_bytes_match_sources": true,
+      "v2_reserved_empty": true,
+      "sha256": "123bbe6e3dec00e5bf495ff050e2dfd01008ac8abfda392445b7e84df6aed07d"
+    },
+    {
+      "file": "06_外部对比与投稿准备/V1/06_外部对比与投稿准备_V1.pptx",
+      "slides": 12,
+      "white_backgrounds": true,
+      "speaker_notes_present": true,
+      "image_bytes_match_sources": true,
+      "v2_reserved_empty": true,
+      "sha256": "a1bb884160008a44b41751e39e77034f89b836e7ded477900a4c0f390d7657f2"
+    }
+  ],
+  "rendering": [
+    {
+      "number": 1,
+      "rendered_pages": 11,
+      "pdf": "/tmp/meeting-pptx-check/01/01_方向调整与初步验证_V1.pdf"
+    },
+    {
+      "number": 2,
+      "rendered_pages": 14,
+      "pdf": "/tmp/meeting-pptx-check/02/02_正式协议与完整评估_V1.pdf"
+    },
+    {
+      "number": 3,
+      "rendered_pages": 12,
+      "pdf": "/tmp/meeting-pptx-check/03/03_场景扩展与数值修复_V1.pdf"
+    },
+    {
+      "number": 4,
+      "rendered_pages": 12,
+      "pdf": "/tmp/meeting-pptx-check/04/04_消融与预学习改进_V1.pdf"
+    },
+    {
+      "number": 5,
+      "rendered_pages": 13,
+      "pdf": "/tmp/meeting-pptx-check/05/05_机理画像与稳健性验证_V1.pdf"
+    },
+    {
+      "number": 6,
+      "rendered_pages": 12,
+      "pdf": "/tmp/meeting-pptx-check/06/06_外部对比与投稿准备_V1.pdf"
+    }
+  ],
+  "total_pages": 74,
+  "original_image_placements": 52,
+  "targeted_matplotlib_redraws": 1,
+  "editable_schematics": 2,
+  "visual_review": "completed: all 74 pages reviewed; corrected crops, shared labels and wrapping",
+  "text_elements_checked": 456,
+  "rendered_text_complete": true,
+  "body_text_clear_of_footer": true,
+  "pdf_exports": [
+    {
+      "file": "01_方向调整与初步验证/V1/01_方向调整与初步验证_V1.pdf",
+      "pages": 11,
+      "sha256": "3281a0bc4d0669461c68f7395d4e7b019d784d0b2750d2d8a240d030145caef9",
+      "source_pptx_sha256": "2fd932356b36048ab34682d565df64cdd76788fa9ed8aeaed0dcd44c56870aba",
+      "conversion": "LibreOffice PDF export; previously rendered and visually checked"
+    },
+    {
+      "file": "02_正式协议与完整评估/V1/02_正式协议与完整评估_V1.pdf",
+      "pages": 14,
+      "sha256": "639d8f2e9963c6b9a3717fa3be5aa142e4dbbc843835cdc4b8bbc38571a3cb1b",
+      "source_pptx_sha256": "9face1615d378df48de772e840127e8f19f4e71770ccdac6e853483e60f37a24",
+      "conversion": "LibreOffice PDF export; previously rendered and visually checked"
+    },
+    {
+      "file": "03_场景扩展与数值修复/V1/03_场景扩展与数值修复_V1.pdf",
+      "pages": 12,
+      "sha256": "94af93ea50d65c78cecf55901284aed7117f9d38cdf36a40744219e97d7d1857",
+      "source_pptx_sha256": "5f8a446bdf3a63eab25a12698e0e8ac8efcec85dd61f3982d437620c843f217c",
+      "conversion": "LibreOffice PDF export; previously rendered and visually checked"
+    },
+    {
+      "file": "04_消融与预学习改进/V1/04_消融与预学习改进_V1.pdf",
+      "pages": 12,
+      "sha256": "a46fee10aba5333723d2ba48ef80de7b5d48c980cd40eeac4c1edd6409922cb4",
+      "source_pptx_sha256": "3a522a91700d7c32f7b1d17a859fc3b7fe884ebb37676377e8c2dff74aa6163c",
+      "conversion": "LibreOffice PDF export; previously rendered and visually checked"
+    },
+    {
+      "file": "05_机理画像与稳健性验证/V1/05_机理画像与稳健性验证_V1.pdf",
+      "pages": 13,
+      "sha256": "f26803653403bada0dcde913f595c040c014bea6d960d7267ade7708a150f52e",
+      "source_pptx_sha256": "123bbe6e3dec00e5bf495ff050e2dfd01008ac8abfda392445b7e84df6aed07d",
+      "conversion": "LibreOffice PDF export; previously rendered and visually checked"
+    },
+    {
+      "file": "06_外部对比与投稿准备/V1/06_外部对比与投稿准备_V1.pdf",
+      "pages": 12,
+      "sha256": "21a3e2a4f4e606f9bb0bd5838f1675021f5a097bf0b919e2297ac0194e826de0",
+      "source_pptx_sha256": "a1bb884160008a44b41751e39e77034f89b836e7ded477900a4c0f390d7657f2",
+      "conversion": "LibreOffice PDF export; previously rendered and visually checked"
+    }
+  ]
+}

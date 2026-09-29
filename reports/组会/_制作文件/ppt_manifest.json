@@ -1,0 +1,1310 @@
+[
+  {
+    "number": 1,
+    "title": "方向调整与初步验证",
+    "file": "01_方向调整与初步验证/V1/01_方向调整与初步验证_V1.pptx",
+    "slides": [
+      {
+        "slide": 1,
+        "title": "本次工作：方向调整与初步验证",
+        "sources": [],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 2,
+        "title": "论文思路的调整",
+        "sources": [
+          "DNN_Aggresvation98/CHANGELOG.md",
+          "DNN_Aggresvation99/CHANGELOG.md"
+        ],
+        "images": [],
+        "notes": [
+          "这是本批主线调整：保留已经完成的通用估计器，把其输出接到字段级评价与可检查的背景证据。"
+        ]
+      },
+      {
+        "slide": 3,
+        "title": "完成 Shapley 与最大边际的对照",
+        "sources": [
+          "DNN_Aggresvation98/CHANGELOG.md",
+          "DNN_Aggresvation98/figures/fig3_shapley_vs_risk_semantics.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation98/figures/fig3_shapley_vs_risk_semantics.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": [
+          "图为98号原图。灰点为单字段能力，蓝色方块为Shapley，橙色菱形为M¹。最大边际和Shapley关注不同对象，不把差别解释为Shapley算法错误。"
+        ]
+      },
+      {
+        "slide": 4,
+        "title": "增加副本实验，检查分数稀释",
+        "sources": [
+          "DNN_Aggresvation99/CHANGELOG.md",
+          "DNN_Aggresvation99/figures/fig3_copy_dilution.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation99/figures/fig3_copy_dilution.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 5,
+        "title": "明确最终要计算的字段风险",
+        "sources": [
+          "DNN_Aggresvation99/CHANGELOG.md",
+          "paper/20260915_MK严格定义与安全语义.md"
+        ],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 6,
+        "title": "完成定义自查与表述修正",
+        "sources": [
+          "DNN_Aggresvation99/CHANGELOG.md"
+        ],
+        "images": [],
+        "notes": [
+          "99号既做了数学推导，也通过反例搜索检查过强的等价表述。数值核验用于检错，不替代理论证明。"
+        ]
+      },
+      {
+        "slide": 7,
+        "title": "复核现有通用估计器",
+        "sources": [
+          "DNN_Aggresvation98/CHANGELOG.md",
+          "DNN_Aggresvation98/figures/fig1_value_model_ladder.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation98/figures/fig1_value_model_ladder.png",
+            "crop": [
+              0,
+              0.06,
+              0.4,
+              1
+            ],
+            "label": "原图左侧集合值误差子图"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 8,
+        "title": "扩展到 PJM、CAISO 的完整字段集",
+        "sources": [
+          "DNN_Aggresvation100/CHANGELOG.md",
+          "DNN_Aggresvation100/figures/fig1_escalation_saturation.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation100/figures/fig1_escalation_saturation.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 9,
+        "title": "补做发现／审计分离的独立验证",
+        "sources": [
+          "DNN_Aggresvation101/CHANGELOG.md",
+          "DNN_Aggresvation101/figures/fig1_independent_certification.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation101/figures/fig1_independent_certification.png",
+            "crop": [
+              0,
+              0.055,
+              0.51,
+              0.52
+            ],
+            "label": "独立审计原图A：最大值选择偏差"
+          },
+          {
+            "source": "DNN_Aggresvation101/figures/fig1_independent_certification.png",
+            "crop": [
+              0,
+              0.52,
+              0.51,
+              1
+            ],
+            "label": "独立审计原图C：阈值结论复现"
+          }
+        ],
+        "notes": [
+          "原图误差条为六次结果的95% t区间（三次随机对半、两个方向）。随机逐时拆分可能仍存在时间相关性，不能等同于时间块外推。独立审计与后续同表查证是不同验证。"
+        ]
+      },
+      {
+        "slide": 10,
+        "title": "增加并行重训对照，明确效率收益",
+        "sources": [
+          "DNN_Aggresvation100/CHANGELOG.md",
+          "DNN_Aggresvation100/figures/fig7_efficiency.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation100/figures/fig7_efficiency.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 11,
+        "title": "本次完成的工作",
+        "sources": [
+          "DNN_Aggresvation98/CHANGELOG.md",
+          "DNN_Aggresvation99/CHANGELOG.md",
+          "DNN_Aggresvation100/CHANGELOG.md",
+          "DNN_Aggresvation101/CHANGELOG.md"
+        ],
+        "images": [],
+        "notes": []
+      }
+    ],
+    "page_count": 11
+  },
+  {
+    "number": 2,
+    "title": "正式协议与完整评估",
+    "file": "02_正式协议与完整评估/V1/02_正式协议与完整评估_V1.pptx",
+    "slides": [
+      {
+        "slide": 1,
+        "title": "本次工作：正式协议与完整评估",
+        "sources": [],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 2,
+        "title": "统一正式实验协议",
+        "sources": [
+          "DNN_Aggresvation102/CHANGELOG.md",
+          "DNN_Aggresvation103/CHANGELOG.md",
+          "paper/FINAL_PROTOCOL.md"
+        ],
+        "images": [],
+        "notes": [
+          "区分训练内部选择和研究方案开发：103号记录主估计器选型参照过测试MAE，因此不能将本轮方法开发写成完全未接触测试误差。101号独立审计是另一个历史实验；106号发布审查不是时间块独立重跑。"
+        ]
+      },
+      {
+        "slide": 3,
+        "title": "完成单目标／多目标主干对照",
+        "sources": [
+          "DNN_Aggresvation102/CHANGELOG.md",
+          "DNN_Aggresvation102/figures/fig1_single_vs_multi.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation102/figures/fig1_single_vs_multi.png",
+            "crop": [
+              0,
+              0.11,
+              0.255,
+              1
+            ],
+            "label": "原图A：集合值误差"
+          },
+          {
+            "source": "DNN_Aggresvation102/figures/fig1_single_vs_multi.png",
+            "crop": [
+              0.745,
+              0.11,
+              1,
+              1
+            ],
+            "label": "原图D：关键字段召回"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 4,
+        "title": "量化单目标方案的重复开销",
+        "sources": [
+          "DNN_Aggresvation102/CHANGELOG.md",
+          "DNN_Aggresvation102/figures/fig2_single_cost.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation102/figures/fig2_single_cost.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 5,
+        "title": "补齐三模型经验参考值",
+        "sources": [
+          "DNN_Aggresvation103/CHANGELOG.md",
+          "DNN_Aggresvation103/figures/fig3_attacker_share.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation103/figures/fig3_attacker_share.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 6,
+        "title": "重做读出组件比较",
+        "sources": [
+          "DNN_Aggresvation103/CHANGELOG.md",
+          "DNN_Aggresvation103/figures/fig1_baselines.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation103/figures/fig1_baselines.png",
+            "crop": [
+              0.493,
+              0.1,
+              0.755,
+              1
+            ],
+            "label": "原图C：M²误差"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 7,
+        "title": "生成正式字段风险全表",
+        "sources": [
+          "DNN_Aggresvation104/CHANGELOG.md",
+          "DNN_Aggresvation104/figures/fig3_escalation_official.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation104/figures/fig3_escalation_official.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": [
+          "每个数据集有492个字段—目标条目，并不是337个不同字段。原图展示风险均值与放大条目占比，关键性统计取同号正式汇总表。"
+        ]
+      },
+      {
+        "slide": 8,
+        "title": "完成评分基线比较",
+        "sources": [
+          "DNN_Aggresvation105/CHANGELOG.md",
+          "DNN_Aggresvation105/figures/fig1_baseline_pr.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation105/figures/fig1_baseline_pr.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 9,
+        "title": "完成发布规则的漏放／误拒评估",
+        "sources": [
+          "DNN_Aggresvation106/CHANGELOG.md",
+          "DNN_Aggresvation106/figures/fig1_release_audit.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation106/figures/fig1_release_audit.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": [
+          "危险放行率以真实危险集合为分母。零漏放仅是当前实验观察。图中还保留线性规则、直接估计与估计预算的结果。"
+        ]
+      },
+      {
+        "slide": 10,
+        "title": "增加前三背景认证与区间报告",
+        "sources": [
+          "DNN_Aggresvation108/CHANGELOG.md",
+          "DNN_Aggresvation108/figures/fig1_interval_bounds.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation108/figures/fig1_interval_bounds.png",
+            "crop": [
+              0,
+              0.11,
+              0.345,
+              1
+            ],
+            "label": "原图A：前三背景认证"
+          },
+          {
+            "source": "DNN_Aggresvation108/figures/fig1_interval_bounds.png",
+            "crop": [
+              0.675,
+              0.11,
+              1,
+              1
+            ],
+            "label": "原图C：区间覆盖"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 11,
+        "title": "量化区间判定的收益与代价",
+        "sources": [
+          "DNN_Aggresvation108/CHANGELOG.md",
+          "DNN_Aggresvation108/figures/fig2_critical_interval.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation108/figures/fig2_critical_interval.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 12,
+        "title": "补做辅助标签量敏感性实验",
+        "sources": [
+          "DNN_Aggresvation109/CHANGELOG.md",
+          "DNN_Aggresvation109/figures/fig1_naux_v_m.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation109/figures/fig1_naux_v_m.png",
+            "crop": [
+              0,
+              0.12,
+              0.675,
+              1
+            ],
+            "label": "原图A、B：辅助数据量与V、M"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 13,
+        "title": "完成小样本最大值偏差的排查",
+        "sources": [
+          "DNN_Aggresvation109/CHANGELOG.md",
+          "DNN_Aggresvation109/figures/fig4_winners_curse.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation109/figures/fig4_winners_curse.png",
+            "crop": [
+              0.337,
+              0.12,
+              0.674,
+              1
+            ],
+            "label": "原图B：能力下降与选择增益分解"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 14,
+        "title": "本次完成的工作",
+        "sources": [
+          "DNN_Aggresvation107/CHANGELOG.md",
+          "DNN_Aggresvation108/CHANGELOG.md",
+          "DNN_Aggresvation109/CHANGELOG.md",
+          "paper/claude/V3_en/README.md"
+        ],
+        "images": [],
+        "notes": []
+      }
+    ],
+    "page_count": 14
+  },
+  {
+    "number": 3,
+    "title": "场景扩展与数值修复",
+    "file": "03_场景扩展与数值修复/V1/03_场景扩展与数值修复_V1.pptx",
+    "slides": [
+      {
+        "slide": 1,
+        "title": "本次工作：场景扩展与数值修复",
+        "sources": [],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 2,
+        "title": "完成新增场景与数据整理",
+        "sources": [
+          "DNN_Aggresvation110/CHANGELOG.md",
+          "DNN_Aggresvation111/CHANGELOG.md",
+          "DNN_Aggresvation112/CHANGELOG.md",
+          "DNN_Aggresvation113/CHANGELOG.md",
+          "DNN_Aggresvation114/CHANGELOG.md",
+          "DNN_Aggresvation116/CHANGELOG.md"
+        ],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 3,
+        "title": "完成 IEEE 30 节点预试验",
+        "sources": [
+          "DNN_Aggresvation110/CHANGELOG.md",
+          "DNN_Aggresvation110/figures/fig2_field_profile.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation110/figures/fig2_field_profile.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 4,
+        "title": "新增 RTS-GMLC 场景的组合风险验证",
+        "sources": [
+          "DNN_Aggresvation111/CHANGELOG.md",
+          "DNN_Aggresvation111/figures/fig2_gain_matrix.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation111/figures/fig2_gain_matrix.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 5,
+        "title": "在 NEM 历史数据上完成相同验证",
+        "sources": [
+          "DNN_Aggresvation112/CHANGELOG.md",
+          "DNN_Aggresvation112/figures/fig2_gain_matrix.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation112/figures/fig2_gain_matrix.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 6,
+        "title": "重新整理候选字段的披露角色",
+        "sources": [
+          "DNN_Aggresvation113/CHANGELOG.md",
+          "DNN_Aggresvation114/CHANGELOG.md",
+          "DNN_Aggresvation116/CHANGELOG.md",
+          "DNN_Aggresvation114/figures/fig1_vs_113.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation114/figures/fig1_vs_113.png",
+            "crop": [
+              0,
+              0.12,
+              0.33,
+              1
+            ],
+            "label": "原图A：候选角色修正前后的最强单字段"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 7,
+        "title": "补齐遗漏候选并重算全部组合",
+        "sources": [
+          "DNN_Aggresvation116/CHANGELOG.md",
+          "DNN_Aggresvation116/figures/fig1_vs_114.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation116/figures/fig1_vs_114.png",
+            "crop": [
+              0.662,
+              0.125,
+              1,
+              1
+            ],
+            "label": "原图C：最小不安全集合数量"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 8,
+        "title": "定位读出数值异常并完成修复",
+        "sources": [
+          "DNN_Aggresvation115/CHANGELOG.md"
+        ],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 9,
+        "title": "对数值修复配置做完整比较",
+        "sources": [
+          "DNN_Aggresvation115/CHANGELOG.md",
+          "DNN_Aggresvation115/figures/fig2_variant_summary.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation115/figures/fig2_variant_summary.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": [
+          "图中A为原三种子拼接，C为拼接加数值修正，D为单种子修正与五折，E为预测平均，F为再加交叉拟合。C的平均M误差略小，但E认证恢复更好，故采用E。"
+        ]
+      },
+      {
+        "slide": 10,
+        "title": "补做全列主干与未见目标的复用检查",
+        "sources": [
+          "DNN_Aggresvation116/CHANGELOG.md",
+          "DNN_Aggresvation116/figures/fig2_backbones.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation116/figures/fig2_backbones.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 11,
+        "title": "修复后完成决策与处置评价",
+        "sources": [
+          "DNN_Aggresvation117/CHANGELOG.md",
+          "DNN_Aggresvation117/figures/fig2_decision_disposal.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation117/figures/fig2_decision_disposal.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": [
+          "两个阈值分别为0.5和0.7。认证精确率为固定参考口径内的实验结果。右图是策略仅使用估计值选字段后的参考评价，不能把“打破大部分”说成全部组合都安全。"
+        ]
+      },
+      {
+        "slide": 12,
+        "title": "本次完成的工作",
+        "sources": [
+          "DNN_Aggresvation115/CHANGELOG.md",
+          "DNN_Aggresvation116/CHANGELOG.md",
+          "DNN_Aggresvation117/CHANGELOG.md",
+          "paper/claude/V4_en/README.md"
+        ],
+        "images": [],
+        "notes": []
+      }
+    ],
+    "page_count": 12
+  },
+  {
+    "number": 4,
+    "title": "消融与预学习改进",
+    "file": "04_消融与预学习改进/V1/04_消融与预学习改进_V1.pptx",
+    "slides": [
+      {
+        "slide": 1,
+        "title": "本次工作：消融与预学习改进",
+        "sources": [],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 2,
+        "title": "完成消融：随机主干与原预学习接近",
+        "sources": [
+          "DNN_Aggresvation118/CHANGELOG.md",
+          "DNN_Aggresvation118/figures/fig1_variants.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation118/figures/fig1_variants.png",
+            "crop": [
+              0,
+              0.12,
+              0.555,
+              1
+            ],
+            "label": "原图A/B：V与M²误差消融，共用方法标签"
+          }
+        ],
+        "notes": [
+          "这次发现并不等于所有预学习都没有用。118和122的随机初始化不同，不能直接把两号绝对值当成同一次配对实验。"
+        ]
+      },
+      {
+        "slide": 3,
+        "title": "尝试调整掩码与加入重建任务",
+        "sources": [
+          "DNN_Aggresvation122/CHANGELOG.md",
+          "DNN_Aggresvation122/figures/fig1_collapse_and_V.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation122/figures/fig1_collapse_and_V.png",
+            "crop": [
+              0.332,
+              0.13,
+              0.664,
+              1
+            ],
+            "label": "原图B：小集合误差与修改尝试"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 4,
+        "title": "用有效维度检查表征变化",
+        "sources": [
+          "DNN_Aggresvation122/CHANGELOG.md",
+          "DNN_Aggresvation122/figures/fig1_collapse_and_V.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation122/figures/fig1_collapse_and_V.png",
+            "crop": [
+              0,
+              0.13,
+              0.331,
+              1
+            ],
+            "label": "原图A：表征有效维度"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 5,
+        "title": "补做秩截断试验",
+        "sources": [
+          "DNN_Aggresvation122/CHANGELOG.md",
+          "DNN_Aggresvation122/figures/fig2_rank_truncation.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation122/figures/fig2_rank_truncation.png",
+            "crop": [
+              0,
+              0.13,
+              0.504,
+              1
+            ],
+            "label": "秩截断原图前两个数据组"
+          }
+        ],
+        "notes": [
+          "原图中横轴的0表示去掉主干特征，256表示全部特征。不是将缺失的秩值补成新数据。这里只显示RTS与NEM两个原子图以便放大阅读。"
+        ]
+      },
+      {
+        "slide": 6,
+        "title": "扩大查询集合，检查预学习收益",
+        "sources": [
+          "DNN_Aggresvation122/CHANGELOG.md",
+          "DNN_Aggresvation122/figures/fig3_set_size.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation122/figures/fig3_set_size.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 7,
+        "title": "排查重建后的尾部异常并加入截断",
+        "sources": [
+          "DNN_Aggresvation122/CHANGELOG.md",
+          "DNN_Aggresvation122/figures/fig4_V_vs_M_tail.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation122/figures/fig4_V_vs_M_tail.png",
+            "crop": [
+              0,
+              0.13,
+              0.249,
+              1
+            ],
+            "label": "原图A：集合值误差"
+          },
+          {
+            "source": "DNN_Aggresvation122/figures/fig4_V_vs_M_tail.png",
+            "crop": [
+              0.748,
+              0.13,
+              1,
+              1
+            ],
+            "label": "原图D：最大边际误差"
+          }
+        ],
+        "notes": [
+          "截断上下界只由训练标签决定，不使用测试标签。背景差分再取最大对少数异常更敏感，因此同时检查V和M，不能仅按平均V误差选型。"
+        ]
+      },
+      {
+        "slide": 8,
+        "title": "最终估计器采用的结构",
+        "sources": [
+          "DNN_Aggresvation115/CHANGELOG.md",
+          "DNN_Aggresvation122/CHANGELOG.md",
+          "DNN_Aggresvation125/CHANGELOG.md"
+        ],
+        "images": [],
+        "notes": [
+          "125的C3与118的同名拼接变体不是一回事。这里所有形状与文字都可在PPT内直接修改。"
+        ]
+      },
+      {
+        "slide": 9,
+        "title": "完成候选比较并固定 C3",
+        "sources": [
+          "DNN_Aggresvation125/CHANGELOG.md",
+          "DNN_Aggresvation125/figures/fig1_candidates.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation125/figures/fig1_candidates.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": [
+          "相对旧E，C3的V与M误差约降32%和29%。C2是三个独立单种子试验的平均，部署一次仍只用一组主干。C3按完整画像精度采用；C2在τ=0.5关键召回上更好，保留这一例外。"
+        ]
+      },
+      {
+        "slide": 10,
+        "title": "回代后重新评价关键字段召回",
+        "sources": [
+          "DNN_Aggresvation125/CHANGELOG.md",
+          "DNN_Aggresvation125/figures/fig2_downstream.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation125/figures/fig2_downstream.png",
+            "crop": [
+              0,
+              0.115,
+              0.337,
+              1
+            ],
+            "label": "原图A：新旧关键字段召回"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 11,
+        "title": "同步更新背景恢复与处置结果",
+        "sources": [
+          "DNN_Aggresvation125/CHANGELOG.md",
+          "DNN_Aggresvation125/figures/fig2_downstream.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation125/figures/fig2_downstream.png",
+            "crop": [
+              0.334,
+              0.115,
+              0.67,
+              1
+            ],
+            "label": "原图B：残余危险组合"
+          },
+          {
+            "source": "DNN_Aggresvation125/figures/fig2_downstream.png",
+            "crop": [
+              0.667,
+              0.115,
+              1,
+              1
+            ],
+            "label": "原图C：画像与背景恢复"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 12,
+        "title": "本次完成的工作",
+        "sources": [
+          "DNN_Aggresvation118/CHANGELOG.md",
+          "DNN_Aggresvation122/CHANGELOG.md",
+          "DNN_Aggresvation125/CHANGELOG.md",
+          "paper/claude/V5.1_en/README.md"
+        ],
+        "images": [],
+        "notes": []
+      }
+    ],
+    "page_count": 12
+  },
+  {
+    "number": 5,
+    "title": "机理画像与稳健性验证",
+    "file": "05_机理画像与稳健性验证/V1/05_机理画像与稳健性验证_V1.pptx",
+    "slides": [
+      {
+        "slide": 1,
+        "title": "本次工作：机理画像与稳健性验证",
+        "sources": [],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 2,
+        "title": "搭建可解释的受控机制算例",
+        "sources": [
+          "DNN_Aggresvation123/CHANGELOG.md"
+        ],
+        "images": [],
+        "notes": [
+          "这是受控仿真，不是真实机组私有报价的观测。结果相对本号攻击器与评估协议，不与其他号的绝对误差直接比较。"
+        ]
+      },
+      {
+        "slide": 3,
+        "title": "受控算例中观察到价格与出力的组合增益",
+        "sources": [
+          "DNN_Aggresvation123/CHANGELOG.md",
+          "DNN_Aggresvation123/outputs/narrow/analysis/ladder.csv",
+          "DNN_Aggresvation123/figures/fig1_mechanism_narrow.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation123/figures/fig1_mechanism_narrow.png",
+            "crop": [
+              0,
+              0,
+              0.392,
+              0.89
+            ],
+            "label": "原图A：机组出力在不同背景下的增益"
+          }
+        ],
+        "notes": [
+          "横轴是原图的 gain of Pg over background。无背景的单独值来自闭包后的 ladder；状态分组页使用未闭包的分组测试值，二者不混算。"
+        ]
+      },
+      {
+        "slide": 4,
+        "title": "按阻塞状态复核：远端价格的作用发生改变",
+        "sources": [
+          "DNN_Aggresvation123/CHANGELOG.md",
+          "DNN_Aggresvation123/outputs/narrow/analysis/regime.csv",
+          "reports/组会/_制作文件/replot_123_panel.py",
+          "reports/组会/05_机理画像与稳健性验证/V1/素材/123_运行状态子图.png"
+        ],
+        "images": [
+          {
+            "source": "reports/组会/05_机理画像与稳健性验证/V1/素材/123_运行状态子图.png",
+            "crop": null,
+            "label": "123号原图B单独重绘：运行状态与价格放大",
+            "derived": true
+          }
+        ],
+        "notes": [
+          "原合并图的 B/C 面板标签互相贴近，无法干净裁开，因此只重画 B。",
+          "严格沿用原图算法：每个状态内，V(T+Pg)−V(Pg)，不是完整集合能力，也不是 V(T+Pg)−V(T)。",
+          "分组测试 R² 未作单调闭包，因此允许出现轻微负提升；没有将负值截断为零。"
+        ]
+      },
+      {
+        "slide": 5,
+        "title": "把真实数据整理为字段风险画像",
+        "sources": [
+          "DNN_Aggresvation124/CHANGELOG.md",
+          "DNN_Aggresvation124/figures/fig1_profile_map.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation124/figures/fig1_profile_map.png",
+            "crop": [
+              0,
+              0.11,
+              0.461,
+              1
+            ],
+            "label": "原图A：单字段风险与放大量"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 6,
+        "title": "同时记录背景增益分布与危险背景",
+        "sources": [
+          "DNN_Aggresvation124/CHANGELOG.md",
+          "DNN_Aggresvation124/figures/fig1_profile_map.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation124/figures/fig1_profile_map.png",
+            "crop": [
+              0.465,
+              0.11,
+              1,
+              1
+            ],
+            "label": "原图B：典型字段的背景增益分布"
+          }
+        ],
+        "notes": [
+          "本页“平均”是本号枚举背景上的边际平均，不将其称为 Shapley 值。124 的背景恢复率使用旧 E；最终估计器的恢复率已在第4次汇报中用125结果展示。"
+        ]
+      },
+      {
+        "slide": 7,
+        "title": "更换攻击器种子和划分，复核结论稳定性",
+        "sources": [
+          "DNN_Aggresvation119/CHANGELOG.md",
+          "DNN_Aggresvation119/figures/fig1_seed_split.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation119/figures/fig1_seed_split.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": [
+          "重跑范围为 RTS 三目标的种子/划分，以及 PJM 实际负荷的种子。验证的是参考表及风险结论，不宣称最终 C3 已做全数据集全划分重复实验。"
+        ]
+      },
+      {
+        "slide": 8,
+        "title": "扫描阈值，检查组合风险是否只在特定阈值出现",
+        "sources": [
+          "DNN_Aggresvation119/CHANGELOG.md",
+          "DNN_Aggresvation119/figures/fig3_tau_sweep.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation119/figures/fig3_tau_sweep.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 9,
+        "title": "补做 K=3，并检查 K=2 的适用范围",
+        "sources": [
+          "DNN_Aggresvation119/CHANGELOG.md",
+          "DNN_Aggresvation119/figures/fig2_nem_k3.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation119/figures/fig2_nem_k3.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 10,
+        "title": "将字段画像与阈值处置的预算结论分开",
+        "sources": [
+          "DNN_Aggresvation119/CHANGELOG.md",
+          "DNN_Aggresvation119/outputs/analysis/k3_critical.csv"
+        ],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 11,
+        "title": "本次完成的工作",
+        "sources": [
+          "DNN_Aggresvation119/CHANGELOG.md",
+          "DNN_Aggresvation123/CHANGELOG.md",
+          "DNN_Aggresvation124/CHANGELOG.md",
+          "paper/claude/V5_en/README.md"
+        ],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 12,
+        "title": "补充工作：87 字段扩展（120 号）",
+        "sources": [
+          "DNN_Aggresvation120/CHANGELOG.md",
+          "DNN_Aggresvation120/figures/fig1_large_p.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation120/figures/fig1_large_p.png",
+            "crop": [
+              0.353,
+              0.1,
+              0.675,
+              1
+            ],
+            "label": "原图B：大字段空间的关键字段"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 13,
+        "title": "补充工作：改变公开基底后重新定级（121 号）",
+        "sources": [
+          "DNN_Aggresvation121/CHANGELOG.md",
+          "DNN_Aggresvation121/figures/fig1_regrade.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation121/figures/fig1_regrade.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": [
+          "只做了两个目标上的指定基底，不将其推广为所有公开信息变化下的规律。120/121没有加入当前论文；本页是已完成的探索工作。"
+        ]
+      }
+    ],
+    "page_count": 13
+  },
+  {
+    "number": 6,
+    "title": "外部对比与投稿准备",
+    "file": "06_外部对比与投稿准备/V1/06_外部对比与投稿准备_V1.pptx",
+    "slides": [
+      {
+        "slide": 1,
+        "title": "本次工作：外部对比与投稿准备",
+        "sources": [],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 2,
+        "title": "统一计时，并优化重复读出的实现",
+        "sources": [
+          "DNN_Aggresvation126/CHANGELOG.md"
+        ],
+        "images": [],
+        "notes": [
+          "逐位一致是已检查样本上的结果，不声明所有硬件、所有输入上的浮点运算顺序必然完全相同。"
+        ]
+      },
+      {
+        "slide": 3,
+        "title": "补齐各配置的每集合耗时",
+        "sources": [
+          "DNN_Aggresvation126/CHANGELOG.md",
+          "DNN_Aggresvation126/figures/fig1_time_per_method.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation126/figures/fig1_time_per_method.png",
+            "crop": null,
+            "label": ""
+          }
+        ],
+        "notes": [
+          "原图为对数时间轴。三种子表示分别读出再平均，三次求解。预训练为一次性成本，不能当作每集合时间。"
+        ]
+      },
+      {
+        "slide": 4,
+        "title": "结合成本，明确最终配置的取舍",
+        "sources": [
+          "DNN_Aggresvation125/CHANGELOG.md",
+          "DNN_Aggresvation126/CHANGELOG.md",
+          "paper/codex/V2_en/README.md"
+        ],
+        "images": [],
+        "notes": [
+          "C2 精度是多个独立单种子试验的平均；每次使用仍为单种子，不能误写成三种子集成。"
+        ]
+      },
+      {
+        "slide": 5,
+        "title": "补充外部对照，避免只有自身变体比较",
+        "sources": [
+          "DNN_Aggresvation127/CHANGELOG.md"
+        ],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 6,
+        "title": "外部对比显示：TabPFN 的精度最接近",
+        "sources": [
+          "DNN_Aggresvation127/CHANGELOG.md",
+          "DNN_Aggresvation127/figures/fig1_baselines.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation127/figures/fig1_baselines.png",
+            "crop": [
+              0,
+              0.095,
+              0.648,
+              1
+            ],
+            "label": "原图A/B：精度与耗时"
+          }
+        ],
+        "notes": [
+          "“串行重训误差为零”来自其被定义为参考，不代表掌握真实攻击能力的物理上限。表格基础模型有时强于参考攻击者族，该局限已写入论文。"
+        ]
+      },
+      {
+        "slide": 7,
+        "title": "对高成本方法保留样本评测的边界",
+        "sources": [
+          "DNN_Aggresvation127/CHANGELOG.md",
+          "DNN_Aggresvation127/figures/fig1_baselines.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation127/figures/fig1_baselines.png",
+            "crop": [
+              0.651,
+              0.095,
+              1,
+              1
+            ],
+            "label": "原图C：共同200集合样本的V误差"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 8,
+        "title": "分数据组核对 TabPFN 的优势和误差来源",
+        "sources": [
+          "DNN_Aggresvation127/CHANGELOG.md",
+          "DNN_Aggresvation127/figures/fig2_ours_vs_tabpfn.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation127/figures/fig2_ours_vs_tabpfn.png",
+            "crop": [
+              0,
+              0.09,
+              0.503,
+              1
+            ],
+            "label": "原图A/B：V误差与M误差"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "slide": 9,
+        "title": "如实保留不同指标上的优劣",
+        "sources": [
+          "DNN_Aggresvation127/CHANGELOG.md",
+          "DNN_Aggresvation127/figures/fig2_ours_vs_tabpfn.png"
+        ],
+        "images": [
+          {
+            "source": "DNN_Aggresvation127/figures/fig2_ours_vs_tabpfn.png",
+            "crop": [
+              0.498,
+              0.09,
+              1,
+              1
+            ],
+            "label": "原图C/D：放大量误差与关键字段召回"
+          }
+        ],
+        "notes": [
+          "关键召回针对真实关键字段的检出；认证恢复比针对已搜索候选恢复的风险量。二者评价对象不同。"
+        ]
+      },
+      {
+        "slide": 10,
+        "title": "把实验修改同步到论文版本",
+        "sources": [
+          "paper/claude/V3_en/README.md",
+          "paper/claude/V4_en/README.md",
+          "paper/claude/V5_en/README.md",
+          "paper/claude/V5.1_en/README.md",
+          "paper/claude/V5.2_en/README.md",
+          "paper/claude/V6_ieee/README.md",
+          "paper/codex/V2_en/README.md"
+        ],
+        "images": [],
+        "notes": []
+      },
+      {
+        "slide": 11,
+        "title": "基于同一研究，完成两种期刊定向稿",
+        "sources": [
+          "paper/codex/IJCIP/V1/README.md",
+          "paper/codex/JISA/V1/README.md",
+          "paper/codex/JOURNAL_ADAPTATION_RESEARCH.md"
+        ],
+        "images": [],
+        "notes": [
+          "本页总结本地已完成的期刊调研和定向改写，不新增期刊排名、录用概率或审稿周期判断。期刊当前专属投稿要求仍需在实际投稿前核实。"
+        ]
+      },
+      {
+        "slide": 12,
+        "title": "本次完成的工作与材料状态",
+        "sources": [
+          "DNN_Aggresvation126/CHANGELOG.md",
+          "DNN_Aggresvation127/CHANGELOG.md",
+          "paper/codex/IJCIP/V1/README.md",
+          "paper/codex/JISA/V1/README.md"
+        ],
+        "images": [],
+        "notes": []
+      }
+    ],
+    "page_count": 12
+  }
+]

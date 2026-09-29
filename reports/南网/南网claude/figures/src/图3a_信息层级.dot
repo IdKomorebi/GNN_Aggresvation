@@ -1,0 +1,23 @@
+digraph G {
+  graph [rankdir=LR, fontname="Noto Sans CJK SC", bgcolor="#fcfcfb", nodesep=0.25, ranksep=0.5, pad=0.3, compound=true, newrank=true,
+label="", fontsize=12];
+  node [shape=box, style="rounded,filled", fontname="Noto Sans CJK SC", fontsize=10.5, penwidth=1.2, margin="0.12,0.06"];
+  edge [color="#52514e", arrowsize=0.7, fontname="Noto Sans CJK SC", fontsize=10, fontcolor="#52514e"];
+
+  subgraph cluster_int {
+    label="内部数据（南网自持，未披露）：调度运行管理、电网结构、设备运维等（手册表4.1 多为3级）"; style="rounded,filled"; fillcolor="#f3f2ee"; color="#8a8984"; fontsize=11;
+    subgraph cluster_spec {
+      label="特定信息（向特定市场成员）"; style="rounded,filled"; fillcolor="#fde9e0"; color="#eb6834"; fontsize=11;
+      sp [label="发电企业：申报量价与合同、机组实际出力与发电量、\n边际能耗曲线、燃料价格与存煤、最低技术出力、爬坡速率\n注册细则：技术参数登记；用户近36个月分月用电量", fillcolor="#fbe1d6", color="#eb6834"];
+      subgraph cluster_pub {
+        label="公开信息（向有关市场成员）"; style="rounded,filled"; fillcolor="#e6effb"; color="#2a78d6"; fontsize=11;
+        pb [label="预测类：系统负荷、发电总出力、新能源/水电出力预测\n出清类：分时出清电价与出清量、断面阻塞\n运行类：实际负荷、机组状态、联络线潮流、非市场机组实际出力\n约束/参数：断面可用容量、节点分配因子、检修计划", fillcolor="#dbe8f9", color="#2a78d6"];
+        subgraph cluster_pz {
+          label="公众信息（向社会公众）"; style="rounded,filled"; fillcolor="#fcfcfb"; color="#2a78d6"; fontsize=11;
+          pz [label="企业基本信息、装机容量、交易规则、信用信息、\n市场运行总体情况、HHI；开放目录13项无条件开放\n+ 攻击者自有的外部公开数据（气象、宏观经济等）", fillcolor="#ffffff", color="#2a78d6"];
+        }
+      }
+    }
+  }
+
+}
