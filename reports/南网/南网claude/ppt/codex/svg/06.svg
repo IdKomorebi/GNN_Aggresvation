@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">关联找线索，联合验证确认能否推断</title><desc id="desc">关联发现有实际作用：提示副本、提供业务解释、帮助安排验证顺序。但 Pearson、Spearman、MIC 都不是已确认的推断方向，也不直接给出安全等级。联合推断评估回答给定字段集合能恢复目标到何种程度。连续目标可以使用 DNN 等模型，结构目标可研究 GAT 与物理约束，但指标和验证任务要匹配。集合评估应保留图外组合，避免漏掉两两弱、联合强的情形。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="a087F79" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#087F79"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">05  从关系线索到推断证据</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">关联找线索，联合验证确认能否推断</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">两路分析相互补充：关联图解释关系，集合评估直接检验联合信息。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">06 / 12</tspan>
+</text>
+<rect x="64" y="199" width="493" height="339" rx="9" fill="#F4F7FA"/>
+<rect x="592" y="199" width="624" height="339" rx="9" fill="#EDF7F5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="87" y="248.56">关联发现</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="615" y="248.56">联合推断评估</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="88" y="303.44">Pearson</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#172B3A" text-anchor="start">
+<tspan x="282" y="304.46">线性关系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="88" y="357.44">Spearman</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#172B3A" text-anchor="start">
+<tspan x="282" y="358.46">单调关系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="88" y="411.44">MIC</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#172B3A" text-anchor="start">
+<tspan x="282" y="412.46">非线性依赖</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="478.4">产物：候选关联图、方向线索</tspan>
+<tspan x="88" y="509.4">方向需结合业务或预测验证</tspan>
+</text>
+<rect x="617" y="286" width="238" height="50" rx="6" fill="#FFFFFF"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#087F79" text-anchor="middle">
+<tspan x="736.0" y="318.59">背景 B + 字段集合 S</tspan>
+</text>
+<line x1="864" y1="310" x2="892" y2="310" stroke="#087F79" stroke-width="2" marker-end="url(#a087F79)"/>
+<rect x="905" y="286" width="283" height="50" rx="6" fill="#FFFFFF"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#087F79" text-anchor="middle">
+<tspan x="1046.5" y="318.59">目标专用推断模型</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400" fill="#172B3A" text-anchor="start">
+<tspan x="620" y="395.48">连续目标：样本外预测能力</tspan>
+<tspan x="620" y="433.88">结构目标：匹配任务的恢复指标</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="620" y="495.46">产物：集合能力 V(B ∪ S) 与可核验结果</tspan>
+</text>
+<line x1="310" y1="542" x2="310" y2="570" stroke="#2459C4" stroke-width="2"/>
+<line x1="904" y1="542" x2="904" y2="570" stroke="#087F79" stroke-width="2"/>
+<line x1="310" y1="570" x2="904" y2="570" stroke="#647584" stroke-width="2"/>
+<rect x="64" y="600" width="1152" height="48" rx="6" fill="#EDF7F5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="82" y="630.44">关联弱的字段也可能参与强组合：联合评估不能被两两关联图直接排除。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">方法定位：关联图提供解释与优先级；模型预测检验推断能力；连续与结构目标分别验证。</tspan>
+</text>
+</svg>

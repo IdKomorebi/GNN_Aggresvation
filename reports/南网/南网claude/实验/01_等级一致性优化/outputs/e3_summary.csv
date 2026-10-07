@@ -1,0 +1,15 @@
+训练时见过,方法族,mean,max,达到最优比例
+False,all_raise,4.9177,25.126,0.0032
+False,greedy_M_prune,1.0752,2.0437,0.4351
+False,greedy_cover_prune,1.0162,1.5,0.8117
+False,grpo_prune,1.0084,1.5,0.8929
+False,grpo_raw,1.0228,1.6734,0.7581
+False,grpo_x16,1.0001,1.0512,0.9951
+False,noisy_greedy_x16,1.0008,1.0912,0.9805
+True,all_raise,3.0122,15.5379,0.0
+True,greedy_M_prune,1.0462,2.6,0.5451
+True,greedy_cover_prune,1.0209,1.4818,0.7736
+True,grpo_prune,1.01,1.3178,0.8145
+True,grpo_raw,1.0207,1.3281,0.6918
+True,grpo_x16,1.0014,1.1145,0.9633
+True,noisy_greedy_x16,1.0026,1.2186,0.9623

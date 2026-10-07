@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">场景定义：谁在什么时候已经知道什么</title><desc id="desc">先确定具体主体和时点，再定义它已经持有的信息 B、还能取得的字段 H，以及对它仍需保护的目标 y。已知背景包括历史提供、自有数据和其他合法渠道信息，不仅是网上公开内容。公众、有关市场成员、特定成员的权限并不完全嵌套。实验中按等级阈值生成可见范围，是一种须确认的简化模型；不能直接替代实际授权关系。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">04  推断分析的边界</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">场景定义：谁在什么时候已经知道什么</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">同一数据，在不同主体、时点和已有背景下，可能形成不同的推断证据。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">05 / 12</tspan>
+</text>
+<rect x="64" y="197" width="486" height="350" rx="10" fill="#F4F7FA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="88" y="244.52">一张场景卡，固定评估问题</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="305.44">接收主体</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="244" y="305.44">角色、授权与用途</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="366.44">评估时点</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="244" y="366.44">披露前 / 披露后</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="427.44">已知背景 B</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="244" y="427.44">公开、自有、历史已获取</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="488.44">受保护目标 y</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="244" y="488.44">此时对该主体仍需保护</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="610" y="232.54">把“已有”与“可能新增”分开</tspan>
+</text>
+<rect x="610" y="270" width="605" height="110" rx="10" fill="#EDF7F5" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="610" y="270" width="4" height="110" rx="0" fill="#087F79"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="632" y="313.52">已有背景 B</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="632" y="354.42">已掌握的信息保留，不因重新定级而消失</tspan>
+</text>
+<rect x="610" y="403" width="605" height="110" rx="10" fill="#EDF3FD" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="610" y="403" width="4" height="110" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="632" y="446.52">可得字段 H</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="632" y="487.42">依据主体、时点、授权及确认的等级映射确定</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="612" y="567.46">披露时点改变 → 重新确认 B、H 和目标</tspan>
+</text>
+<rect x="64" y="600" width="1152" height="48" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="82" y="630.44">市场“公开信息”面向有关市场成员；不能等同于向社会公众公开。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">依据：所供披露细则 2.7、5.1；开放目录说明、注册细则；等级—可见范围映射须经业务确认。</tspan>
+</text>
+</svg>

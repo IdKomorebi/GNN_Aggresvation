@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">验证闭环：建议形成后，再检查剩余可得组合</title><desc id="desc">已有实验发现，估计值偏低的组合可能根本不会被选入一次性验证清单，优化结果仍留有残余。因此形成等级建议后，需要核验剩余可得范围中的组合，并验证作为约束的可疑集合以纠正误报，再返回求解。结束条件应包含声明范围内的核验完成与约束检查通过。E2b 使用已有重训结果表模拟验证调用，零残余仅相对于这张固定表。真实项目还需要独立样本、时间顺序留出和模型范围核验。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="a647584" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#647584"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">10  让等级建议有足够证据支撑</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">验证闭环：建议形成后，再检查剩余可得组合</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">扫描用于提高效率，补充验证用于发现漏项；一次性验证不能代替闭环。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">11 / 12</tspan>
+</text>
+<rect x="65" y="220" width="482" height="128" rx="10" fill="#EDF7F5" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="65" y="220" width="4" height="128" rx="0" fill="#087F79"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="87" y="263.52">01  通用模型扫描</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="87" y="304.42">估计组合能力，提出重点核验对象</tspan>
+</text>
+<rect x="734" y="220" width="482" height="128" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="734" y="220" width="4" height="128" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="756" y="263.52">02  形成等级建议</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="756" y="304.42">在当前证据与硬约束下运行 GRPO</tspan>
+</text>
+<rect x="734" y="420" width="482" height="132" rx="10" fill="#EDF7F5" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="734" y="420" width="4" height="132" rx="0" fill="#087F79"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="756" y="463.52">03  补充验证</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="756" y="504.42">核验剩余可得组合与未确认约束</tspan>
+</text>
+<rect x="65" y="420" width="482" height="132" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="65" y="420" width="4" height="132" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="87" y="463.52">04  更新证据并复算</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="87" y="504.42">发现遗漏或误报，修正约束与建议</tspan>
+</text>
+<line x1="561" y1="284" x2="720" y2="284" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<line x1="975" y1="355" x2="975" y2="407" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<line x1="720" y1="486" x2="561" y2="486" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<line x1="304" y1="406" x2="304" y2="358" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#647584" text-anchor="middle">
+<tspan x="640.5" y="376.4">迭代至</tspan>
+<tspan x="640.5" y="407.4">范围内完成验</tspan>
+<tspan x="640.5" y="438.4">证</tspan>
+</text>
+<rect x="64" y="600" width="1152" height="48" rx="6" fill="#EDF7F5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="82" y="630.44">结论必须连同范围提交：数据版本、模型、目标、背景与已核验组合规模。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">依据：项目 E2/E2b 验证记录。范围内无残余，不代表所有模型、未来数据与更大组合都安全。</tspan>
+</text>
+</svg>

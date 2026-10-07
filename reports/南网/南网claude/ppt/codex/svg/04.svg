@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">基础定级：先分类，再按影响形成规则等级</title><desc id="desc">分类和分级是两件事。分类沿专业域、流程、业务对象定位到字段；分级依据要素和影响矩阵。大模型提取规则、匹配业务语义，输出可审查候选，不能替代影响判断。规则等级是后续研究的基线；如果对象已有批准等级，还需保留现行结果与变更状态。材料为所供版本，正式采用前核对生效状态。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="a647584" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#647584"/></marker>
+<marker id="a2459C4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2459C4"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">03  规则基线</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">基础定级：先分类，再按影响形成规则等级</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">大模型与检索增强辅助条款提取，定级依据仍是业务语义和南网规则。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">04 / 12</tspan>
+</text>
+<rect x="64" y="193" width="124" height="36" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="126.0" y="217.20999999999998">数据分类</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="212" y="219.5">确定字段属于哪一类业务对象</tspan>
+</text>
+<rect x="64" y="250" width="140" height="68" rx="7" fill="#F4F7FA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#172B3A" text-anchor="middle">
+<tspan x="134.0" y="292.46">专业域</tspan>
+</text>
+<line x1="213" y1="284" x2="237" y2="284" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<rect x="249" y="250" width="235" height="68" rx="7" fill="#F4F7FA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#172B3A" text-anchor="middle">
+<tspan x="366.5" y="292.46">专业级流程组</tspan>
+</text>
+<line x1="493" y1="284" x2="517" y2="284" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<rect x="529" y="250" width="205" height="68" rx="7" fill="#F4F7FA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#172B3A" text-anchor="middle">
+<tspan x="631.5" y="292.46">操作级流程</tspan>
+</text>
+<line x1="743" y1="284" x2="767" y2="284" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<rect x="779" y="250" width="185" height="68" rx="7" fill="#F4F7FA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#172B3A" text-anchor="middle">
+<tspan x="871.5" y="292.46">业务对象</tspan>
+</text>
+<line x1="973" y1="284" x2="997" y2="284" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<rect x="1009" y="250" width="137" height="68" rx="7" fill="#F4F7FA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#172B3A" text-anchor="middle">
+<tspan x="1077.5" y="292.46">字段</tspan>
+</text>
+<rect x="64" y="362" width="124" height="36" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="126.0" y="386.21000000000004">数据分级</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="212" y="388.5">确定受损可能影响谁、影响多严重</tspan>
+</text>
+<rect x="64" y="416" width="317" height="114" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="64" y="416" width="4" height="114" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="86" y="458.5">八个分级要素</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="86" y="500.42">含规模、精度、深度等</tspan>
+</text>
+<rect x="444" y="416" width="360" height="114" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="444" y="416" width="4" height="114" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="466" y="458.5">影响对象 × 影响程度</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="466" y="500.42">按适用规则从严判断</tspan>
+</text>
+<rect x="867" y="416" width="349" height="114" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="867" y="416" width="4" height="114" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="889" y="458.5">规则等级 L_rule</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="889" y="500.42">保留条款与复核记录</tspan>
+</text>
+<line x1="389" y1="473" x2="433" y2="473" stroke="#2459C4" stroke-width="2" marker-end="url(#a2459C4)"/>
+<line x1="812" y1="473" x2="856" y2="473" stroke="#2459C4" stroke-width="2" marker-end="url(#a2459C4)"/>
+<rect x="64" y="565" width="670" height="45" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="399.0" y="595.78">一般数据：1 · 2 · 3 级</tspan>
+</text>
+<rect x="752" y="565" width="224" height="45" rx="6" fill="#FBF5E9"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#AE6C26" text-anchor="middle">
+<tspan x="864.0" y="595.4350000000001">重要：4 级</tspan>
+</text>
+<rect x="994" y="565" width="222" height="45" rx="6" fill="#FBF5E9"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#AE6C26" text-anchor="middle">
+<tspan x="1105.0" y="595.4350000000001">核心：5 级</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">依据：所供分级手册第四部分、表 4.4、附录 A–C；重要/核心数据按对应识别、申报与审批程序处理。</tspan>
+</text>
+</svg>

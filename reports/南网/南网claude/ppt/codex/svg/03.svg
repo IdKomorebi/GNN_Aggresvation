@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">四个阶段，形成有依据、可复核的等级结论</title><desc id="desc">每个阶段都有明确产物。第一阶段给规则等级和条款，第二阶段给目标、背景、能力和验证范围，第三阶段将技术证据转成影响复核依据，并通过 GRPO 研究联合等级方案，第四阶段完成审批固化。第二、三阶段不是一次流水线：建议形成后，还要验证其剩余可得组合，必要时返回更新。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="a647584" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#647584"/></marker>
+<marker id="a2459C4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2459C4"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">02  总体研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">四个阶段，形成有依据、可复核的等级结论</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">以南网分类分级规则为基线，将推断证据接入等级复核与审批。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">03 / 12</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="46" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="254.92000000000002">01</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="303.56">基础分类分级</tspan>
+</text>
+<line x1="64" y1="324" x2="313" y2="324" stroke="#2459C4" stroke-width="3"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="371.48">规则解析</tspan>
+<tspan x="64" y="411.08000000000004">业务分类</tspan>
+<tspan x="64" y="450.68">影响矩阵</tspan>
+</text>
+<rect x="64" y="492" width="258" height="45" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="193.0" y="521.4">规则等级 + 依据</tspan>
+</text>
+<line x1="325" y1="387" x2="347" y2="387" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="46" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="360" y="254.92000000000002">02</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="360" y="303.56">推断风险分析</tspan>
+</text>
+<line x1="360" y1="324" x2="609" y2="324" stroke="#087F79" stroke-width="3"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="360" y="371.48">主体与已知背景</tspan>
+<tspan x="360" y="411.08000000000004">集合推断评估</tspan>
+<tspan x="360" y="450.68">字段风险解释</tspan>
+</text>
+<rect x="360" y="492" width="258" height="45" rx="6" fill="#EDF7F5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#087F79" text-anchor="middle">
+<tspan x="489.0" y="521.4">推断证据 + 范围</tspan>
+</text>
+<line x1="621" y1="387" x2="643" y2="387" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="46" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="656" y="254.92000000000002">03</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="656" y="303.56">等级复核优化</tspan>
+</text>
+<line x1="656" y1="324" x2="905" y2="324" stroke="#2459C4" stroke-width="3"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="656" y="371.48">补充影响判断</tspan>
+<tspan x="656" y="411.08000000000004">GRPO 联合优化</tspan>
+<tspan x="656" y="450.68">硬约束与验证</tspan>
+</text>
+<rect x="656" y="492" width="258" height="45" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="785.0" y="521.4">建议等级 + 理由</tspan>
+</text>
+<line x1="917" y1="387" x2="939" y2="387" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="46" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="952" y="254.92000000000002">04</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="952" y="303.56">审批固化复评</tspan>
+</text>
+<line x1="952" y1="324" x2="1201" y2="324" stroke="#2459C4" stroke-width="3"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="952" y="371.48">业务复核与审批</tspan>
+<tspan x="952" y="411.08000000000004">目录固化</tspan>
+<tspan x="952" y="450.68">变化触发复评</tspan>
+</text>
+<rect x="952" y="492" width="258" height="45" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="1081.0" y="521.4">批准结果 + 记录</tspan>
+</text>
+<line x1="1082" y1="552" x2="1082" y2="578" stroke="#2459C4" stroke-width="2"/>
+<line x1="1082" y1="578" x2="190" y2="578" stroke="#2459C4" stroke-width="2"/>
+<line x1="190" y1="578" x2="190" y2="548" stroke="#2459C4" stroke-width="2" marker-end="url(#a2459C4)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#2459C4" text-anchor="middle">
+<tspan x="711.0" y="602.4">数据、背景或规则变化 → 重新复评</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">范围：基础分类分级、推断风险增强、等级复核建议、审批固化与动态更新。</tspan>
+</text>
+</svg>

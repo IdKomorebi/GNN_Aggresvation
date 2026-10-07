@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">GRPO：在规则硬约束内，逐步形成等级建议</title><desc id="desc">GRPO 的重点是组内比较：从同一状态生成多条合法调整轨迹，用各轨迹回报相对组内水平的优势更新策略，并保留 KL 约束等稳定机制。状态包含当前等级、已核验风险、候选级别、剩余组合约束和调整代价；动作是合法的一级上调或申请结束。环境根据已确认的映射更新未来可得范围，历史已知 B 保留。奖励鼓励减少越线并控制调整代价，规则通过动作可行域限制，不作为可被业务收益抵消的罚项。顺序求解不自动证明强化学习必要，现有小规模实验应与整数规划及覆盖贪心比较。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="a647584" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#647584"/></marker>
+<marker id="a2459C4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2459C4"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">09  联合等级决策的重点研究方法</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">GRPO：在规则硬约束内，逐步形成等级建议</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">同一状态采样多条调整轨迹，在组内比较收益，学习更合适的调整顺序。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">10 / 12</tspan>
+</text>
+<rect x="65" y="184" width="1150" height="47" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="640.0" y="215.09">硬约束贯穿全程：规则基线 · 合法候选级别 · 已知背景 / 披露要求 · 审批边界</tspan>
+</text>
+<rect x="64" y="269" width="282" height="178" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="64" y="269" width="4" height="178" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="86" y="314.56">状态</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="86" y="353.42">当前等级、组合风险</tspan>
+<tspan x="86" y="383.87">剩余约束、调整代价</tspan>
+</text>
+<rect x="407" y="269" width="284" height="178" rx="10" fill="#EDF7F5" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="407" y="269" width="4" height="178" rx="0" fill="#087F79"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="429" y="314.56">GRPO 策略</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="429" y="353.42">采样多条调整轨迹</tspan>
+<tspan x="429" y="383.87">组内相对优势更新</tspan>
+</text>
+<rect x="753" y="269" width="209" height="178" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="753" y="269" width="4" height="178" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="775" y="314.56">动作</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="775" y="353.42">选字段调一级</tspan>
+<tspan x="775" y="383.87">或申请结束</tspan>
+</text>
+<rect x="1021" y="269" width="195" height="178" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="1021" y="269" width="4" height="178" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="1043" y="311.5">环境反馈</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="1043" y="353.42">更新可得范围</tspan>
+<tspan x="1043" y="383.87">重算剩余约束</tspan>
+</text>
+<line x1="354" y1="356" x2="398" y2="356" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<line x1="699" y1="356" x2="744" y2="356" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<line x1="970" y1="356" x2="1012" y2="356" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<line x1="1118" y1="453" x2="1118" y2="480" stroke="#2459C4" stroke-width="2"/>
+<line x1="1118" y1="480" x2="203" y2="480" stroke="#2459C4" stroke-width="2"/>
+<line x1="203" y1="480" x2="203" y2="451" stroke="#2459C4" stroke-width="2" marker-end="url(#a2459C4)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#2459C4" text-anchor="middle">
+<tspan x="719.0" y="504.42">调整一个字段 → 其余组合的可得性随之变化</tspan>
+</text>
+<rect x="64" y="542" width="720" height="66" rx="7" fill="#F4F7FA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="82" y="585.52">奖励：已核验越线减少 − 调整代价</tspan>
+</text>
+<rect x="807" y="542" width="409" height="66" rx="7" fill="#EDF7F5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="826" y="573.4">通过一致性检查与补充验证</tspan>
+<tspan x="826" y="600.4">才形成可提交的建议</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">算法保留 KL 约束等训练机制；不允许用奖励抵消规则违规。整数规划与覆盖贪心作为对照，结果见备查 A2。</tspan>
+</text>
+</svg>

@@ -1,0 +1,43 @@
+# 01 号：等级一致性优化的验证（V2 方案第 7 节 E1–E3）。本文件在运行前写定，避免看结果改口径。
+question: |
+  在南网约束下求“上调最少的一致等级”这件事：
+  E1 相对“全部上调”（保守口径）能少调多少；贪心离精确最优有多远。
+  E2 用通用模型估计值代替重训真值做优化，按真值检查还剩多少越线组合；加认证后是否归零、要认证多少集合。
+  E3 改造后的 GRPO 是否稳定不劣于贪心。
+data:        # 只读复用主目录的数据与真值，不重训
+  groups: [RTS-GMLC, NEM, PJM-load, PJM-gen/ic, CAISO-load]   # 共 10 个敏感目标
+  truth: 各组 V_official.npy（三攻击器专用重训 + 单调闭包），取不超过 3 个字段的全部组合（K=2）
+  estimate: DNN_Aggresvation125/outputs/final_est/<组>.npz（论文固定估计器 C3），做子集最大值闭包
+instance:    # 数据集本身没有南网等级，按下面的规则随机生成实例；每个（组, τ, 设置）生成 R 个
+  field_rule_level: 每个字段独立取 1 级（概率 p1）或 2 级；p1 ∈ {0.7, 0.5}
+  target_level: all3（全部目标 3 级）或 mixed（每个目标独立取 2 或 3 级）
+  roles: 公众可见 1 级、协议接收方可见 ≤2 级（可见范围嵌套）
+  cost: uniform（每上调一级代价 1）或 nonuniform（每字段代价 ~ U[0.5, 2]）
+  locked: none（主设置）；lock10（附加设置：随机 10% 的 1 级字段为法定公开、不可上调）
+  tau: [0.5, 0.7]
+  R: 20
+  note: |
+    可见范围嵌套时，一致性条件等价于：每个最小越线组合里至少有一个字段的等级不低于目标等级。
+    lock10 中把锁定字段留在背景池里、计入 ≤3 的组合规模（真值表没有“基底 + 3 个字段”的更大集合），
+    这比方案定义（基底不占预算）弱，只作附加设置；只由锁定字段组成的越线组合记为“基底已泄露”并剔除。
+methods:
+  all_raise: 凡参与越线组合的字段都上调到所涉目标的最高等级（保守口径）
+  greedy_M: 每步上调“当前背景池下 M^(K) 最大”的字段到所需等级，然后重算（方案里描述的做法）
+  greedy_cover: 每步选“消除的越线组合数 ÷ 上调代价”最大的（字段, 目标等级）
+  greedy_cover_prune: greedy_cover 之后按代价从大到小尝试回退，仍一致则回退
+  grpo: 逐步上调一级的策略网络（逐字段共享 MLP），组内相对优势 + KL 约束 + 熵正则；贪心解码与 16 次采样取最优两种用法
+  optimal: 整数规划精确最优（scipy.milp）
+metrics:
+  cost: 上调代价合计；与 optimal 的比值；相对 all_raise 节省的比例
+  overgrade: 被上调但在 optimal 中不必上调的字段比例
+  e2_residual: 用估计值优化后，按真值仍未消除的最小越线组合比例；认证的集合数
+grpo_protocol:
+  train_groups: [RTS-GMLC, PJM-load, PJM-gen/ic]      # 训练实例由这三组随机生成
+  test: 全部五组的留出实例；NEM、CAISO-load 为训练时没见过的组
+  seeds: [0, 1]                                        # 两个种子各占一张 GPU（GPU1、GPU2；GPU0 有人在用，GPU3 留给别人）
+  selection: 训练中只看训练组的验证实例，不看测试实例
+criteria:    # 事先写定的判据
+  E1: 报告 optimal / greedy / all_raise 的代价；greedy 与 optimal 的比值 ≤1.10 视为“贪心足够”
+  E2: 认证后按真值残余必须为 0 才能说“认证后可用”；否则如实报告残余比例
+  E3: GRPO（贪心解码）在留出实例上平均代价不高于 greedy_cover_prune 且在没见过的组上不劣于 1%，才称“GRPO 不劣于贪心”；否则以贪心为主方法
+compute: GPU1、GPU2（各一个 GRPO 种子）；CPU 部分 OMP_NUM_THREADS=1

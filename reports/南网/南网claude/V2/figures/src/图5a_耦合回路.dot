@@ -1,0 +1,11 @@
+digraph G {
+  graph [fontname="Noto Sans CJK SC", bgcolor="#fcfcfb", pad=0.25, nodesep=0.5, ranksep=0.6, layout=circo,
+         label="(a) 定级为什么是耦合的", labelloc=t, labeljust=l, fontsize=13];
+  node [shape=box, style="rounded,filled", fontname="Noto Sans CJK SC", fontsize=11, penwidth=1.3, margin="0.14,0.08"];
+  edge [color="#52514e", arrowsize=0.8, fontname="Noto Sans CJK SC", fontsize=10, fontcolor="#52514e"];
+  g [label="字段等级", fillcolor="#dbe8f9", color="#2a78d6"];
+  s [label="可见范围\n（哪些角色拿得到）", fillcolor="#dbe8f9", color="#2a78d6"];
+  h [label="各角色的背景池", fillcolor="#d3f0e4", color="#1baf7a"];
+  m [label="其余字段的推断风险\nM⁽ᴷ⁾", fillcolor="#d3f0e4", color="#1baf7a"];
+  g -> s [label="表4.1–4.3\n共享开放口径"]; s -> h [label="被上调的字段\n退出更宽角色的池"]; h -> m [label="重算"]; m -> g [label="是否仍需上调"];
+}

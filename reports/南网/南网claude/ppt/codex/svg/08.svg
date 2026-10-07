@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">等级复核：先把推断证据转成影响依据</title><desc id="desc">这是技术与制度之间最重要的接口。经验推断越线说明值得复核，不直接证明某个字段必须继承目标等级。先确认目标在该场景需要保护，再看新的深度、覆盖范围和影响后果是否改变分级要素，然后按矩阵和适用规则形成候选级别。算法在这些候选级别内寻找一致方案。若只有场景风险变化而对象影响未改变，可以给出专项复核记录，不能为了让优化有解而随意改级。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="a647584" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#647584"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">07  风险证据怎样进入定级</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">等级复核：先把推断证据转成影响依据</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">技术越线触发复核；建议等级仍需要回答“影响谁、影响多严重”。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">08 / 12</tspan>
+</text>
+<rect x="64" y="238" width="266" height="194" rx="10" fill="#EDF7F5" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="64" y="238" width="4" height="194" rx="0" fill="#087F79"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="86" y="280.5">推断证据</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="86" y="322.42">目标、场景、背景</tspan>
+<tspan x="86" y="352.87">能力、验证范围</tspan>
+</text>
+<rect x="378" y="238" width="266" height="194" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="378" y="238" width="4" height="194" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="400" y="280.5">影响复核</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="400" y="322.42">是否揭示更深信息</tspan>
+<tspan x="400" y="352.87">对象与后果是否改变</tspan>
+</text>
+<rect x="692" y="238" width="266" height="194" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="692" y="238" width="4" height="194" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="714" y="280.5">规则判定</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="714" y="322.42">核对要素与矩阵</tspan>
+<tspan x="714" y="352.87">形成允许的候选级别</tspan>
+</text>
+<rect x="1006" y="238" width="210" height="194" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="1006" y="238" width="4" height="194" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="1028" y="280.5">等级建议</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="1028" y="322.42">附理由与证据</tspan>
+<tspan x="1028" y="352.87">进入联合优化</tspan>
+</text>
+<line x1="338" y1="333" x2="368" y2="333" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<line x1="652" y1="333" x2="682" y2="333" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<line x1="966" y1="333" x2="996" y2="333" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<rect x="65" y="473" width="365" height="52" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="247.5" y="506.59">规则基线：原则上不低于基线</tspan>
+</text>
+<rect x="447" y="473" width="375" height="52" rx="6" fill="#FBF5E9"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#AE6C26" text-anchor="middle">
+<tspan x="634.5" y="506.59">重要 / 核心：按识别程序处理</tspan>
+</text>
+<rect x="839" y="473" width="377" height="52" rx="6" fill="#F4F7FA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#647584" text-anchor="middle">
+<tspan x="1027.5" y="506.245">证据不足或约束冲突：专项复核</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="581.46">数据项、数据集、衍生产品分别复核；组合的风险不自动复制为每个成员的等级。</tspan>
+</text>
+<rect x="64" y="600" width="1152" height="48" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="82" y="630.44">优化只在有依据的候选级别和可行约束内选择方案，不以代价替代影响判断。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">依据：所供分级手册表 4.4、附录 D/E；输出区分规则等级、建议等级与最终批准等级。</tspan>
+</text>
+</svg>

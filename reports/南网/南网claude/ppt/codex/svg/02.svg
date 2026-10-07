@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">单项定级之外，还要检查组合后能揭示什么</title><desc id="desc">规则定级仍然是基础。新增分析解决的是：分别审查每个字段时不明显的信息，可能在组合后被推断出来。这里的目标必须在具体场景中仍需保护；能推断某个已经允许获取的目标，不自动构成分级问题。本页仅示意组合效应，不表示某项南网数据已经发生泄露。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="aDCE4EA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DCE4EA"/></marker>
+<marker id="a087F79" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#087F79"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">01  为什么需要推断风险分析</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">单项定级之外，还要检查组合后能揭示什么</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">新的风险可能出现在字段之间，也可能来自接收方已经掌握的信息。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">02 / 12</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" fill="#647584" text-anchor="start">
+<tspan x="78" y="215.48">单独观察</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="694" y="215.48">联合观察</tspan>
+</text>
+<line x1="638" y1="190" x2="638" y2="567" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="80" y="269" width="165" height="86" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="80" y="269" width="4" height="86" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="102" y="311.5">字段 A</tspan>
+</text>
+<line x1="246" y1="312" x2="355" y2="312" stroke="#DCE4EA" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#aDCE4EA)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="366" y="314.44">对目标的证据弱</tspan>
+</text>
+<rect x="80" y="421" width="165" height="86" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="80" y="421" width="4" height="86" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="102" y="463.5">字段 B</tspan>
+</text>
+<line x1="246" y1="464" x2="355" y2="464" stroke="#DCE4EA" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#aDCE4EA)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="366" y="466.44">对目标的证据弱</tspan>
+</text>
+<rect x="698" y="278" width="152" height="84" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="698" y="278" width="4" height="84" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="720" y="320.5">字段 A</tspan>
+</text>
+<rect x="698" y="420" width="152" height="84" rx="10" fill="#FFFFFF" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="698" y="420" width="4" height="84" rx="0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="720" y="462.5">字段 B</tspan>
+</text>
+<line x1="850" y1="320" x2="906" y2="320" stroke="#087F79" stroke-width="2"/>
+<line x1="850" y1="462" x2="906" y2="462" stroke="#087F79" stroke-width="2"/>
+<line x1="906" y1="320" x2="906" y2="462" stroke="#087F79" stroke-width="2"/>
+<line x1="906" y1="391" x2="959" y2="391" stroke="#087F79" stroke-width="2" marker-end="url(#a087F79)"/>
+<rect x="971" y="335" width="231" height="112" rx="10" fill="#EDF7F5" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="971" y="335" width="4" height="112" rx="0" fill="#087F79"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="993" y="377.5">受保护目标</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="993" y="419.42">联合后可能恢复</tspan>
+</text>
+<rect x="710" y="523" width="476" height="42" rx="6" fill="#EDF7F5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#087F79" text-anchor="middle">
+<tspan x="948.0" y="551.245">字段集合 + 已有背景 → 推断能力</tspan>
+</text>
+<rect x="64" y="600" width="1152" height="48" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="82" y="630.44">需要补充评估：组合后多揭示了什么，以及是否改变原有分级依据。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">依据：所供分级手册“深度”要素、附录 D/E；风险评估手册第 382 项。图为原理示意。</tspan>
+</text>
+</svg>

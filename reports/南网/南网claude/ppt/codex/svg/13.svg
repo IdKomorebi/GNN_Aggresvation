@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">备查：风险量与等级一致性条件</title><desc id="desc">风险量都以同一目标、同一场景和同一评估协议为前提。M 的实测最大值通常是已搜索背景族内的最大值，不能代表全部未知背景。检查一致性使用最终集合能力 V，而不是直接用 M 作等级阈值。等级与可见范围的对应关系必须业务确认；实际非嵌套角色要分别列出可得集合。GRPO 学习的是可行候选空间中的联合调整，不能通过改级使历史已知信息消失。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">A1  定义与前提</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">备查：风险量与等级一致性条件</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">以下是研究评估量与约束的形式化表达，不是南网法规中的数值分级规则。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">A1</tspan>
+</text>
+<rect x="64" y="183" width="184" height="36" rx="6" fill="#EDF7F5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#087F79" text-anchor="middle">
+<tspan x="156.0" y="207.20999999999998">风险量的定义</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="65" y="265.6">Δᵢ(T) = V(B ∪ T ∪ {i}) − V(B ∪ T)</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="65" y="322.56">M⁽⁰⁾ = Δᵢ(∅)     M⁽ᴷ⁾ = max Δᵢ(T)     Γ⁽ᴷ⁾ = M⁽ᴷ⁾ − M⁽⁰⁾</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="361.4">最大值在可行背景 T 中取：来自候选背景池，不含 B 或字段 i，字段数不超过 K。</tspan>
+</text>
+<line x1="64" y1="394" x2="1216" y2="394" stroke="#DCE4EA" stroke-width="1"/>
+<rect x="64" y="420" width="184" height="36" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="156.0" y="444.21000000000004">一致性检查</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="66" y="497.5">对该主体仍受保护的目标：所有纳入检查的可得组合 S 均满足 V(B ∪ S) ≤ τ。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#2459C4" text-anchor="start">
+<tspan x="66" y="548.46">目标：在允许的候选级别内，减少加权调整代价；约束：规则基线、披露要求与一致性。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" fill="#AE6C26" text-anchor="start">
+<tspan x="66" y="600.44">B 已足以暴露、成员不可调整或映射不成立时，报告冲突并人工复核，不承诺一定有解。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">V 是固定经验协议下的样本外能力；K 是评估预算；τ 按目标与业务确认；以上省略目标和场景下标。</tspan>
+</text>
+</svg>

@@ -1,0 +1,44 @@
+digraph G {
+  graph [rankdir=LR, fontname="Noto Sans CJK SC", bgcolor="#fcfcfb", nodesep=0.22, ranksep=0.4, pad=0.3,
+         label="图1  三版体系对照：哪些没变、哪些被替换、近期研究插在哪里\n灰＝师兄论文原内容（保留）   灰底虚线框＝师兄内容中将被替换的环节   蓝＝按南网规则替换/新增   绿＝近期研究新增   橙＝师兄 GRPO（保留并改造）",
+         labelloc=b, labeljust=l, fontsize=12.5];
+  node [shape=box, style="rounded,filled", fontname="Noto Sans CJK SC", fontsize=10.5, penwidth=1.3, margin="0.12,0.06", fillcolor="#efeeea", color="#8a8984"];
+  edge [color="#52514e", arrowsize=0.7];
+
+  subgraph cluster_c {
+    label="③ 最终体系（加入近期研究）"; fontsize=12; style="rounded"; color="#1baf7a";
+    c1 [label="大模型 + 检索增强\n解析南网手册与细则"];
+    c2 [label="业务架构线分类到字段\n矩阵 → 规则等级（1~5级）\n+ 标注披露层级、披露时点、是否法定公开", fillcolor="#dbe8f9", color="#2a78d6"];
+    c3 [label="风险关联图\n（并联：解释与先验，不做硬筛选）"];
+    c4 [label="DNN / GAT 验证\n＝集合推断能力在单字段、结构目标下的特例"];
+    c5 [label="场景：角色的公开基底与背景池（来自披露细则）\n通用模型扫描全部组合 + 重训认证\n→ V(S)、M⁽⁰⁾、M⁽ᴷ⁾、Γ⁽ᴷ⁾、见证背景", fillcolor="#d3f0e4", color="#1baf7a"];
+    c6 [label="等级一致性优化（GRPO，基线：贪心）\n状态＝当前等级下的 M⁽ᴷ⁾；动作＝上调某字段一级\n等级决定可见范围 → 背景池变化 → 风险重算\n目标：满足“从严”的前提下上调最少（“避免过度定级”）", fillcolor="#fbe1d6", color="#eb6834"];
+    c7 [label="建议等级 + 推断证据 → 审批 → 固化\n事件触发复评（附录E + 披露时点、新批次开放）", fillcolor="#dbe8f9", color="#2a78d6"];
+    c1 -> c2 -> c6; c2 -> c5; c3 -> c5 [style=dashed]; c4 -> c5 [style=dashed]; c5 -> c6 -> c7; c6 -> c5 [style=dashed, constraint=false];
+  }
+
+  subgraph cluster_b {
+    label="② 南网合规版（只改与南网规则冲突之处）"; fontsize=12; style="rounded"; color="#2a78d6";
+    b1 [label="大模型 + 检索增强\n解析南网手册与细则"];
+    b2 [label="业务架构线分类到字段\n影响对象 × 影响程度矩阵\n→ 规则等级（1~5级，就高不就低）", fillcolor="#dbe8f9", color="#2a78d6"];
+    b3 [label="Pearson/Spearman/MIC 融合\n有向加权风险关联图"];
+    b4 [label="DNN / GAT+物理约束 验证"];
+    b5 [label="风险指数 rᵢ = max MIC(dᵢ, y)", style="rounded,filled,dashed"];
+    b6 [label="GRPO：五级；不得低于规则等级（硬约束）\n4、5级只出申报建议", fillcolor="#fbe1d6", color="#eb6834"];
+    b7 [label="建议等级 → 审批 → 固化到数据目录\n附录E 场景触发更新", fillcolor="#dbe8f9", color="#2a78d6"];
+    b1 -> b2 -> b6; b3 -> b4; b3 -> b5 -> b6 -> b7;
+  }
+
+  subgraph cluster_a {
+    label="① 师兄原体系（论文第3、4章）"; fontsize=12; style="rounded"; color="#8a8984";
+    a1 [label="大模型 + 检索增强\n抽取结构化分级规则"];
+    a2 [label="自编码器 + FP-Growth\n支持度之和 → 初始等级（四级）", style="rounded,filled,dashed"];
+    a3 [label="Pearson/Spearman/MIC 融合\n有向加权风险关联图"];
+    a4 [label="DNN / GAT+物理约束\n验证候选关系可否推断"];
+    a5 [label="风险指数 rᵢ = max MIC(dᵢ, y)", style="rounded,filled,dashed"];
+    a6 [label="GRPO：安全收益 − 可用性成本 − 合规罚项\n逐字段选择四级之一", fillcolor="#fbe1d6", color="#eb6834"];
+    a7 [label="动态等级（公开/一般/重要/核心）", style="rounded,filled,dashed"];
+    a1 -> a2 -> a5; a3 -> a4; a3 -> a5; a5 -> a6 -> a7;
+  }
+
+}

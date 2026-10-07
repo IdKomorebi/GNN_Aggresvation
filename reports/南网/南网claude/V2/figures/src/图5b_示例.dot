@@ -1,0 +1,15 @@
+digraph G {
+  graph [fontname="Noto Sans CJK SC", bgcolor="#fcfcfb", pad=0.25, label="(b) 示例（示意数字，非实测）：目标 y 为 3 级，泄露线 τ=0.7；公众可见 1 级字段，协议接收方可见 ≤2 级字段", labelloc=t, labeljust=l, fontsize=13];
+  node [shape=plain, fontname="Noto Sans CJK SC", fontsize=11];
+  t [label=<
+  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#8a8984" BGCOLOR="#ffffff">
+   <TR><TD BGCOLOR="#efeeea"><B>字段</B></TD><TD BGCOLOR="#efeeea"><B>规则等级</B></TD><TD BGCOLOR="#efeeea"><B>M⁽⁰⁾ → M⁽²⁾</B></TD><TD BGCOLOR="#efeeea"><B>参与的越线组合（与公开电价 P 一起）</B></TD><TD BGCOLOR="#efeeea"><B>方案甲：凡参与者<br/>都取目标级别</B></TD><TD BGCOLOR="#fbe1d6"><B>方案乙：一致性<br/>优化（上调最少）</B></TD></TR>
+   <TR><TD>P 出清电价（法定公开）</TD><TD>1</TD><TD>—</TD><TD>在公开基底内</TD><TD>1（锁定）</TD><TD>1（锁定）</TD></TR>
+   <TR><TD>A</TD><TD>1</TD><TD>0.35 → 0.68</TD><TD>{A,B}=0.78　{A,C}=0.74　{A,D}=0.80</TD><TD>3</TD><TD BGCOLOR="#fde9e0"><B>3</B></TD></TR>
+   <TR><TD>B</TD><TD>1</TD><TD>0.05 → 0.42</TD><TD>{A,B}=0.78　{B,C,D}=0.72</TD><TD>3</TD><TD>1</TD></TR>
+   <TR><TD>C</TD><TD>1</TD><TD>0.04 → 0.42</TD><TD>{A,C}=0.74　{B,C,D}=0.72</TD><TD>3</TD><TD>1</TD></TR>
+   <TR><TD>D</TD><TD>2</TD><TD>0.02 → 0.37</TD><TD>{A,D}=0.80　{B,C,D}=0.72</TD><TD>3</TD><TD BGCOLOR="#fde9e0"><B>3</B></TD></TR>
+   <TR><TD COLSPAN="4" ALIGN="RIGHT">上调合计（级次）／上调字段数</TD><TD>7 ／ 4</TD><TD BGCOLOR="#fde9e0"><B>3 ／ 2</B></TD></TR>
+   <TR><TD COLSPAN="6" ALIGN="LEFT"><FONT POINT-SIZE="10" COLOR="#52514e">方案乙的过程：① A 的 M⁽²⁾ 最大，先上调 A；A 到 2 级后公众池里只剩 B、C（{B,C}=0.35，安全），但协议接收方仍可用 {A,B}，继续调到 3 级。<br ALIGN="LEFT"/>② 重算后协议接收方池为 {B,C,D}，仍有 {B,C,D}=0.72 越线；调 D 一级即可，比调 B 或 C 两级便宜。③ 再重算：各角色池内无越线组合，结束。<br ALIGN="LEFT"/>两种方案都满足“从严”；方案乙没有把 B、C 抬到 3 级，对应分级手册“合理性：避免过度定级”。</FONT></TD></TR>
+  </TABLE>>];
+}

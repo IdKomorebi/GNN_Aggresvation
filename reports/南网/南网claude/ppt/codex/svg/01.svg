@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">面向推断风险的
+数据分类分级体系</title><desc id="desc">本次汇报聚焦分类分级研究体系。先按南网规则形成基线，再检查字段与已有背景结合是否揭示新的受保护信息，最后在规则硬约束内形成等级复核和联合优化建议。GRPO 是重点研究模块，但等级结论仍需业务复核与审批。整套方法统一作为项目组的研究体系介绍。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="a647584" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#647584"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">南方电网项目 · 研究体系汇报</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">01 / 12</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="44" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="139.88">面向推断风险的</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="56" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="212.12">数据分类分级体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="67" y="280.5">规则确定基线  ·  组合推断补充证据  ·  GRPO 支持联合等级建议</tspan>
+</text>
+<line x1="64" y1="371" x2="404" y2="371" stroke="#2459C4" stroke-width="3"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="426.6">规则基线</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="475.46">明确分什么、依据什么定级</tspan>
+</text>
+<line x1="464" y1="371" x2="804" y2="371" stroke="#087F79" stroke-width="3"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="464" y="426.6">推断证据</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="464" y="475.46">发现单字段之外的组合影响</tspan>
+</text>
+<line x1="864" y1="371" x2="1204" y2="371" stroke="#2459C4" stroke-width="3"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="864" y="426.6">等级建议</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="864" y="475.46">在硬约束内复核并联合优化</tspan>
+</text>
+<line x1="419" y1="422" x2="448" y2="422" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<line x1="819" y1="422" x2="848" y2="422" stroke="#647584" stroke-width="2" marker-end="url(#a647584)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="601.54">形成“有规则依据、有推断证据、可审批、可复评”的分类分级结果。</tspan>
+</text>
+</svg>

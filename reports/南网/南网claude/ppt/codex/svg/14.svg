@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">备查：已有验证结果与下一步</title><desc id="desc">本页根据 2026-10-07 实验记录更新。E3 使用两个种子的留出实例结果，GRPO 加回退相对最优的平均代价为 1.010 和 1.008，覆盖贪心为 1.021 和 1.016。E1 中整数规划平均约 8 毫秒，是当前小规模任务的重要精确基线。E2b 使用估计先验时平均核验 38.71% 的集合，不用先验时为 82.84%；所谓核验是在已有专用模型结果表中查询，不代表新增实际训练。随机等级与代价、有限字段和组合规模都应随结论一起报告，不能当作南网现场效果。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="a087F79" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#087F79"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">A2  研究证据与适用范围</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">备查：已有验证结果与下一步</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">重点展示 GRPO 的研究机制，同时保留精确基线和已有实验的真实结论。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">A2</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="212.5">GRPO 与基线的代价比较</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="677" y="212.5">验证闭环的作用</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="248.36">相对精确最优的平均代价（越接近 1 越好）</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#647584" text-anchor="start">
+<tspan x="64" y="299.4">方法</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#647584" text-anchor="start">
+<tspan x="323" y="299.4">见过的组</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#647584" text-anchor="start">
+<tspan x="463" y="299.4">未见过的组</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="347.42">精确最优</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="323" y="347.42">1.000</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="463" y="347.42">1.000</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="400.42">覆盖贪心 + 回退</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="323" y="400.42">1.021</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="463" y="400.42">1.016</tspan>
+</text>
+<rect x="58" y="428" width="559" height="47" rx="5" fill="#EDF7F5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="64" y="453.42">GRPO + 回退</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="323" y="453.42">1.010</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="463" y="453.42">1.008</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="532.4">当前规模精确求解平均约 8 ms。</tspan>
+<tspan x="66" y="564.4">GRPO 相对贪心小幅改善，扩展价值仍待验证。</tspan>
+</text>
+<line x1="641" y1="190" x2="641" y2="588" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="678" y="272.42">使用估计值先验后，需要核验的集合比例</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="52" font-weight="700" fill="#647584" text-anchor="start">
+<tspan x="681" y="349.04">83%</tspan>
+</text>
+<line x1="860" y1="335" x2="943" y2="335" stroke="#087F79" stroke-width="3" marker-end="url(#a087F79)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="52" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="977" y="349.04">39%</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="679" y="388.38">不用先验                         使用先验</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#172B3A" text-anchor="start">
+<tspan x="679" y="451.42">闭环在既有真值表内达到零残余；</tspan>
+<tspan x="679" y="485.02000000000004">验证调用通过查表模拟，非新增重训。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#2459C4" text-anchor="start">
+<tspan x="679" y="541.42">下一步：真实权限与等级、南网样本、</tspan>
+<tspan x="679" y="573.9699999999999">更大组合范围与动态场景。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">来源：01 号实验 WORKLOG、e3_summary.csv、e2b_summary.csv；公开电力数据、随机等级/代价、≤35 字段、≤3 字段组合、2 种子。</tspan>
+</text>
+</svg>

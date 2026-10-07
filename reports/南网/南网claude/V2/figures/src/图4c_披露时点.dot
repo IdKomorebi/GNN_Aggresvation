@@ -1,0 +1,16 @@
+digraph G {
+  graph [rankdir=LR, fontname="Noto Sans CJK SC", bgcolor="#fcfcfb", nodesep=0.25, ranksep=0.5, pad=0.3, compound=true, newrank=true,
+label="", fontsize=12];
+  node [shape=box, style="rounded,filled", fontname="Noto Sans CJK SC", fontsize=10.5, penwidth=1.2, margin="0.12,0.06"];
+  edge [color="#52514e", arrowsize=0.7, fontname="Noto Sans CJK SC", fontsize=10, fontcolor="#52514e"];
+
+  subgraph cluster_time {
+    label="披露时点（细则2.7）：B 随时间长大"; style="rounded,dashed"; color="#1baf7a"; fontcolor="#0f7a53"; fontsize=11;
+    t0 [label="D-1  申报前\n预测类信息进入 B", fillcolor="#d3f0e4", color="#1baf7a"];
+    t1 [label="D日  交易日\n出清类信息进入 B", fillcolor="#d3f0e4", color="#1baf7a"];
+    t2 [label="D+1  运行日次日\n运行类信息进入 B", fillcolor="#d3f0e4", color="#1baf7a"];
+    t0 -> t1 -> t2;
+    tn [shape=note, fillcolor="#ffffff", color="#8a8984", label="例：“区域实际负荷”在 D+1 才披露。\nD日之前，能推出它的预测/电价组合是有风险的；\nD+1 之后该目标本身已公开，这些组合不再继承其等级。\n→ 同一字段在不同时点可以有不同的继承级别"];
+    t2 -> tn [style=dashed];
+  }
+}

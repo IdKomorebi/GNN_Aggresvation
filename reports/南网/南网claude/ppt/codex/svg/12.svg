@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">输出可审批的等级清单，随变化持续复评</title><desc id="desc">最终交付不是一个模型分数，而是一项完整分级记录：对象与业务分类、规则基线、推断证据、建议级别、复核理由以及审批与复评信息。业务部门复核后进入审批，批准结果固化到目录。数据加工、字段汇聚、主体和已知背景变化，以及规则修订或时效变化，触发下一轮复评。第一步先选择一个业务场景，确认目标、阈值和实际权限，接入历史数据完成闭环试点。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="a2459C4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2459C4"/></marker>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">11  交付与落地</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">输出可审批的等级清单，随变化持续复评</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">让每一项等级建议都能追溯到规则、场景、推断证据与审批记录。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">12 / 12</tspan>
+</text>
+<rect x="64" y="197" width="515" height="362" rx="9" fill="#F4F7FA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="88" y="244.54">一项完整的分级记录</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="295.4">对象与分类</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="235" y="294.38">字段 / 数据集 / 产品及业务路径</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="347.4">规则基线</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="235" y="346.38">规则等级、依据条款与版本</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="399.4">补充证据</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="235" y="398.38">目标、背景、能力、验证范围</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="451.4">等级建议</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="235" y="450.38">建议级别、复核理由与约束</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="88" y="503.4">最终记录</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="235" y="502.38">审批结论、目录版本、复评条件</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="630" y="238.54">审批之后，才固化正式结果</tspan>
+</text>
+<rect x="630" y="279" width="158" height="64" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="709.0" y="318.935">业务复核</tspan>
+</text>
+<rect x="837" y="279" width="170" height="64" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="922.0" y="318.935">审批确认</tspan>
+</text>
+<rect x="1056" y="279" width="158" height="64" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#2459C4" text-anchor="middle">
+<tspan x="1135.0" y="318.935">目录固化</tspan>
+</text>
+<line x1="797" y1="311" x2="828" y2="311" stroke="#2459C4" stroke-width="2" marker-end="url(#a2459C4)"/>
+<line x1="1016" y1="311" x2="1047" y2="311" stroke="#2459C4" stroke-width="2" marker-end="url(#a2459C4)"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="630" y="421.5">触发复评的变化</tspan>
+</text>
+<ellipse cx="636.0" cy="462.0" rx="4.0" ry="4.0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="654" y="473.46">数据与产品变化</tspan>
+</text>
+<ellipse cx="636.0" cy="504.0" rx="4.0" ry="4.0" fill="#087F79"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="654" y="515.46">背景与主体变化</tspan>
+</text>
+<ellipse cx="636.0" cy="546.0" rx="4.0" ry="4.0" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="654" y="557.46">规则与时效变化</tspan>
+</text>
+<rect x="64" y="600" width="1152" height="48" rx="6" fill="#EDF3FD"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="82" y="630.44">规则有依据，风险有证据，建议可解释，结果可审批，变化可复评。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">落地前确认：有效规则版本、目标及阈值、真实授权与历史背景、试点数据；本次不预填真实南网等级。</tspan>
+</text>
+</svg>

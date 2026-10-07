@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">V 判断暴露，M 与 Γ 解释字段为何需要复核</title><desc id="desc">四条柱形来自同一场景。无额外背景时，加入 i 使能力从 0.10 到 0.15，增量为 0.05。有背景 T* 时，能力从 0.20 到 0.85，增量为 0.65；如果 T* 是已评估背景族的最大见证，则 M 的估计最大值为 0.65，背景放大量为 0.60。0.85 越过示意阈值 0.70，所以需要复核。不能只看增量，因为背景本身已经暴露时，增量很小仍可能有较高总暴露。所有数值仅用于说明原理。</desc>
+<rect width="1280" height="720" fill="#FFFFFF"/>
+<defs>
+</defs>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2459C4" text-anchor="start">
+<tspan x="64" y="44.3">06  风险如何量化</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="64" y="104.75999999999999">V 判断暴露，M 与 Γ 解释字段为何需要复核</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="147.42000000000002">同一目标、同一场景：比较加入字段 i 前后，推断能力增加了多少。</tspan>
+</text>
+<line x1="64" y1="676" x2="1216" y2="676" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="64" y="701.24">南网项目  /  数据分类分级研究体系</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" fill="#647584" text-anchor="end">
+<tspan x="1216" y="701.28">07 / 12</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="207.42000000000002">V：在留出数据上的推断能力（示意 R²）</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#172B3A" text-anchor="start">
+<tspan x="66" y="271.42">已有 B</tspan>
+</text>
+<rect x="224" y="244" width="534" height="42" rx="4" fill="#F4F7FA"/>
+<rect x="224" y="244" width="53.400000000000006" height="42" rx="4" fill="#DCE4EA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="289.4" y="271.44">0.10</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#172B3A" text-anchor="start">
+<tspan x="66" y="349.42">B + i</tspan>
+</text>
+<rect x="224" y="322" width="534" height="42" rx="4" fill="#F4F7FA"/>
+<rect x="224" y="322" width="80.1" height="42" rx="4" fill="#2459C4"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="316.1" y="349.44">0.15</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#172B3A" text-anchor="start">
+<tspan x="66" y="427.42">B + T*</tspan>
+</text>
+<rect x="224" y="400" width="534" height="42" rx="4" fill="#F4F7FA"/>
+<rect x="224" y="400" width="106.80000000000001" height="42" rx="4" fill="#DCE4EA"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="342.8" y="427.44">0.20</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#172B3A" text-anchor="start">
+<tspan x="66" y="505.42">B + T* + i</tspan>
+</text>
+<rect x="224" y="478" width="534" height="42" rx="4" fill="#F4F7FA"/>
+<rect x="224" y="478" width="453.9" height="42" rx="4" fill="#087F79"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#172B3A" text-anchor="start">
+<tspan x="689.9" y="505.44">0.85</tspan>
+</text>
+<line x1="597.8" y1="226" x2="597.8" y2="528" stroke="#AE6C26" stroke-width="2" stroke-dasharray="6 5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="400" fill="#AE6C26" text-anchor="middle">
+<tspan x="615.8" y="553.38">示意复核线 τ = 0.70</tspan>
+</text>
+<line x1="805" y1="207" x2="805" y2="572" stroke="#DCE4EA" stroke-width="1"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="842" y="255.62">M⁽⁰⁾</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" fill="#087F79" text-anchor="end">
+<tspan x="1196" y="259.72">0.05</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="842" y="295.42">无额外背景时的增量</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="842" y="372.62">M⁽ᴷ⁾</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" fill="#087F79" text-anchor="end">
+<tspan x="1196" y="376.72">0.65</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="842" y="412.42">已评估背景中的最大增量</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="842" y="489.62">Γ⁽ᴷ⁾</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" fill="#087F79" text-anchor="end">
+<tspan x="1196" y="493.72">0.60</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="842" y="529.42">背景使字段增益额外放大</tspan>
+</text>
+<rect x="64" y="600" width="1152" height="48" rx="6" fill="#EDF7F5"/>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#087F79" text-anchor="start">
+<tspan x="82" y="630.44">最终能力是否越线，用 V 判断；为什么这个字段值得复核，用 M、Γ 和见证背景解释。</tspan>
+</text>
+<text font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="400" fill="#647584" text-anchor="start">
+<tspan x="66" y="663.24">全部数值为原理示意：T* 为示意背景族中的最大见证；τ 需按目标确认；分数不直接映射安全等级。</tspan>
+</text>
+</svg>
