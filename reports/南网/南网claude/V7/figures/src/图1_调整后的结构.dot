@@ -1,0 +1,41 @@
+digraph G {
+  graph [rankdir=TB, fontname="Noto Sans CJK SC", bgcolor="#fcfcfb", nodesep=0.3, ranksep=0.42, pad=0.3, newrank=true,
+         label="图1  调整后的结构：按课题任务书分为“信息归纳与结构化—一次标定—二次标定”，每一步右侧写明产出\n灰＝产出物；二次标定内部“识别到什么”与“等级怎么变”连在一起，3.4 一步给出等级，3.5 只是在此基础上收紧",
+         labelloc=b, labeljust=l, fontsize=12.5];
+  node [shape=box, style="rounded,filled", fontname="Noto Sans CJK SC", fontsize=11, penwidth=1.3, margin="0.14,0.07"];
+  edge [color="#52514e", arrowsize=0.7, fontname="Noto Sans CJK SC", fontsize=9.5, fontcolor="#52514e"];
+
+  subgraph cluster_0 { label="一、电力信息类型归纳与结构化处理"; fontsize=12; style="rounded,dashed"; color="#2a78d6"; fontcolor="#1c5cab";
+    a1 [label="1.1 按业务流归类\n专业域→流程→业务对象→字段", fillcolor="#dbe8f9", color="#2a78d6"];
+    a2 [label="1.2 按数据流标注\n披露层级、披露时点、接收方", fillcolor="#dbe8f9", color="#2a78d6"];
+    a3 [label="1.3 异构信息结构化\n大模型+检索增强解析规则文件与字段说明", fillcolor="#dbe8f9", color="#2a78d6"];
+    a3 -> a1; a3 -> a2;
+  }
+  o0 [label="产出：字段清单\n（类别、流向、时点）", shape=note, fillcolor="#efeeea", color="#8a8984"];
+
+  subgraph cluster_1 { label="二、一次标定：面向本体安全威胁"; fontsize=12; style="rounded,dashed"; color="#eb6834"; fontcolor="#b44a1f";
+    b1 [label="2.1 影响分析\n影响对象、影响范围、影响程度", fillcolor="#fbe1d6", color="#eb6834"];
+    b2 [label="2.2 等级判定\n南网判定矩阵，就高不就低", fillcolor="#fbe1d6", color="#eb6834"];
+    b1 -> b2;
+  }
+  o1 [label="产出：每个字段的一次等级\n（数据本身泄露的后果）", shape=note, fillcolor="#efeeea", color="#8a8984"];
+
+  subgraph cluster_2 { label="三、二次标定：面向多源跨域融合推断威胁"; fontsize=12; style="rounded,dashed"; color="#1baf7a"; fontcolor="#0f7a53";
+    c1 [label="3.1 融合推断场景\n各类接收方已掌握、可能获得的信息", fillcolor="#d3f0e4", color="#1baf7a"];
+    c2 [label="3.2 融合推断关系识别\n哪些字段组合能推出哪个敏感目标、推到多准", fillcolor="#d3f0e4", color="#1baf7a"];
+    c3 [label="3.3 字段推断敏感度评估\n每个字段在组合推断中起多大作用", fillcolor="#d3f0e4", color="#1baf7a"];
+    c4 [label="3.4 等级二次标定\n二次等级 = max(一次等级, 所促成推断的目标的等级)", fillcolor="#1baf7a", color="#1baf7a", fontcolor="#ffffff"];
+    c5 [label="3.5 联合调整（收紧）\n同一组合里不必全部上调，在约束下使上调最少", fillcolor="#d3f0e4", color="#1baf7a"];
+    c1 -> c2 -> c3 -> c4 -> c5;
+  }
+  p2 [label="产出：推断关系清单\n（集合级：组合→目标，精度）", shape=note, fillcolor="#efeeea", color="#8a8984"];
+  p3 [label="产出：字段推断敏感度\n（字段级：目标、背景、增益）", shape=note, fillcolor="#efeeea", color="#8a8984"];
+  p4 [label="产出：每个字段的二次等级\n及标定依据", shape=note, fillcolor="#efeeea", color="#8a8984"];
+  o3 [label="四、审批固化与动态更新（南网流程）", fillcolor="#dbe8f9", color="#2a78d6"];
+
+  a1 -> b1; a2 -> c1 [constraint=false]; b2 -> c1 [label="一次等级；敏感目标"];
+  a2 -> o0 [style=dotted, arrowhead=none, constraint=false]; b2 -> o1 [style=dotted, arrowhead=none, constraint=false];
+  c2 -> p2 [style=dotted, arrowhead=none, constraint=false]; c3 -> p3 [style=dotted, arrowhead=none, constraint=false]; c4 -> p4 [style=dotted, arrowhead=none, constraint=false];
+  {rank=same; a2; o0} {rank=same; b2; o1} {rank=same; c2; p2} {rank=same; c3; p3} {rank=same; c4; p4}
+  c5 -> o3;
+}
